@@ -1,0 +1,598 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="es"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Centro de Tutorías | Refuerzo Académico con Rigor y Empatía</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#d8dadc",
+                    "on-surface": "#191c1e",
+                    "surface-container-highest": "#e0e3e5",
+                    "primary-fixed-dim": "#8dcdff",
+                    "on-secondary-fixed-variant": "#005316",
+                    "on-secondary-fixed": "#002105",
+                    "tertiary-container": "#bfb4e1",
+                    "on-primary": "#ffffff",
+                    "primary-container": "#73c2fb",
+                    "tertiary-fixed-dim": "#ccc0ee",
+                    "on-tertiary-fixed": "#1e1539",
+                    "on-primary-fixed-variant": "#004b70",
+                    "primary-fixed": "#cae6ff",
+                    "primary": "#006493",
+                    "secondary-fixed": "#93f993",
+                    "on-secondary-fixed": "#002105",
+                    "surface-bright": "#f7f9fb",
+                    "on-primary-container": "#004f75",
+                    "on-error": "#ffffff",
+                    "on-secondary-container": "#007322",
+                    "surface-variant": "#e0e3e5",
+                    "on-tertiary": "#ffffff",
+                    "surface-container-high": "#e6e8ea",
+                    "on-tertiary-container": "#4d456b",
+                    "error": "#ba1a1a",
+                    "on-error-container": "#93000a",
+                    "surface-container": "#eceef0",
+                    "inverse-primary": "#8dcdff",
+                    "secondary-container": "#90f691",
+                    "surface-container-lowest": "#ffffff",
+                    "tertiary": "#625981",
+                    "inverse-surface": "#2d3133",
+                    "error-container": "#ffdad6",
+                    "surface-tint": "#006493",
+                    "outline": "#707880",
+                    "on-tertiary-fixed-variant": "#4a4168",
+                    "tertiary-fixed": "#e7deff",
+                    "on-secondary": "#ffffff",
+                    "surface-container-low": "#f2f4f6",
+                    "secondary-fixed-dim": "#77dc7a",
+                    "background": "#f7f9fb",
+                    "on-surface-variant": "#40484f",
+                    "outline-variant": "#bfc7d0",
+                    "secondary": "#006e20",
+                    "on-background": "#191c1e",
+                    "inverse-on-surface": "#eff1f3",
+                    "surface": "#f7f9fb"
+            },
+            "borderRadius": {
+                    "DEFAULT": "1rem",
+                    "lg": "2rem",
+                    "xl": "3rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "container-padding-desktop": "64px",
+                    "section-gap": "80px",
+                    "element-gap": "16px",
+                    "container-padding-mobile": "20px",
+                    "gutter": "24px",
+                    "unit": "8px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Plus Jakarta Sans"],
+                    "headline-xl": ["Plus Jakarta Sans"],
+                    "headline-md": ["Plus Jakarta Sans"],
+                    "body-md": ["Plus Jakarta Sans"],
+                    "label-md": ["Plus Jakarta Sans"],
+                    "label-sm": ["Plus Jakarta Sans"],
+                    "headline-lg-mobile": ["Plus Jakarta Sans"],
+                    "headline-lg": ["Plus Jakarta Sans"]
+            },
+            "fontSize": {
+                    "body-lg": ["18px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "headline-xl": ["48px", {"lineHeight": "1.2", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "headline-md": ["24px", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "body-md": ["16px", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-md": ["14px", {"lineHeight": "1", "letterSpacing": "0.01em", "fontWeight": "600"}],
+                    "label-sm": ["12px", {"lineHeight": "1", "fontWeight": "500"}],
+                    "headline-lg-mobile": ["28px", {"lineHeight": "1.2", "fontWeight": "700"}],
+                    "headline-lg": ["32px", {"lineHeight": "1.2", "fontWeight": "700"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: #f7f9fb; }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+        .glass-nav { background: rgba(247, 249, 251, 0.8); backdrop-filter: blur(12px); }
+        .shadow-soft { box-shadow: 0 20px 40px -10px rgba(115, 194, 251, 0.15); }
+        .card-hover:hover { transform: translateY(-4px); transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1); }
+        .gradient-progress { background: linear-gradient(90deg, #90f691 0%, #73c2fb 100%); }
+    </style>
+</head>
+<body class="text-on-surface selection:bg-primary-container selection:text-on-primary-container">
+<!-- Header Navigation -->
+<header class="fixed top-0 left-0 w-full z-50 glass-nav shadow-sm shadow-primary/5 flex justify-between items-center px-6 md:px-16 py-4">
+<div class="font-headline-md text-headline-md font-bold text-primary">Centro de Tutorías</div>
+<nav class="hidden md:flex gap-8 items-center">
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#materias">Materias</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#como-funciona">Cómo funciona</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#planes">Planes</a>
+<a class="font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" href="#testimonios">Testimonios</a>
+</nav>
+<button class="bg-primary text-on-primary px-6 py-2.5 rounded-full font-label-md text-label-md hover:scale-105 active:scale-95 transition-all shadow-soft">
+            Solicitar clase modelo
+        </button>
+</header>
+<!-- Hero Section -->
+<section class="pt-32 pb-20 md:pt-48 md:pb-32 px-6 md:px-16 overflow-hidden">
+<div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+<div class="space-y-8">
+<span class="bg-primary-container/20 text-primary px-4 py-2 rounded-full font-label-md text-label-md">Educación Personalizada</span>
+<h1 class="font-headline-xl text-headline-xl md:text-6xl text-on-surface tracking-tight">
+                    Refuerzo académico personalizado en <span class="text-primary">Matemáticas y Estadística</span>
+</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+                    Ayudamos a estudiantes de secundaria, diversificado y primeros años de universidad a comprender mejor, mejorar sus notas y recuperar la confianza en su aprendizaje.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4 pt-4">
+<button class="bg-primary text-on-primary px-8 py-4 rounded-full font-headline-md text-headline-md hover:scale-105 active:scale-95 transition-all shadow-lg shadow-primary/20">
+                        Solicitar clase modelo
+                    </button>
+<button class="border-2 border-primary-container text-primary px-8 py-4 rounded-full font-headline-md text-headline-md hover:bg-primary-container/10 transition-all">
+                        Conocer los planes
+                    </button>
+</div>
+</div>
+<div class="relative">
+<div class="absolute inset-0 bg-primary-container/10 rounded-xl -rotate-3 scale-105"></div>
+<img alt="Student learning math" class="relative z-10 w-full h-auto rounded-xl shadow-soft object-cover" data-alt="A friendly 3D character of a young student sitting at a bright, minimalist desk studying mathematics. Behind the student is a digital chalkboard showing geometric formulas. The scene is lit with warm, soft sunlight from a nearby window, using a palette of mint green, sky blue, and soft lavender to create a calm, optimistic educational environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVZuX1FJ6nDiznyz-1UiTHVcRN5hHhg1rIcANHO-W0detK9UFMkpCb61EP7gRMMHoPYnoVS1JDpIZZ6YSTyQSXCZPr2PF7Ddk3asn1Zqz6BeYeVtyZHXXEk2M6s9LfWZGS7B5ICCBn9HVc_5JV61XLVGe0ZoJt8Xwq0qdtFU-02dUC3NURcrfwBdIdeuxNjxtYEwxYHIzbDGPEMeZGg5fcL8ZqGfP1oQrRGUTLPrQjQSRNUa53DXiCb87MtYGpl1yAPwIkPN2zYQ"/>
+</div>
+</div>
+</section>
+<!-- Problemas Frecuentes (Bento-style Grid) -->
+<section class="py-20 px-6 md:px-16 bg-white">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">¿Te sientes identificado con esto?</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-4">Entendemos los retos de la educación moderna.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-6 gap-6">
+<div class="md:col-span-3 p-8 bg-surface-container-low rounded-lg border border-primary-container/10 card-hover">
+<div class="w-12 h-12 bg-primary-container/20 rounded-full flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary">sentiment_dissatisfied</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4">"Mi hijo no entiende matemáticas"</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">La frustración diaria por no comprender conceptos básicos puede afectar el ambiente familiar.</p>
+</div>
+<div class="md:col-span-3 p-8 bg-secondary-container/10 rounded-lg border border-secondary/10 card-hover">
+<div class="w-12 h-12 bg-secondary-container/30 rounded-full flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-secondary">trending_down</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4">Baja confianza</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Las malas notas generan un ciclo de desmotivación que frena el potencial de los estudiantes.</p>
+</div>
+<div class="md:col-span-2 p-8 bg-tertiary-container/10 rounded-lg border border-tertiary/10 card-hover">
+<div class="w-12 h-12 bg-tertiary-container/30 rounded-full flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-tertiary">psychology</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4">Apoyo personalizado</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Cada mente aprende a un ritmo distinto, sin la guía adecuada es fácil perderse.</p>
+</div>
+<div class="md:col-span-2 p-8 bg-primary-container/5 rounded-lg border border-primary-container/10 card-hover">
+<div class="w-12 h-12 bg-primary-container/20 rounded-full flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-primary">school</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4">Inicio de universidad</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">La brecha entre el colegio y la universidad puede ser abrumadora sin bases sólidas.</p>
+</div>
+<div class="md:col-span-2 p-8 bg-error-container/10 rounded-lg border border-error/10 card-hover">
+<div class="w-12 h-12 bg-error-container/30 rounded-full flex items-center justify-center mb-6">
+<span class="material-symbols-outlined text-error">relax</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-4">Sin estrés</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Buscamos que el aprendizaje sea un proceso natural y libre de ansiedad innecesaria.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Solución & Confianza -->
+<section class="py-20 px-6 md:px-16 overflow-hidden">
+<div class="max-w-7xl mx-auto flex flex-col lg:flex-row gap-20 items-center">
+<div class="lg:w-1/2 space-y-12">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Metodología pensada en el éxito real</h2>
+<ul class="space-y-6">
+<li class="flex gap-4">
+<div class="flex-shrink-0 w-8 h-8 bg-secondary-container/40 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div>
+<p class="font-headline-md text-headline-md text-on-surface leading-none mb-2">Clases vía Zoom</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Interacción directa y segura desde la comodidad de tu hogar.</p>
+</div>
+</li>
+<li class="flex gap-4">
+<div class="flex-shrink-0 w-8 h-8 bg-primary-container/40 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div>
+<p class="font-headline-md text-headline-md text-on-surface leading-none mb-2">Pizarras interactivas</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Visualización dinámica de problemas para una mejor retención.</p>
+</div>
+</li>
+<li class="flex gap-4">
+<div class="flex-shrink-0 w-8 h-8 bg-tertiary-container/40 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div>
+<p class="font-headline-md text-headline-md text-on-surface leading-none mb-2">Acompañamiento paso a paso</p>
+<p class="font-body-md text-body-md text-on-surface-variant">No saltamos pasos. Nos aseguramos de que cada concepto quede claro.</p>
+</div>
+</li>
+<li class="flex gap-4">
+<div class="flex-shrink-0 w-8 h-8 bg-secondary-container/40 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-secondary text-sm" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+</div>
+<div>
+<p class="font-headline-md text-headline-md text-on-surface leading-none mb-2">Horarios flexibles</p>
+<p class="font-body-md text-body-md text-on-surface-variant">Nos adaptamos a la cargada agenda de los estudiantes modernos.</p>
+</div>
+</li>
+</ul>
+</div>
+<div class="lg:w-1/2 grid grid-cols-1 md:grid-cols-2 gap-6">
+<div class="p-8 bg-white rounded-lg shadow-soft text-center space-y-4">
+<span class="material-symbols-outlined text-4xl text-primary">groups</span>
+<h4 class="font-label-md text-label-md uppercase tracking-widest text-primary">Docentes Expertos</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Profesionales con años de experiencia en didáctica.</p>
+</div>
+<div class="p-8 bg-white rounded-lg shadow-soft text-center space-y-4 md:mt-12">
+<span class="material-symbols-outlined text-4xl text-secondary">communication</span>
+<h4 class="font-label-md text-label-md uppercase tracking-widest text-secondary">Comunicación Directa</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Reportes periódicos para padres sobre el progreso.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Materias -->
+<section class="py-20 px-6 md:px-16 bg-surface-container-lowest" id="materias">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Especialistas en Ciencias Exactas</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-4">Desde conceptos básicos hasta niveles universitarios.</p>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+<!-- Subject Card -->
+<div class="p-8 bg-white rounded-lg border border-outline-variant/30 hover:border-primary transition-all card-hover group">
+<span class="material-symbols-outlined text-primary mb-6 block text-4xl group-hover:scale-110 transition-transform">functions</span>
+<h3 class="font-headline-md text-headline-md mb-2">Álgebra</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Simplificando expresiones y resolviendo incógnitas con lógica.</p>
+<button class="text-primary font-label-md text-label-md flex items-center gap-2 group-hover:gap-3 transition-all">Solicitar apoyo <span class="material-symbols-outlined text-sm">arrow_forward</span></button>
+</div>
+<div class="p-8 bg-white rounded-lg border border-outline-variant/30 hover:border-primary transition-all card-hover group">
+<span class="material-symbols-outlined text-primary mb-6 block text-4xl group-hover:scale-110 transition-transform">architecture</span>
+<h3 class="font-headline-md text-headline-md mb-2">Geometría</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Dominio de formas, áreas, volúmenes y teoremas espaciales.</p>
+<button class="text-primary font-label-md text-label-md flex items-center gap-2 group-hover:gap-3 transition-all">Solicitar apoyo <span class="material-symbols-outlined text-sm">arrow_forward</span></button>
+</div>
+<div class="p-8 bg-white rounded-lg border border-outline-variant/30 hover:border-primary transition-all card-hover group">
+<span class="material-symbols-outlined text-primary mb-6 block text-4xl group-hover:scale-110 transition-transform">timeline</span>
+<h3 class="font-headline-md text-headline-md mb-2">Cálculo</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Límites, derivadas e integrales para bachillerato y universidad.</p>
+<button class="text-primary font-label-md text-label-md flex items-center gap-2 group-hover:gap-3 transition-all">Solicitar apoyo <span class="material-symbols-outlined text-sm">arrow_forward</span></button>
+</div>
+<div class="p-8 bg-white rounded-lg border border-outline-variant/30 hover:border-primary transition-all card-hover group">
+<span class="material-symbols-outlined text-primary mb-6 block text-4xl group-hover:scale-110 transition-transform">bar_chart</span>
+<h3 class="font-headline-md text-headline-md mb-2">Estadística</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Análisis de datos, probabilidad y estadística aplicada.</p>
+<button class="text-primary font-label-md text-label-md flex items-center gap-2 group-hover:gap-3 transition-all">Solicitar apoyo <span class="material-symbols-outlined text-sm">arrow_forward</span></button>
+</div>
+</div>
+</div>
+</section>
+<!-- Cómo Funciona -->
+<section class="py-20 px-6 md:px-16" id="como-funciona">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Tu camino hacia el éxito</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 relative">
+<!-- Connector Line (Desktop) -->
+<div class="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-primary-container/20 -translate-y-1/2 z-0"></div>
+<div class="relative z-10 text-center space-y-4">
+<div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto border-4 border-primary shadow-soft">
+<span class="font-headline-md text-primary">1</span>
+</div>
+<h4 class="font-headline-md text-headline-md">Formulario</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Completa tus datos y cuéntanos tus necesidades.</p>
+</div>
+<div class="relative z-10 text-center space-y-4">
+<div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto border-4 border-secondary shadow-soft">
+<span class="font-headline-md text-secondary">2</span>
+</div>
+<h4 class="font-headline-md text-headline-md">Clase Modelo</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Prueba nuestra metodología sin compromiso.</p>
+</div>
+<div class="relative z-10 text-center space-y-4">
+<div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto border-4 border-tertiary shadow-soft">
+<span class="font-headline-md text-tertiary">3</span>
+</div>
+<h4 class="font-headline-md text-headline-md">Diagnóstico</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Identificamos áreas clave a reforzar.</p>
+</div>
+<div class="relative z-10 text-center space-y-4">
+<div class="w-16 h-16 bg-white rounded-full flex items-center justify-center mx-auto border-4 border-primary shadow-soft">
+<span class="font-headline-md text-primary">4</span>
+</div>
+<h4 class="font-headline-md text-headline-md">Plan a Medida</h4>
+<p class="font-body-md text-body-md text-on-surface-variant">Iniciamos el proceso de aprendizaje guiado.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-20 px-6 md:px-16">
+<div class="max-w-5xl mx-auto bg-primary text-on-primary rounded-xl p-12 md:p-20 text-center space-y-8 relative overflow-hidden shadow-soft">
+<div class="absolute -top-12 -right-12 w-64 h-64 bg-primary-container/20 rounded-full blur-3xl"></div>
+<div class="absolute -bottom-12 -left-12 w-64 h-64 bg-secondary-container/20 rounded-full blur-3xl"></div>
+<h2 class="font-headline-xl text-headline-xl relative z-10">¿Listo para transformar el aprendizaje?</h2>
+<p class="font-body-lg text-body-lg relative z-10 opacity-90 max-w-2xl mx-auto">Solicita una clase modelo hoy mismo y descubre por qué cientos de familias confían en nosotros.</p>
+<button class="bg-white text-primary px-10 py-5 rounded-full font-headline-md text-headline-md hover:scale-105 active:scale-95 transition-all shadow-xl relative z-10">
+                Quiero solicitar una clase modelo
+            </button>
+</div>
+</section>
+<!-- Planes de Precios -->
+<section class="py-20 px-6 md:px-16 bg-surface-container-low" id="planes">
+<div class="max-w-7xl mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Planes flexibles para cada necesidad</h2>
+<div class="mt-6 inline-flex items-center gap-2 bg-secondary-container/20 text-secondary px-4 py-2 rounded-full font-label-md text-label-md">
+<span class="material-symbols-outlined text-sm">verified_user</span> Pago Seguro y Garantizado
+                </div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Basic Plan -->
+<div class="bg-white p-8 rounded-lg shadow-soft border border-outline-variant/30 flex flex-col h-full card-hover">
+<h3 class="font-headline-md text-headline-md mb-2">Individual</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Para dudas puntuales.</p>
+<ul class="space-y-4 mb-8 flex-grow">
+<li class="flex items-center gap-3 text-on-surface-variant"><span class="material-symbols-outlined text-secondary text-lg">check</span> 1 Sesión de 60 min</li>
+<li class="flex items-center gap-3 text-on-surface-variant"><span class="material-symbols-outlined text-secondary text-lg">check</span> Material digital</li>
+<li class="flex items-center gap-3 text-on-surface-variant"><span class="material-symbols-outlined text-secondary text-lg">check</span> Soporte vía WhatsApp</li>
+</ul>
+<button class="w-full border-2 border-primary-container text-primary py-3 rounded-full font-label-md text-label-md hover:bg-primary-container/10 transition-all">Elegir este plan</button>
+</div>
+<!-- Popular Plan -->
+<div class="bg-white p-8 rounded-lg shadow-soft border-2 border-primary flex flex-col h-full card-hover relative">
+<span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-on-primary px-4 py-1 rounded-full text-xs font-bold uppercase">Más solicitado</span>
+<h3 class="font-headline-md text-headline-md mb-2">Mensual</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Seguimiento constante.</p>
+<ul class="space-y-4 mb-8 flex-grow">
+<li class="flex items-center gap-3 text-on-surface-variant"><span class="material-symbols-outlined text-secondary text-lg">check</span> 8 Sesiones mensuales</li>
+<li class="flex items-center gap-3 text-on-surface-variant"><span class="material-symbols-outlined text-secondary text-lg">check</span> Reporte de progreso</li>
+<li class="flex items-center gap-3 text-on-surface-variant"><span class="material-symbols-outlined text-secondary text-lg">check</span> Plan personalizado</li>
+</ul>
+<button class="w-full bg-primary text-on-primary py-3 rounded-full font-label-md text-label-md hover:scale-105 transition-all">Elegir este plan</button>
+</div>
+<!-- Weekly Plan -->
+<div class="bg-white p-8 rounded-lg shadow-soft border border-outline-variant/30 flex flex-col h-full card-hover">
+<h3 class="font-headline-md text-headline-md mb-2">Semanal</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Refuerzo intensivo corto.</p>
+<ul class="space-y-4 mb-8 flex-grow">
+<li class="flex items-center gap-3 text-on-surface-variant"><span class="material-symbols-outlined text-secondary text-lg">check</span> 3 Sesiones por semana</li>
+<li class="flex items-center gap-3 text-on-surface-variant"><span class="material-symbols-outlined text-secondary text-lg">check</span> Ejercicios de práctica</li>
+</ul>
+<button class="w-full border-2 border-primary-container text-primary py-3 rounded-full font-label-md text-label-md hover:bg-primary-container/10 transition-all">Elegir este plan</button>
+</div>
+<!-- Intensive Plan -->
+<div class="bg-white p-8 rounded-lg shadow-soft border border-outline-variant/30 flex flex-col h-full card-hover">
+<h3 class="font-headline-md text-headline-md mb-2">Intensivo</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-6">Preparación exámenes.</p>
+<ul class="space-y-4 mb-8 flex-grow">
+<li class="flex items-center gap-3 text-on-surface-variant"><span class="material-symbols-outlined text-secondary text-lg">check</span> 15 Sesiones flash</li>
+<li class="flex items-center gap-3 text-on-surface-variant"><span class="material-symbols-outlined text-secondary text-lg">check</span> Simulacro de examen</li>
+</ul>
+<button class="w-full border-2 border-primary-container text-primary py-3 rounded-full font-label-md text-label-md hover:bg-primary-container/10 transition-all">Elegir este plan</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Testimonios -->
+<section class="py-20 px-6 md:px-16 overflow-hidden" id="testimonios">
+<div class="max-w-7xl mx-auto">
+<h2 class="font-headline-lg text-headline-lg text-on-surface text-center mb-16">Lo que dicen las familias</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="bg-white p-8 rounded-lg shadow-soft border border-primary-container/10 italic text-on-surface-variant">
+<p class="mb-6 font-body-md text-body-md">"Mis hijos pasaron de odiar las matemáticas a disfrutarlas. El cambio en su confianza fue inmediato. ¡Totalmente recomendados!"</p>
+<div class="flex items-center gap-4 not-italic">
+<div class="w-12 h-12 bg-primary-container rounded-full"></div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Marta Rodríguez</p>
+<p class="text-xs text-on-surface-variant">Madre de familia</p>
+</div>
+</div>
+</div>
+<div class="bg-white p-8 rounded-lg shadow-soft border border-primary-container/10 italic text-on-surface-variant md:mt-12">
+<p class="mb-6 font-body-md text-body-md">"Estaba a punto de perder cálculo en la u y gracias a las tutorías personalizadas logré no solo pasar, sino entender los conceptos."</p>
+<div class="flex items-center gap-4 not-italic">
+<div class="w-12 h-12 bg-secondary-container rounded-full"></div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Andrés López</p>
+<p class="text-xs text-on-surface-variant">Estudiante Universitario</p>
+</div>
+</div>
+</div>
+<div class="bg-white p-8 rounded-lg shadow-soft border border-primary-container/10 italic text-on-surface-variant">
+<p class="mb-6 font-body-md text-body-md">"Excelente comunicación. Siempre estoy al tanto del avance de mi hija y ella se siente muy cómoda con su tutor."</p>
+<div class="flex items-center gap-4 not-italic">
+<div class="w-12 h-12 bg-tertiary-container rounded-full"></div>
+<div>
+<p class="font-label-md text-label-md text-on-surface">Carlos Méndez</p>
+<p class="text-xs text-on-surface-variant">Padre de familia</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Formulario Section -->
+<section class="py-20 px-6 md:px-16 bg-white" id="contacto">
+<div class="max-w-4xl mx-auto">
+<div class="text-center mb-12">
+<h2 class="font-headline-lg text-headline-lg text-on-surface">Solicita tu clase modelo gratuita</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mt-2">Danos un poco de información para asignarte al tutor ideal.</p>
+</div>
+<form action="#" class="grid grid-cols-1 md:grid-cols-2 gap-6 p-8 bg-surface-container-low rounded-lg shadow-soft border border-outline-variant/30" method="POST">
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface">Nombre completo</label>
+<input class="w-full p-4 rounded-lg bg-white border-outline-variant focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all" placeholder="Ej. Ana García" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface">Correo electrónico</label>
+<input class="w-full p-4 rounded-lg bg-white border-outline-variant focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="ejemplo@correo.com" type="email"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface">Teléfono</label>
+<input class="w-full p-4 rounded-lg bg-white border-outline-variant focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="+123 456 7890" type="tel"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface">Colegio o Universidad</label>
+<input class="w-full p-4 rounded-lg bg-white border-outline-variant focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="Nombre de la institución" type="text"/>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface">Materia de interés</label>
+<select class="w-full p-4 rounded-lg bg-white border-outline-variant focus:ring-2 focus:ring-primary outline-none transition-all">
+<option>Matemática Básica</option>
+<option>Álgebra</option>
+<option>Cálculo</option>
+<option>Estadística</option>
+</select>
+</div>
+<div class="space-y-2">
+<label class="font-label-md text-label-md text-on-surface">Grado / Año</label>
+<input class="w-full p-4 rounded-lg bg-white border-outline-variant focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="Ej. 1er año Universidad" type="text"/>
+</div>
+<div class="md:col-span-2 space-y-2">
+<label class="font-label-md text-label-md text-on-surface">Mensaje adicional</label>
+<textarea class="w-full p-4 rounded-lg bg-white border-outline-variant focus:ring-2 focus:ring-primary outline-none transition-all" placeholder="¿En qué tema específico necesitas ayuda?" rows="4"></textarea>
+</div>
+<div class="md:col-span-2 flex items-start gap-3">
+<input class="mt-1 rounded text-primary focus:ring-primary" type="checkbox"/>
+<p class="font-label-sm text-label-sm text-on-surface-variant">Autorizo el tratamiento de mis datos personales para recibir información sobre los servicios del Centro de Tutorías.</p>
+</div>
+<button class="md:col-span-2 bg-primary text-on-primary py-4 rounded-full font-headline-md text-headline-md hover:scale-[1.02] active:scale-95 transition-all shadow-lg shadow-primary/20" type="submit">
+                    Enviar solicitud
+                </button>
+</form>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="py-20 px-6 md:px-16 bg-surface-container-low">
+<div class="max-w-3xl mx-auto">
+<h2 class="font-headline-lg text-headline-lg text-on-surface text-center mb-12">Preguntas Frecuentes</h2>
+<div class="space-y-4">
+<details class="group bg-white rounded-lg border border-outline-variant/30 overflow-hidden" open="">
+<summary class="flex justify-between items-center p-6 cursor-pointer font-headline-md text-headline-md text-on-surface">
+                        ¿Cómo funcionan las clases en línea?
+                        <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="p-6 pt-0 font-body-md text-body-md text-on-surface-variant">
+                        Utilizamos Zoom junto con herramientas de pizarra digital interactiva que permiten al estudiante ver los procedimientos en tiempo real, participar activamente y recibir material de apoyo inmediatamente.
+                    </div>
+</details>
+<details class="group bg-white rounded-lg border border-outline-variant/30 overflow-hidden">
+<summary class="flex justify-between items-center p-6 cursor-pointer font-headline-md text-headline-md text-on-surface">
+                        ¿Qué incluye la clase modelo?
+                        <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="p-6 pt-0 font-body-md text-body-md text-on-surface-variant">
+                        Es una sesión de 30-40 minutos donde el tutor interactúa con el estudiante, evalúa sus conocimientos previos y demuestra nuestra metodología de enseñanza. Es totalmente gratuita y sin compromiso.
+                    </div>
+</details>
+<details class="group bg-white rounded-lg border border-outline-variant/30 overflow-hidden">
+<summary class="flex justify-between items-center p-6 cursor-pointer font-headline-md text-headline-md text-on-surface">
+                        ¿Cuáles son los métodos de pago?
+                        <span class="material-symbols-outlined transition-transform group-open:rotate-180">expand_more</span>
+</summary>
+<div class="p-6 pt-0 font-body-md text-body-md text-on-surface-variant">
+                        Aceptamos transferencias bancarias, tarjetas de crédito/débito y plataformas de pago digital seguro. Ofrecemos recibos por cada transacción.
+                    </div>
+</details>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="w-full px-6 md:px-16 py-12 bg-surface-container-low border-t border-outline-variant/20">
+<div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-12">
+<div class="space-y-4">
+<div class="font-headline-md text-headline-md font-bold text-primary">Centro de Tutorías</div>
+<p class="font-body-md text-body-md text-on-surface-variant">Refuerzo académico con rigor y empatía para formar las mentes del futuro.</p>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface mb-6 uppercase tracking-widest">Navegación</h4>
+<ul class="space-y-4">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Inicio</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#materias">Materias</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#planes">Planes</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Contacto</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface mb-6 uppercase tracking-widest">Legal</h4>
+<ul class="space-y-4">
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Aviso de Privacidad</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Términos y Condiciones</a></li>
+<li><a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors" href="#">Metodología</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-label-md text-label-md text-on-surface mb-6 uppercase tracking-widest">Síguenos</h4>
+<div class="flex gap-4">
+<a class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all" href="#"><span class="material-symbols-outlined">face_nod</span></a>
+<a class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all" href="#"><span class="material-symbols-outlined">video_library</span></a>
+<a class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-on-primary transition-all" href="#"><span class="material-symbols-outlined">alternate_email</span></a>
+</div>
+</div>
+</div>
+<div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-outline-variant/30 text-center text-on-surface-variant font-label-sm text-label-sm">
+            © 2024 Centro de Tutorías. Refuerzo académico con rigor y empatía.
+        </div>
+</footer>
+<!-- Chat Flotante -->
+<div class="fixed bottom-6 right-6 z-[100] group">
+<div class="hidden absolute bottom-16 right-0 w-80 bg-white rounded-lg shadow-soft border border-primary-container/20 p-6 space-y-4" id="chat-bubble">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 bg-primary-container/20 rounded-full flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">smart_toy</span>
+</div>
+<p class="font-headline-md text-headline-md text-on-surface">Asistente</p>
+</div>
+<p class="font-body-md text-body-md text-on-surface-variant">¡Hola! Soy el asistente del Centro de Tutorías. ¿En qué materia necesitas apoyo hoy?</p>
+<button class="w-full bg-primary text-on-primary py-2 rounded-full font-label-md text-label-md">Hablar con un humano</button>
+</div>
+<button class="w-14 h-14 bg-primary text-on-primary rounded-full flex items-center justify-center shadow-soft hover:scale-110 active:scale-95 transition-all" onclick="toggleChat()">
+<span class="material-symbols-outlined">chat</span>
+</button>
+</div>
+<script>
+        function toggleChat() {
+            const chat = document.getElementById('chat-bubble');
+            chat.classList.toggle('hidden');
+        }
+
+        // Simple animation on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        document.querySelectorAll('section').forEach(section => {
+            section.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+            observer.observe(section);
+        });
+    </script>
+</body></html>
