@@ -89,6 +89,28 @@
       }
     }
     </script>
+    
+    <!-- LucIA Chatbot Custom Styles -->
+    <style>
+        :root {
+            --chat--color--primary: #1E3A8A !important; /* Cobalt Blue */
+            --chat--color--secondary: #10B981 !important; /* Emerald Green */
+            --chat--color--primary-shade-50: #172554 !important;
+            --chat--color--primary-shade-100: #1E3A8A !important;
+            --chat--color--secondary-shade-50: #064E3B !important;
+        }
+        
+        .n8n-chat-launcher {
+            background-color: #F97316 !important; /* Orange accent */
+            box-shadow: 0 4px 14px rgba(249, 115, 22, 0.4) !important;
+            transition: transform 0.2s ease, background-color 0.2s ease !important;
+        }
+        
+        .n8n-chat-launcher:hover {
+            transform: scale(1.08) !important;
+            background-color: #EA580C !important;
+        }
+    </style>
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans antialiased overflow-x-hidden">
 
@@ -96,7 +118,7 @@
     <header class="fixed w-full top-0 z-50 bg-white/90 backdrop-blur-md shadow-sm">
         <div class="max-w-6xl mx-auto px-4 h-20 flex items-center justify-between">
             <a href="#" class="text-2xl font-bold text-primary flex items-center gap-2" aria-label="Inicio">
-                <svg class="w-8 h-8 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path></svg>
+                <img src="LOGO_CEDETU.png" alt="Logo Centro de Tutorías" class="h-10 w-auto">
                 Centro de Tutorías
             </a>
             <nav class="hidden md:flex gap-6">
@@ -499,7 +521,7 @@
         <div class="max-w-6xl mx-auto grid md:grid-cols-4 gap-8">
             <div class="md:col-span-2">
                 <a href="#" class="text-2xl font-bold text-white flex items-center gap-2 mb-4">
-                    <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"></path></svg>
+                    <img src="LOGO_CEDETU.png" alt="Logo Centro de Tutorías" class="h-8 w-auto">
                     Centro de Tutorías
                 </a>
                 <p class="text-sm">Tutorías virtuales personalizadas. Deja de invertir tiempo y recursos en métodos ineficaces; domina las materias más difíciles con especialistas verdaderos.</p>
@@ -824,6 +846,29 @@
                 const { error } = await supabaseClient.auth.signOut();
                 if (error) console.error('Error logging out:', error.message);
             });
+        });
+    </script>
+
+    <!-- n8n Chat Widget (LucIA) -->
+    <div id="n8n-chat"></div>
+    <link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+    <script type="module">
+        import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+        createChat({
+            webhookUrl: 'https://n8n.centrodetutorias.com/webhook/06b1b4ef-bd58-4e4f-bc65-c9ded1c234a8/chat',
+            title: 'LucIA 🤖',
+            subtitle: 'Asistente Virtual - Centro de Tutorías',
+            showWelcomeScreen: true,
+            initialMessages: [
+                '¡Hola! Soy LucIA, tu asistente virtual del Centro de Tutorías (CEDETU). 📚✨',
+                '¿Cómo te llamas y qué materia o examen te gustaría reforzar hoy?'
+            ],
+            i18n: {
+                es: {
+                    inputPlaceholder: 'Escribe tu mensaje aquí...',
+                    sendButtonAriaLabel: 'Enviar mensaje'
+                }
+            }
         });
     </script>
 </body>

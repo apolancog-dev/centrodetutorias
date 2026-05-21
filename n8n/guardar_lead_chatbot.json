@@ -1,0 +1,189 @@
+{
+  "name": "Guardar Lead desde Chatbot",
+  "nodes": [
+    {
+      "parameters": {},
+      "id": "e44d32a1-fa0b-4bd2-8e10-ff99c82abdd3",
+      "name": "Execute Workflow Trigger",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1,
+      "position": [
+        200,
+        240
+      ]
+    },
+    {
+      "parameters": {
+        "operation": "upsert",
+        "table": "leads",
+        "columns": [
+          "nombre",
+          "email",
+          "telefono",
+          "materia",
+          "nivel",
+          "descripcion",
+          "origen"
+        ],
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "nombre",
+              "value": "={{$json.nombre}}"
+            },
+            {
+              "column": "email",
+              "value": "={{$json.email}}"
+            },
+            {
+              "column": "telefono",
+              "value": "={{$json.telefono}}"
+            },
+            {
+              "column": "materia",
+              "value": "={{$json.materia}}"
+            },
+            {
+              "column": "nivel",
+              "value": "={{$json.nivel}}"
+            },
+            {
+              "column": "descripcion",
+              "value": "={{$json.descripcion || 'Sin descripción'}}"
+            },
+            {
+              "column": "origen",
+              "value": "Chatbot LucIA"
+            }
+          ]
+        }
+      },
+      "id": "c12d8a9b-381a-4fe1-9d2b-ff27b2cbb1d3",
+      "name": "Insert Supabase",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        420,
+        240
+      ],
+      "credentials": {
+        "supabaseApi": {
+          "id": "default_supabase_key",
+          "name": "Supabase Connection"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "contact",
+        "operation": "upsert",
+        "firstName": "={{$node[\"Execute Workflow Trigger\"].json.nombre}}",
+        "email": "={{$node[\"Execute Workflow Trigger\"].json.email}}",
+        "phone": "={{$node[\"Execute Workflow Trigger\"].json.telefono}}",
+        "tags": [
+          "lead-chatbot-lucia",
+          "materia:{{$node[\"Execute Workflow Trigger\"].json.materia}}"
+        ]
+      },
+      "id": "b18c9b2a-cc41-45fe-85fa-7b24346e9699",
+      "name": "HTTP Request GHL",
+      "type": "n8n-nodes-base.highLevel",
+      "typeVersion": 1,
+      "position": [
+        640,
+        240
+      ],
+      "credentials": {
+        "highLevelApi": {
+          "id": "default_ghl_key",
+          "name": "GHL Connection"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "fromEmail": "lucia@centrodetutorias.com",
+        "toEmail": "={{$node[\"Execute Workflow Trigger\"].json.email}}",
+        "subject": "¡Hola {{$node[\"Execute Workflow Trigger\"].json.nombre}}! Bienvenido al Centro de Tutorías CEDETU 📚",
+        "html": "=<div style=\"font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; background-color: #f8fafc; border: 1px solid #e2e8f0; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);\">\n    <div style=\"background-color: #1e3a8a; padding: 30px 20px; text-align: center; color: white;\">\n        <img src=\"https://www.centrodetutorias.com/LOGO_CEDETU.png\" alt=\"Logo CEDETU\" style=\"max-height: 60px; margin-bottom: 15px;\" />\n        <h1 style=\"margin: 0; font-size: 24px; font-weight: bold;\">Centro de Tutorías (CEDETU)</h1>\n        <p style=\"margin: 5px 0 0 0; font-size: 14px; opacity: 0.9;\">Tu ruta hacia el éxito y la confianza académica</p>\n    </div>\n    \n    <div style=\"padding: 30px 20px; background-color: white;\">\n        <p style=\"font-size: 16px; color: #1e293b; line-height: 1.6; margin-top: 0;\">\n            Hola <strong>{{$node[\"Execute Workflow Trigger\"].json.nombre}}</strong>,\n        </p>\n        <p style=\"font-size: 16px; color: #334155; line-height: 1.6;\">\n            Es un gusto saludarte. Soy <strong>Lucía</strong>, coordinadora y representante del <strong>Centro de Tutorías (CEDETU)</strong>.\n        </p>\n        <p style=\"font-size: 16px; color: #334155; line-height: 1.6;\">\n            Nuestra asistente virtual, LucIA, me ha compartido tus datos y tu interés en recibir apoyo escolar personalizado para la materia de <strong>{{$node[\"Execute Workflow Trigger\"].json.materia}}</strong> (nivel <strong>{{$node[\"Execute Workflow Trigger\"].json.nivel}}</strong>).\n        </p>\n        \n        <div style=\"background-color: #f0fdf4; border-left: 4px solid #10b981; padding: 15px; margin: 20px 0; border-radius: 4px;\">\n            <h3 style=\"margin: 0 0 10px 0; color: #065f46; font-size: 16px;\">¿Por qué elegir CEDETU?</h3>\n            <ul style=\"margin: 0; padding-left: 20px; color: #065f46; font-size: 14px; line-height: 1.5;\">\n                <li><strong>Tutores especializados:</strong> Seleccionados rigurosamente por su paciencia y didáctica.</li>\n                <li><strong>Enfoque en entender:</strong> No hacemos las tareas por ti, te enseñamos el paso a paso.</li>\n                <li><strong>Clases 100% en vivo:</strong> Videollamadas individuales mediante pizarras virtuales interactivas.</li>\n                <li><strong>Horarios flexibles:</strong> Nos adaptamos por completo a tus tiempos libres.</li>\n            </ul>\n        </div>\n        \n        <p style=\"font-size: 16px; color: #334155; line-height: 1.6;\">\n            Para diseñar el plan ideal para ti y asignarte el tutor perfecto, te invitamos a agendar tu <strong>Diagnóstico Académico Gratuito de 20 minutos</strong> en nuestro Calendly oficial:\n        </p>\n        \n        <div style=\"text-align: center; margin: 30px 0;\">\n            <a href=\"https://calendly.com/cedetu\" style=\"background-color: #f97316; color: white; padding: 14px 28px; text-align: center; font-size: 16px; font-weight: bold; text-decoration: none; border-radius: 8px; display: inline-block; box-shadow: 0 4px 10px rgba(249, 115, 22, 0.3);\">Agendar Diagnóstico Gratis 🗓️</a>\n        </div>\n        \n        <p style=\"font-size: 14px; color: #64748b; text-align: center; margin-top: -10px; margin-bottom: 25px;\">\n            (La sesión de diagnóstico es completamente gratuita y sin compromisos)\n        </p>\n        \n        <hr style=\"border: 0; border-top: 1px solid #e2e8f0; margin: 25px 0;\">\n        \n        <p style=\"font-size: 15px; color: #334155; line-height: 1.6; margin-bottom: 5px;\">\n            Quedo a tu entera disposición para resolver cualquier duda. ¡Pronto verás cómo el estrés por los exámenes y tareas se convierte en absoluta tranquilidad!\n        </p>\n        \n        <p style=\"font-size: 16px; color: #1e293b; margin-top: 20px; margin-bottom: 0;\">\n            Un cordial saludo,\n        </p>\n        <p style=\"font-size: 16px; color: #1e293b; font-weight: bold; margin: 5px 0 0 0;\">\n            Lucía\n        </p>\n        <p style=\"font-size: 14px; color: #64748b; margin: 0;\">\n            Coordinadora Académica de CEDETU\n        </p>\n    </div>\n    \n    <div style=\"background-color: #f1f5f9; padding: 20px; text-align: center; font-size: 12px; color: #94a3b8; border-top: 1px solid #e2e8f0;\">\n        <p style=\"margin: 0;\">Este correo fue generado tras tu interacción con nuestra asistente LucIA en la landing page de CEDETU.</p>\n        <p style=\"margin: 5px 0 0 0;\">© 2026 Centro de Tutorías CEDETU. Todos los derechos reservados.</p>\n    </div>\n</div>"
+      },
+      "id": "e63a8a3c-cc72-466d-9658-0056637b58c7",
+      "name": "Send Email",
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 1,
+      "position": [
+        860,
+        240
+      ],
+      "credentials": {
+        "smtp": {
+          "id": "default_smtp_key",
+          "name": "SMTP Connection"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "return [{\n  json: {\n    response: \"Lead guardado exitosamente en Supabase y GHL. Se envió correo de bienvenida a \" + $node[\"Execute Workflow Trigger\"].json.email + \".\"\n  }\n}];"
+      },
+      "id": "ab7c8e9b-381a-45c1-8d2b-ff27b2cbb9d3",
+      "name": "Return Confirmation",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 1,
+      "position": [
+        1080,
+        240
+      ]
+    }
+  ],
+  "connections": {
+    "Execute Workflow Trigger": {
+      "main": [
+        [
+          {
+            "node": "Insert Supabase",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Insert Supabase": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request GHL",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request GHL": {
+      "main": [
+        [
+          {
+            "node": "Send Email",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Email": {
+      "main": [
+        [
+          {
+            "node": "Return Confirmation",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  }
+}

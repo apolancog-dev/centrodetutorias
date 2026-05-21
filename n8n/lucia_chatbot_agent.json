@@ -1,0 +1,133 @@
+{
+  "name": "LucIA Chatbot Agent",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {}
+      },
+      "id": "18f92b7c-fa0e-4be7-8d82-df75c61abcc5",
+      "name": "Chat Trigger",
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1,
+      "position": [
+        380,
+        240
+      ]
+    },
+    {
+      "parameters": {
+        "options": {
+          "systemMessage": "Eres LucIA, la asistente virtual inteligente y empática del Centro de Tutorías (CEDETU). Tu tono es cálido, profesional, paciente y sumamente servicial. Tu meta es orientar a los padres y estudiantes, responder sus dudas sobre nuestras tutorías virtuales, y registrar sus datos para agendar su diagnóstico académico gratuito de 20 minutos.\n\nINFORMACIÓN DEL CENTRO DE TUTORÍAS (CEDETU):\n- Ofrecemos tutorías virtuales personalizadas para primaria, secundaria, bachillerato/diversificado y primeros años de universidad.\n- Áreas de apoyo principales: Matemáticas, Física, Química, Cálculo Diferencial/Integral, Estadística, Economía e Introducción a la Micro/Macroeconomía.\n- Modalidad: Clases virtuales en vivo individuales vía Google Meet o Zoom, utilizando pizarras digitales interactivas para que el aprendizaje sea dinámico.\n- Tutores: Seleccionados rigurosamente por su paciencia, habilidad didáctica y experiencia docente. Enseñamos a ENTENDER los conceptos, no solo a copiar procedimientos.\n- Flexibilidad de horarios adaptada a las necesidades del alumno.\n- Diagnóstico Académico Gratuito: Una sesión inicial de 20 minutos sin costo para identificar las necesidades específicas del estudiante, nivel, urgencia y diseñar el plan ideal.\n- Enlace para agendar el diagnóstico: https://calendly.com/cedetu\n\nREGLAS DE CONVERSACIÓN Y REGISTRO:\n1. Responde a las dudas del usuario utilizando la información de CEDETU. Sé clara, estructurada y transmite total confianza.\n2. De manera muy natural y conversacional (sin que parezca un interrogatorio), solicita al usuario los siguientes datos para poder registrar su caso:\n   - Nombre completo\n   - Número de teléfono (WhatsApp)\n   - Correo electrónico\n   - Materia que necesita reforzar\n   - Nivel académico (Primaria, Secundaria, Bachillerato, Universidad)\n   - Breve descripción de lo que le cuesta o urgencia.\n3. No pidas todos los datos en un solo bloque; ve ganándote la confianza del cliente. Primero resuelve su duda, luego pídele su nombre, luego su materia/nivel, y después sus datos de contacto.\n4. En cuanto tengas al menos: Nombre, Teléfono, Correo Electrónico y Materia, DEBES invocar la herramienta \"guardar_lead\" pasándole estos datos.\n5. Invita activamente al usuario a agendar su diagnóstico gratuito en nuestro Calendly: https://calendly.com/cedetu\n6. Al finalizar la conversación o al invocar el registro, explícale que has enviado sus datos y que Lucía (nuestra coordinadora y representante de CEDETU) se pondrá en contacto pronto, además de que le llegará un correo con el resumen de la información solicitada.\n7. Firma tus mensajes cordialmente como: \"LucIA, Asistente Virtual de CEDETU\"."
+        }
+      },
+      "id": "e63a1ab3-cc72-466d-9658-0056637b58c7",
+      "name": "AI Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.6,
+      "position": [
+        600,
+        240
+      ]
+    },
+    {
+      "parameters": {
+        "model": "gpt-4o-mini",
+        "options": {
+          "temperature": 0.7
+        }
+      },
+      "id": "cb1c34a2-eb41-45fe-85fa-7b24346e9699",
+      "name": "OpenAI Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1,
+      "position": [
+        480,
+        420
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "default_openai_key",
+          "name": "OpenAI API"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "id": "890bc892-0b1a-47fa-802c-7b22416b23cc",
+      "name": "Window Buffer Memory",
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.2,
+      "position": [
+        620,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "name": "guardar_lead",
+        "description": "Utiliza esta herramienta únicamente cuando el usuario te haya proporcionado sus datos de contacto completos (Nombre, Correo, Teléfono) y la Materia de interés, para registrarlos en el sistema Supabase y GoHighLevel.",
+        "workflowId": "select-subworkflow-uuid",
+        "specifyInputSchema": true,
+        "inputSchema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"nombre\": {\n      \"type\": \"string\",\n      \"description\": \"Nombre completo del lead (padre o estudiante)\"\n    },\n    \"email\": {\n      \"type\": \"string\",\n      \"description\": \"Correo electrónico de contacto\"\n    },\n    \"telefono\": {\n      \"type\": \"string\",\n      \"description\": \"Número de teléfono o WhatsApp de contacto\"\n    },\n    \"materia\": {\n      \"type\": \"string\",\n      \"description\": \"Materia o curso que necesita reforzar\"\n    },\n    \"nivel\": {\n      \"type\": \"string\",\n      \"description\": \"Nivel académico del estudiante (Primaria, Secundaria, Bachillerato, Universidad)\"\n    },\n    \"descripcion\": {\n      \"type\": \"string\",\n      \"description\": \"Descripción breve del problema o urgencia\"\n    }\n  },\n  \"required\": [\"nombre\", \"email\", \"telefono\", \"materia\"]\n}"
+      },
+      "id": "ab7c8e9b-381a-45c1-8d2b-ff27b2cbb1d3",
+      "name": "Guardar Lead Sub-Workflow Tool",
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 1,
+      "position": [
+        780,
+        420
+      ]
+    }
+  ],
+  "connections": {
+    "Chat Trigger": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Window Buffer Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Guardar Lead Sub-Workflow Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  }
+}
