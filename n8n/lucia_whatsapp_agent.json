@@ -1,0 +1,211 @@
+{
+  "name": "LucIA WhatsApp Agent",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "whatsapp-webhook",
+        "options": {}
+      },
+      "id": "18f92b7c-fa0e-4be7-8d82-df75c61abcc5",
+      "name": "Webhook Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1,
+      "position": [
+        200,
+        240
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "type": "string"
+          },
+          "conditions": [
+            {
+              "id": "has_message",
+              "leftValue": "={{$json.body.entry[0].changes[0].value.messages[0].text.body}}",
+              "transition": "notEmpty"
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "id": "23a8b2cd-ea71-46fd-9658-0056637b58c7",
+      "name": "Is Text Message?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [
+        420,
+        240
+      ]
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{$json.body.entry[0].changes[0].value.messages[0].text.body}}",
+        "options": {
+          "systemMessage": "Eres LucIA, la asistente virtual inteligente y empática del Centro de Tutorías (CEDETU), atendiendo a los clientes directamente por WhatsApp. Tu tono es sumamente cálido, amigable, profesional y paciente. \n\nREGLAS DE CONVERSACIÓN EN WHATSAPP:\n- Escribe de forma concisa y conversacional. Usa párrafos cortos de 2 o 3 líneas máximo. WhatsApp requiere respuestas dinámicas, evita textos extremadamente largos.\n- Usa emojis con buen gusto para hacer los mensajes dinámicos y legibles.\n- Usa negritas (*texto*) para resaltar palabras importantes (ej: *clases virtuales*, *diagnóstico gratuito*).\n- Tu objetivo es responder dudas sobre las tutorías de CEDETU y recopilar los datos del lead de manera fluida:\n  - Nombre completo\n  - Correo electrónico\n  - Número de teléfono (ya lo tienes, es el número de WhatsApp actual: {{$json.body.entry[0].changes[0].value.messages[0].from}})\n  - Materia que necesita reforzar\n  - Nivel académico (Primaria, Secundaria, Bachillerato, Universidad)\n  - Breve descripción del caso\n- Cuando tengas al menos Nombre, Email y Materia de interés, DEBES invocar la herramienta \"guardar_lead\" para registrarlos en Supabase y GoHighLevel. (El número de teléfono pásalo como {{$json.body.entry[0].changes[0].value.messages[0].from}}).\n- Siempre ofrece la opción de agendar un *Diagnóstico Académico Gratuito de 20 minutos* directamente en nuestro Calendly: https://calendly.com/cedetu\n- Despídete cordialmente firmando como: \"*LucIA*, tu Asistente Virtual de CEDETU 🤖✨\"."
+        }
+      },
+      "id": "e63a1ab3-cc72-466d-9658-0056637b58c7",
+      "name": "AI Agent",
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.6,
+      "position": [
+        640,
+        240
+      ]
+    },
+    {
+      "parameters": {
+        "model": "gpt-4o-mini",
+        "options": {
+          "temperature": 0.7
+        }
+      },
+      "id": "cb1c34a2-eb41-45fe-85fa-7b24346e9699",
+      "name": "OpenAI Chat Model",
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1,
+      "position": [
+        520,
+        420
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "default_openai_key",
+          "name": "OpenAI API"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sessionId": "={{$json.body.entry[0].changes[0].value.messages[0].from}}",
+        "contextKey": "chat_history"
+      },
+      "id": "890bc892-0b1a-47fa-802c-7b22416b23cc",
+      "name": "Window Buffer Memory",
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.2,
+      "position": [
+        660,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "name": "guardar_lead",
+        "description": "Utiliza esta herramienta únicamente cuando el usuario te haya proporcionado sus datos de contacto completos (Nombre, Correo, Teléfono) y la Materia de interés, para registrarlos en el sistema Supabase y GoHighLevel.",
+        "workflowId": "select-subworkflow-uuid",
+        "specifyInputSchema": true,
+        "inputSchema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"nombre\": {\n      \"type\": \"string\",\n      \"description\": \"Nombre completo del lead\"\n    },\n    \"email\": {\n      \"type\": \"string\",\n      \"description\": \"Correo electrónico de contacto\"\n    },\n    \"telefono\": {\n      \"type\": \"string\",\n      \"description\": \"Número de teléfono del contacto\"\n    },\n    \"materia\": {\n      \"type\": \"string\",\n      \"description\": \"Materia que necesita reforzar\"\n    },\n    \"nivel\": {\n      \"type\": \"string\",\n      \"description\": \"Nivel académico del estudiante (Primaria, Secundaria, Bachillerato, Universidad)\"\n    },\n    \"descripcion\": {\n      \"type\": \"string\",\n      \"description\": \"Breve descripción de la necesidad académica\"\n    }\n  },\n  \"required\": [\"nombre\", \"email\", \"telefono\", \"materia\"]\n}"
+      },
+      "id": "ab7c8e9b-381a-45c1-8d2b-ff27b2cbb1d3",
+      "name": "Guardar Lead Sub-Workflow Tool",
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 1,
+      "position": [
+        800,
+        420
+      ]
+    },
+    {
+      "parameters": {
+        "phoneNumberId": "default_phone_number_id",
+        "recipientPhoneNumber": "={{$node[\"Webhook Trigger\"].json.body.entry[0].changes[0].value.messages[0].from}}",
+        "text": "={{$json.output}}"
+      },
+      "id": "c3e4b5df-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
+      "name": "Send WhatsApp Message",
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        920,
+        240
+      ],
+      "credentials": {
+        "whatsAppCloudApi": {
+          "id": "default_whatsapp_key",
+          "name": "WhatsApp Cloud API Connection"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Webhook Trigger": {
+      "main": [
+        [
+          {
+            "node": "Is Text Message?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Is Text Message?": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Window Buffer Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Guardar Lead Sub-Workflow Tool": {
+      "ai_tool": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_tool",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Send WhatsApp Message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  }
+}
