@@ -1,0 +1,2303 @@
+<!DOCTYPE html>
+<html lang="es" class="h-full bg-gray-50">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Miembros | Centro de Tutorías</title>
+    <meta name="description" content="Tu espacio personalizado de aprendizaje. Accede a recursos, guías y contenidos diseñados para mejorar tu rendimiento académico.">
+    
+    <!-- Google Fonts: Outfit & Plus Jakarta Sans -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        primary: '#1E3A8A', 
+                        secondary: '#10B981', 
+                        accent: '#F97316',
+                        darkNavy: '#0F172A',
+                        sidebarBg: '#0B1530',
+                        pastel: {
+                            blue: '#E0F2FE',
+                            mint: '#D1FAE5',
+                            lilac: '#EDE9FE',
+                            yellow: '#FEF08A',
+                            coral: '#FECDD3'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'Outfit', 'system-ui', '-apple-system', 'sans-serif'],
+                        display: ['Outfit', 'sans-serif']
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #F1F5F9;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #CBD5E1;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #94A3B8;
+        }
+        
+        .active-nav {
+            background-color: rgba(255, 255, 255, 0.08);
+            border-left: 4px solid #10B981;
+            color: #F8FAFC !important;
+        }
+        .active-admin-nav {
+            background-color: #E2E8F0;
+            border-bottom: 2px solid #1E3A8A;
+            color: #1E3A8A !important;
+        }
+        
+        .premium-glow {
+            box-shadow: 0 0 20px rgba(249, 115, 22, 0.15);
+        }
+        
+        .transition-all-300 {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+    </style>
+</head>
+<body class="h-full text-slate-800 antialiased font-sans">
+
+    <!-- CONTAINER PRINCIPAL AUTH (LOGIN / REGISTRO) -->
+    <div id="auth-container" class="hidden min-h-full flex-col justify-center py-12 sm:px-6 lg:px-8 bg-gradient-to-tr from-[#0F172A] via-[#1E293B] to-[#0F172A] relative overflow-hidden">
+        
+        <!-- Elementos decorativos de fondo -->
+        <div class="absolute w-96 h-96 rounded-full bg-primary/20 blur-3xl -top-20 -left-20"></div>
+        <div class="absolute w-96 h-96 rounded-full bg-secondary/15 blur-3xl -bottom-20 -right-20"></div>
+
+        <div class="sm:mx-auto sm:w-full sm:max-w-md relative z-10">
+            <div class="flex justify-center items-center gap-3">
+                <img class="h-16 w-auto" src="LOGO_CEDETU.png" alt="Centro de Tutorías">
+                <h1 class="text-3xl font-extrabold text-white font-display tracking-tight">Centro de Tutorías</h1>
+            </div>
+            <p id="auth-title-desc" class="mt-3 text-center text-sm text-slate-400 font-medium px-4">
+                Ingresa a tu espacio personalizado de aprendizaje.
+            </p>
+        </div>
+
+        <!-- FORMULARIO DE INICIO DE SESIÓN -->
+        <div id="login-view" class="mt-8 sm:mx-auto sm:w-full sm:max-w-md relative z-10 px-4 sm:px-0">
+            <div class="bg-white/95 backdrop-blur-md py-8 px-6 shadow-2xl rounded-3xl sm:px-10 border border-slate-100/10">
+                <h2 class="text-2xl font-bold text-slate-900 mb-6 font-display text-center">Iniciar Sesión</h2>
+                
+                <div id="login-error" class="hidden mb-4 p-3 bg-red-50 border border-red-200 text-red-700 text-sm rounded-xl"></div>
+                <div id="login-success" class="hidden mb-4 p-3 bg-green-50 border border-green-200 text-green-700 text-sm rounded-xl"></div>
+
+                <form id="form-login" class="space-y-5">
+                    <div>
+                        <label for="login-email" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Correo Electrónico</label>
+                        <input id="login-email" type="email" required autocomplete="email" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-secondary focus:border-secondary outline-none transition-all-300 bg-slate-50 text-sm">
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-center mb-1">
+                            <label for="login-password" class="block text-xs font-bold text-slate-700 uppercase tracking-wider">Contraseña</label>
+                            <a href="#forgot" onclick="showForgotPassword(event)" class="text-xs font-semibold text-primary hover:text-blue-700 transition-colors">¿Olvidaste tu contraseña?</a>
+                        </div>
+                        <input id="login-password" type="password" required autocomplete="current-password" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-secondary focus:border-secondary outline-none transition-all-300 bg-slate-50 text-sm">
+                    </div>
+
+                    <button type="submit" id="btn-login-submit" class="w-full bg-primary hover:bg-blue-900 text-white font-bold py-4 rounded-xl shadow-lg transition-transform transform hover:-translate-y-0.5 font-display flex items-center justify-center gap-2 text-base">
+                        Entrar a mi Cuenta
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                    </button>
+                </form>
+
+                <div class="mt-6 pt-6 border-t border-slate-100 text-center">
+                    <p class="text-sm text-slate-600">
+                        ¿Aún no tienes cuenta? 
+                        <a href="#register" class="font-bold text-secondary hover:text-emerald-600 transition-colors">Crear Cuenta Gratis</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FORMULARIO DE REGISTRO EXTENDIDO -->
+        <div id="register-view" class="hidden mt-8 sm:mx-auto sm:w-full sm:max-w-xl relative z-10 px-4 sm:px-0">
+            <div class="bg-white/95 backdrop-blur-md py-8 px-6 shadow-2xl rounded-3xl sm:px-10 border border-slate-100/10">
+                <h2 class="text-2xl font-bold text-slate-900 font-display text-center">Crea tu Cuenta Gratis</h2>
+                <p class="text-xs text-slate-500 text-center mt-1 mb-6">Empieza accediendo a recursos gratuitos y descubre cómo Centro de Tutorías te impulsa.</p>
+
+                <div id="register-error" class="hidden mb-4 p-3 bg-red-50 border border-red-200 text-red-700 text-sm rounded-xl"></div>
+                <div id="register-success" class="hidden mb-4 p-3 bg-green-50 border border-green-200 text-green-700 text-sm rounded-xl"></div>
+
+                <form id="form-register" class="space-y-4">
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="reg-name" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Nombre Completo *</label>
+                            <input id="reg-name" type="text" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-secondary focus:border-secondary outline-none bg-slate-50 text-sm">
+                        </div>
+                        <div>
+                            <label for="reg-phone" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">WhatsApp / Teléfono *</label>
+                            <input id="reg-phone" type="tel" required placeholder="Ej. +502 5715 2096" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-secondary focus:border-secondary outline-none bg-slate-50 text-sm">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="reg-email" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Correo Electrónico *</label>
+                        <input id="reg-email" type="email" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-secondary focus:border-secondary outline-none bg-slate-50 text-sm">
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="reg-level" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Nivel Académico *</label>
+                            <select id="reg-level" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-secondary focus:border-secondary outline-none bg-slate-50 text-sm appearance-none cursor-pointer">
+                                <option value="">Selecciona tu nivel</option>
+                                <option value="Primaria">Primaria</option>
+                                <option value="Secundaria">Secundaria</option>
+                                <option value="Diversificado">Diversificado</option>
+                                <option value="Universidad">Universidad</option>
+                                <option value="Preparación para exámenes">Preparación para exámenes</option>
+                                <option value="Otro">Otro / Profesional</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="reg-interest" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Interés Principal *</label>
+                            <select id="reg-interest" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-secondary focus:border-secondary outline-none bg-slate-50 text-sm appearance-none cursor-pointer">
+                                <option value="">Selecciona tu interés</option>
+                                <option value="Refuerzo en matemática">Refuerzo en matemática</option>
+                                <option value="Refuerzo en física">Refuerzo en física</option>
+                                <option value="Refuerzo en estadística">Refuerzo en estadística</option>
+                                <option value="Preparación para exámenes">Preparación para exámenes</option>
+                                <option value="Hábitos de estudio">Hábitos de estudio</option>
+                                <option value="Otro">Otro</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="reg-password" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Contraseña *</label>
+                            <input id="reg-password" type="password" required minlength="6" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-secondary focus:border-secondary outline-none bg-slate-50 text-sm">
+                        </div>
+                        <div>
+                            <label for="reg-confirm-password" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Confirmar Contraseña *</label>
+                            <input id="reg-confirm-password" type="password" required minlength="6" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-secondary focus:border-secondary outline-none bg-slate-50 text-sm">
+                        </div>
+                    </div>
+
+                    <button type="submit" id="btn-register-submit" class="w-full bg-secondary hover:bg-emerald-600 text-white font-bold py-4 rounded-xl shadow-lg transition-transform transform hover:-translate-y-0.5 font-display flex items-center justify-center gap-2 text-base mt-4">
+                        Crear mi Cuenta Gratis
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18 9v3m0 0v3m0-3h3m-3 0h-3m2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"></path></svg>
+                    </button>
+                </form>
+
+                <div class="mt-6 pt-6 border-t border-slate-100 text-center">
+                    <p class="text-sm text-slate-600">
+                        ¿Ya tienes una cuenta? 
+                        <a href="#login" class="font-bold text-primary hover:text-blue-700 transition-colors">Iniciar Sesión</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- FORMULARIO DE RECUPERACIÓN DE CONTRASEÑA -->
+        <div id="forgot-view" class="hidden mt-8 sm:mx-auto sm:w-full sm:max-w-md relative z-10 px-4 sm:px-0">
+            <div class="bg-white/95 backdrop-blur-md py-8 px-6 shadow-2xl rounded-3xl sm:px-10 border border-slate-100/10">
+                <h2 class="text-2xl font-bold text-slate-900 font-display text-center mb-2">Recuperar Contraseña</h2>
+                <p class="text-xs text-slate-500 text-center mb-6">Ingresa tu correo y te enviaremos un enlace para restaurar tu contraseña.</p>
+                
+                <div id="forgot-error" class="hidden mb-4 p-3 bg-red-50 border border-red-200 text-red-700 text-sm rounded-xl"></div>
+                <div id="forgot-success" class="hidden mb-4 p-3 bg-green-50 border border-green-200 text-green-700 text-sm rounded-xl"></div>
+
+                <form id="form-forgot" class="space-y-5">
+                    <div>
+                        <label for="forgot-email" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Correo Electrónico</label>
+                        <input id="forgot-email" type="email" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-secondary focus:border-secondary outline-none bg-slate-50 text-sm">
+                    </div>
+
+                    <button type="submit" id="btn-forgot-submit" class="w-full bg-primary hover:bg-blue-900 text-white font-bold py-4 rounded-xl shadow-lg transition-transform transform hover:-translate-y-0.5 font-display flex items-center justify-center gap-2 text-base">
+                        Enviar Enlace de Recuperación
+                    </button>
+                </form>
+
+                <div class="mt-6 pt-6 border-t border-slate-100 text-center">
+                    <p class="text-sm text-slate-600">
+                        <a href="#login" class="font-bold text-primary hover:text-blue-700 transition-colors">Volver al Inicio de Sesión</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- CONTAINER PRINCIPAL DEL PORTAL (DASHBOARD) -->
+    <div id="portal-container" class="hidden h-full flex flex-col md:flex-row overflow-hidden bg-slate-50">
+        
+        <!-- SIDEBAR DE NAVEGACIÓN -->
+        <aside id="sidebar" class="w-full md:w-64 bg-sidebarBg text-slate-300 flex flex-col flex-shrink-0 z-40 transition-transform md:translate-x-0 relative border-r border-slate-800">
+            <!-- Header Sidebar -->
+            <div class="h-20 flex items-center justify-between px-6 border-b border-slate-800">
+                <a href="#" class="flex items-center gap-2.5 font-extrabold text-white text-lg font-display">
+                    <img src="LOGO_CEDETU.png" alt="CEDETU Logo" class="h-9 w-auto">
+                    <span>CEDETU Portal</span>
+                </a>
+                <button id="close-mobile-menu" class="md:hidden text-slate-400 hover:text-white">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+                </button>
+            </div>
+
+            <!-- Navegación General -->
+            <nav class="flex-1 px-4 py-6 space-y-1.5 overflow-y-auto" aria-label="Menú del Portal">
+                <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest px-3 mb-2">Mi Espacio</p>
+                
+                <a href="#bienvenida" class="nav-item flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-semibold hover:bg-white/5 hover:text-white transition-all-300">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                    <span>Bienvenida</span>
+                </a>
+                
+                <a href="#contenidos" class="nav-item flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-semibold hover:bg-white/5 hover:text-white transition-all-300">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                    <span>Mis Contenidos</span>
+                </a>
+                
+                <a href="#contenidos/gratuitos" class="nav-item flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-semibold hover:bg-white/5 hover:text-white transition-all-300">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"></path></svg>
+                    <span>Catálogo Gratuito</span>
+                </a>
+                
+                <a href="#contenidos/premium" class="nav-item flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-semibold hover:bg-white/5 hover:text-white transition-all-300">
+                    <svg class="w-5 h-5 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
+                    <span>Contenido Premium</span>
+                </a>
+                
+                <a href="#mis-tutorias" class="nav-item flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-semibold hover:bg-white/5 hover:text-white transition-all-300">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                    <span>Mis Tutorías</span>
+                </a>
+                
+                <a href="#recursos" class="nav-item flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-semibold hover:bg-white/5 hover:text-white transition-all-300">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                    <span>Recursos Descargables</span>
+                </a>
+
+                <a href="#progreso" class="nav-item flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-semibold hover:bg-white/5 hover:text-white transition-all-300">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 002 2h2a2 2 0 002-2z"></path></svg>
+                    <span>Mi Progreso</span>
+                </a>
+
+                <div class="pt-6">
+                    <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest px-3 mb-2">Ajustes y Ayuda</p>
+                </div>
+
+                <a href="#cuenta" class="nav-item flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-semibold hover:bg-white/5 hover:text-white transition-all-300">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                    <span>Mi Cuenta</span>
+                </a>
+
+                <a href="#soporte" class="nav-item flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-semibold hover:bg-white/5 hover:text-white transition-all-300">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                    <span>Soporte</span>
+                </a>
+
+                <!-- BOTÓN PANEL ADMINISTRADOR (VISIBLE SOLO PARA ROL ADMIN) -->
+                <div id="admin-nav-section" class="hidden pt-6">
+                    <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest px-3 mb-2">Administración</p>
+                    <a href="#admin" class="nav-item flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-bold text-emerald-400 hover:bg-emerald-500/10 hover:text-emerald-300 transition-all-300">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+                        <span>Panel Admin</span>
+                    </a>
+                </div>
+            </nav>
+
+            <!-- Footer Sidebar con perfil de usuario rápido -->
+            <div class="p-4 border-t border-slate-800 flex items-center justify-between gap-3">
+                <div class="flex items-center gap-3 min-w-0">
+                    <div class="w-9 h-9 rounded-full bg-secondary text-white font-bold flex items-center justify-center flex-shrink-0 text-sm" id="user-avatar-initial">
+                        U
+                    </div>
+                    <div class="min-w-0">
+                        <p class="text-sm font-bold text-white truncate" id="sidebar-user-name">Cargando...</p>
+                        <span class="inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold tracking-wider uppercase mt-0.5" id="user-role-badge">
+                            free
+                        </span>
+                    </div>
+                </div>
+                <button onclick="handleLogout()" class="text-slate-400 hover:text-red-400 p-1.5 rounded-lg hover:bg-white/5 transition-colors" title="Cerrar Sesión">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
+                </button>
+            </div>
+        </aside>
+
+        <!-- AREA DE CONTENIDO DE LA APP -->
+        <div class="flex-1 flex flex-col overflow-hidden relative">
+            
+            <!-- ENCABEZADO SUPERIOR -->
+            <header class="h-20 bg-white border-b border-slate-100 flex items-center justify-between px-6 flex-shrink-0">
+                <!-- Hamburger móviles -->
+                <div class="flex items-center gap-4">
+                    <button id="open-mobile-menu" class="md:hidden text-slate-600 hover:text-slate-900 focus:outline-none">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    </button>
+                    <!-- Título dinámico -->
+                    <h2 class="text-xl font-extrabold text-slate-800 font-display" id="header-view-title">Bienvenido</h2>
+                </div>
+
+                <!-- Buscador rápido superior -->
+                <div class="hidden sm:flex max-w-xs w-64 relative">
+                    <input type="text" id="top-search" placeholder="Buscar guías o cursos..." class="w-full pl-10 pr-4 py-2 border border-slate-200 rounded-full focus:outline-none focus:ring-2 focus:ring-secondary text-sm bg-slate-50">
+                    <svg class="w-4 h-4 text-slate-400 absolute left-3.5 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                </div>
+            </header>
+
+            <!-- CONTENEDOR PRINCIPAL DE LA VISTA ACTIVA -->
+            <main class="flex-1 overflow-y-auto p-6 md:p-8" id="main-content-area">
+                <!-- El contenido se inyectará dinámicamente mediante JS -->
+                <div class="flex items-center justify-center h-full">
+                    <div class="text-center">
+                        <div class="animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-primary mx-auto mb-4"></div>
+                        <p class="text-slate-500 font-semibold">Cargando tu portal de tutorías...</p>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- MODAL PARA CREAR/EDITAR CONTENIDO (ADMIN) -->
+    <div id="content-modal" class="hidden fixed inset-0 z-50 overflow-y-auto bg-slate-900/50 backdrop-blur-sm flex items-center justify-center p-4">
+        <div class="bg-white rounded-3xl w-full max-w-2xl shadow-2xl overflow-hidden border border-slate-100 relative">
+            <button onclick="closeContentModal()" class="absolute top-4 right-4 text-slate-400 hover:text-slate-700">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+            <div class="p-6 md:p-8">
+                <h3 id="modal-content-title" class="text-2xl font-bold text-slate-900 mb-6 font-display">Crear Nuevo Recurso</h3>
+                
+                <form id="form-content-item" class="space-y-4">
+                    <input type="hidden" id="edit-content-id">
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="cont-title" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Título *</label>
+                            <input id="cont-title" type="text" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-secondary text-sm">
+                        </div>
+                        <div>
+                            <label for="cont-slug" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Slug *</label>
+                            <input id="cont-slug" type="text" required placeholder="ej-guia-estudio" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-secondary text-sm bg-slate-50">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="cont-desc" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Descripción Breve *</label>
+                        <input id="cont-desc" type="text" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-secondary text-sm">
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div>
+                            <label for="cont-category" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Categoría *</label>
+                            <select id="cont-category" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-secondary text-sm">
+                                <!-- Llenado dinámicamente -->
+                            </select>
+                        </div>
+                        <div>
+                            <label for="cont-level" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Nivel Académico *</label>
+                            <select id="cont-level" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-secondary text-sm">
+                                <option value="Secundaria">Secundaria</option>
+                                <option value="Universidad">Universidad</option>
+                                <option value="Diversificado">Diversificado</option>
+                                <option value="Primaria">Primaria</option>
+                                <option value="Preparación para exámenes">Preparación para exámenes</option>
+                                <option value="General">General</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="cont-type" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Tipo de Recurso *</label>
+                            <select id="cont-type" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-secondary text-sm">
+                                <option value="article">Artículo</option>
+                                <option value="course">Curso Completo</option>
+                                <option value="exercise">Ejercicio</option>
+                                <option value="download">Descargable (PDF)</option>
+                                <option value="video">Grabación / Video</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div>
+                            <label for="cont-access" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Nivel de Acceso *</label>
+                            <select id="cont-access" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-secondary text-sm">
+                                <option value="free">Gratuito</option>
+                                <option value="premium">Premium / Suscriptor</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="cont-status" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Estado de Publicación *</label>
+                            <select id="cont-status" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-secondary text-sm">
+                                <option value="active">Activo / Visible</option>
+                                <option value="inactive">Inactivo / Oculto</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                        <div class="sm:col-span-1">
+                            <label for="cont-thumbnail" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Miniatura URL</label>
+                            <input id="cont-thumbnail" type="text" placeholder="https://..." class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm">
+                        </div>
+                        <div class="sm:col-span-1">
+                            <label for="cont-video" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">URL del Video (Youtube)</label>
+                            <input id="cont-video" type="text" placeholder="https://..." class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm">
+                        </div>
+                        <div class="sm:col-span-1">
+                            <label for="cont-document" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">URL de Documento (PDF)</label>
+                            <input id="cont-document" type="text" placeholder="https://..." class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label for="cont-body" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Cuerpo / Contenido Completo (Markdown / HTML)</label>
+                        <textarea id="cont-body" rows="6" placeholder="Escribe aquí el contenido principal..." class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-secondary text-sm bg-slate-50 resize-none font-mono"></textarea>
+                    </div>
+
+                    <button type="submit" id="btn-save-content" class="w-full bg-primary hover:bg-blue-900 text-white font-bold py-4 rounded-xl shadow-lg transition-transform transform hover:-translate-y-0.5 font-display flex items-center justify-center gap-2 text-base">
+                        Guardar Contenido
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- JAVASCRIPT DE LA SPA -->
+    <script>
+        // Configuración Supabase
+        const SUPABASE_URL = 'https://api.centrodetutorias.com';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NzkxNTA0OTEsImV4cCI6MTg5MzQ1NjAwMCwicm9sZSI6ImFub24iLCJpc3MiOiJzdXBhYmFzZSJ9.zlAS2xQq78_xvDfuaunxT7btPy2pn5II3pNk2gYFaKg';
+        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+        // Variables de Estado de la Aplicación
+        let currentSession = null;
+        let currentUser = null; // Perfil de la tabla public.users
+        let loadedCategories = [];
+        let loadedContentItems = [];
+        let loadedUserProgress = [];
+        let loadedTutoringRequests = [];
+        let adminUsers = [];
+        let adminRequests = [];
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            // Inicializar Web Auth listener
+            initAuthListeners();
+            // Comprobar la sesión activa de Supabase
+            const { data: { session } } = await supabase.auth.getSession();
+            handleSessionChange(session);
+            
+            // Toggle sidebar móvil
+            const sidebar = document.getElementById('sidebar');
+            document.getElementById('open-mobile-menu').addEventListener('click', () => {
+                sidebar.classList.remove('-translate-x-full');
+                sidebar.classList.add('translate-x-0');
+            });
+            document.getElementById('close-mobile-menu').addEventListener('click', () => {
+                sidebar.classList.add('-translate-x-full');
+                sidebar.classList.remove('translate-x-0');
+            });
+            
+            // Listener del buscador global superior
+            const topSearch = document.getElementById('top-search');
+            topSearch.addEventListener('input', (e) => {
+                const query = e.target.value.toLowerCase().trim();
+                // Si estamos en contenidos, filtrar en vivo
+                if (window.location.hash.startsWith('#contenidos')) {
+                    filterCatalog(query);
+                }
+            });
+        });
+
+        // ---------------------------------------------------------------------
+        // SECCIÓN: AUTENTICACIÓN Y CONTROL DE ACCESO
+        // ---------------------------------------------------------------------
+
+        function initAuthListeners() {
+            // Cambio de hash en URL
+            window.addEventListener('hashchange', () => {
+                routeApp();
+            });
+
+            // Login submit
+            document.getElementById('form-login').addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const email = document.getElementById('login-email').value.trim();
+                const password = document.getElementById('login-password').value;
+                const btn = document.getElementById('btn-login-submit');
+                const errDiv = document.getElementById('login-error');
+
+                btn.disabled = true;
+                btn.innerHTML = '<span class="animate-spin rounded-full h-5 w-5 border-t-2 border-b-2 border-white"></span> Entrando...';
+                errDiv.classList.add('hidden');
+
+                try {
+                    const { data, error } = await supabase.auth.signInWithPassword({ email, password });
+                    if (error) throw error;
+                    // Redirigir a bienvenida tras éxito
+                    window.location.hash = '#bienvenida';
+                } catch (error) {
+                    errDiv.innerText = error.message === 'Invalid login credentials' ? 'Correo o contraseña incorrectos.' : error.message;
+                    errDiv.classList.remove('hidden');
+                    btn.disabled = false;
+                    btn.innerText = 'Entrar a mi Cuenta';
+                }
+            });
+
+            // Registro submit
+            document.getElementById('form-register').addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const name = document.getElementById('reg-name').value.trim();
+                const phone = document.getElementById('reg-phone').value.trim();
+                const email = document.getElementById('reg-email').value.trim();
+                const level = document.getElementById('reg-level').value;
+                const interest = document.getElementById('reg-interest').value;
+                const password = document.getElementById('reg-password').value;
+                const confirmPassword = document.getElementById('reg-confirm-password').value;
+                const btn = document.getElementById('btn-register-submit');
+                const errDiv = document.getElementById('register-error');
+                const successDiv = document.getElementById('register-success');
+
+                errDiv.classList.add('hidden');
+                successDiv.classList.add('hidden');
+
+                if (password !== confirmPassword) {
+                    errDiv.innerText = 'Las contraseñas no coinciden.';
+                    errDiv.classList.remove('hidden');
+                    return;
+                }
+
+                btn.disabled = true;
+                btn.innerHTML = '<span class="animate-spin rounded-full h-5 w-5 border-t-2 border-b-2 border-white"></span> Registrando...';
+
+                try {
+                    const { data, error } = await supabase.auth.signUp({
+                        email,
+                        password,
+                        options: {
+                            data: {
+                                full_name: name,
+                                phone: phone,
+                                academic_level: level,
+                                main_interest: interest,
+                                role: 'free_user'
+                            }
+                        }
+                    });
+
+                    if (error) throw error;
+
+                    successDiv.innerText = '¡Registro exitoso! Ya puedes iniciar sesión con tu cuenta.';
+                    successDiv.classList.remove('hidden');
+                    document.getElementById('form-register').reset();
+                    setTimeout(() => {
+                        window.location.hash = '#login';
+                    }, 2500);
+                } catch (error) {
+                    errDiv.innerText = error.message;
+                    errDiv.classList.remove('hidden');
+                } finally {
+                    btn.disabled = false;
+                    btn.innerText = 'Crear mi Cuenta Gratis';
+                }
+            });
+
+            // Recuperación submit
+            document.getElementById('form-forgot').addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const email = document.getElementById('forgot-email').value.trim();
+                const btn = document.getElementById('btn-forgot-submit');
+                const errDiv = document.getElementById('forgot-error');
+                const successDiv = document.getElementById('forgot-success');
+
+                errDiv.classList.add('hidden');
+                successDiv.classList.add('hidden');
+                btn.disabled = true;
+                btn.innerText = 'Enviando...';
+
+                try {
+                    const { error } = await supabase.auth.resetPasswordForEmail(email, {
+                        redirectTo: window.location.origin + window.location.pathname + '#cuenta'
+                    });
+                    if (error) throw error;
+                    successDiv.innerText = 'Se ha enviado un enlace a tu correo para restablecer la contraseña.';
+                    successDiv.classList.remove('hidden');
+                } catch (error) {
+                    errDiv.innerText = error.message;
+                    errDiv.classList.remove('hidden');
+                } finally {
+                    btn.disabled = false;
+                    btn.innerText = 'Enviar Enlace de Recuperación';
+                }
+            });
+
+            // Escuchar cambios de Auth de Supabase
+            supabase.auth.onAuthStateChange((event, session) => {
+                handleSessionChange(session);
+            });
+        }
+
+        async function handleSessionChange(session) {
+            currentSession = session;
+            if (session) {
+                // Consultar base de datos pública de perfiles
+                const { data, error } = await supabase
+                    .from('users')
+                    .select('*')
+                    .eq('id', session.user.id)
+                    .single();
+
+                if (error) {
+                    console.error('Error al cargar perfil de usuario publico:', error);
+                    // Fallback rápido si el trigger aún no populatea
+                    currentUser = {
+                        id: session.user.id,
+                        full_name: session.user.user_metadata.full_name || 'Estudiante Nuevo',
+                        email: session.user.email,
+                        phone: session.user.user_metadata.phone || '',
+                        role: session.user.user_metadata.role || 'free_user',
+                        subscription_status: 'inactive',
+                        academic_level: session.user.user_metadata.academic_level || 'Secundaria',
+                        main_interest: session.user.user_metadata.main_interest || 'Matemática'
+                    };
+                } else {
+                    currentUser = data;
+                }
+
+                // Sincronizar UI del sidebar
+                document.getElementById('sidebar-user-name').innerText = currentUser.full_name;
+                document.getElementById('user-avatar-initial').innerText = currentUser.full_name.charAt(0).toUpperCase();
+                
+                const roleBadge = document.getElementById('user-role-badge');
+                roleBadge.innerText = currentUser.role === 'subscriber' ? 'Suscriptor' : (currentUser.role === 'admin' ? 'Admin' : 'Gratuito');
+                roleBadge.className = 'inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold tracking-wider uppercase mt-0.5 ' + 
+                    (currentUser.role === 'subscriber' ? 'bg-amber-500/20 text-amber-300' : (currentUser.role === 'admin' ? 'bg-emerald-500/20 text-emerald-300' : 'bg-slate-700 text-slate-300'));
+
+                if (currentUser.role === 'admin') {
+                    document.getElementById('admin-nav-section').classList.remove('hidden');
+                } else {
+                    document.getElementById('admin-nav-section').classList.add('hidden');
+                }
+
+                document.getElementById('auth-container').classList.add('hidden');
+                document.getElementById('portal-container').classList.remove('hidden');
+                
+                // Redirigir a bienvenida si está en rutas auth
+                if (!window.location.hash || ['#login', '#register', '#forgot'].includes(window.location.hash)) {
+                    window.location.hash = '#bienvenida';
+                }
+            } else {
+                currentUser = null;
+                document.getElementById('auth-container').classList.remove('hidden');
+                document.getElementById('portal-container').classList.add('hidden');
+                
+                if (!['#login', '#register', '#forgot'].includes(window.location.hash)) {
+                    window.location.hash = '#login';
+                }
+            }
+            routeApp();
+        }
+
+        async function handleLogout() {
+            const { error } = await supabase.auth.signOut();
+            if (error) console.error('Error al desconectarse:', error.message);
+        }
+
+        function showForgotPassword(e) {
+            e.preventDefault();
+            window.location.hash = '#forgot';
+        }
+
+        // ---------------------------------------------------------------------
+        // SECCIÓN: RUTAS Y RENDERING DE VISTAS (SPA STATE ROUTER)
+        // ---------------------------------------------------------------------
+
+        async function routeApp() {
+            const hash = window.location.hash || '#bienvenida';
+            
+            // Cerrar menú móvil siempre al cambiar de página
+            document.getElementById('sidebar').classList.add('-translate-x-full');
+            document.getElementById('sidebar').classList.remove('translate-x-0');
+
+            // Limpiar buscador
+            document.getElementById('top-search').value = '';
+
+            // Si no hay sesión, forzar auth views
+            if (!currentSession) {
+                document.getElementById('auth-container').classList.remove('hidden');
+                document.getElementById('portal-container').classList.add('hidden');
+                
+                document.getElementById('login-view').classList.add('hidden');
+                document.getElementById('register-view').classList.add('hidden');
+                document.getElementById('forgot-view').classList.add('hidden');
+
+                if (hash === '#register') {
+                    document.getElementById('register-view').classList.remove('hidden');
+                    document.getElementById('auth-title-desc').innerText = 'Empieza hoy mismo tu ruta de superación académica.';
+                } else if (hash === '#forgot') {
+                    document.getElementById('forgot-view').classList.remove('hidden');
+                    document.getElementById('auth-title-desc').innerText = 'Recupera el acceso a tu espacio personalizado.';
+                } else {
+                    document.getElementById('login-view').classList.remove('hidden');
+                    document.getElementById('auth-title-desc').innerText = 'Ingresa a tu espacio personalizado de aprendizaje.';
+                }
+                return;
+            }
+
+            // Cambiar items activos en Sidebar
+            document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active-nav'));
+            let matchedNav = document.querySelector(`.nav-item[href="${hash}"]`);
+            if (hash.startsWith('#contenidos/gratuitos')) {
+                matchedNav = document.querySelector('.nav-item[href="#contenidos/gratuitos"]');
+            } else if (hash.startsWith('#contenidos/premium')) {
+                matchedNav = document.querySelector('.nav-item[href="#contenidos/premium"]');
+            } else if (hash.startsWith('#contenidos') || hash.startsWith('#contenido')) {
+                matchedNav = document.querySelector('.nav-item[href="#contenidos"]');
+            }
+            if (matchedNav) matchedNav.classList.add('active-nav');
+
+            // Renderizar la vista
+            const viewTitle = document.getElementById('header-view-title');
+            const mainArea = document.getElementById('main-content-area');
+
+            // Cargar Datos Necesarios de la Base de Datos antes de renderizar
+            await Promise.all([
+                loadCategories(),
+                loadContentItems(),
+                loadUserProgress()
+            ]);
+
+            if (hash === '#bienvenida') {
+                viewTitle.innerText = 'Mi Espacio Personal';
+                renderBienvenida(mainArea);
+            } else if (hash.startsWith('#contenidos/gratuitos')) {
+                viewTitle.innerText = 'Catálogo de Recursos Gratuitos';
+                renderCatalogView(mainArea, 'free');
+            } else if (hash.startsWith('#contenidos/premium')) {
+                viewTitle.innerText = 'Biblioteca de Contenido Premium';
+                renderCatalogView(mainArea, 'premium');
+            } else if (hash === '#contenidos') {
+                viewTitle.innerText = 'Todos mis Contenidos';
+                renderCatalogView(mainArea, 'all');
+            } else if (hash.startsWith('#contenido/')) {
+                const slug = hash.replace('#contenido/', '');
+                renderContentView(mainArea, slug);
+            } else if (hash === '#mis-tutorias') {
+                viewTitle.innerText = 'Mis Tutorías Virtuales';
+                renderTutoringView(mainArea);
+            } else if (hash === '#recursos') {
+                viewTitle.innerText = 'Descargas de Apoyo Directo';
+                renderRecursosView(mainArea);
+            } else if (hash === '#progreso') {
+                viewTitle.innerText = 'Mi Historial y Progreso';
+                renderProgresoView(mainArea);
+            } else if (hash === '#cuenta') {
+                viewTitle.innerText = 'Mi Perfil';
+                renderCuentaView(mainArea);
+            } else if (hash === '#soporte') {
+                viewTitle.innerText = 'Canal de Soporte CEDETU';
+                renderSoporteView(mainArea);
+            } else if (hash.startsWith('#admin')) {
+                if (currentUser.role !== 'admin') {
+                    window.location.hash = '#bienvenida';
+                    return;
+                }
+                viewTitle.innerText = 'Consola de Control del Administrador';
+                renderAdminView(mainArea, hash);
+            } else {
+                // Fallback a bienvenida
+                window.location.hash = '#bienvenida';
+            }
+        }
+
+        // ---------------------------------------------------------------------
+        // SECCIÓN: CARGA DE DATOS DESDE SUPABASE
+        // ---------------------------------------------------------------------
+
+        async function loadCategories() {
+            if (loadedCategories.length > 0) return;
+            const { data, error } = await supabase.from('categories').select('*').order('name');
+            if (!error && data) loadedCategories = data;
+        }
+
+        async function loadContentItems() {
+            // Siempre recargar para sincronizar si el administrador edita/agrega
+            const { data, error } = await supabase.from('content_items').select('*, categories(*)').order('created_at', { ascending: false });
+            if (!error && data) loadedContentItems = data;
+        }
+
+        async function loadUserProgress() {
+            const { data, error } = await supabase.from('user_content_progress').select('*').eq('user_id', currentUser.id);
+            if (!error && data) loadedUserProgress = data;
+        }
+
+        async function loadUserTutoringRequests() {
+            const { data, error } = await supabase.from('tutoring_requests').select('*').eq('user_id', currentUser.id).order('created_at', { ascending: false });
+            if (!error && data) loadedTutoringRequests = data;
+        }
+
+        // Helper para comprobar el estado de progreso
+        function getProgressStatus(contentId) {
+            const progress = loadedUserProgress.find(p => p.content_id === contentId);
+            return progress ? progress.status : 'not_started';
+        }
+
+        // Helper para comprobar el progreso porcentual
+        function getProgressPercentage(contentId) {
+            const progress = loadedUserProgress.find(p => p.content_id === contentId);
+            return progress ? progress.progress_percentage : 0;
+        }
+
+        // ---------------------------------------------------------------------
+        // VISTA: BIENVENIDA / DASHBOARD PRINCIPAL
+        // ---------------------------------------------------------------------
+
+        function renderBienvenida(container) {
+            // Contar cursos completados y total
+            const completedCount = loadedUserProgress.filter(p => p.status === 'completed').length;
+            const activeCount = loadedUserProgress.filter(p => p.status === 'in_progress').length;
+            
+            // Contenidos recomendados según nivel académico e interés
+            const recLevel = currentUser.academic_level;
+            const recInterest = currentUser.main_interest;
+            
+            // Priorizar por nivel e interés
+            let recommended = loadedContentItems.filter(item => 
+                item.status === 'active' && 
+                (item.academic_level === recLevel || item.title.toLowerCase().includes(recInterest.toLowerCase().replace('refuerzo en ', '')))
+            ).slice(0, 3);
+
+            // Si no hay específicos, recomendar los últimos 3 libres
+            if (recommended.length === 0) {
+                recommended = loadedContentItems.filter(item => item.status === 'active').slice(0, 3);
+            }
+
+            let cardsHtml = '';
+            recommended.forEach(item => {
+                const isPremium = item.access_type === 'premium';
+                const progressStatus = getProgressStatus(item.id);
+                const progressPct = getProgressPercentage(item.id);
+                const hasAccess = !isPremium || currentUser.role === 'subscriber' || currentUser.role === 'admin';
+                
+                cardsHtml += `
+                    <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full group">
+                        <div class="relative aspect-video w-full bg-slate-100 overflow-hidden">
+                            <img src="${item.thumbnail_url || 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=300&auto=format&fit=crop'}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                            
+                            <!-- Badges de Acceso -->
+                            <div class="absolute top-3 left-3 flex gap-2">
+                                <span class="px-2.5 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase shadow-sm ${
+                                    isPremium ? 'bg-amber-500 text-white' : 'bg-emerald-500 text-white'
+                                }">
+                                    ${isPremium ? '👑 Premium' : '⭐ Gratis'}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="p-5 flex-grow flex flex-col">
+                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">${item.categories?.name || 'Recurso'}</span>
+                            <h4 class="font-bold text-slate-800 text-base mb-2 line-clamp-2">${item.title}</h4>
+                            <p class="text-xs text-slate-500 line-clamp-3 mb-4 flex-grow">${item.description}</p>
+                            
+                            <!-- Barra de Progreso -->
+                            ${progressStatus !== 'not_started' ? `
+                                <div class="w-full bg-slate-100 h-1.5 rounded-full mb-4 overflow-hidden">
+                                    <div class="bg-secondary h-full rounded-full" style="width: ${progressPct}%"></div>
+                                </div>
+                            ` : ''}
+
+                            <!-- Botón de acción -->
+                            ${hasAccess ? `
+                                <a href="#contenido/${item.slug}" class="w-full bg-slate-50 hover:bg-primary hover:text-white border border-slate-200 text-center py-2.5 rounded-xl font-bold text-xs transition-colors duration-300">
+                                    ${progressStatus === 'completed' ? 'Revisar Contenido' : (progressStatus === 'in_progress' ? 'Continuar Lección' : 'Ver Contenido')}
+                                </a>
+                            ` : `
+                                <a href="#contenido/${item.slug}" class="w-full bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-200 text-center py-2.5 rounded-xl font-bold text-xs flex items-center justify-center gap-1.5 transition-colors duration-300">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zM9 11V7a3 3 0 016 0v4"></path></svg>
+                                    Suscribirme para Ver
+                                </a>
+                            `}
+                        </div>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = `
+                <div class="space-y-8">
+                    <!-- Banner de Bienvenida Premium -->
+                    <div class="relative rounded-3xl overflow-hidden bg-gradient-to-r from-primary to-[#2563EB] text-white p-6 md:p-8 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
+                        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent"></div>
+                        
+                        <div class="space-y-3 max-w-xl relative z-10 text-center md:text-left">
+                            <div class="inline-block bg-white/10 px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase mb-1">
+                                Miembro de Centro de Tutorías
+                            </div>
+                            <h3 class="text-3xl font-extrabold font-display">¡Hola, ${currentUser.full_name}!</h3>
+                            <p class="text-sm md:text-base text-blue-100 leading-relaxed font-medium">
+                                Bienvenido a tu espacio de aprendizaje. Priorizamos recursos de <strong class="text-white">${recLevel}</strong> con especialidad en <strong class="text-white">${recInterest.replace('Refuerzo en ', '')}</strong> para impulsar tus notas paso a paso.
+                            </p>
+                        </div>
+                        <div class="relative z-10 flex-shrink-0 flex gap-4">
+                            <a href="#contenidos" class="bg-secondary hover:bg-emerald-600 text-white font-bold px-6 py-3 rounded-2xl shadow-lg transition-transform transform hover:-translate-y-0.5 text-sm">
+                                Explorar Cursos
+                            </a>
+                            <a href="#mis-tutorias" class="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-bold px-6 py-3 rounded-2xl transition-all-300 text-sm">
+                                Pedir Tutoría en Vivo
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Estadísticas Rápidas -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                        <div class="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-pastel-blue text-primary flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-slate-400 uppercase">Completados</p>
+                                <h4 class="text-2xl font-black text-slate-800">${completedCount}</h4>
+                            </div>
+                        </div>
+                        <div class="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-pastel-mint text-secondary flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-slate-400 uppercase">En Progreso</p>
+                                <h4 class="text-2xl font-black text-slate-800">${activeCount}</h4>
+                            </div>
+                        </div>
+                        <div class="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-pastel-lilac text-purple-600 flex items-center justify-center flex-shrink-0">
+                                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m-2 4a2 2 0 012 2m-6-4h.01M9 16h.01M5 16h.01M5 12h.01M5 8h.01M9 8h.01M13 8h.01M13 12h.01M13 16h.01M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                            </div>
+                            <div>
+                                <p class="text-xs font-bold text-slate-400 uppercase">Membresía</p>
+                                <h4 class="text-base font-bold text-slate-800 mt-1 uppercase tracking-wide">
+                                    ${currentUser.subscription_status === 'active' ? '👑 PREMIUM' : '⭐ ACCESO GRATUITO'}
+                                </h4>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Recomendados para Ti -->
+                    <div class="space-y-4">
+                        <div class="flex items-center justify-between">
+                            <h3 class="text-xl font-bold text-slate-800 font-display flex items-center gap-2">
+                                <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                                Recomendado para ti
+                            </h3>
+                            <a href="#contenidos" class="text-xs font-bold text-primary hover:underline">Ver todo el catálogo →</a>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                            ${cardsHtml}
+                        </div>
+                    </div>
+
+                    <!-- Banner de Oferta Especial (Solo para usuarios free) -->
+                    ${currentUser.role === 'free_user' ? `
+                        <div class="rounded-3xl border border-slate-100 shadow-sm p-6 bg-amber-50 flex flex-col md:flex-row items-center gap-6 justify-between border-l-4 border-l-amber-500">
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-full bg-amber-500 text-white flex items-center justify-center flex-shrink-0 mt-1 font-bold">💎</div>
+                                <div>
+                                    <h4 class="font-bold text-slate-800 text-lg">¿Quieres desbloquear las guías resueltas y videos de refuerzo?</h4>
+                                    <p class="text-sm text-slate-600 leading-normal max-w-xl">
+                                        Accede hoy al Plan Premium de Centro de Tutorías para obtener soporte 24/7 de profesores expertos, lecciones completas y resolución de ejercicios resueltos paso a paso.
+                                    </p>
+                                </div>
+                            </div>
+                            <a href="#soporte" class="bg-amber-500 hover:bg-amber-600 text-white font-bold px-6 py-3 rounded-2xl text-sm shadow-md transition-colors flex items-center gap-1">
+                                Ver Planes y Suscribirme
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            </a>
+                        </div>
+                    ` : ''}
+                </div>
+            `;
+        }
+
+        // ---------------------------------------------------------------------
+        // VISTA: CATÁLOGO DE CONTENIDOS Y RECURSOS (FILTROS EN VIVO)
+        // ---------------------------------------------------------------------
+
+        let currentCatalogFilter = 'all'; // free, premium, all
+
+        function renderCatalogView(container, filterType) {
+            currentCatalogFilter = filterType;
+            
+            // Cargar barra de filtros
+            let filterHtml = `
+                <div class="space-y-6">
+                    <div class="flex flex-wrap gap-4 items-center justify-between">
+                        <!-- Categorías Selector -->
+                        <div class="flex flex-wrap gap-2" id="catalog-category-filters">
+                            <button onclick="filterCatalogByCategory(null)" class="cat-filter-btn px-4 py-2 text-xs font-bold rounded-full bg-primary text-white transition-colors duration-300">Todos</button>
+            `;
+
+            loadedCategories.forEach(cat => {
+                filterHtml += `
+                    <button onclick="filterCatalogByCategory(${cat.id})" class="cat-filter-btn px-4 py-2 text-xs font-bold rounded-full bg-white text-slate-600 hover:bg-slate-100 border border-slate-200 transition-colors duration-300">${cat.name}</button>
+                `;
+            });
+
+            filterHtml += `
+                        </div>
+                        
+                        <!-- Acceso Filtro Rápido -->
+                        <div class="flex border border-slate-200 rounded-xl overflow-hidden bg-white">
+                            <button onclick="window.location.hash = '#contenidos'" class="px-4 py-2 text-xs font-bold ${filterType === 'all' ? 'bg-primary text-white' : 'text-slate-600 hover:bg-slate-50'}">Todos</button>
+                            <button onclick="window.location.hash = '#contenidos/gratuitos'" class="px-4 py-2 text-xs font-bold border-l border-r border-slate-200 ${filterType === 'free' ? 'bg-primary text-white' : 'text-slate-600 hover:bg-slate-50'}">Gratis</button>
+                            <button onclick="window.location.hash = '#contenidos/premium'" class="px-4 py-2 text-xs font-bold ${filterType === 'premium' ? 'bg-primary text-white' : 'text-slate-600 hover:bg-slate-50'}">Premium</button>
+                        </div>
+                    </div>
+
+                    <!-- Grid de Cursos -->
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="catalog-grid-area">
+                        <!-- Llenado dinámicamente -->
+                    </div>
+                </div>
+            `;
+
+            container.innerHTML = filterHtml;
+            // Ejecutar filtrado inicial
+            filterCatalog('');
+        }
+
+        let selectedCategoryId = null;
+
+        function filterCatalogByCategory(catId) {
+            selectedCategoryId = catId;
+            
+            // Estilo de botones activos
+            const buttons = document.querySelectorAll('.cat-filter-btn');
+            buttons.forEach(btn => {
+                btn.className = 'cat-filter-btn px-4 py-2 text-xs font-bold rounded-full bg-white text-slate-600 hover:bg-slate-100 border border-slate-200 transition-colors duration-300';
+            });
+            
+            // Resaltar seleccionado
+            const selectedIdx = catId === null ? 0 : loadedCategories.findIndex(c => c.id === catId) + 1;
+            if (buttons[selectedIdx]) {
+                buttons[selectedIdx].className = 'cat-filter-btn px-4 py-2 text-xs font-bold rounded-full bg-primary text-white transition-colors duration-300';
+            }
+
+            filterCatalog(document.getElementById('top-search').value.toLowerCase().trim());
+        }
+
+        function filterCatalog(searchQuery) {
+            const grid = document.getElementById('catalog-grid-area');
+            if (!grid) return;
+
+            // Filtrar contenidos locales
+            const filtered = loadedContentItems.filter(item => {
+                if (item.status !== 'active') return false;
+
+                // 1. Filtrar por tipo de acceso
+                if (currentCatalogFilter === 'free' && item.access_type !== 'free') return false;
+                if (currentCatalogFilter === 'premium' && item.access_type !== 'premium') return false;
+
+                // 2. Filtrar por categoría
+                if (selectedCategoryId !== null && item.category_id !== selectedCategoryId) return false;
+
+                // 3. Filtrar por buscador de texto
+                if (searchQuery) {
+                    const titleMatch = item.title.toLowerCase().includes(searchQuery);
+                    const descMatch = item.description.toLowerCase().includes(searchQuery);
+                    const catMatch = item.categories?.name?.toLowerCase().includes(searchQuery);
+                    if (!titleMatch && !descMatch && !catMatch) return false;
+                }
+
+                return true;
+            });
+
+            if (filtered.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full py-16 text-center">
+                        <div class="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4 text-slate-400 font-bold">🔍</div>
+                        <h4 class="font-bold text-slate-800 text-lg">No encontramos contenidos</h4>
+                        <p class="text-sm text-slate-500 max-w-sm mx-auto mt-1">Prueba seleccionando otra categoría o modificando los términos del buscador.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            let cardsHtml = '';
+            filtered.forEach(item => {
+                const isPremium = item.access_type === 'premium';
+                const progressStatus = getProgressStatus(item.id);
+                const progressPct = getProgressPercentage(item.id);
+                const hasAccess = !isPremium || currentUser.role === 'subscriber' || currentUser.role === 'admin';
+
+                cardsHtml += `
+                    <div class="bg-white rounded-3xl border border-slate-150 overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col h-full group">
+                        <div class="relative aspect-video w-full bg-slate-100 overflow-hidden">
+                            <img src="${item.thumbnail_url || 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=300&auto=format&fit=crop'}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
+                            
+                            <!-- Badges de Acceso -->
+                            <div class="absolute top-3 left-3 flex gap-2">
+                                <span class="px-2.5 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase shadow-sm ${
+                                    isPremium ? 'bg-amber-500 text-white' : 'bg-emerald-500 text-white'
+                                }">
+                                    ${isPremium ? '👑 Premium' : '⭐ Gratis'}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="p-6 flex-grow flex flex-col">
+                            <div class="flex justify-between items-center mb-1">
+                                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">${item.categories?.name || 'Recurso'}</span>
+                                <span class="text-[10px] font-bold text-primary bg-blue-50 px-2 py-0.5 rounded-full uppercase">${item.academic_level || 'General'}</span>
+                            </div>
+                            <h4 class="font-bold text-slate-800 text-base mb-2 line-clamp-2">${item.title}</h4>
+                            <p class="text-xs text-slate-500 line-clamp-3 mb-4 flex-grow">${item.description}</p>
+                            
+                            <!-- Progreso si está en uso -->
+                            ${progressStatus !== 'not_started' ? `
+                                <div class="w-full bg-slate-100 h-1.5 rounded-full mb-4 overflow-hidden">
+                                    <div class="bg-secondary h-full rounded-full" style="width: ${progressPct}%"></div>
+                                </div>
+                            ` : ''}
+
+                            <!-- Botón de acción -->
+                            ${hasAccess ? `
+                                <a href="#contenido/${item.slug}" class="w-full bg-slate-50 hover:bg-primary hover:text-white border border-slate-200 text-center py-2.5 rounded-xl font-bold text-xs transition-colors duration-300">
+                                    ${progressStatus === 'completed' ? 'Revisar Contenido' : (progressStatus === 'in_progress' ? 'Continuar Lección' : 'Ver Contenido')}
+                                </a>
+                            ` : `
+                                <a href="#contenido/${item.slug}" class="w-full bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-200 text-center py-2.5 rounded-xl font-bold text-xs flex items-center justify-center gap-1.5 transition-colors duration-300">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zM9 11V7a3 3 0 016 0v4"></path></svg>
+                                    Suscribirme para Ver
+                                </a>
+                            `}
+                        </div>
+                    </div>
+                `;
+            });
+            grid.innerHTML = cardsHtml;
+        }
+
+        // ---------------------------------------------------------------------
+        // VISTA: DETALLE Y VISUALIZADOR DE CONTENIDO (CON CONTROL DE ACCESO)
+        // ---------------------------------------------------------------------
+
+        async function renderContentView(container, slug) {
+            const item = loadedContentItems.find(c => c.slug === slug);
+            
+            if (!item) {
+                container.innerHTML = `
+                    <div class="py-16 text-center">
+                        <h4 class="font-bold text-slate-800 text-lg">Contenido no encontrado</h4>
+                        <a href="#contenidos" class="mt-4 inline-block bg-primary text-white font-bold px-6 py-2.5 rounded-xl">Volver al catálogo</a>
+                    </div>
+                `;
+                return;
+            }
+
+            // --- CONTROL DE ACCESOS ---
+            const isPremium = item.access_type === 'premium';
+            const hasAccess = !isPremium || currentUser.role === 'subscriber' || currentUser.role === 'admin';
+
+            if (!hasAccess) {
+                // RENDERIZAR VISTA DE BLOQUEADO EXQUISITA
+                container.innerHTML = `
+                    <div class="max-w-xl mx-auto py-12 text-center space-y-6">
+                        <div class="w-24 h-24 rounded-full bg-amber-50 flex items-center justify-center mx-auto shadow-sm text-4xl">
+                            🔒
+                        </div>
+                        <div class="space-y-2">
+                            <h3 class="text-3xl font-extrabold font-display text-slate-800">Este recurso es exclusivo para suscriptores</h3>
+                            <p class="text-sm text-slate-500 leading-relaxed px-4">
+                                Con una suscripción activa podrás acceder de forma ilimitada a guías, videos grabados de tutorías, ejercicios resueltos paso a paso y resúmenes creados por especialistas para garantizar tus notas.
+                            </p>
+                        </div>
+                        <div class="pt-4 flex flex-col sm:flex-row justify-center gap-4">
+                            <a href="https://wa.me/50257152096?text=Hola,%20quiero%20más%20información%20sobre%20los%20planes%20de%20suscripción%20premium%20de%20Centro%20de%20Tutorías" target="_blank" class="bg-amber-500 hover:bg-amber-600 text-white font-bold px-8 py-3.5 rounded-2xl text-sm shadow-md transition-colors flex items-center justify-center gap-2">
+                                <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946C.06 5.348 5.397.01 12.008.01c3.202.001 6.212 1.246 8.477 3.514 2.266 2.268 3.507 5.28 3.505 8.484-.004 6.657-5.34 11.997-11.953 11.997-2.005-.001-3.973-.502-5.73-1.45L0 24zm6.59-4.846c1.6.95 3.188 1.449 4.825 1.451 5.436 0 9.86-4.37 9.864-9.799.002-2.63-1.023-5.101-2.885-6.963C16.588 2.02 14.132.996 11.52.996c-5.44 0-9.87 4.372-9.874 9.802-.001 1.73.476 3.42 1.378 4.908l-.997 3.639 3.73-.974zm11.381-5.115c-.247-.124-1.461-.72-1.685-.802-.224-.082-.388-.124-.552.124-.164.247-.636.802-.78.966-.143.164-.288.185-.535.061-.247-.124-1.042-.383-1.986-1.226-.733-.655-1.229-1.464-1.373-1.711-.144-.247-.015-.38.109-.502.112-.11.247-.288.371-.432.124-.144.165-.247.248-.411.082-.164.041-.308-.021-.432-.062-.124-.552-1.332-.756-1.823-.203-.49-.406-.424-.553-.431-.143-.006-.307-.008-.471-.008-.164 0-.431.061-.656.308-.225.246-.861.842-.861 2.053 0 1.21.881 2.38 1.003 2.546.124.164 1.734 2.648 4.201 3.712.586.253 1.044.404 1.401.517.589.187 1.125.161 1.549.097.473-.072 1.461-.597 1.666-1.173.205-.576.205-1.07.143-1.173-.061-.103-.224-.164-.471-.287z"/></svg>
+                                Ver planes de suscripción
+                            </a>
+                            <a href="#contenidos/gratuitos" class="bg-white hover:bg-slate-105 border border-slate-200 text-slate-700 font-bold px-8 py-3.5 rounded-2xl text-sm transition-colors flex items-center justify-center">
+                                Volver al catálogo gratuito
+                            </a>
+                        </div>
+                    </div>
+                `;
+                return;
+            }
+
+            // REGISTRAR INICIO DE ACCESO EN PROGRESO (SI AÚN NO EXISTE)
+            const progressStatus = getProgressStatus(item.id);
+            if (progressStatus === 'not_started') {
+                await updateContentProgress(item.id, 'in_progress', 10);
+            }
+
+            // Preparar vistas de video u otros tipos
+            let mediaArea = '';
+            if (item.content_type === 'video' || item.video_url) {
+                const embedUrl = item.video_url || 'https://www.youtube.com/embed/dQw4w9WgXcQ';
+                mediaArea = `
+                    <div class="aspect-video w-full rounded-2xl overflow-hidden shadow-md border border-slate-100 bg-black mb-6">
+                        <iframe class="w-full h-full" src="${embedUrl}" title="Reproductor CEDETU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                `;
+            } else if (item.content_type === 'download' || item.document_url) {
+                mediaArea = `
+                    <div class="bg-slate-150 p-6 rounded-2xl border border-slate-200 mb-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+                        <div class="flex items-center gap-3">
+                            <span class="text-4xl">📄</span>
+                            <div>
+                                <h4 class="font-bold text-slate-800 text-base">Material de Apoyo Imprimible</h4>
+                                <p class="text-xs text-slate-500">Documento PDF estructurado para repasar y repasar.</p>
+                            </div>
+                        </div>
+                        <a href="${item.document_url || '#'}" target="_blank" onclick="markCompleted(${item.id})" class="bg-secondary hover:bg-emerald-600 text-white font-bold px-6 py-3 rounded-xl text-xs shadow-md transition-colors flex items-center gap-1.5">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                            Descargar Documento
+                        </a>
+                    </div>
+                `;
+            }
+
+            // Convertir cuerpo en HTML simple (soporte de markdown elemental)
+            let formattedBody = item.body_content || '';
+            if (formattedBody) {
+                formattedBody = formattedBody
+                    .replace(/\n\n/g, '<br><br>')
+                    .replace(/### (.*?)\n/g, '<h4 class="text-base font-bold text-slate-850 mt-4 mb-2">$1</h4>')
+                    .replace(/## (.*?)\n/g, '<h3 class="text-lg font-bold text-slate-900 mt-6 mb-3">$1</h3>')
+                    .replace(/# (.*?)\n/g, '<h2 class="text-xl font-extrabold text-slate-900 mt-8 mb-4">$1</h2>')
+                    .replace(/\* \*\*(.*?)\*\*:/g, '<br>• <strong>$1</strong>:')
+                    .replace(/\* (.*?)\n/g, '<br>• $1');
+            }
+
+            container.innerHTML = `
+                <div class="max-w-4xl mx-auto space-y-6">
+                    <nav class="flex text-xs text-slate-400 font-bold gap-2">
+                        <a href="#contenidos" class="hover:text-primary">Catálogo</a>
+                        <span>/</span>
+                        <span class="text-slate-600">${item.categories?.name}</span>
+                    </nav>
+
+                    <div class="space-y-4">
+                        <div class="flex flex-wrap items-center justify-between gap-4">
+                            <h1 class="text-3xl font-extrabold text-slate-800 font-display leading-tight">${item.title}</h1>
+                            
+                            <!-- Botón Marcar como Completado -->
+                            <button id="btn-complete-item" onclick="markCompleted(${item.id})" class="px-6 py-2.5 rounded-xl font-bold text-xs transition-colors flex items-center gap-1.5 shadow-sm ${
+                                progressStatus === 'completed' 
+                                ? 'bg-green-100 text-green-800 border border-green-200' 
+                                : 'bg-primary text-white hover:bg-blue-900'
+                            }">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                                ${progressStatus === 'completed' ? '¡Tema Completado!' : 'Marcar como Completado'}
+                            </button>
+                        </div>
+                        <p class="text-sm text-slate-500 italic leading-relaxed">${item.description}</p>
+                    </div>
+
+                    <hr class="border-slate-100">
+
+                    <!-- Renderización Multimedia -->
+                    ${mediaArea}
+
+                    <!-- Contenido Escrito -->
+                    <div class="bg-white rounded-3xl p-6 md:p-8 border border-slate-100 shadow-sm prose max-w-none text-slate-700 leading-relaxed text-sm sm:text-base">
+                        ${formattedBody || '<p class="text-slate-400 italic">No hay contenido de texto adicional.</p>'}
+                    </div>
+
+                    <!-- Footer De Contenido -->
+                    <div class="flex justify-between items-center pt-6">
+                        <a href="#contenidos" class="text-xs font-bold text-primary flex items-center gap-1 hover:underline">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                            Volver al Catálogo
+                        </a>
+                    </div>
+                </div>
+            `;
+        }
+
+        async function updateContentProgress(contentId, status, percentage) {
+            const now = new Date().toISOString();
+            const { error } = await supabase
+                .from('user_content_progress')
+                .upsert({
+                    user_id: currentUser.id,
+                    content_id: contentId,
+                    status: status,
+                    progress_percentage: percentage,
+                    last_accessed_at: now,
+                    completed_at: status === 'completed' ? now : null
+                }, { onConflict: 'user_id,content_id' });
+
+            if (!error) {
+                // Actualizar caché de progreso
+                await loadUserProgress();
+            }
+        }
+
+        async function markCompleted(contentId) {
+            const btn = document.getElementById('btn-complete-item');
+            if (btn) {
+                btn.disabled = true;
+                btn.innerText = 'Guardando...';
+            }
+            await updateContentProgress(contentId, 'completed', 100);
+            
+            // Re-renderizar la vista actual
+            const hash = window.location.hash;
+            if (hash.startsWith('#contenido/')) {
+                const slug = hash.replace('#contenido/', '');
+                const mainArea = document.getElementById('main-content-area');
+                renderContentView(mainArea, slug);
+            }
+        }
+
+        // ---------------------------------------------------------------------
+        // VISTA: SOLICITUD DE TUTORÍAS PERSONALIZADAS
+        // ---------------------------------------------------------------------
+
+        async function renderTutoringView(container) {
+            await loadUserTutoringRequests();
+
+            let requestsListHtml = '';
+            if (loadedTutoringRequests.length === 0) {
+                requestsListHtml = `
+                    <div class="py-8 text-center text-slate-400 italic text-sm">
+                        No has solicitado tutorías virtuales por el momento.
+                    </div>
+                `;
+            } else {
+                loadedTutoringRequests.forEach(req => {
+                    const statusLabels = {
+                        new: { text: 'Enviada', style: 'bg-blue-50 text-blue-700 border-blue-200' },
+                        contacted: { text: 'Contactado', style: 'bg-amber-50 text-amber-700 border-amber-200' },
+                        scheduled: { text: 'Programada', style: 'bg-emerald-50 text-emerald-700 border-emerald-200' },
+                        completed: { text: 'Finalizada', style: 'bg-slate-100 text-slate-600 border-slate-200' },
+                        cancelled: { text: 'Cancelada', style: 'bg-red-50 text-red-700 border-red-200' }
+                    };
+                    const label = statusLabels[req.status] || { text: req.status, style: 'bg-slate-50 text-slate-600' };
+                    
+                    requestsListHtml += `
+                        <div class="p-5 rounded-2xl border border-slate-150 bg-white flex items-center justify-between gap-4 flex-wrap sm:flex-nowrap">
+                            <div class="space-y-1.5 min-w-0">
+                                <div class="flex items-center gap-2 flex-wrap">
+                                    <h4 class="font-bold text-slate-800 text-sm md:text-base">${req.subject}</h4>
+                                    <span class="inline-flex px-2 py-0.5 rounded-full text-[10px] font-bold uppercase border ${label.style}">
+                                        ${label.text}
+                                    </span>
+                                </div>
+                                <p class="text-xs text-slate-500 font-medium truncate">${req.problem_description}</p>
+                                <div class="text-[10px] font-bold text-slate-400 flex gap-4">
+                                    <span>Para: ${req.student_name} (${req.academic_level})</span>
+                                    <span>Horario: ${req.preferred_schedule || 'Flexible'}</span>
+                                </div>
+                            </div>
+                            <span class="text-xs text-slate-400 font-bold whitespace-nowrap">${new Date(req.created_at).toLocaleDateString()}</span>
+                        </div>
+                    `;
+                });
+            }
+
+            container.innerHTML = `
+                <div class="max-w-4xl mx-auto grid grid-cols-1 lg:grid-cols-5 gap-8">
+                    <!-- Formulario de Solicitud -->
+                    <div class="lg:col-span-3 bg-white p-6 md:p-8 rounded-3xl border border-slate-100 shadow-sm space-y-6">
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-800 font-display">Solicitar nueva tutoría virtual</h3>
+                            <p class="text-xs text-slate-400 mt-1">Completa los datos y un tutor especialista se coordinará contigo de inmediato.</p>
+                        </div>
+                        
+                        <div id="tut-error" class="hidden p-3 bg-red-50 text-red-700 border border-red-200 rounded-xl text-xs"></div>
+                        <div id="tut-success" class="hidden p-3 bg-green-50 text-green-700 border border-green-200 rounded-xl text-xs"></div>
+
+                        <form id="form-tutoring" class="space-y-4" onsubmit="handleTutoringRequest(event)">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="tut-student" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Nombre del Alumno *</label>
+                                    <input id="tut-student" type="text" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-secondary text-sm bg-slate-50" value="${currentUser.full_name}">
+                                </div>
+                                <div>
+                                    <label for="tut-level" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Nivel Académico *</label>
+                                    <select id="tut-level" required class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-secondary text-sm bg-slate-50 cursor-pointer">
+                                        <option value="${currentUser.academic_level}">${currentUser.academic_level}</option>
+                                        <option value="Primaria">Primaria</option>
+                                        <option value="Secundaria">Secundaria</option>
+                                        <option value="Diversificado">Diversificado</option>
+                                        <option value="Universidad">Universidad</option>
+                                        <option value="Preparación para exámenes">Preparación para exámenes</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="tut-subject" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Materia a Reforzar *</label>
+                                    <input id="tut-subject" type="text" required placeholder="Ej. Álgebra lineal o Mecánica básica" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-secondary text-sm bg-slate-50">
+                                </div>
+                                <div>
+                                    <label for="tut-schedule" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Horario de Preferencia</label>
+                                    <input id="tut-schedule" type="text" placeholder="Ej. Lunes y Miércoles tardes" class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-secondary text-sm bg-slate-50">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="tut-desc" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Escribe la dificultad o tema principal *</label>
+                                <textarea id="tut-desc" rows="4" required placeholder="Por favor detalla qué temas necesitas repasar o si tienes algún examen programado..." class="w-full px-4 py-3 rounded-xl border border-slate-200 focus:ring-2 focus:ring-secondary text-sm bg-slate-50 resize-none"></textarea>
+                            </div>
+
+                            <button type="submit" id="btn-submit-tut" class="w-full bg-primary hover:bg-blue-900 text-white font-bold py-4 rounded-xl shadow-lg transition-transform transform hover:-translate-y-0.5 flex items-center justify-center gap-2 text-sm font-display">
+                                Solicitar Diagnóstico y Tutoría
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Listado de solicitudes del alumno -->
+                    <div class="lg:col-span-2 space-y-4">
+                        <h3 class="text-lg font-bold text-slate-800 font-display">Mis Solicitudes de Tutorías</h3>
+                        <div class="space-y-3 overflow-y-auto max-h-[500px]" id="tutoring-requests-history">
+                            ${requestsListHtml}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        async function handleTutoringRequest(e) {
+            e.preventDefault();
+            const student = document.getElementById('tut-student').value.trim();
+            const level = document.getElementById('tut-level').value;
+            const subject = document.getElementById('tut-subject').value.trim();
+            const schedule = document.getElementById('tut-schedule').value.trim();
+            const desc = document.getElementById('tut-desc').value.trim();
+            const btn = document.getElementById('btn-submit-tut');
+            const errDiv = document.getElementById('tut-error');
+            const successDiv = document.getElementById('tut-success');
+
+            errDiv.classList.add('hidden');
+            successDiv.classList.add('hidden');
+            btn.disabled = true;
+            btn.innerText = 'Enviando Solicitud...';
+
+            try {
+                const { error } = await supabase.from('tutoring_requests').insert({
+                    user_id: currentUser.id,
+                    student_name: student,
+                    academic_level: level,
+                    subject: subject,
+                    problem_description: desc,
+                    preferred_schedule: schedule,
+                    status: 'new'
+                });
+
+                if (error) throw error;
+
+                successDiv.innerText = '¡Solicitud registrada correctamente! Recibirás un mensaje de WhatsApp para coordinar.';
+                successDiv.classList.remove('hidden');
+                document.getElementById('form-tutoring').reset();
+                
+                // Recargar solicitudes
+                const mainArea = document.getElementById('main-content-area');
+                setTimeout(() => {
+                    renderTutoringView(mainArea);
+                }, 2000);
+            } catch (error) {
+                errDiv.innerText = error.message;
+                errDiv.classList.remove('hidden');
+                btn.disabled = false;
+                btn.innerText = 'Solicitar Diagnóstico y Tutoría';
+            }
+        }
+
+        // ---------------------------------------------------------------------
+        // VISTA: RECURSOS DESCARGABLES
+        // ---------------------------------------------------------------------
+
+        function renderRecursosView(container) {
+            // Filtrar contenidos de tipo descarga/download
+            const resources = loadedContentItems.filter(item => 
+                item.status === 'active' && 
+                (item.content_type === 'download' || item.document_url)
+            );
+
+            if (resources.length === 0) {
+                container.innerHTML = `
+                    <div class="py-16 text-center text-slate-400 italic text-sm">
+                        No hay recursos descargables habilitados en este momento.
+                    </div>
+                `;
+                return;
+            }
+
+            let cardsHtml = '';
+            resources.forEach(item => {
+                const isPremium = item.access_type === 'premium';
+                const hasAccess = !isPremium || currentUser.role === 'subscriber' || currentUser.role === 'admin';
+
+                cardsHtml += `
+                    <div class="bg-white rounded-3xl border border-slate-150 p-6 shadow-sm hover:shadow-md transition-shadow flex flex-col justify-between h-full relative group">
+                        <div class="space-y-3">
+                            <div class="flex items-center justify-between">
+                                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">${item.categories?.name || 'Guía'}</span>
+                                <span class="text-[10px] font-bold text-slate-500 bg-slate-100 px-2 py-0.5 rounded-full uppercase">${item.academic_level || 'General'}</span>
+                            </div>
+                            <h4 class="font-bold text-slate-800 text-base line-clamp-2">${item.title}</h4>
+                            <p class="text-xs text-slate-500 line-clamp-3 leading-normal">${item.description}</p>
+                        </div>
+                        
+                        <div class="pt-6">
+                            ${hasAccess ? `
+                                <a href="${item.document_url || '#'}" target="_blank" onclick="updateContentProgress(${item.id}, 'completed', 100)" class="w-full bg-primary hover:bg-blue-900 text-white font-bold py-2.5 rounded-xl text-xs flex items-center justify-center gap-1.5 transition-colors">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                                    Descargar PDF Gratis
+                                </a>
+                            ` : `
+                                <a href="#contenido/${item.slug}" class="w-full bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-200 font-bold py-2.5 rounded-xl text-xs flex items-center justify-center gap-1.5 transition-colors">
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zM9 11V7a3 3 0 016 0v4"></path></svg>
+                                    Desbloquear Descarga Premium
+                                </a>
+                            `}
+                        </div>
+                    </div>
+                `;
+            });
+
+            container.innerHTML = `
+                <div class="max-w-4xl mx-auto space-y-6">
+                    <p class="text-sm text-slate-500 leading-relaxed">
+                        Accede a plantillas imprimibles, checklists de preparación para pruebas y hojas de fórmulas diseñadas para reforzar tu estudio.
+                    </p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        ${cardsHtml}
+                    </div>
+                </div>
+            `;
+        }
+
+        // ---------------------------------------------------------------------
+        // VISTA: MI PROGRESO DETALLADO
+        // ---------------------------------------------------------------------
+
+        function renderProgresoView(container) {
+            const completed = loadedUserProgress.filter(p => p.status === 'completed');
+            const inProgress = loadedUserProgress.filter(p => p.status === 'in_progress');
+
+            let compListHtml = '';
+            if (completed.length === 0) {
+                compListHtml = '<p class="text-xs text-slate-400 italic">No has completado recursos académicos todavía.</p>';
+            } else {
+                completed.forEach(c => {
+                    const item = loadedContentItems.find(x => x.id === c.content_id);
+                    if (item) {
+                        compListHtml += `
+                            <div class="flex items-center justify-between p-3.5 border-b border-slate-100">
+                                <div>
+                                    <h5 class="font-bold text-slate-800 text-sm">${item.title}</h5>
+                                    <p class="text-[10px] text-slate-400 font-bold uppercase mt-0.5">${item.categories?.name || 'Recurso'}</p>
+                                </div>
+                                <span class="text-xs text-slate-400 font-bold">Completado: ${new Date(c.completed_at || c.last_accessed_at).toLocaleDateString()}</span>
+                            </div>
+                        `;
+                    }
+                });
+            }
+
+            let inProgListHtml = '';
+            if (inProgress.length === 0) {
+                inProgListHtml = '<p class="text-xs text-slate-400 italic">No tienes lecciones o cursos en curso.</p>';
+            } else {
+                inProgress.forEach(c => {
+                    const item = loadedContentItems.find(x => x.id === c.content_id);
+                    if (item) {
+                        inProgListHtml += `
+                            <div class="p-4 border-b border-slate-100 space-y-2">
+                                <div class="flex justify-between items-center">
+                                    <div>
+                                        <h5 class="font-bold text-slate-800 text-sm">${item.title}</h5>
+                                        <p class="text-[10px] text-slate-400 font-bold uppercase mt-0.5">${item.categories?.name || 'Recurso'}</p>
+                                    </div>
+                                    <a href="#contenido/${item.slug}" class="text-xs font-bold text-primary hover:underline">Continuar Lección</a>
+                                </div>
+                                <div class="w-full bg-slate-100 h-2 rounded-full overflow-hidden">
+                                    <div class="bg-primary h-full" style="width: ${c.progress_percentage}%"></div>
+                                </div>
+                            </div>
+                        `;
+                    }
+                });
+            }
+
+            container.innerHTML = `
+                <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- En Progreso -->
+                    <div class="bg-white p-6 md:p-8 rounded-3xl border border-slate-100 shadow-sm space-y-6">
+                        <h3 class="text-lg font-bold text-slate-800 font-display flex items-center gap-2">
+                            <span class="w-3 h-3 rounded-full bg-primary"></span>
+                            Recursos en Progreso
+                        </h3>
+                        <div class="space-y-2">
+                            ${inProgListHtml}
+                        </div>
+                    </div>
+
+                    <!-- Completados -->
+                    <div class="bg-white p-6 md:p-8 rounded-3xl border border-slate-100 shadow-sm space-y-6">
+                        <h3 class="text-lg font-bold text-slate-800 font-display flex items-center gap-2">
+                            <span class="w-3 h-3 rounded-full bg-secondary"></span>
+                            Recursos Completados
+                        </h3>
+                        <div class="space-y-2">
+                            ${compListHtml}
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // ---------------------------------------------------------------------
+        // VISTA: MI CUENTA / PERFIL
+        // ---------------------------------------------------------------------
+
+        function renderCuentaView(container) {
+            container.innerHTML = `
+                <div class="max-w-xl mx-auto bg-white p-6 md:p-8 rounded-3xl border border-slate-100 shadow-sm space-y-8">
+                    <div>
+                        <h3 class="text-xl font-bold text-slate-800 font-display">Ajustes de mi Perfil</h3>
+                        <p class="text-xs text-slate-400 mt-1">Administra tus datos de contacto y nivel de estudio.</p>
+                    </div>
+
+                    <div id="acc-error" class="hidden p-3 bg-red-50 text-red-700 border border-red-200 rounded-xl text-xs"></div>
+                    <div id="acc-success" class="hidden p-3 bg-green-50 text-green-700 border border-green-200 rounded-xl text-xs"></div>
+
+                    <form id="form-account-update" class="space-y-4" onsubmit="handleAccountUpdate(event)">
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Nombre Completo *</label>
+                            <input id="acc-name" type="text" required class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm" value="${currentUser.full_name}">
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Correo Electrónico (Solo Lectura)</label>
+                            <input type="email" disabled class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm bg-slate-100 text-slate-500" value="${currentUser.email}">
+                        </div>
+
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">WhatsApp / Teléfono *</label>
+                                <input id="acc-phone" type="tel" required class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm" value="${currentUser.phone || ''}">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Nivel Académico *</label>
+                                <select id="acc-level" required class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm bg-slate-50">
+                                    <option value="${currentUser.academic_level}">${currentUser.academic_level}</option>
+                                    <option value="Primaria">Primaria</option>
+                                    <option value="Secundaria">Secundaria</option>
+                                    <option value="Diversificado">Diversificado</option>
+                                    <option value="Universidad">Universidad</option>
+                                    <option value="Preparación para exámenes">Preparación para exámenes</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Interés Principal *</label>
+                            <select id="acc-interest" required class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm bg-slate-50">
+                                <option value="${currentUser.main_interest}">${currentUser.main_interest}</option>
+                                <option value="Refuerzo en matemática">Refuerzo en matemática</option>
+                                <option value="Refuerzo en física">Refuerzo en física</option>
+                                <option value="Refuerzo en estadística">Refuerzo en estadística</option>
+                                <option value="Preparación para exámenes">Preparación para exámenes</option>
+                                <option value="Hábitos de estudio">Hábitos de estudio</option>
+                            </select>
+                        </div>
+
+                        <button type="submit" id="btn-update-acc" class="w-full bg-primary hover:bg-blue-900 text-white font-bold py-4 rounded-xl shadow-lg transition-transform transform hover:-translate-y-0.5 flex items-center justify-center text-sm font-display">
+                            Guardar Cambios de Perfil
+                        </button>
+                    </form>
+
+                    <hr class="border-slate-100">
+
+                    <!-- Cambio de Contraseña -->
+                    <form id="form-password-update" class="space-y-4" onsubmit="handlePasswordUpdate(event)">
+                        <div>
+                            <h4 class="font-bold text-slate-800 text-base">Actualizar Contraseña</h4>
+                            <p class="text-[10px] text-slate-400 mt-0.5">Escribe una contraseña segura de al menos 6 caracteres.</p>
+                        </div>
+                        
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="acc-pass" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Nueva Contraseña</label>
+                                <input id="acc-pass" type="password" required minlength="6" class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm">
+                            </div>
+                            <div>
+                                <label for="acc-pass-conf" class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Confirmar Contraseña</label>
+                                <input id="acc-pass-conf" type="password" required minlength="6" class="w-full px-4 py-3 rounded-xl border border-slate-200 text-sm">
+                            </div>
+                        </div>
+
+                        <button type="submit" id="btn-update-pass" class="w-full bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold py-3.5 rounded-xl border border-slate-200 text-sm flex items-center justify-center">
+                            Cambiar Contraseña de Forma Segura
+                        </button>
+                    </form>
+                </div>
+            `;
+        }
+
+        async function handleAccountUpdate(e) {
+            e.preventDefault();
+            const name = document.getElementById('acc-name').value.trim();
+            const phone = document.getElementById('acc-phone').value.trim();
+            const level = document.getElementById('acc-level').value;
+            const interest = document.getElementById('acc-interest').value;
+            const btn = document.getElementById('btn-update-acc');
+            const errDiv = document.getElementById('acc-error');
+            const successDiv = document.getElementById('acc-success');
+
+            errDiv.classList.add('hidden');
+            successDiv.classList.add('hidden');
+            btn.disabled = true;
+
+            try {
+                // 1. Guardar en public.users
+                const { error: dbError } = await supabase
+                    .from('users')
+                    .update({
+                        full_name: name,
+                        phone: phone,
+                        academic_level: level,
+                        main_interest: interest,
+                        updated_at: new Date().toISOString()
+                    })
+                    .eq('id', currentUser.id);
+
+                if (dbError) throw dbError;
+
+                // 2. Guardar en metadatos de Supabase Auth
+                const { error: authError } = await supabase.auth.updateUser({
+                    data: {
+                        full_name: name,
+                        phone: phone,
+                        academic_level: level,
+                        main_interest: interest
+                    }
+                });
+
+                if (authError) throw authError;
+
+                successDiv.innerText = '¡Perfil actualizado de forma exitosa!';
+                successDiv.classList.remove('hidden');
+                
+                // Recargar perfil
+                const { data } = await supabase.from('users').select('*').eq('id', currentUser.id).single();
+                if (data) currentUser = data;
+                
+                // Sincronizar sidebar
+                document.getElementById('sidebar-user-name').innerText = currentUser.full_name;
+            } catch (error) {
+                errDiv.innerText = error.message;
+                errDiv.classList.remove('hidden');
+            } finally {
+                btn.disabled = false;
+            }
+        }
+
+        async function handlePasswordUpdate(e) {
+            e.preventDefault();
+            const pass = document.getElementById('acc-pass').value;
+            const passConf = document.getElementById('acc-pass-conf').value;
+            const btn = document.getElementById('btn-update-pass');
+            const errDiv = document.getElementById('acc-error');
+            const successDiv = document.getElementById('acc-success');
+
+            errDiv.classList.add('hidden');
+            successDiv.classList.add('hidden');
+
+            if (pass !== passConf) {
+                errDiv.innerText = 'Las contraseñas de actualización no coinciden.';
+                errDiv.classList.remove('hidden');
+                return;
+            }
+
+            btn.disabled = true;
+
+            try {
+                const { error } = await supabase.auth.updateUser({ password: pass });
+                if (error) throw error;
+                successDiv.innerText = '¡Contraseña restablecida de forma exitosa!';
+                successDiv.classList.remove('hidden');
+                document.getElementById('form-password-update').reset();
+            } catch (error) {
+                errDiv.innerText = error.message;
+                errDiv.classList.remove('hidden');
+            } finally {
+                btn.disabled = false;
+            }
+        }
+
+        // ---------------------------------------------------------------------
+        // VISTA: SOPORTE TÉCNICO Y COMUNICACIÓN
+        // ---------------------------------------------------------------------
+
+        function renderSoporteView(container) {
+            container.innerHTML = `
+                <div class="max-w-4xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <!-- Canales de comunicación directa -->
+                    <div class="bg-white p-6 md:p-8 rounded-3xl border border-slate-100 shadow-sm space-y-6">
+                        <div>
+                            <h3 class="text-xl font-bold text-slate-800 font-display">¿Cómo te podemos ayudar hoy?</h3>
+                            <p class="text-xs text-slate-400 mt-1">Conéctate directamente con nuestro equipo de operaciones.</p>
+                        </div>
+
+                        <div class="space-y-4">
+                            <!-- WhatsApp -->
+                            <a href="https://wa.me/50257152096?text=Hola,%20soy%20miembro%20del%20portal%20del%20Centro%20de%20Tutorías%20y%20necesito%20soporte" target="_blank" class="flex items-center gap-4 bg-emerald-50 hover:bg-emerald-100 p-4 rounded-2xl border border-emerald-100 transition-colors">
+                                <div class="bg-secondary text-white w-12 h-12 rounded-xl flex items-center justify-center text-xl font-bold">
+                                    💬
+                                </div>
+                                <div class="min-w-0 flex-1">
+                                    <p class="font-bold text-emerald-800 text-sm md:text-base">Soporte por WhatsApp</p>
+                                    <span class="text-xs text-emerald-600 block mt-0.5">Respuesta inmediata - +502 5715 2096</span>
+                                </div>
+                            </a>
+
+                            <!-- Correo -->
+                            <a href="mailto:operaciones@centrodetutorias.com" class="flex items-center gap-4 bg-blue-50 hover:bg-blue-100 p-4 rounded-2xl border border-blue-100 transition-colors">
+                                <div class="bg-primary text-white w-12 h-12 rounded-xl flex items-center justify-center text-xl font-bold">
+                                    📧
+                                </div>
+                                <div class="min-w-0 flex-1">
+                                    <p class="font-bold text-primary text-sm md:text-base">Correo Operativo</p>
+                                    <span class="text-xs text-blue-600 block mt-0.5">operaciones@centrodetutorias.com</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Planes de Membresías informativas -->
+                    <div class="bg-gradient-to-tr from-darkNavy to-sidebarBg p-6 md:p-8 rounded-3xl text-white space-y-6">
+                        <div>
+                            <h3 class="text-lg font-bold font-display text-white">Suscripción Premium CEDETU</h3>
+                            <p class="text-xs text-slate-400 mt-1">Lleva el estudio de tu hijo al siguiente nivel académico.</p>
+                        </div>
+                        <ul class="space-y-3.5 text-xs text-slate-300">
+                            <li class="flex items-center gap-2">
+                                <span class="text-secondary text-base">✓</span> Acceso a la totalidad del material premium y guías resueltas en video.
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="text-secondary text-base">✓</span> Prioridad absoluta para agendar tutorías virtuales 1 a 1 semanales.
+                            </li>
+                            <li class="flex items-center gap-2">
+                                <span class="text-secondary text-base">✓</span> Consultas directas de dudas por WhatsApp 24/7.
+                            </li>
+                        </ul>
+                        <div class="pt-6 border-t border-slate-800 text-center">
+                            <a href="https://wa.me/50257152096?text=Hola,%20quiero%20conocer%20los%20planes%20y%20tarifas%20de%20membresía%20premium" target="_blank" class="w-full inline-block bg-amber-500 hover:bg-amber-600 text-white font-bold py-3.5 rounded-xl shadow-md text-sm transition-colors text-center font-display">
+                                Solicitar Cotización de Planes
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // ---------------------------------------------------------------------
+        // VISTA: PANEL DE ADMINISTRACIÓN COMPLETO (VISTAS CRUD E INTEGRACIONES)
+        // ---------------------------------------------------------------------
+
+        let currentAdminTab = 'users'; // users, content, requests
+
+        async function renderAdminView(container, hash) {
+            // Analizar sub-ruta admin
+            if (hash === '#admin/content') currentAdminTab = 'content';
+            else if (hash === '#admin/requests') currentAdminTab = 'requests';
+            else currentAdminTab = 'users';
+
+            // Menú de sub-pestañas
+            let navTabs = `
+                <div class="space-y-6">
+                    <div class="flex border-b border-slate-200">
+                        <button onclick="window.location.hash = '#admin/users'" class="flex-1 py-4 font-bold text-xs uppercase tracking-wider text-center ${currentAdminTab === 'users' ? 'active-admin-nav' : 'text-slate-500 hover:text-slate-800'}">
+                            👥 Usuarios (${adminUsers.length})
+                        </button>
+                        <button onclick="window.location.hash = '#admin/content'" class="flex-1 py-4 font-bold text-xs uppercase tracking-wider text-center ${currentAdminTab === 'content' ? 'active-admin-nav' : 'text-slate-500 hover:text-slate-800'}">
+                            📝 Contenidos (${loadedContentItems.length})
+                        </button>
+                        <button onclick="window.location.hash = '#admin/requests'" class="flex-1 py-4 font-bold text-xs uppercase tracking-wider text-center ${currentAdminTab === 'requests' ? 'active-admin-nav' : 'text-slate-500 hover:text-slate-800'}">
+                            📅 Solicitudes de Tutorías (${adminRequests.length})
+                        </button>
+                    </div>
+                    
+                    <div id="admin-table-container">
+                        <div class="flex justify-center py-12">
+                            <span class="animate-spin rounded-full h-8 w-8 border-t-2 border-primary"></span>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            container.innerHTML = navTabs;
+            
+            // Cargar datos asíncronos por pestaña
+            if (currentAdminTab === 'users') {
+                await loadAdminUsers();
+                renderAdminUsersTab();
+            } else if (currentAdminTab === 'content') {
+                renderAdminContentTab();
+            } else if (currentAdminTab === 'requests') {
+                await loadAdminRequests();
+                renderAdminRequestsTab();
+            }
+        }
+
+        async function loadAdminUsers() {
+            const { data, error } = await supabase.from('users').select('*').order('created_at', { ascending: false });
+            if (!error && data) {
+                adminUsers = data;
+                // Actualizar cantidad en pestaña
+                routeApp; // No loops
+            }
+        }
+
+        async function loadAdminRequests() {
+            const { data, error } = await supabase.from('tutoring_requests').select('*, users(full_name, email, phone)').order('created_at', { ascending: false });
+            if (!error && data) adminRequests = data;
+        }
+
+        // --- SUB-PESTAÑA 1: GESTIÓN DE USUARIOS ---
+        function renderAdminUsersTab() {
+            const tableDiv = document.getElementById('admin-table-container');
+            if (!tableDiv) return;
+
+            let rows = '';
+            adminUsers.forEach(u => {
+                rows += `
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-bold text-slate-800">${u.full_name}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-500">${u.email}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-slate-500 font-medium">${u.phone || 'N/D'}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-xs text-slate-500 uppercase font-bold">${u.academic_level || 'General'}</td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <select onchange="changeUserRole('${u.id}', this.value)" class="px-3 py-1.5 border border-slate-200 rounded-lg text-xs bg-white focus:ring-2 focus:ring-secondary cursor-pointer font-semibold">
+                                <option value="free_user" ${u.role === 'free_user' ? 'selected' : ''}>free_user</option>
+                                <option value="subscriber" ${u.role === 'subscriber' ? 'selected' : ''}>subscriber</option>
+                                <option value="admin" ${u.role === 'admin' ? 'selected' : ''}>admin</option>
+                            </select>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <select onchange="changeUserSubscription('${u.id}', this.value)" class="px-3 py-1.5 border border-slate-200 rounded-lg text-xs bg-white focus:ring-2 focus:ring-secondary cursor-pointer font-semibold">
+                                <option value="inactive" ${u.subscription_status === 'inactive' ? 'selected' : ''}>inactive</option>
+                                <option value="active" ${u.subscription_status === 'active' ? 'selected' : ''}>active</option>
+                                <option value="trial" ${u.subscription_status === 'trial' ? 'selected' : ''}>trial</option>
+                                <option value="cancelled" ${u.subscription_status === 'cancelled' ? 'selected' : ''}>cancelled</option>
+                                <option value="expired" ${u.subscription_status === 'expired' ? 'selected' : ''}>expired</option>
+                            </select>
+                        </td>
+                    </tr>
+                `;
+            });
+
+            tableDiv.innerHTML = `
+                <div class="bg-white rounded-3xl border border-slate-150 shadow-sm overflow-hidden overflow-x-auto">
+                    <table class="min-w-full divide-y divide-slate-150">
+                        <thead class="bg-slate-50">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-[10px] font-bold text-slate-500 uppercase tracking-widest">Nombre</th>
+                                <th class="px-6 py-3 text-left text-[10px] font-bold text-slate-500 uppercase tracking-widest">Email</th>
+                                <th class="px-6 py-3 text-left text-[10px] font-bold text-slate-500 uppercase tracking-widest">WhatsApp</th>
+                                <th class="px-6 py-3 text-left text-[10px] font-bold text-slate-500 uppercase tracking-widest">Grado</th>
+                                <th class="px-6 py-3 text-left text-[10px] font-bold text-slate-500 uppercase tracking-widest">Rol</th>
+                                <th class="px-6 py-3 text-left text-[10px] font-bold text-slate-500 uppercase tracking-widest">Membresía</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100 bg-white">
+                            ${rows}
+                        </tbody>
+                    </table>
+                </div>
+            `;
+        }
+
+        async function changeUserRole(userId, newRole) {
+            const { error } = await supabase.from('users').update({ role: newRole }).eq('id', userId);
+            if (!error) alert('Rol actualizado correctamente en base de datos.');
+            else alert('Error: ' + error.message);
+        }
+
+        async function changeUserSubscription(userId, newStatus) {
+            // Para cambiar estado, creamos o actualizamos en la tabla subscriptions
+            const { error } = await supabase.from('subscriptions').insert({
+                user_id: userId,
+                plan_name: 'Premium Manual Update',
+                status: newStatus,
+                start_date: new Date().toISOString(),
+                payment_provider: 'Admin Dashboard Override'
+            });
+
+            if (!error) {
+                alert('Membresía del cliente modificada correctamente. Se han actualizado los permisos de acceso.');
+                // Recargar
+                window.location.reload();
+            } else {
+                alert('Error al actualizar suscripción: ' + error.message);
+            }
+        }
+
+        // --- SUB-PESTAÑA 2: GESTIÓN DE CONTENIDOS (CRUD) ---
+        function renderAdminContentTab() {
+            const tableDiv = document.getElementById('admin-table-container');
+            if (!tableDiv) return;
+
+            let rows = '';
+            loadedContentItems.forEach(c => {
+                rows += `
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-bold text-slate-800 truncate max-w-xs">${c.title}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-xs font-bold text-slate-500 uppercase">${c.categories?.name || 'Recurso'}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-xs text-slate-500 uppercase font-semibold">${c.content_type}</td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <span class="inline-flex px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider ${
+                                c.access_type === 'premium' ? 'bg-amber-500/10 text-amber-800' : 'bg-emerald-500/10 text-emerald-800'
+                            }">
+                                ${c.access_type}
+                            </span>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-xs font-bold text-slate-600">${c.status === 'active' ? '🟢 Activo' : '🔴 Oculto'}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-right text-xs font-bold">
+                            <button onclick="openEditContentModal(${c.id})" class="text-primary hover:underline mr-4">Editar</button>
+                            <button onclick="deleteContentItem(${c.id})" class="text-red-600 hover:underline">Eliminar</button>
+                        </td>
+                    </tr>
+                `;
+            });
+
+            tableDiv.innerHTML = `
+                <div class="flex justify-between items-center mb-4">
+                    <p class="text-xs text-slate-500">Crea o edita guías, cuestionarios y cursos de matemáticas y física en vivo.</p>
+                    <button onclick="openCreateContentModal()" class="bg-secondary hover:bg-emerald-600 text-white font-bold px-4 py-2 rounded-xl text-xs flex items-center gap-1 shadow-md">
+                        + Agregar Recurso
+                    </button>
+                </div>
+                <div class="bg-white rounded-3xl border border-slate-150 shadow-sm overflow-hidden overflow-x-auto">
+                    <table class="min-w-full divide-y divide-slate-150">
+                        <thead class="bg-slate-50">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-[10px] font-bold text-slate-500 uppercase tracking-widest">Recurso</th>
+                                <th class="px-6 py-3 text-left text-[10px] font-bold text-slate-500 uppercase tracking-widest">Categoría</th>
+                                <th class="px-6 py-3 text-left text-[10px] font-bold text-slate-500 uppercase tracking-widest">Tipo</th>
+                                <th class="px-6 py-3 text-left text-[10px] font-bold text-slate-500 uppercase tracking-widest">Acceso</th>
+                                <th class="px-6 py-3 text-left text-[10px] font-bold text-slate-500 uppercase tracking-widest">Estatus</th>
+                                <th class="px-6 py-3"></th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100 bg-white">
+                            ${rows}
+                        </tbody>
+                    </table>
+                </div>
+            `;
+        }
+
+        // CONTROLES DE FORMULARIO CRUD MODAL
+        function openCreateContentModal() {
+            document.getElementById('form-content-item').reset();
+            document.getElementById('edit-content-id').value = '';
+            document.getElementById('modal-content-title').innerText = 'Crear Nuevo Recurso';
+            
+            // Cargar selector de categorías
+            const select = document.getElementById('cont-category');
+            select.innerHTML = loadedCategories.map(c => `<option value="${c.id}">${c.name}</option>`).join('');
+            
+            // Auto-generación de slug
+            const titleInput = document.getElementById('cont-title');
+            const slugInput = document.getElementById('cont-slug');
+            titleInput.oninput = () => {
+                slugInput.value = titleInput.value.toLowerCase()
+                    .replace(/[^a-z0-9\s-]/g, '')
+                    .replace(/\s+/g, '-')
+                    .replace(/-+/g, '-');
+            };
+
+            document.getElementById('content-modal').classList.remove('hidden');
+        }
+
+        function openEditContentModal(itemId) {
+            const item = loadedContentItems.find(c => c.id === itemId);
+            if (!item) return;
+
+            document.getElementById('edit-content-id').value = item.id;
+            document.getElementById('modal-content-title').innerText = 'Editar Recurso Académico';
+            
+            document.getElementById('cont-title').value = item.title;
+            document.getElementById('cont-slug').value = item.slug;
+            document.getElementById('cont-desc').value = item.description;
+            document.getElementById('cont-level').value = item.academic_level || 'Secundaria';
+            document.getElementById('cont-type').value = item.content_type;
+            document.getElementById('cont-access').value = item.access_type;
+            document.getElementById('cont-status').value = item.status;
+            document.getElementById('cont-thumbnail').value = item.thumbnail_url || '';
+            document.getElementById('cont-video').value = item.video_url || '';
+            document.getElementById('cont-document').value = item.document_url || '';
+            document.getElementById('cont-body').value = item.body_content || '';
+
+            // Categorías
+            const select = document.getElementById('cont-category');
+            select.innerHTML = loadedCategories.map(c => `<option value="${c.id}" ${c.id === item.category_id ? 'selected' : ''}>${c.name}</option>`).join('');
+
+            // Deshabilitar slug auto
+            document.getElementById('cont-title').oninput = null;
+
+            document.getElementById('content-modal').classList.remove('hidden');
+        }
+
+        function closeContentModal() {
+            document.getElementById('content-modal').classList.add('hidden');
+        }
+
+        // Guardar cambios (CREATE y UPDATE)
+        document.getElementById('form-content-item').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const id = document.getElementById('edit-content-id').value;
+            const title = document.getElementById('cont-title').value.trim();
+            const slug = document.getElementById('cont-slug').value.trim();
+            const desc = document.getElementById('cont-desc').value.trim();
+            const catId = document.getElementById('cont-category').value;
+            const level = document.getElementById('cont-level').value;
+            const type = document.getElementById('cont-type').value;
+            const access = document.getElementById('cont-access').value;
+            const status = document.getElementById('cont-status').value;
+            const thumb = document.getElementById('cont-thumbnail').value.trim() || null;
+            const video = document.getElementById('cont-video').value.trim() || null;
+            const doc = document.getElementById('cont-document').value.trim() || null;
+            const body = document.getElementById('cont-body').value.trim() || null;
+            const btn = document.getElementById('btn-save-content');
+
+            btn.disabled = true;
+            btn.innerText = 'Guardando cambios...';
+
+            const payload = {
+                title, slug, description: desc, category_id: catId, academic_level: level,
+                content_type: type, access_type: access, status, thumbnail_url: thumb,
+                video_url: video, document_url: doc, body_content: body,
+                updated_at: new Date().toISOString()
+            };
+
+            try {
+                if (id) {
+                    // Update
+                    const { error } = await supabase.from('content_items').update(payload).eq('id', id);
+                    if (error) throw error;
+                } else {
+                    // Insert
+                    const { error } = await supabase.from('content_items').insert(payload);
+                    if (error) throw error;
+                }
+
+                alert('Recurso académico guardado correctamente.');
+                closeContentModal();
+                // Recargar catálogo
+                await loadContentItems();
+                renderAdminContentTab();
+            } catch (error) {
+                alert('Error al guardar recurso: ' + error.message);
+            } finally {
+                btn.disabled = false;
+                btn.innerText = 'Guardar Contenido';
+            }
+        });
+
+        async function deleteContentItem(itemId) {
+            if (!confirm('¿Estás 100% seguro de que deseas eliminar este contenido permanentemente? Esta acción borrará los registros de progreso de los estudiantes.')) return;
+
+            const { error } = await supabase.from('content_items').delete().eq('id', itemId);
+            if (!error) {
+                alert('Recurso académico eliminado correctamente.');
+                await loadContentItems();
+                renderAdminContentTab();
+            } else {
+                alert('Error al eliminar: ' + error.message);
+            }
+        }
+
+        // --- SUB-PESTAÑA 3: GESTIÓN DE SOLICITUDES DE TUTORÍAS ---
+        function renderAdminRequestsTab() {
+            const tableDiv = document.getElementById('admin-table-container');
+            if (!tableDiv) return;
+
+            if (adminRequests.length === 0) {
+                tableDiv.innerHTML = `
+                    <div class="py-16 text-center text-slate-400 italic">
+                        No hay solicitudes de tutorías registradas.
+                    </div>
+                `;
+                return;
+            }
+
+            let rows = '';
+            adminRequests.forEach(r => {
+                rows += `
+                    <tr class="hover:bg-slate-50 transition-colors">
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-bold text-slate-800">${r.student_name}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-xs text-slate-500 uppercase font-semibold">${r.academic_level}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-bold text-primary">${r.subject}</td>
+                        <td class="px-6 py-4 text-xs text-slate-500 max-w-xs truncate">${r.problem_description}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-xs text-slate-500 font-medium">${r.users?.phone || 'Sin número'}</td>
+                        <td class="px-6 py-4 whitespace-nowrap">
+                            <select onchange="changeTutoringStatus('${r.id}', this.value)" class="px-3 py-1.5 border border-slate-200 rounded-lg text-xs bg-white focus:ring-2 focus:ring-secondary font-bold cursor-pointer">
+                                <option value="new" ${r.status === 'new' ? 'selected' : ''}>new</option>
+                                <option value="contacted" ${r.status === 'contacted' ? 'selected' : ''}>contacted</option>
+                                <option value="scheduled" ${r.status === 'scheduled' ? 'selected' : ''}>scheduled</option>
+                                <option value="completed" ${r.status === 'completed' ? 'selected' : ''}>completed</option>
+                                <option value="cancelled" ${r.status === 'cancelled' ? 'selected' : ''}>cancelled</option>
+                            </select>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-xs font-bold text-slate-400 text-right">${new Date(r.created_at).toLocaleDateString()}</td>
+                    </tr>
+                `;
+            });
+
+            tableDiv.innerHTML = `
+                <div class="bg-white rounded-3xl border border-slate-150 shadow-sm overflow-hidden overflow-x-auto">
+                    <table class="min-w-full divide-y divide-slate-150">
+                        <thead class="bg-slate-50">
+                            <tr>
+                                <th class="px-6 py-3 text-left text-[10px] font-bold text-slate-500 uppercase tracking-widest">Alumno</th>
+                                <th class="px-6 py-3 text-left text-[10px] font-bold text-slate-500 uppercase tracking-widest">Nivel</th>
+                                <th class="px-6 py-3 text-left text-[10px] font-bold text-slate-500 uppercase tracking-widest">Materia</th>
+                                <th class="px-6 py-3 text-left text-[10px] font-bold text-slate-500 uppercase tracking-widest">Detalle</th>
+                                <th class="px-6 py-3 text-left text-[10px] font-bold text-slate-500 uppercase tracking-widest">WhatsApp</th>
+                                <th class="px-6 py-3 text-left text-[10px] font-bold text-slate-500 uppercase tracking-widest">Estado</th>
+                                <th class="px-6 py-3"></th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100 bg-white">
+                            ${rows}
+                        </tbody>
+                    </table>
+                </div>
+            `;
+        }
+
+        async function changeTutoringStatus(reqId, newStatus) {
+            const { error } = await supabase.from('tutoring_requests').update({ status: newStatus }).eq('id', reqId);
+            if (!error) {
+                alert('Estado de tutoría actualizado correctamente. Se ha notificado internamente al sistema.');
+                await loadAdminRequests();
+                renderAdminRequestsTab();
+            } else {
+                alert('Error al actualizar tutoría: ' + error.message);
+            }
+        }
+    </script>
+</body>
+</html>

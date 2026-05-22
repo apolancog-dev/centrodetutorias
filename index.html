@@ -757,40 +757,21 @@
             const authSuccess = document.getElementById('auth-success');
             const accountEmail = document.getElementById('account-email');
 
-            // Toggle Modals
-            authBtn.addEventListener('click', () => authModal.classList.add('active'));
-            accountBtn.addEventListener('click', () => accountModal.classList.add('active'));
-            document.getElementById('close-auth-modal').addEventListener('click', () => authModal.classList.remove('active'));
-            document.getElementById('close-account-modal').addEventListener('click', () => accountModal.classList.remove('active'));
-
-            // Tabs Logic
-            function setAuthMode(register) {
-                isRegisterMode = register;
-                authError.classList.add('hidden');
-                authSuccess.classList.add('hidden');
-                if (register) {
-                    tabRegister.classList.add('border-b-2', 'border-primary', 'bg-gray-50/50', 'text-primary');
-                    tabRegister.classList.remove('text-gray-500');
-                    tabLogin.classList.remove('border-b-2', 'border-primary', 'bg-gray-50/50', 'text-primary');
-                    tabLogin.classList.add('text-gray-500');
-                    authSubmitBtn.innerText = 'Crear Cuenta';
-                } else {
-                    tabLogin.classList.add('border-b-2', 'border-primary', 'bg-gray-50/50', 'text-primary');
-                    tabLogin.classList.remove('text-gray-500');
-                    tabRegister.classList.remove('border-b-2', 'border-primary', 'bg-gray-50/50', 'text-primary');
-                    tabRegister.classList.add('text-gray-500');
-                    authSubmitBtn.innerText = 'Entrar';
-                }
-            }
-            tabLogin.addEventListener('click', () => setAuthMode(false));
-            tabRegister.addEventListener('click', () => setAuthMode(true));
+            // Redirects to Dashboard
+            authBtn.addEventListener('click', () => {
+                window.location.href = 'dashboard.html#login';
+            });
+            accountBtn.addEventListener('click', () => {
+                window.location.href = 'dashboard.html#bienvenida';
+            });
 
             // UI Update by Session
             function updateUI(session) {
                 if (session) {
                     authBtn.classList.add('hidden');
                     accountBtn.classList.remove('hidden');
-                    accountEmail.innerText = session.user.email;
+                    accountBtn.innerText = 'Ir al Panel';
+                    if (accountEmail) accountEmail.innerText = session.user.email;
                     authModal.classList.remove('active');
                 } else {
                     authBtn.classList.remove('hidden');
