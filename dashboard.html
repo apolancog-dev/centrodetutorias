@@ -139,9 +139,10 @@
         }
         
         .active-nav {
-            background-color: rgba(255, 255, 255, 0.08);
+            background-color: rgba(255, 255, 255, 0.1);
             border-left: 4px solid #10B981;
-            color: #F8FAFC !important;
+            color: #FFFFFF !important;
+            font-weight: 700;
         }
         .active-admin-nav {
             background-color: #E2E8F0;
@@ -341,7 +342,7 @@
     <div id="portal-container" class="hidden h-full flex flex-col md:flex-row overflow-hidden bg-slate-50">
         
         <!-- SIDEBAR DE NAVEGACIÓN -->
-        <aside id="sidebar" class="w-full md:w-64 bg-sidebarBg text-slate-300 flex flex-col flex-shrink-0 z-40 transition-transform md:translate-x-0 relative border-r border-slate-800">
+        <aside id="sidebar" class="w-full md:w-64 bg-sidebarBg text-slate-200 flex flex-col flex-shrink-0 z-40 transition-transform md:translate-x-0 relative border-r border-slate-800">
             <!-- Header Sidebar -->
             <div class="h-20 flex items-center justify-between px-6 border-b border-slate-800">
                 <a href="#" class="flex items-center gap-2.5 font-extrabold text-white text-lg font-display">
@@ -355,60 +356,60 @@
 
             <!-- Navegación General -->
             <nav class="flex-1 px-4 py-6 space-y-1.5 overflow-y-auto" aria-label="Menú del Portal">
-                <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest px-3 mb-2">Mi Espacio</p>
+                <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest px-3 mb-2">Mi Espacio</p>
                 
-                <a href="#bienvenida" class="nav-item flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-semibold hover:bg-white/5 hover:text-white transition-all-300">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+                <a href="#bienvenida" class="nav-item flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-semibold text-slate-200 hover:bg-white/10 hover:text-white transition-all-300">
+                    <svg class="w-5 h-5 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
                     <span>Bienvenida</span>
                 </a>
                 
-                <a href="#contenidos" class="nav-item flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-semibold hover:bg-white/5 hover:text-white transition-all-300">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
+                <a href="#contenidos" class="nav-item flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-semibold text-slate-200 hover:bg-white/10 hover:text-white transition-all-300">
+                    <svg class="w-5 h-5 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
                     <span>Mis Contenidos</span>
                 </a>
                 
-                <a href="#contenidos/gratuitos" class="nav-item flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-semibold hover:bg-white/5 hover:text-white transition-all-300">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"></path></svg>
+                <a href="#contenidos/gratuitos" class="nav-item flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-semibold text-slate-200 hover:bg-white/10 hover:text-white transition-all-300">
+                    <svg class="w-5 h-5 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"></path></svg>
                     <span>Catálogo Gratuito</span>
                 </a>
                 
-                <a href="#contenidos/premium" class="nav-item flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-semibold hover:bg-white/5 hover:text-white transition-all-300">
-                    <svg class="w-5 h-5 text-amber-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
+                <a href="#contenidos/premium" class="nav-item flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-semibold text-slate-200 hover:bg-white/10 hover:text-white transition-all-300">
+                    <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
                     <span>Contenido Premium</span>
                 </a>
                 
-                <a href="#mis-tutorias" class="nav-item flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-semibold hover:bg-white/5 hover:text-white transition-all-300">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                <a href="#mis-tutorias" class="nav-item flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-semibold text-slate-200 hover:bg-white/10 hover:text-white transition-all-300">
+                    <svg class="w-5 h-5 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
                     <span>Mis Tutorías</span>
                 </a>
                 
-                <a href="#recursos" class="nav-item flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-semibold hover:bg-white/5 hover:text-white transition-all-300">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
+                <a href="#recursos" class="nav-item flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-semibold text-slate-200 hover:bg-white/10 hover:text-white transition-all-300">
+                    <svg class="w-5 h-5 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
                     <span>Recursos Descargables</span>
                 </a>
 
-                <a href="#progreso" class="nav-item flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-semibold hover:bg-white/5 hover:text-white transition-all-300">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 002 2h2a2 2 0 002-2z"></path></svg>
+                <a href="#progreso" class="nav-item flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-semibold text-slate-200 hover:bg-white/10 hover:text-white transition-all-300">
+                    <svg class="w-5 h-5 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 002 2h2a2 2 0 002-2z"></path></svg>
                     <span>Mi Progreso</span>
                 </a>
 
                 <div class="pt-6">
-                    <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest px-3 mb-2">Ajustes y Ayuda</p>
+                    <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest px-3 mb-2">Ajustes y Ayuda</p>
                 </div>
 
-                <a href="#cuenta" class="nav-item flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-semibold hover:bg-white/5 hover:text-white transition-all-300">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+                <a href="#cuenta" class="nav-item flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-semibold text-slate-200 hover:bg-white/10 hover:text-white transition-all-300">
+                    <svg class="w-5 h-5 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
                     <span>Mi Cuenta</span>
                 </a>
 
-                <a href="#soporte" class="nav-item flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-semibold hover:bg-white/5 hover:text-white transition-all-300">
-                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                <a href="#soporte" class="nav-item flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-semibold text-slate-200 hover:bg-white/10 hover:text-white transition-all-300">
+                    <svg class="w-5 h-5 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192l-3.536 3.536M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-5 0a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
                     <span>Soporte</span>
                 </a>
 
                 <!-- BOTÓN PANEL ADMINISTRADOR (VISIBLE SOLO PARA ROL ADMIN) -->
                 <div id="admin-nav-section" class="hidden pt-6">
-                    <p class="text-[10px] font-bold text-slate-500 uppercase tracking-widest px-3 mb-2">Administración</p>
+                    <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest px-3 mb-2">Administración</p>
                     <a href="#admin" class="nav-item flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-bold text-emerald-400 hover:bg-emerald-500/10 hover:text-emerald-300 transition-all-300">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
                         <span>Panel Admin</span>
@@ -431,11 +432,11 @@
                 </div>
                 <div class="flex items-center gap-1 flex-shrink-0">
                     <!-- Botón regresar a landing page -->
-                    <a href="index.html" class="text-slate-400 hover:text-blue-400 p-1.5 rounded-lg hover:bg-white/5 transition-colors" title="Ir a la página de inicio">
+                    <a href="index.html" class="text-slate-300 hover:text-blue-300 p-1.5 rounded-lg hover:bg-white/10 transition-colors" title="Ir a la página de inicio">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
                     </a>
                     <!-- Botón cerrar sesión -->
-                    <button onclick="handleLogout()" class="text-slate-400 hover:text-red-400 p-1.5 rounded-lg hover:bg-white/5 transition-colors" title="Cerrar Sesión">
+                    <button onclick="handleLogout()" class="text-slate-300 hover:text-red-400 p-1.5 rounded-lg hover:bg-white/10 transition-colors" title="Cerrar Sesión">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
                     </button>
                 </div>
