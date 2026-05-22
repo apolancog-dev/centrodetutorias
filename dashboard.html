@@ -598,7 +598,8 @@
                 window.module = undefined;
                 
                 const script = document.createElement('script');
-                script.text = code;
+                // Envolver en IIFE para que 'var supabase' del SDK no conflictúe con 'let supabase' del scope global
+                script.text = '(function(){\n' + code + '\n; if(typeof supabase !== "undefined" && !window.supabase) window.supabase = supabase;\n})();';
                 document.head.appendChild(script);
                 
                 if (window.supabase) {
