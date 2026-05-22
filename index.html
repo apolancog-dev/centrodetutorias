@@ -698,56 +698,64 @@
             const submitBtn = document.getElementById('submit-btn');
             const successMsg = document.getElementById('success-msg');
 
-            form.addEventListener('submit', async (e) => {
-                e.preventDefault();
-                trackEvent('form_submit_attempt');
-                
-                const originalText = submitBtn.innerText;
-                submitBtn.innerText = 'Enviando...';
-                submitBtn.disabled = true;
-                submitBtn.classList.add('opacity-70');
+            if (form) {
+                form.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    trackEvent('form_submit_attempt');
+                    
+                    const originalText = submitBtn ? submitBtn.innerText : 'Enviar';
+                    if (submitBtn) {
+                        submitBtn.innerText = 'Enviando...';
+                        submitBtn.disabled = true;
+                        submitBtn.classList.add('opacity-70');
+                    }
 
-                try {
-                    const { data, error } = await supabaseClient
-                        .from('leads')
-                        .insert([
-                            {
-                                parent_or_student_name: document.getElementById('nombre_tutor').value,
-                                phone: document.getElementById('telefono').value,
-                                email: document.getElementById('email').value,
-                                student_name: document.getElementById('nombre_estudiante').value,
-                                institution: document.getElementById('institucion').value,
-                                grade: document.getElementById('grado').value,
-                                subject: document.getElementById('materia').value,
-                                support_type: document.getElementById('tipo_apoyo').value,
-                                description: document.getElementById('descripcion').value
-                            }
-                        ]);
+                    try {
+                        const { data, error } = await supabaseClient
+                            .from('leads')
+                            .insert([
+                                {
+                                    parent_or_student_name: document.getElementById('nombre_tutor').value,
+                                    phone: document.getElementById('telefono').value,
+                                    email: document.getElementById('email').value,
+                                    student_name: document.getElementById('nombre_estudiante').value,
+                                    institution: document.getElementById('institucion').value,
+                                    grade: document.getElementById('grado').value,
+                                    subject: document.getElementById('materia').value,
+                                    support_type: document.getElementById('tipo_apoyo').value,
+                                    description: document.getElementById('descripcion').value
+                                }
+                            ]);
 
-                    if (error) throw error;
+                        if (error) throw error;
 
-                    form.reset();
-                    form.style.display = 'none';
-                    successMsg.innerHTML = `
-                        <p class="text-green-800 font-bold text-lg mb-1">¡Gracias por contactar!</p>
-                        <p class="text-green-700 font-medium leading-tight">Te enviaremos un correo con el detalle y próximos pasos de tu solicitud.</p>
-                        <div class="mt-3 pt-3 border-t border-green-300">
-                            <p class="text-sm text-gray-800 font-semibold">¿Es urgente?</p>
-                            <p class="text-sm text-gray-700 font-medium border-t border-green-300 pt-3">
-                            Si es urgente, <a href="https://wa.me/50257152096" target="_blank" class="text-primary font-bold hover:underline" data-track="click_CTA_phone_urgent">escríbenos al WhatsApp +502 5715 2096 ahora</a>.
-                        </p>
-                        </div>
-                    `;
-                    successMsg.classList.remove('hidden');
-                    trackEvent('form_submit_success');
-                } catch (error) {
-                    console.error('Error enviando formulario:', error);
-                    alert('Error de Supabase: ' + (error.message || JSON.stringify(error)) + '\\n\\nPor favor revisa la consola para más detalles.');
-                    submitBtn.innerText = originalText;
-                    submitBtn.disabled = false;
-                    submitBtn.classList.remove('opacity-70');
-                }
-            });
+                        form.reset();
+                        form.style.display = 'none';
+                        if (successMsg) {
+                            successMsg.innerHTML = `
+                                <p class="text-green-800 font-bold text-lg mb-1">¡Gracias por contactar!</p>
+                                <p class="text-green-700 font-medium leading-tight">Te enviaremos un correo con el detalle y próximos pasos de tu solicitud.</p>
+                                <div class="mt-3 pt-3 border-t border-green-300">
+                                    <p class="text-sm text-gray-800 font-semibold">¿Es urgente?</p>
+                                    <p class="text-sm text-gray-700 font-medium border-t border-green-300 pt-3">
+                                    Si es urgente, <a href="https://wa.me/50257152096" target="_blank" class="text-primary font-bold hover:underline" data-track="click_CTA_phone_urgent">escríbenos al WhatsApp +502 5715 2096 ahora</a>.
+                                </p>
+                                </div>
+                            `;
+                            successMsg.classList.remove('hidden');
+                        }
+                        trackEvent('form_submit_success');
+                    } catch (error) {
+                        console.error('Error enviando formulario:', error);
+                        alert('Error de Supabase: ' + (error.message || JSON.stringify(error)) + '\n\nPor favor revisa la consola para más detalles.');
+                        if (submitBtn) {
+                            submitBtn.innerText = originalText;
+                            submitBtn.disabled = false;
+                            submitBtn.classList.remove('opacity-70');
+                        }
+                    }
+                });
+            }
 
             // --- Autenticación ---
             let isRegisterMode = false;
@@ -768,25 +776,31 @@
             const accountEmail = document.getElementById('account-email');
 
             // Redirects to Dashboard
-            authBtn.addEventListener('click', () => {
-                window.location.href = 'dashboard.html#login';
-            });
-            accountBtn.addEventListener('click', () => {
-                window.location.href = 'dashboard.html#bienvenida';
-            });
+            if (authBtn) {
+                authBtn.addEventListener('click', () => {
+                    window.location.href = 'dashboard.html#login';
+                });
+            }
+            if (accountBtn) {
+                accountBtn.addEventListener('click', () => {
+                    window.location.href = 'dashboard.html#bienvenida';
+                });
+            }
 
             // UI Update by Session
             function updateUI(session) {
                 if (session) {
-                    authBtn.classList.add('hidden');
-                    accountBtn.classList.remove('hidden');
-                    accountBtn.innerText = 'Ir al Panel';
+                    if (authBtn) authBtn.classList.add('hidden');
+                    if (accountBtn) {
+                        accountBtn.classList.remove('hidden');
+                        accountBtn.innerText = 'Ir al Panel';
+                    }
                     if (accountEmail) accountEmail.innerText = session.user.email;
-                    authModal.classList.remove('active');
+                    if (authModal) authModal.classList.remove('active');
                 } else {
-                    authBtn.classList.remove('hidden');
-                    accountBtn.classList.add('hidden');
-                    accountModal.classList.remove('active');
+                    if (authBtn) authBtn.classList.remove('hidden');
+                    if (accountBtn) accountBtn.classList.add('hidden');
+                    if (accountModal) accountModal.classList.remove('active');
                 }
             }
 
@@ -810,40 +824,51 @@
             }
 
             // Form Submit
-            authForm.addEventListener('submit', async (e) => {
-                e.preventDefault();
-                const email = authEmail.value;
-                const password = authPassword.value;
-                
-                authSubmitBtn.disabled = true;
-                authSubmitBtn.classList.add('opacity-70');
-                authError.classList.add('hidden');
-                authSuccess.classList.add('hidden');
+            if (authForm) {
+                authForm.addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    if (!authEmail || !authPassword) return;
+                    const email = authEmail.value;
+                    const password = authPassword.value;
+                    
+                    if (authSubmitBtn) {
+                        authSubmitBtn.disabled = true;
+                        authSubmitBtn.classList.add('opacity-70');
+                    }
+                    if (authError) authError.classList.add('hidden');
+                    if (authSuccess) authSuccess.classList.add('hidden');
 
-                try {
-                    if (!supabaseClient) {
-                        throw new Error("El servicio de conexión no está listo. Recarga la página o desactiva bloqueadores de scripts.");
+                    try {
+                        if (!supabaseClient) {
+                            throw new Error("El servicio de conexión no está listo. Recarga la página o desactiva bloqueadores de scripts.");
+                        }
+                        if (isRegisterMode) {
+                            const { data, error } = await supabaseClient.auth.signUp({ email, password });
+                            if (error) throw error;
+                            if (authSuccess) {
+                                authSuccess.innerText = '¡Registro exitoso! Ya puedes iniciar sesión.';
+                                authSuccess.classList.remove('hidden');
+                            }
+                            authForm.reset();
+                            setTimeout(() => setAuthMode(false), 2000);
+                        } else {
+                            const { data, error } = await supabaseClient.auth.signInWithPassword({ email, password });
+                            if (error) throw error;
+                            // onAuthStateChange automatically updates UI
+                        }
+                    } catch (error) {
+                        if (authError) {
+                            authError.innerText = error.message === 'Invalid login credentials' ? 'Credenciales incorrectas.' : error.message;
+                            authError.classList.remove('hidden');
+                        }
+                    } finally {
+                        if (authSubmitBtn) {
+                            authSubmitBtn.disabled = false;
+                            authSubmitBtn.classList.remove('opacity-70');
+                        }
                     }
-                    if (isRegisterMode) {
-                        const { data, error } = await supabaseClient.auth.signUp({ email, password });
-                        if (error) throw error;
-                        authSuccess.innerText = '¡Registro exitoso! Ya puedes iniciar sesión.';
-                        authSuccess.classList.remove('hidden');
-                        authForm.reset();
-                        setTimeout(() => setAuthMode(false), 2000);
-                    } else {
-                        const { data, error } = await supabaseClient.auth.signInWithPassword({ email, password });
-                        if (error) throw error;
-                        // onAuthStateChange automatically updates UI
-                    }
-                } catch (error) {
-                    authError.innerText = error.message === 'Invalid login credentials' ? 'Credenciales incorrectas.' : error.message;
-                    authError.classList.remove('hidden');
-                } finally {
-                    authSubmitBtn.disabled = false;
-                    authSubmitBtn.classList.remove('opacity-70');
-                }
-            });
+                });
+            }
 
             // Logout
             const logoutBtn = document.getElementById('logout-btn');
