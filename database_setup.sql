@@ -23,6 +23,39 @@ CREATE TABLE IF NOT EXISTS public.users (
 -- Habilitar Seguridad a Nivel de Fila (RLS) en la tabla users
 ALTER TABLE public.users ENABLE ROW LEVEL SECURITY;
 
+-- -----------------------------------------------------
+-- 1.1 Funciones Auxiliares de Seguridad (Evitan recursión infinita en RLS)
+-- -----------------------------------------------------
+CREATE OR REPLACE FUNCTION public.is_admin(user_id UUID)
+RETURNS BOOLEAN AS $$
+BEGIN
+  RETURN EXISTS (
+    SELECT 1 FROM public.users
+    WHERE id = user_id AND role = 'admin'
+  );
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+CREATE OR REPLACE FUNCTION public.is_subscriber(user_id UUID)
+RETURNS BOOLEAN AS $$
+BEGIN
+  RETURN EXISTS (
+    SELECT 1 FROM public.users
+    WHERE id = user_id AND role = 'subscriber'
+  );
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+CREATE OR REPLACE FUNCTION public.has_premium_access(user_id UUID)
+RETURNS BOOLEAN AS $$
+BEGIN
+  RETURN EXISTS (
+    SELECT 1 FROM public.users
+    WHERE id = user_id AND (role = 'subscriber' OR role = 'admin')
+  );
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
 -- Políticas RLS para users
 CREATE POLICY "Permitir a los usuarios ver su propio perfil" 
     ON public.users FOR SELECT 
@@ -34,21 +67,11 @@ CREATE POLICY "Permitir a los usuarios actualizar su propio perfil"
 
 CREATE POLICY "Permitir a los administradores ver todos los perfiles" 
     ON public.users FOR SELECT 
-    USING (
-        EXISTS (
-            SELECT 1 FROM public.users 
-            WHERE users.id = auth.uid() AND users.role = 'admin'
-        )
-    );
+    USING (public.is_admin(auth.uid()));
 
 CREATE POLICY "Permitir a los administradores actualizar cualquier perfil" 
     ON public.users FOR UPDATE 
-    USING (
-        EXISTS (
-            SELECT 1 FROM public.users 
-            WHERE users.id = auth.uid() AND users.role = 'admin'
-        )
-    );
+    USING (public.is_admin(auth.uid()));
 
 -- -----------------------------------------------------
 -- 2. Tabla de Categorías
@@ -72,12 +95,7 @@ CREATE POLICY "Permitir a cualquiera ver categorías"
 
 CREATE POLICY "Permitir solo a administradores modificar categorías" 
     ON public.categories FOR ALL 
-    USING (
-        EXISTS (
-            SELECT 1 FROM public.users 
-            WHERE users.id = auth.uid() AND users.role = 'admin'
-        )
-    );
+    USING (public.is_admin(auth.uid()));
 
 -- -----------------------------------------------------
 -- 3. Tabla de Contenidos (Cursos, Artículos, Ejercicios)
@@ -108,20 +126,12 @@ CREATE POLICY "Permitir a usuarios ver contenidos libres o sus propios accesos"
     ON public.content_items FOR SELECT 
     USING (
         access_type = 'free' 
-        OR EXISTS (
-            SELECT 1 FROM public.users 
-            WHERE users.id = auth.uid() AND (users.role = 'subscriber' OR users.role = 'admin')
-        )
+        OR public.has_premium_access(auth.uid())
     );
 
 CREATE POLICY "Permitir a administradores realizar todo en content_items" 
     ON public.content_items FOR ALL 
-    USING (
-        EXISTS (
-            SELECT 1 FROM public.users 
-            WHERE users.id = auth.uid() AND users.role = 'admin'
-        )
-    );
+    USING (public.is_admin(auth.uid()));
 
 -- -----------------------------------------------------
 -- 4. Tabla de Progreso de Usuarios
@@ -152,12 +162,7 @@ CREATE POLICY "Permitir a usuarios actualizar su propio progreso"
 
 CREATE POLICY "Permitir a administradores ver todos los progresos" 
     ON public.user_content_progress FOR SELECT 
-    USING (
-        EXISTS (
-            SELECT 1 FROM public.users 
-            WHERE users.id = auth.uid() AND users.role = 'admin'
-        )
-    );
+    USING (public.is_admin(auth.uid()));
 
 -- -----------------------------------------------------
 -- 5. Tabla de Suscripciones
@@ -184,12 +189,7 @@ CREATE POLICY "Permitir a usuarios ver sus propias suscripciones"
 
 CREATE POLICY "Permitir a administradores control total sobre suscripciones" 
     ON public.subscriptions FOR ALL 
-    USING (
-        EXISTS (
-            SELECT 1 FROM public.users 
-            WHERE users.id = auth.uid() AND users.role = 'admin'
-        )
-    );
+    USING (public.is_admin(auth.uid()));
 
 -- -----------------------------------------------------
 -- 6. Tabla de Solicitudes de Tutorías
@@ -221,12 +221,7 @@ CREATE POLICY "Permitir a usuarios crear sus propias solicitudes"
 
 CREATE POLICY "Permitir a administradores ver todas las solicitudes" 
     ON public.tutoring_requests FOR ALL 
-    USING (
-        EXISTS (
-            SELECT 1 FROM public.users 
-            WHERE users.id = auth.uid() AND users.role = 'admin'
-        )
-    );
+    USING (public.is_admin(auth.uid()));
 
 -- =====================================================================
 -- TRIGGERS DE AUTOMATIZACIÓN EN POSTGRESQL

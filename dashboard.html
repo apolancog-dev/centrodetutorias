@@ -12,34 +12,37 @@
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
     <!-- Tailwind CSS (CDN) -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdn.tailwindcss.com" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
     
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#1E3A8A', 
-                        secondary: '#10B981', 
-                        accent: '#F97316',
-                        darkNavy: '#0F172A',
-                        sidebarBg: '#0B1530',
-                        pastel: {
-                            blue: '#E0F2FE',
-                            mint: '#D1FAE5',
-                            lilac: '#EDE9FE',
-                            yellow: '#FEF08A',
-                            coral: '#FECDD3'
+        // Configurar Tailwind preventivamente en window por si carga en diferido
+        window.tailwind = {
+            config: {
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: '#1E3A8A', 
+                            secondary: '#10B981', 
+                            accent: '#F97316',
+                            darkNavy: '#0F172A',
+                            sidebarBg: '#0B1530',
+                            pastel: {
+                                blue: '#E0F2FE',
+                                mint: '#D1FAE5',
+                                lilac: '#EDE9FE',
+                                yellow: '#FEF08A',
+                                coral: '#FECDD3'
+                            }
+                        },
+                        fontFamily: {
+                            sans: ['"Plus Jakarta Sans"', 'Outfit', 'system-ui', '-apple-system', 'sans-serif'],
+                            display: ['Outfit', 'sans-serif']
                         }
-                    },
-                    fontFamily: {
-                        sans: ['"Plus Jakarta Sans"', 'Outfit', 'system-ui', '-apple-system', 'sans-serif'],
-                        display: ['Outfit', 'sans-serif']
                     }
                 }
             }
-        }
+        };
     </script>
     
     <style>
@@ -504,14 +507,14 @@
         try {
             if (window.supabase) {
                 supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-            } else {
-                console.error("Supabase SDK no se detecta en window (CDN bloqueado o error de red).");
             }
         } catch (e) {
-            console.error("Error inicializando Supabase SDK:", e);
+            console.error("Error inicializando Supabase SDK (global):", e);
         }
 
         // Variables de Estado de la Aplicación
+        let isInitialLoadInProgress = false;
+        let isInitialLoadDone = false;
         let currentSession = null;
         let currentUser = null; // Perfil de la tabla public.users
         let loadedCategories = [];
@@ -522,6 +525,19 @@
         let adminRequests = [];
 
         document.addEventListener('DOMContentLoaded', async () => {
+            // Inicializar/Re-intentar Supabase en caso de carga asíncrona o diferida
+            if (!supabase) {
+                try {
+                    if (window.supabase) {
+                        supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+                    } else {
+                        console.error("Supabase SDK no se detecta en window (CDN bloqueado o error de red).");
+                    }
+                } catch (e) {
+                    console.error("Error inicializando Supabase SDK (DOMContentLoaded):", e);
+                }
+            }
+
             // Validar si se está ejecutando mediante el protocolo file://
             if (window.location.protocol === 'file:') {
                 showFileProtocolWarning();
@@ -821,18 +837,16 @@
         }
 
         async function handleSessionChange(session) {
-            try {
-                // Eliminar pantalla de carga
-                const loadingScreen = document.getElementById('app-loading-screen');
-                if (loadingScreen) {
-                    loadingScreen.style.opacity = '0';
-                    setTimeout(() => {
-                        if (loadingScreen.parentNode) {
-                            loadingScreen.parentNode.removeChild(loadingScreen);
-                        }
-                    }, 500);
-                }
+            if (!isInitialLoadDone && isInitialLoadInProgress) {
+                console.log("handleSessionChange: Carga inicial ya en progreso, ignorando llamada duplicada.");
+                return;
+            }
+            
+            if (!isInitialLoadDone) {
+                isInitialLoadInProgress = true;
+            }
 
+            try {
                 currentSession = session;
                 if (session) {
                     // Consultar base de datos pública de perfiles
@@ -917,7 +931,22 @@
                     }
                 }
                 await routeApp();
+
+                // Eliminar pantalla de carga únicamente tras haber completado el flujo completo de enrutado
+                const loadingScreen = document.getElementById('app-loading-screen');
+                if (loadingScreen) {
+                    loadingScreen.style.opacity = '0';
+                    setTimeout(() => {
+                        if (loadingScreen.parentNode) {
+                            loadingScreen.parentNode.removeChild(loadingScreen);
+                        }
+                    }, 500);
+                }
+                
+                isInitialLoadDone = true;
+                isInitialLoadInProgress = false;
             } catch (err) {
+                isInitialLoadInProgress = false;
                 console.error("Error crítico en handleSessionChange:", err);
                 showGenericError(err);
             }
@@ -1090,8 +1119,13 @@
         }
 
         async function loadUserTutoringRequests() {
-            const { data, error } = await supabase.from('tutoring_requests').select('*').eq('user_id', currentUser.id).order('created_at', { ascending: false });
-            if (!error && data) loadedTutoringRequests = data;
+            if (!currentUser) return;
+            try {
+                const { data, error } = await supabase.from('tutoring_requests').select('*').eq('user_id', currentUser.id).order('created_at', { ascending: false });
+                if (!error && data) loadedTutoringRequests = data;
+            } catch (e) {
+                console.error("Error al cargar solicitudes de tutoría:", e);
+            }
         }
 
         // Helper para comprobar el estado de progreso
@@ -2206,17 +2240,23 @@
         }
 
         async function loadAdminUsers() {
-            const { data, error } = await supabase.from('users').select('*').order('created_at', { ascending: false });
-            if (!error && data) {
-                adminUsers = data;
-                // Actualizar cantidad en pestaña
-                routeApp; // No loops
+            try {
+                const { data, error } = await supabase.from('users').select('*').order('created_at', { ascending: false });
+                if (!error && data) {
+                    adminUsers = data;
+                }
+            } catch (e) {
+                console.error("Error al cargar usuarios de administración:", e);
             }
         }
 
         async function loadAdminRequests() {
-            const { data, error } = await supabase.from('tutoring_requests').select('*, users(full_name, email, phone)').order('created_at', { ascending: false });
-            if (!error && data) adminRequests = data;
+            try {
+                const { data, error } = await supabase.from('tutoring_requests').select('*, users(full_name, email, phone)').order('created_at', { ascending: false });
+                if (!error && data) adminRequests = data;
+            } catch (e) {
+                console.error("Error al cargar solicitudes de administración:", e);
+            }
         }
 
         // --- SUB-PESTAÑA 1: GESTIÓN DE USUARIOS ---
@@ -2548,6 +2588,7 @@
             if (authContainer) authContainer.classList.add('hidden');
             if (portalContainer) portalContainer.classList.add('hidden');
             
+            const errMsg = err ? (err.message || String(err)) : 'Error de inicialización desconocido.';
             const errorEl = document.createElement('div');
             errorEl.style.cssText = "position: fixed; inset: 0; z-index: 99999; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle at center, #1E293B 0%, #0F172A 100%); padding: 16px; font-family: system-ui, -apple-system, sans-serif; text-align: center;";
             errorEl.innerHTML = `
@@ -2564,7 +2605,7 @@
                     
                     <div style="background-color: #FEF2F2; color: #991B1B; padding: 16px; border-radius: 12px; border: 1px solid #FCA5A5; text-align: left; font-size: 12px; font-family: monospace; word-break: break-all; margin-bottom: 24px; line-height: 1.5; box-sizing: border-box;">
                         <strong>Detalles técnicos:</strong><br>
-                        ${err.message || err}
+                        ${errMsg}
                     </div>
                     
                     <button onclick="window.location.reload()" style="width: 100%; display: inline-flex; align-items: center; justify-content: center; gap: 8px; background-color: #1E3A8A; color: #ffffff; font-weight: 700; padding: 14px 20px; border-radius: 12px; border: none; font-size: 14px; cursor: pointer; box-shadow: 0 10px 15px -3px rgba(30, 58, 138, 0.3); transition: background-color 0.2s;">

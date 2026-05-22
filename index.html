@@ -12,30 +12,33 @@
     <meta property="og:type" content="website">
     
     <!-- Tailwind CSS (CDN) -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="https://cdn.tailwindcss.com" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2" defer></script>
     <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        primary: '#1E3A8A', 
-                        secondary: '#10B981', 
-                        accent: '#F97316',
-                        pastel: {
-                            blue: '#E0F2FE',
-                            mint: '#D1FAE5',
-                            lilac: '#EDE9FE',
-                            yellow: '#FEF08A',
-                            coral: '#FECDD3'
+        // Configurar Tailwind preventivamente en window por si carga en diferido
+        window.tailwind = {
+            config: {
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: '#1E3A8A', 
+                            secondary: '#10B981', 
+                            accent: '#F97316',
+                            pastel: {
+                                blue: '#E0F2FE',
+                                mint: '#D1FAE5',
+                                lilac: '#EDE9FE',
+                                yellow: '#FEF08A',
+                                coral: '#FECDD3'
+                            }
+                        },
+                        fontFamily: {
+                            sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
                         }
-                    },
-                    fontFamily: {
-                        sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
                     }
                 }
             }
-        }
+        };
     </script>
     <style>
         .fade-in {
@@ -602,7 +605,6 @@
     </div>
 
 
-    <!-- JavaScript embebido -->
     <script>
         // --- Supabase Configuración ---
         const SUPABASE_URL = 'https://api.centrodetutorias.com';
@@ -612,14 +614,24 @@
         try {
             if (window.supabase) {
                 supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-            } else {
-                console.warn("Supabase SDK no está definido en window (bloqueado por red u otra extensión).");
             }
         } catch (e) {
-            console.error("Error inicializando Supabase en la Landing:", e);
+            console.error("Error inicializando Supabase en la Landing (global):", e);
         }
 
         document.addEventListener('DOMContentLoaded', () => {
+            // Inicializar/Re-intentar Supabase en caso de carga asíncrona o diferida
+            if (!supabaseClient) {
+                try {
+                    if (window.supabase) {
+                        supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+                    } else {
+                        console.warn("Supabase SDK no está definido en window (bloqueado por red u otra extensión).");
+                    }
+                } catch (e) {
+                    console.error("Error inicializando Supabase en la Landing (DOMContentLoaded):", e);
+                }
+            }
             // --- Animaciones Scroll (Fade-in) ---
             const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
             const observer = new IntersectionObserver((entries, obs) => {
