@@ -138,24 +138,59 @@
             background: #94A3B8;
         }
         
+        /* =====================================================
+           SIDEBAR: Colores garantizados por CSS directo
+           (No depende de que Tailwind JIT genere las clases)
+           ===================================================== */
+        #sidebar {
+            color: #CBD5E1; /* slate-300 — base visible */
+        }
+        #sidebar .nav-item {
+            color: #E2E8F0 !important; /* slate-200 — texto siempre legible */
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            border-radius: 0.75rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        #sidebar .nav-item:hover {
+            background-color: rgba(255,255,255,0.1);
+            color: #FFFFFF !important;
+        }
+        #sidebar .nav-item svg {
+            color: #94A3B8; /* slate-400 — íconos visibles */
+            flex-shrink: 0;
+        }
+        #sidebar .nav-item:hover svg {
+            color: #FFFFFF;
+        }
+        #sidebar .nav-section-label {
+            color: #94A3B8 !important; /* slate-400 — etiquetas de sección */
+            font-size: 0.625rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            padding: 0 0.75rem;
+            margin-bottom: 0.5rem;
+        }
+        #sidebar .sidebar-icon-btn {
+            color: #CBD5E1 !important; /* slate-300 — botones de icono */
+        }
+        #sidebar .sidebar-icon-btn:hover {
+            background-color: rgba(255,255,255,0.1);
+        }
+
         .active-nav {
             background-color: rgba(255, 255, 255, 0.1);
             border-left: 4px solid #10B981;
             color: #FFFFFF !important;
             font-weight: 700;
         }
-        .active-admin-nav {
-            background-color: #E2E8F0;
-            border-bottom: 2px solid #1E3A8A;
-            color: #1E3A8A !important;
-        }
-        
-        .premium-glow {
-            box-shadow: 0 0 20px rgba(249, 115, 22, 0.15);
-        }
-        
-        .transition-all-300 {
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        .active-nav svg {
+            color: #FFFFFF !important;
         }
     </style>
 </head>
@@ -356,7 +391,7 @@
 
             <!-- Navegación General -->
             <nav class="flex-1 px-4 py-6 space-y-1.5 overflow-y-auto" aria-label="Menú del Portal">
-                <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest px-3 mb-2">Mi Espacio</p>
+                <p class="nav-section-label">Mi Espacio</p>
                 
                 <a href="#bienvenida" class="nav-item flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-semibold text-slate-200 hover:bg-white/10 hover:text-white transition-all-300">
                     <svg class="w-5 h-5 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
@@ -394,7 +429,7 @@
                 </a>
 
                 <div class="pt-6">
-                    <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest px-3 mb-2">Ajustes y Ayuda</p>
+                    <p class="nav-section-label">Ajustes y Ayuda</p>
                 </div>
 
                 <a href="#cuenta" class="nav-item flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-semibold text-slate-200 hover:bg-white/10 hover:text-white transition-all-300">
@@ -409,7 +444,7 @@
 
                 <!-- BOTÓN PANEL ADMINISTRADOR (VISIBLE SOLO PARA ROL ADMIN) -->
                 <div id="admin-nav-section" class="hidden pt-6">
-                    <p class="text-[10px] font-bold text-slate-400 uppercase tracking-widest px-3 mb-2">Administración</p>
+                    <p class="nav-section-label">Administración</p>
                     <a href="#admin" class="nav-item flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-bold text-emerald-400 hover:bg-emerald-500/10 hover:text-emerald-300 transition-all-300">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
                         <span>Panel Admin</span>
@@ -432,11 +467,11 @@
                 </div>
                 <div class="flex items-center gap-1 flex-shrink-0">
                     <!-- Botón regresar a landing page -->
-                    <a href="index.html" class="text-slate-300 hover:text-blue-300 p-1.5 rounded-lg hover:bg-white/10 transition-colors" title="Ir a la página de inicio">
+                    <a href="index.html" class="sidebar-icon-btn p-1.5 rounded-lg transition-colors" style="color:#CBD5E1" title="Ir a la página de inicio">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
                     </a>
                     <!-- Botón cerrar sesión -->
-                    <button onclick="handleLogout()" class="text-slate-300 hover:text-red-400 p-1.5 rounded-lg hover:bg-white/10 transition-colors" title="Cerrar Sesión">
+                    <button onclick="handleLogout()" class="sidebar-icon-btn p-1.5 rounded-lg transition-colors hover:text-red-400" style="color:#CBD5E1" title="Cerrar Sesión">
                         <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
                     </button>
                 </div>
