@@ -611,27 +611,56 @@
         const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NzkxNTA0OTEsImV4cCI6MTg5MzQ1NjAwMCwicm9sZSI6ImFub24iLCJpc3MiOiJzdXBhYmFzZSJ9.zlAS2xQq78_xvDfuaunxT7btPy2pn5II3pNk2gYFaKg';
         
         let supabaseClient = null;
-        try {
-            if (window.supabase) {
-                supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-            }
-        } catch (e) {
-            console.error("Error inicializando Supabase en la Landing (global):", e);
-        }
 
-        document.addEventListener('DOMContentLoaded', () => {
-            // Inicializar/Re-intentar Supabase en caso de carga asíncrona o diferida
-            if (!supabaseClient) {
+        // Cargador ultra-robusto y resiliente del SDK de Supabase
+        async function asegurarSupabaseSDK() {
+            if (window.supabase) {
                 try {
-                    if (window.supabase) {
-                        supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-                    } else {
-                        console.warn("Supabase SDK no está definido en window (bloqueado por red u otra extensión).");
-                    }
+                    supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+                    return true;
                 } catch (e) {
-                    console.error("Error inicializando Supabase en la Landing (DOMContentLoaded):", e);
+                    console.error("Error inicializando cliente existente:", e);
                 }
             }
+
+            const urls = [
+                'db-client.js?v=2.0.0',
+                'supabase.js?v=2.0.0',
+                'https://unpkg.com/@supabase/supabase-js@2',
+                'https://cdnjs.cloudflare.com/ajax/libs/supabase/2.39.8/supabase.js',
+                'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2'
+            ];
+
+            for (const url of urls) {
+                try {
+                    console.log(`Intentando cargar SDK de Supabase desde: ${url}`);
+                    await new Promise((resolve, reject) => {
+                        const script = document.createElement('script');
+                        script.src = url;
+                        script.onload = () => {
+                            if (window.supabase) {
+                                resolve();
+                            } else {
+                                reject(new Error("Script cargado pero window.supabase sigue undefined"));
+                            }
+                        };
+                        script.onerror = () => reject(new Error("Error de red cargando script"));
+                        document.head.appendChild(script);
+                    });
+                    
+                    supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+                    console.log(`SDK de Supabase cargado con éxito desde: ${url}`);
+                    return true;
+                } catch (err) {
+                    console.warn(`Falló la carga desde ${url}:`, err.message);
+                }
+            }
+            return false;
+        }
+
+        document.addEventListener('DOMContentLoaded', async () => {
+            // Asegurar que el SDK de Supabase esté cargado
+            await asegurarSupabaseSDK();
             // --- Animaciones Scroll (Fade-in) ---
             const observerOptions = { root: null, rootMargin: '0px', threshold: 0.1 };
             const observer = new IntersectionObserver((entries, obs) => {

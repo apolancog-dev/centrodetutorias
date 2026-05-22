@@ -504,12 +504,51 @@
         const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NzkxNTA0OTEsImV4cCI6MTg5MzQ1NjAwMCwicm9sZSI6ImFub24iLCJpc3MiOiJzdXBhYmFzZSJ9.zlAS2xQq78_xvDfuaunxT7btPy2pn5II3pNk2gYFaKg';
         
         let supabase = null;
-        try {
+
+        // Cargador ultra-robusto y resiliente del SDK de Supabase
+        async function asegurarSupabaseSDK() {
             if (window.supabase) {
-                supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+                try {
+                    supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+                    return true;
+                } catch (e) {
+                    console.error("Error inicializando cliente existente:", e);
+                }
             }
-        } catch (e) {
-            console.error("Error inicializando Supabase SDK (global):", e);
+
+            const urls = [
+                'db-client.js?v=2.0.0',
+                'supabase.js?v=2.0.0',
+                'https://unpkg.com/@supabase/supabase-js@2',
+                'https://cdnjs.cloudflare.com/ajax/libs/supabase/2.39.8/supabase.js',
+                'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2'
+            ];
+
+            for (const url of urls) {
+                try {
+                    console.log(`Intentando cargar SDK de Supabase desde: ${url}`);
+                    await new Promise((resolve, reject) => {
+                        const script = document.createElement('script');
+                        script.src = url;
+                        script.onload = () => {
+                            if (window.supabase) {
+                                resolve();
+                            } else {
+                                reject(new Error("Script cargado pero window.supabase sigue undefined"));
+                            }
+                        };
+                        script.onerror = () => reject(new Error("Error de red cargando script"));
+                        document.head.appendChild(script);
+                    });
+                    
+                    supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+                    console.log(`SDK de Supabase cargado con éxito desde: ${url}`);
+                    return true;
+                } catch (err) {
+                    console.warn(`Falló la carga desde ${url}:`, err.message);
+                }
+            }
+            return false;
         }
 
         // Variables de Estado de la Aplicación
@@ -525,27 +564,15 @@
         let adminRequests = [];
 
         document.addEventListener('DOMContentLoaded', async () => {
-            // Inicializar/Re-intentar Supabase en caso de carga asíncrona o diferida
-            if (!supabase) {
-                try {
-                    if (window.supabase) {
-                        supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-                    } else {
-                        console.error("Supabase SDK no se detecta en window (CDN bloqueado o error de red).");
-                    }
-                } catch (e) {
-                    console.error("Error inicializando Supabase SDK (DOMContentLoaded):", e);
-                }
-            }
-
             // Validar si se está ejecutando mediante el protocolo file://
             if (window.location.protocol === 'file:') {
                 showFileProtocolWarning();
                 return;
             }
 
-            // Validar que Supabase SDK se haya cargado e inicializado correctamente
-            if (!supabase) {
+            // Asegurar que el SDK de Supabase esté cargado e inicializado
+            const cargado = await asegurarSupabaseSDK();
+            if (!cargado || !supabase) {
                 showGenericError(new Error("No se pudo conectar con el servicio de base de datos porque el SDK de Supabase no cargó. Esto suele suceder por bloqueadores de publicidad/scripts, navegación de incógnito restrictiva o micro-cortes de internet. Por favor, desactiva extensiones que puedan bloquearlo y recarga la página."));
                 return;
             }
