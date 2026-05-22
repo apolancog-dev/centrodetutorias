@@ -484,7 +484,15 @@
         // Configuración Supabase
         const SUPABASE_URL = 'https://api.centrodetutorias.com';
         const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NzkxNTA0OTEsImV4cCI6MTg5MzQ1NjAwMCwicm9sZSI6ImFub24iLCJpc3MiOiJzdXBhYmFzZSJ9.zlAS2xQq78_xvDfuaunxT7btPy2pn5II3pNk2gYFaKg';
-        const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        
+        let supabase;
+        try {
+            if (window.supabase) {
+                supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+            }
+        } catch (e) {
+            console.error("Error inicializando Supabase SDK:", e);
+        }
 
         // Variables de Estado de la Aplicación
         let currentSession = null;
@@ -497,11 +505,23 @@
         let adminRequests = [];
 
         document.addEventListener('DOMContentLoaded', async () => {
-            // Inicializar Web Auth listener
-            initAuthListeners();
-            // Comprobar la sesión activa de Supabase
-            const { data: { session } } = await supabase.auth.getSession();
-            handleSessionChange(session);
+            // Validar si se está ejecutando mediante el protocolo file://
+            if (window.location.protocol === 'file:') {
+                showFileProtocolWarning();
+                return;
+            }
+
+            try {
+                // Inicializar Web Auth listener
+                initAuthListeners();
+                // Comprobar la sesión activa de Supabase
+                const { data: { session } } = await supabase.auth.getSession();
+                handleSessionChange(session);
+            } catch (err) {
+                console.error("Error en la inicialización de la SPA:", err);
+                showGenericError(err);
+                return;
+            }
             
             // Toggle sidebar móvil
             const sidebar = document.getElementById('sidebar');
@@ -2297,6 +2317,73 @@
             } else {
                 alert('Error al actualizar tutoría: ' + error.message);
             }
+        }
+
+        // --- FUNCIONES DE ROBUSTEDAD Y PROTOCOLO FILE:// ---
+        function showFileProtocolWarning() {
+            const authContainer = document.getElementById('auth-container');
+            const portalContainer = document.getElementById('portal-container');
+            if (authContainer) authContainer.classList.add('hidden');
+            if (portalContainer) portalContainer.classList.add('hidden');
+            
+            const warningEl = document.createElement('div');
+            warningEl.className = 'fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-tr from-[#0F172A] via-[#1E293B] to-[#0F172A] p-4 text-center';
+            warningEl.innerHTML = `
+                <div class="max-w-md w-full bg-white p-8 rounded-3xl shadow-2xl border border-slate-100 transition-all transform duration-300 scale-100">
+                    <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-amber-100 mb-6 animate-pulse">
+                        <svg class="h-8 w-8 text-amber-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-extrabold text-slate-900 font-display tracking-tight mb-3">Protocolo Local Detectado</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-6">
+                        Estás abriendo <strong>dashboard.html</strong> directamente desde tu computadora (<code>file://</code>). Los navegadores modernos bloquean el almacenamiento local (localStorage) y las conexiones a bases de datos seguras por motivos de seguridad en este modo.
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <a href="https://www.centrodetutorias.com/dashboard.html" target="_blank" class="w-full inline-flex justify-center items-center gap-2 bg-[#1E3A8A] hover:bg-blue-900 text-white font-bold py-3.5 px-4 rounded-xl shadow-lg transition-all duration-200 text-sm">
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                            Abrir en la Web de Producción
+                        </a>
+                        
+                        <div class="text-left bg-slate-50 p-4 rounded-xl border border-slate-200">
+                            <span class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-2">Para probarlo localmente:</span>
+                            <ul class="text-xs text-slate-600 space-y-1.5 list-disc pl-4">
+                                <li>Usa la extensión <strong>Live Server</strong> de VS Code.</li>
+                                <li>O ejecuta en tu terminal en esta carpeta: <code class="bg-slate-200 px-1 py-0.5 rounded font-mono font-semibold">python -m http.server 8080</code> y accede a <code class="text-[#1E3A8A] font-semibold">http://localhost:8080/dashboard.html</code>.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(warningEl);
+        }
+
+        function showGenericError(err) {
+            const authContainer = document.getElementById('auth-container');
+            const portalContainer = document.getElementById('portal-container');
+            if (authContainer) authContainer.classList.add('hidden');
+            if (portalContainer) portalContainer.classList.add('hidden');
+            
+            const errorEl = document.createElement('div');
+            errorEl.className = 'fixed inset-0 z-50 flex items-center justify-center bg-gradient-to-tr from-[#0F172A] via-[#1E293B] to-[#0F172A] p-4 text-center';
+            errorEl.innerHTML = `
+                <div class="max-w-md w-full bg-white p-8 rounded-3xl shadow-2xl border border-slate-100">
+                    <div class="mx-auto flex items-center justify-center h-16 w-16 rounded-full bg-red-100 mb-6">
+                        <svg class="h-8 w-8 text-red-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl font-extrabold text-slate-900 font-display tracking-tight mb-3">Error de Inicialización</h3>
+                    <p class="text-sm text-slate-600 leading-relaxed mb-6">
+                        Ha ocurrido un problema al cargar los servicios de autenticación y conexión. Detalles: <code class="bg-red-50 text-red-700 px-2 py-1 rounded block mt-2 text-xs font-mono break-all">${err.message || err}</code>
+                    </p>
+                    <button onclick="window.location.reload()" class="w-full inline-flex justify-center items-center gap-2 bg-[#1E3A8A] hover:bg-blue-900 text-white font-bold py-3.5 px-4 rounded-xl shadow-lg transition-all duration-200 text-sm">
+                        Recargar Página
+                    </button>
+                </div>
+            `;
+            document.body.appendChild(errorEl);
         }
     </script>
 </body>
