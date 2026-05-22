@@ -607,7 +607,17 @@
         // --- Supabase Configuración ---
         const SUPABASE_URL = 'https://api.centrodetutorias.com';
         const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NzkxNTA0OTEsImV4cCI6MTg5MzQ1NjAwMCwicm9sZSI6ImFub24iLCJpc3MiOiJzdXBhYmFzZSJ9.zlAS2xQq78_xvDfuaunxT7btPy2pn5II3pNk2gYFaKg';
-        const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+        
+        let supabaseClient = null;
+        try {
+            if (window.supabase) {
+                supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+            } else {
+                console.warn("Supabase SDK no está definido en window (bloqueado por red u otra extensión).");
+            }
+        } catch (e) {
+            console.error("Error inicializando Supabase en la Landing:", e);
+        }
 
         document.addEventListener('DOMContentLoaded', () => {
             // --- Animaciones Scroll (Fade-in) ---
@@ -781,13 +791,23 @@
             }
 
             // Auth State Listener
-            supabaseClient.auth.getSession().then(({ data: { session } }) => {
-                updateUI(session);
-            });
+            if (supabaseClient) {
+                try {
+                    supabaseClient.auth.getSession().then(({ data: { session } }) => {
+                        updateUI(session);
+                    }).catch(err => {
+                        console.error("Error al recuperar sesión:", err);
+                    });
 
-            supabaseClient.auth.onAuthStateChange((_event, session) => {
-                updateUI(session);
-            });
+                    supabaseClient.auth.onAuthStateChange((_event, session) => {
+                        updateUI(session);
+                    });
+                } catch (e) {
+                    console.error("Error al adjuntar observadores de Auth:", e);
+                }
+            } else {
+                console.warn("SupabaseClient no disponible. No se pueden validar sesiones automáticas.");
+            }
 
             // Form Submit
             authForm.addEventListener('submit', async (e) => {
@@ -801,6 +821,9 @@
                 authSuccess.classList.add('hidden');
 
                 try {
+                    if (!supabaseClient) {
+                        throw new Error("El servicio de conexión no está listo. Recarga la página o desactiva bloqueadores de scripts.");
+                    }
                     if (isRegisterMode) {
                         const { data, error } = await supabaseClient.auth.signUp({ email, password });
                         if (error) throw error;
@@ -823,10 +846,18 @@
             });
 
             // Logout
-            document.getElementById('logout-btn').addEventListener('click', async () => {
-                const { error } = await supabaseClient.auth.signOut();
-                if (error) console.error('Error logging out:', error.message);
-            });
+            const logoutBtn = document.getElementById('logout-btn');
+            if (logoutBtn) {
+                logoutBtn.addEventListener('click', async () => {
+                    try {
+                        if (!supabaseClient) throw new Error("SupabaseClient no disponible");
+                        const { error } = await supabaseClient.auth.signOut();
+                        if (error) throw error;
+                    } catch (err) {
+                        console.error('Error logging out:', err.message);
+                    }
+                });
+            }
         });
     </script>
 

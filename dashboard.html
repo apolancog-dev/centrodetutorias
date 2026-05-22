@@ -485,10 +485,12 @@
         const SUPABASE_URL = 'https://api.centrodetutorias.com';
         const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NzkxNTA0OTEsImV4cCI6MTg5MzQ1NjAwMCwicm9sZSI6ImFub24iLCJpc3MiOiJzdXBhYmFzZSJ9.zlAS2xQq78_xvDfuaunxT7btPy2pn5II3pNk2gYFaKg';
         
-        let supabase;
+        let supabase = null;
         try {
             if (window.supabase) {
                 supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+            } else {
+                console.error("Supabase SDK no se detecta en window (CDN bloqueado o error de red).");
             }
         } catch (e) {
             console.error("Error inicializando Supabase SDK:", e);
@@ -511,12 +513,18 @@
                 return;
             }
 
+            // Validar que Supabase SDK se haya cargado e inicializado correctamente
+            if (!supabase) {
+                showGenericError(new Error("No se pudo conectar con el servicio de base de datos porque el SDK de Supabase no cargó. Esto suele suceder por bloqueadores de publicidad/scripts, navegación de incógnito restrictiva o micro-cortes de internet. Por favor, desactiva extensiones que puedan bloquearlo y recarga la página."));
+                return;
+            }
+
             try {
                 // Inicializar Web Auth listener
                 initAuthListeners();
                 // Comprobar la sesión activa de Supabase
                 const { data: { session } } = await supabase.auth.getSession();
-                handleSessionChange(session);
+                await handleSessionChange(session);
             } catch (err) {
                 console.error("Error en la inicialización de la SPA:", err);
                 showGenericError(err);
@@ -525,24 +533,34 @@
             
             // Toggle sidebar móvil
             const sidebar = document.getElementById('sidebar');
-            document.getElementById('open-mobile-menu').addEventListener('click', () => {
-                sidebar.classList.remove('-translate-x-full');
-                sidebar.classList.add('translate-x-0');
-            });
-            document.getElementById('close-mobile-menu').addEventListener('click', () => {
-                sidebar.classList.add('-translate-x-full');
-                sidebar.classList.remove('translate-x-0');
-            });
+            if (sidebar) {
+                const openMenu = document.getElementById('open-mobile-menu');
+                if (openMenu) {
+                    openMenu.addEventListener('click', () => {
+                        sidebar.classList.remove('-translate-x-full');
+                        sidebar.classList.add('translate-x-0');
+                    });
+                }
+                const closeMenu = document.getElementById('close-mobile-menu');
+                if (closeMenu) {
+                    closeMenu.addEventListener('click', () => {
+                        sidebar.classList.add('-translate-x-full');
+                        sidebar.classList.remove('translate-x-0');
+                    });
+                }
+            }
             
             // Listener del buscador global superior
             const topSearch = document.getElementById('top-search');
-            topSearch.addEventListener('input', (e) => {
-                const query = e.target.value.toLowerCase().trim();
-                // Si estamos en contenidos, filtrar en vivo
-                if (window.location.hash.startsWith('#contenidos')) {
-                    filterCatalog(query);
-                }
-            });
+            if (topSearch) {
+                topSearch.addEventListener('input', (e) => {
+                    const query = e.target.value.toLowerCase().trim();
+                    // Si estamos en contenidos, filtrar en vivo
+                    if (window.location.hash.startsWith('#contenidos')) {
+                        filterCatalog(query);
+                    }
+                });
+            }
         });
 
         // ---------------------------------------------------------------------
@@ -668,70 +686,105 @@
             });
 
             // Escuchar cambios de Auth de Supabase
-            supabase.auth.onAuthStateChange((event, session) => {
-                handleSessionChange(session);
+            supabase.auth.onAuthStateChange(async (event, session) => {
+                try {
+                    await handleSessionChange(session);
+                } catch (err) {
+                    console.error("Error en onAuthStateChange:", err);
+                }
             });
         }
 
         async function handleSessionChange(session) {
-            currentSession = session;
-            if (session) {
-                // Consultar base de datos pública de perfiles
-                const { data, error } = await supabase
-                    .from('users')
-                    .select('*')
-                    .eq('id', session.user.id)
-                    .single();
+            try {
+                currentSession = session;
+                if (session) {
+                    // Consultar base de datos pública de perfiles
+                    let data = null;
+                    let error = null;
+                    try {
+                        const res = await supabase
+                            .from('users')
+                            .select('*')
+                            .eq('id', session.user.id)
+                            .single();
+                        data = res.data;
+                        error = res.error;
+                    } catch (dbErr) {
+                        console.error('Error de red al consultar perfil:', dbErr);
+                        error = dbErr;
+                    }
 
-                if (error) {
-                    console.error('Error al cargar perfil de usuario publico:', error);
-                    // Fallback rápido si el trigger aún no populatea
-                    currentUser = {
-                        id: session.user.id,
-                        full_name: session.user.user_metadata.full_name || 'Estudiante Nuevo',
-                        email: session.user.email,
-                        phone: session.user.user_metadata.phone || '',
-                        role: session.user.user_metadata.role || 'free_user',
-                        subscription_status: 'inactive',
-                        academic_level: session.user.user_metadata.academic_level || 'Secundaria',
-                        main_interest: session.user.user_metadata.main_interest || 'Matemática'
-                    };
+                    if (error || !data) {
+                        console.warn('No se pudo cargar perfil de usuario publico, usando fallback de metadata:', error);
+                        // Fallback rápido si el trigger aún no populatea
+                        currentUser = {
+                            id: session.user.id,
+                            full_name: session?.user?.user_metadata?.full_name || session?.user?.email?.split('@')[0] || 'Estudiante Nuevo',
+                            email: session.user.email,
+                            phone: session?.user?.user_metadata?.phone || '',
+                            role: session?.user?.user_metadata?.role || 'free_user',
+                            subscription_status: 'inactive',
+                            academic_level: session?.user?.user_metadata?.academic_level || 'Secundaria',
+                            main_interest: session?.user?.user_metadata?.main_interest || 'Matemática'
+                        };
+                    } else {
+                        currentUser = data;
+                    }
+
+                    // Sincronizar UI del sidebar con seguridad ante campos nulos
+                    const fullName = currentUser.full_name || 'Estudiante Nuevo';
+                    const nameEl = document.getElementById('sidebar-user-name');
+                    if (nameEl) nameEl.innerText = fullName;
+                    
+                    const avatarEl = document.getElementById('user-avatar-initial');
+                    if (avatarEl) {
+                        avatarEl.innerText = fullName.trim().charAt(0).toUpperCase() || 'E';
+                    }
+                    
+                    const roleBadge = document.getElementById('user-role-badge');
+                    if (roleBadge) {
+                        roleBadge.innerText = currentUser.role === 'subscriber' ? 'Suscriptor' : (currentUser.role === 'admin' ? 'Admin' : 'Gratuito');
+                        roleBadge.className = 'inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold tracking-wider uppercase mt-0.5 ' + 
+                            (currentUser.role === 'subscriber' ? 'bg-amber-500/20 text-amber-300' : (currentUser.role === 'admin' ? 'bg-emerald-500/20 text-emerald-300' : 'bg-slate-700 text-slate-300'));
+                    }
+
+                    const adminSection = document.getElementById('admin-nav-section');
+                    if (adminSection) {
+                        if (currentUser.role === 'admin') {
+                            adminSection.classList.remove('hidden');
+                        } else {
+                            adminSection.classList.add('hidden');
+                        }
+                    }
+
+                    const authContainer = document.getElementById('auth-container');
+                    if (authContainer) authContainer.classList.add('hidden');
+                    
+                    const portalContainer = document.getElementById('portal-container');
+                    if (portalContainer) portalContainer.classList.remove('hidden');
+                    
+                    // Redirigir a bienvenida si está en rutas auth
+                    if (!window.location.hash || ['#login', '#register', '#forgot'].includes(window.location.hash)) {
+                        window.location.hash = '#bienvenida';
+                    }
                 } else {
-                    currentUser = data;
+                    currentUser = null;
+                    const authContainer = document.getElementById('auth-container');
+                    if (authContainer) authContainer.classList.remove('hidden');
+                    
+                    const portalContainer = document.getElementById('portal-container');
+                    if (portalContainer) portalContainer.classList.add('hidden');
+                    
+                    if (!['#login', '#register', '#forgot'].includes(window.location.hash)) {
+                        window.location.hash = '#login';
+                    }
                 }
-
-                // Sincronizar UI del sidebar
-                document.getElementById('sidebar-user-name').innerText = currentUser.full_name;
-                document.getElementById('user-avatar-initial').innerText = currentUser.full_name.charAt(0).toUpperCase();
-                
-                const roleBadge = document.getElementById('user-role-badge');
-                roleBadge.innerText = currentUser.role === 'subscriber' ? 'Suscriptor' : (currentUser.role === 'admin' ? 'Admin' : 'Gratuito');
-                roleBadge.className = 'inline-flex items-center px-2 py-0.5 rounded-full text-[10px] font-semibold tracking-wider uppercase mt-0.5 ' + 
-                    (currentUser.role === 'subscriber' ? 'bg-amber-500/20 text-amber-300' : (currentUser.role === 'admin' ? 'bg-emerald-500/20 text-emerald-300' : 'bg-slate-700 text-slate-300'));
-
-                if (currentUser.role === 'admin') {
-                    document.getElementById('admin-nav-section').classList.remove('hidden');
-                } else {
-                    document.getElementById('admin-nav-section').classList.add('hidden');
-                }
-
-                document.getElementById('auth-container').classList.add('hidden');
-                document.getElementById('portal-container').classList.remove('hidden');
-                
-                // Redirigir a bienvenida si está en rutas auth
-                if (!window.location.hash || ['#login', '#register', '#forgot'].includes(window.location.hash)) {
-                    window.location.hash = '#bienvenida';
-                }
-            } else {
-                currentUser = null;
-                document.getElementById('auth-container').classList.remove('hidden');
-                document.getElementById('portal-container').classList.add('hidden');
-                
-                if (!['#login', '#register', '#forgot'].includes(window.location.hash)) {
-                    window.location.hash = '#login';
-                }
+                await routeApp();
+            } catch (err) {
+                console.error("Error crítico en handleSessionChange:", err);
+                showGenericError(err);
             }
-            routeApp();
         }
 
         async function handleLogout() {
@@ -749,100 +802,121 @@
         // ---------------------------------------------------------------------
 
         async function routeApp() {
-            const hash = window.location.hash || '#bienvenida';
-            
-            // Cerrar menú móvil siempre al cambiar de página
-            document.getElementById('sidebar').classList.add('-translate-x-full');
-            document.getElementById('sidebar').classList.remove('translate-x-0');
-
-            // Limpiar buscador
-            document.getElementById('top-search').value = '';
-
-            // Si no hay sesión, forzar auth views
-            if (!currentSession) {
-                document.getElementById('auth-container').classList.remove('hidden');
-                document.getElementById('portal-container').classList.add('hidden');
+            try {
+                const hash = window.location.hash || '#bienvenida';
                 
-                document.getElementById('login-view').classList.add('hidden');
-                document.getElementById('register-view').classList.add('hidden');
-                document.getElementById('forgot-view').classList.add('hidden');
-
-                if (hash === '#register') {
-                    document.getElementById('register-view').classList.remove('hidden');
-                    document.getElementById('auth-title-desc').innerText = 'Empieza hoy mismo tu ruta de superación académica.';
-                } else if (hash === '#forgot') {
-                    document.getElementById('forgot-view').classList.remove('hidden');
-                    document.getElementById('auth-title-desc').innerText = 'Recupera el acceso a tu espacio personalizado.';
-                } else {
-                    document.getElementById('login-view').classList.remove('hidden');
-                    document.getElementById('auth-title-desc').innerText = 'Ingresa a tu espacio personalizado de aprendizaje.';
+                // Cerrar menú móvil siempre al cambiar de página
+                const sidebar = document.getElementById('sidebar');
+                if (sidebar) {
+                    sidebar.classList.add('-translate-x-full');
+                    sidebar.classList.remove('translate-x-0');
                 }
-                return;
-            }
 
-            // Cambiar items activos en Sidebar
-            document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active-nav'));
-            let matchedNav = document.querySelector(`.nav-item[href="${hash}"]`);
-            if (hash.startsWith('#contenidos/gratuitos')) {
-                matchedNav = document.querySelector('.nav-item[href="#contenidos/gratuitos"]');
-            } else if (hash.startsWith('#contenidos/premium')) {
-                matchedNav = document.querySelector('.nav-item[href="#contenidos/premium"]');
-            } else if (hash.startsWith('#contenidos') || hash.startsWith('#contenido')) {
-                matchedNav = document.querySelector('.nav-item[href="#contenidos"]');
-            }
-            if (matchedNav) matchedNav.classList.add('active-nav');
+                // Limpiar buscador
+                const topSearch = document.getElementById('top-search');
+                if (topSearch) topSearch.value = '';
 
-            // Renderizar la vista
-            const viewTitle = document.getElementById('header-view-title');
-            const mainArea = document.getElementById('main-content-area');
+                // Si no hay sesión, forzar auth views
+                if (!currentSession) {
+                    const authContainer = document.getElementById('auth-container');
+                    if (authContainer) authContainer.classList.remove('hidden');
+                    
+                    const portalContainer = document.getElementById('portal-container');
+                    if (portalContainer) portalContainer.classList.add('hidden');
+                    
+                    const loginView = document.getElementById('login-view');
+                    const registerView = document.getElementById('register-view');
+                    const forgotView = document.getElementById('forgot-view');
+                    const authTitleDesc = document.getElementById('auth-title-desc');
+                    
+                    if (loginView) loginView.classList.add('hidden');
+                    if (registerView) registerView.classList.add('hidden');
+                    if (forgotView) forgotView.classList.add('hidden');
 
-            // Cargar Datos Necesarios de la Base de Datos antes de renderizar
-            await Promise.all([
-                loadCategories(),
-                loadContentItems(),
-                loadUserProgress()
-            ]);
-
-            if (hash === '#bienvenida') {
-                viewTitle.innerText = 'Mi Espacio Personal';
-                renderBienvenida(mainArea);
-            } else if (hash.startsWith('#contenidos/gratuitos')) {
-                viewTitle.innerText = 'Catálogo de Recursos Gratuitos';
-                renderCatalogView(mainArea, 'free');
-            } else if (hash.startsWith('#contenidos/premium')) {
-                viewTitle.innerText = 'Biblioteca de Contenido Premium';
-                renderCatalogView(mainArea, 'premium');
-            } else if (hash === '#contenidos') {
-                viewTitle.innerText = 'Todos mis Contenidos';
-                renderCatalogView(mainArea, 'all');
-            } else if (hash.startsWith('#contenido/')) {
-                const slug = hash.replace('#contenido/', '');
-                renderContentView(mainArea, slug);
-            } else if (hash === '#mis-tutorias') {
-                viewTitle.innerText = 'Mis Tutorías Virtuales';
-                renderTutoringView(mainArea);
-            } else if (hash === '#recursos') {
-                viewTitle.innerText = 'Descargas de Apoyo Directo';
-                renderRecursosView(mainArea);
-            } else if (hash === '#progreso') {
-                viewTitle.innerText = 'Mi Historial y Progreso';
-                renderProgresoView(mainArea);
-            } else if (hash === '#cuenta') {
-                viewTitle.innerText = 'Mi Perfil';
-                renderCuentaView(mainArea);
-            } else if (hash === '#soporte') {
-                viewTitle.innerText = 'Canal de Soporte CEDETU';
-                renderSoporteView(mainArea);
-            } else if (hash.startsWith('#admin')) {
-                if (currentUser.role !== 'admin') {
-                    window.location.hash = '#bienvenida';
+                    if (hash === '#register') {
+                        if (registerView) registerView.classList.remove('hidden');
+                        if (authTitleDesc) authTitleDesc.innerText = 'Empieza hoy mismo tu ruta de superación académica.';
+                    } else if (hash === '#forgot') {
+                        if (forgotView) forgotView.classList.remove('hidden');
+                        if (authTitleDesc) authTitleDesc.innerText = 'Recupera el acceso a tu espacio personalizado.';
+                    } else {
+                        if (loginView) loginView.classList.remove('hidden');
+                        if (authTitleDesc) authTitleDesc.innerText = 'Ingresa a tu espacio personalizado de aprendizaje.';
+                    }
                     return;
                 }
-                viewTitle.innerText = 'Consola de Control del Administrador';
-                renderAdminView(mainArea, hash);
-            } else {
-                // Fallback a bienvenida
-                window.location.hash = '#bienvenida';
+
+                // Cambiar items activos en Sidebar
+                document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active-nav'));
+                let matchedNav = document.querySelector(`.nav-item[href="${hash}"]`);
+                if (hash.startsWith('#contenidos/gratuitos')) {
+                    matchedNav = document.querySelector('.nav-item[href="#contenidos/gratuitos"]');
+                } else if (hash.startsWith('#contenidos/premium')) {
+                    matchedNav = document.querySelector('.nav-item[href="#contenidos/premium"]');
+                } else if (hash.startsWith('#contenidos') || hash.startsWith('#contenido')) {
+                    matchedNav = document.querySelector('.nav-item[href="#contenidos"]');
+                }
+                if (matchedNav) matchedNav.classList.add('active-nav');
+
+                // Renderizar la vista
+                const viewTitle = document.getElementById('header-view-title');
+                const mainArea = document.getElementById('main-content-area');
+
+                // Cargar Datos Necesarios de la Base de Datos antes de renderizar
+                try {
+                    await Promise.all([
+                        loadCategories(),
+                        loadContentItems(),
+                        loadUserProgress()
+                    ]);
+                } catch (dbLoadErr) {
+                    console.error("Error al precargar datos para vista:", dbLoadErr);
+                }
+
+                if (hash === '#bienvenida') {
+                    if (viewTitle) viewTitle.innerText = 'Mi Espacio Personal';
+                    renderBienvenida(mainArea);
+                } else if (hash.startsWith('#contenidos/gratuitos')) {
+                    if (viewTitle) viewTitle.innerText = 'Catálogo de Recursos Gratuitos';
+                    renderCatalogView(mainArea, 'free');
+                } else if (hash.startsWith('#contenidos/premium')) {
+                    if (viewTitle) viewTitle.innerText = 'Biblioteca de Contenido Premium';
+                    renderCatalogView(mainArea, 'premium');
+                } else if (hash === '#contenidos') {
+                    if (viewTitle) viewTitle.innerText = 'Todos mis Contenidos';
+                    renderCatalogView(mainArea, 'all');
+                } else if (hash.startsWith('#contenido/')) {
+                    const slug = hash.replace('#contenido/', '');
+                    renderContentView(mainArea, slug);
+                } else if (hash === '#mis-tutorias') {
+                    if (viewTitle) viewTitle.innerText = 'Mis Tutorías Virtuales';
+                    renderTutoringView(mainArea);
+                } else if (hash === '#recursos') {
+                    if (viewTitle) viewTitle.innerText = 'Descargas de Apoyo Directo';
+                    renderRecursosView(mainArea);
+                } else if (hash === '#progreso') {
+                    if (viewTitle) viewTitle.innerText = 'Mi Historial y Progreso';
+                    renderProgresoView(mainArea);
+                } else if (hash === '#cuenta') {
+                    if (viewTitle) viewTitle.innerText = 'Mi Perfil';
+                    renderCuentaView(mainArea);
+                } else if (hash === '#soporte') {
+                    if (viewTitle) viewTitle.innerText = 'Canal de Soporte CEDETU';
+                    renderSoporteView(mainArea);
+                } else if (hash.startsWith('#admin')) {
+                    if (currentUser && currentUser.role !== 'admin') {
+                        window.location.hash = '#bienvenida';
+                        return;
+                    }
+                    if (viewTitle) viewTitle.innerText = 'Consola de Control del Administrador';
+                    renderAdminView(mainArea, hash);
+                } else {
+                    // Fallback a bienvenida
+                    window.location.hash = '#bienvenida';
+                }
+            } catch (err) {
+                console.error("Error crítico en routeApp:", err);
+                showGenericError(err);
             }
         }
 
@@ -852,19 +926,31 @@
 
         async function loadCategories() {
             if (loadedCategories.length > 0) return;
-            const { data, error } = await supabase.from('categories').select('*').order('name');
-            if (!error && data) loadedCategories = data;
+            try {
+                const { data, error } = await supabase.from('categories').select('*').order('name');
+                if (!error && data) loadedCategories = data;
+            } catch (e) {
+                console.error("Error al cargar categorías:", e);
+            }
         }
 
         async function loadContentItems() {
-            // Siempre recargar para sincronizar si el administrador edita/agrega
-            const { data, error } = await supabase.from('content_items').select('*, categories(*)').order('created_at', { ascending: false });
-            if (!error && data) loadedContentItems = data;
+            try {
+                const { data, error } = await supabase.from('content_items').select('*, categories(*)').order('created_at', { ascending: false });
+                if (!error && data) loadedContentItems = data;
+            } catch (e) {
+                console.error("Error al cargar ítems de contenido:", e);
+            }
         }
 
         async function loadUserProgress() {
-            const { data, error } = await supabase.from('user_content_progress').select('*').eq('user_id', currentUser.id);
-            if (!error && data) loadedUserProgress = data;
+            if (!currentUser) return;
+            try {
+                const { data, error } = await supabase.from('user_content_progress').select('*').eq('user_id', currentUser.id);
+                if (!error && data) loadedUserProgress = data;
+            } catch (e) {
+                console.error("Error al cargar progreso de usuario:", e);
+            }
         }
 
         async function loadUserTutoringRequests() {
