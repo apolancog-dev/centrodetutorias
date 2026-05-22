@@ -88,8 +88,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Tailwind CSS (CDN) -->
-    <script src="https://cdn.tailwindcss.com" defer></script>
+    <!-- Tailwind CSS (CDN sin defer para que los colores custom apliquen en el primer render) -->
+    <script src="https://cdn.tailwindcss.com"></script>
     
     <script>
         // Configurar Tailwind preventivamente en window por si carga en diferido
@@ -181,6 +181,48 @@
         }
         #sidebar .sidebar-icon-btn:hover {
             background-color: rgba(255,255,255,0.1);
+        }
+
+        /* =====================================================
+           AUTH FORMS: Colores garantizados por CSS directo
+           ===================================================== */
+        #auth-container label {
+            color: #334155 !important; /* slate-700 */
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+        #btn-login-submit {
+            background-color: #1E3A8A !important; /* primary */
+            color: #FFFFFF !important;
+            font-weight: 700;
+        }
+        #btn-login-submit:hover {
+            background-color: #1e40af !important;
+        }
+        #btn-login-submit:disabled {
+            background-color: #93c5fd !important;
+            cursor: not-allowed;
+        }
+        #btn-register-submit {
+            background-color: #10B981 !important; /* secondary */
+            color: #FFFFFF !important;
+            font-weight: 700;
+        }
+        #btn-register-submit:hover {
+            background-color: #059669 !important;
+        }
+        #btn-forgot-submit {
+            background-color: #1E3A8A !important;
+            color: #FFFFFF !important;
+            font-weight: 700;
+        }
+        #auth-container a.font-bold {
+            color: #1E3A8A;
+        }
+        #auth-container a.text-secondary {
+            color: #10B981;
         }
 
         .active-nav {
@@ -1102,19 +1144,21 @@
             try {
                 currentSession = session;
                 if (session) {
-                    // Consultar base de datos pública de perfiles
+                    // Consultar base de datos pública de perfiles (con timeout de 8s)
                     let data = null;
                     let error = null;
                     try {
-                        const res = await supabase
-                            .from('users')
-                            .select('*')
-                            .eq('id', session.user.id)
-                            .single();
+                        const dbTimeout = new Promise((_, reject) =>
+                            setTimeout(() => reject(new Error('DB_TIMEOUT')), 8000)
+                        );
+                        const res = await Promise.race([
+                            supabase.from('users').select('*').eq('id', session.user.id).single(),
+                            dbTimeout
+                        ]);
                         data = res.data;
                         error = res.error;
                     } catch (dbErr) {
-                        console.error('Error de red al consultar perfil:', dbErr);
+                        console.warn('Timeout o error al consultar perfil:', dbErr.message);
                         error = dbErr;
                     }
 
