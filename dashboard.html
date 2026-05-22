@@ -720,30 +720,35 @@
 
             // Timeout helper
             const timeout = (ms) => new Promise((_, reject) => 
-                setTimeout(() => reject(new Error("Tiempo de espera agotado al conectar con el servidor. Esto ocurre si la red es inestable, si hay un cortafuegos restrictivo o si un bloqueador de anuncios interfiere con el servidor de base de datos.")), ms)
+                setTimeout(() => reject(new Error('TIMEOUT')), ms)
             );
 
-            // Mostrar advertencia de lentitud si tarda más de 3 segundos
+            // Mostrar advertencia de lentitud si tarda más de 4 segundos
             const slowTimer = setTimeout(() => {
                 const timeoutMsg = document.getElementById('loading-timeout-msg');
                 if (timeoutMsg) timeoutMsg.style.display = 'block';
-            }, 3000);
+            }, 4000);
 
             try {
                 // Inicializar Web Auth listener
                 initAuthListeners();
-                // Comprobar la sesión activa de Supabase con un timeout de 6 segundos
+                // Comprobar la sesión activa de Supabase con un timeout de 15 segundos
                 const { data: { session } } = await Promise.race([
                     supabase.auth.getSession(),
-                    timeout(6000)
+                    timeout(15000)
                 ]);
                 clearTimeout(slowTimer);
                 await handleSessionChange(session);
             } catch (err) {
                 clearTimeout(slowTimer);
-                console.error("Error en la inicialización de la SPA:", err);
-                showGenericError(err);
-                return;
+                if (err.message === 'TIMEOUT' || err.message.includes('Tiempo de espera')) {
+                    // Si hay timeout verificando sesión, asumir no autenticado y mostrar login
+                    console.warn('getSession() tardó demasiado — mostrando login sin sesión.');
+                    try { await handleSessionChange(null); } catch(e) {}
+                } else {
+                    console.error('Error en la inicialización de la SPA:', err);
+                    showGenericError(err);
+                }
             }
             
             // Toggle sidebar móvil
