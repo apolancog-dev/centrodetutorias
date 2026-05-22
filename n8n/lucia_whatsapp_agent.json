@@ -78,8 +78,8 @@
       ],
       "credentials": {
         "openAiApi": {
-          "id": "default_openai_key",
-          "name": "OpenAI API"
+          "id": "4iK6wrqLwNRksV0n",
+          "name": "OpenAI account"
         }
       }
     },
@@ -101,7 +101,7 @@
       "parameters": {
         "name": "guardar_lead",
         "description": "Utiliza esta herramienta únicamente cuando el usuario te haya proporcionado sus datos de contacto completos (Nombre, Correo, Teléfono) y la Materia de interés, para registrarlos en el sistema Supabase y GoHighLevel.",
-        "workflowId": "select-subworkflow-uuid",
+        "workflowId": "dtiE5EpLZzzTsgDn",
         "specifyInputSchema": true,
         "inputSchema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"nombre\": {\n      \"type\": \"string\",\n      \"description\": \"Nombre completo del lead\"\n    },\n    \"email\": {\n      \"type\": \"string\",\n      \"description\": \"Correo electrónico de contacto\"\n    },\n    \"telefono\": {\n      \"type\": \"string\",\n      \"description\": \"Número de teléfono del contacto\"\n    },\n    \"materia\": {\n      \"type\": \"string\",\n      \"description\": \"Materia que necesita reforzar\"\n    },\n    \"nivel\": {\n      \"type\": \"string\",\n      \"description\": \"Nivel académico del estudiante (Primaria, Secundaria, Bachillerato, Universidad)\"\n    },\n    \"descripcion\": {\n      \"type\": \"string\",\n      \"description\": \"Breve descripción de la necesidad académica\"\n    }\n  },\n  \"required\": [\"nombre\", \"email\", \"telefono\", \"materia\"]\n}"
       },
@@ -129,9 +129,9 @@
         240
       ],
       "credentials": {
-        "whatsAppCloudApi": {
-          "id": "default_whatsapp_key",
-          "name": "WhatsApp Cloud API Connection"
+        "whatsAppApi": {
+          "id": "b8AIBqrblIjhztKe",
+          "name": "WhatsApp Account (Meta)"
         }
       }
     }

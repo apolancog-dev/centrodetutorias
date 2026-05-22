@@ -68,8 +68,8 @@
       ],
       "credentials": {
         "supabaseApi": {
-          "id": "default_supabase_key",
-          "name": "Supabase Connection"
+          "id": "IVa19l81qjUZcHse",
+          "name": "Supabase account"
         }
       }
     },
@@ -95,8 +95,8 @@
       ],
       "credentials": {
         "highLevelApi": {
-          "id": "default_ghl_key",
-          "name": "GHL Connection"
+          "id": "lybJUXV40zv92wqz",
+          "name": "HighLevel account"
         }
       }
     },
@@ -117,8 +117,8 @@
       ],
       "credentials": {
         "smtp": {
-          "id": "default_smtp_key",
-          "name": "SMTP Connection"
+          "id": "RrEqzBTLbIQz9QNL",
+          "name": "SMTP account"
         }
       }
     },
