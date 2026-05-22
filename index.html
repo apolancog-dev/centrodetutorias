@@ -130,8 +130,7 @@
                 <a href="#faq" class="text-gray-600 hover:text-primary font-medium transition-colors">FAQ</a>
             </nav>
             <div class="flex gap-3 items-center">
-                <button id="auth-btn" class="text-primary font-bold hover:text-blue-800 transition-colors hidden md:block">Iniciar Sesión</button>
-                <button id="account-btn" class="text-primary font-bold hover:text-blue-800 transition-colors hidden">Mi Cuenta</button>
+                <button id="auth-btn" class="text-primary font-bold hover:text-blue-800 transition-colors hidden md:flex items-center gap-1.5">Iniciar Sesión</button>
                 <a href="#contacto" data-track="click_CTA_primary" class="bg-primary hover:bg-blue-900 text-white px-5 py-2.5 rounded-full font-semibold transition-transform transform hover:scale-105 shadow-md text-sm md:text-base">Agendar Diagnóstico</a>
             </div>
         </div>
@@ -815,31 +814,19 @@
             const authSuccess = document.getElementById('auth-success');
             const accountEmail = document.getElementById('account-email');
 
-            // Redirects to Dashboard
-            if (authBtn) {
-                authBtn.addEventListener('click', () => {
-                    window.location.href = 'dashboard.html#login';
-                });
-            }
-            if (accountBtn) {
-                accountBtn.addEventListener('click', () => {
-                    window.location.href = 'dashboard.html#bienvenida';
-                });
-            }
-
-            // UI Update by Session
+            // UI Update by Session — un solo botón que cambia según estado
             function updateUI(session) {
+                const btn = document.getElementById('auth-btn');
+                if (!btn) return;
+                btn.classList.remove('hidden');
                 if (session) {
-                    if (authBtn) authBtn.classList.add('hidden');
-                    if (accountBtn) {
-                        accountBtn.classList.remove('hidden');
-                        accountBtn.innerText = 'Ir al Panel';
-                    }
+                    btn.innerHTML = 'Ir al Panel <svg xmlns="http://www.w3.org/2000/svg" class="inline w-4 h-4 mb-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" /></svg>';
+                    btn.onclick = () => window.location.href = 'dashboard.html#bienvenida';
                     if (accountEmail) accountEmail.innerText = session.user.email;
                     if (authModal) authModal.classList.remove('active');
                 } else {
-                    if (authBtn) authBtn.classList.remove('hidden');
-                    if (accountBtn) accountBtn.classList.add('hidden');
+                    btn.innerHTML = 'Iniciar Sesión';
+                    btn.onclick = () => window.location.href = 'dashboard.html#login';
                     if (accountModal) accountModal.classList.remove('active');
                 }
             }
