@@ -711,15 +711,36 @@
                 return;
             }
 
+            // =========================================================
+            // FAILSAFE NUCLEAR: Si en 20 segundos nada resolvió,
+            // forzar la vista de login para no bloquear al usuario
+            // =========================================================
+            const failsafeTimer = setTimeout(() => {
+                console.warn('[FAILSAFE] 20s sin respuesta — forzando pantalla de login.');
+                const loadingScreen = document.getElementById('app-loading-screen');
+                if (loadingScreen) loadingScreen.remove();
+                const authContainer = document.getElementById('auth-container');
+                if (authContainer) authContainer.classList.remove('hidden');
+                const portalContainer = document.getElementById('portal-container');
+                if (portalContainer) portalContainer.classList.add('hidden');
+                if (!['#login', '#register', '#forgot'].includes(window.location.hash)) {
+                    window.location.hash = '#login';
+                }
+            }, 20000);
+
+            // Para localhost/desarrollo, reducir timeout de sesión a 5s
+            const isLocal = ['localhost', '127.0.0.1', '0.0.0.0'].includes(window.location.hostname);
+
             // Asegurar que el SDK de Supabase esté cargado e inicializado
             const cargado = await asegurarSupabaseSDK();
             if (!cargado || !supabase) {
+                clearTimeout(failsafeTimer);
                 showGenericError(new Error("No se pudo conectar con el servicio de base de datos porque el SDK de Supabase no cargó. Esto suele suceder por bloqueadores de publicidad/scripts, navegación de incógnito restrictiva o micro-cortes de internet. Por favor, desactiva extensiones que puedan bloquearlo y recarga la página."));
                 return;
             }
 
             // Timeout helper
-            const timeout = (ms) => new Promise((_, reject) => 
+            const timeout = (ms) => new Promise((_, reject) =>
                 setTimeout(() => reject(new Error('TIMEOUT')), ms)
             );
 
@@ -732,19 +753,35 @@
             try {
                 // Inicializar Web Auth listener
                 initAuthListeners();
-                // Comprobar la sesión activa de Supabase con un timeout de 15 segundos
+                // En local usar 5s de timeout para no esperar demasiado
+                const sessionTimeout = isLocal ? 5000 : 15000;
                 const { data: { session } } = await Promise.race([
                     supabase.auth.getSession(),
-                    timeout(15000)
+                    timeout(sessionTimeout)
                 ]);
                 clearTimeout(slowTimer);
+                clearTimeout(failsafeTimer);
                 await handleSessionChange(session);
             } catch (err) {
                 clearTimeout(slowTimer);
-                if (err.message === 'TIMEOUT' || err.message.includes('Tiempo de espera')) {
-                    // Si hay timeout verificando sesión, asumir no autenticado y mostrar login
-                    console.warn('getSession() tardó demasiado — mostrando login sin sesión.');
-                    try { await handleSessionChange(null); } catch(e) {}
+                clearTimeout(failsafeTimer);
+                if (err.message === 'TIMEOUT') {
+                    // Timeout: asumir no autenticado y mostrar login directamente
+                    console.warn('getSession() timeout — mostrando login.');
+                    try {
+                        const loadingScreen = document.getElementById('app-loading-screen');
+                        if (loadingScreen) loadingScreen.remove();
+                        const authContainer = document.getElementById('auth-container');
+                        if (authContainer) authContainer.classList.remove('hidden');
+                        const portalContainer = document.getElementById('portal-container');
+                        if (portalContainer) portalContainer.classList.add('hidden');
+                        if (!['#login', '#register', '#forgot'].includes(window.location.hash)) {
+                            window.location.hash = '#login';
+                        }
+                        try { await routeApp(); } catch(e) {}
+                    } catch(fallbackErr) {
+                        console.error('Error en fallback de timeout:', fallbackErr);
+                    }
                 } else {
                     console.error('Error en la inicialización de la SPA:', err);
                     showGenericError(err);
