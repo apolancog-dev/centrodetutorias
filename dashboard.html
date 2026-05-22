@@ -1,6 +1,83 @@
 <!DOCTYPE html>
 <html lang="es" class="h-full bg-gray-50">
 <head>
+    <!-- DIAGNÓSTICO ULTRA-TEMPRANO Y PREVENCIÓN DE CACHÉ -->
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    
+    <script>
+        // Buffer para registrar todos los logs, advertencias y errores antes de la carga de la UI
+        window.__cetu_logs = [];
+        const originalLog = console.log;
+        const originalWarn = console.warn;
+        const originalError = console.error;
+        
+        console.log = function(...args) {
+            window.__cetu_logs.push({ type: 'LOG', text: args.map(a => typeof a === 'object' ? JSON.stringify(a) : String(a)).join(' ') });
+            originalLog.apply(console, args);
+        };
+        console.warn = function(...args) {
+            window.__cetu_logs.push({ type: 'WARN', text: args.map(a => typeof a === 'object' ? JSON.stringify(a) : String(a)).join(' ') });
+            originalWarn.apply(console, args);
+        };
+        console.error = function(...args) {
+            window.__cetu_logs.push({ type: 'ERROR', text: args.map(a => typeof a === 'object' ? JSON.stringify(a) : String(a)).join(' ') });
+            originalError.apply(console, args);
+        };
+
+        // Captura de excepciones globales
+        window.addEventListener('error', function(e) {
+            mostrarErrorFatal("EXCEPCIÓN NO CONTROLADA", e.message, e.filename + ":" + e.lineno + ":" + e.colno, e.error ? e.error.stack : '');
+        });
+        window.addEventListener('unhandledrejection', function(e) {
+            mostrarErrorFatal("PROCESO ASÍNCRONO FALLIDO", e.reason, "Promesa Rechazada", e.reason && e.reason.stack ? e.reason.stack : '');
+        });
+
+        function mostrarErrorFatal(titulo, mensaje, ubicacion, stack) {
+            const renderPanel = function() {
+                var panel = document.getElementById('cetu-fatal-error-panel');
+                if (panel) return;
+                
+                panel = document.createElement('div');
+                panel.id = 'cetu-fatal-error-panel';
+                panel.style.cssText = "position: fixed; inset: 0; z-index: 999999; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle at center, #1E293B 0%, #0F172A 100%); padding: 16px; font-family: system-ui, -apple-system, sans-serif; box-sizing: border-box;";
+                
+                var logsHtml = window.__cetu_logs.map(function(l) {
+                    var color = l.type === 'ERROR' ? '#EF4444' : (l.type === 'WARN' ? '#F59E0B' : '#94A3B8');
+                    return '<div style="color: ' + color + '; margin-bottom: 4px;">[' + l.type + '] ' + l.text + '</div>';
+                }).join('');
+                
+                var stackHtml = stack ? '<div style="margin-bottom: 12px;"><strong style="font-size: 12px; color: #1E293B;">Pila de ejecución (Stack):</strong><pre style="background: #F8FAFC; border: 1px solid #E2E8F0; padding: 10px; border-radius: 8px; font-size: 11px; font-family: monospace; overflow-x: auto; margin: 4px 0 0 0; max-height: 150px;">' + stack + '</pre></div>' : '';
+                
+                panel.innerHTML = '<div style="max-width: 600px; width: 100%; background: #ffffff; padding: 24px; border-radius: 20px; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4); border: 2px solid #EF4444; box-sizing: border-box; text-align: left; overflow: auto; max-height: 90vh;">'
+                    + '<div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px; border-bottom: 2px solid #FEE2E2; padding-bottom: 12px;">'
+                    + '<div style="background: #FEE2E2; color: #DC2626; border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 20px;">!</div>'
+                    + '<div><h3 style="margin: 0; font-size: 18px; font-weight: 800; color: #991B1B;">' + titulo + '</h3>'
+                    + '<span style="font-size: 11px; color: #B91C1C; font-family: monospace;">' + ubicacion + '</span></div>'
+                    + '</div>'
+                    + '<p style="font-size: 13px; color: #475569; line-height: 1.5; margin: 0 0 12px 0;"><strong>Error:</strong> ' + mensaje + '</p>'
+                    + stackHtml
+                    + '<div style="margin-bottom: 16px;"><strong style="font-size: 12px; color: #1E293B;">Historial de Carga y Diagnóstico:</strong>'
+                    + '<div style="background: #1E293B; color: #F8FAFC; border: 1px solid #0F172A; padding: 10px; border-radius: 8px; font-size: 10px; font-family: monospace; overflow-x: auto; margin: 4px 0 0 0; max-height: 150px;">' + (logsHtml || 'Sin logs disponibles') + '</div>'
+                    + '</div>'
+                    + '<button onclick="window.location.reload()" style="width: 100%; background: #DC2626; color: #ffffff; font-weight: 700; padding: 12px; border-radius: 10px; border: none; font-size: 13px; cursor: pointer; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">Limpiar Caché y Recargar Portal</button>'
+                    + '</div>';
+                
+                var lScreen = document.getElementById('app-loading-screen');
+                if (lScreen) lScreen.remove();
+                
+                document.body ? document.body.appendChild(panel) : document.documentElement.appendChild(panel);
+            };
+            
+            if (document.body) {
+                renderPanel();
+            } else {
+                window.addEventListener('DOMContentLoaded', renderPanel);
+            }
+        }
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal de Miembros | Centro de Tutorías</title>
@@ -13,7 +90,6 @@
     
     <!-- Tailwind CSS (CDN) -->
     <script src="https://cdn.tailwindcss.com" defer></script>
-    <script src="db-client.js?v=2.0.0" defer></script>
     
     <script>
         // Configurar Tailwind preventivamente en window por si carga en diferido
@@ -505,6 +581,75 @@
         
         let supabase = null;
 
+        // Helpers de carga dinámica e inmunes a UMD Hijacking
+        async function cargarSDKPorFetch(url) {
+            console.log(`Intentando fetch de SDK: ${url}`);
+            const response = await fetch(url);
+            if (!response.ok) throw new Error(`Error HTTP: ${response.status}`);
+            const code = await response.text();
+            
+            const tempDefine = window.define;
+            const tempExports = window.exports;
+            const tempModule = window.module;
+            
+            try {
+                window.define = undefined;
+                window.exports = undefined;
+                window.module = undefined;
+                
+                const script = document.createElement('script');
+                script.text = code;
+                document.head.appendChild(script);
+                
+                if (window.supabase) {
+                    console.log(`SDK cargado exitosamente via fetch e inyección inline desde ${url}`);
+                    return true;
+                } else {
+                    throw new Error("El script ejecutó pero window.supabase sigue undefined");
+                }
+            } finally {
+                window.define = tempDefine;
+                window.exports = tempExports;
+                window.module = tempModule;
+            }
+        }
+
+        async function cargarSDKPorScriptTag(url) {
+            console.log(`Intentando inyección de script: ${url}`);
+            
+            const tempDefine = window.define;
+            const tempExports = window.exports;
+            const tempModule = window.module;
+            
+            window.define = undefined;
+            window.exports = undefined;
+            window.module = undefined;
+            
+            return new Promise((resolve, reject) => {
+                const script = document.createElement('script');
+                script.src = url;
+                script.onload = () => {
+                    window.define = tempDefine;
+                    window.exports = tempExports;
+                    window.module = tempModule;
+                    
+                    if (window.supabase) {
+                        console.log(`SDK cargado exitosamente via script tag desde ${url}`);
+                        resolve(true);
+                    } else {
+                        reject(new Error("Script cargado pero window.supabase sigue undefined"));
+                    }
+                };
+                script.onerror = () => {
+                    window.define = tempDefine;
+                    window.exports = tempExports;
+                    window.module = tempModule;
+                    reject(new Error("Error de red cargando script"));
+                };
+                document.head.appendChild(script);
+            });
+        }
+
         // Cargador ultra-robusto y resiliente del SDK de Supabase
         async function asegurarSupabaseSDK() {
             if (window.supabase) {
@@ -526,26 +671,21 @@
 
             for (const url of urls) {
                 try {
-                    console.log(`Intentando cargar SDK de Supabase desde: ${url}`);
-                    await new Promise((resolve, reject) => {
-                        const script = document.createElement('script');
-                        script.src = url;
-                        script.onload = () => {
-                            if (window.supabase) {
-                                resolve();
-                            } else {
-                                reject(new Error("Script cargado pero window.supabase sigue undefined"));
-                            }
-                        };
-                        script.onerror = () => reject(new Error("Error de red cargando script"));
-                        document.head.appendChild(script);
-                    });
-                    
+                    // 1. Intentar por fetch e inyección inline (totalmente inmune a UMD Hijacking)
+                    await cargarSDKPorFetch(url);
                     supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
-                    console.log(`SDK de Supabase cargado con éxito desde: ${url}`);
                     return true;
-                } catch (err) {
-                    console.warn(`Falló la carga desde ${url}:`, err.message);
+                } catch (fetchErr) {
+                    console.warn(`Método Fetch falló para ${url}:`, fetchErr.message);
+                    
+                    // 2. Intentar por inyección de script tag clásica (con enmascaramiento temporal)
+                    try {
+                        await cargarSDKPorScriptTag(url);
+                        supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+                        return true;
+                    } catch (scriptErr) {
+                        console.warn(`Método ScriptTag falló para ${url}:`, scriptErr.message);
+                    }
                 }
             }
             return false;
@@ -2606,41 +2746,7 @@
         }
 
         function showGenericError(err) {
-            // Eliminar pantalla de carga
-            const loadingScreen = document.getElementById('app-loading-screen');
-            if (loadingScreen) loadingScreen.remove();
-
-            const authContainer = document.getElementById('auth-container');
-            const portalContainer = document.getElementById('portal-container');
-            if (authContainer) authContainer.classList.add('hidden');
-            if (portalContainer) portalContainer.classList.add('hidden');
-            
-            const errMsg = err ? (err.message || String(err)) : 'Error de inicialización desconocido.';
-            const errorEl = document.createElement('div');
-            errorEl.style.cssText = "position: fixed; inset: 0; z-index: 99999; display: flex; align-items: center; justify-content: center; background: radial-gradient(circle at center, #1E293B 0%, #0F172A 100%); padding: 16px; font-family: system-ui, -apple-system, sans-serif; text-align: center;";
-            errorEl.innerHTML = `
-                <div style="max-width: 448px; width: 100%; background: #ffffff; padding: 32px; border-radius: 24px; box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25); border: 1px solid #E2E8F0; box-sizing: border-box;">
-                    <div style="margin: 0 auto 24px auto; display: flex; align-items: center; justify-content: center; height: 64px; width: 64px; border-radius: 50%; background-color: #FEE2E2; color: #DC2626; align-items: center;">
-                        <svg style="height: 32px; width: 32px;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"></path>
-                        </svg>
-                    </div>
-                    <h3 style="font-size: 24px; font-weight: 800; color: #0F172A; margin: 0 0 12px 0; letter-spacing: -0.025em;">Error de Conexión</h3>
-                    <p style="font-size: 14px; color: #475569; line-height: 1.6; margin: 0 0 20px 0;">
-                        No se ha podido conectar de forma segura con el servicio de base de datos.
-                    </p>
-                    
-                    <div style="background-color: #FEF2F2; color: #991B1B; padding: 16px; border-radius: 12px; border: 1px solid #FCA5A5; text-align: left; font-size: 12px; font-family: monospace; word-break: break-all; margin-bottom: 24px; line-height: 1.5; box-sizing: border-box;">
-                        <strong>Detalles técnicos:</strong><br>
-                        ${errMsg}
-                    </div>
-                    
-                    <button onclick="window.location.reload()" style="width: 100%; display: inline-flex; align-items: center; justify-content: center; gap: 8px; background-color: #1E3A8A; color: #ffffff; font-weight: 700; padding: 14px 20px; border-radius: 12px; border: none; font-size: 14px; cursor: pointer; box-shadow: 0 10px 15px -3px rgba(30, 58, 138, 0.3); transition: background-color 0.2s;">
-                        Recargar e Intentar de Nuevo
-                    </button>
-                </div>
-            `;
-            document.body.appendChild(errorEl);
+            mostrarErrorFatal("ERROR DE CONEXIÓN", err ? (err.message || String(err)) : 'No se pudo inicializar la base de datos.', "Inicialización de la SPA / Supabase", err ? (err.stack || '') : '');
         }
     </script>
 </body>
