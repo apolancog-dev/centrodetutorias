@@ -4,144 +4,144 @@
     {
       "id": "23a8b2cd-ea71-46fd-9658-0056637b58c7",
       "name": "Filter Text Message",
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 2,
+      "parameters": {
+        "jsCode": "const body = $input.first().json.body;\nif (!body) return [];\n\n// Check if it's a valid WhatsApp message event\nconst entry = body.entry?.[0];\nconst change = entry?.changes?.[0];\nconst value = change?.value;\nconst messages = value?.messages;\n\nif (!messages || messages.length === 0) return [];\n\nconst msg = messages[0];\nif (msg.type === 'text' && msg.text && msg.text.body) {\n  return [{\n    json: {\n      text: msg.text.body,\n      from: msg.from,\n      contact_name: value.contacts?.[0]?.profile?.name || 'Cliente',\n      phone_number_id: value.metadata?.phone_number_id\n    }\n  }];\n}\n\nreturn [];"
+      },
       "position": [
         420,
         240
       ],
-      "parameters": {
-        "jsCode": "const body = $input.first().json.body;\nif (!body) return [];\n\n// Check if it's a valid WhatsApp message event\nconst entry = body.entry?.[0];\nconst change = entry?.changes?.[0];\nconst value = change?.value;\nconst messages = value?.messages;\n\nif (!messages || messages.length === 0) return [];\n\nconst msg = messages[0];\nif (msg.type === 'text' && msg.text && msg.text.body) {\n  return [{\n    json: {\n      text: msg.text.body,\n      from: msg.from,\n      contact_name: value.contacts?.[0]?.profile?.name || 'Cliente',\n      phone_number_id: value.metadata?.phone_number_id\n    }\n  }];\n}\n\nreturn [];"
-      }
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2
     },
     {
       "id": "e63a1ab3-cc72-466d-9658-0056637b58c7",
       "name": "AI Agent",
-      "type": "@n8n/n8n-nodes-langchain.agent",
-      "typeVersion": 1.6,
+      "parameters": {
+        "options": {
+          "systemMessage": "Eres LucIA, la asistente virtual inteligente y empática del Centro de Tutorías (CEDETU), atendiendo a los clientes directamente por WhatsApp. Tu tono es sumamente cálido, amigable, profesional y paciente. \n\nREGLAS DE CONVERSACIÓN EN WHATSAPP:\n- Escribe de forma concisa y conversacional. Usa párrafos cortos de 2 o 3 líneas máximo. WhatsApp requiere respuestas dinámicas, evita textos extremadamente largos.\n- Usa emojis con buen gusto para hacer los mensajes dinámicos y legibles.\n- Usa negritas (*texto*) para resaltar palabras importantes (ej: *clases virtuales*, *entrevista de diagnóstico gratuita*).\n- Tu objetivo es responder dudas sobre las tutorías de CEDETU y recopilar los datos del lead de manera fluida:\n  - Nombre completo\n  - Correo electrónico\n  - Número de teléfono (ya lo tienes, es el número de WhatsApp actual: {{ $('Filter Text Message').item.json.from }})\n  - Materia que necesita reforzar\n  - Nivel académico (Primaria, Secundaria, Bachillerato, Universidad)\n  - Breve descripción del caso\n- Cuando tengas al menos Nombre, Email y Materia de interés, DEBES invocar la herramienta \"guardar_lead\" para registrarlos en Supabase y GoHighLevel. (El número de teléfono pásalo como {{ $('Filter Text Message').item.json.from }}).\n- Siempre ofrece la opción de agendar un *Entrevista de Diagnóstico Gratuita de 20 minutos* directamente en nuestro Calendly: https://calendly.com/cedetu\n- Despídete cordialmente firmando como: \"*LucIA*, tu Asistente Virtual de CEDETU 🤖✨\"."
+        },
+        "promptType": "define",
+        "text": "={{ $json.text }}"
+      },
       "position": [
         640,
         240
       ],
-      "parameters": {
-        "options": {
-          "systemMessage": "Eres LucIA, la asistente virtual inteligente y empática del Centro de Tutorías (CEDETU), atendiendo a los clientes directamente por WhatsApp. Tu tono es sumamente cálido, amigable, profesional y paciente. \n\nREGLAS DE CONVERSACIÓN EN WHATSAPP:\n- Escribe de forma concisa y conversacional. Usa párrafos cortos de 2 o 3 líneas máximo. WhatsApp requiere respuestas dinámicas, evita textos extremadamente largos.\n- Usa emojis con buen gusto para hacer los mensajes dinámicos y legibles.\n- Usa negritas (*texto*) para resaltar palabras importantes (ej: *clases virtuales*, *diagnóstico gratuito*).\n- Tu objetivo es responder dudas sobre las tutorías de CEDETU y recopilar los datos del lead de manera fluida:\n  - Nombre completo\n  - Correo electrónico\n  - Número de teléfono (ya lo tienes, es el número de WhatsApp actual: {{ $('Filter Text Message').item.json.from }})\n  - Materia que necesita reforzar\n  - Nivel académico (Primaria, Secundaria, Bachillerato, Universidad)\n  - Breve descripción del caso\n- Cuando tengas al menos Nombre, Email y Materia de interés, DEBES invocar la herramienta \"guardar_lead\" para registrarlos en Supabase y GoHighLevel. (El número de teléfono pásalo como {{ $('Filter Text Message').item.json.from }}).\n- Siempre ofrece la opción de agendar un *Diagnóstico Académico Gratuito de 20 minutos* directamente en nuestro Calendly: https://calendly.com/cedetu\n- Despídete cordialmente firmando como: \"*LucIA*, tu Asistente Virtual de CEDETU 🤖✨\"."
-        },
-        "promptType": "define",
-        "text": "={{ $json.text }}"
-      }
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.6
     },
     {
+      "credentials": {
+        "openAiApi": {
+          "id": "4iK6wrqLwNRksV0n",
+          "name": "OpenAI account"
+        }
+      },
       "id": "cb1c34a2-eb41-45fe-85fa-7b24346e9699",
       "name": "OpenAI Chat Model",
-      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
-      "typeVersion": 1,
-      "position": [
-        520,
-        420
-      ],
       "parameters": {
         "model": "gpt-4o-mini",
         "options": {
           "temperature": 0.7
         }
       },
-      "credentials": {
-        "openAiApi": {
-          "id": "4iK6wrqLwNRksV0n",
-          "name": "OpenAI account"
-        }
-      }
+      "position": [
+        520,
+        420
+      ],
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1
     },
     {
       "id": "890bc892-0b1a-47fa-802c-7b22416b23cc",
       "name": "Window Buffer Memory",
-      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
-      "typeVersion": 1.2,
+      "parameters": {
+        "contextKey": "chat_history",
+        "sessionId": "={{ $('Filter Text Message').item.json.from }}"
+      },
       "position": [
         660,
         420
       ],
-      "parameters": {
-        "contextKey": "chat_history",
-        "sessionId": "={{ $('Filter Text Message').item.json.from }}"
-      }
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.2
     },
     {
       "id": "ab7c8e9b-381a-45c1-8d2b-ff27b2cbb1d3",
       "name": "Guardar Lead Sub-Workflow Tool",
-      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
-      "typeVersion": 1,
-      "position": [
-        800,
-        420
-      ],
       "parameters": {
         "description": "Utiliza esta herramienta únicamente cuando el usuario te haya proporcionado sus datos de contacto completos (Nombre, Correo, Teléfono) y la Materia de interés, para registrarlos en el sistema Supabase y GoHighLevel.",
         "inputSchema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"nombre\": {\n      \"type\": \"string\",\n      \"description\": \"Nombre completo del lead\"\n    },\n    \"email\": {\n      \"type\": \"string\",\n      \"description\": \"Correo electrónico de contacto\"\n    },\n    \"telefono\": {\n      \"type\": \"string\",\n      \"description\": \"Número de teléfono del contacto\"\n    },\n    \"materia\": {\n      \"type\": \"string\",\n      \"description\": \"Materia que necesita reforzar\"\n    },\n    \"nivel\": {\n      \"type\": \"string\",\n      \"description\": \"Nivel académico del estudiante (Primaria, Secundaria, Bachillerato, Universidad)\"\n    },\n    \"descripcion\": {\n      \"type\": \"string\",\n      \"description\": \"Breve descripción de la necesidad académica\"\n    }\n  },\n  \"required\": [\"nombre\", \"email\", \"telefono\", \"materia\"]\n}",
         "name": "guardar_lead",
         "specifyInputSchema": true,
         "workflowId": "dtiE5EpLZzzTsgDn"
-      }
+      },
+      "position": [
+        800,
+        420
+      ],
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 1
     },
     {
       "id": "18f92b7c-fa0e-4be7-8d82-df75c61abcc5",
       "name": "Webhook Trigger (POST)",
-      "type": "n8n-nodes-base.webhook",
-      "typeVersion": 1.1,
-      "position": [
-        200,
-        240
-      ],
       "parameters": {
         "httpMethod": "POST",
         "options": {},
         "path": "lucia-whatsapp",
         "responseMode": "onReceived"
       },
+      "position": [
+        200,
+        240
+      ],
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1.1,
       "webhookId": "ee9fc820-70dc-4ea5-8dc9-f9413c475781"
     },
     {
       "id": "28f92b7c-fa0e-4be7-8d82-df75c61abcc6",
       "name": "Webhook Verification (GET)",
-      "type": "n8n-nodes-base.webhook",
-      "typeVersion": 1.1,
-      "position": [
-        200,
-        80
-      ],
+      "onError": "continueRegularOutput",
       "parameters": {
         "httpMethod": "GET",
         "options": {},
         "path": "lucia-whatsapp",
         "responseMode": "responseNode"
       },
-      "webhookId": "6e369b63-fd88-4dfa-8669-050e6f4b68db",
-      "onError": "continueRegularOutput"
+      "position": [
+        200,
+        80
+      ],
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1.1,
+      "webhookId": "6e369b63-fd88-4dfa-8669-050e6f4b68db"
     },
     {
       "id": "38f92b7c-fa0e-4be7-8d82-df75c61abcc7",
       "name": "Respond to Webhook",
-      "type": "n8n-nodes-base.respondToWebhook",
-      "typeVersion": 1.5,
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "={{ $json.query[\"hub.challenge\"] }}"
+      },
       "position": [
         420,
         80
       ],
-      "parameters": {
-        "respondWith": "text",
-        "responseBody": "={{ $json.query[\"hub.challenge\"] }}"
-      }
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5
     },
     {
+      "credentials": {
+        "whatsAppApi": {
+          "id": "b8AIBqrblIjhztKe",
+          "name": "WhatsApp Account (Meta)"
+        }
+      },
       "id": "c3e4b5df-1a2b-3c4d-5e6f-7a8b9c0d1e2f",
       "name": "Send WhatsApp Message",
-      "type": "n8n-nodes-base.whatsApp",
-      "typeVersion": 1.1,
-      "position": [
-        920,
-        240
-      ],
       "parameters": {
         "operation": "send",
         "phoneNumberId": "={{ $('Filter Text Message').item.json.phone_number_id }}",
@@ -149,45 +149,34 @@
         "resource": "message",
         "textBody": "={{ $json.output }}"
       },
-      "credentials": {
-        "whatsAppApi": {
-          "id": "b8AIBqrblIjhztKe",
-          "name": "WhatsApp Account (Meta)"
-        }
-      },
+      "position": [
+        920,
+        240
+      ],
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1.1,
       "webhookId": "0eb9fec1-8c4b-4e2f-82fa-f84126eaa434"
     }
   ],
   "connections": {
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Send WhatsApp Message",
+            "type": "main"
+          }
+        ]
+      ]
+    },
     "Filter Text Message": {
       "main": [
         [
           {
+            "index": 0,
             "node": "AI Agent",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "OpenAI Chat Model": {
-      "ai_languageModel": [
-        [
-          {
-            "node": "AI Agent",
-            "type": "ai_languageModel",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Window Buffer Memory": {
-      "ai_memory": [
-        [
-          {
-            "node": "AI Agent",
-            "type": "ai_memory",
-            "index": 0
+            "type": "main"
           }
         ]
       ]
@@ -196,20 +185,20 @@
       "ai_tool": [
         [
           {
+            "index": 0,
             "node": "AI Agent",
-            "type": "ai_tool",
-            "index": 0
+            "type": "ai_tool"
           }
         ]
       ]
     },
-    "Webhook Verification (GET)": {
-      "main": [
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
         [
           {
-            "node": "Respond to Webhook",
-            "type": "main",
-            "index": 0
+            "index": 0,
+            "node": "AI Agent",
+            "type": "ai_languageModel"
           }
         ]
       ]
@@ -218,20 +207,31 @@
       "main": [
         [
           {
+            "index": 0,
             "node": "Filter Text Message",
-            "type": "main",
-            "index": 0
+            "type": "main"
           }
         ]
       ]
     },
-    "AI Agent": {
+    "Webhook Verification (GET)": {
       "main": [
         [
           {
-            "node": "Send WhatsApp Message",
-            "type": "main",
-            "index": 0
+            "index": 0,
+            "node": "Respond to Webhook",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Window Buffer Memory": {
+      "ai_memory": [
+        [
+          {
+            "index": 0,
+            "node": "AI Agent",
+            "type": "ai_memory"
           }
         ]
       ]
