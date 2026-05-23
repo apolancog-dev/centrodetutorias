@@ -1652,7 +1652,11 @@
 
         // Helper para comprobar el progreso porcentual
         function getProgressPercentage(contentId) {
-          function renderBienvenida(container) {
+            const progress = loadedUserProgress.find(p => p.content_id === contentId);
+            return progress ? progress.progress_percentage : 0;
+        }
+
+        function renderBienvenida(container) {
             // Cuentas de estadísticas reales
             const completedCount = loadedUserProgress.filter(p => p.status === 'completed').length;
             const activeCount = loadedUserProgress.filter(p => p.status === 'in_progress').length;
