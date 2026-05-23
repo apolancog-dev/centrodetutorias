@@ -76,7 +76,7 @@
         "inputSchema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"nombre\": {\n      \"type\": \"string\",\n      \"description\": \"Nombre completo del lead\"\n    },\n    \"email\": {\n      \"type\": \"string\",\n      \"description\": \"Correo electrónico de contacto\"\n    },\n    \"telefono\": {\n      \"type\": \"string\",\n      \"description\": \"Número de teléfono del contacto\"\n    },\n    \"materia\": {\n      \"type\": \"string\",\n      \"description\": \"Materia que necesita reforzar\"\n    },\n    \"nivel\": {\n      \"type\": \"string\",\n      \"description\": \"Nivel académico del estudiante (Primaria, Secundaria, Bachillerato, Universidad)\"\n    },\n    \"descripcion\": {\n      \"type\": \"string\",\n      \"description\": \"Breve descripción de la necesidad académica\"\n    }\n  },\n  \"required\": [\"nombre\", \"email\", \"telefono\", \"materia\"]\n}",
         "name": "guardar_lead",
         "specifyInputSchema": true,
-        "workflowId": "dtiE5EpLZzzTsgDn"
+        "workflowId": "hITGXdI6ECjNDtYe"
       },
       "position": [
         800,
@@ -157,6 +157,31 @@
       "type": "n8n-nodes-base.whatsApp",
       "typeVersion": 1.1,
       "webhookId": "0eb9fec1-8c4b-4e2f-82fa-f84126eaa434"
+    },
+    {
+      "id": "e64c1bb3-dd72-477d-9658-0056637b58c7",
+      "name": "HTTP Request GHL WhatsApp",
+      "type": "n8n-nodes-base.highLevel",
+      "typeVersion": 1,
+      "position": [
+        640,
+        80
+      ],
+      "parameters": {
+        "firstName": "={{ $('Filter Text Message').item.json.contact_name }}",
+        "operation": "upsert",
+        "phone": "={{ $('Filter Text Message').item.json.from }}",
+        "resource": "contact",
+        "tags": [
+          "lead-whatsapp-lucia"
+        ]
+      },
+      "credentials": {
+        "highLevelApi": {
+          "id": "lybJUXV40zv92wqz",
+          "name": "HighLevel account"
+        }
+      }
     }
   ],
   "connections": {
@@ -178,6 +203,11 @@
             "index": 0,
             "node": "AI Agent",
             "type": "main"
+          },
+          {
+            "node": "HTTP Request GHL WhatsApp",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
