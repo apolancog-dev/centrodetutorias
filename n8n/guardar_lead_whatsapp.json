@@ -74,31 +74,39 @@
       "typeVersion": 1
     },
     {
-      "credentials": {
-        "highLevelApi": {
-          "id": "lybJUXV40zv92wqz",
-          "name": "HighLevel account"
-        }
+      "parameters": {
+        "method": "POST",
+        "url": "https://services.leadconnectorhq.com/contacts/upsert",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer pit-62719809-63ac-4b11-8e4a-df5942c8e80e"
+            },
+            {
+              "name": "Version",
+              "value": "2021-07-28"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"locationId\": \"JhSnXQVvO5cUmHqXRced\",\n  \"email\": \"{{ $('Execute Workflow Trigger').item.json.email }}\",\n  \"firstName\": \"{{ $('Execute Workflow Trigger').item.json.nombre }}\",\n  \"phone\": \"{{ $('Execute Workflow Trigger').item.json.telefono }}\",\n  \"tags\": [\n    \"lead-whatsapp-lucia\",\n    \"materia:{{ $('Execute Workflow Trigger').item.json.materia }}\"\n  ]\n}",
+        "options": {}
       },
       "id": "b18c9b2a-cc41-45fe-85fa-7b24346e9699",
       "name": "HTTP Request GHL",
-      "parameters": {
-        "email": "={{$node[\"Execute Workflow Trigger\"].json.email}}",
-        "firstName": "={{$node[\"Execute Workflow Trigger\"].json.nombre}}",
-        "operation": "upsert",
-        "phone": "={{$node[\"Execute Workflow Trigger\"].json.telefono}}",
-        "resource": "contact",
-        "tags": [
-          "lead-whatsapp-lucia",
-          "materia:{{$node[\"Execute Workflow Trigger\"].json.materia}}"
-        ]
-      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
       "position": [
         640,
         240
-      ],
-      "type": "n8n-nodes-base.highLevel",
-      "typeVersion": 1
+      ]
     },
     {
       "credentials": {
