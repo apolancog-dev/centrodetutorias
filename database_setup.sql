@@ -65,6 +65,10 @@ CREATE POLICY "Permitir a los usuarios actualizar su propio perfil"
     ON public.users FOR UPDATE 
     USING (auth.uid() = id);
 
+CREATE POLICY "Permitir a los usuarios insertar su propio perfil"
+    ON public.users FOR INSERT
+    WITH CHECK (auth.uid() = id);
+
 CREATE POLICY "Permitir a los administradores ver todos los perfiles" 
     ON public.users FOR SELECT 
     USING (public.is_admin(auth.uid()));

@@ -1320,6 +1320,29 @@
                             academic_level: session?.user?.user_metadata?.academic_level || 'Secundaria',
                             main_interest: session?.user?.user_metadata?.main_interest || 'Matemática'
                         };
+
+                        // INTENTAR CREACIÓN DINÁMICA DEL PERFIL EN CASO DE HUÉRFANOS (Desarrollo / Cuentas antiguas)
+                        try {
+                            console.log("Intentando auto-creación de perfil en tabla public.users...");
+                            supabase.from('users').insert({
+                                id: currentUser.id,
+                                full_name: currentUser.full_name,
+                                email: currentUser.email,
+                                phone: currentUser.phone,
+                                role: currentUser.role,
+                                subscription_status: currentUser.subscription_status,
+                                academic_level: currentUser.academic_level,
+                                main_interest: currentUser.main_interest
+                            }).then(({ error: insertErr }) => {
+                                if (insertErr) {
+                                    console.warn("Fallo el autoregistro del perfil:", insertErr.message);
+                                } else {
+                                    console.log("Autoregistro del perfil completado exitosamente.");
+                                }
+                            });
+                        } catch (insertEx) {
+                            console.warn("Excepción en autoregistro de perfil:", insertEx.message);
+                        }
                     } else {
                         currentUser = data;
                     }
