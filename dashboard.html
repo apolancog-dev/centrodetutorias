@@ -437,32 +437,67 @@
                 
                 <a href="#bienvenida" class="nav-item flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-semibold text-slate-200 hover:bg-white/10 hover:text-white transition-all-300">
                     <svg class="w-5 h-5 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
-                    <span>Bienvenida</span>
+                    <span>Inicio / Dashboard</span>
                 </a>
                 
-                <a href="#contenidos" class="nav-item flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-semibold text-slate-200 hover:bg-white/10 hover:text-white transition-all-300">
+                <a href="#bienvenida" onclick="setTimeout(() => { document.getElementById('seccion-aprendizaje')?.scrollIntoView({behavior: 'smooth'}) }, 200)" class="nav-item flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-semibold text-slate-200 hover:bg-white/10 hover:text-white transition-all-300">
                     <svg class="w-5 h-5 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path></svg>
-                    <span>Mis Contenidos</span>
+                    <span>Mi Aprendizaje</span>
                 </a>
                 
-                <a href="#contenidos/gratuitos" class="nav-item flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-semibold text-slate-200 hover:bg-white/10 hover:text-white transition-all-300">
-                    <svg class="w-5 h-5 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 11V7a4 4 0 118 0m-4 8v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2z"></path></svg>
-                    <span>Catálogo Gratuito</span>
+                <a href="#catalogo" class="nav-item flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-semibold text-slate-200 hover:bg-white/10 hover:text-white transition-all-300">
+                    <svg class="w-5 h-5 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
+                    <span>Catálogo de Cursos</span>
+                </a>
+
+                <div class="pt-4">
+                    <p class="nav-section-label">Materias</p>
+                </div>
+                
+                <a href="#catalogo?materia=matematicas" class="nav-item flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-semibold text-slate-300 hover:bg-white/10 hover:text-white transition-all-300">
+                    <span class="text-sm">🔢</span> <span>Matemáticas</span>
                 </a>
                 
-                <a href="#contenidos/premium" class="nav-item flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-semibold text-slate-200 hover:bg-white/10 hover:text-white transition-all-300">
-                    <svg class="w-5 h-5 text-amber-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z"></path></svg>
-                    <span>Contenido Premium</span>
+                <a href="#catalogo?materia=ciencias" class="nav-item flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-semibold text-slate-300 hover:bg-white/10 hover:text-white transition-all-300">
+                    <span class="text-sm">🔬</span> <span>Ciencias</span>
                 </a>
-                
+
+                <a href="#catalogo?materia=lectura" class="nav-item flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-semibold text-slate-300 hover:bg-white/10 hover:text-white transition-all-300">
+                    <span class="text-sm">✍️</span> <span>Lectura y Comunicación</span>
+                </a>
+
+                <a href="#catalogo?materia=economia" class="nav-item flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-semibold text-slate-300 hover:bg-white/10 hover:text-white transition-all-300">
+                    <span class="text-sm">📈</span> <span>Economía y Finanzas</span>
+                </a>
+
+                <a href="#catalogo?materia=computacion" class="nav-item flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-semibold text-slate-300 hover:bg-white/10 hover:text-white transition-all-300">
+                    <span class="text-sm">💻</span> <span>Computación e IA</span>
+                </a>
+
+                <a href="#catalogo?materia=examenes" class="nav-item flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-semibold text-slate-300 hover:bg-white/10 hover:text-white transition-all-300">
+                    <span class="text-sm">📋</span> <span>Prep. Exámenes</span>
+                </a>
+
+                <a href="#catalogo?materia=habitos" class="nav-item flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-semibold text-slate-300 hover:bg-white/10 hover:text-white transition-all-300">
+                    <span class="text-sm">🧠</span> <span>Hábitos de Estudio</span>
+                </a>
+
+                <a href="#catalogo?materia=padres" class="nav-item flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-semibold text-slate-300 hover:bg-white/10 hover:text-white transition-all-300">
+                    <span class="text-sm">👪</span> <span>Recursos para Padres</span>
+                </a>
+
+                <div class="pt-4">
+                    <p class="nav-section-label">Acompañamiento</p>
+                </div>
+
                 <a href="#mis-tutorias" class="nav-item flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-semibold text-slate-200 hover:bg-white/10 hover:text-white transition-all-300">
                     <svg class="w-5 h-5 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                    <span>Mis Tutorías</span>
+                    <span>Solicitar Tutoría</span>
                 </a>
                 
                 <a href="#recursos" class="nav-item flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-semibold text-slate-200 hover:bg-white/10 hover:text-white transition-all-300">
                     <svg class="w-5 h-5 text-slate-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"></path></svg>
-                    <span>Recursos Descargables</span>
+                    <span>Recursos Gratuitos</span>
                 </a>
 
                 <a href="#progreso" class="nav-item flex items-center gap-3 px-3 py-3 rounded-xl text-sm font-semibold text-slate-200 hover:bg-white/10 hover:text-white transition-all-300">
@@ -470,7 +505,7 @@
                     <span>Mi Progreso</span>
                 </a>
 
-                <div class="pt-6">
+                <div class="pt-4">
                     <p class="nav-section-label">Ajustes y Ayuda</p>
                 </div>
 
@@ -536,7 +571,7 @@
 
                 <!-- Buscador rápido superior -->
                 <div class="hidden sm:flex max-w-xs w-64 relative">
-                    <input type="text" id="top-search" placeholder="Buscar guías o cursos..." class="w-full pl-10 pr-4 py-2 border border-slate-200 rounded-full focus:outline-none focus:ring-2 focus:ring-secondary text-sm bg-slate-50">
+                    <input type="text" id="top-search" placeholder="¿Qué tema quieres aprender hoy?" class="w-full pl-10 pr-4 py-2 border border-slate-200 rounded-full focus:outline-none focus:ring-2 focus:ring-secondary text-sm bg-slate-50">
                     <svg class="w-4 h-4 text-slate-400 absolute left-3.5 top-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                 </div>
             </header>
@@ -789,6 +824,100 @@
         let adminUsers = [];
         let adminRequests = [];
 
+        // Base de Datos Estática Educativa (Inspiración Khan Academy)
+        const STATIC_CATEGORIES = [
+            { id: 1, slug: 'matematicas', name: 'Matemáticas', icon: '🔢', desc: 'Domina desde aritmética de primaria hasta cálculo universitario.', count: 9 },
+            { id: 2, slug: 'ciencias', name: 'Ciencias', icon: '🔬', desc: 'Física, química, biología y ecología con explicaciones claras.', count: 5 },
+            { id: 3, slug: 'lectura', name: 'Lectura y Comunicación', icon: '✍️', desc: 'Comprensión lectora, redacción y técnicas de estudio activo.', count: 4 },
+            { id: 4, slug: 'economia', name: 'Economía y Finanzas', icon: '📈', desc: 'Ahorro, presupuesto personal y principios básicos de economía.', count: 3 },
+            { id: 5, slug: 'computacion', name: 'Computación e IA', icon: '💻', desc: 'Programación básica, Excel y uso de IA para estudiar mejor.', count: 4 },
+            { id: 6, slug: 'examenes', name: 'Prep. Exámenes', icon: '📋', desc: 'Simulacros y estrategias para exámenes escolares y de admisión.', count: 3 },
+            { id: 7, slug: 'habitos', name: 'Hábitos de Estudio', icon: '🧠', desc: 'Métodos de organización, resúmenes y disciplina escolar.', count: 4 },
+            { id: 8, slug: 'padres', name: 'Recursos para Padres', icon: '👪', desc: 'Cómo apoyar a tu hijo en casa y seguir su rendimiento.', count: 3 }
+        ];
+
+        const STATIC_COURSES = [
+            // MATEMATICAS (9)
+            { id: 101, title: 'Matemáticas de Primaria', slug: 'mate-primaria', category_id: 1, category_slug: 'matematicas', academic_level: 'Primaria', access_type: 'free', description: 'Repasa sumas, restas, multiplicaciones y divisiones con métodos visuales.', lessons_count: 8, exercises_count: 24 },
+            { id: 102, title: 'Aritmética Esencial', slug: 'aritmetica-esencial', category_id: 1, category_slug: 'matematicas', academic_level: 'Primaria / Secundaria', access_type: 'free', description: 'Domina los números enteros, decimales, potencias y el orden de operaciones.', lessons_count: 10, exercises_count: 30 },
+            { id: 103, title: 'Fracciones y Decimales Paso a Paso', slug: 'fracciones-decimales', category_id: 1, category_slug: 'matematicas', academic_level: 'Primaria / Secundaria', access_type: 'free', description: 'Aprende a sumar, restar y multiplicar fracciones y números decimales sin esfuerzo.', lessons_count: 6, exercises_count: 18 },
+            { id: 104, title: 'Porcentajes y Proporciones', slug: 'porcentajes-proporciones', category_id: 1, category_slug: 'matematicas', academic_level: 'Secundaria', access_type: 'free', description: 'Aplica reglas de tres, porcentajes e interés simple a situaciones cotidianas.', lessons_count: 8, exercises_count: 20 },
+            { id: 105, title: 'Preálgebra y Bases Algebraicas', slug: 'prealgebra', category_id: 1, category_slug: 'matematicas', academic_level: 'Secundaria', access_type: 'free', description: 'El puente perfecto entre la aritmética y el álgebra. Aprende a pensar con variables.', lessons_count: 9, exercises_count: 25 },
+            { id: 106, title: 'Álgebra Básica', slug: 'algebra-basica', category_id: 1, category_slug: 'matematicas', academic_level: 'Secundaria / Diversificado', access_type: 'premium', description: 'Aprende a resolver ecuaciones lineales, cuadráticas, factorizar y graficar funciones.', lessons_count: 12, exercises_count: 35 },
+            { id: 107, title: 'Geometría Plana', slug: 'geometria-plana', category_id: 1, category_slug: 'matematicas', academic_level: 'Secundaria / Diversificado', access_type: 'premium', description: 'Cálculo de áreas, perímetros, Teorema de Pitágoras y propiedades de figuras geométricas.', lessons_count: 8, exercises_count: 22 },
+            { id: 108, title: 'Trigonometría Fundamental', slug: 'trigonometria-fundamental', category_id: 1, category_slug: 'matematicas', academic_level: 'Diversificado', access_type: 'premium', description: 'Funciones trigonométricas, identidades y resolución de triángulos oblicuángulos.', lessons_count: 10, exercises_count: 28 },
+            { id: 109, title: 'Cálculo Diferencial e Integral', slug: 'calculo-universitario', category_id: 1, category_slug: 'matematicas', academic_level: 'Universidad', access_type: 'premium', description: 'Límites, derivadas, integrales y sus aplicaciones prácticas en ciencias e ingeniería.', lessons_count: 15, exercises_count: 45 },
+            
+            // CIENCIAS (5)
+            { id: 201, title: 'Ciencias Naturales Introductorio', slug: 'ciencias-naturales', category_id: 2, category_slug: 'ciencias', academic_level: 'Primaria', access_type: 'free', description: 'Explora el reino animal, vegetal, el ciclo del agua y el cuerpo humano.', lessons_count: 6, exercises_count: 15 },
+            { id: 202, title: 'Biología Fundamental', slug: 'biologia-fundamental', category_id: 2, category_slug: 'ciencias', academic_level: 'Secundaria', access_type: 'free', description: 'Comprende la célula, el ADN, la genética y la biodiversidad del planeta.', lessons_count: 8, exercises_count: 20 },
+            { id: 203, title: 'Física I: Movimiento y Fuerzas', slug: 'fisica-movimiento', category_id: 2, category_slug: 'ciencias', academic_level: 'Diversificado / Universidad', access_type: 'premium', description: 'Leyes de Newton, cinemática, trabajo y energía aplicados a problemas reales.', lessons_count: 11, exercises_count: 30 },
+            { id: 204, title: 'Química Básica y Tabla Periódica', slug: 'quimica-basica', category_id: 2, category_slug: 'ciencias', academic_level: 'Secundaria / Diversificado', access_type: 'free', description: 'Estructura atómica, enlaces químicos, balanceo de ecuaciones y nomenclatura.', lessons_count: 9, exercises_count: 22 },
+            { id: 205, title: 'Ecología y Medio Ambiente', slug: 'ecologia-medio-ambiente', category_id: 2, category_slug: 'ciencias', academic_level: 'Secundaria', access_type: 'free', description: 'Ecosistemas, cadenas alimenticias y el impacto del cambio climático global.', lessons_count: 5, exercises_count: 12 },
+
+            // LECTURA Y COMUNICACIÓN (4)
+            { id: 301, title: 'Técnicas de Comprensión Lectora', slug: 'comprension-lectora', category_id: 3, category_slug: 'lectura', academic_level: 'Secundaria / Diversificado', access_type: 'free', description: 'Estrategias para identificar ideas principales, hacer resúmenes y leer críticamente.', lessons_count: 7, exercises_count: 18 },
+            { id: 302, title: 'Redacción y Ortografía Académica', slug: 'redaccion-academica', category_id: 3, category_slug: 'lectura', academic_level: 'Diversificado / Universidad', access_type: 'premium', description: 'Reglas de acentuación, conectores, estructura de ensayos y normas de citación.', lessons_count: 8, exercises_count: 25 },
+            { id: 303, title: 'Oratoria y Exposiciones de Impacto', slug: 'oratoria-exposiciones', category_id: 3, category_slug: 'lectura', academic_level: 'Secundaria / Diversificado', access_type: 'free', description: 'Supera el miedo escénico, estructura tu discurso y diseña material visual de apoyo.', lessons_count: 6, exercises_count: 10 },
+            { id: 304, title: 'Técnicas de Estudio e Investigación', slug: 'tecnicas-estudio', category_id: 3, category_slug: 'lectura', academic_level: 'Diversificado', access_type: 'free', description: 'Cómo buscar fuentes confiables, citar en APA y hacer mapas mentales.', lessons_count: 5, exercises_count: 12 },
+
+            // ECONOMÍA Y FINANZAS (3)
+            { id: 401, title: 'Educación Financiera para Jóvenes', slug: 'educacion-financiera', category_id: 4, category_slug: 'economia', academic_level: 'Diversificado', access_type: 'free', description: 'Conceptos de ahorro, presupuesto personal, deudas y el poder del interés compuesto.', lessons_count: 6, exercises_count: 15 },
+            { id: 402, title: 'Principios de Microeconomía', slug: 'microeconomia-basica', category_id: 4, category_slug: 'economia', academic_level: 'Universidad', access_type: 'premium', description: 'Oferta y demanda, elasticidad, estructuras de mercado y comportamiento del consumidor.', lessons_count: 9, exercises_count: 22 },
+            { id: 403, title: 'Matemática Financiera Básica', slug: 'mate-financiera', category_id: 4, category_slug: 'economia', academic_level: 'Diversificado / Universidad', access_type: 'premium', description: 'Análisis de tasas de interés, valor presente y futuro, y evaluación de proyectos.', lessons_count: 8, exercises_count: 20 },
+
+            // COMPUTACIÓN E IA (4)
+            { id: 501, title: 'Herramientas Digitales Escolares', slug: 'herramientas-digitales', category_id: 5, category_slug: 'computacion', academic_level: 'Primaria / Secundaria', access_type: 'free', description: 'Domina Google Drive, Docs, Slides, Zoom y otras herramientas clave para tu estudio.', lessons_count: 5, exercises_count: 10 },
+            { id: 502, title: 'Excel para Estudiantes', slug: 'excel-estudiantes', category_id: 5, category_slug: 'computacion', academic_level: 'Secundaria / Diversificado', access_type: 'premium', description: 'Desde fórmulas básicas, tablas dinámicas y gráficos para tus reportes escolares.', lessons_count: 10, exercises_count: 28 },
+            { id: 503, title: 'Introducción a la Programación', slug: 'intro-programacion', category_id: 5, category_slug: 'computacion', academic_level: 'Secundaria / Diversificado', access_type: 'premium', description: 'Desarrolla el pensamiento lógico con algoritmos sencillos y fundamentos de Python.', lessons_count: 12, exercises_count: 32 },
+            { id: 504, title: 'IA y Prompts para Estudiar Mejor', slug: 'ia-estudiantes', category_id: 5, category_slug: 'computacion', academic_level: 'Diversificado / Universidad', access_type: 'free', description: 'Aprende a usar ChatGPT y Claude éticamente para resumir, explicar temas y programar.', lessons_count: 6, exercises_count: 15 },
+
+            // PREPARACIÓN PARA EXÁMENES (3)
+            { id: 601, title: 'Simulacros de Exámenes de Admisión', slug: 'admision-universidad', category_id: 6, category_slug: 'examenes', academic_level: 'Diversificado', access_type: 'premium', description: 'Practica con simulacros cronometrados de matemáticas, física y comprensión de lectura.', lessons_count: 5, exercises_count: 50 },
+            { id: 602, title: 'Estrategias de Resolución bajo Presión', slug: 'estrategias-examenes', category_id: 6, category_slug: 'examenes', academic_level: 'Diversificado / Universidad', access_type: 'free', description: 'Técnicas de descarte rápido, manejo de la ansiedad y optimización del tiempo.', lessons_count: 4, exercises_count: 12 },
+            { id: 603, title: 'Técnicas para Reducir la Ansiedad Escolar', slug: 'ansiedad-academica', category_id: 6, category_slug: 'examenes', academic_level: 'Secundaria / Diversificado', access_type: 'free', description: 'Ejercicios de concentración, preparación psicológica y manejo del estrés ante evaluaciones.', lessons_count: 3, exercises_count: 8 },
+
+            // HÁBITOS DE ESTUDIO (4)
+            { id: 701, title: 'Organización y Planificación Semanal', slug: 'planificacion-tiempo', category_id: 7, category_slug: 'habitos', academic_level: 'Secundaria / Diversificado', access_type: 'free', description: 'Aprende a usar la técnica Pomodoro, planificadores semanales y priorizar tus deberes.', lessons_count: 5, exercises_count: 10 },
+            { id: 702, title: 'Toma de Apuntes Inteligente', slug: 'apuntes-cornell', category_id: 7, category_slug: 'habitos', academic_level: 'Secundaria / Diversificado', access_type: 'free', description: 'Descubre el Método Cornell, mapas conceptuales y resúmenes para repasar con facilidad.', lessons_count: 4, exercises_count: 8 },
+            { id: 703, title: 'Disciplina y Motivación Diaria', slug: 'disciplina-estudio', category_id: 7, category_slug: 'habitos', academic_level: 'General', access_type: 'premium', description: 'Cómo vencer la procrastinación, crear una zona de estudio ideal y forjar buenos hábitos.', lessons_count: 6, exercises_count: 12 },
+            { id: 704, title: 'Cómo Estudiar Matemáticas y Ciencias', slug: 'como-estudiar-mate', category_id: 7, category_slug: 'habitos', academic_level: 'General', access_type: 'free', description: 'Métodos específicos de práctica activa y corrección de errores en materias prácticas.', lessons_count: 4, exercises_count: 10 },
+
+            // RECURSOS PARA PADRES (3)
+            { id: 801, title: 'Cómo Apoyar el Estudio en Casa', slug: 'apoyo-padres', category_id: 8, category_slug: 'padres', academic_level: 'Recursos para Padres', access_type: 'free', description: 'Crea un ambiente de estudio positivo, maneja horarios y ayuda sin resolverles la tarea.', lessons_count: 5, exercises_count: 5 },
+            { id: 802, title: 'Detectar Dificultades de Aprendizaje', slug: 'detectar-dificultades', category_id: 8, category_slug: 'padres', academic_level: 'Recursos para Padres', access_type: 'premium', description: 'Señales de alerta de dislexia, TDAH, y cuándo es oportuno buscar una tutoría especializada.', lessons_count: 6, exercises_count: 6 },
+            { id: 803, title: 'Comunicación Asertiva con tu Hijo', slug: 'comunicacion-padres-hijos', category_id: 8, category_slug: 'padres', academic_level: 'Recursos para Padres', access_type: 'free', description: 'Estrategias para hablar sobre notas, evitar la frustración y fomentar la mentalidad de crecimiento.', lessons_count: 4, exercises_count: 4 }
+        ];
+
+        let allCetuCourses = [...STATIC_COURSES];
+
+        function mergeCourses() {
+            const merged = [...STATIC_COURSES];
+            loadedContentItems.forEach(dbItem => {
+                const exists = merged.some(item => item.slug === dbItem.slug);
+                if (!exists) {
+                    const matchedCat = loadedCategories.find(c => c.id === dbItem.category_id);
+                    merged.push({
+                        id: dbItem.id,
+                        title: dbItem.title,
+                        slug: dbItem.slug,
+                        category_id: dbItem.category_id || 1,
+                        category_slug: matchedCat ? matchedCat.slug : 'matematicas',
+                        academic_level: dbItem.academic_level || 'General',
+                        access_type: dbItem.access_type || 'free',
+                        description: dbItem.description || '',
+                        lessons_count: dbItem.total_lessons || 5,
+                        exercises_count: dbItem.total_exercises || 10,
+                        video_url: dbItem.video_url,
+                        document_url: dbItem.document_url,
+                        body_content: dbItem.body_content,
+                        is_from_db: true
+                    });
+                }
+            });
+            allCetuCourses = merged;
+        }
+
         document.addEventListener('DOMContentLoaded', async () => {
             // Validar si se está ejecutando mediante el protocolo file://
             if (window.location.protocol === 'file:') {
@@ -896,10 +1025,26 @@
             const topSearch = document.getElementById('top-search');
             if (topSearch) {
                 topSearch.addEventListener('input', (e) => {
-                    const query = e.target.value.toLowerCase().trim();
-                    // Si estamos en contenidos, filtrar en vivo
-                    if (window.location.hash.startsWith('#contenidos')) {
-                        filterCatalog(query);
+                    const query = e.target.value;
+                    const normalizedQuery = query.toLowerCase().trim();
+                    const hash = window.location.hash;
+                    
+                    // Si no estamos en catálogo o contenidos, y el usuario empieza a escribir, redirigir
+                    if (!hash.startsWith('#contenidos') && !hash.startsWith('#catalogo') && !hash.startsWith('#contenido')) {
+                        if (normalizedQuery.length > 0) {
+                            window.location.hash = '#catalogo';
+                            // Volver a enfocar y posicionar el cursor al final de forma asíncrona
+                            setTimeout(() => {
+                                const activeSearch = document.getElementById('top-search');
+                                if (activeSearch) {
+                                    activeSearch.value = query;
+                                    activeSearch.focus();
+                                    filterCatalog(normalizedQuery);
+                                }
+                            }, 50);
+                        }
+                    } else {
+                        filterCatalog(normalizedQuery);
                     }
                 });
             }
@@ -1273,11 +1418,13 @@
                     sidebar.classList.add('-translate-x-full');
                     sidebar.classList.remove('translate-x-0');
                 }
-
-                // Limpiar buscador
+ 
+                // Limpiar buscador si no estamos navegando a las secciones de catálogo o contenido
                 const topSearch = document.getElementById('top-search');
-                if (topSearch) topSearch.value = '';
-
+                if (topSearch && !hash.startsWith('#catalogo') && !hash.startsWith('#contenido')) {
+                    topSearch.value = '';
+                }
+ 
                 // Si no hay sesión, forzar auth views
                 if (!currentSession) {
                     const authContainer = document.getElementById('auth-container');
@@ -1294,7 +1441,7 @@
                     if (loginView) loginView.classList.add('hidden');
                     if (registerView) registerView.classList.add('hidden');
                     if (forgotView) forgotView.classList.add('hidden');
-
+ 
                     if (hash === '#register') {
                         if (registerView) registerView.classList.remove('hidden');
                         if (authTitleDesc) authTitleDesc.innerText = 'Empieza hoy mismo tu ruta de superación académica.';
@@ -1307,23 +1454,30 @@
                     }
                     return;
                 }
-
+ 
                 // Cambiar items activos en Sidebar
                 document.querySelectorAll('.nav-item').forEach(el => el.classList.remove('active-nav'));
-                let matchedNav = document.querySelector(`.nav-item[href="${hash}"]`);
-                if (hash.startsWith('#contenidos/gratuitos')) {
-                    matchedNav = document.querySelector('.nav-item[href="#contenidos/gratuitos"]');
-                } else if (hash.startsWith('#contenidos/premium')) {
-                    matchedNav = document.querySelector('.nav-item[href="#contenidos/premium"]');
-                } else if (hash.startsWith('#contenidos') || hash.startsWith('#contenido')) {
-                    matchedNav = document.querySelector('.nav-item[href="#contenidos"]');
+                let matchedNav = null;
+                if (hash.startsWith('#catalogo')) {
+                    if (hash.includes('?materia=')) {
+                        matchedNav = document.querySelector(`.nav-item[href="${hash}"]`);
+                    }
+                    if (!matchedNav) {
+                        matchedNav = document.querySelector('.nav-item[href="#catalogo"]');
+                    }
+                } else if (hash.startsWith('#contenido/')) {
+                    matchedNav = document.querySelector('.nav-item[href="#catalogo"]');
+                } else if (hash.startsWith('#contenidos')) {
+                    matchedNav = document.querySelector('.nav-item[href="#catalogo"]');
+                } else {
+                    matchedNav = document.querySelector(`.nav-item[href="${hash}"]`);
                 }
                 if (matchedNav) matchedNav.classList.add('active-nav');
-
+ 
                 // Renderizar la vista
                 const viewTitle = document.getElementById('header-view-title');
                 const mainArea = document.getElementById('main-content-area');
-
+ 
                 // Cargar Datos Necesarios de la Base de Datos antes de renderizar (con timeout global de 10s)
                 try {
                     const globalDbTimeout = new Promise((resolve) =>
@@ -1337,22 +1491,38 @@
                         ]),
                         globalDbTimeout
                     ]);
+                    // Fusionar base de datos con los cursos estáticos de Centro de Tutorías
+                    mergeCourses();
                 } catch (dbLoadErr) {
                     console.error("Error al precargar datos para vista:", dbLoadErr);
                 }
-
+ 
                 if (hash === '#bienvenida') {
-                    if (viewTitle) viewTitle.innerText = 'Mi Espacio Personal';
+                    if (viewTitle) viewTitle.innerText = 'Mi Academia Personal';
                     renderBienvenida(mainArea);
+                } else if (hash.startsWith('#catalogo')) {
+                    let materia = null;
+                    if (hash.includes('?materia=')) {
+                        materia = hash.split('?materia=')[1];
+                    }
+                    if (viewTitle) {
+                        if (materia) {
+                            const catObj = STATIC_CATEGORIES.find(c => c.slug === materia);
+                            viewTitle.innerText = catObj ? `Materia: ${catObj.name}` : 'Catálogo Educativo';
+                        } else {
+                            viewTitle.innerText = 'Catálogo Educativo Completo';
+                        }
+                    }
+                    renderCatalogoView(mainArea, materia);
                 } else if (hash.startsWith('#contenidos/gratuitos')) {
                     if (viewTitle) viewTitle.innerText = 'Catálogo de Recursos Gratuitos';
-                    renderCatalogView(mainArea, 'free');
+                    renderCatalogoView(mainArea, null, 'free');
                 } else if (hash.startsWith('#contenidos/premium')) {
                     if (viewTitle) viewTitle.innerText = 'Biblioteca de Contenido Premium';
-                    renderCatalogView(mainArea, 'premium');
+                    renderCatalogoView(mainArea, null, 'premium');
                 } else if (hash === '#contenidos') {
                     if (viewTitle) viewTitle.innerText = 'Todos mis Contenidos';
-                    renderCatalogView(mainArea, 'all');
+                    renderCatalogoView(mainArea);
                 } else if (hash.startsWith('#contenido/')) {
                     const slug = hash.replace('#contenido/', '');
                     renderContentView(mainArea, slug);
@@ -1419,6 +1589,26 @@
             }
         }
 
+        function mergeLocalProgress() {
+            if (!currentUser) return;
+            try {
+                const key = `cetu_progress_${currentUser.id}`;
+                const localProg = JSON.parse(localStorage.getItem(key) || '[]');
+                
+                // Unir localProg en loadedUserProgress sin duplicados por content_id
+                localProg.forEach(lp => {
+                    const idx = loadedUserProgress.findIndex(p => p.content_id === lp.content_id);
+                    if (idx > -1) {
+                        loadedUserProgress[idx] = lp;
+                    } else {
+                        loadedUserProgress.push(lp);
+                    }
+                });
+            } catch (e) {
+                console.error("Error al fusionar progreso local:", e);
+            }
+        }
+
         async function loadUserProgress() {
             if (!currentUser) return;
             try {
@@ -1427,10 +1617,17 @@
                     supabase.from('user_content_progress').select('*').eq('user_id', currentUser.id),
                     dbTimeout
                 ]);
-                if (!error && data) loadedUserProgress = data;
+                if (!error && data) {
+                    loadedUserProgress = data;
+                } else {
+                    loadedUserProgress = [];
+                }
             } catch (e) {
-                console.warn("Error al cargar progreso:", e.message);
+                console.warn("Error al cargar progreso de Supabase:", e.message);
+                loadedUserProgress = [];
             }
+            // Fusionar con el LocalStorage siempre
+            mergeLocalProgress();
         }
 
         async function loadUserTutoringRequests() {
@@ -1455,115 +1652,161 @@
 
         // Helper para comprobar el progreso porcentual
         function getProgressPercentage(contentId) {
-            const progress = loadedUserProgress.find(p => p.content_id === contentId);
-            return progress ? progress.progress_percentage : 0;
-        }
-
-        // ---------------------------------------------------------------------
-        // VISTA: BIENVENIDA / DASHBOARD PRINCIPAL
-        // ---------------------------------------------------------------------
-
-        function renderBienvenida(container) {
-            // Contar cursos completados y total
+          function renderBienvenida(container) {
+            // Cuentas de estadísticas reales
             const completedCount = loadedUserProgress.filter(p => p.status === 'completed').length;
             const activeCount = loadedUserProgress.filter(p => p.status === 'in_progress').length;
             
-            // Contenidos recomendados según nivel académico e interés (defensivo ante nulos)
             const recLevel = currentUser.academic_level || 'Secundaria';
             const recInterest = currentUser.main_interest || 'Matemática';
-            
-            // Priorizar por nivel e interés
-            let recommended = loadedContentItems.filter(item => {
-                if (item.status !== 'active') return false;
-                const matchesLevel = item.academic_level === recLevel;
-                const interestTerm = (recInterest || '').toLowerCase().replace('refuerzo en ', '').trim();
-                const matchesInterest = interestTerm ? (item.title || '').toLowerCase().includes(interestTerm) : false;
-                return matchesLevel || matchesInterest;
-            }).slice(0, 3);
 
-            // Si no hay específicos, recomendar los últimos 3 libres
-            if (recommended.length === 0) {
-                recommended = loadedContentItems.filter(item => item.status === 'active').slice(0, 3);
+            // --- SECCIÓN: CONTINUAR APRENDIENDO ---
+            const inProgressRecords = loadedUserProgress.filter(p => p.status === 'in_progress');
+            let continueLearningHtml = '';
+            
+            if (inProgressRecords.length === 0) {
+                continueLearningHtml = `
+                    <div class="bg-white rounded-3xl border border-slate-100 p-8 text-center shadow-sm max-w-2xl">
+                        <div class="w-16 h-16 bg-slate-50 rounded-full flex items-center justify-center mx-auto mb-4 text-3xl">🎯</div>
+                        <h4 class="font-bold text-slate-800 text-lg">¿Listo para comenzar a aprender?</h4>
+                        <p class="text-sm text-slate-500 mt-2 mb-6 max-w-md mx-auto">
+                            Aún no tienes cursos en curso. Explora nuestro catálogo completo de materias y elige tu primer tema de estudio gratuito.
+                        </p>
+                        <a href="#catalogo" class="inline-flex items-center justify-center bg-primary hover:bg-blue-900 text-white font-bold px-6 py-3 rounded-2xl text-xs shadow-md transition-colors gap-2">
+                            Explorar Catálogo de Cursos
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                        </a>
+                    </div>
+                `;
+            } else {
+                continueLearningHtml = `<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">`;
+                inProgressRecords.slice(0, 3).forEach(prog => {
+                    const course = allCetuCourses.find(c => c.id === prog.content_id);
+                    if (course) {
+                        const progressPct = prog.progress_percentage || 10;
+                        const isPremium = course.access_type === 'premium';
+                        continueLearningHtml += `
+                            <div class="bg-white rounded-3xl border border-slate-150 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col justify-between h-full p-5 group">
+                                <div class="space-y-2">
+                                    <div class="flex justify-between items-center">
+                                        <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">${course.academic_level}</span>
+                                        <span class="px-2 py-0.5 rounded-full text-[9px] font-bold tracking-wider uppercase bg-emerald-100 text-emerald-800">
+                                            En Progreso
+                                        </span>
+                                    </div>
+                                    <h4 class="font-bold text-slate-800 text-base line-clamp-2">${course.title}</h4>
+                                    <p class="text-xs text-slate-500 line-clamp-2">${course.description}</p>
+                                </div>
+                                <div class="pt-6 space-y-3">
+                                    <div class="space-y-1">
+                                        <div class="flex justify-between items-center text-[10px] font-bold text-slate-450">
+                                            <span>Progreso</span>
+                                            <span>${progressPct}%</span>
+                                        </div>
+                                        <div class="w-full bg-slate-100 h-1.5 rounded-full overflow-hidden">
+                                            <div class="bg-secondary h-full rounded-full transition-all duration-500" style="width: ${progressPct}%"></div>
+                                        </div>
+                                    </div>
+                                    <a href="#contenido/${course.slug}" class="w-full inline-flex items-center justify-center bg-slate-50 hover:bg-primary hover:text-white border border-slate-200 text-center py-2.5 rounded-xl font-bold text-xs transition-colors duration-300 gap-1.5">
+                                        Continuar Lección
+                                        <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                                    </a>
+                                </div>
+                            </div>
+                        `;
+                    }
+                });
+                continueLearningHtml += `</div>`;
             }
 
-            let cardsHtml = '';
-            recommended.forEach(item => {
-                const isPremium = item.access_type === 'premium';
-                const progressStatus = getProgressStatus(item.id);
-                const progressPct = getProgressPercentage(item.id);
-                const hasAccess = !isPremium || currentUser.role === 'subscriber' || currentUser.role === 'admin';
-                
-                cardsHtml += `
-                    <div class="bg-white rounded-2xl border border-slate-100 overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 flex flex-col h-full group">
-                        <div class="relative aspect-video w-full bg-slate-100 overflow-hidden">
-                            <img src="${item.thumbnail_url || 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=300&auto=format&fit=crop'}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-                            
-                            <!-- Badges de Acceso -->
-                            <div class="absolute top-3 left-3 flex gap-2">
-                                <span class="px-2.5 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase shadow-sm ${
-                                    isPremium ? 'bg-amber-500 text-white' : 'bg-emerald-500 text-white'
-                                }">
-                                    ${isPremium ? '👑 Premium' : '⭐ Gratis'}
-                                </span>
+            // --- SECCIÓN: CATEGORÍAS GRID ---
+            let categoriesHtml = '';
+            STATIC_CATEGORIES.forEach(cat => {
+                categoriesHtml += `
+                    <div class="bg-white rounded-3xl border border-slate-150 p-6 shadow-sm hover:shadow-lg transition-all duration-300 flex flex-col justify-between h-full group hover:-translate-y-1">
+                        <div class="space-y-3">
+                            <div class="w-12 h-12 rounded-2xl bg-slate-50 flex items-center justify-center text-2xl group-hover:scale-110 transition-transform duration-300">${cat.icon}</div>
+                            <div>
+                                <h4 class="font-extrabold text-slate-800 text-base font-display">${cat.name}</h4>
+                                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">${cat.count} temas académicos</span>
                             </div>
+                            <p class="text-xs text-slate-500 leading-relaxed">${cat.desc}</p>
                         </div>
-                        <div class="p-5 flex-grow flex flex-col">
-                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest mb-1">${item.categories?.name || 'Recurso'}</span>
-                            <h4 class="font-bold text-slate-800 text-base mb-2 line-clamp-2">${item.title}</h4>
-                            <p class="text-xs text-slate-500 line-clamp-3 mb-4 flex-grow">${item.description}</p>
-                            
-                            <!-- Barra de Progreso -->
-                            ${progressStatus !== 'not_started' ? `
-                                <div class="w-full bg-slate-100 h-1.5 rounded-full mb-4 overflow-hidden">
-                                    <div class="bg-secondary h-full rounded-full" style="width: ${progressPct}%"></div>
-                                </div>
-                            ` : ''}
+                        <div class="pt-6">
+                            <a href="#catalogo?materia=${cat.slug}" class="w-full inline-flex items-center justify-center bg-slate-50 hover:bg-primary hover:text-white border border-slate-200 text-center py-2.5 rounded-xl font-bold text-xs transition-colors duration-300 gap-1">
+                                Explorar Materia
+                                <svg class="w-3.5 h-3.5 text-slate-400 group-hover:text-white transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                            </a>
+                        </div>
+                    </div>
+                `;
+            });
 
-                            <!-- Botón de acción -->
-                            ${hasAccess ? `
-                                <a href="#contenido/${item.slug}" class="w-full bg-slate-50 hover:bg-primary hover:text-white border border-slate-200 text-center py-2.5 rounded-xl font-bold text-xs transition-colors duration-300">
-                                    ${progressStatus === 'completed' ? 'Revisar Contenido' : (progressStatus === 'in_progress' ? 'Continuar Lección' : 'Ver Contenido')}
-                                </a>
-                            ` : `
-                                <a href="#contenido/${item.slug}" class="w-full bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-200 text-center py-2.5 rounded-xl font-bold text-xs flex items-center justify-center gap-1.5 transition-colors duration-300">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zM9 11V7a3 3 0 016 0v4"></path></svg>
-                                    Suscribirme para Ver
-                                </a>
-                            `}
+            // --- SECCIÓN: RUTAS RECOMENDADAS ---
+            const routes = [
+                { id: 'primaria', level: 'Primaria', title: 'Fortalecer bases de Matemática', desc: 'Pensado para niños de primaria. Operaciones básicas, fracciones y hábitos organizativos.', count: 3, target: 'Primaria' },
+                { id: 'secundaria', level: 'Secundaria', title: 'Dominar Álgebra y Ciencias', desc: 'Preálgebra, álgebra escolar, bases de biología y técnicas de toma de apuntes.', count: 4, target: 'Secundaria' },
+                { id: 'diversificado', level: 'Diversificado', title: 'Preparación para Universidad', desc: 'Trigonometría, física del movimiento, microeconomía y simulacros de admisión.', count: 4, target: 'Diversificado' },
+                { id: 'universidad', level: 'Universidad', title: 'Matemática y Herramientas Digitales', desc: 'Cálculo universitario, estadística elemental y uso ético de Inteligencia Artificial.', count: 3, target: 'Universidad' }
+            ];
+
+            let routesHtml = '';
+            routes.forEach(route => {
+                const isActive = recLevel.toLowerCase() === route.target.toLowerCase();
+                routesHtml += `
+                    <div class="bg-white rounded-3xl border ${isActive ? 'border-2 border-secondary shadow-md' : 'border-slate-150 shadow-sm'} p-6 relative flex flex-col justify-between h-full hover:shadow-md transition-shadow">
+                        ${isActive ? `
+                            <div class="absolute -top-3.5 left-6 bg-secondary text-white text-[9px] font-bold px-3 py-1 rounded-full uppercase tracking-wider shadow-sm">
+                                Recomendada para ti
+                            </div>
+                        ` : ''}
+                        <div class="space-y-3 mt-1">
+                            <div class="flex justify-between items-center">
+                                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">${route.level}</span>
+                                <span class="text-xs font-bold text-primary">${route.count} cursos</span>
+                            </div>
+                            <h4 class="font-extrabold text-slate-800 text-sm font-display">${route.title}</h4>
+                            <p class="text-xs text-slate-550 leading-relaxed">${route.desc}</p>
+                        </div>
+                        <div class="pt-6">
+                            <a href="#catalogo?nivel=${route.target}" class="w-full inline-flex items-center justify-center ${isActive ? 'bg-secondary hover:bg-emerald-600 text-white' : 'bg-slate-50 hover:bg-primary hover:text-white border border-slate-200'} text-center py-2.5 rounded-xl font-bold text-xs transition-colors duration-300 gap-1">
+                                Comenzar Ruta
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
+                            </a>
                         </div>
                     </div>
                 `;
             });
 
             container.innerHTML = `
-                <div class="space-y-8">
-                    <!-- Banner de Bienvenida Premium -->
-                    <div class="relative rounded-3xl overflow-hidden bg-gradient-to-r from-primary to-[#2563EB] text-white p-6 md:p-8 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
+                <div class="space-y-12">
+                    <!-- HERO DE BIENVENIDA -->
+                    <div class="relative rounded-3xl overflow-hidden bg-gradient-to-r from-primary to-[#2563EB] text-white p-6 md:p-10 shadow-xl flex flex-col md:flex-row items-center justify-between gap-6">
                         <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-white/10 via-transparent to-transparent"></div>
                         
-                        <div class="space-y-3 max-w-xl relative z-10 text-center md:text-left">
-                            <div class="inline-block bg-white/10 px-3 py-1 rounded-full text-xs font-bold tracking-wider uppercase mb-1">
+                        <div class="space-y-4 max-w-2xl relative z-10 text-center md:text-left">
+                            <div class="inline-block bg-white/10 px-3.5 py-1 rounded-full text-xs font-bold tracking-wider uppercase mb-1">
                                 Miembro de Centro de Tutorías
                             </div>
-                            <h3 class="text-3xl font-extrabold font-display">¡Hola, ${currentUser.full_name}!</h3>
+                            <h3 class="text-3xl md:text-4xl font-extrabold font-display leading-tight">¡Hola, ${currentUser.full_name}!</h3>
                             <p class="text-sm md:text-base text-blue-100 leading-relaxed font-medium">
-                                Bienvenido a tu espacio de aprendizaje. Priorizamos recursos de <strong class="text-white">${recLevel}</strong> con especialidad en <strong class="text-white">${recInterest.replace('Refuerzo en ', '')}</strong> para impulsar tus notas paso a paso.
+                                Bienvenido a tu espacio personalizado de aprendizaje. Explora lecciones completas, practica con nuestros ejercicios interactivos y solicita apoyo presencial o virtual cuando lo necesites.
                             </p>
                         </div>
-                        <div class="relative z-10 flex-shrink-0 flex gap-4">
-                            <a href="#contenidos" class="bg-secondary hover:bg-emerald-600 text-white font-bold px-6 py-3 rounded-2xl shadow-lg transition-transform transform hover:-translate-y-0.5 text-sm">
+                        <div class="relative z-10 flex-shrink-0 flex flex-col sm:flex-row gap-3 w-full md:w-auto">
+                            <a href="#catalogo" class="bg-secondary hover:bg-emerald-600 text-white font-bold px-6 py-3.5 rounded-2xl shadow-lg transition-transform transform hover:-translate-y-0.5 text-center text-xs">
                                 Explorar Cursos
                             </a>
-                            <a href="#mis-tutorias" class="bg-white/10 hover:bg-white/20 text-white border border-white/20 font-bold px-6 py-3 rounded-2xl transition-all-300 text-sm">
-                                Pedir Tutoría en Vivo
+                            <a href="#mis-tutorias" class="bg-white hover:bg-slate-100 text-primary font-bold px-6 py-3.5 rounded-2xl shadow-md transition-all-300 text-center text-xs flex items-center justify-center gap-1">
+                                Solicitar Tutoría
                             </a>
                         </div>
                     </div>
 
-                    <!-- Estadísticas Rápidas -->
+                    <!-- ESTADÍSTICAS RÁPIDAS -->
                     <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                        <div class="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm flex items-center gap-4">
-                            <div class="w-12 h-12 rounded-xl bg-pastel-blue text-primary flex items-center justify-center flex-shrink-0">
+                        <div class="bg-white p-5 rounded-3xl border border-slate-100 shadow-sm flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-pastel-blue text-primary flex items-center justify-center flex-shrink-0">
                                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                             </div>
                             <div>
@@ -1571,8 +1814,8 @@
                                 <h4 class="text-2xl font-black text-slate-800">${completedCount}</h4>
                             </div>
                         </div>
-                        <div class="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm flex items-center gap-4">
-                            <div class="w-12 h-12 rounded-xl bg-pastel-mint text-secondary flex items-center justify-center flex-shrink-0">
+                        <div class="bg-white p-5 rounded-3xl border border-slate-100 shadow-sm flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-pastel-mint text-secondary flex items-center justify-center flex-shrink-0">
                                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
                             </div>
                             <div>
@@ -1580,46 +1823,86 @@
                                 <h4 class="text-2xl font-black text-slate-800">${activeCount}</h4>
                             </div>
                         </div>
-                        <div class="bg-white p-5 rounded-2xl border border-slate-100 shadow-sm flex items-center gap-4">
-                            <div class="w-12 h-12 rounded-xl bg-pastel-lilac text-purple-600 flex items-center justify-center flex-shrink-0">
+                        <div class="bg-white p-5 rounded-3xl border border-slate-100 shadow-sm flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-2xl bg-pastel-lilac text-purple-600 flex items-center justify-center flex-shrink-0">
                                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 7a2 2 0 012 2m-2 4a2 2 0 012 2m-6-4h.01M9 16h.01M5 16h.01M5 12h.01M5 8h.01M9 8h.01M13 8h.01M13 12h.01M13 16h.01M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
                             </div>
                             <div>
-                                <p class="text-xs font-bold text-slate-400 uppercase">Membresía</p>
-                                <h4 class="text-base font-bold text-slate-800 mt-1 uppercase tracking-wide">
-                                    ${currentUser.subscription_status === 'active' ? '👑 PREMIUM' : '⭐ ACCESO GRATUITO'}
+                                <p class="text-xs font-bold text-slate-400 uppercase">Suscripción</p>
+                                <h4 class="text-sm font-extrabold text-slate-800 mt-1 uppercase tracking-wider">
+                                    ${currentUser.role === 'subscriber' || currentUser.subscription_status === 'active' ? '👑 PLAN PREMIUM' : '⭐ ACCESO GRATUITO'}
                                 </h4>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Recomendados para Ti -->
-                    <div class="space-y-4">
-                        <div class="flex items-center justify-between">
-                            <h3 class="text-xl font-bold text-slate-800 font-display flex items-center gap-2">
-                                <svg class="w-5 h-5 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                                Recomendado para ti
+                    <!-- SECCIÓN: MI APRENDIZAJE / CONTINUAR APRENDIENDO -->
+                    <div id="seccion-aprendizaje" class="space-y-6 scroll-mt-24">
+                        <h3 class="text-xl font-extrabold text-slate-850 font-display flex items-center gap-2.5">
+                            <span class="w-3.5 h-3.5 rounded-full bg-secondary"></span>
+                            Mi Aprendizaje: Continúa donde te quedaste
+                        </h3>
+                        ${continueLearningHtml}
+                    </div>
+
+                    <!-- SECCIÓN: CATEGORÍAS PRINCIPALES -->
+                    <div class="space-y-6">
+                        <div class="flex justify-between items-center flex-wrap gap-4">
+                            <h3 class="text-xl font-extrabold text-slate-850 font-display flex items-center gap-2.5">
+                                <span class="w-3.5 h-3.5 rounded-full bg-primary"></span>
+                                Explorar por Materias Académicas
                             </h3>
-                            <a href="#contenidos" class="text-xs font-bold text-primary hover:underline">Ver todo el catálogo →</a>
+                            <a href="#catalogo" class="text-xs font-extrabold text-primary hover:underline flex items-center gap-1">
+                                Ver todo el catálogo educativo
+                                <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path></svg>
+                            </a>
                         </div>
-                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-                            ${cardsHtml}
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                            ${categoriesHtml}
                         </div>
                     </div>
 
-                    <!-- Banner de Oferta Especial (Solo para usuarios free) -->
-                    ${currentUser.role === 'free_user' ? `
+                    <!-- SECCIÓN: RUTAS RECOMENDADAS -->
+                    <div class="space-y-6">
+                        <div class="flex justify-between items-center flex-wrap gap-4">
+                            <div>
+                                <h3 class="text-xl font-extrabold text-slate-850 font-display flex items-center gap-2.5">
+                                    <span class="w-3.5 h-3.5 rounded-full bg-accent"></span>
+                                    Rutas de Aprendizaje Recomendadas
+                                </h3>
+                                <p class="text-xs text-slate-500 max-w-2xl mt-1">
+                                    Rutas estructuradas paso a paso para ayudarte a conseguir tus objetivos académicos y destacar en tus materias clave.
+                                </p>
+                            </div>
+                            <!-- Selector dinámico de nivel académico para cambiar ruta recomendada -->
+                            <div class="flex items-center gap-2 bg-white px-3.5 py-2 rounded-2xl border border-slate-200 shadow-sm shrink-0">
+                                <span class="text-[10px] font-extrabold text-slate-400 uppercase tracking-wide">Nivel Recomendado:</span>
+                                <select id="routes-level-select" onchange="changeActiveRoute(this.value)" class="text-xs font-bold text-slate-700 focus:outline-none bg-transparent cursor-pointer border-none p-0 pr-6 focus:ring-0">
+                                    <option value="Primaria" ${recLevel === 'Primaria' ? 'selected' : ''}>Primaria</option>
+                                    <option value="Secundaria" ${recLevel === 'Secundaria' ? 'selected' : ''}>Secundaria</option>
+                                    <option value="Diversificado" ${recLevel === 'Diversificado' ? 'selected' : ''}>Diversificado</option>
+                                    <option value="Universidad" ${recLevel === 'Universidad' ? 'selected' : ''}>Universidad</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                            ${routesHtml}
+                        </div>
+                    </div>
+
+                    <!-- SECCIÓN PROMO PREMIUM (Solo para usuarios gratuitos) -->
+                    ${(currentUser.role === 'free_user' || currentUser.subscription_status !== 'active') ? `
                         <div class="rounded-3xl border border-slate-100 shadow-sm p-6 bg-amber-50 flex flex-col md:flex-row items-center gap-6 justify-between border-l-4 border-l-amber-500">
                             <div class="flex items-start gap-4">
                                 <div class="w-10 h-10 rounded-full bg-amber-500 text-white flex items-center justify-center flex-shrink-0 mt-1 font-bold">💎</div>
-                                <div>
-                                    <h4 class="font-bold text-slate-800 text-lg">¿Quieres desbloquear las guías resueltas y videos de refuerzo?</h4>
-                                    <p class="text-sm text-slate-600 leading-normal max-w-xl">
+                                <div class="space-y-1">
+                                    <h4 class="font-extrabold text-slate-800 text-lg font-display">¿Quieres desbloquear todos los cursos premium y guías resueltas?</h4>
+                                    <p class="text-xs text-slate-650 leading-relaxed max-w-2xl">
                                         Accede hoy al Plan Premium de Centro de Tutorías para obtener soporte 24/7 de profesores expertos, lecciones completas y resolución de ejercicios resueltos paso a paso.
                                     </p>
                                 </div>
                             </div>
-                            <a href="#soporte" class="bg-amber-500 hover:bg-amber-600 text-white font-bold px-6 py-3 rounded-2xl text-sm shadow-md transition-colors flex items-center gap-1">
+                            <a href="https://wa.me/50257152096?text=Hola,%20quiero%20más%20información%20sobre%20los%20planes%20de%20suscripción%20premium%20de%20Centro%20de%20Tutorías" target="_blank" class="bg-amber-500 hover:bg-amber-600 text-white font-bold px-6 py-3.5 rounded-2xl text-xs shadow-md transition-colors flex items-center gap-1 flex-shrink-0 text-center w-full md:w-auto">
                                 Ver Planes y Suscribirme
                                 <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
                             </a>
@@ -1629,105 +1912,199 @@
             `;
         }
 
+        // Definición de cambio dinámico de ruta recomendada
+        function changeActiveRoute(level) {
+            if (!currentUser) return;
+            currentUser.academic_level = level;
+            const mainArea = document.getElementById('main-content-area');
+            if (mainArea) {
+                renderBienvenida(mainArea);
+            }
+        }
+
         // ---------------------------------------------------------------------
         // VISTA: CATÁLOGO DE CONTENIDOS Y RECURSOS (FILTROS EN VIVO)
         // ---------------------------------------------------------------------
 
         let currentCatalogFilter = 'all'; // free, premium, all
 
-        function renderCatalogView(container, filterType) {
-            currentCatalogFilter = filterType;
+        let selectedMateriaFilter = null;
+        let selectedNivelFilter = null;
+        let selectedAccessFilter = 'all';
+
+        function renderCatalogView(container, materia, accessFilter) {
+            // Inicializar filtros
+            selectedMateriaFilter = materia || null;
+            selectedAccessFilter = accessFilter || 'all';
             
-            // Cargar barra de filtros
+            // Parsear ?nivel= desde la URL hash
+            selectedNivelFilter = null;
+            const hash = window.location.hash;
+            if (hash.includes('?nivel=')) {
+                selectedNivelFilter = decodeURIComponent(hash.split('?nivel=')[1]);
+            }
+
+            // Construir barra de filtros completa
             let filterHtml = `
-                <div class="space-y-6">
-                    <div class="flex flex-wrap gap-4 items-center justify-between">
-                        <!-- Categorías Selector -->
-                        <div class="flex flex-wrap gap-2" id="catalog-category-filters">
-                            <button onclick="filterCatalogByCategory(null)" class="cat-filter-btn px-4 py-2 text-xs font-bold rounded-full bg-primary text-white transition-colors duration-300">Todos</button>
+                <div class="space-y-8">
+                    <!-- CONTROLES DE BÚSQUEDA Y FILTRADO -->
+                    <div class="bg-white p-6 rounded-3xl border border-slate-100 shadow-sm space-y-6">
+                        <!-- Selector de Materias -->
+                        <div class="space-y-2">
+                            <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest">Filtrar por Materia</h4>
+                            <div class="flex flex-wrap gap-2" id="catalog-materia-filters">
+                                <button onclick="setCatalogMateria(null)" class="cat-materia-btn px-4 py-2 text-xs font-bold rounded-full transition-all duration-300 ${!selectedMateriaFilter ? 'bg-primary text-white shadow-sm' : 'bg-slate-50 text-slate-600 hover:bg-slate-100 border border-slate-200'}">
+                                    📚 Todas las Materias
+                                </button>
             `;
 
-            loadedCategories.forEach(cat => {
+            STATIC_CATEGORIES.forEach(cat => {
+                const isActive = selectedMateriaFilter === cat.slug;
                 filterHtml += `
-                    <button onclick="filterCatalogByCategory(${cat.id})" class="cat-filter-btn px-4 py-2 text-xs font-bold rounded-full bg-white text-slate-600 hover:bg-slate-100 border border-slate-200 transition-colors duration-300">${cat.name}</button>
+                    <button onclick="setCatalogMateria('${cat.slug}')" class="cat-materia-btn px-4 py-2 text-xs font-bold rounded-full transition-all duration-300 ${isActive ? 'bg-primary text-white shadow-sm' : 'bg-slate-50 text-slate-600 hover:bg-slate-100 border border-slate-200'}">
+                        ${cat.icon} ${cat.name}
+                    </button>
                 `;
             });
 
             filterHtml += `
+                            </div>
                         </div>
-                        
-                        <!-- Acceso Filtro Rápido -->
-                        <div class="flex border border-slate-200 rounded-xl overflow-hidden bg-white">
-                            <button onclick="window.location.hash = '#contenidos'" class="px-4 py-2 text-xs font-bold ${filterType === 'all' ? 'bg-primary text-white' : 'text-slate-600 hover:bg-slate-50'}">Todos</button>
-                            <button onclick="window.location.hash = '#contenidos/gratuitos'" class="px-4 py-2 text-xs font-bold border-l border-r border-slate-200 ${filterType === 'free' ? 'bg-primary text-white' : 'text-slate-600 hover:bg-slate-50'}">Gratis</button>
-                            <button onclick="window.location.hash = '#contenidos/premium'" class="px-4 py-2 text-xs font-bold ${filterType === 'premium' ? 'bg-primary text-white' : 'text-slate-600 hover:bg-slate-50'}">Premium</button>
+
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 pt-2">
+                            <!-- Selector de Nivel Académico -->
+                            <div class="space-y-2">
+                                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest">Nivel Académico</h4>
+                                <div class="flex flex-wrap gap-2" id="catalog-nivel-filters">
+                                    <button onclick="setCatalogNivel(null)" class="cat-nivel-btn px-4 py-2 text-xs font-bold rounded-xl transition-all duration-300 ${!selectedNivelFilter ? 'bg-slate-800 text-white shadow-sm' : 'bg-slate-50 text-slate-600 hover:bg-slate-100 border border-slate-200'}">
+                                        Todos
+                                    </button>
+            `;
+
+            const niveles = ['Primaria', 'Secundaria', 'Diversificado', 'Universidad', 'Recurso para Padres'];
+            niveles.forEach(niv => {
+                const isActive = selectedNivelFilter === niv;
+                filterHtml += `
+                    <button onclick="setCatalogNivel('${niv}')" class="cat-nivel-btn px-4 py-2 text-xs font-bold rounded-xl transition-all duration-300 ${isActive ? 'bg-slate-800 text-white shadow-sm' : 'bg-slate-50 text-slate-600 hover:bg-slate-100 border border-slate-200'}">
+                        ${niv}
+                    </button>
+                `;
+            });
+
+            filterHtml += `
+                                </div>
+                            </div>
+
+                            <!-- Selector de Tipo de Acceso -->
+                            <div class="space-y-2">
+                                <h4 class="text-xs font-bold text-slate-400 uppercase tracking-widest">Tipo de Contenido</h4>
+                                <div class="flex border border-slate-200 rounded-xl overflow-hidden bg-white max-w-xs">
+                                    <button onclick="setCatalogAccess('all')" class="cat-access-btn flex-1 py-2 px-4 text-xs font-bold transition-colors ${selectedAccessFilter === 'all' ? 'bg-primary text-white' : 'text-slate-600 hover:bg-slate-55'}-50'}">Todos</button>
+                                    <button onclick="setCatalogAccess('free')" class="cat-access-btn flex-1 py-2 px-4 text-xs font-bold border-l border-r border-slate-200 transition-colors ${selectedAccessFilter === 'free' ? 'bg-primary text-white' : 'text-slate-600 hover:bg-slate-55'}-50'}">Gratis</button>
+                                    <button onclick="setCatalogAccess('premium')" class="cat-access-btn flex-1 py-2 px-4 text-xs font-bold transition-colors ${selectedAccessFilter === 'premium' ? 'bg-primary text-white' : 'text-slate-600 hover:bg-slate-55'}-50'}">Premium</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
 
-                    <!-- Grid de Cursos -->
+                    <!-- Buscador local visible para móvil -->
+                    <div class="block sm:hidden relative">
+                        <input type="text" id="catalog-mobile-search" placeholder="¿Qué tema quieres aprender hoy?" class="w-full pl-10 pr-4 py-3 border border-slate-200 rounded-2xl focus:outline-none focus:ring-2 focus:ring-secondary text-sm bg-white" oninput="filterCatalog(this.value)">
+                        <svg class="w-5 h-5 text-slate-400 absolute left-3.5 top-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    </div>
+
+                    <!-- CONTENEDOR GRID DE CURSOS -->
                     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="catalog-grid-area">
-                        <!-- Llenado dinámicamente -->
+                        <!-- Cargar dinámicamente -->
                     </div>
                 </div>
             `;
 
             container.innerHTML = filterHtml;
             // Ejecutar filtrado inicial
-            filterCatalog('');
+            filterCatalog(document.getElementById('top-search')?.value || '');
         }
 
-        let selectedCategoryId = null;
-
-        function filterCatalogByCategory(catId) {
-            selectedCategoryId = catId;
-            
-            // Estilo de botones activos
-            const buttons = document.querySelectorAll('.cat-filter-btn');
+        function setCatalogMateria(materiaSlug) {
+            selectedMateriaFilter = materiaSlug;
+            const buttons = document.querySelectorAll('.cat-materia-btn');
             buttons.forEach(btn => {
-                btn.className = 'cat-filter-btn px-4 py-2 text-xs font-bold rounded-full bg-white text-slate-600 hover:bg-slate-100 border border-slate-200 transition-colors duration-300';
+                btn.className = 'cat-materia-btn px-4 py-2 text-xs font-bold rounded-full bg-slate-50 text-slate-600 hover:bg-slate-100 border border-slate-200 transition-all duration-300';
             });
             
-            // Resaltar seleccionado
-            const selectedIdx = catId === null ? 0 : loadedCategories.findIndex(c => c.id === catId) + 1;
-            if (buttons[selectedIdx]) {
-                buttons[selectedIdx].className = 'cat-filter-btn px-4 py-2 text-xs font-bold rounded-full bg-primary text-white transition-colors duration-300';
+            const index = !materiaSlug ? 0 : STATIC_CATEGORIES.findIndex(c => c.slug === materiaSlug) + 1;
+            if (buttons[index]) {
+                buttons[index].className = 'cat-materia-btn px-4 py-2 text-xs font-bold rounded-full bg-primary text-white shadow-sm transition-all duration-300';
+            }
+            
+            filterCatalog(document.getElementById('top-search')?.value || '');
+        }
+
+        function setCatalogNivel(nivelName) {
+            selectedNivelFilter = nivelName;
+            const buttons = document.querySelectorAll('.cat-nivel-btn');
+            buttons.forEach(btn => {
+                btn.className = 'cat-nivel-btn px-4 py-2 text-xs font-bold rounded-xl bg-slate-50 text-slate-600 hover:bg-slate-100 border border-slate-200 transition-all duration-300';
+            });
+
+            const index = !nivelName ? 0 : ['Primaria', 'Secundaria', 'Diversificado', 'Universidad', 'Recurso para Padres'].indexOf(nivelName) + 1;
+            if (buttons[index]) {
+                buttons[index].className = 'cat-nivel-btn px-4 py-2 text-xs font-bold rounded-xl bg-slate-800 text-white shadow-sm transition-all duration-300';
             }
 
-            filterCatalog(document.getElementById('top-search').value.toLowerCase().trim());
+            filterCatalog(document.getElementById('top-search')?.value || '');
+        }
+
+        function setCatalogAccess(accessType) {
+            selectedAccessFilter = accessType;
+            const buttons = document.querySelectorAll('.cat-access-btn');
+            buttons.forEach(btn => {
+                btn.className = 'cat-access-btn flex-1 py-2 px-4 text-xs font-bold text-slate-600 hover:bg-slate-50 transition-colors';
+            });
+
+            const index = accessType === 'all' ? 0 : (accessType === 'free' ? 1 : 2);
+            if (buttons[index]) {
+                buttons[index].className = `cat-access-btn flex-1 py-2 px-4 text-xs font-bold transition-colors bg-primary text-white ${index === 1 ? 'border-l border-r border-slate-200' : ''}`;
+            }
+
+            filterCatalog(document.getElementById('top-search')?.value || '');
         }
 
         function filterCatalog(searchQuery) {
             const grid = document.getElementById('catalog-grid-area');
             if (!grid) return;
 
-            // Filtrar contenidos locales
-            const filtered = loadedContentItems.filter(item => {
-                if (item.status !== 'active') return false;
+            const q = searchQuery.toLowerCase().trim();
 
-                // 1. Filtrar por tipo de acceso
-                if (currentCatalogFilter === 'free' && item.access_type !== 'free') return false;
-                if (currentCatalogFilter === 'premium' && item.access_type !== 'premium') return false;
-
-                // 2. Filtrar por categoría
-                if (selectedCategoryId !== null && item.category_id !== selectedCategoryId) return false;
-
-                // 3. Filtrar por buscador de texto (seguridad ante campos nulos en BD)
-                if (searchQuery) {
-                    const titleMatch = (item.title || '').toLowerCase().includes(searchQuery);
-                    const descMatch = (item.description || '').toLowerCase().includes(searchQuery);
-                    const catMatch = (item.categories?.name || '').toLowerCase().includes(searchQuery);
-                    if (!titleMatch && !descMatch && !catMatch) return false;
+            const filtered = allCetuCourses.filter(item => {
+                if (q) {
+                    const matchesTitle = item.title.toLowerCase().includes(q);
+                    const matchesDesc = item.description.toLowerCase().includes(q);
+                    const matchesCategory = item.category_slug?.toLowerCase().includes(q);
+                    const matchesLevel = item.academic_level?.toLowerCase().includes(q);
+                    if (!matchesTitle && !matchesDesc && !matchesCategory && !matchesLevel) return false;
                 }
+
+                if (selectedMateriaFilter && item.category_slug !== selectedMateriaFilter) return false;
+
+                if (selectedNivelFilter) {
+                    const targetNivel = selectedNivelFilter.toLowerCase();
+                    const itemNivel = item.academic_level.toLowerCase();
+                    if (!itemNivel.includes(targetNivel)) return false;
+                }
+
+                if (selectedAccessFilter === 'free' && item.access_type !== 'free') return false;
+                if (selectedAccessFilter === 'premium' && item.access_type !== 'premium') return false;
 
                 return true;
             });
 
             if (filtered.length === 0) {
                 grid.innerHTML = `
-                    <div class="col-span-full py-16 text-center">
-                        <div class="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4 text-slate-400 font-bold">🔍</div>
-                        <h4 class="font-bold text-slate-800 text-lg">No encontramos contenidos</h4>
-                        <p class="text-sm text-slate-500 max-w-sm mx-auto mt-1">Prueba seleccionando otra categoría o modificando los términos del buscador.</p>
+                    <div class="col-span-full py-16 text-center bg-white rounded-3xl border border-slate-100 shadow-sm">
+                        <div class="w-16 h-16 bg-slate-50 rounded-full flex items-center justify-center mx-auto mb-4 text-slate-400 text-3xl font-bold">🔍</div>
+                        <h4 class="font-bold text-slate-800 text-lg">No encontramos temas que coincidan</h4>
+                        <p class="text-sm text-slate-505 max-w-sm mx-auto mt-1 px-4">Prueba seleccionando otra materia, nivel académico o cambiando los términos del buscador.</p>
                     </div>
                 `;
                 return;
@@ -1738,53 +2115,104 @@
                 const isPremium = item.access_type === 'premium';
                 const progressStatus = getProgressStatus(item.id);
                 const progressPct = getProgressPercentage(item.id);
-                const hasAccess = !isPremium || currentUser.role === 'subscriber' || currentUser.role === 'admin';
+                const isSubscribed = currentUser.role === 'subscriber' || currentUser.role === 'admin' || currentUser.subscription_status === 'active';
+                const hasAccess = !isPremium || isSubscribed;
+
+                const categoryObj = STATIC_CATEGORIES.find(c => c.id === item.category_id);
+                const categoryName = categoryObj ? categoryObj.name : 'Curso';
 
                 cardsHtml += `
-                    <div class="bg-white rounded-3xl border border-slate-150 overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col h-full group">
-                        <div class="relative aspect-video w-full bg-slate-100 overflow-hidden">
-                            <img src="${item.thumbnail_url || 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?q=80&w=300&auto=format&fit=crop'}" alt="${item.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300">
-                            
-                            <!-- Badges de Acceso -->
-                            <div class="absolute top-3 left-3 flex gap-2">
-                                <span class="px-2.5 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase shadow-sm ${
-                                    isPremium ? 'bg-amber-500 text-white' : 'bg-emerald-500 text-white'
-                                }">
-                                    ${isPremium ? '👑 Premium' : '⭐ Gratis'}
-                                </span>
+                    <div class="bg-white rounded-3xl border border-slate-150 overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col h-full justify-between group">
+                        <div class="p-6 space-y-4">
+                            <div class="flex justify-between items-center gap-2">
+                                <span class="text-[10px] font-extrabold text-slate-400 uppercase tracking-wider">${categoryName}</span>
+                                <span class="text-[9px] font-extrabold text-primary bg-blue-50 px-2.5 py-1 rounded-full uppercase tracking-wide shrink-0">${item.academic_level}</span>
+                            </div>
+
+                            <div class="space-y-2">
+                                <h4 class="font-extrabold text-slate-800 text-base leading-snug group-hover:text-primary transition-colors duration-300 line-clamp-2">${item.title}</h4>
+                                <p class="text-xs text-slate-500 leading-relaxed line-clamp-3">${item.description}</p>
                             </div>
                         </div>
-                        <div class="p-6 flex-grow flex flex-col">
-                            <div class="flex justify-between items-center mb-1">
-                                <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">${item.categories?.name || 'Recurso'}</span>
-                                <span class="text-[10px] font-bold text-primary bg-blue-50 px-2 py-0.5 rounded-full uppercase">${item.academic_level || 'General'}</span>
+
+                        <div class="p-6 pt-0 space-y-4">
+                            <div class="flex items-center gap-4 text-[10px] font-bold text-slate-400 border-t border-slate-100 pt-3">
+                                <span class="flex items-center gap-1">📖 ${item.lessons_count || 6} lecciones</span>
+                                <span class="flex items-center gap-1">✍️ ${item.exercises_count || 15} ejercicios</span>
                             </div>
-                            <h4 class="font-bold text-slate-800 text-base mb-2 line-clamp-2">${item.title}</h4>
-                            <p class="text-xs text-slate-500 line-clamp-3 mb-4 flex-grow">${item.description}</p>
-                            
-                            <!-- Progreso si está en uso -->
+
                             ${progressStatus !== 'not_started' ? `
-                                <div class="w-full bg-slate-100 h-1.5 rounded-full mb-4 overflow-hidden">
-                                    <div class="bg-secondary h-full rounded-full" style="width: ${progressPct}%"></div>
+                                <div class="space-y-1">
+                                    <div class="flex justify-between items-center text-[10px] font-bold text-slate-400">
+                                        <span>Progreso</span>
+                                        <span>${progressPct}%</span>
+                                    </div>
+                                    <div class="w-full bg-slate-150 h-1.5 rounded-full overflow-hidden">
+                                        <div class="bg-secondary h-full rounded-full animate-pulse-slow" style="width: ${progressPct}%"></div>
+                                    </div>
                                 </div>
                             ` : ''}
 
-                            <!-- Botón de acción -->
                             ${hasAccess ? `
-                                <a href="#contenido/${item.slug}" class="w-full bg-slate-50 hover:bg-primary hover:text-white border border-slate-200 text-center py-2.5 rounded-xl font-bold text-xs transition-colors duration-300">
-                                    ${progressStatus === 'completed' ? 'Revisar Contenido' : (progressStatus === 'in_progress' ? 'Continuar Lección' : 'Ver Contenido')}
+                                <a href="#contenido/${item.slug}" class="w-full inline-flex items-center justify-center bg-slate-50 hover:bg-primary hover:text-white border border-slate-200 text-center py-2.5 rounded-xl font-bold text-xs transition-colors duration-300 gap-1">
+                                    ${progressStatus === 'completed' ? 'Revisar Contenido' : (progressStatus === 'in_progress' ? 'Continuar Lección' : 'Comenzar Lección')}
+                                    <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path></svg>
                                 </a>
                             ` : `
-                                <a href="#contenido/${item.slug}" class="w-full bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-200 text-center py-2.5 rounded-xl font-bold text-xs flex items-center justify-center gap-1.5 transition-colors duration-300">
-                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zM9 11V7a3 3 0 016 0v4"></path></svg>
-                                    Suscribirme para Ver
-                                </a>
+                                <button onclick="showPremiumGate('${item.title}')" class="w-full inline-flex items-center justify-center bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-200 text-center py-2.5 rounded-xl font-bold text-xs transition-colors duration-300 gap-1.5 animate-pulse-slow">
+                                    <span>🔒 Desbloquear Lección</span>
+                                    <span class="text-[9px] bg-amber-250 text-amber-900 px-1.5 py-0.5 rounded-full font-extrabold">PREMIUM</span>
+                                </button>
                             `}
                         </div>
                     </div>
                 `;
             });
+
             grid.innerHTML = cardsHtml;
+        }
+
+        function showPremiumGate(courseName) {
+            let modal = document.getElementById('premium-gate-modal');
+            if (!modal) {
+                modal = document.createElement('div');
+                modal.id = 'premium-gate-modal';
+                modal.className = 'fixed inset-0 z-50 overflow-y-auto bg-slate-900/60 backdrop-blur-sm flex items-center justify-center p-4 transition-all duration-300';
+                document.body.appendChild(modal);
+            }
+            
+            modal.innerHTML = `
+                <div class="bg-white rounded-3xl w-full max-w-md shadow-2xl overflow-hidden border border-slate-100 animate-[bounce_0.5s_ease-out_1]">
+                    <div class="p-8 text-center space-y-6">
+                        <div class="w-20 h-20 rounded-full bg-amber-50 flex items-center justify-center mx-auto text-4xl shadow-inner animate-pulse">
+                            👑
+                        </div>
+                        <div class="space-y-2">
+                            <span class="text-[10px] font-extrabold text-amber-600 bg-amber-50 px-3 py-1 rounded-full uppercase tracking-wider">Plan Suscriptor</span>
+                            <h3 class="text-2xl font-extrabold font-display text-slate-800">Contenido Exclusivo</h3>
+                            <p class="text-sm text-slate-500 leading-relaxed px-2">
+                                El tema <strong class="text-slate-800 font-bold">"${courseName}"</strong> está disponible exclusivamente para suscriptores. Activa tu membresía hoy mismo para desbloquear lecciones completas, guías avanzadas y soporte continuo de tutores.
+                            </p>
+                        </div>
+                        <div class="pt-4 flex flex-col gap-3">
+                            <a href="https://wa.me/50257152096?text=Hola,%20quiero%2520más%2520información%2520sobre%2520los%2520planes%2520de%2520suscripción%2520premium%2520de%2520Centro%2520de%2520Tutorías" target="_blank" class="w-full bg-amber-500 hover:bg-amber-600 text-white font-bold py-3.5 rounded-2xl text-xs shadow-md transition-colors text-center">
+                                Activar mi Suscripción Premium
+                            </a>
+                            <button onclick="closePremiumGate()" class="w-full bg-white hover:bg-slate-50 border border-slate-200 text-slate-600 font-bold py-3.5 rounded-2xl text-xs transition-colors">
+                                Volver al Catálogo Gratuito
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+            modal.classList.remove('hidden');
+        }
+
+        function closePremiumGate() {
+            const modal = document.getElementById('premium-gate-modal');
+            if (modal) {
+                modal.classList.add('hidden');
+            }
         }
 
         // ---------------------------------------------------------------------
@@ -1792,7 +2220,7 @@
         // ---------------------------------------------------------------------
 
         async function renderContentView(container, slug) {
-            const item = loadedContentItems.find(c => c.slug === slug);
+            const item = allCetuCourses.find(c => c.slug === slug);
             
             if (!item) {
                 container.innerHTML = `
@@ -1926,22 +2354,57 @@
             `;
         }
 
-        async function updateContentProgress(contentId, status, percentage) {
-            const now = new Date().toISOString();
-            const { error } = await supabase
-                .from('user_content_progress')
-                .upsert({
+        function saveProgressLocalStorage(contentId, status, percentage) {
+            try {
+                const key = `cetu_progress_${currentUser.id}`;
+                let localProg = JSON.parse(localStorage.getItem(key) || '[]');
+                const index = localProg.findIndex(p => p.content_id === contentId);
+                const now = new Date().toISOString();
+                const record = {
                     user_id: currentUser.id,
                     content_id: contentId,
                     status: status,
                     progress_percentage: percentage,
                     last_accessed_at: now,
                     completed_at: status === 'completed' ? now : null
-                }, { onConflict: 'user_id,content_id' });
+                };
+                if (index > -1) {
+                    localProg[index] = record;
+                } else {
+                    localProg.push(record);
+                }
+                localStorage.setItem(key, JSON.stringify(localProg));
+                // Combinar con la caché en memoria
+                mergeLocalProgress();
+            } catch (e) {
+                console.error("Error al guardar en LocalStorage:", e);
+            }
+        }
 
-            if (!error) {
-                // Actualizar caché de progreso
-                await loadUserProgress();
+        async function updateContentProgress(contentId, status, percentage) {
+            const now = new Date().toISOString();
+            try {
+                const { error } = await supabase
+                    .from('user_content_progress')
+                    .upsert({
+                        user_id: currentUser.id,
+                        content_id: contentId,
+                        status: status,
+                        progress_percentage: percentage,
+                        last_accessed_at: now,
+                        completed_at: status === 'completed' ? now : null
+                    }, { onConflict: 'user_id,content_id' });
+
+                if (error) {
+                    console.warn("Error al guardar en base de datos, usando fallback local:", error.message);
+                    saveProgressLocalStorage(contentId, status, percentage);
+                } else {
+                    // Actualizar caché de progreso
+                    await loadUserProgress();
+                }
+            } catch (dbErr) {
+                console.warn("Excepción al guardar en base de datos, usando fallback local:", dbErr.message);
+                saveProgressLocalStorage(contentId, status, percentage);
             }
         }
 
@@ -2124,8 +2587,7 @@
 
         function renderRecursosView(container) {
             // Filtrar contenidos de tipo descarga/download
-            const resources = loadedContentItems.filter(item => 
-                item.status === 'active' && 
+            const resources = allCetuCourses.filter(item => 
                 (item.content_type === 'download' || item.document_url)
             );
 
@@ -2196,7 +2658,7 @@
                 compListHtml = '<p class="text-xs text-slate-400 italic">No has completado recursos académicos todavía.</p>';
             } else {
                 completed.forEach(c => {
-                    const item = loadedContentItems.find(x => x.id === c.content_id);
+                    const item = allCetuCourses.find(x => x.id === c.content_id);
                     if (item) {
                         compListHtml += `
                             <div class="flex items-center justify-between p-3.5 border-b border-slate-100">
@@ -2216,7 +2678,7 @@
                 inProgListHtml = '<p class="text-xs text-slate-400 italic">No tienes lecciones o cursos en curso.</p>';
             } else {
                 inProgress.forEach(c => {
-                    const item = loadedContentItems.find(x => x.id === c.content_id);
+                    const item = allCetuCourses.find(x => x.id === c.content_id);
                     if (item) {
                         inProgListHtml += `
                             <div class="p-4 border-b border-slate-100 space-y-2">
