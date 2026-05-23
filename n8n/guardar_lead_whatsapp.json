@@ -190,6 +190,8 @@
       ]
     }
   },
-  "active": false,
-  "settings": {}
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  }
 }
