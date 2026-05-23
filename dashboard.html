@@ -960,11 +960,11 @@
                 setTimeout(() => reject(new Error('TIMEOUT')), ms)
             );
 
-            // Mostrar advertencia de lentitud si tarda más de 4 segundos
+            // Mostrar advertencia de lentitud si tarda más de 12 segundos (evita falsos positivos en producción)
             const slowTimer = setTimeout(() => {
                 const timeoutMsg = document.getElementById('loading-timeout-msg');
                 if (timeoutMsg) timeoutMsg.style.display = 'block';
-            }, 4000);
+            }, 12000);
 
             try {
                 // Inicializar Web Auth listener
