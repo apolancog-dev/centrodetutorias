@@ -11,8 +11,8 @@
     <meta property="og:description" content="Apoyo académico personalizado para entender y aprobar. No pierdas más tiempo ni dinero con clases que no funcionan.">
     <meta property="og:type" content="website">
     
-    <!-- Tailwind CSS (CDN) -->
-    <script src="https://cdn.tailwindcss.com" defer></script>
+    <!-- Tailwind CSS (CDN sin defer para que colores custom apliquen en el primer render) -->
+    <script src="https://cdn.tailwindcss.com"></script>
     <script>
         // Configurar Tailwind preventivamente en window por si carga en diferido
         window.tailwind = {
@@ -40,6 +40,20 @@
         };
     </script>
     <style>
+        /* Colores de marca garantizados por CSS directo (por si Tailwind tarda en cargar) */
+        .btn-primary, a[class*="bg-primary"], button[class*="bg-primary"] {
+            background-color: #1E3A8A;
+            color: #FFFFFF;
+        }
+        #auth-btn {
+            color: #1E3A8A;
+            font-weight: 700;
+        }
+        a[href="#contacto"][class*="bg-primary"] {
+            background-color: #1E3A8A !important;
+            color: #FFFFFF !important;
+        }
+
         .fade-in {
             opacity: 0;
             transform: translateY(20px);

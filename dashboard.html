@@ -1324,12 +1324,18 @@
                 const viewTitle = document.getElementById('header-view-title');
                 const mainArea = document.getElementById('main-content-area');
 
-                // Cargar Datos Necesarios de la Base de Datos antes de renderizar
+                // Cargar Datos Necesarios de la Base de Datos antes de renderizar (con timeout global de 10s)
                 try {
-                    await Promise.all([
-                        loadCategories(),
-                        loadContentItems(),
-                        loadUserProgress()
+                    const globalDbTimeout = new Promise((resolve) =>
+                        setTimeout(() => { console.warn('Timeout global de carga de datos — continuando con datos vacios.'); resolve(); }, 10000)
+                    );
+                    await Promise.race([
+                        Promise.all([
+                            loadCategories(),
+                            loadContentItems(),
+                            loadUserProgress()
+                        ]),
+                        globalDbTimeout
                     ]);
                 } catch (dbLoadErr) {
                     console.error("Error al precargar datos para vista:", dbLoadErr);
@@ -1389,39 +1395,55 @@
         async function loadCategories() {
             if (loadedCategories.length > 0) return;
             try {
-                const { data, error } = await supabase.from('categories').select('*').order('name');
+                const dbTimeout = new Promise((resolve) => setTimeout(() => resolve({ data: null, error: new Error('TIMEOUT') }), 8000));
+                const { data, error } = await Promise.race([
+                    supabase.from('categories').select('*').order('name'),
+                    dbTimeout
+                ]);
                 if (!error && data) loadedCategories = data;
             } catch (e) {
-                console.error("Error al cargar categorías:", e);
+                console.warn("Error al cargar categorías:", e.message);
             }
         }
 
         async function loadContentItems() {
             try {
-                const { data, error } = await supabase.from('content_items').select('*, categories(*)').order('created_at', { ascending: false });
+                const dbTimeout = new Promise((resolve) => setTimeout(() => resolve({ data: null, error: new Error('TIMEOUT') }), 8000));
+                const { data, error } = await Promise.race([
+                    supabase.from('content_items').select('*, categories(*)').order('created_at', { ascending: false }),
+                    dbTimeout
+                ]);
                 if (!error && data) loadedContentItems = data;
             } catch (e) {
-                console.error("Error al cargar ítems de contenido:", e);
+                console.warn("Error al cargar ítems de contenido:", e.message);
             }
         }
 
         async function loadUserProgress() {
             if (!currentUser) return;
             try {
-                const { data, error } = await supabase.from('user_content_progress').select('*').eq('user_id', currentUser.id);
+                const dbTimeout = new Promise((resolve) => setTimeout(() => resolve({ data: null, error: new Error('TIMEOUT') }), 8000));
+                const { data, error } = await Promise.race([
+                    supabase.from('user_content_progress').select('*').eq('user_id', currentUser.id),
+                    dbTimeout
+                ]);
                 if (!error && data) loadedUserProgress = data;
             } catch (e) {
-                console.error("Error al cargar progreso de usuario:", e);
+                console.warn("Error al cargar progreso:", e.message);
             }
         }
 
         async function loadUserTutoringRequests() {
             if (!currentUser) return;
             try {
-                const { data, error } = await supabase.from('tutoring_requests').select('*').eq('user_id', currentUser.id).order('created_at', { ascending: false });
+                const dbTimeout = new Promise((resolve) => setTimeout(() => resolve({ data: null, error: new Error('TIMEOUT') }), 8000));
+                const { data, error } = await Promise.race([
+                    supabase.from('tutoring_requests').select('*').eq('user_id', currentUser.id).order('created_at', { ascending: false }),
+                    dbTimeout
+                ]);
                 if (!error && data) loadedTutoringRequests = data;
             } catch (e) {
-                console.error("Error al cargar solicitudes de tutoría:", e);
+                console.warn("Error al cargar tutorías:", e.message);
             }
         }
 
