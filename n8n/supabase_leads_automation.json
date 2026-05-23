@@ -44,9 +44,8 @@
         "fromEmail": "operaciones@centrodetutorias.com",
         "toEmail": "={{$json.body.record.email}}",
         "subject": "=¡Hemos recibido tu solicitud, {{$json.body.record.parent_or_student_name}}! 🚀",
-        "options": {},
-        "html": "=<p>Hola <b>{{$json.body.record.parent_or_student_name}}</b>,</p><p>¡Gracias por contactar al Centro de Tutorías!</p><p>Hemos recibido tu solicitud para apoyo en <b>{{$json.body.record.subject}}</b>.</p><ul><li><b>Modalidad:</b> {{$json.body.record.support_type}}</li><li><b>Detalles:</b> {{$json.body.record.description}}</li></ul><p>Muy pronto uno de nuestros coordinadores académicos te llamará al <b>{{$json.body.record.phone}}</b> para agendar tu entrevista de diagnóstico gratuita.</p><p>Si tienes prisa, escríbenos directamente a WhatsApp: <a href=\"https://wa.me/50257152096\">Clic aquí (+502 5715 2096)</a></p><p>Saludos cordiales,<br><b>El equipo del Centro de Tutorías</b></p>",
-        "text": "=Hola {{$json.body.record.parent_or_student_name}},\n\n¡Gracias por contactar al Centro de Tutorías!\n\nHemos recibido tu solicitud para apoyo en {{$json.body.record.subject}}.\n\nModalidad: {{$json.body.record.support_type}}\nDetalles: {{$json.body.record.description}}\n\nMuy pronto uno de nuestros coordinadores académicos te llamará al {{$json.body.record.phone}} para agendar tu entrevista de diagnóstico gratuita.\n\nSi tienes prisa, escríbenos directamente a WhatsApp: https://wa.me/50257152096\n\nSaludos cordiales,\nEl equipo del Centro de Tutorías"
+        "text": "=Hola {{$json.body.record.parent_or_student_name}},\n\n¡Gracias por contactar al Centro de Tutorías!\n\nHemos recibido tu solicitud para apoyo en {{$json.body.record.subject}}.\n\nModalidad: {{$json.body.record.support_type}}\nDetalles: {{$json.body.record.description}}\n\nMuy pronto uno de nuestros coordinadores académicos te llamará al {{$json.body.record.phone}} para agendar tu entrevista de diagnóstico gratuita.\n\nSi tienes prisa, escríbenos directamente a WhatsApp: https://wa.me/50257152096\n\nSaludos cordiales,\nEl equipo del Centro de Tutorías",
+        "options": {}
       },
       "id": "email-1",
       "name": "Correo de Bienvenida",
@@ -65,6 +64,9 @@
       }
     },
     {
+      "parameters": {
+        "jsCode": "return { json: $input.item.json.body.record || {} };"
+      },
       "id": "code-extract",
       "name": "Extraer Datos del Lead",
       "type": "n8n-nodes-base.code",
@@ -72,47 +74,45 @@
       "position": [
         512,
         800
-      ],
-      "parameters": {
-        "jsCode": "return { json: $input.item.json.body.record || {} };"
-      }
+      ]
     },
     {
+      "parameters": {
+        "workflowId": "Mwcb19HS9Zj1S76j",
+        "options": {}
+      },
       "id": "exec-1",
       "name": "Ejecutar Calificación",
       "type": "n8n-nodes-base.executeWorkflow",
       "typeVersion": 1,
       "position": [
-        712,
+        720,
         800
-      ],
-      "parameters": {
-        "workflowId": "Mwcb19HS9Zj1S76j"
-      }
+      ]
     },
     {
+      "parameters": {
+        "operation": "send",
+        "phoneNumberId": "=1106627229206345",
+        "recipientPhoneNumber": "={{ $json.body.record.phone.startsWith('502') ? $json.body.record.phone : '502' + $json.body.record.phone }}",
+        "textBody": "=¡Hola {{$json.body.record.parent_or_student_name}}! 🚀 Te saludamos del Centro de Tutorías. Hemos recibido tu solicitud para apoyo en *{{$json.body.record.subject}}*.\n\nQuisiéramos agendar una breve *entrevista de diagnóstico gratuita de 15 minutos* para conocer el caso en detalle y asignarte al tutor ideal. ¿Te queda bien que coordinemos por aquí? 😊",
+        "additionalFields": {}
+      },
       "id": "whatsapp-1",
       "name": "WhatsApp Coordinar",
       "type": "n8n-nodes-base.whatsApp",
       "typeVersion": 1.1,
       "position": [
         512,
-        600
+        608
       ],
-      "parameters": {
-        "resource": "message",
-        "operation": "send",
-        "phoneNumberId": "={{ 'SELECCIONAR_REMITENTE_EN_N8N' }}",
-        "recipientPhoneNumber": "={{ $json.body.record.phone.startsWith('502') ? $json.body.record.phone : '502' + $json.body.record.phone }}",
-        "textBody": "=¡Hola {{$json.body.record.parent_or_student_name}}! 🚀 Te saludamos del Centro de Tutorías. Hemos recibido tu solicitud para apoyo en *{{$json.body.record.subject}}*.\n\nQuisiéramos agendar una breve *entrevista de diagnóstico gratuita de 15 minutos* para conocer el caso en detalle y asignarte al tutor ideal. ¿Te queda bien que coordinemos por aquí? 😊"
-      },
+      "webhookId": "c0b076b4-c9f0-4474-8ead-c11217e31b94",
       "credentials": {
         "whatsAppApi": {
           "id": "b8AIBqrblIjhztKe",
           "name": "WhatsApp Account (Meta)"
         }
-      },
-      "webhookId": "c0b076b4-c9f0-4474-8ead-c11217e31b94"
+      }
     }
   ],
   "connections": {

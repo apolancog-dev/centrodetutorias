@@ -58,7 +58,8 @@
       "name": "Window Buffer Memory",
       "parameters": {
         "contextKey": "chat_history",
-        "sessionId": "={{ $('Filter Text Message').item.json.from }}"
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Filter Text Message').item.json.from }}"
       },
       "position": [
         660,
