@@ -22,49 +22,41 @@
       "id": "c12d8a9b-381a-4fe1-9d2b-ff27b2cbb1d3",
       "name": "Insert Supabase",
       "parameters": {
-        "columns": [
-          "nombre",
-          "email",
-          "telefono",
-          "materia",
-          "nivel",
-          "descripcion",
-          "origen"
-        ],
-        "operation": "upsert",
-        "table": "leads",
-        "valuesToSend": {
-          "values": [
+        "columns": null,
+        "dataToSend": "defineBelow",
+        "fieldsUi": {
+          "fieldValues": [
             {
-              "column": "nombre",
-              "value": "={{$json.nombre}}"
+              "fieldId": "parent_or_student_name",
+              "fieldValue": "={{$json.nombre}}"
             },
             {
-              "column": "email",
-              "value": "={{$json.email}}"
+              "fieldId": "email",
+              "fieldValue": "={{$json.email}}"
             },
             {
-              "column": "telefono",
-              "value": "={{$json.telefono}}"
+              "fieldId": "phone",
+              "fieldValue": "={{$json.telefono}}"
             },
             {
-              "column": "materia",
-              "value": "={{$json.materia}}"
+              "fieldId": "subject",
+              "fieldValue": "={{$json.materia}}"
             },
             {
-              "column": "nivel",
-              "value": "={{$json.nivel}}"
+              "fieldId": "grade",
+              "fieldValue": "={{$json.nivel}}"
             },
             {
-              "column": "descripcion",
-              "value": "={{$json.descripcion || 'Sin descripción'}}"
-            },
-            {
-              "column": "origen",
-              "value": "WhatsApp LucIA"
+              "fieldId": "description",
+              "fieldValue": "={{$json.descripcion || 'Sin descripción'}}"
             }
           ]
-        }
+        },
+        "operation": "upsert",
+        "resource": "row",
+        "table": null,
+        "tableId": "leads",
+        "valuesToSend": null
       },
       "position": [
         420,
