@@ -75,8 +75,8 @@
       },
       "credentials": {
         "httpQueryAuth": {
-          "id": "Hznf2ZMg4wObho4L",
-          "name": "Meta Page Access Token"
+          "id": "3sxSOv0XdFSMPbsT",
+          "name": "Meta Page Access Token v2"
         }
       },
       "type": "n8n-nodes-base.httpRequest",
