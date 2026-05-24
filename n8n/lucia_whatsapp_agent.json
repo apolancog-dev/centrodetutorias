@@ -192,6 +192,98 @@
         640,
         80
       ]
+    },
+    {
+      "parameters": {
+        "table": "whatsapp_messages",
+        "operation": "insert",
+        "columns": [
+          "phone",
+          "name",
+          "direction",
+          "content"
+        ],
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "phone",
+              "value": "={{ $json.from }}"
+            },
+            {
+              "column": "name",
+              "value": "={{ $json.contact_name }}"
+            },
+            {
+              "column": "direction",
+              "value": "inbound"
+            },
+            {
+              "column": "content",
+              "value": "={{ $json.text }}"
+            }
+          ]
+        }
+      },
+      "credentials": {
+        "supabaseApi": {
+          "id": "IVa19l81qjUZcHse",
+          "name": "Supabase account"
+        }
+      },
+      "id": "supabase-log-inbound",
+      "name": "Log Inbound Message",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        640,
+        -100
+      ]
+    },
+    {
+      "parameters": {
+        "table": "whatsapp_messages",
+        "operation": "insert",
+        "columns": [
+          "phone",
+          "name",
+          "direction",
+          "content"
+        ],
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "phone",
+              "value": "={{ $('Filter Text Message').item.json.from }}"
+            },
+            {
+              "column": "name",
+              "value": "LucIA (AI)"
+            },
+            {
+              "column": "direction",
+              "value": "outbound"
+            },
+            {
+              "column": "content",
+              "value": "={{ $('AI Agent').item.json.output }}"
+            }
+          ]
+        }
+      },
+      "credentials": {
+        "supabaseApi": {
+          "id": "IVa19l81qjUZcHse",
+          "name": "Supabase account"
+        }
+      },
+      "id": "supabase-log-outbound-ai",
+      "name": "Log Outbound AI Message",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        1140,
+        240
+      ]
     }
   ],
   "connections": {
@@ -216,6 +308,11 @@
           },
           {
             "node": "HTTP Request GHL WhatsApp",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Log Inbound Message",
             "type": "main",
             "index": 0
           }
@@ -273,6 +370,17 @@
             "index": 0,
             "node": "AI Agent",
             "type": "ai_memory"
+          }
+        ]
+      ]
+    },
+    "Send WhatsApp Message": {
+      "main": [
+        [
+          {
+            "node": "Log Outbound AI Message",
+            "type": "main",
+            "index": 0
           }
         ]
       ]

@@ -113,6 +113,52 @@
           "name": "WhatsApp Account (Meta)"
         }
       }
+    },
+    {
+      "parameters": {
+        "table": "whatsapp_messages",
+        "operation": "insert",
+        "columns": [
+          "phone",
+          "name",
+          "direction",
+          "content"
+        ],
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "phone",
+              "value": "={{ $json.recipientPhoneNumber }}"
+            },
+            {
+              "column": "name",
+              "value": "Sistema (Template)"
+            },
+            {
+              "column": "direction",
+              "value": "outbound"
+            },
+            {
+              "column": "content",
+              "value": "={{ $json.textBody }}"
+            }
+          ]
+        }
+      },
+      "credentials": {
+        "supabaseApi": {
+          "id": "IVa19l81qjUZcHse",
+          "name": "Supabase account"
+        }
+      },
+      "id": "supabase-log-template",
+      "name": "Log Outbound Template Message",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        750,
+        608
+      ]
     }
   ],
   "connections": {
@@ -147,6 +193,17 @@
         [
           {
             "node": "Ejecutar Calificación",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WhatsApp Coordinar": {
+      "main": [
+        [
+          {
+            "node": "Log Outbound Template Message",
             "type": "main",
             "index": 0
           }

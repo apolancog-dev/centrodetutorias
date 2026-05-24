@@ -1,0 +1,119 @@
+{
+  "id": "U4yZmBSWM7TdSBid",
+  "name": "Send Manual WhatsApp",
+  "nodes": [
+    {
+      "id": "webhook-trigger",
+      "name": "Webhook",
+      "parameters": {
+        "httpMethod": "POST",
+        "options": {},
+        "path": "send-manual-whatsapp",
+        "responseMode": "onReceived"
+      },
+      "position": [
+        200,
+        240
+      ],
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1.1
+    },
+    {
+      "credentials": {
+        "whatsAppApi": {
+          "id": "b8AIBqrblIjhztKe",
+          "name": "WhatsApp Account (Meta)"
+        }
+      },
+      "id": "waba-send",
+      "name": "Send WhatsApp Message",
+      "parameters": {
+        "operation": "send",
+        "phoneNumberId": "1106627229206345",
+        "recipientPhoneNumber": "={{ $json.body.phone }}",
+        "resource": "message",
+        "textBody": "={{ $json.body.message }}"
+      },
+      "position": [
+        420,
+        240
+      ],
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1.1
+    },
+    {
+      "credentials": {
+        "supabaseApi": {
+          "id": "IVa19l81qjUZcHse",
+          "name": "Supabase account"
+        }
+      },
+      "id": "supabase-insert",
+      "name": "Log Manual Message",
+      "parameters": {
+        "table": "whatsapp_messages",
+        "operation": "insert",
+        "columns": [
+          "phone",
+          "name",
+          "direction",
+          "content"
+        ],
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "phone",
+              "value": "={{ $('Webhook').item.json.body.phone }}"
+            },
+            {
+              "column": "name",
+              "value": "={{ $('Webhook').item.json.body.adminName || 'Admin' }}"
+            },
+            {
+              "column": "direction",
+              "value": "outbound"
+            },
+            {
+              "column": "content",
+              "value": "={{ $('Webhook').item.json.body.message }}"
+            }
+          ]
+        }
+      },
+      "position": [
+        640,
+        240
+      ],
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1
+    }
+  ],
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Send WhatsApp Message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send WhatsApp Message": {
+      "main": [
+        [
+          {
+            "node": "Log Manual Message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1"
+  }
+}
