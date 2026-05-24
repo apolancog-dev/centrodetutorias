@@ -226,7 +226,7 @@
         "url": "https://graph.facebook.com/v19.0/me/messages",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={\n  \"recipient\": {\n    \"id\": \"{{ $('Filter Meta Message').item.json.sender_id }}\"\n  },\n  \"message\": {\n    \"text\": \"{{ $json.output }}\"\n  }\n}",
+        "jsonBody": "={{ { \"recipient\": { \"id\": $('Filter Meta Message').item.json.sender_id }, \"message\": { \"text\": $json.output } } }}",
         "options": {}
       },
       "credentials": {

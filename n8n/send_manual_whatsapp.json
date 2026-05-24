@@ -70,7 +70,7 @@
         "url": "https://graph.facebook.com/v19.0/me/messages",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={\n  \"recipient\": {\n    \"id\": \"{{ $('Webhook').item.json.body.phone }}\"\n  },\n  \"message\": {\n    \"text\": \"{{ $('Webhook').item.json.body.message }}\"\n  }\n}",
+        "jsonBody": "={{ { \"recipient\": { \"id\": $('Webhook').item.json.body.phone }, \"message\": { \"text\": $('Webhook').item.json.body.message } } }}",
         "options": {}
       },
       "credentials": {
