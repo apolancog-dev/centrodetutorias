@@ -32,7 +32,7 @@
           "origen"
         ],
         "operation": "upsert",
-        "tableId": "leads",
+        "tableId": "={{ 'leads' }}",
         "valuesToSend": {
           "values": [
             {

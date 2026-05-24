@@ -67,7 +67,7 @@
       "id": "supabase-log-inbound",
       "name": "Log Inbound Message",
       "parameters": {
-        "tableId": "whatsapp_messages",
+        "tableId": "={{ 'whatsapp_messages' }}",
         "operation": "insert",
         "columns": [
           "phone",
@@ -248,7 +248,7 @@
       "id": "supabase-log-outbound-ai",
       "name": "Log Outbound AI Message",
       "parameters": {
-        "tableId": "whatsapp_messages",
+        "tableId": "={{ 'whatsapp_messages' }}",
         "operation": "insert",
         "columns": [
           "phone",
