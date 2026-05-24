@@ -19,6 +19,27 @@
       "typeVersion": 1.1
     },
     {
+      "id": "check-channel",
+      "name": "Check Channel",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        400,
+        240
+      ],
+      "parameters": {
+        "conditions": {
+          "string": [
+            {
+              "value1": "={{ $json.body.channel || 'whatsapp' }}",
+              "operation": "equal",
+              "value2": "whatsapp"
+            }
+          ]
+        }
+      }
+    },
+    {
       "credentials": {
         "whatsAppApi": {
           "id": "b8AIBqrblIjhztKe",
@@ -30,16 +51,40 @@
       "parameters": {
         "operation": "send",
         "phoneNumberId": "1106627229206345",
-        "recipientPhoneNumber": "={{ $json.body.phone }}",
+        "recipientPhoneNumber": "={{ $('Webhook').item.json.body.phone }}",
         "resource": "message",
-        "textBody": "={{ $json.body.message }}"
+        "textBody": "={{ $('Webhook').item.json.body.message }}"
       },
       "position": [
-        420,
-        240
+        620,
+        140
       ],
       "type": "n8n-nodes-base.whatsApp",
       "typeVersion": 1.1
+    },
+    {
+      "id": "meta-send-manual",
+      "name": "Send Meta Message",
+      "parameters": {
+        "method": "POST",
+        "url": "https://graph.facebook.com/v19.0/me/messages",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"recipient\": {\n    \"id\": \"{{ $('Webhook').item.json.body.phone }}\"\n  },\n  \"message\": {\n    \"text\": \"{{ $('Webhook').item.json.body.message }}\"\n  }\n}",
+        "options": {}
+      },
+      "credentials": {
+        "httpQueryAuth": {
+          "id": "Hznf2ZMg4wObho4L",
+          "name": "Meta Page Access Token"
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        620,
+        340
+      ]
     },
     {
       "credentials": {
@@ -57,7 +102,8 @@
           "phone",
           "name",
           "direction",
-          "content"
+          "content",
+          "channel"
         ],
         "valuesToSend": {
           "values": [
@@ -76,12 +122,16 @@
             {
               "column": "content",
               "value": "={{ $('Webhook').item.json.body.message }}"
+            },
+            {
+              "column": "channel",
+              "value": "={{ $('Webhook').item.json.body.channel || 'whatsapp' }}"
             }
           ]
         }
       },
       "position": [
-        640,
+        860,
         240
       ],
       "type": "n8n-nodes-base.supabase",
@@ -93,7 +143,25 @@
       "main": [
         [
           {
+            "node": "Check Channel",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Check Channel": {
+      "main": [
+        [
+          {
             "node": "Send WhatsApp Message",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send Meta Message",
             "type": "main",
             "index": 0
           }
@@ -101,6 +169,17 @@
       ]
     },
     "Send WhatsApp Message": {
+      "main": [
+        [
+          {
+            "node": "Log Manual Message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send Meta Message": {
       "main": [
         [
           {

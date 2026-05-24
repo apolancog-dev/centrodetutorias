@@ -1,0 +1,407 @@
+{
+  "name": "LucIA Meta Agent",
+  "nodes": [
+    {
+      "id": "18f92b7c-fa0e-4be7-8d82-df75c61abcc5",
+      "name": "Webhook Trigger (POST)",
+      "parameters": {
+        "httpMethod": "POST",
+        "options": {},
+        "path": "lucia-meta",
+        "responseMode": "onReceived"
+      },
+      "position": [
+        200,
+        240
+      ],
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1.1,
+      "webhookId": "ee9fc820-70dc-4ea5-8dc9-f9413c475782"
+    },
+    {
+      "id": "28f92b7c-fa0e-4be7-8d82-df75c61abcc6",
+      "name": "Webhook Verification (GET)",
+      "onError": "continueRegularOutput",
+      "parameters": {
+        "httpMethod": "GET",
+        "options": {},
+        "path": "lucia-meta",
+        "responseMode": "responseNode"
+      },
+      "position": [
+        200,
+        80
+      ],
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 1.1,
+      "webhookId": "6e369b63-fd88-4dfa-8669-050e6f4b68dc"
+    },
+    {
+      "id": "38f92b7c-fa0e-4be7-8d82-df75c61abcc7",
+      "name": "Respond to Webhook",
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "={{ $json.query[\"hub.challenge\"] }}"
+      },
+      "position": [
+        420,
+        80
+      ],
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1.5
+    },
+    {
+      "id": "23a8b2cd-ea71-46fd-9658-0056637b58c7",
+      "name": "Filter Meta Message",
+      "parameters": {
+        "jsCode": "const body = $input.first().json.body;\nif (!body) return [];\n\n// Determinar el canal y recuperar la mensajería del payload\nconst object = body.object;\nconst entry = body.entry?.[0];\nconst messaging = entry?.messaging?.[0];\n\nif (!messaging || !messaging.message) return [];\n\nconst sender_id = messaging.sender?.id;\nconst recipient_id = messaging.recipient?.id;\nconst text = messaging.message.text;\n\nif (!sender_id || !text) return [];\n\n// Prevenir auto-respuestas infinitas (Meta envía eventos tipo echo de la propia cuenta)\nif (messaging.message.is_echo === true || sender_id === recipient_id) {\n  return [];\n}\n\nconst channel = object === 'instagram' ? 'instagram' : 'facebook';\nconst contact_name = channel === 'instagram' ? 'Cliente Instagram' : 'Cliente Facebook';\n\nreturn [{\n  json: {\n    text: text,\n    sender_id: sender_id,\n    recipient_id: recipient_id,\n    contact_name: contact_name,\n    channel: channel\n  }\n}];"
+      },
+      "position": [
+        420,
+        240
+      ],
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2
+    },
+    {
+      "id": "supabase-log-inbound",
+      "name": "Log Inbound Message",
+      "parameters": {
+        "table": "whatsapp_messages",
+        "operation": "insert",
+        "columns": [
+          "phone",
+          "name",
+          "direction",
+          "content",
+          "channel"
+        ],
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "phone",
+              "value": "={{ $json.sender_id }}"
+            },
+            {
+              "column": "name",
+              "value": "={{ $json.contact_name }}"
+            },
+            {
+              "column": "direction",
+              "value": "inbound"
+            },
+            {
+              "column": "content",
+              "value": "={{ $json.text }}"
+            },
+            {
+              "column": "channel",
+              "value": "={{ $json.channel }}"
+            }
+          ]
+        }
+      },
+      "credentials": {
+        "supabaseApi": {
+          "id": "IVa19l81qjUZcHse",
+          "name": "Supabase account"
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        640,
+        -100
+      ]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://services.leadconnectorhq.com/contacts/upsert",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer pit-62719809-63ac-4b11-8e4a-df5942c8e80e"
+            },
+            {
+              "name": "Version",
+              "value": "2021-07-28"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"locationId\": \"JhSnXQVvO5cUmHqXRced\",\n  \"firstName\": \"{{ $('Filter Meta Message').item.json.contact_name }}\",\n  \"email\": \"{{ $('Filter Meta Message').item.json.sender_id }}@{{ $('Filter Meta Message').item.json.channel }}.meta\",\n  \"tags\": [\n    \"lead-meta-lucia\",\n    \"lead-{{ $('Filter Meta Message').item.json.channel }}-lucia\",\n    \"LucIA {{ $('Filter Meta Message').item.json.channel.charAt(0).toUpperCase() + $('Filter Meta Message').item.json.channel.slice(1) }}\"\n  ]\n}",
+        "options": {}
+      },
+      "id": "e64c1bb3-dd72-477d-9658-0056637b58c8",
+      "name": "HTTP Request GHL Meta",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        640,
+        80
+      ]
+    },
+    {
+      "id": "e63a1ab3-cc72-466d-9658-0056637b58c8",
+      "name": "AI Agent",
+      "parameters": {
+        "options": {
+          "systemMessage": "=Eres LucIA, la asistente virtual inteligente y empática del Centro de Tutorías (CEDETU), atendiendo a los clientes directamente por Instagram y Facebook. Tu tono es sumamente cálido, amigable, profesional y paciente.\n\nREGLAS DE CONVERSACIÓN MULTICANAL:\n- Escribe de forma muy concisa, fluida y conversacional. En Instagram y Facebook, los usuarios prefieren textos cortos (máximo 2 o 3 líneas por párrafo).\n- Usa emojis con buen gusto para hacer los mensajes dinámicos y legibles.\n- Tu objetivo es responder dudas sobre las tutorías de CEDETU y recopilar los datos del lead de manera fluida:\n  - Nombre completo\n  - Correo electrónico\n  - Número de teléfono o WhatsApp de contacto principal\n  - Materia que necesita reforzar\n  - Nivel académico (Primaria, Secundaria, Bachillerato, Universidad)\n  - Breve descripción del caso\n- Cuando tengas al menos Nombre, Email, Teléfono y Materia de interés, DEBES invocar la herramienta \"guardar_lead\" para registrarlos en Supabase y GoHighLevel. (El email temporal de referencia de la conversación es: {{ $('Filter Meta Message').item.json.sender_id }}@{{ $('Filter Meta Message').item.json.channel }}.meta)\n- Siempre ofrece la opción de agendar una *Entrevista de Diagnóstico Gratuita de 20 minutos* directamente en nuestro Calendly: https://calendly.com/cedetu\n- Despídete cordialmente firmando como: \"*LucIA*, tu Asistente Virtual de CEDETU 🤖✨\"."
+        },
+        "promptType": "define",
+        "text": "={{ $json.text }}"
+      },
+      "position": [
+        640,
+        240
+      ],
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 1.6
+    },
+    {
+      "credentials": {
+        "openAiApi": {
+          "id": "4iK6wrqLwNRksV0n",
+          "name": "OpenAI account"
+        }
+      },
+      "id": "cb1c34a2-eb41-45fe-85fa-7b24346e969a",
+      "name": "OpenAI Chat Model",
+      "parameters": {
+        "model": "gpt-4o-mini",
+        "options": {
+          "temperature": 0.7
+        }
+      },
+      "position": [
+        520,
+        420
+      ],
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1
+    },
+    {
+      "id": "890bc892-0b1a-47fa-802c-7b22416b23cd",
+      "name": "Window Buffer Memory",
+      "parameters": {
+        "contextKey": "chat_history",
+        "sessionIdType": "customKey",
+        "sessionKey": "={{ $('Filter Meta Message').item.json.sender_id }}"
+      },
+      "position": [
+        660,
+        420
+      ],
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.2
+    },
+    {
+      "id": "ab7c8e9b-381a-45c1-8d2b-ff27b2cbb1d4",
+      "name": "Guardar Lead Sub-Workflow Tool",
+      "parameters": {
+        "description": "Utiliza esta herramienta únicamente cuando el usuario te haya proporcionado sus datos de contacto completos (Nombre, Correo, Teléfono) y la Materia de interés, para registrarlos en el sistema Supabase y GoHighLevel.",
+        "inputSchema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"nombre\": {\n      \"type\": \"string\",\n      \"description\": \"Nombre completo del lead\"\n    },\n    \"email\": {\n      \"type\": \"string\",\n      \"description\": \"Correo electrónico de contacto\"\n    },\n    \"telefono\": {\n      \"type\": \"string\",\n      \"description\": \"Número de teléfono del contacto\"\n    },\n    \"materia\": {\n      \"type\": \"string\",\n      \"description\": \"Materia que necesita reforzar\"\n    },\n    \"nivel\": {\n      \"type\": \"string\",\n      \"description\": \"Nivel académico del estudiante (Primaria, Secundaria, Bachillerato, Universidad)\"\n    },\n    \"descripcion\": {\n      \"type\": \"string\",\n      \"description\": \"Breve descripción de la necesidad académica\"\n    },\n    \"reference_email\": {\n      \"type\": \"string\",\n      \"description\": \"El email de referencia de la conversación (es: {{ $('Filter Meta Message').item.json.sender_id }}@{{ $('Filter Meta Message').item.json.channel }}.meta)\"\n    }\n  },\n  \"required\": [\"nombre\", \"email\", \"telefono\", \"materia\", \"reference_email\"]\n}",
+        "name": "guardar_lead",
+        "specifyInputSchema": true,
+        "workflowId": "o7SJolS5MlkeEUWV"
+      },
+      "position": [
+        800,
+        420
+      ],
+      "type": "@n8n/n8n-nodes-langchain.toolWorkflow",
+      "typeVersion": 1
+    },
+    {
+      "id": "meta-send",
+      "name": "Send Meta Message",
+      "parameters": {
+        "method": "POST",
+        "url": "https://graph.facebook.com/v19.0/me/messages",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"recipient\": {\n    \"id\": \"{{ $('Filter Meta Message').item.json.sender_id }}\"\n  },\n  \"message\": {\n    \"text\": \"{{ $json.output }}\"\n  }\n}",
+        "options": {}
+      },
+      "credentials": {
+        "httpQueryAuth": {
+          "id": "Hznf2ZMg4wObho4L",
+          "name": "Meta Page Access Token"
+        }
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        920,
+        240
+      ]
+    },
+    {
+      "id": "supabase-log-outbound-ai",
+      "name": "Log Outbound AI Message",
+      "parameters": {
+        "table": "whatsapp_messages",
+        "operation": "insert",
+        "columns": [
+          "phone",
+          "name",
+          "direction",
+          "content",
+          "channel"
+        ],
+        "valuesToSend": {
+          "values": [
+            {
+              "column": "phone",
+              "value": "={{ $('Filter Meta Message').item.json.sender_id }}"
+            },
+            {
+              "column": "name",
+              "value": "LucIA (AI)"
+            },
+            {
+              "column": "direction",
+              "value": "outbound"
+            },
+            {
+              "column": "content",
+              "value": "={{ $('AI Agent').item.json.output }}"
+            },
+            {
+              "column": "channel",
+              "value": "={{ $('Filter Meta Message').item.json.channel }}"
+            }
+          ]
+        }
+      },
+      "credentials": {
+        "supabaseApi": {
+          "id": "IVa19l81qjUZcHse",
+          "name": "Supabase account"
+        }
+      },
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        1140,
+        240
+      ]
+    }
+  ],
+  "connections": {
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Send Meta Message",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Filter Meta Message": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "AI Agent",
+            "type": "main"
+          },
+          {
+            "node": "HTTP Request GHL Meta",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Log Inbound Message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Guardar Lead Sub-Workflow Tool": {
+      "ai_tool": [
+        [
+          {
+            "index": 0,
+            "node": "AI Agent",
+            "type": "ai_tool"
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "index": 0,
+            "node": "AI Agent",
+            "type": "ai_languageModel"
+          }
+        ]
+      ]
+    },
+    "Webhook Trigger (POST)": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Filter Meta Message",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Webhook Verification (GET)": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Respond to Webhook",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Window Buffer Memory": {
+      "ai_memory": [
+        [
+          {
+            "index": 0,
+            "node": "AI Agent",
+            "type": "ai_memory"
+          }
+        ]
+      ]
+    },
+    "Send Meta Message": {
+      "main": [
+        [
+          {
+            "node": "Log Outbound AI Message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "saveDataErrorExecution": "all",
+    "saveDataSuccessExecution": "all",
+    "saveManualExecutions": true,
+    "saveExecutionProgress": true
+  }
+}

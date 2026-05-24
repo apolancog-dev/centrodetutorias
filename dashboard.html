@@ -3491,6 +3491,23 @@
         let whatsappRealtimeChannel = null;
         let mobileChatViewActive = false;
         let leadsPhoneMap = {};
+        let activeWAChannelFilter = 'all';
+
+        window.setWAChannelFilter = function(filter) {
+            activeWAChannelFilter = filter;
+            const buttons = ['all', 'whatsapp', 'instagram', 'facebook'];
+            buttons.forEach(btn => {
+                const el = document.getElementById(`btn-filter-${btn}`);
+                if (el) {
+                    if (btn === filter) {
+                        el.className = "px-3 py-1 rounded-full text-[10px] font-extrabold transition-all bg-primary text-white shadow-sm cursor-pointer";
+                    } else {
+                        el.className = "px-3 py-1 rounded-full text-[10px] font-extrabold transition-all bg-slate-100 text-slate-600 hover:bg-slate-200/60 flex items-center gap-1 cursor-pointer";
+                    }
+                }
+            });
+            renderWhatsAppThreadsList(document.getElementById('wa-chat-search')?.value || '');
+        };
 
         async function renderAdminWhatsAppView(container) {
             mobileChatViewActive = false;
@@ -3541,6 +3558,7 @@
 
                 messages.forEach(msg => {
                     const phone = msg.phone;
+                    const channel = msg.channel || 'whatsapp';
                     if (!groups[phone]) {
                         // Limpiar número para cruce de nombres de leads
                         const cleanPhone = phone.replace(/\D/g, '');
@@ -3548,7 +3566,8 @@
 
                         groups[phone] = {
                             phone: phone,
-                            name: leadName || (msg.direction === 'inbound' ? msg.name : null) || `Contacto +${phone}`,
+                            channel: channel,
+                            name: leadName || (msg.direction === 'inbound' ? msg.name : null) || (channel === 'instagram' ? 'Cliente Instagram' : channel === 'facebook' ? 'Cliente Facebook' : `Contacto +${phone}`),
                             isLead: !!leadName,
                             messages: []
                         };
@@ -3593,6 +3612,7 @@
 
         function handleNewRealtimeMessage(newMsg) {
             const phone = newMsg.phone;
+            const channel = newMsg.channel || 'whatsapp';
             let conv = whatsappConversations.find(c => c.phone === phone);
 
             if (!conv) {
@@ -3600,7 +3620,8 @@
                 const leadName = leadsPhoneMap[clean] || leadsPhoneMap[phone];
                 conv = {
                     phone: phone,
-                    name: leadName || (newMsg.direction === 'inbound' ? newMsg.name : null) || `Contacto +${phone}`,
+                    channel: channel,
+                    name: leadName || (newMsg.direction === 'inbound' ? newMsg.name : null) || (channel === 'instagram' ? 'Cliente Instagram' : channel === 'facebook' ? 'Cliente Facebook' : `Contacto +${phone}`),
                     isLead: !!leadName,
                     messages: [],
                     latestMessage: '',
@@ -3659,6 +3680,13 @@
                                 <svg class="absolute left-3 w-4 h-4 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
                                 <input type="text" id="wa-chat-search" placeholder="Buscar contacto o teléfono..." class="w-full pl-9 pr-4 py-2 bg-slate-50 border border-slate-200 rounded-xl text-xs focus:outline-none focus:ring-2 focus:ring-secondary/50 focus:border-secondary transition-all" />
                             </div>
+                            <!-- FILTRO MULTICANAL -->
+                            <div class="flex gap-1.5 overflow-x-auto py-1 scrollbar-none" id="wa-channel-filters">
+                                <button onclick="setWAChannelFilter('all')" id="btn-filter-all" class="px-3 py-1 rounded-full text-[10px] font-extrabold transition-all bg-primary text-white shadow-sm cursor-pointer">Todos</button>
+                                <button onclick="setWAChannelFilter('whatsapp')" id="btn-filter-whatsapp" class="px-3 py-1 rounded-full text-[10px] font-extrabold transition-all bg-slate-100 text-slate-600 hover:bg-slate-200/60 flex items-center gap-1 cursor-pointer">🟢 WA</button>
+                                <button onclick="setWAChannelFilter('instagram')" id="btn-filter-instagram" class="px-3 py-1 rounded-full text-[10px] font-extrabold transition-all bg-slate-100 text-slate-600 hover:bg-slate-200/60 flex items-center gap-1 cursor-pointer">🟣 IG</button>
+                                <button onclick="setWAChannelFilter('facebook')" id="btn-filter-facebook" class="px-3 py-1 rounded-full text-[10px] font-extrabold transition-all bg-slate-100 text-slate-600 hover:bg-slate-200/60 flex items-center gap-1 cursor-pointer">🔵 FB</button>
+                            </div>
                         </div>
                         <div id="wa-threads-container" class="flex-1 overflow-y-auto p-2 space-y-1">
                             <!-- Inyectado dinámicamente -->
@@ -3696,7 +3724,11 @@
 
             const q = query.toLowerCase().trim();
             const filtered = whatsappConversations.filter(c => {
-                return c.phone.includes(q) || c.name.toLowerCase().includes(q) || c.latestMessage.toLowerCase().includes(q);
+                const matchesQuery = c.phone.includes(q) || c.name.toLowerCase().includes(q) || c.latestMessage.toLowerCase().includes(q);
+                if (!matchesQuery) return false;
+                
+                if (activeWAChannelFilter === 'all') return true;
+                return c.channel === activeWAChannelFilter;
             });
 
             if (filtered.length === 0) {
@@ -3714,9 +3746,27 @@
                 const dateText = formatWhatsAppDate(c.latestTime);
                 const initials = c.name.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase() || 'C';
                 
+                let badgeHtml = '';
+                let avatarClass = 'bg-emerald-500/10 text-emerald-600 border-emerald-500/20';
+                let activeBorder = 'border-emerald-500';
+                
+                if (c.channel === 'instagram') {
+                    badgeHtml = `<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[8px] font-extrabold bg-purple-50 text-purple-600 border border-purple-100 uppercase tracking-wide">Instagram</span>`;
+                    avatarClass = 'bg-purple-500/10 text-purple-600 border-purple-500/20';
+                    activeBorder = 'border-purple-500';
+                } else if (c.channel === 'facebook') {
+                    badgeHtml = `<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[8px] font-extrabold bg-blue-50 text-blue-600 border border-blue-100 uppercase tracking-wide">Facebook</span>`;
+                    avatarClass = 'bg-blue-500/10 text-blue-600 border-blue-500/20';
+                    activeBorder = 'border-blue-500';
+                } else {
+                    badgeHtml = `<span class="inline-flex items-center px-1.5 py-0.5 rounded text-[8px] font-extrabold bg-emerald-50 text-emerald-600 border border-emerald-100 uppercase tracking-wide">WhatsApp</span>`;
+                    avatarClass = 'bg-emerald-500/10 text-emerald-600 border-emerald-500/20';
+                    activeBorder = 'border-emerald-500';
+                }
+                
                 html += `
-                    <div onclick="selectWhatsAppThread('${c.phone}')" class="flex items-center gap-3 p-3 rounded-2xl cursor-pointer hover:bg-slate-100/80 active:bg-slate-200/50 transition-all ${isActive ? 'bg-slate-100 border-l-4 border-primary shadow-sm' : ''}">
-                        <div class="w-10 h-10 rounded-full flex-shrink-0 bg-primary/10 text-primary font-bold flex items-center justify-center text-xs border border-primary/20 shadow-inner">
+                    <div onclick="selectWhatsAppThread('${c.phone}')" class="flex items-center gap-3 p-3 rounded-2xl cursor-pointer hover:bg-slate-100/80 active:bg-slate-200/50 transition-all ${isActive ? `bg-slate-100 border-l-4 ${activeBorder} shadow-sm` : ''}">
+                        <div class="w-10 h-10 rounded-full flex-shrink-0 ${avatarClass} font-bold flex items-center justify-center text-xs border shadow-inner">
                             ${initials}
                         </div>
                         <div class="min-w-0 flex-1">
@@ -3727,7 +3777,10 @@
                                 </h4>
                                 <span class="text-[9px] font-bold text-slate-400">${dateText}</span>
                             </div>
-                            <p class="text-[11px] text-slate-500 truncate mt-0.5">${c.latestMessage}</p>
+                            <div class="flex items-center justify-between mt-0.5">
+                                <p class="text-[11px] text-slate-500 truncate flex-1 mr-2">${c.latestMessage}</p>
+                                ${badgeHtml}
+                            </div>
                         </div>
                     </div>
                 `;
@@ -3756,6 +3809,21 @@
             const conv = whatsappConversations.find(c => c.phone === phone);
             if (!conv) return;
 
+            const channel = conv.channel || 'whatsapp';
+            let headerBadge = '<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-extrabold bg-emerald-50 text-emerald-600 border border-emerald-200 uppercase tracking-wide"><span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>WhatsApp Activo</span>';
+            let headerAvatarColor = 'bg-emerald-500/10 text-emerald-600 border-emerald-500/20';
+            let phoneLabel = `Tel: +${conv.phone}`;
+
+            if (channel === 'instagram') {
+                headerBadge = '<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-extrabold bg-purple-50 text-purple-600 border border-purple-200 uppercase tracking-wide"><span class="w-1.5 h-1.5 rounded-full bg-purple-500 animate-pulse"></span>Instagram DM Activo</span>';
+                headerAvatarColor = 'bg-purple-500/10 text-purple-600 border-purple-500/20';
+                phoneLabel = `IGSID: ${conv.phone}`;
+            } else if (channel === 'facebook') {
+                headerBadge = '<span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-extrabold bg-blue-50 text-blue-600 border border-blue-200 uppercase tracking-wide"><span class="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse"></span>Facebook Messenger Activo</span>';
+                headerAvatarColor = 'bg-blue-500/10 text-blue-600 border-blue-500/20';
+                phoneLabel = `PSID: ${conv.phone}`;
+            }
+
             // Render active conversation interface
             chatPane.innerHTML = `
                 <!-- TOP BAR -->
@@ -3764,19 +3832,16 @@
                         <button onclick="exitWhatsAppMobileView()" class="md:hidden p-1.5 rounded-lg hover:bg-slate-100 text-slate-600 mr-1 focus:outline-none">
                             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
                         </button>
-                        <div class="w-9 h-9 rounded-full bg-secondary/10 text-secondary font-bold flex items-center justify-center text-sm border border-secondary/20 shadow-sm">
+                        <div class="w-9 h-9 rounded-full ${headerAvatarColor} font-bold flex items-center justify-center text-sm border shadow-sm">
                             ${conv.name.split(' ').map(n => n[0]).join('').substring(0, 2).toUpperCase() || 'C'}
                         </div>
                         <div class="min-w-0">
                             <h4 class="text-xs font-extrabold text-slate-800 truncate">${conv.name}</h4>
-                            <p class="text-[10px] font-semibold text-slate-400">Tel: +${conv.phone}</p>
+                            <p class="text-[10px] font-semibold text-slate-400">${phoneLabel}</p>
                         </div>
                     </div>
                     <div>
-                        <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[10px] font-extrabold bg-emerald-50 text-emerald-600 border border-emerald-200 uppercase tracking-wide">
-                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
-                            Takeover Activo
-                        </span>
+                        ${headerBadge}
                     </div>
                 </div>
 
@@ -3872,6 +3937,9 @@
             const text = textarea.value.trim();
             if (!text || !activeWhatsAppPhone) return;
 
+            const conv = whatsappConversations.find(c => c.phone === activeWhatsAppPhone);
+            const channel = conv ? (conv.channel || 'whatsapp') : 'whatsapp';
+
             textarea.value = '';
             textarea.style.height = 'auto';
 
@@ -3905,7 +3973,8 @@
                     body: JSON.stringify({
                         phone: activeWhatsAppPhone,
                         message: text,
-                        adminName: currentUser.full_name || 'Admin'
+                        adminName: currentUser.full_name || 'Admin',
+                        channel: channel
                     })
                 });
 
