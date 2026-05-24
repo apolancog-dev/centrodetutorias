@@ -222,8 +222,8 @@
       "id": "meta-send",
       "name": "Send Meta Message",
       "parameters": {
-        "authentication": "predefinedCredentialType",
-        "nodeCredentialType": "httpQueryAuth",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpQueryAuth",
         "method": "POST",
         "url": "https://graph.facebook.com/v19.0/me/messages",
         "sendBody": true,
