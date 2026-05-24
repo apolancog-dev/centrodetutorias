@@ -22,49 +22,45 @@
       "id": "c12d8a9b-381a-4fe1-9d2b-ff27b2cbb1d3",
       "name": "Insert Supabase",
       "parameters": {
-        "columns": [
-          "nombre",
-          "email",
-          "telefono",
-          "materia",
-          "nivel",
-          "descripcion",
-          "origen"
-        ],
-        "operation": "upsert",
-        "tableId": "={{ 'leads' }}",
-        "valuesToSend": {
-          "values": [
+        "columns": null,
+        "dataToSend": "defineBelow",
+        "fieldsUi": {
+          "fieldValues": [
             {
-              "column": "nombre",
-              "value": "={{$json.nombre}}"
+              "fieldId": "nombre",
+              "fieldValue": "={{$json.nombre}}"
             },
             {
-              "column": "email",
-              "value": "={{$json.email}}"
+              "fieldId": "email",
+              "fieldValue": "={{$json.email}}"
             },
             {
-              "column": "telefono",
-              "value": "={{$json.telefono}}"
+              "fieldId": "telefono",
+              "fieldValue": "={{$json.telefono}}"
             },
             {
-              "column": "materia",
-              "value": "={{$json.materia}}"
+              "fieldId": "materia",
+              "fieldValue": "={{$json.materia}}"
             },
             {
-              "column": "nivel",
-              "value": "={{$json.nivel}}"
+              "fieldId": "nivel",
+              "fieldValue": "={{$json.nivel}}"
             },
             {
-              "column": "descripcion",
-              "value": "={{$json.descripcion || 'Sin descripción'}}"
+              "fieldId": "descripcion",
+              "fieldValue": "={{$json.descripcion || 'Sin descripción'}}"
             },
             {
-              "column": "origen",
-              "value": "={{$json.reference_email.includes('instagram') ? 'Instagram LucIA' : 'Facebook LucIA'}}"
+              "fieldId": "origen",
+              "fieldValue": "={{$json.reference_email.includes('instagram') ? 'Instagram LucIA' : 'Facebook LucIA'}}"
             }
           ]
-        }
+        },
+        "operation": "upsert",
+        "resource": "row",
+        "table": null,
+        "tableId": "leads",
+        "valuesToSend": null
       },
       "position": [
         420,

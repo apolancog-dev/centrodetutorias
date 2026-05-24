@@ -67,39 +67,37 @@
       "id": "supabase-log-inbound",
       "name": "Log Inbound Message",
       "parameters": {
-        "tableId": "={{ 'whatsapp_messages' }}",
-        "operation": "insert",
-        "columns": [
-          "phone",
-          "name",
-          "direction",
-          "content",
-          "channel"
-        ],
-        "valuesToSend": {
-          "values": [
+        "columns": null,
+        "dataToSend": "defineBelow",
+        "fieldsUi": {
+          "fieldValues": [
             {
-              "column": "phone",
-              "value": "={{ $json.sender_id }}"
+              "fieldId": "phone",
+              "fieldValue": "={{ $json.sender_id }}"
             },
             {
-              "column": "name",
-              "value": "={{ $json.contact_name }}"
+              "fieldId": "name",
+              "fieldValue": "={{ $json.contact_name }}"
             },
             {
-              "column": "direction",
-              "value": "inbound"
+              "fieldId": "direction",
+              "fieldValue": "inbound"
             },
             {
-              "column": "content",
-              "value": "={{ $json.text }}"
+              "fieldId": "content",
+              "fieldValue": "={{ $json.text }}"
             },
             {
-              "column": "channel",
-              "value": "={{ $json.channel }}"
+              "fieldId": "channel",
+              "fieldValue": "={{ $json.channel }}"
             }
           ]
-        }
+        },
+        "operation": "create",
+        "resource": "row",
+        "table": null,
+        "tableId": "whatsapp_messages",
+        "valuesToSend": null
       },
       "credentials": {
         "supabaseApi": {
@@ -248,39 +246,37 @@
       "id": "supabase-log-outbound-ai",
       "name": "Log Outbound AI Message",
       "parameters": {
-        "tableId": "={{ 'whatsapp_messages' }}",
-        "operation": "insert",
-        "columns": [
-          "phone",
-          "name",
-          "direction",
-          "content",
-          "channel"
-        ],
-        "valuesToSend": {
-          "values": [
+        "columns": null,
+        "dataToSend": "defineBelow",
+        "fieldsUi": {
+          "fieldValues": [
             {
-              "column": "phone",
-              "value": "={{ $('Filter Meta Message').item.json.sender_id }}"
+              "fieldId": "phone",
+              "fieldValue": "={{ $('Filter Meta Message').item.json.sender_id }}"
             },
             {
-              "column": "name",
-              "value": "LucIA (AI)"
+              "fieldId": "name",
+              "fieldValue": "LucIA (AI)"
             },
             {
-              "column": "direction",
-              "value": "outbound"
+              "fieldId": "direction",
+              "fieldValue": "outbound"
             },
             {
-              "column": "content",
-              "value": "={{ $('AI Agent').item.json.output }}"
+              "fieldId": "content",
+              "fieldValue": "={{ $('AI Agent').item.json.output }}"
             },
             {
-              "column": "channel",
-              "value": "={{ $('Filter Meta Message').item.json.channel }}"
+              "fieldId": "channel",
+              "fieldValue": "={{ $('Filter Meta Message').item.json.channel }}"
             }
           ]
-        }
+        },
+        "operation": "create",
+        "resource": "row",
+        "table": null,
+        "tableId": "whatsapp_messages",
+        "valuesToSend": null
       },
       "credentials": {
         "supabaseApi": {
