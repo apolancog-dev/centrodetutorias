@@ -66,6 +66,8 @@
       "id": "meta-send-manual",
       "name": "Send Meta Message",
       "parameters": {
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "httpQueryAuth",
         "method": "POST",
         "url": "https://graph.facebook.com/v19.0/me/messages",
         "sendBody": true,
