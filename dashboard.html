@@ -420,8 +420,11 @@
     <!-- CONTAINER PRINCIPAL DEL PORTAL (DASHBOARD) -->
     <div id="portal-container" class="hidden h-full flex flex-col md:flex-row overflow-hidden bg-slate-50">
         
+        <!-- BACKDROP PARA MENÚ MÓVIL (PREVIENE PANTALLA EN BLANCO Y DA EFECTO BLUR) -->
+        <div id="sidebar-backdrop" class="hidden fixed inset-0 bg-slate-900/40 backdrop-blur-sm z-40 md:hidden transition-all duration-300 opacity-0"></div>
+
         <!-- SIDEBAR DE NAVEGACIÓN -->
-        <aside id="sidebar" class="w-full md:w-64 bg-sidebarBg text-slate-200 flex flex-col flex-shrink-0 z-40 transition-transform md:translate-x-0 relative border-r border-slate-800">
+        <aside id="sidebar" class="fixed inset-y-0 left-0 w-64 md:w-64 bg-sidebarBg text-slate-200 flex flex-col flex-shrink-0 z-50 transition-transform -translate-x-full md:translate-x-0 md:relative border-r border-slate-800">
             <!-- Header Sidebar -->
             <div class="h-20 flex items-center justify-between px-6 border-b border-slate-800">
                 <a href="#" class="flex items-center gap-2.5 font-extrabold text-white text-lg font-display">
@@ -1021,22 +1024,49 @@
                 }
             }
             
-            // Toggle sidebar móvil
+            // Toggle sidebar móvil y backdrop
             const sidebar = document.getElementById('sidebar');
+            const backdrop = document.getElementById('sidebar-backdrop');
+            
+            const closeSidebar = () => {
+                if (sidebar) {
+                    sidebar.classList.add('-translate-x-full');
+                    sidebar.classList.remove('translate-x-0');
+                }
+                if (backdrop) {
+                    backdrop.classList.remove('opacity-100');
+                    backdrop.classList.add('opacity-0');
+                    setTimeout(() => {
+                        backdrop.classList.add('hidden');
+                    }, 300);
+                }
+            };
+
+            const openSidebar = () => {
+                if (sidebar) {
+                    sidebar.classList.remove('-translate-x-full');
+                    sidebar.classList.add('translate-x-0');
+                }
+                if (backdrop) {
+                    backdrop.classList.remove('hidden');
+                    setTimeout(() => {
+                        backdrop.classList.remove('opacity-0');
+                        backdrop.classList.add('opacity-100');
+                    }, 50);
+                }
+            };
+
             if (sidebar) {
                 const openMenu = document.getElementById('open-mobile-menu');
                 if (openMenu) {
-                    openMenu.addEventListener('click', () => {
-                        sidebar.classList.remove('-translate-x-full');
-                        sidebar.classList.add('translate-x-0');
-                    });
+                    openMenu.addEventListener('click', openSidebar);
                 }
                 const closeMenu = document.getElementById('close-mobile-menu');
                 if (closeMenu) {
-                    closeMenu.addEventListener('click', () => {
-                        sidebar.classList.add('-translate-x-full');
-                        sidebar.classList.remove('translate-x-0');
-                    });
+                    closeMenu.addEventListener('click', closeSidebar);
+                }
+                if (backdrop) {
+                    backdrop.addEventListener('click', closeSidebar);
                 }
             }
             
@@ -1465,6 +1495,11 @@
                 if (sidebar) {
                     sidebar.classList.add('-translate-x-full');
                     sidebar.classList.remove('translate-x-0');
+                }
+                const backdrop = document.getElementById('sidebar-backdrop');
+                if (backdrop) {
+                    backdrop.classList.remove('opacity-100');
+                    backdrop.classList.add('opacity-0', 'hidden');
                 }
  
                 // Limpiar buscador si no estamos navegando a las secciones de catálogo o contenido
