@@ -715,6 +715,9 @@
     </div>
 
 
+    <!-- CONTENIDO ACADÉMICO MODULAR -->
+    <script src="academic_content.js"></script>
+
     <!-- JAVASCRIPT DE LA SPA -->
     <script>
         // Configuración Supabase
@@ -908,12 +911,35 @@
             // RECURSOS PARA PADRES (3)
             { id: 801, title: 'Cómo Apoyar el Estudio en Casa', slug: 'apoyo-padres', category_id: 8, category_slug: 'padres', academic_level: 'Recursos para Padres', access_type: 'free', description: 'Crea un ambiente de estudio positivo, maneja horarios y ayuda sin resolverles la tarea.', lessons_count: 5, exercises_count: 5 },
             { id: 802, title: 'Detectar Dificultades de Aprendizaje', slug: 'detectar-dificultades', category_id: 8, category_slug: 'padres', academic_level: 'Recursos para Padres', access_type: 'premium', description: 'Señales de alerta de dislexia, TDAH, y cuándo es oportuno buscar una tutoría especializada.', lessons_count: 6, exercises_count: 6 },
-            { id: 803, title: 'Comunicación Asertiva con tu Hijo', slug: 'comunicacion-padres-hijos', category_id: 8, category_slug: 'padres', academic_level: 'Recursos para Padres', access_type: 'free', description: 'Estrategias para hablar sobre notas, evitar la frustración y fomentar la mentalidad de crecimiento.', lessons_count: 4, exercises_count: 4 }
+            { id: 803, title: 'Comunicación Asertiva con tu Hijo', slug: 'comunicacion-padres-hijos', category_id: 8, category_slug: 'padres', academic_level: 'Recursos para Padres', access_type: 'free', description: 'Estrategias para hablar sobre notas, evitar la frustración y fomentar la mentalidad de crecimiento.', lessons_count: 4, exercises_count: 4 },
+
+            // FÍSICA ADICIONAL (5)
+            { id: 206, title: 'Introducción a la Física', slug: 'intro-fisica', category_id: 2, category_slug: 'ciencias', academic_level: 'Secundaria', access_type: 'free', description: 'Qué estudia la física, el método científico y cómo se resuelven problemas prácticos.', lessons_count: 9, exercises_count: 45 },
+            { id: 207, title: 'Magnitudes y Unidades', slug: 'magnitudes-unidades', category_id: 2, category_slug: 'ciencias', academic_level: 'Secundaria / Diversificado', access_type: 'free', description: 'Sistema Internacional, conversión de unidades, notación científica y cifras significativas.', lessons_count: 9, exercises_count: 45 },
+            { id: 208, title: 'Vectores en Física', slug: 'vectores-fisica', category_id: 2, category_slug: 'ciencias', academic_level: 'Diversificado', access_type: 'premium', description: 'Magnitudes escalares y vectoriales, componentes de un vector, suma y resta de vectores.', lessons_count: 9, exercises_count: 45 },
+            { id: 209, title: 'Leyes de Newton', slug: 'leyes-newton', category_id: 2, category_slug: 'ciencias', academic_level: 'Diversificado', access_type: 'premium', description: 'Fuerza, masa y aceleración. Primera, segunda y tercera ley de Newton en problemas reales.', lessons_count: 9, exercises_count: 45 },
+            { id: 210, title: 'Trabajo, Energía y Potencia', slug: 'trabajo-energia-potencia', category_id: 2, category_slug: 'ciencias', academic_level: 'Diversificado / Universidad', access_type: 'premium', description: 'Trabajo mecánico, energía cinética y potencial, potencia y la ley de conservación.', lessons_count: 9, exercises_count: 45 },
+
+            // ESTADÍSTICA ADICIONAL (6)
+            { id: 901, title: 'Introducción a la Estadística', slug: 'intro-estadistica', category_id: 1, category_slug: 'matematicas', academic_level: 'Secundaria / Diversificado', access_type: 'free', description: 'Qué estudia la estadística, tipos de datos, variables cualitativas y cuantitativas.', lessons_count: 9, exercises_count: 45 },
+            { id: 902, title: 'Estadística Descriptiva Aplicada', slug: 'curso-estadistica-aplicada', category_id: 1, category_slug: 'matematicas', academic_level: 'Diversificado / Universidad', access_type: 'premium', description: 'Tablas de frecuencia, gráficas, medidas de tendencia central y de dispersión.', lessons_count: 9, exercises_count: 45 },
+            { id: 903, title: 'Probabilidad Básica', slug: 'probabilidad-basica', category_id: 1, category_slug: 'matematicas', academic_level: 'Diversificado / Universidad', access_type: 'free', description: 'Experimentos aleatorios, espacio muestral, eventos y las reglas fundamentales.', lessons_count: 9, exercises_count: 45 },
+            { id: 904, title: 'Distribuciones de Probabilidad', slug: 'distribuciones-probabilidad', category_id: 1, category_slug: 'matematicas', academic_level: 'Universidad', access_type: 'premium', description: 'Variables aleatorias, distribuciones discretas (binomial) y distribución normal.', lessons_count: 9, exercises_count: 45 },
+            { id: 905, title: 'Inferencia Estadística Básica', slug: 'inferencia-estadistica', category_id: 1, category_slug: 'matematicas', academic_level: 'Universidad', access_type: 'premium', description: 'Muestras y poblaciones, intervalos de confianza y pruebas de hipótesis introductorias.', lessons_count: 9, exercises_count: 45 },
+            { id: 906, title: 'Regresión Lineal Simple', slug: 'regresion-lineal', category_id: 1, category_slug: 'matematicas', academic_level: 'Universidad', access_type: 'premium', description: 'Relación entre variables cuantitativas, correlación de Pearson y modelos de regresión.', lessons_count: 9, exercises_count: 45 }
         ];
 
         let allCetuCourses = [...STATIC_COURSES];
 
         function mergeCourses() {
+            // Sincronizar contenidos académicos del archivo modular
+            if (window.ACADEMIC_CONTENT) {
+                STATIC_COURSES.forEach(c => {
+                    if (window.ACADEMIC_CONTENT[c.slug]) {
+                        c.body_content = window.ACADEMIC_CONTENT[c.slug];
+                    }
+                });
+            }
             const merged = [...STATIC_COURSES];
             loadedContentItems.forEach(dbItem => {
                 const exists = merged.some(item => item.slug === dbItem.slug);
