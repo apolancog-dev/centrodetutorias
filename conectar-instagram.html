@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conectar Instagram | Centro de Tutorías</title>
+    <meta name="description" content="Portal de integración para la conexión de cuentas de Instagram Business con el sistema inteligente del Centro de Tutorías.">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="LOGO_CEDETU.png">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        window.tailwind = {
+            config: {
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: '#1E3A8A', 
+                            secondary: '#10B981', 
+                            accent: '#F97316',
+                            pastel: {
+                                blue: '#E0F2FE',
+                                mint: '#D1FAE5',
+                                lilac: '#EDE9FE',
+                                yellow: '#FEF08A',
+                                coral: '#FECDD3'
+                            }
+                        },
+                        fontFamily: {
+                            sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', '"Segoe UI"', 'Roboto', 'sans-serif'],
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-slate-50 text-slate-800 flex flex-col min-h-screen">
+
+    <!-- Header / Nav -->
+    <header class="bg-white border-b border-slate-100 py-4 px-6 sticky top-0 z-50 shadow-sm">
+        <div class="max-w-6xl mx-auto flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="LOGO_CEDETU.png" alt="Logo Centro de Tutorías" class="h-10 w-auto">
+                <span class="font-bold text-xl text-primary tracking-tight hidden sm:inline-block">Centro de Tutorías</span>
+            </a>
+            <a href="index.html" class="text-sm font-semibold text-primary hover:text-blue-800 transition-colors flex items-center gap-2">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"></path></svg>
+                Volver al Inicio
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="flex-grow flex items-center justify-center py-16 px-4">
+        <div class="bg-white rounded-3xl p-8 md:p-12 shadow-xl border border-slate-100 max-w-xl w-full text-center space-y-6">
+            <div class="w-20 h-20 bg-gradient-to-tr from-amber-500 via-red-500 to-purple-600 rounded-2xl mx-auto flex items-center justify-center shadow-lg transform rotate-6 hover:rotate-0 transition-transform duration-300">
+                <svg class="w-12 h-12 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" stroke-width="2"></rect>
+                    <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" stroke-width="2"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" stroke-width="2" stroke-linecap="round"></line>
+                </svg>
+            </div>
+            
+            <div class="space-y-2">
+                <span class="text-xs font-extrabold text-purple-600 bg-purple-50 px-3 py-1 rounded-full uppercase tracking-wider">Integración API Oficial</span>
+                <h1 class="text-2xl md:text-3xl font-extrabold text-primary leading-tight">Vincular Instagram Business</h1>
+                <p class="text-sm text-slate-500 leading-relaxed px-4">
+                    Autoriza a nuestra aplicación para gestionar tus mensajes y comentarios a través del sistema multicanal de <strong>LucIA</strong>.
+                </p>
+            </div>
+
+            <!-- Botón Oficial de Instagram OAuth -->
+            <div class="pt-4">
+                <a href="https://www.instagram.com/oauth/authorize?force_reauth=true&client_id=975841112029803&redirect_uri=https://www.centrodetutorias.com/&response_type=code&scope=instagram_business_basic%2Cinstagram_business_manage_messages%2Cinstagram_business_manage_comments%2Cinstagram_business_content_publish%2Cinstagram_business_manage_insights" 
+                   class="w-full bg-gradient-to-r from-amber-500 via-red-500 to-purple-600 hover:from-amber-600 hover:via-red-600 hover:to-purple-700 text-white font-bold py-4 px-6 rounded-2xl text-sm shadow-lg hover:shadow-xl transition-all flex items-center justify-center gap-3 active:scale-[0.98]">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+                    </svg>
+                    Conectar Instagram de Empresa
+                </a>
+            </div>
+
+            <div class="border-t border-slate-100 pt-6 space-y-3 text-left">
+                <h4 class="text-xs font-extrabold text-slate-400 uppercase tracking-widest">Permisos solicitados:</h4>
+                <ul class="text-xs text-slate-500 space-y-2 list-none pl-0">
+                    <li class="flex items-start gap-2">
+                        <span class="text-green-500">✓</span>
+                        <span>Acceso básico a la información de perfil de Instagram Business.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-green-500">✓</span>
+                        <span>Lectura y respuesta de mensajes directos (DMs) de clientes.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-green-500">✓</span>
+                        <span>Gestión y moderación de comentarios en publicaciones.</span>
+                    </li>
+                    <li class="flex items-start gap-2">
+                        <span class="text-green-500">✓</span>
+                        <span>Lectura de estadísticas e insights del perfil comercial.</span>
+                    </li>
+                </ul>
+            </div>
+
+            <p class="text-[10px] text-slate-400 leading-normal border-t border-slate-100 pt-4">
+                Esta pantalla de inicio de sesión se utiliza exclusivamente para fines de verificación del desarrollador en el portal de Meta App Review y el tratamiento de datos cumple estrictamente con nuestro <a href="privacidad.html" target="_blank" class="text-primary hover:underline font-bold">Aviso de Privacidad</a>.
+            </p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-6 px-6 border-t border-slate-800 text-center text-xs">
+        &copy; 2026 Centro de Tutorías. Todos los derechos reservados.
+    </footer>
+
+</body>
+</html>
