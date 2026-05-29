@@ -2525,381 +2525,1345 @@ eq -1)$
 * Si el costo marginal de producción en una fábrica está dado por C'(x) = 5x + 10, y el costo fijo es C(0) = Q100, encuentra la función de costo total C(x). (R: C(x) = 2.5x² + 10x + 100).
 `,
 
-    "intro-fisica": `# Curso: Introducción a la Física
-* **Materia:** Ciencias | **Nivel sugerido:** Secundaria
-* **Público objetivo:** Alumnos que inician su formación científica y quieren entender los cimientos de la física moderna y el método científico.
-* **Objetivos de aprendizaje:** Comprender qué estudia la física, aplicar el método científico a experimentos locales y resolver problemas analíticos mediante estimaciones precisas e incertidumbres de medición.
+    "intro-fisica": {
+    "isRichCourse": true,
+    "title": "Introducción a la Física",
+    "units": [
+        {
+            "title": "Unidad 1: La Naturaleza de la Física",
+            "lessons": [
+                {
+                    "id": "que-estudia-fisica",
+                    "title": "Lección 1.1: Qué Estudia la Física y su Relación con Otras Ciencias",
+                    "introduction": "La física es la ciencia fundamental que estudia los componentes básicos del universo: materia, energía, espacio, tiempo y sus interacciones.",
+                    "explanationHtml": "<p>La <strong>física</strong> es la disciplina científica que busca comprender las leyes más elementales de la naturaleza. Intenta explicar desde el comportamiento de las partículas subatómicas hasta la dinámica de galaxias enteras.</p><p class=\"mt-3\">Una distinción clave en la ciencia es entre:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Fenómeno Físico:</strong> Cambio en la materia que no altera su estructura molecular ni su identidad química (ej. evaporar agua, romper un vidrio o magnetizar un clavo).</li><li><strong>Fenómeno Químico:</strong> Cambio profundo que altera la estructura interna de la materia transformándola en nuevas sustancias (ej. quemar madera, oxidar un metal o digerir comida).</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Identificación de Fenómenos</p><p class=\"text-base font-mono font-extrabold text-primary\">Físico (Identidad se Mantiene) &amp; Químico (Nueva Sustancia)</p><p class=\"text-xs text-slate-500\">Si al revertir el proceso la sustancia sigue siendo la misma químicamente, es un cambio físico.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"22\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">FENÓMENOS FÍSICOS VS QUÍMICOS</text><rect x=\"20\" y=\"40\" width=\"115\" height=\"55\" fill=\"#eff6ff\" stroke=\"#bfdbfe\" rx=\"8\" /><text x=\"77.5\" y=\"58\" font-size=\"9\" fill=\"#1e40af\" font-weight=\"extrabold\" text-anchor=\"middle\">FÍSICO: EVAPORACIÓN</text><text x=\"77.5\" y=\"78\" font-size=\"8\" fill=\"#1e40af\" text-anchor=\"middle\">H₂O líquida &rarr; H₂O gas</text><text x=\"77.5\" y=\"88\" font-size=\"8\" fill=\"#1e40af\" text-anchor=\"middle\">Misma molécula</text><rect x=\"165\" y=\"40\" width=\"115\" height=\"55\" fill=\"#fef2f2\" stroke=\"#fca5a5\" rx=\"8\" /><text x=\"222.5\" y=\"58\" font-size=\"9\" fill=\"#991b1b\" font-weight=\"extrabold\" text-anchor=\"middle\">QUÍMICO: COMBUSTIÓN</text><text x=\"222.5\" y=\"78\" font-size=\"8\" fill=\"#991b1b\" text-anchor=\"middle\">Madera + O₂ &rarr; Ceniza + CO₂</text><text x=\"222.5\" y=\"88\" font-size=\"8\" fill=\"#991b1b\" text-anchor=\"middle\">Estructura alterada</text></svg>",
+                    "svgDescription": "Esquema comparativo de cambios de la materia. La evaporación mantiene la estructura del agua (físico), la combustión crea nuevas sustancias (químico).",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Clasifica las siguientes situaciones de la vida diaria en Guatemala: a) El hielo de la cima del volcán Tajumulco derritiéndose por el sol, b) Una antorcha encendiéndose durante las fiestas patrias.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1 Tajumulco:</strong> El hielo es agua en estado sólido que pasa a líquido. Sigue siendo químicamente $H_2O$. Es un **Fenómeno Físico**.</li><li><strong>Paso 2 Antorcha:</strong> El queroseno o gas de la antorcha se quema al reaccionar con el oxígeno, emitiendo luz, calor y dióxido de carbono. Es un **Fenómeno Químico**.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> a) Físico, b) Químico.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Creer que el calor implica cambio químico:</strong> Pensar que calentar agua hasta hervir es un cambio químico porque requiere calor. Las transiciones de fase (fusión, ebullición, solidificación) son puramente cambios físicos.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "¿Qué tipo de fenómeno ocurre cuando un rayo magnetiza temporalmente una aguja de brújula de hierro?",
+                            "correctAnswer": "Fenomeno Fisico",
+                            "hint": "La aguja cambia sus propiedades magnéticas, pero su estructura atómica de hierro sigue siendo idéntica (escríbelo sin tildes).",
+                            "feedbackCorrect": "¡Excelente! La magnetización es un fenómeno físico, no cambia la composición química del hierro.",
+                            "feedbackIncorrect": "Incorrecto. Al no alterar la composición química de la aguja, es un 'Fenomeno Fisico'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Qué tipo de fenómeno ocurre cuando el combustible de un cohete espacial se quema para generar empuje?",
+                            "correctAnswer": "Fenomeno Quimico",
+                            "hint": "La combustión del combustible genera gases nuevos y libera gran energía atómica (escríbelo sin tildes).",
+                            "feedbackCorrect": "¡Perfecto! La combustión altera permanentemente las moléculas químicas del reactivo.",
+                            "feedbackIncorrect": "Incorrecto. Al generar nuevas sustancias y alterar la estructura molecular, es un 'Fenomeno Quimico'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cómo se llama la rama de la física clásica que estudia el equilibrio y las fuerzas en los fluidos (líquidos y gases) en reposo?",
+                            "correctAnswer": "Hidrostatica",
+                            "hint": "Estudia fluidos estáticos o en reposo (ingresa sin tildes).",
+                            "feedbackCorrect": "¡Excelente! Se trata de la hidrostática.",
+                            "feedbackIncorrect": "Incorrecto. Es la 'Hidrostatica'.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si disolvemos una cucharada de sal en un vaso de agua en Antigua Guatemala, ¿qué tipo de cambio ocurre?",
+                            "options": [
+                                "Un cambio físico, porque si evaporamos el agua podemos recuperar la sal intacta",
+                                "Un cambio químico, porque el sabor cambia y no se puede separar",
+                                "Un cambio nuclear, porque los átomos de cloro y sodio se fusionan",
+                                "Un cambio biológico, porque el agua adquiere vida celular"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "La disolución de un soluto en un solvente es un cambio de estado físico; no se crean nuevos elementos químicos.",
+                            "feedbackCorrect": "¡Correcto! Es físico porque podemos separar la sal evaporando el agua.",
+                            "feedbackIncorrect": "Incorrecto. Como la sal sigue siendo cloruro de sodio y el agua sigue siendo H2O (mezcla física), el cambio es físico.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "¿Cuál de las siguientes disciplinas es el resultado de la intersección directa entre la Física y la Astronomía?",
+                            "options": [
+                                "Astrofísica",
+                                "Bioquímica",
+                                "Geofísica",
+                                "Fisicoquímica"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Estudia las leyes físicas de los cuerpos celestes y del espacio exterior.",
+                            "feedbackCorrect": "¡Excelente! La astrofísica aplica las leyes de la física para comprender las estrellas y galaxias.",
+                            "feedbackIncorrect": "Incorrecto. Se le conoce como Astrofísica.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "La física estudia los cimientos de la naturaleza a través de fenómenos físicos (sin cambio de identidad química), diferenciándose de la química por la conservación de la estructura molecular.",
+                    "videoPlaceholderText": "Video de Física: Introducción y la física como ciencia fundamental."
+                },
+                {
+                    "id": "metodo-cientifico-fisica",
+                    "title": "Lección 1.2: El Método Científico en Física",
+                    "introduction": "Descubre el camino lógico, sistemático y empírico que aplican los físicos para validar teorías y descubrir leyes universales.",
+                    "explanationHtml": "<p>El <strong>método científico</strong> es una metodología rigurosa para adquirir conocimiento basado en la observación y la evidencia empírica. Consta de las siguientes etapas secuenciales:</p><ol class=\"list-decimal pl-5 space-y-1.5 my-3\"><li><strong>Observación:</strong> Identificar y describir detalladamente un fenómeno natural.</li><li><strong>Planteamiento del problema:</strong> Formular una pregunta de investigación clara.</li><li><strong>Formulación de Hipótesis:</strong> Proponer una explicación provisional y falsable que responda a la pregunta.</li><li><strong>Experimentación:</strong> Diseñar pruebas controladas para validar o refutar la hipótesis.</li><li><strong>Análisis y Conclusión:</strong> Evaluar los datos recolectados para confirmar la hipótesis o reformularla.</li></ol>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Flujo del Método Científico</p><p class=\"text-xs font-mono font-bold text-primary\">Observación &rarr; Hipótesis &rarr; Experimento &rarr; Análisis &rarr; Conclusión</p><p class=\"text-xs text-slate-505\">Si el experimento no apoya la hipótesis, se descarta y se formula una nueva.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">ETAPAS DEL MÉTODO CIENTÍFICO</text><rect x=\"15\" y=\"38\" width=\"50\" height=\"30\" fill=\"#eff6ff\" stroke=\"#bfdbfe\" rx=\"4\" /><text x=\"40\" y=\"56\" font-size=\"8\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">Observa</text><rect x=\"85\" y=\"38\" width=\"50\" height=\"30\" fill=\"#eff6ff\" stroke=\"#bfdbfe\" rx=\"4\" /><text x=\"110\" y=\"56\" font-size=\"8\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">Hipótesis</text><rect x=\"155\" y=\"38\" width=\"55\" height=\"30\" fill=\"#fffbeb\" stroke=\"#fde68a\" rx=\"4\" /><text x=\"182.5\" y=\"56\" font-size=\"8\" fill=\"#b45309\" font-weight=\"bold\" text-anchor=\"middle\">Experimento</text><rect x=\"230\" y=\"38\" width=\"55\" height=\"30\" fill=\"#ecfdf5\" stroke=\"#a7f3d0\" rx=\"4\" /><text x=\"257.5\" y=\"56\" font-size=\"8\" fill=\"#065f46\" font-weight=\"bold\" text-anchor=\"middle\">Concluye</text><path d=\"M 65 53 L 85 53 M 135 53 L 155 53 M 210 53 L 230 53\" stroke=\"#cbd5e1\" stroke-width=\"1.5\" stroke-linecap=\"round\" /></svg>",
+                    "svgDescription": "Flujo simplificado del método científico. Muestra las transiciones consecutivas desde la observación empírica hasta la deducción y conclusiones científicas.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Un estudiante de Quetzaltenango nota que un péndulo de cuerda larga oscila más lentamente que uno de cuerda corta. Sigue los pasos para estructurar su hipótesis.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1 Observación:</strong> La cuerda larga tarda más tiempo en completar una oscilación.</li><li><strong>Paso 2 Variable independiente:</strong> La longitud de la cuerda ($L$). Variable dependiente: El período de oscilación ($T$).</li><li><strong>Paso 3 Formulación de Hipótesis:</strong> \"El período de oscilación de un péndulo simple aumenta de manera proporcional a la longitud de su cuerda de suspensión\".</li></ol>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Creer que una hipótesis rechazada es un fracaso:</strong> Pensar que si el experimento contradice tu hipótesis, el estudio falló. Al contrario, falsar una hipótesis es un éxito científico porque descarta explicaciones erróneas y reduce el camino hacia la verdad.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "¿Qué paso del método científico pone a prueba directamente la validez de una hipótesis planteada?",
+                            "correctAnswer": "Experimentacion",
+                            "hint": "Es la fase práctica donde controlamos variables para observar si la hipótesis se cumple en la realidad (escríbelo sin tildes).",
+                            "feedbackCorrect": "¡Excelente! La experimentación permite comprobar la hipótesis empíricamente.",
+                            "feedbackIncorrect": "Incorrecto. Se realiza a través de la 'Experimentacion'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Una hipótesis científica para ser válida debe ser empíricamente comprobable y (ingresar una palabra descriptiva):",
+                            "correctAnswer": "falsable",
+                            "hint": "Debe existir la posibilidad lógica y física de que la hipótesis resulte ser falsa mediante experimentos.",
+                            "feedbackCorrect": "¡Perfecto! La falsabilidad es un requisito metodológico fundamental propuesto por Popper.",
+                            "feedbackIncorrect": "Incorrecto. Debe ser comprobable y 'falsable' (que se pueda probar que es falsa si realmente lo es).",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cómo se llama una explicación amplia y bien documentada de un fenómeno respaldada por un inmenso cuerpo de evidencia experimental?",
+                            "correctAnswer": "Teoria cientifica",
+                            "hint": "No es una simple corazonada; es un modelo altamente verificado como la relatividad o la evolución (escríbelo sin tildes).",
+                            "feedbackCorrect": "¡Excelente! Se trata de una teoría científica.",
+                            "feedbackIncorrect": "Incorrecto. En ciencia, ese nivel de confirmación se denomina 'Teoria cientifica'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si diseñas un experimento para medir cómo afecta el peso de una pelota a su tiempo de caída libre en el vacío, ¿cuál es la variable independiente?",
+                            "options": [
+                                "El peso de la pelota, el cual modificas a voluntad en las pruebas",
+                                "El tiempo que tarda en caer al suelo",
+                                "La fricción de la atmósfera circundante",
+                                "La gravedad de la Tierra"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "La variable independiente es el factor que manipula deliberadamente el experimentador para observar cambios en otra variable.",
+                            "feedbackCorrect": "¡Excelente! El peso de la pelota es la variable que manipulas independientemente.",
+                            "feedbackIncorrect": "Incorrecto. El tiempo de caída es la variable dependiente; el peso de la pelota es la independiente.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "¿Por qué es crucial la reproducibilidad en la experimentación científica?",
+                            "options": [
+                                "Para asegurar que cualquier otro investigador pueda repetir exactamente el experimento y obtener los mismos resultados, validando el descubrimiento",
+                                "Para que las revistas científicas puedan cobrar más por publicar el artículo",
+                                "Para evitar tener que hacer cálculos matemáticos difíciles",
+                                "Para ganar debates en redes sociales con opiniones personales"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "La reproducibilidad garantiza la objetividad de la ciencia, eliminando errores aislados o fraudes.",
+                            "feedbackCorrect": "¡Perfecto! La reproducibilidad da solidez empírica a los hallazgos.",
+                            "feedbackIncorrect": "Incorrecto. El fin es corroborar la consistencia de los datos por parte de terceros independientes.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "El método científico estructura la investigación en física encadenando la observación sistemática, hipótesis predictivas falsables, experimentos repetibles y análisis objetivos de datos.",
+                    "videoPlaceholderText": "Video de Física: El método científico aplicado al movimiento de caída."
+                },
+                {
+                    "id": "historia-fisica",
+                    "title": "Lección 1.3: Historia de la Física (Clásica vs. Moderna)",
+                    "introduction": "Recorre la historia evolutiva de la física y comprende los límites de validez que separan la mecánica clásica de la revolucionaria física moderna.",
+                    "explanationHtml": "<p>A lo largo de la historia, la física se ha dividido en dos grandes paradigmas según las dimensiones de velocidad y tamaño de los objetos de estudio:</p><p class=\"mt-3\"><strong>1. Física Clásica (Newtoniana):</strong> Estudia objetos de tamaño macroscópico que se desplazan a velocidades muy inferiores a la velocidad de la luz ($v \\ll c$). Incluye la mecánica clásica, el electromagnetismo clásico y la termodinámica.</p><p class=\"mt-3\"><strong>2. Física Moderna:</strong> Surge a principios del siglo XX para explicar el universo a escalas extremas. Se divide en:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li>*Teoría de la Relatividad:* Para velocidades cercanas a la de la luz ($c \\approx 300,000 \\text{ km/s}$).</li><li>*Mecánica Cuántica:* Para escalas atómicas y subatómicas muy pequeñas.</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Límites de Validez</p><p class=\"text-xs font-mono font-bold text-primary\">Clásica: Macroscópico y v &lt;&lt; c || Moderna: Atómico o v &asymp; c</p><p class=\"text-xs text-slate-505\">La física clásica es un límite de aproximación matemática excelente de la física moderna para la escala humana cotidiana.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">ESPECTRO DE APLICACIÓN FÍSICA</text><line x1=\"150\" y1=\"30\" x2=\"150\" y2=\"105\" stroke=\"#cbd5e1\" stroke-width=\"1\" stroke-dasharray=\"3,3\" /><text x=\"75\" y=\"42\" font-size=\"9\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">FÍSICA CLÁSICA</text><text x=\"75\" y=\"65\" font-size=\"8\" fill=\"#475569\" text-anchor=\"middle\">Mecánica de Newton</text><text x=\"75\" y=\"85\" font-size=\"8\" fill=\"#475569\" text-anchor=\"middle\">Velocidades cotidianas (v &lt;&lt; c)</text><text x=\"225\" y=\"42\" font-size=\"9\" fill=\"#065f46\" font-weight=\"bold\" text-anchor=\"middle\">FÍSICA MODERNA</text><text x=\"225\" y=\"65\" font-size=\"8\" fill=\"#475569\" text-anchor=\"middle\">Relatividad (v &asymp; c)</text><text x=\"225\" y=\"85\" font-size=\"8\" fill=\"#475569\" text-anchor=\"middle\">Mecánica Cuántica (Átomos)</text></svg>",
+                    "svgDescription": "Espectro de validez de la física. Divide las teorías en clásica y moderna de acuerdo al tamaño y velocidad de los cuerpos bajo análisis.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Si un ingeniero estructural diseña un edificio en Ciudad de Guatemala, ¿qué tipo de física aplica? ¿Y si un laboratorio analiza las órbitas de los electrones dentro de un microchip de silicio?</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1 Edificio:</strong> El edificio es macroscópico y está estático (velocidad cero). Las leyes de Newton de la física clásica son perfectas y sumamente precisas para este diseño.</li><li><strong>Paso 2 Microchip:</strong> El análisis de órbitas electrónicas ocurre a escala atómica ($10^{-10}$ m). La física clásica falla a esta escala; es obligatorio aplicar la **Mecánica Cuántica** (Física Moderna).</li></ol>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Creer que la relatividad invalida a Newton:</strong> Pensar que como la física moderna es más exacta, las leyes de Newton de la física clásica son falsas. En realidad, la física de Newton sigue siendo 100% exacta y aplicable para el mundo macroscópico terrestre.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "¿Quién formuló en el siglo XVII las famosas tres leyes del movimiento y la ley de gravitación universal que cimentaron la mecánica clásica?",
+                            "correctAnswer": "Isaac Newton",
+                            "hint": "Es el físico inglés que desarrolló el cálculo infinitesimal para modelar el movimiento orbital de los planetas.",
+                            "feedbackCorrect": "¡Excelente! Sir Isaac Newton cimentó la física clásica en sus Principia.",
+                            "feedbackIncorrect": "Incorrecto. Fue 'Isaac Newton'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Qué físico alemán revolucionó la ciencia a principios del siglo XX publicando la Teoría de la Relatividad Especial?",
+                            "correctAnswer": "Albert Einstein",
+                            "hint": "Su famosa ecuación E = mc² vincula la masa y la energía de forma directa.",
+                            "feedbackCorrect": "¡Perfecto! Albert Einstein es el padre de la relatividad.",
+                            "feedbackIncorrect": "Incorrecto. El autor fue 'Albert Einstein'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cómo se llama la rama de la física moderna que se encarga de modelar el comportamiento cuántico y probabilístico a escala de partículas subatómicas?",
+                            "correctAnswer": "Mecanica Cuantica",
+                            "hint": "Estudia las partículas elementales a nivel de cuantos de energía (escríbelo sin tildes).",
+                            "feedbackCorrect": "¡Excelente! La mecánica cuántica rige el micro-cosmos.",
+                            "feedbackIncorrect": "Incorrecto. Se trata de la 'Mecanica Cuantica'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cuál es el límite físico aproximado de velocidad a partir del cual las leyes clásicas de Newton dejan de ser precisas y es obligatorio usar física relativista?",
+                            "options": [
+                                "A partir del 10% de la velocidad de la luz (aproximadamente 30,000 km/s)",
+                                "A la velocidad máxima permitida en una carretera de Guatemala (100 km/h)",
+                                "A la velocidad del sonido en el aire (340 m/s)",
+                                "A la velocidad de órbita de un satélite artificial terrestre"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Se requiere alcanzar velocidades extremas comparables a la velocidad de la luz para que los efectos de dilatación temporal sean significativos.",
+                            "feedbackCorrect": "¡Excelente! A velocidades muy altas se activan los efectos relativistas de Einstein.",
+                            "feedbackIncorrect": "Incorrecto. Las desviaciones clásicas se hacen importantes a velocidades cercanas a la velocidad de la luz (más del 10% de c).",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "¿Quién unificó los fenómenos de la electricidad y el magnetismo en cuatro ecuaciones matemáticas en el siglo XIX?",
+                            "options": [
+                                "James Clerk Maxwell",
+                                "Galileo Galilei",
+                                "Isaac Newton",
+                                "Albert Einstein"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Describió por completo la luz como una onda electromagnética transversal.",
+                            "feedbackCorrect": "¡Perfecto! James Clerk Maxwell desarrolló la síntesis electromagnética.",
+                            "feedbackIncorrect": "Incorrecto. El autor de la síntesis electromagnética es James Clerk Maxwell.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "La física clásica rige de forma brillante el comportamiento macroscópico de velocidad cotidiana, mientras que la física moderna (relatividad y cuántica) describe los límites de lo infinitamente rápido o pequeño.",
+                    "videoPlaceholderText": "Video de Física: Historia de la física de Newton a Einstein."
+                }
+            ]
+        },
+        {
+            "title": "Unidad 2: Modelos y Resolución de Problemas",
+            "lessons": [
+                {
+                    "id": "modelos-ciencias",
+                    "title": "Lección 2.1: Modelos en Ciencias",
+                    "introduction": "Aprende a simplificar la compleja realidad física utilizando representaciones ideales y el modelo de partícula puntual.",
+                    "explanationHtml": "<p>El universo real es sumamente complejo: el viento, la fricción del suelo, la rotación tridimensional y la deformación de los cuerpos añaden infinitas variables a los problemas cotidianos. Para poder resolver problemas analíticamente, los físicos usan <strong>modelos científicos</strong>.</p><p class=\"mt-3\">Un modelo es una simplificación intencionada de la realidad que conserva solo las características esenciales del fenómeno. El modelo más representativo de la mecánica es la <strong>Partícula Puntual</strong>:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li>Consiste en representar a un objeto gigante como si fuera un simple punto geométrico sin volumen ni forma.</li><li>Toda la masa del objeto se considera concentrada en ese único punto matemático.</li><li>Se ignora su rotación y su resistencia del aire como primera aproximación.</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Modelo de Partícula Puntual</p><p class=\"text-xs font-mono font-bold text-primary\">Tamaño Objeto &lt;&lt; Distancia Recorrida &rArr; Válido</p><p class=\"text-xs text-slate-505\">Tratar al objeto como un punto matemático sin volumen simplifica la descripción matemática del movimiento traslacional.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">MODELO DE PARTÍCULA PUNTUAL</text><!-- Bus real detallado --><rect x=\"30\" y=\"45\" width=\"80\" height=\"30\" fill=\"#eff6ff\" stroke=\"#2563eb\" stroke-width=\"1.5\" rx=\"6\" /><circle cx=\"50\" cy=\"80\" r=\"6\" fill=\"#1e293b\" /><circle cx=\"90\" cy=\"80\" r=\"6\" fill=\"#1e293b\" /><text x=\"70\" y=\"63\" font-size=\"8\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">Bus real</text><path d=\"M 125 60 L 175 60\" stroke=\"#cbd5e1\" stroke-width=\"1.5\" stroke-dasharray=\"2,2\" /><!-- Particula puntual simplificada --><circle cx=\"220\" cy=\"60\" r=\"5\" fill=\"#e11d48\" /><text x=\"220\" y=\"80\" font-size=\"8\" fill=\"#9f1239\" font-weight=\"bold\" text-anchor=\"middle\">Partícula Puntual (m)</text></svg>",
+                    "svgDescription": "Simplificación física. Un autobús con ruedas y volumen complejo se modela matemáticamente como una simple partícula puntual en análisis de velocidad traslacional.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Al calcular el tiempo que tarda un tren metropolitano de 15 metros en viajar de una estación a otra separada por 15 kilómetros de distancia en Ciudad de Guatemala, ¿es válido modelarlo como una partícula puntual?</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1: Compara dimensiones.</strong> La distancia de viaje es de $15 \\text{ km} = 15,000 \\text{ metros}$.</li><li><strong>Paso 2: Evalúa proporción.</strong> La longitud del tren es de 15 m. La proporción es: <br>$15 \\text{ m} / 15,000 \\text{ m} = 0.001$ (solo el $0.1\\%$ del viaje).</li><li><strong>Paso 3 Conclusión:</strong> Dado que el tamaño del tren es insignificante comparado con la distancia total, el modelo de partícula puntual es totalmente válido y simplifica el cálculo eliminando la forma y volumen del tren.</li></ol>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Usar partícula puntual para rotaciones:</strong> Tratar a una pelota como partícula puntual cuando calculas su giro (spin) o rotación. El modelo de partícula puntual anula geométricamente los giros; para analizar rotación, es obligatorio modelar el cuerpo como un sólido rígido con dimensiones espaciales reales.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "¿Cómo se llama el modelo físico simplificado que reduce un cuerpo geométrico real a un único punto matemático que acumula toda su masa?",
+                            "correctAnswer": "particula puntual",
+                            "hint": "Es el modelo básico con el que inicia todo curso escolar de cinemática (ingrésalo sin tildes).",
+                            "feedbackCorrect": "¡Excelente! El modelo de partícula puntual es la base de la cinemática traslacional.",
+                            "feedbackIncorrect": "Incorrecto. Se le llama modelo de 'particula puntual'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si queremos calcular la velocidad de rotación de un trompo girando en una banqueta de Panajachel, ¿es válido aplicar el modelo de partícula puntual?",
+                            "correctAnswer": "No",
+                            "hint": "El movimiento del trompo es puramente rotacional sobre su eje físico; requiere volumen para existir.",
+                            "feedbackCorrect": "¡Perfecto! Para rotación, no es válido el modelo puntual ya que este elimina la geometría física del cuerpo.",
+                            "feedbackIncorrect": "Incorrecto. No es válido porque una partícula puntual no posee dimensiones físicas y por tanto no puede girar sobre sí misma.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "En física de fluidos, ¿cómo llamamos a un líquido idealizado que no ofrece resistencia por fricción interna o viscosidad?",
+                            "correctAnswer": "fluido ideal",
+                            "hint": "Es un modelo simplificado de un fluido incompresible y sin viscosidad.",
+                            "feedbackCorrect": "¡Excelente! Se llama fluido ideal.",
+                            "feedbackIncorrect": "Incorrecto. Se le conoce como 'fluido ideal'.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿En cuál de las siguientes situaciones del estudio del movimiento orbital terrestre es totalmente válido tratar a la Tierra como una partícula puntual?",
+                            "options": [
+                                "Al calcular el tiempo que tarda la Tierra en completar su órbita anual alrededor del Sol",
+                                "Al predecir la duración del día y la noche según el movimiento de rotación sobre su propio eje",
+                                "Al diseñar la estabilidad estructural de un rascacielos sismorresistente",
+                                "Al calcular la fuerza de marea generada por la Luna en los océanos terrestres"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "El diámetro terrestre es despreciable únicamente frente a la gigantesca distancia de 150 millones de kilómetros al Sol.",
+                            "feedbackCorrect": "¡Excelente! La distancia orbital al Sol hace que el diámetro terrestre sea despreciable matemáticamente.",
+                            "feedbackIncorrect": "Incorrecto. En los giros terrestres o mareas, las dimensiones reales del planeta son cruciales para el modelo físico.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "¿Cuál es la función principal de los modelos científicos ideales en la física escolar?",
+                            "options": [
+                                "Simplificar la realidad omitiendo variables secundarias para permitir cálculos matemáticos exactos e intuitivos",
+                                "Mentir a los estudiantes ocultando la verdad sobre las leyes del universo",
+                                "Evitar que los laboratorios escolares gasten dinero en instrumentos reales",
+                                "Garantizar que todas las fórmulas den siempre como resultado el número cero"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Los modelos nos permiten enfocarnos en los conceptos físicos fundamentales sin perdernos en infinitas variables caóticas secundarias.",
+                            "feedbackCorrect": "¡Excelente! Esa es la función metodológica clave de la modelización.",
+                            "feedbackIncorrect": "Incorrecto. Buscan simplificar de forma razonada la complejidad del mundo real para poder estudiar un fenómeno de forma aislada.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "Los modelos simplifican los sistemas caóticos del mundo real en representaciones abstractas de fácil cálculo, permitiendo que la partícula puntual describa de forma limpia movimientos de traslación pura.",
+                    "videoPlaceholderText": "Video de Física: Por qué simplificamos el universo con modelos puntuales."
+                },
+                {
+                    "id": "estrategia-resolucion-problemas",
+                    "title": "Lección 2.2: Estrategia de 4 Pasos para Resolver Problemas de Física",
+                    "introduction": "Adopta una metodología lógica y sistemática para abordar y solucionar cualquier problema de física escolar de forma segura.",
+                    "explanationHtml": "<p>Muchos estudiantes cometen el error de buscar una fórmula en su cuaderno e intentar meter números en la calculadora inmediatamente sin comprender el problema. Los físicos aplican una **estrategia de cuatro pasos fundamentales**:</p><ol class=\"list-decimal pl-5 space-y-2 my-3\"><li><strong>Visualizar y Dibujar:</strong> Realizar un bosquejo manual del sistema físico, marcar el sistema de referencia y rotular todos los datos conocidos y la incógnita.</li><li><strong>Modelar Físicamente:</strong> Elegir las leyes y fórmulas físicas que describen el fenómeno observado.</li><li><strong>Operar (Cálculos):</strong> Despejar de forma puramente algebraica la incógnita y luego sustituir con precisión los valores numéricos correspondientes.</li><li><strong>Evaluar (Lógica Física):</strong> Comprobar si las unidades del resultado son correctas y analizar si el número obtenido tiene sentido biológico o físico en el mundo real.</li></ol>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Estrategia Lógica de Resolución</p><p class=\"text-xs font-mono font-bold text-primary\">1. Dibuja &rarr; 2. Modela &rarr; 3. Opera &rarr; 4. Evalúa</p><p class=\"text-xs text-slate-505\">Verificar el sentido lógico físico al final evita reportar resultados absurdos (ej: un auto terrestre viajando a la velocidad del sonido).</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">MÉTODO DE 4 PASOS (CEDETU)</text><g transform=\"translate(15, 35)\"><rect x=\"0\" y=\"0\" width=\"55\" height=\"50\" fill=\"#eff6ff\" stroke=\"#bfdbfe\" rx=\"4\" /><text x=\"27.5\" y=\"22\" font-size=\"8\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">1. DIBUJA</text><text x=\"27.5\" y=\"38\" font-size=\"7\" fill=\"#1e40af\" text-anchor=\"middle\">Esquema</text><rect x=\"70\" y=\"0\" width=\"55\" height=\"50\" fill=\"#eff6ff\" stroke=\"#bfdbfe\" rx=\"4\" /><text x=\"97.5\" y=\"22\" font-size=\"8\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">2. MODELA</text><text x=\"97.5\" y=\"38\" font-size=\"7\" fill=\"#1e40af\" text-anchor=\"middle\">Fórmulas</text><rect x=\"140\" y=\"0\" width=\"55\" height=\"50\" fill=\"#fffbeb\" stroke=\"#fde68a\" rx=\"4\" /><text x=\"167.5\" y=\"22\" font-size=\"8\" fill=\"#b45309\" font-weight=\"bold\" text-anchor=\"middle\">3. OPERA</text><text x=\"167.5\" y=\"38\" font-size=\"7\" fill=\"#b45309\" text-anchor=\"middle\">Cálculos</text><rect x=\"210\" y=\"0\" width=\"60\" height=\"50\" fill=\"#ecfdf5\" stroke=\"#a7f3d0\" rx=\"4\" /><text x=\"240\" y=\"22\" font-size=\"8\" fill=\"#065f46\" font-weight=\"bold\" text-anchor=\"middle\">4. EVALÚA</text><text x=\"240\" y=\"38\" font-size=\"7\" fill=\"#065f46\" text-anchor=\"middle\">¿Lógico?</text></g></svg>",
+                    "svgDescription": "Infografía de resolución estructurada. Guía al estudiante por la secuencia ordenada recomendada por CEDETU para afrontar problemas escolares de física.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Un ciclista viaja a velocidad constante de $12 \\text{ m/s}$ durante $20 \\text{ segundos}$ en la calzada Roosevelt de Guatemala. Calcula la distancia recorrida.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1 Dibuja:</strong> Haz un boceto del ciclista, marca la posición inicial $x_0 = 0$, velocidad $v = 12 \\text{ m/s}$ y tiempo $t = 20 \\text{ s}$.</li><li><strong>Paso 2 Modela:</strong> Movimiento rectilíneo uniforme. Ecuación: $d = v \\cdot t$.</li><li><strong>Paso 3 Opera:</strong> Multiplica valores numéricos: <br>$d = 12 \\text{ m/s} \\times 20 \\text{ s} = 240 \\text{ metros}$.</li><li><strong>Paso 4 Evalúa:</strong> Un trayecto de 240 metros en 20 segundos equivale a una cuadra larga a velocidad normal de bicicleta. Tiene perfecto sentido físico.</li></ol>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Omitir el paso de evaluar la coherencia:</strong> Reportar que la masa de una manzana de Sololá da 150 kg por un error de coma decimal, y dejar el resultado sin analizar que 150 kg es el peso de dos seres humanos adultos. Siempre evalúa la lógica del orden de magnitud.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "¿Cuál es el primer paso indispensable de la estrategia de resolución de problemas físicos para ordenar la información visual?",
+                            "correctAnswer": "Dibujar",
+                            "hint": "Consiste en bosquejar o graficar los objetos, rotulando los datos numéricos y las incógnitas (escríbelo en infinitivo).",
+                            "feedbackCorrect": "¡Excelente! Dibujar un boceto aclara los vectores y datos espaciales al instante.",
+                            "feedbackIncorrect": "Incorrecto. El primer paso recomendado es 'Dibujar' (o visualizar).",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si calculas la velocidad promedio de un corredor escolar a pie y tu resultado da 340 m/s, ¿qué paso de la estrategia falló al no advertir este error?",
+                            "correctAnswer": "Evaluar",
+                            "hint": "Consiste en verificar la coherencia lógica física del número obtenido. 340 m/s es la velocidad del sonido (escríbelo en infinitivo).",
+                            "feedbackCorrect": "¡Perfecto! Evaluar te permite advertir que un corredor humano no puede alcanzar velocidades supersónicas.",
+                            "feedbackIncorrect": "Incorrecto. Se omitió la fase de 'Evaluar' la coherencia física del resultado.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Qué herramienta gráfica vectorizada nos permite ilustrar todas las fuerzas externas que actúan sobre un cuerpo en estudio?",
+                            "correctAnswer": "Diagrama de cuerpo libre",
+                            "hint": "Acrónimo DCL en física clásica (ingresa el nombre completo en minúsculas).",
+                            "feedbackCorrect": "¡Excelente! El diagrama de cuerpo libre es fundamental para modelar sistemas de fuerzas.",
+                            "feedbackIncorrect": "Incorrecto. Se conoce como 'Diagrama de cuerpo libre'.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si realizas una operación algebraica y obtienes que la velocidad da como unidad final el 'segundo por metro', ¿qué conclusión debes extraer?",
+                            "options": [
+                                "Que el despeje algebraico tiene un error conceptual, ya que la velocidad física debe expresarse obligatoriamente en metros por segundo",
+                                "Que descubriste una nueva constante universal del tiempo de forma exitosa",
+                                "Que el resultado numérico es correcto siempre y cuando se multiplique por 10",
+                                "Que las unidades físicas cambian de valor según la altitud de la zona de estudio"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "El análisis dimensional de las unidades a lo largo de las operaciones algebraicas actúa como un filtro infalible de error de despeje.",
+                            "feedbackCorrect": "¡Excelente! Las unidades físicas incompatibles demuestran un despeje algebraico equivocado.",
+                            "feedbackIncorrect": "Incorrecto. Significa que despejaste mal la ecuación; las unidades son inconsistentes con la velocidad.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Un ciclista viaja en Xela a 15 km/h constante. Si calcula que recorre 30 metros tras rodar durante 2 horas, ¿dónde radica el error?",
+                            "options": [
+                                "Confundió las unidades: al multiplicar km/h por horas, la distancia da 30 kilómetros, no 30 metros.",
+                                "La velocidad de 15 km/h es físicamente imposible para una bicicleta común.",
+                                "El tiempo debe convertirse obligatoriamente a segundos antes de realizar sumas.",
+                                "La fricción de la altitud de Xela hace que avance solo 30 metros de forma real."
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Verifica el factor dimensional de unidades: velocidad (km/h) multiplicada por tiempo (h) resulta en distancia expresada en kilómetros.",
+                            "feedbackCorrect": "¡Excelente! Es un típico error de confusión de unidades de longitud.",
+                            "feedbackIncorrect": "Incorrecto. La distancia resultante de operar km/h por horas debe expresarse en kilómetros, por lo que avanzó 30 km.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "La estrategia sistemática de 4 pasos (Dibujar, Modelar, Operar, Evaluar) previene errores de escala y de unidades, garantizando soluciones analíticamente sólidas y lógicas en física.",
+                    "videoPlaceholderText": "Video de Física: La estrategia sistemática de CEDETU para resolver problemas."
+                },
+                {
+                    "id": "estimacion-ordenes-magnitud",
+                    "title": "Lección 2.3: Estimación y Órdenes de Magnitud",
+                    "introduction": "Desarrolla la destreza de aproximar medidas complejas y comprender escalas de magnitud mediante potencias de 10.",
+                    "explanationHtml": "<p>En muchas ocasiones científicas o industriales no contamos con datos exactos o instrumentos de medida a la mano. La <strong>estimación razonada</strong> (o problemas de Fermi) nos permite calcular valores aproximados basados en supuestos lógicos.</p><p class=\"mt-3\">Para clasificar y comparar tamaños o medidas de forma extremadamente simplificada, usamos el <strong>Orden de Magnitud</strong>. El orden de magnitud es la potencia de 10 más cercana al valor real de la variable de estudio. Permite catalogar el universo desde la nanoescala hasta la escala cosmológica:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li>Átomo: aprox. $10^{-10} \\text{ m}$.</li><li>Grosor cabello: aprox. $10^{-4} \\text{ m}$.</li><li>Estatura humana: aprox. $10^0 \\text{ m}$ (1 metro).</li><li>Diámetro Tierra: aprox. $10^7 \\text{ m}$.</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Determinación de Orden de Magnitud</p><p class=\"text-xs font-mono font-bold text-primary\">Si valor &ge; 3.16 &rArr; potencia es 10^(n+1) || Si valor &lt; 3.16 &rArr; potencia es 10^n</p><p class=\"text-xs text-slate-505\">Dado que 3.16 es la raíz geométrica de 10. Ejemplo: 180 (1.8x10²) tiene orden de magnitud 10².</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">ESCALA LOGARÍTMICA (METROS)</text><line x1=\"20\" y1=\"65\" x2=\"280\" y2=\"65\" stroke=\"#cbd5e1\" stroke-width=\"2\" /><circle cx=\"50\" cy=\"65\" r=\"4\" fill=\"#2563eb\" /><text x=\"50\" y=\"85\" font-size=\"7\" fill=\"#1e40af\" text-anchor=\"middle\">Átomo (10⁻¹⁰m)</text><circle cx=\"120\" cy=\"65\" r=\"4\" fill=\"#2563eb\" /><text x=\"120\" y=\"85\" font-size=\"7\" fill=\"#1e40af\" text-anchor=\"middle\">Cabello (10⁻⁴m)</text><circle cx=\"190\" cy=\"65\" r=\"4\" fill=\"#d97706\" stroke-width=\"1\" /><text x=\"190\" y=\"85\" font-size=\"7\" fill=\"#b45309\" font-weight=\"bold\" text-anchor=\"middle\">Humano (10⁰m)</text><circle cx=\"250\" cy=\"65\" r=\"4\" fill=\"#059669\" /><text x=\"250\" y=\"85\" font-size=\"7\" fill=\"#065f46\" text-anchor=\"middle\">Tierra (10⁷m)</text></svg>",
+                    "svgDescription": "Escala logarítmica universal de distancias. Muestra la posición relativa de diferentes cuerpos en potencias de diez metros de longitud.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Determina el orden de magnitud de la estatura de una persona que mide $1.70 \\text{ metros}$ y de un bus escolar que mide $12 \\text{ metros}$.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1 Estatura:</strong> Expresado en notación científica: $1.70 = 1.70 \\times 10^0$ m. Como $1.70 < 3.16$, conservamos el exponente original. El orden de magnitud es **$10^0 \\text{ m}$** (escala de 1 metro).</li><li><strong>Paso 2 Bus:</strong> Expresado en notación científica: $12 = 1.2 \\times 10^1$ m. Como $1.2 < 3.16$, conservamos el exponente. El orden de magnitud es **$10^1 \\text{ m}$** (escala de 10 metros).</li></ol>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Redondear el orden de magnitud linealmente:</strong> Pensar que 5 es el punto medio para subir de potencia. En escala logarítmica, el término medio geométrico es $\\sqrt{10} \\approx 3.16$. Por lo tanto, valores mayores o iguales a 3.16 suben al siguiente orden de magnitud (ej. 4 metros tiene un orden de magnitud de $10^1 = 10$ metros).</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "¿Cuál es el orden de magnitud en segundos de un minuto de tiempo completo (60 segundos)? Ingrésalo en formato de potencia (ej: 10^2):",
+                            "correctAnswer": "10^2",
+                            "hint": "60 = 6.0 x 10¹. Dado que 6.0 ≥ 3.16, el orden de magnitud sube al siguiente exponente: 10^(1+1) = 10^2.",
+                            "feedbackCorrect": "¡Excelente! Al ser 60 mayor que 31.6, su orden de magnitud logarítmico es 10^2 segundos.",
+                            "feedbackIncorrect": "Incorrecto. 60 es 6.0x10¹. Como 6.0 ≥ 3.16, sube a '10^2'.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Estima el orden de magnitud en metros de una manzana de Sololá que tiene un diámetro aproximado de 8 centímetros (0.08 m):",
+                            "correctAnswer": "10^-1",
+                            "hint": "0.08 = 8.0 x 10⁻². Como 8.0 ≥ 3.16, el exponente sube de -2 a -1 (-2+1).",
+                            "feedbackCorrect": "¡Perfecto! Su orden de magnitud es 10^-1 metros (decímetros).",
+                            "feedbackIncorrect": "Incorrecto. En notación es 8x10⁻². Como 8 ≥ 3.16, el orden es '10^-1'.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cuál es el orden de magnitud de la distancia de 150 kilómetros expresada en metros? (150,000 metros):",
+                            "correctAnswer": "10^5",
+                            "hint": "150,000 = 1.5 x 10⁵ m. Como 1.5 < 3.16, el exponente de orden de magnitud se mantiene igual.",
+                            "feedbackCorrect": "¡Excelente! Su orden de magnitud es 10^5 metros.",
+                            "feedbackIncorrect": "Incorrecto. 1.5x10⁵ tiene un orden de magnitud de '10^5'.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si estimamos a grosso modo la población total del departamento de Guatemala (aprox. 3.5 millones de habitantes), ¿cuál es su orden de magnitud?",
+                            "options": [
+                                "10^7 habitantes",
+                                "10^6 habitantes",
+                                "10^5 habitantes",
+                                "10^8 habitantes"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "3.5 millones = 3.5 x 10⁶. Como 3.5 es mayor o igual que 3.16, el exponente de orden de magnitud sube en 1.",
+                            "feedbackCorrect": "¡Excelente! Sube a 10^7 debido a que 3.5 es mayor que 3.16.",
+                            "feedbackIncorrect": "Incorrecto. 3.5 x 10⁶ personas. Dado que 3.5 ≥ 3.16, el orden de magnitud es 10^7.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Un problema clásico de Fermi consiste en estimar cuántos afinadores de piano hay en una gran ciudad. ¿Cuál es el valor fundamental de hacer esto?",
+                            "options": [
+                                "Desarrollar el razonamiento lógico cuantitativo e intuitivo para validar cálculos complejos de ingeniería con suposiciones coherentes",
+                                "Obtener el número exacto y preciso sin cometer ningún error de conteo",
+                                "Aprender a tocar el piano de forma profesional en poco tiempo",
+                                "Calcular la velocidad exacta de las ondas sonoras en las cuerdas del piano"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Las estimaciones de Fermi entrenan la mente de los científicos para formular modelos y magnitudes aproximadas de forma estructurada.",
+                            "feedbackCorrect": "¡Perfecto! Nos entrena para deducir dimensiones de variables físicas aproximadas de forma rápida.",
+                            "feedbackIncorrect": "Incorrecto. El fin no es el dato exacto sino entrenar el análisis lógico estimativo y coherente.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "Los órdenes de magnitud simplifican la visualización del universo clasificando variables físicas en potencias logarítmicas de 10, definiendo fronteras dimensionales lógicas.",
+                    "videoPlaceholderText": "Video de Física: Potencias de diez y escalas en el universo real."
+                }
+            ]
+        },
+        {
+            "title": "Unidad 3: Mediciones e Incertidumbre",
+            "lessons": [
+                {
+                    "id": "medicion-directa-indirecta",
+                    "title": "Lección 3.1: Medición Directa e Indirecta",
+                    "introduction": "Aprende a clasificar los procesos de recolección de variables físicas en laboratorios de acuerdo a si utilizas lectura instrumental o fórmulas complejas.",
+                    "explanationHtml": "<p>En cualquier práctica de laboratorio de física, la obtención del valor de una magnitud se realiza mediante la medición, clasificándose en:</p><p class=\"mt-3\"><strong>1. Medición Directa:</strong> Es aquella que se obtiene de forma inmediata comparando físicamente la variable contra la escala grabada en un instrumento calibrado (ej. medir el largo de una libreta con una regla de madera, medir la temperatura de Antigua Guatemala con un termómetro o leer el tiempo con un cronómetro digital).</p><p class=\"mt-3\"><strong>2. Medición Indirecta:</strong> Es aquella que no se puede obtener por comparación visual directa. Se calcula a partir de aplicar fórmulas matemáticas sobre un conjunto de mediciones directas previas (ej. calcular la densidad de un bloque de piedra a partir de su masa y su volumen $D = m/V$, o el área de una mesa circular $A = \\pi r^2$).</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Clasificación Instrumental</p><p class=\"text-xs font-mono font-bold text-primary\">Directa: Instrumento Físico || Indirecta: Ecuación Matemática</p><p class=\"text-xs text-slate-505\">La mayoría de constantes físicas y magnitudes avanzadas se estiman mediante mediciones de tipo indirecto.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">TIPOS DE MEDICIÓN</text><!-- Directa (Regla y Bloque) --><rect x=\"25\" y=\"60\" width=\"80\" height=\"15\" fill=\"#eff6ff\" stroke=\"#2563eb\" rx=\"2\" /><line x1=\"35\" y1=\"60\" x2=\"35\" y2=\"70\" stroke=\"#2563eb\" /><line x1=\"45\" y1=\"60\" x2=\"45\" y2=\"67\" stroke=\"#2563eb\" /><line x1=\"55\" y1=\"60\" x2=\"55\" y2=\"70\" stroke=\"#2563eb\" /><line x1=\"65\" y1=\"60\" x2=\"65\" y2=\"67\" stroke=\"#2563eb\" /><line x1=\"75\" y1=\"60\" x2=\"75\" y2=\"70\" stroke=\"#2563eb\" /><line x1=\"85\" y1=\"60\" x2=\"85\" y2=\"67\" stroke=\"#2563eb\" /><line x1=\"95\" y1=\"60\" x2=\"95\" y2=\"70\" stroke=\"#2563eb\" /><rect x=\"35\" y=\"45\" width=\"40\" height=\"15\" fill=\"#fffbeb\" stroke=\"#d97706\" rx=\"2\" /><text x=\"55\" y=\"55\" font-size=\"7\" fill=\"#b45309\" text-anchor=\"middle\">Largo (L)</text><text x=\"65\" y=\"90\" font-size=\"8\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">Directa (Lectura)</text><!-- Indirecta (Formula de Area) --><rect x=\"175\" y=\"40\" width=\"100\" height=\"35\" fill=\"#ecfdf5\" stroke=\"#a7f3d0\" rx=\"6\" /><text x=\"225\" y=\"62\" font-size=\"11\" font-family=\"monospace\" fill=\"#065f46\" font-weight=\"bold\" text-anchor=\"middle\">Área = b &times; h</text><text x=\"225\" y=\"90\" font-size=\"8\" fill=\"#065f46\" font-weight=\"bold\" text-anchor=\"middle\">Indirecta (Fórmula)</text></svg>",
+                    "svgDescription": "Metodologías de medición. Ilustra el contraste entre la toma de datos mediante escala analógica directa frente al cálculo geométrico indirecto.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> En un experimento en el lago de Amatitlán para medir la velocidad de propagación de una lancha, se mide la distancia entre boyas (50 metros directos con telémetro) y el tiempo empleado (5 segundos directos con cronómetro). ¿Qué tipo de medición es la velocidad de la lancha?</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1 Identifica las directas:</strong> Distancia ($d = 50 \\text{ m}$) y tiempo ($t = 5 \\text{ s}$) se leyeron de instrumentos de escala. Son mediciones directas.</li><li><strong>Paso 2 Aplica el cálculo:</strong> La velocidad se estima dividiendo variables directas: <br>$v = d / t = 50 \\text{ m} / 5 \\text{ s} = 10 \\text{ m/s}$.</li><li><strong>Paso 3 Conclusión:</strong> La velocidad es una **Medición Indirecta**, resultado de una ecuación matemática.</li></ol>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Pensar que indirecto significa impreciso:</strong> Creer que las mediciones indirectas tienen menor validez que las directas. De hecho, la gran mayoría de descubrimientos de constantes de la astrofísica y física de partículas son indirectos y poseen una precisión milimétrica.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "¿Qué tipo de medición realizamos al leer la temperatura corporal de un alumno de CEDETU utilizando un termómetro analógico de mercurio?",
+                            "correctAnswer": "Medicion Directa",
+                            "hint": "Compara el nivel de mercurio directamente contra la escala termométrica grabada (escríbelo sin tildes).",
+                            "feedbackCorrect": "¡Excelente! Es una medición directa ya que leemos la escala del instrumento físico.",
+                            "feedbackIncorrect": "Incorrecto. Al leer el instrumento directamente es una 'Medicion Directa'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Qué tipo de medición es el volumen de un cubo de hielo obtenido tras medir sus aristas con regla y operar la fórmula V = L³?",
+                            "correctAnswer": "Medicion Indirecta",
+                            "hint": "Requiere la recolección de aristas directas y el cálculo de una potencia matemática posterior (escríbelo sin tildes).",
+                            "feedbackCorrect": "¡Perfecto! Se estima a través de una fórmula matemática, por lo que es una medición indirecta.",
+                            "feedbackIncorrect": "Incorrecto. Se calcula mediante una ecuación, es una 'Medicion Indirecta'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cómo se llama el instrumento de metrología utilizado en talleres mecánicos de precisión para medir fracciones de milímetros en cilindros?",
+                            "correctAnswer": "Calibrador Vernier",
+                            "hint": "También llamado pie de rey o calibrador deslizante (ingresa el nombre estándar en minúsculas y sin tilde).",
+                            "feedbackCorrect": "¡Excelente! El calibrador vernier permite lecturas directas sub-milimétricas exactas.",
+                            "feedbackIncorrect": "Incorrecto. Se le conoce como 'Calibrador Vernier' (o micrometro).",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Al estimar el flujo de agua de un río de Sololá midiendo el área transversal del cauce y multiplicándolo por la velocidad promedio de un flotador, estamos ejecutando:",
+                            "options": [
+                                "Una medición indirecta, ya que calculamos el caudal mediante la combinación y multiplicación de variables medidas",
+                                "Una medición directa, porque observamos el agua correr a simple vista",
+                                "Una estimación teórica no científica de baja precisión",
+                                "Una medición de análisis dimensional puro sin unidades"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "El caudal o flujo volumétrico es el producto matemático de área por velocidad, estimándose mediante una ecuación.",
+                            "feedbackCorrect": "¡Excelente! Es una medición indirecta basada en fórmulas.",
+                            "feedbackIncorrect": "Incorrecto. Es un cálculo de variables indirectas, por lo que es una medición indirecta.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "¿Cuál de los siguientes es un ejemplo clásico de patrón estándar de medida física invariable?",
+                            "options": [
+                                "El segundo de tiempo definido por las transiciones atómicas de Cesio-133",
+                                "La longitud promedio de la vara de madera del mercado de Quetzaltenango",
+                                "El peso exacto de una piedra recolectada del lago de Amatitlán",
+                                "El tiempo transcurrido durante el recreo escolar"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Un patrón de medida debe ser universal, invariable y reproducible de forma física exacta por cualquier laboratorio del planeta.",
+                            "feedbackCorrect": "¡Excelente! Los patrones atómicos modernos aseguran precisión científica universal.",
+                            "feedbackIncorrect": "Incorrecto. Los patrones locales varían de forma inaceptable; la ciencia moderna utiliza referencias atómicas universales invariables.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "Las mediciones directas se extraen por comparación física instrumental y las indirectas se obtienen mediante el despeje y cálculo de ecuaciones físicas de laboratorio.",
+                    "videoPlaceholderText": "Video de Física: Mediciones directas analógicas e indirectas en laboratorio."
+                },
+                {
+                    "id": "precision-exactitud-incertidumbre",
+                    "title": "Lección 3.2: Precisión, Exactitud e Incertidumbre",
+                    "introduction": "Comprende la profunda diferencia técnica entre consistencia de datos y aproximación al valor verdadero en tus estudios científicos.",
+                    "explanationHtml": "<p>En la física experimental, es un error grave usar \"precisión\" y \"exactitud\" como sinónimos. Sus significados de laboratorio son radicalmente distintos:</p><p class=\"mt-3\"><strong>1. Exactitud:</strong> Se refiere a qué tan cerca está una medición experimental del valor teórico real aceptado de la variable (ej. si medimos la gravedad y obtenemos 9.79 m/s², es altamente exacto con respecto al real 9.80 m/s²).</p><p class=\"mt-3\"><strong>2. Precisión:</strong> Se refiere a qué tan cercanas y consistentes son entre sí múltiples mediciones sucesivas tomadas de la misma manera, sin importar si están cerca o lejos del valor real (repetibilidad).</p><p class=\"mt-3\"><strong>3. Incertidumbre ($Delta V$):</strong> Es el rango de tolerancia experimental que acompaña a toda medición, reportándose de la forma: $V \\pm \\Delta V$ (ej. $12.5 \\pm 0.1 \\text{ m}$).</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Conceptos de Incertidumbre</p><p class=\"text-xs font-mono font-bold text-primary\">Medida = Valor &plusmn; Incertidumbre (V &plusmn; &Delta;V)</p><p class=\"text-xs text-slate-505\">Los errores aleatorios afectan la precisión; los errores sistemáticos de calibración afectan la exactitud.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">TIRO AL BLANCO: EXACTITUD VS PRECISIÓN</text><!-- Diana 1: Preciso pero Inexacto (agrupado fuera del centro) --><g transform=\"translate(60, 65)\"><circle cx=\"0\" cy=\"0\" r=\"22\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"1\" /><circle cx=\"0\" cy=\"0\" r=\"12\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"1\" /><circle cx=\"0\" cy=\"0\" r=\"3\" fill=\"#cbd5e1\" /><circle cx=\"12\" cy=\"-12\" r=\"2\" fill=\"#dc2626\" /><circle cx=\"15\" cy=\"-10\" r=\"2\" fill=\"#dc2626\" /><circle cx=\"14\" cy=\"-15\" r=\"2\" fill=\"#dc2626\" /><text x=\"0\" y=\"32\" font-size=\"7\" fill=\"#dc2626\" font-weight=\"bold\" text-anchor=\"middle\">Preciso / Inexacto</text></g><!-- Diana 2: Preciso y Exacto (agrupado en el centro) --><g transform=\"translate(220, 65)\"><circle cx=\"0\" cy=\"0\" r=\"22\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"1\" /><circle cx=\"0\" cy=\"0\" r=\"12\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"1\" /><circle cx=\"0\" cy=\"0\" r=\"3\" fill=\"#cbd5e1\" /><circle cx=\"0\" cy=\"1\" r=\"2\" fill=\"#059669\" /><circle cx=\"2\" cy=\"-1\" r=\"2\" fill=\"#059669\" /><circle cx=\"-1\" cy=\"0\" r=\"2\" fill=\"#059669\" /><text x=\"0\" y=\"32\" font-size=\"7\" fill=\"#059669\" font-weight=\"bold\" text-anchor=\"middle\">Preciso / Exacto</text></g></svg>",
+                    "svgDescription": "Comparativa en dianas. Muestra la diferencia técnica de laboratorio: la consistencia agrupada (precisión) frente a la cercanía al centro verdadero (exactitud).",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Tres grupos miden la constante gravitatoria g (real: 9.80 m/s²). El grupo 1 obtiene: 9.79, 9.81, 9.80 m/s². El grupo 2 obtiene: 9.10, 9.11, 9.10 m/s². Describe su desempeño.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1 Grupo 1:</strong> Sus datos son muy similares entre sí (precisos) y el promedio da exactamente 9.80 m/s² (exacto). Es **Preciso y Exacto**.</li><li><strong>Paso 2 Grupo 2:</strong> Sus datos son altamente consistentes (precisos), pero distan mucho del valor de la gravedad teórica (inexacto). Es **Preciso pero Inexacto** (típico de un cronómetro mal calibrado).</li></ol>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Creer que la precisión elimina los errores sistemáticos:</strong> Pensar que al tomar una medición 50 veces y obtener exactamente el mismo número el resultado está bien. Si tu balanza está descalibrada y marca 1 kg de más por defecto, tomarás datos muy precisos pero totalmente inexactos.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Si un arquero en Panajachel dispara 5 flechas consecutivas agrupándolas de forma muy compacta en una esquina alejada del blanco, ¿cómo se califica su tiro?",
+                            "correctAnswer": "Preciso pero inexacto",
+                            "hint": "Tiene una excelente consistencia (repetibilidad de tiro) pero no dio en el centro real.",
+                            "feedbackCorrect": "¡Perfecto! Demuestra precisión por agrupación pero inexactitud por desviación del objetivo real.",
+                            "feedbackIncorrect": "Incorrecto. Se califica como 'Preciso pero inexacto'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cómo se llama el tipo de error experimental constante que desvía sistemáticamente las medidas en la misma dirección debido a fallas de calibración?",
+                            "correctAnswer": "Error sistematico",
+                            "hint": "Se debe a descalibraciones de balanzas, reglas desgastadas o sesgos del observador (escríbelo sin tildes).",
+                            "feedbackCorrect": "¡Excelente! El error sistemático afecta directamente a la exactitud.",
+                            "feedbackIncorrect": "Incorrecto. Se le conoce como 'Error sistematico'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Qué tipo de error experimental se puede atenuar sustancialmente repitiendo las medidas muchas veces y calculando el promedio aritmético?",
+                            "correctAnswer": "Error aleatorio",
+                            "hint": "Ocurre al azar debido a variaciones aleatorias impredecibles del entorno (escríbelo sin tildes).",
+                            "feedbackCorrect": "¡Excelente! Los errores aleatorios se diluyen mediante promediaciones estadísticas.",
+                            "feedbackIncorrect": "Incorrecto. Son los 'Error aleatorio' los que se compensan al promediar.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si reportamos la masa de un objeto medido en Antigua como M = 15.6 ± 0.2 gramos, ¿qué representa físicamente el término '± 0.2'?",
+                            "options": [
+                                "La incertidumbre absoluta asociada al instrumento y al proceso de medición",
+                                "La masa que se sumará si la altitud cambia de valor",
+                                "El error sistemático total acumulado por el experimentador",
+                                "El porcentaje relativo de error multiplicado por 100"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Representa el intervalo de tolerancia o duda sobre el valor real que admite el instrumento físico de laboratorio.",
+                            "feedbackCorrect": "¡Excelente! Es la incertidumbre absoluta asociada.",
+                            "feedbackIncorrect": "Incorrecto. Expresa la incertidumbre absoluta de medición, acotando el intervalo donde yace el valor real.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Si una regla común tiene marcas milimétricas de 1 mm, ¿cuál es su incertidumbre instrumental estándar aceptada?",
+                            "options": [
+                                "± 0.5 mm (mitad de la división más pequeña)",
+                                "± 5.0 mm",
+                                "± 10.0 mm",
+                                "La regla no posee incertidumbre porque es de plástico sólido"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "En metrología manual, la incertidumbre estándar de una escala se asume comúnmente como la mitad de la escala mínima de lectura.",
+                            "feedbackCorrect": "¡Excelente! Equivale a ± 0.5 mm por resolución manual instrumental.",
+                            "feedbackIncorrect": "Incorrecto. Por criterio de escala manual analógica se define como la mitad del rango mínimo (± 0.5 mm).",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "La exactitud describe la proximidad al valor central real de control y la precisión la repetibilidad de los resultados experimentales, estando acompañados de su tolerancia de incertidumbre.",
+                    "videoPlaceholderText": "Video de Física: Diferencia de exactitud y precisión explicada con balanzas."
+                },
+                {
+                    "id": "error-absoluto-relativo-porcentual",
+                    "title": "Lección 3.3: Error Absoluto, Relativo y Porcentual",
+                    "introduction": "Aprende a cuantificar de forma rigurosa los márgenes de error porcentual de tus experimentos comparando los resultados contra valores de control.",
+                    "explanationHtml": "<p>Para evaluar la calidad de un reporte de laboratorio en física, calculamos la desviación de los datos medidos frente a su valor teórico mediante tres fórmulas esenciales:</p><p class=\"mt-3\"><strong>1. Error Absoluto ($E_a$):</strong> Mide la magnitud de la desviación lineal en las mismas unidades de la variable. Siempre se reporta positivo:</p><p class=\"text-center font-mono font-extrabold text-primary my-2\">Ea = |Valor Medido - Valor Real|</p><p class=\"mt-3\"><strong>2. Error Relativo ($E_r$):</strong> Compara el error absoluto respecto a la magnitud real. Es adimensional (sin unidades):</p><p class=\"text-center font-mono font-extrabold text-primary my-2\">Er = Ea / Valor Real</p><p class=\"mt-3\"><strong>3. Error Porcentual ($E_p$):</strong> Expresa el error en porcentaje. Es el indicador universal de calidad del experimento:</p><p class=\"text-center font-mono font-extrabold text-primary my-2\">Ep = Er &times; 100%</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Ecuaciones de Error</p><p class=\"text-base font-mono font-extrabold text-primary\">Ea = |Vm - Vr| &nbsp;&bull;&nbsp; Ep = (Ea / Vr) &times; 100%</p><p class=\"text-xs text-slate-505\">El error porcentual en laboratorios escolares de física suele considerarse satisfactorio si es menor al 5% o 10%.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"22\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">RESUMEN DE FÓRMULAS DE ERROR</text><rect x=\"30\" y=\"38\" width=\"240\" height=\"65\" fill=\"#eff6ff\" stroke=\"#bfdbfe\" rx=\"8\" /><text x=\"45\" y=\"55\" font-size=\"8\" font-family=\"monospace\" fill=\"#1e40af\" font-weight=\"bold\">Ea = |Medido - Real|</text><text x=\"45\" y=\"73\" font-size=\"8\" font-family=\"monospace\" fill=\"#1e40af\" font-weight=\"bold\">Er = Ea / Real</text><text x=\"45\" y=\"91\" font-size=\"8\" font-family=\"monospace\" fill=\"#2563eb\" font-weight=\"extrabold\">Ep = Er &times; 100%  [Porcentual]</text></svg>",
+                    "svgDescription": "Formulario métrico de errores. Muestra la jerarquía de cálculo: del error absoluto lineal al error porcentual adimensional.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Un grupo de laboratorio en Xela mide la constante gravitatoria y obtiene $9.5 \\text{ m/s}^2$. Si el valor real aceptado teóricamente es $9.8 \\text{ m/s}^2$, calcula el error absoluto y el error porcentual de la medición.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1 Error Absoluto:</strong> Restamos el medido del real de forma absoluta: <br>$E_a = |9.5 - 9.8| = |-0.3| = 0.3 \\text{ m/s}^2$.</li><li><strong>Paso 2 Error Relativo:</strong> Dividimos el absoluto entre el valor teórico real: <br>$E_r = 0.3 / 9.8 \\approx 0.0306$.</li><li><strong>Paso 3 Error Porcentual:</strong> Multiplicamos el relativo por 100%: <br>$E_p = 0.0306 \\times 100\\% = 3.06\\%$.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> El error absoluto es de **0.3 m/s²** y el porcentual es de **3.06%** (muy buen resultado experimental).</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Dividir entre el valor medido:</strong> Cometer el error de colocar el valor medido en el denominador de la fórmula de error relativo. Recuerda que el denominador es estrictamente el valor teórico real aceptado científicamente.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Si mides una distancia teórica de 50 metros y tu instrumento de escala marca 48 metros, ¿cuál es tu error absoluto en metros? (Ingresa el entero positivo):",
+                            "correctAnswer": "2",
+                            "hint": "Aplica Ea = |Medido - Real|: resta 48 de 50 de forma absoluta.",
+                            "feedbackCorrect": "¡Excelente! El error absoluto lineal es de 2 metros.",
+                            "feedbackIncorrect": "Incorrecto. |48 - 50| = 2.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Con los datos anteriores (medido 48 m, real 50 m), calcula el error porcentual exacto. Escribe solo el número entero sin el símbolo %:",
+                            "correctAnswer": "4",
+                            "hint": "Error relativo = 2 / 50 = 0.04. Multiplícalo por 100 para obtener el porcentaje.",
+                            "feedbackCorrect": "¡Perfecto! El error porcentual del experimento es del 4%.",
+                            "feedbackIncorrect": "Incorrecto. (2 / 50) * 100 = 4%.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si medimos la densidad del agua de Amatitlán y obtenemos 0.95 g/cm³ siendo el valor teórico real de 1.00 g/cm³, ¿cuál es el error porcentual? (Escribe el número entero sin %):",
+                            "correctAnswer": "5",
+                            "hint": "Ea = |0.95 - 1.00| = 0.05. Er = 0.05 / 1.00 = 0.05. Ep = 5%.",
+                            "feedbackCorrect": "¡Excelente! El error porcentual es del 5%.",
+                            "feedbackIncorrect": "Incorrecto. |0.95 - 1.00| / 1.00 = 0.05 = 5%.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si un experimento de caída libre en el colegio reporta un error porcentual de exactamente el 14.5%, ¿cómo se cataloga en metrología escolar estándar?",
+                            "options": [
+                                "Como un error de precisión moderada, aceptable para prácticas escolares sencillas pero mejorable refinando el control de factores aleatorios",
+                                "Como un éxito absoluto que demuestra una nueva ley universal de la gravedad",
+                                "Como un experimento fallido no científico que debe eliminarse de inmediato",
+                                "Como un error de medición directa pura sin cálculo indirecto"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "En laboratorios manuales escolares, desviaciones de entre el 10% y 15% son comunes debido a la resistencia de la atmósfera y limitaciones de cronometraje analógico.",
+                            "feedbackCorrect": "¡Excelente! Es un error moderado típico de laboratorios escolares.",
+                            "feedbackIncorrect": "Incorrecto. No anula el estudio; simplemente representa una precisión moderada mejorable controlando los factores.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Calcula el error absoluto obtenido al medir una resistencia eléctrica si el valor real teórico es de 200 Ohmios y medimos 208 Ohmios. Ingresa el valor numérico:",
+                            "options": [
+                                "8 Ohmios",
+                                "4 Ohmios",
+                                "208 Ohmios",
+                                "16 Ohmios"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Resta los dos valores de forma absoluta: |208 - 200|.",
+                            "feedbackCorrect": "¡Perfecto! El error absoluto es de 8 Ohmios.",
+                            "feedbackIncorrect": "Incorrecto. Ea = |208 - 200| = 8 Ohmios.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "Los cálculos de errores absolutos lineales y errores porcentuales adimensionales nos brindan una evaluación objetiva matemática de la calidad de nuestras mediciones experimentales.",
+                    "videoPlaceholderText": "Video de Física: Cómo calcular error absoluto y porcentual con ejemplos prácticos."
+                }
+            ]
+        }
+    ]
+},
 
-## Unidad 1: La Naturaleza de la Física
-### Lección 1.1: Qué Estudia la Física y su Relación con Otras Ciencias
-* **Objetivo:** Definir la física como ciencia fundamental y reconocer su interrelación con la química, biología y astronomía.
-* **Explicación:** La física estudia los componentes fundamentales del universo: la materia, la energía, el espacio, el tiempo y las interacciones entre ellos. Intenta explicar desde el comportamiento de las partículas subatómicas hasta el movimiento de las galaxias.
-* **Ejemplo Resuelto:** Clasifica los siguientes eventos como fenómenos físicos o químicos: 1) El agua del lago de Amatitlán evaporándose, 2) Un trozo de madera quemándose en una fogata en Tecpán.
-  - *Paso 1 Evaporación:* El agua cambia de estado líquido a gaseoso, pero sigue siendo agua ($H_2O$). Es un cambio físico.
-  - *Paso 2 Combustión:* La madera se transforma en cenizas, dióxido de carbono y vapor de agua, alterando su estructura molecular. Es un cambio químico.
-  - *Resultado:* 1) Físico, 2) Químico.
-* **Errores Comunes:** Pensar que cualquier cambio que involucre calor es químico, olvidando que los cambios de estado de la materia son físicos.
-* **Ejercicios de Práctica:**
-  1. ¿Qué rama de la física estudia el movimiento de los cuerpos sin atender a las causas que lo producen? (R: Cinemática).
-  2. ¿Es el arcoíris que se observa en Panajachel un fenómeno óptico de la física? (R: Sí. Se produce por la refracción y reflexión de la luz en gotas de agua).
-  3. ¿Qué estudia la termodinámica? (R: El calor, la temperatura y sus transformaciones en trabajo mecánico).
-  4. La fotosíntesis de las plantas en Petén es un objeto de estudio conjunto de la biología y la: (R: Química / Bioquímica).
-  5. ¿Cómo se llama la rama de la física que estudia las fuerzas y el equilibrio de los cuerpos? (R: Estática).
-* **¿Necesitas ayuda?** La física no son solo fórmulas, es entender cómo funciona el universo real. ¡Explórala de forma apasionante junto a tu tutor de CEDETU!
-
-### Lección 1.2: El Método Científico en Física
-* **Objetivo:** Aplicar las etapas del método científico a problemas prácticos y entender la diferencia entre hipótesis, teoría y ley.
-* **Explicación:** El método científico es un camino ordenado: Observación, Planteamiento del problema, Formulación de hipótesis, Experimentación, Análisis de resultados y Conclusión. Una hipótesis es una explicación provisional; una teoría es una explicación amplia respaldada por experimentos; una ley es una descripción matemática universal de un fenómeno.
-* **Ejemplo Resuelto:** Un estudiante en Xela observa que el agua hierve a menor temperatura que en el Puerto de San José. Formula una hipótesis.
-  - *Paso 1 Observación:* La temperatura de ebullición del agua varía con la altitud.
-  - *Paso 2 Factor Clave:* Xela está a 2,330 m y el puerto a nivel del mar. La presión atmosférica es menor a mayor altitud.
-  - *Paso 3 Hipótesis:* "La temperatura de ebullición del agua disminuye al disminuir la presión atmosférica del entorno".
-  - *Resultado:* Hipótesis planteada de forma científica y medible.
-* **Errores Comunes:** Tratar a las teorías como "simples opiniones" que no han sido comprobadas, cuando en ciencia una teoría es un modelo altamente verificado.
-* **Ejercicios de Práctica:**
-  1. ¿Cuál es el paso del método científico donde se ponen a prueba las hipótesis? (R: Experimentación).
-  2. Si los resultados de un experimento contradicen tu hipótesis, ¿qué debes hacer? (R: Descartar o modificar la hipótesis y plantear un nuevo experimento).
-  3. ¿Cómo se le llama a una descripción matemática resumida de un comportamiento de la naturaleza? (R: Ley física).
-  4. Un grupo de estudiantes mide el tiempo de caída de varias piedras. ¿Qué paso del método realizan? (R: Experimentación y recolección de datos).
-  5. ¿Por qué es fundamental la reproducibilidad en la experimentación científica? (R: Para asegurar que cualquier otro científico pueda repetir el experimento y obtener los mismos resultados, validando el descubrimiento).
-* **¿Necesitas ayuda?** Aprender a diseñar tus propios proyectos de ciencias escolares es facilísimo si cuentas con la guía estructurada de tu tutor. ¡Planifica tu experimento hoy!
-
-### Lección 1.3: Historia de la Física (Clásica vs. Moderna)
-* **Objetivo:** Identificar los periodos de la física, desde Galileo y Newton hasta Einstein y la mecánica cuántica, reconociendo sus límites de aplicación.
-* **Explicación:** La **Física Clásica** (estudia objetos grandes y a velocidades mucho menores que la luz) incluye la mecánica de Newton, el electromagnetismo de Maxwell y la termodinámica. La **Física Moderna** (estudia lo infinitamente pequeño como átomos, o lo infinitamente rápido a velocidad cercana a la luz) surge a inicios del siglo XX con la Teoría de la Relatividad de Einstein y la Mecánica Cuántica.
-* **Ejemplo Resuelto:** Si diseñas un puente en Ciudad de Guatemala, ¿qué tipo de física debes aplicar: clásica o moderna?
-  - *Paso 1:* Analiza el objeto (puente, tamaño macroscópico) y las condiciones (estático, sin velocidades cercanas a la luz).
-  - *Paso 2:* La física clásica (mecánica newtoniana) es 100% exacta y suficiente para modelar estas fuerzas.
-  - *Resultado:* Física Clásica.
-* **Errores Comunes:** Pensar que la física moderna "anuló" a la clásica; en realidad, la física clásica sigue siendo perfectamente correcta para el mundo cotidiano y es un caso límite de la moderna.
-* **Ejercicios de Práctica:**
-  1. ¿Quién es considerado el padre del método experimental en la física? (R: Galileo Galilei).
-  2. ¿Qué físico formuló las leyes del movimiento y de la gravitación universal en el siglo XVII? (R: Isaac Newton).
-  3. ¿Qué teoría introdujo Albert Einstein a principios del siglo XX para explicar fenómenos a velocidades extremas? (R: Teoría de la Relatividad).
-  4. ¿En qué rango de tamaño se hace indispensable aplicar la mecánica cuántica en lugar de la mecánica clásica? (R: A escala atómica y subatómica).
-  5. ¿Qué físico unificó la electricidad y el magnetismo en un solo conjunto de ecuaciones matemáticas? (R: James Clerk Maxwell).
-* **¿Necesitas ayuda?** La historia de la física es una aventura fascinante de mentes brillantes. ¡Conversa con tu tutor sobre los misterios del cosmos y la materia!
-
-## Evaluación Unidad 1
-* ¿Cuál es la diferencia principal entre una ley física y una teoría científica? (R: La ley describe matemáticamente cómo ocurre un fenómeno, mientras que la teoría explica el mecanismo subyacente y el porqué ocurre).
-* Si quieres estudiar el choque de dos autos de juguete, ¿qué física aplicas y qué ramas se involucran? (R: Física Clásica, ramas de Mecánica y Cinemática).
-* Un científico propone: "Los planetas se mueven porque hay ángeles empujándolos". ¿Es esto una hipótesis científica válida? (R: No. No es falsable ni se puede someter a experimentación u observación empírica medible).
-
----
-
-## Unidad 2: Modelos y Resolución de Problemas
-### Lección 2.1: Modelos en Ciencias
-* **Objetivo:** Comprender la necesidad de simplificar la realidad mediante modelos ideales (como la "partícula puntual") para resolver problemas físicos.
-* **Explicación:** La realidad física es sumamente compleja (viento, fricción del aire, rotación de los cuerpos, etc.). Para resolver problemas, los físicos "modelan" u omiten detalles secundarios. El modelo más común es la **partícula puntual**: tratar a un objeto gigante como si toda su masa se concentrara en un solo punto matemático sin volumen.
-* **Ejemplo Resuelto:** Al calcular el tiempo de viaje de un bus extraurbano desde la capital hasta Quetzaltenango, ¿por qué es válido tratar al bus como una partícula puntual?
-  - *Paso 1:* La longitud del bus es de aprox. 12 metros, mientras que la distancia del viaje es de 200,000 metros (200 km).
-  - *Paso 2:* Dado que la distancia recorrida es inmensamente mayor que el tamaño del bus, los detalles de su forma y volumen no influyen en el tiempo de viaje.
-  - *Resultado:* El modelo de partícula puntual es totalmente válido y simplifica el cálculo.
-* **Errores Comunes:** Querer incluir todas las variables reales del universo en un problema escolar de primer año, lo cual hace los cálculos imposibles de resolver sin necesidad.
-* **Ejercicios de Práctica:**
-  1. ¿Qué es un "fluido ideal" en física de líquidos? (R: Un fluido imaginario sin viscosidad ni fricción interna, incompresible).
-  2. ¿Qué propiedad geométrica se omite al tratar a una pelota como una "partícula puntual"? (R: Su volumen, forma y rotación).
-  3. En física de caída libre, ¿qué factor atmosférico solemos ignorar como primera aproximación? (R: La resistencia o fricción del aire).
-  4. ¿Qué es un modelo matemático en física? (R: Una ecuación o fórmula que describe y predice con precisión el comportamiento de un sistema real).
-  5. ¿Es válido tratar a la Tierra como una partícula puntual cuando calculamos su órbita alrededor del Sol? (R: Sí. Su tamaño es despreciable comparado con la distancia al Sol).
-* **¿Necesitas ayuda?** Aprender a simplificar problemas complejos es el mayor secreto de los ingenieros exitosos. ¡Entrénalo junto a tu tutor de CEDETU!
-
-### Lección 2.2: Estrategia de 4 Pasos para Resolver Problemas de Física
-* **Objetivo:** Resolver problemas de física aplicando de forma sistemática la estrategia de plantear, dibujar, operar y verificar la lógica física del resultado.
-* **Explicación:** Para resolver problemas complejos:
-  1. **Visualizar y Dibujar:** Hacer un bosquejo del sistema con todos los datos conocidos y la incógnita (esquema físico).
-  2. **Modelar Matemáticamente:** Elegir las ecuaciones físicas correspondientes.
-  3. **Operar:** Sustituir los valores numéricos de forma limpia en el despeje correspondiente.
-  4. **Evaluar:** Verificar si el resultado tiene sentido físico (por ejemplo, si un auto va a 800 km/s en una carretera de Guatemala, ¡hay un error de cálculo!).
-* **Ejemplo Resuelto:** Un auto acelera de forma constante y recorre 100 metros en 5 segundos. Calcula su velocidad promedio.
-  - *Paso 1 Dibujar:* Dibuja el auto, marca la posición inicial 0 y final 100 m, tiempo transcurrido 5 s.
-  - *Paso 2 Modelo:* Velocidad promedio $v = d / t$.
-  - *Paso 3 Operar:* $v = 100 	ext{ m} / 5 	ext{ s} = 20 	ext{ m/s}$.
-  - *Paso 4 Evaluar:* 20 m/s equivale a 72 km/h, lo cual es totalmente normal para un automóvil en una autopista.
-  - *Resultado:* 20 m/s.
-* **Errores Comunes:** Empezar a meter números en la calculadora sin tener un esquema claro ni verificar las unidades de medida.
-* **Ejercicios de Práctica:**
-  1. Si calculas la masa de una manzana de Sololá y tu resultado da 250 kg, ¿dónde está el error? (R: En las unidades o en la escala de cálculo. Una manzana pesa aprox. 0.15 kg).
-  2. ¿Cuál es el primer paso indispensable al abordar un problema de física de fuerzas? (R: Realizar un diagrama de cuerpo libre (DCL)).
-  3. Si un ciclista recorre 15 km en media hora, ¿cuál es su velocidad promedio en km/h? (R: 30 km/h. Retroalimentación: v = 15 / 0.5 = 30).
-  4. ¿Para qué sirve analizar las unidades de medida a lo largo de las operaciones de un despeje? (R: Para verificar que no hayamos despejado mal; si buscamos tiempo, el resultado final debe quedar en segundos).
-  5. Si un avión comercial vuela a una velocidad constante, ¿qué valor tiene su aceleración? (R: Cero. Retroalimentación: La aceleración mide el cambio de velocidad; si la velocidad es constante, la aceleración es nula).
-* **¿Necesitas ayuda?** La física escolar a veces intimida por la cantidad de fórmulas. ¡Aprende el método sistemático de CEDETU y saca notas perfectas en tus exámenes!
-
-### Lección 2.3: Estimación y Órdenes de Magnitud
-* **Objetivo:** Estimar magnitudes físicas de forma rápida y razonada sin necesidad de instrumentos de medición precisos, utilizando potencias de 10.
-* **Explicación:** Estimar consiste en hallar un valor aproximado y lógico a un problema cuando no tenemos datos exactos. Un **orden de magnitud** es la potencia de 10 más cercana al valor de una cantidad. Nos permite validar cálculos complejos rápidamente.
-* **Ejemplo Resuelto:** Estima cuántas tazas de café se consumen en Guatemala en un solo día.
-  - *Paso 1:* Población de Guatemala: aprox. 18 millones ($1.8 	imes 10^7$ personas).
-  - *Paso 2:* Supongamos que un tercio de la población toma café activamente, consumiendo en promedio 2 tazas al día. Esto es aprox. 6 millones de personas consumiendo 2 tazas = 12 millones de tazas.
-  - *Paso 3 Potencia de 10:* 12 millones es $1.2 	imes 10^7$. El orden de magnitud es $10^7$ tazas.
-  - *Resultado:* Orden de magnitud $10^7$ tazas diarias.
-* **Errores Comunes:** Pensar que estimar es simplemente "adivinar" al azar, sin seguir un razonamiento de variables lógico y proporcional.
-* **Ejercicios de Práctica:**
-  1. ¿Cuál es el orden de magnitud en metros de la estatura promedio de un estudiante guatemalteco? (R: 10⁰ metros. Retroalimentación: Estatura ≈ 1.6 m, la potencia más cercana de 10 es 10⁰ = 1).
-  2. Estima el número de cabellos en la cabeza de una persona si la densidad es de 100 cabellos por cm² y la cabeza tiene un área de 1,000 cm². (R: 100,000 cabellos. Orden de magnitud 10⁵).
-  3. ¿Cuál es el orden de magnitud en segundos de un día completo de 24 horas? (R: 10⁵ segundos. Retroalimentación: Un día tiene 86,400 segundos; aproximado es 10⁵).
-  4. Estima el volumen aproximado en litros de un cubo de 10 cm de lado. (R: 1 litro. Retroalimentación: Volumen = 10*10*10 = 1,000 cm³ = 1 litro).
-  5. Si una persona camina a 1 m/s, ¿cuántos kilómetros aproximados recorrerá en una caminata activa de 3 horas? (R: Aproximadamente 11 km. Retroalimentación: 3 horas = 10,800 s. Distancia = 1 * 10,800 = 10.8 km).
-* **¿Necesitas ayuda?** Las estimaciones de Fermi son una herramienta analítica increíblemente valorada en entrevistas de trabajo de tecnología y finanzas. ¡Aprende a dominarlas con tu tutor!
-
-## Evaluación Unidad 2
-* Si resuelves la aceleración de una pelota de fútbol al ser pateada y tu resultado da 0.05 m/s², ¿es este un valor físicamente lógico para el mundo real? (R: No. Es una aceleración extremadamente pequeña; para acelerar un balón a una velocidad de juego en fracciones de segundo se requieren aceleraciones mayores a 10 m/s²).
-* Estima el número de latidos del corazón de una persona promedio a lo largo de una vida de 75 años (supón 70 latidos por minuto). (R: Aproximadamente 2.76 x 10⁹ latidos. Orden de magnitud 10⁹).
-* ¿Cuál es el modelo físico básico para estudiar el movimiento de los planetas sin considerar sus continentes, océanos o rotaciones? (R: Modelo de esfera homogénea o partícula puntual en el centro de gravedad).
-
----
-
-## Unidad 3: Mediciones e Incertidumbre
-### Lección 3.1: Medición Directa e Indirecta
-* **Objetivo:** Diferenciar entre mediciones directas (con instrumentos de escala) e indirectas (mediante el cálculo de fórmulas) en laboratorios de física.
-* **Explicación:** 
-  - **Medición Directa:** Se obtiene comparando la magnitud directamente con un patrón de un instrumento de medida (ej. medir el largo de una mesa con una cinta métrica o el tiempo con un cronómetro).
-  - **Medición Indirecta:** Se calcula a partir de aplicar fórmulas matemáticas sobre mediciones directas (ej. calcular el volumen de un bloque a partir de medir sus tres aristas directas $V = a cdot b cdot c$).
-* **Ejemplo Resuelto:** Para calcular la velocidad de un tuk-tuk en Panajachel, se mide la distancia de una cuadra con cinta métrica (100 m) y el tiempo que tarda en cruzarla con un cronómetro (10 s). ¿Qué tipos de mediciones realizaste?
-  - *Paso 1:* Distancia (100 m) y tiempo (10 s) se leen directamente de los instrumentos. Son mediciones directas.
-  - *Paso 2:* La velocidad se calcula con la fórmula $v = d / t$ ($100 / 10 = 10$ m/s). Es una medición indirecta.
-  - *Resultado:* Distancia y tiempo son directas, velocidad es indirecta.
-* **Errores Comunes:** Pensar que toda medición en física requiere un sensor especial directo, ignorando que la mayoría de variables complejas se calculan indirectamente.
-* **Ejercicios de Práctica:**
-  1. ¿Qué tipo de medición es el área de un círculo obtenida tras medir su radio con un calibrador y calcular A = πr²? (R: Medición indirecta).
-  2. Si lees la temperatura en Antigua usando un termómetro analógico de mercurio, ¿qué medición realizas? (R: Medición directa).
-  3. ¿Cuál es el instrumento clásico de precisión utilizado para medir longitudes de milímetros y fracciones de milímetro en piezas mecánicas? (R: Calibrador Vernier o micrómetro).
-  4. Para medir la densidad de una piedra de Amatitlán, mides su masa en una balanza y su volumen por desplazamiento de agua. ¿Qué tipo de medición es la densidad? (R: Medición indirecta).
-  5. ¿Cómo se define el término "patrón de medida"? (R: Una referencia física estándar e invariable utilizada para definir el valor de una unidad de medida).
-* **¿Necesitas ayuda?** Dominar los instrumentos de laboratorio te dará una ventaja tremenda en tus clases prácticas de secundaria y bachillerato. ¡Repásalos con tu tutor!
-
-### Lección 3.2: Precisión, Exactitud e Incertidumbre
-* **Objetivo:** Diferenciar claramente entre precisión (repetibilidad de las medidas) y exactitud (cercanía al valor real), y reportar mediciones con su incertidumbre.
-* **Explicación:** 
-  - **Exactitud:** Qué tan cerca está una medición del valor real aceptado.
-  - **Precisión:** Qué tan cercanas entre sí están las mediciones sucesivas tomadas de la misma manera (consistencia).
-  - **Incertidumbre:** El rango de duda asociado a toda medición experimental (se reporta como $V pm Delta V$).
-* **Ejemplo Resuelto:** Tres estudiantes miden la aceleración de la gravedad g (cuyo valor real es 9.8 m/s²). El estudiante A obtiene: 9.79, 9.81, 9.80 m/s². El estudiante B obtiene: 9.20, 9.21, 9.20 m/s². Analiza su precisión y exactitud.
-  - *Paso 1 Estudiante A:* Los datos son consistentes entre sí (precisos) y están sumamente cerca de 9.8 (exactos).
-  - *Paso 2 Estudiante B:* Los datos son muy consistentes entre sí (precisos), pero están alejados del valor real 9.8 (inexactos).
-  - *Resultado:* El Estudiante A es preciso y exacto; el Estudiante B es preciso pero inexacto (probablemente debido a un error sistemático o instrumento descalibrado).
-* **Errores Comunes:** Utilizar los términos "precisión" y "exactitud" como si significaran exactamente lo mismo en contextos científicos.
-* **Ejercicios de Práctica:**
-  1. Si un reloj analógico de pared en Chichicastenango está atrasado por exactamente 2 horas pero funciona perfectamente marcando siempre la misma diferencia, ¿es exacto o preciso? (R: Es preciso pero inexacto).
-  2. ¿Cómo se expresa una medida física reportada con su incertidumbre absoluta si el valor es 5.4 metros y la tolerancia del instrumento es de 0.1 metros? (R: 5.4 ± 0.1 m).
-  3. ¿Cuál es el error de escala de una regla común graduada en milímetros? (R: ±0.5 mm o ±1 mm dependiendo del criterio del laboratorio).
-  4. ¿Qué tipo de error en mediciones se reduce repitiendo el experimento muchas veces y promediando los resultados? (R: Los errores aleatorios).
-  5. ¿Qué causa típicamente los errores sistemáticos en un experimento? (R: Instrumentos descalibrados, fallas de diseño en el método de experimentación o sesgos del observador).
-* **¿Necesitas ayuda?** La teoría de errores es crucial para reportar reportes científicos exitosos en bachillerato y universidad. ¡Asegura tu zona con ayuda de tu tutor de CEDETU!
-
-### Lección 3.3: Error Absoluto, Relativo y Porcentual
-* **Objetivo:** Calcular el error absoluto, relativo y porcentual de una medición experimental con respecto a un valor teórico aceptado.
-* **Explicación:** 
-  - **Error Absoluto ($E_a$):** Valor absoluto de la diferencia entre el valor medido ($V_m$) y el valor real ($V_r$): $E_a = |V_m - V_r|$.
-  - **Error Relativo ($E_r$):** Error absoluto dividido entre el valor real: $E_r = E_a / V_r$.
-  - **Error Porcentual ($E_p$):** Error relativo multiplicado por 100: $E_p = E_r 	imes 100%$.
-* **Ejemplo Resuelto:** Un grupo de laboratorio en Xela mide la constante de la gravedad y obtiene $9.5 	ext{ m/s}^2$. Si el valor teórico aceptado es $9.8 	ext{ m/s}^2$, calcula el error absoluto y el error porcentual de la medición.
-  - *Paso 1 Error Absoluto:* $E_a = |9.5 - 9.8| = 0.3 	ext{ m/s}^2$.
-  - *Paso 2 Error Relativo:* $E_r = 0.3 / 9.8 approx 0.0306$.
-  - *Paso 3 Error Porcentual:* $E_p = 0.0306 	imes 100% = 3.06%$.
-  - *Resultado:* Error Absoluto = 0.3 m/s², Error Porcentual = 3.06%.
-* **Errores Comunes:** Dividir entre el valor medido en lugar de dividir entre el valor teórico real en la fórmula de error relativo.
-* **Ejercicios de Práctica:**
-  1. Si mides una distancia teórica de 50 metros y tu instrumento marca 49 metros, ¿cuál es tu error absoluto? (R: 1 metro).
-  2. Con los datos anteriores, calcula el error porcentual. (R: 2%).
-  3. Si un experimento tiene un error porcentual del 15%, ¿se considera de alta precisión en un laboratorio de física escolar? (R: No. En general se buscan errores menores al 5% o 10% en prácticas escolares estándar).
-  4. Calcula el error absoluto si el valor real es 100 y el medido es 105. (R: 5).
-  5. Si el error relativo de una medida es 0.005, ¿a qué porcentaje equivale? (R: 0.5%).
-* **¿Necesitas ayuda?** Aprende los métodos matemáticos para propagar errores en sumas, productos y potencias en tus fórmulas físicas con tu tutor de CEDETU. ¡Toma el control hoy!
-
-## Evaluación Unidad 3
-* Si un carpintero de Antigua mide una tabla y reporta L = 120.4 ± 0.2 cm, ¿cuál es el porcentaje de incertidumbre relativa de la medición? (R: 0.166%. Retroalimentación: Incertidumbre Relativa = (0.2 / 120.4) * 100% ≈ 0.166%).
-* ¿Cuál es la diferencia entre un error aleatorio y un error sistemático? (R: El error aleatorio ocurre al azar, cambia de signo y magnitud y se reduce promediando; el sistemático desvía las medidas siempre en el mismo sentido debido a fallas constantes en el instrumento o método).
-* En un experimento de refracción, se obtiene un índice del agua de 1.36. Si el valor real es 1.33, calcula el error porcentual. (R: 2.26%. Retroalimentación: |1.36 - 1.33|/1.33 * 100% = 0.03 / 1.33 * 100% ≈ 2.26%).
-`,
-
-    "magnitudes-unidades": `# Curso: Magnitudes y Unidades
-* **Materia:** Ciencias | **Nivel sugerido:** Secundaria / Diversificado
-* **Público objetivo:** Estudiantes que desean dominar el uso del Sistema Internacional, las conversiones de unidades y las cifras significativas aplicadas a problemas prácticos de ciencias.
-* **Objetivos de aprendizaje:** Diferenciar magnitudes fundamentales de derivadas, dominar el análisis dimensional y realizar conversiones de unidades compuestas y de notación científica con total fluidez.
-
-## Unidad 1: El Sistema Internacional y Análisis Dimensional
-### Lección 1.1: Magnitudes Fundamentales y Derivadas del SI
-* **Objetivo:** Clasificar las magnitudes físicas en fundamentales y derivadas del Sistema Internacional y reconocer sus respectivas unidades estándar.
-* **Explicación:** La física se basa en medir magnitudes. El Sistema Internacional (SI) define **7 magnitudes fundamentales** de las cuales se construyen todas las demás: longitud (metro, m), masa (kilogramo, kg), tiempo (segundo, s), corriente eléctrica (amperio, A), temperatura (kelvin, K), cantidad de sustancia (mol) e intensidad luminosa (candela, cd). Las **magnitudes derivadas** son combinaciones de las fundamentales (ej. velocidad: m/s, área: m², fuerza: Newton = kg·m/s²).
-* **Ejemplo Resuelto:** Determina si la velocidad y la temperatura son magnitudes fundamentales o derivadas.
-  - *Paso 1:* La temperatura está en la lista de las 7 magnitudes fundamentales del SI (se mide en Kelvin o Celsius).
-  - *Paso 2:* La velocidad se calcula dividiendo distancia (longitud) entre tiempo. Su unidad es m/s (combinación de metro y segundo). Es derivada.
-  - *Resultado:* Temperatura es fundamental, velocidad es derivada.
-* **Errores Comunes:** Pensar que la fuerza o la energía son magnitudes fundamentales porque se miden con instrumentos simples (dinamómetros, etc.).
-* **Ejercicios de Práctica:**
-  1. ¿Cuál es la unidad básica del SI para la masa? (R: El kilogramo (kg). Cuidado: no es el gramo).
-  2. Clasifica la densidad como magnitud fundamental o derivada. (R: Derivada. Se mide en kg/m³).
-  3. ¿Cuál es la unidad fundamental de temperatura en el Sistema Internacional? (R: El Kelvin (K)).
-  4. La fuerza se mide en Newtons (N). Escribe un Newton en términos de unidades fundamentales del SI. (R: kg·m/s²).
-  5. ¿Cuáles son las tres magnitudes fundamentales de la mecánica clásica? (R: Longitud, Masa y Tiempo).
-* **¿Necesitas ayuda?** Comprender el origen de las unidades te facilitará recordar cualquier fórmula de física. ¡Domínalo de forma muy didáctica con tu tutor!
-
-### Lección 1.2: Unidades Tradicionales y del Sistema Inglés
-* **Objetivo:** Identificar las unidades clásicas del Sistema Inglés (libras, pies, pulgadas, galones) y unidades tradicionales latinoamericanas, reconociendo su equivalencia con el SI.
-* **Explicación:** Aunque el SI es el estándar científico universal, en el comercio y la vida diaria de Latinoamérica y Estados Unidos conviven unidades del Sistema Inglés (longitud: pie, pulgada, milla; masa: libra, onza; volumen: galón) y tradicionales locales (quintal: 100 lb; arroba: 25 lb; vara: 84 cm).
-* **Ejemplo Resuelto:** Un letrero de tránsito en una autopista de Guatemala marca que la velocidad máxima es de 80 km/h. Un auto americano marca su velocidad en millas por hora (mph). ¿Cuál es la equivalencia aproximada? (Dato: 1 milla ≈ 1.609 km).
-  - *Paso 1:* Convierte 80 km a millas dividiendo por 1.609: $80 / 1.609 approx 49.7$ millas.
-  - *Resultado:* 80 km/h equivale aproximadamente a 50 mph.
-* **Errores Comunes:** Confundir la libra métrica (500 gramos, muy usada en mercados de Guatemala) con la libra internacional estándar (453.6 gramos).
-* **Ejercicios de Práctica:**
-  1. ¿Cuántas pulgadas hay en un pie? (R: 12 pulgadas).
-  2. Si un terreno mide 10 varas de largo y una vara equivale a 0.84 metros, ¿cuánto mide el largo en metros? (R: 8.4 metros).
-  3. ¿Cuántas libras estándar equivalen exactamente a una arroba? (R: 25 libras).
-  4. Si compras un galón de gasolina en una estación, ¿a cuántos litros equivale aproximadamente? (R: 3.785 litros).
-  5. Convierte 3 pies a pulgadas. (R: 36 pulgadas).
-* **¿Necesitas ayuda?** Saber operar con unidades del sistema inglés es indispensable para tareas escolares y estudios universitarios técnicos. ¡Repásalas de forma práctica con tu tutor!
-
-### Lección 1.3: Análisis Dimensional
-* **Objetivo:** Utilizar las dimensiones fundamentales [L] longitud, [M] masa y [T] tiempo para comprobar la homogeneidad dimensional de fórmulas físicas y deducir unidades.
-* **Explicación:** El análisis dimensional estudia la naturaleza de las magnitudes físicas sin importar sus unidades numéricas. Representamos longitud como [L], masa como [M] y tiempo como [T]. Toda ecuación física debe ser dimensionalmente homogénea: las dimensiones de la parte izquierda deben coincidir exactamente con las de la parte derecha.
-* **Ejemplo Resuelto:** Comprueba si la ecuación de la distancia del movimiento uniformemente acelerado es dimensionalmente correcta: $d = v_0 t + rac{1}{2} a t^2$.
-  - *Paso 1 Dimensiones de la izquierda:* La distancia $d$ tiene dimensión de longitud: $[d] = L$.
-  - *Paso 2 Dimensiones del primer término de la derecha:* Velocidad ($L T^{-1}$) multiplicada por tiempo ($T$): $[v_0 t] = (L T^{-1}) cdot T = L$.
-  - *Paso 3 Dimensiones del segundo término:* La constante numérica 1/2 no tiene dimensión. Aceleración ($L T^{-2}$) multiplicada por tiempo al cuadrado ($T^2$): $[a t^2] = (L T^{-2}) cdot T^2 = L$.
-  - *Resultado:* Dado que todos los términos de la ecuación tienen dimensión de longitud ($L$), la ecuación es dimensionalmente correcta.
-* **Errores Comunes:** Incluir constantes numéricas puras (como 1/2, $pi$, o 5) en el análisis dimensional, cuando en realidad son adimensionales (no tienen unidades ni dimensión).
-* **Ejercicios de Práctica:**
-  1. ¿Cuáles son las dimensiones de la velocidad promedio? (R: [L][T]⁻¹).
-  2. ¿Cuál es la fórmula dimensional de la fuerza (Masa x Aceleración)? (R: [M][L][T]⁻²).
-  3. Determina si la fórmula de la energía E = m c² es dimensionalmente correcta (donde m es masa y c es velocidad de la luz). (R: Sí. Dimensiones de energía son [M][L]²[T]⁻²).
-  4. ¿Cuál es la dimensión de la presión (Fuerza / Área)? (R: [M][L]⁻¹[T]⁻²).
-  5. Si una constante física k tiene unidades de N·m/kg², ¿cuáles son sus dimensiones? (R: [L]³[M]⁻¹[T]⁻²).
-* **¿Necesitas ayuda?** El análisis dimensional es un filtro maravilloso para saber si planteaste mal una fórmula en un examen antes de resolverla. ¡Aprende todos sus secretos con CEDETU!
-
-## Evaluación Unidad 1
-* Deduce la fórmula dimensional de la potencia mecánica (Trabajo / Tiempo). (R: [M][L]²[T]⁻³. Retroalimentación: Trabajo = Fuerza * Distancia = [M][L]²[T]⁻²; dividido entre Tiempo [T] da [M][L]²[T]⁻³).
-* Si una ecuación física es A = B + C, ¿qué relación dimensional debe cumplirse entre las tres variables? (R: Las tres variables A, B y C deben tener exactamente las mismas dimensiones fundamentales).
-* ¿Es el radián una unidad dimensional en física? (R: No. El radián es una unidad adimensional de ángulo plano; representa una razón de longitudes arco/radio, quedando [L]/[L] = 1).
-
----
-
-## Unidad 2: Conversión de Unidades y Notación Científica
-### Lección 2.1: El Método del Factor de Conversión
-* **Objetivo:** Realizar conversiones de unidades simples de forma rápida utilizando el método de multiplicación por factores de fracción equivalentes a 1.
-* **Explicación:** El factor de conversión consiste en multiplicar la cantidad original por una fracción que represente una equivalencia de unidades. La unidad que deseamos eliminar debe colocarse en la posición contraria de la fracción (si la original está arriba, en el factor debe ir abajo) para que se cancelen algebraicamente.
-* **Ejemplo Resuelto:** Convierte 150 centímetros a metros de forma estructurada.
-  - *Paso 1 Equivalencia:* 1 metro (m) = 100 centímetros (cm).
-  - *Paso 2 Plantea el factor:* Coloca cm abajo para cancelarlo: $150 	ext{ cm} 	imes left( rac{1 	ext{ m}}{100 	ext{ cm}} ight)$.
-  - *Paso 3 Opera:* $rac{150 	imes 1}{100} = 1.5$ metros.
-  - *Resultado:* 1.5 metros.
-* **Errores Comunes:** Colocar las unidades en el factor al revés, lo que resulta en multiplicar en lugar de dividir (ej. multiplicar por 100 y decir que 150 cm son 15,000 metros).
-* **Ejercicios de Práctica:**
-  1. Convierte 3.5 kilómetros a metros. (R: 3,500 metros).
-  2. Si una carretera mide 5 millas, ¿cuántos kilómetros mide aproximadamente? (1 milla = 1.609 km). (R: 8.05 km).
-  3. Convierte 48 horas a días. (R: 2 días).
-  4. ¿Cuántos gramos hay en 2.5 kilogramos? (R: 2,500 gramos).
-  5. Convierte 120 pulgadas a pies. (1 pie = 12 pulgadas). (R: 10 pies).
-* **¿Necesitas ayuda?** Los factores de conversión eliminan toda confusión en física y química. ¡Domina este método infalible junto a tu tutor de CEDETU!
-
-### Lección 2.2: Conversión de Unidades Compuestas (Velocidad y Densidad)
-* **Objetivo:** Convertir unidades complejas compuestas por cocientes o productos (como km/h a m/s o g/cm³ a kg/m³) de forma encadenada.
-* **Explicación:** Para convertir unidades compuestas, multiplicamos sucesivamente por los factores de conversión de cada una de las unidades involucradas en el orden deseado, cancelando una a una las unidades antiguas.
-* **Ejemplo Resuelto:** Un bus extraurbano viaja por la autopista a $90 	ext{ km/h}$. Convierte esta velocidad a metros por segundo ($m/s$).
-  - *Paso 1 Factor de Longitud:* 1 km = 1,000 m. Coloca km abajo: $rac{90 	ext{ km}}{	ext{h}} 	imes left( rac{1,000 	ext{ m}}{1 	ext{ km}} ight)$.
-  - *Paso 2 Factor de Tiempo:* 1 h = 3,600 s. Coloca h arriba para cancelarlo: $rac{90 	ext{ km}}{	ext{h}} 	imes left( rac{1,000 	ext{ m}}{1 	ext{ km}} ight) 	imes left( rac{1 	ext{ h}}{3,600 	ext{ s}} ight)$.
-  - *Paso 3 Opera:* $rac{90 	imes 1,000}{3,600} = rac{90,000}{3,600} = 25 	ext{ m/s}$.
-  - *Resultado:* 25 m/s. (Nota de atajo rápido: dividir km/h entre 3.6 da directamente m/s).
-* **Errores Comunes:** Olvidar elevar al cuadrado o al cubo el factor de conversión cuando se trabaja con áreas o volúmenes (ejemplo: decir que 1 m² son 100 cm² en lugar de 10,000 cm²).
-* **Ejercicios de Práctica:**
-  1. Convierte 10 m/s a km/h. (R: 36 km/h. Retroalimentación: Multiplica por 3.6).
-  2. Si la densidad de una piedra de Amatitlán es de 2.5 g/cm³, ¿cuál es su densidad en kg/m³? (R: 2,500 kg/m³. Retroalimentación: g/cm³ se multiplica por 1,000 para pasar a kg/m³).
-  3. Convierte un área de 5 metros cuadrados a centímetros cuadrados. (R: 50,000 cm². Retroalimentación: 1 m² = 10,000 cm²).
-  4. Si un grifo vierte agua a 12 litros por minuto, ¿cuál es su caudal en litros por segundo? (R: 0.2 L/s. Retroalimentación: 12 / 60 = 0.2).
-  5. Convierte 72 km/h a m/s. (R: 20 m/s).
-* **¿Necesitas ayuda?** Las unidades compuestas de volumen y densidad confunden a muchos estudiantes por la potencia cúbica. ¡Aprende el método seguro con tu tutor de CEDETU!
-
-### Lección 2.3: Notación Científica y Prefijos Métricos
-* **Objetivo:** Expresar números gigantescos o infinitesimales en notación científica y utilizar prefijos métricos estándar (Mega, Giga, micro, nano).
-* **Explicación:** La notación científica escribe cantidades como el producto de un número entre 1 y 10 multiplicado por una potencia de 10 ($a 	imes 10^n$). Los prefijos métricos sustituyen potencias de 10 comunes:
-  - **Kilo (k):** $10^3$ | **Mega (M):** $10^6$ | **Giga (G):** $10^9$
-  - **Mili (m):** $10^{-3}$ | **Micro ($mu$):** $10^{-6}$ | **Nano (n):** $10^{-9}$
-* **Ejemplo Resuelto:** Expresa la distancia promedio de la Tierra a la Luna (aprox. 384,000,000 metros) en notación científica y utilizando prefijos de Mega.
-  - *Paso 1 Notación Científica:* Mueve el punto decimal 8 posiciones a la izquierda: $3.84 	imes 10^8$ metros.
-  - *Paso 2 Prefijos:* $10^6$ equivale a "Mega (M)". Así, 384,000,000 m = 384 Megametros (Mm).
-  - *Resultado:* $3.84 	imes 10^8$ m o 384 Mm.
-* **Errores Comunes:** Colocar potencias positivas para decimales extremadamente pequeños (ej. decir que el radio de un átomo es $1.5 	imes 10^{10}$ metros en lugar de $1.5 	imes 10^{-10}$ metros).
-* **Ejercicios de Práctica:**
-  1. Expresa en notación científica el grosor de una hoja de papel de 0.00012 metros. (R: 1.2 x 10⁻⁴ m).
-  2. ¿A cuántos quetzales equivale un premio monetario de 5 Megaquetzales (MQ)? (R: Q5,000,000).
-  3. Si la longitud de onda de un láser de laboratorio es de 650 nanómetros (nm), exprésalo en metros con notación científica. (R: 6.5 x 10⁻⁷ m. Retroalimentación: 650 x 10⁻⁹ = 6.5 x 10⁻⁷).
-  4. Convierte 45,000 Kilómetros a Megámetros (Mm). (R: 45 Mm).
-  5. Escribe en su forma extendida el número 3.2 x 10⁻³. (R: 0.0032).
-* **¿Necesitas ayuda?** La notación científica es el idioma del universo a gran y pequeña escala. ¡Aprende a dominar las leyes de exponentes con tu tutor de CEDETU!
-
-## Evaluación Unidad 2
-* Resuelve y expresa en notación científica el resultado de la siguiente operación: (3.0 x 10⁵ m) x (2.0 x 10⁻² m). (R: 6.0 x 10³ m². Retroalimentación: Multiplica los números: 3*2 = 6; suma los exponentes: 5 + (-2) = 3).
-* Si una señal de internet viaja a una velocidad de 15 Gigabytes por segundo (GB/s), ¿a cuántos Bytes por segundo equivale en notación científica? (R: 1.5 x 10¹⁰ B/s. Retroalimentación: 15 x 10⁹ = 1.5 x 10¹⁰).
-* Convierte una tasa de flujo de 900 kg/m³ a g/cm³. (R: 0.90 g/cm³).
-
----
-
-## Unidad 3: Cifras Significativas y Redondeo
-### Lección 3.1: Identificación de Cifras Significativas
-* **Objetivo:** Identificar la cantidad de cifras significativas de cualquier número medido aplicando de forma estricta las reglas de los ceros.
-* **Explicación:** Las cifras significativas son los dígitos confiables que se conocen de una medición. Reglas:
-  1. Todos los dígitos distintos de cero son significativos.
-  2. Los ceros entre dígitos distintos de cero son significativos (ej. 105 tiene 3 cifras).
-  3. Los ceros a la izquierda del primer dígito distinto de cero **no** son significativos (ej. 0.0025 tiene 2 cifras).
-  4. Los ceros al final de un decimal **sí** son significativos (ej. 45.00 tiene 4 cifras).
-* **Ejemplo Resuelto:** Determina el número de cifras significativas en las siguientes mediciones: a) 0.0450 m, b) 8,002 kg.
-  - *Paso 1 en 0.0450:* Los ceros a la izquierda no cuentan. El 4, 5 y el cero final a la derecha sí cuentan. Hay 3 cifras significativas.
-  - *Paso 2 en 8,002:* Los ceros están intercalados entre dígitos no nulos. Cuentan todos. Hay 4 cifras significativas.
-  - *Resultado:* a) 3 cifras, b) 4 cifras.
-* **Errores Comunes:** Contar todos los ceros de un decimal pequeño como significativos por el simple hecho de estar escritos.
-* **Ejercicios de Práctica:**
-  1. ¿Cuántas cifras significativas tiene el valor 0.005? (R: 1 cifra).
-  2. ¿Cuántas cifras significativas tiene 120.0 cm? (R: 4 cifras. Retroalimentación: El cero después del punto decimal indica precisión instrumental).
-  3. ¿Cuántas cifras significativas tiene 4,500 metros si es una aproximación al millar? (R: 2 cifras. En notación científica es 4.5 x 10³).
-  4. Identifica las cifras significativas en 1.0020 gramos. (R: 5 cifras).
-  5. Si un instrumento tiene una precisión de décimas de milímetro y reportas L = 15.30 cm, ¿cuántas cifras significativas reportas? (R: 4 cifras).
-* **¿Necesitas ayuda?** Las cifras significativas reflejan la realidad y honestidad de tu instrumento en el laboratorio. ¡Aprende a reportarlas correctamente con tu tutor!
-
-### Lección 3.2: Operaciones con Cifras Significativas
-* **Objetivo:** Realizar sumas, restas, multiplicaciones y divisiones conservando la cantidad correcta de cifras significativas en el resultado final.
-* **Explicación:** Reglas operativas:
-  - **Suma y Resta:** El resultado debe tener la misma cantidad de **posiciones decimales** que el dato que tenga menos decimales de todos.
-  - **Multiplicación y División:** El resultado debe tener la misma cantidad de **cifras significativas totales** que el dato con menor número de cifras significativas.
-* **Ejemplo Resuelto:** Un estudiante mide las dimensiones de una placa metálica rectangular: largo = $12.35 	ext{ cm}$ (4 cifras, 2 decimales) y ancho = $4.2 	ext{ cm}$ (2 cifras, 1 decimal). Calcula el área total aplicando las reglas de cifras significativas.
-  - *Paso 1 Multiplicación básica:* $12.35 	imes 4.2 = 51.87 	ext{ cm}^2$.
-  - *Paso 2 Aplicar regla de multiplicación:* La menor cantidad de cifras significativas en los factores es 2 (del ancho 4.2). El resultado final debe redondearse a exactamente 2 cifras significativas.
-  - *Paso 3 Redondear:* 51.87 se redondea a 52.
-  - *Resultado:* Área = $52 	ext{ cm}^2$.
-* **Errores Comunes:** Dejar en el resultado final de una división todos los decimales que arroja la calculadora, dando una falsa impresión de precisión del experimento.
-* **Ejercicios de Práctica:**
-  1. Resuelve con cifras significativas: 15.42 + 8.1. (R: 23.5. Retroalimentación: Se limita a 1 decimal porque 8.1 solo tiene un decimal).
-  2. Resuelve con cifras significativas: 4.0 x 1.25. (R: 5.0. Retroalimentación: Se limita a 2 cifras por el 4.0).
-  3. Resta: 125.37 - 100.0. (R: 25.4. Retroalimentación: Se limita a 1 decimal).
-  4. Divide: 36.0 / 3.00. (R: 12.0. Retroalimentación: Ambos datos tienen 3 cifras significativas).
-  5. Multiplica: 0.0050 x 20.0. (R: 0.10. Retroalimentación: 0.0050 tiene 2 cifras; 20.0 tiene 3 cifras. El resultado debe tener 2 cifras: 0.10).
-* **¿Necesitas ayuda?** Operar con decimales y cifras significativas es un dolor de cabeza común en los primeros laboratorios de química y física de bachillerato. ¡Asegura tu reporte con ayuda de tu tutor de CEDETU!
-
-### Lección 3.3: Criterios de Redondeo en Ciencias
-* **Objetivo:** Aplicar de forma uniforme los criterios de redondeo científicos, incluido el redondeo simétrico al entero par más cercano cuando el dígito a eliminar es exactamente 5.
-* **Explicación:** Para redondear a un número determinado de cifras:
-  - Si el dígito siguiente a eliminar es menor que 5, el último dígito conservado se queda igual.
-  - Si es mayor que 5, el último dígito aumenta en 1.
-  - Si es exactamente 5 (o 5 seguido de ceros): por convención científica se redondea al número par más cercano para evitar sesgar los datos estadísticamente.
-* **Ejemplo Resuelto:** Redondea a 3 cifras significativas las mediciones: a) 4.234, b) 8.126, c) 2.345 (el dígito a eliminar es exactamente 5).
-  - *Paso 1 en 4.234:* El cuarto dígito es 4 (<5). Se queda como 4.23.
-  - *Paso 2 en 8.126:* El cuarto dígito es 6 (>5). Sube a 8.13.
-  - *Paso 3 en 2.345:* El dígito a eliminar es exactamente 5. El dígito anterior es 4 (que es par). Por lo tanto, se queda como 2.34 (si fuera 2.335, se redondearía a 2.34 también para aproximarlo al par más cercano).
-  - *Resultado:* a) 4.23, b) 8.13, c) 2.34.
-* **Errores Comunes:** Redondear siempre hacia arriba en todos los casos que terminen en 5, lo cual acumula sesgos positivos sistemáticos en grandes bases de datos.
-* **Ejercicios de Práctica:**
-  1. Redondea 15.65 a 3 cifras significativas aplicando la regla del entero par. (R: 15.6).
-  2. Redondea 0.002376 a 2 cifras significativas. (R: 0.0024).
-  3. Redondea 98.25 a 3 cifras significativas usando la regla del entero par. (R: 98.2. Retroalimentación: 2 es par).
-  4. Redondea 345,600 a 2 cifras significativas en notación científica. (R: 3.5 x 10⁵).
-  5. ¿Cuál es el resultado de redondear 1.999 a 3 cifras significativas? (R: 2.00).
-* **¿Necesitas ayuda?** Aprender las convenciones internacionales de redondeo te preparará de forma excelente para cursos universitarios de metrología. ¡Consúltalo con tu tutor de CEDETU!
-
-## Evaluación Unidad 3
-* Si sumas tres longitudes medidas por diferentes personas en un terreno de Antigua: 12.3 m (1 decimal), 150.45 m (2 decimales) y 0.234 m (3 decimales). ¿Cuál es la longitud total reportada con el número correcto de cifras significativas? (R: 163.0 m. Retroalimentación: Suma directa = 162.984. Se limita a 1 decimal por el término 12.3. Al redondear 162.984 a 1 decimal da 163.0 m).
-* ¿Cuántas cifras significativas reporta un cronómetro digital que marca 0.0040 segundos? (R: 2 cifras. Los ceros a la izquierda no cuentan; el 4 y el cero final sí).
-* Resuelve y redondea correctamente la operación: 45.3 / 2.50. (R: 18.1. Retroalimentación: 45.3 tiene 3 cifras; 2.50 tiene 3 cifras; el resultado debe tener 3 cifras: 18.12 se redondea a 18.1).
-`,
+    "magnitudes-unidades": {
+    "isRichCourse": true,
+    "title": "Magnitudes y Unidades",
+    "units": [
+        {
+            "title": "Unidad 1: El Sistema Internacional y Análisis Dimensional",
+            "lessons": [
+                {
+                    "id": "magnitudes-fundamentales-derivadas",
+                    "title": "Lección 1.1: Magnitudes Fundamentales y Derivadas del SI",
+                    "introduction": "El Sistema Internacional unifica la ciencia global. Domina las 7 magnitudes fundamentales y cómo estructuran magnitudes derivadas.",
+                    "explanationHtml": "<p>Medir es comparar una magnitud física contra un patrón estandarizado invariable. El <strong>Sistema Internacional de Unidades (SI)</strong> define <strong>7 magnitudes fundamentales</strong>, independientes entre sí, que describen las bases físicas del universo:</p><ol class=\"list-decimal pl-5 space-y-1 my-2\"><li><strong>Longitud:</strong> metro (m)</li><li><strong>Masa:</strong> kilogramo (kg)</li><li><strong>Tiempo:</strong> segundo (s)</li><li><strong>Corriente eléctrica:</strong> amperio (A)</li><li><strong>Temperatura:</strong> kelvin (K)</li><li><strong>Cantidad de sustancia:</strong> mol (mol)</li><li><strong>Intensidad luminosa:</strong> candela (cd)</li></ol><p class=\"mt-3\">Las <strong>magnitudes derivadas</strong> son aquellas resultantes de la combinación algebraica de las fundamentales (ej. velocidad: $\\text{m/s}$, área: $\\text{m}^2$, densidad: $\\text{kg/m}^3$ o fuerza: $\\text{Newton} = \\text{kg}\\cdot\\text{m/s}^2$).</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">7 Pilares del Sistema Internacional</p><p class=\"text-xs font-mono font-bold text-primary\">m (longitud) | kg (masa) | s (tiempo) | A (corriente) | K (temp) | mol | cd</p><p class=\"text-xs text-slate-505\">El kilogramo es la única unidad fundamental que incluye un prefijo (\"kilo\") en su definición estándar.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">7 MAGNITUDES FUNDAMENTALES</text><g transform=\"translate(10, 35)\"><rect x=\"0\" y=\"0\" width=\"35\" height=\"35\" fill=\"#eff6ff\" stroke=\"#bfdbfe\" rx=\"4\" /><text x=\"17.5\" y=\"18\" font-size=\"10\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">m</text><text x=\"17.5\" y=\"30\" font-size=\"6\" fill=\"#1e40af\" text-anchor=\"middle\">Longitud</text><rect x=\"40\" y=\"0\" width=\"35\" height=\"35\" fill=\"#eff6ff\" stroke=\"#bfdbfe\" rx=\"4\" /><text x=\"57.5\" y=\"18\" font-size=\"10\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">kg</text><text x=\"57.5\" y=\"30\" font-size=\"6\" fill=\"#1e40af\" text-anchor=\"middle\">Masa</text><rect x=\"80\" y=\"0\" width=\"35\" height=\"35\" fill=\"#eff6ff\" stroke=\"#bfdbfe\" rx=\"4\" /><text x=\"97.5\" y=\"18\" font-size=\"10\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">s</text><text x=\"97.5\" y=\"30\" font-size=\"6\" fill=\"#1e40af\" text-anchor=\"middle\">Tiempo</text><rect x=\"120\" y=\"0\" width=\"35\" height=\"35\" fill=\"#eff6ff\" stroke=\"#bfdbfe\" rx=\"4\" /><text x=\"137.5\" y=\"18\" font-size=\"10\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">A</text><text x=\"137.5\" y=\"30\" font-size=\"6\" fill=\"#1e40af\" text-anchor=\"middle\">Corriente</text><rect x=\"160\" y=\"0\" width=\"35\" height=\"35\" fill=\"#eff6ff\" stroke=\"#bfdbfe\" rx=\"4\" /><text x=\"177.5\" y=\"18\" font-size=\"10\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">K</text><text x=\"177.5\" y=\"30\" font-size=\"6\" fill=\"#1e40af\" text-anchor=\"middle\">Temp</text><rect x=\"200\" y=\"0\" width=\"35\" height=\"35\" fill=\"#eff6ff\" stroke=\"#bfdbfe\" rx=\"4\" /><text x=\"217.5\" y=\"18\" font-size=\"10\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">mol</text><text x=\"217.5\" y=\"30\" font-size=\"6\" fill=\"#1e40af\" text-anchor=\"middle\">Sustancia</text><rect x=\"240\" y=\"0\" width=\"35\" height=\"35\" fill=\"#eff6ff\" stroke=\"#bfdbfe\" rx=\"4\" /><text x=\"257.5\" y=\"18\" font-size=\"10\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">cd</text><text x=\"257.5\" y=\"30\" font-size=\"6\" fill=\"#1e40af\" text-anchor=\"middle\">Luz</text></g></svg>",
+                    "svgDescription": "Las siete unidades base del Sistema Internacional (SI). Expone las unidades de referencia con las cuales se modelan el resto de variables físicas.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Clasifica la densidad y la cantidad de sustancia como magnitudes fundamentales o derivadas en el Sistema Internacional.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1 Densidad:</strong> Se calcula dividiendo la masa entre el volumen. Sus unidades son $\\text{kg/m}^3$, combinando masa y longitud. Por tanto, es una **Magnitud Derivada**.</li><li><strong>Paso 2 Sustancia:</strong> La cantidad de sustancia se mide de forma elemental en **mol**, la cual forma parte de la lista cerrada de las 7 fundamentales. Es una **Magnitud Fundamental**.</li></ol>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Confundir gramo con la unidad base:</strong> Creer que el gramo (g) es la unidad base de masa en el SI por conveniencia métrica. La unidad base real definida por la Oficina de Pesas y Medidas es el <strong>kilogramo (kg)</strong>.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "¿Cuál es la unidad fundamental de temperatura estándar en el Sistema Internacional (escribe solo el nombre de la escala)?",
+                            "correctAnswer": "Kelvin",
+                            "hint": "Es una escala absoluta que parte del cero absoluto (-273.15 °C) sin usar grados en su rotulación.",
+                            "feedbackCorrect": "¡Excelente! El Kelvin (K) es la unidad de temperatura absoluta del SI.",
+                            "feedbackIncorrect": "Incorrecto. Se mide en 'Kelvin'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Clasifica la magnitud física del 'área de un terreno de juego' en fundamental o derivada:",
+                            "correctAnswer": "derivada",
+                            "hint": "El área se mide en metros cuadrados (m²), producto de multiplicar longitud por longitud.",
+                            "feedbackCorrect": "¡Perfecto! Al ser una combinación de longitud, es una magnitud derivada.",
+                            "feedbackIncorrect": "Incorrecto. Proviene de multiplicar longitudes, por lo que es 'derivada'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cuál es la unidad básica del SI utilizada para cuantificar la cantidad de sustancia elemental de un cuerpo químico?",
+                            "correctAnswer": "mol",
+                            "hint": "Equivale a 6.022 x 10²³ partículas (Número de Avogadro). Escríbelo en singular.",
+                            "feedbackCorrect": "¡Excelente! La unidad fundamental es el mol.",
+                            "feedbackIncorrect": "Incorrecto. Se mide en 'mol'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "La fuerza mecánica se mide en Newtons (N). Escribe la equivalencia exacta de un Newton en términos de las unidades fundamentales del SI:",
+                            "options": [
+                                "kg·m/s²",
+                                "kg·m/s",
+                                "g·cm/s²",
+                                "kg·m²/s²"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Aplica la Segunda Ley de Newton: Fuerza = Masa x Aceleración. Masa (kg) multiplicada por Aceleración (m/s²).",
+                            "feedbackCorrect": "¡Excelente! Un Newton equivale exactamente a kg·m/s².",
+                            "feedbackIncorrect": "Incorrecto. Fuerza = Masa * Aceleración, por lo que N = kg·m/s².",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "¿Cuáles son las tres magnitudes fundamentales con las que se construye toda la mecánica clásica newtoniana?",
+                            "options": [
+                                "Longitud, Masa y Tiempo",
+                                "Longitud, Fuerza y Velocidad",
+                                "Masa, Fuerza y Aceleración",
+                                "Tiempo, Corriente y Temperatura"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Son las variables de escala espacial y temporal básicas de la cinemática de Newton.",
+                            "feedbackCorrect": "¡Perfecto! Longitud, Masa y Tiempo son los pilares mecánicos.",
+                            "feedbackIncorrect": "Incorrecto. Se construye a partir de Longitud (m), Masa (kg) y Tiempo (s).",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "El SI define 7 magnitudes fundamentales como bloques de construcción universales y magnitudes derivadas para describir interacciones compuestas.",
+                    "videoPlaceholderText": "Video de Física: Las 7 unidades fundamentales del SI."
+                },
+                {
+                    "id": "unidades-sistema-ingles",
+                    "title": "Lección 1.2: Unidades Tradicionales y del Sistema Inglés",
+                    "introduction": "Aprende a identificar y convertir unidades del Sistema Inglés y equivalencias tradicionales muy utilizadas en el comercio de Guatemala.",
+                    "explanationHtml": "<p>A pesar del estándar científico del SI, en el comercio diario y en la industria técnica conviven unidades del <strong>Sistema Inglés</strong> (pulgadas, pies, libras, galones) y <strong>unidades tradicionales</strong> locales de Guatemala:</p><p class=\"mt-3\"><strong>Sistema Inglés Clave:</strong></p><ul class=\"list-disc pl-5 space-y-1.5 my-2\"><li>1 pie (ft) = 12 pulgadas (in) &asymp; 30.48 cm</li><li>1 pulgada (in) = 2.54 cm</li><li>1 galón (gal) &asymp; 3.785 litros</li></ul><p class=\"mt-3\"><strong>Unidades Tradicionales en Mercados de Guatemala:</strong></p><ul class=\"list-disc pl-5 space-y-1.5 my-2\"><li>1 Quintal (Qq) = 100 Libras (lb) = 4 Arrobas (@)</li><li>1 Arroba (@) = 25 Libras (lb)</li><li>1 Vara &asymp; 84 cm</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Equivalencias Comerciales</p><p class=\"text-xs font-mono font-bold text-primary\">1 Qq = 4 Arrobas = 100 Libras || 1 lb = 16 onzas</p><p class=\"text-xs text-slate-555\">En los mercados guatemaltecos se suele usar comercialmente la libra métrica de 500g, pero científicamente la libra estándar equivale a 453.6g.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"22\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">UNIDADES TRADICIONALES (MASA)</text><circle cx=\"80\" cy=\"70\" r=\"25\" fill=\"#eff6ff\" stroke=\"#bfdbfe\" stroke-width=\"2\" /><text x=\"80\" y=\"73\" font-size=\"8\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">1 QUINTAL</text><path d=\"M 115 70 Q 150 50 185 70\" stroke=\"#f59e0b\" stroke-width=\"1.5\" stroke-dasharray=\"2,2\" /><text x=\"150\" y=\"52\" font-size=\"8\" fill=\"#d97706\" font-weight=\"bold\" text-anchor=\"middle\">Equivale a</text><rect x=\"195\" y=\"50\" width=\"75\" height=\"40\" fill=\"#fffbeb\" stroke=\"#fca5a5\" rx=\"6\" /><text x=\"232.5\" y=\"65\" font-size=\"8\" fill=\"#b45309\" font-weight=\"bold\" text-anchor=\"middle\">4 ARROBAS</text><text x=\"232.5\" y=\"80\" font-size=\"7\" fill=\"#b45309\" text-anchor=\"middle\">100 Libras totales</text></svg>",
+                    "svgDescription": "Balanza de unidades tradicionales de masa. Ilustra la correlación comercial de masa usada comúnmente en mercados locales guatemaltecos.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Si un agricultor de Sololá transporta un camión cargado con 8 Quintales de papas cosechadas, ¿cuántas libras transporta? ¿Y a cuántas arrobas equivale?</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1: Calcula las libras.</strong> Sabemos que 1 Quintal equivale a 100 Libras. <br>$8 \\text{ Qq} \\times 100 \\text{ lb/Qq} = 800 \\text{ lb}$.</li><li><strong>Paso 2: Calcula las arrobas.</strong> Sabemos que 1 Arroba equivale a 25 Libras, o bien 1 Quintal equivale a 4 Arrobas: <br>$8 \\text{ Qq} \\times 4 \\text{ @/Qq} = 32 \\text{ Arrobas}$.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> Transporta **800 libras** equivalentes a **32 arrobas**.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Confundir libra estándar con libra métrica:</strong> Confundir la libra internacional (453.59g, usada en balanzas electrónicas e ingeniería) con la libra métrica tradicional (500g) empleada por costumbre en la venta de carnes o verduras en mercados locales.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "¿Cuántas pulgadas completas equivalen a la longitud física de exactamente un pie del Sistema Inglés?",
+                            "correctAnswer": "12",
+                            "hint": "Es una equivalencia básica lineal del sistema imperial (ingresa el número entero).",
+                            "feedbackCorrect": "¡Excelente! Un pie equivale exactamente a 12 pulgadas.",
+                            "feedbackIncorrect": "Incorrecto. 1 pie = 12 pulgadas.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si compras 3 arrobas de maíz en una distribuidora de Tecpán, ¿cuántas libras de maíz estás adquiriendo?",
+                            "correctAnswer": "75",
+                            "hint": "Cada arroba contiene exactamente 25 libras estándar (ingresa el número entero).",
+                            "feedbackCorrect": "¡Perfecto! 3 arrobas equivalen a 75 libras (3 × 25).",
+                            "feedbackIncorrect": "Incorrecto. 3 arrobas × 25 lb = 75 libras.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si un trozo de madera mide exactamente 5 varas de longitud y asumimos que cada vara local mide 0.84 metros, ¿cuál es su largo en metros?",
+                            "correctAnswer": "4.2",
+                            "hint": "Multiplica la cantidad de varas por la equivalencia en metros: 5 × 0.84.",
+                            "feedbackCorrect": "¡Excelente! Mide 4.2 metros de longitud.",
+                            "feedbackIncorrect": "Incorrecto. 5 varas × 0.84 m = 4.2 metros.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si importamos un vehículo de los Estados Unidos cuyo tanque de combustible marca una capacidad máxima de 12 galones estándar, ¿cuál es la capacidad aproximada en litros?",
+                            "options": [
+                                "45.4 litros",
+                                "12.0 litros",
+                                "24.0 litros",
+                                "80.5 litros"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Multiplica la capacidad de galones por la constante del galón estándar: 12 gal × 3.785 L/gal.",
+                            "feedbackCorrect": "¡Excelente! Equivale a aproximadamente 45.4 litros.",
+                            "feedbackIncorrect": "Incorrecto. 12 * 3.785 L = 45.42 litros.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "En una autopista de Guatemala, un letrero marca el límite de velocidad máxima como 80 km/h. Si el velocímetro de un auto americano marca 55 mph, ¿está violando la ley?",
+                            "options": [
+                                "Sí. 55 mph equivale a aproximadamente 88.5 km/h, superando el límite de 80 km/h",
+                                "No. 55 mph equivale a aproximadamente 34 km/h, viajando muy por debajo",
+                                "No. mph y km/h son exactamente la misma velocidad física",
+                                "Sí. Toda velocidad medida en mph es ilegal en carreteras nacionales"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Convierte 55 millas por hora a km/h multiplicando por el factor de milla (1 milla ≈ 1.609 km): 55 × 1.609.",
+                            "feedbackCorrect": "¡Perfecto! Al viajar a 88.5 km/h está superando el límite de 80 km/h.",
+                            "feedbackIncorrect": "Incorrecto. 55 * 1.609 km/h ≈ 88.5 km/h, lo cual supera el límite establecido.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "El Sistema Inglés e instrumental tradicional como quintales, arrobas e pulgadas son ampliamente utilizados en el comercio guatemalteco, requiriendo conversiones exactas.",
+                    "videoPlaceholderText": "Video de Física: Las equivalencias imperiales de galones, pies y libras."
+                },
+                {
+                    "id": "analisis-dimensional",
+                    "title": "Lección 1.3: Análisis Dimensional",
+                    "introduction": "Aprende a analizar las dimensiones algebraicas de las ecuaciones para comprobar su coherencia y exactitud física.",
+                    "explanationHtml": "<p>El <strong>análisis dimensional</strong> es una potente herramienta analítica que estudia la naturaleza de las magnitudes físicas mediante sus dimensiones básicas, representadas por letras mayúsculas entre corchetes:</p><ul class=\"list-disc pl-5 space-y-1 my-2\"><li><strong>Longitud:</strong> $[L]$</li><li><strong>Masa:</strong> $[M]$</li><li><strong>Tiempo:</strong> $[T]$</li></ul><p class=\"mt-3\"><strong>Principio de Homogeneidad Dimensional (Fourier):</strong> Si una ecuación física es de la forma $A = B + C$, entonces algebraicamente todos sus términos sumados deben poseer idénticas dimensiones:</p><p class=\"text-center font-mono font-extrabold text-primary my-2\">[A] = [B] = [C]</p><p class=\"mt-3\">Las constantes numéricas puras (como $\\pi$, $2$, $1/2$) son **adimensionales**, es decir, no poseen dimensión física ni unidades y se representan con la unidad adimensional $1$.</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Glosario Dimensional de Variables</p><p class=\"text-xs font-mono font-bold text-primary\">Velocidad: [L][T]⁻¹ || Aceleración: [L][T]⁻² || Fuerza: [M][L][T]⁻²</p><p class=\"text-xs text-slate-555\">El análisis de dimensiones permite detectar si una fórmula física fue despejada erróneamente antes de meter los datos a la calculadora.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">PRINCIPIO DE HOMOGENEIDAD</text><rect x=\"30\" y=\"38\" width=\"240\" height=\"65\" fill=\"#eff6ff\" stroke=\"#bfdbfe\" rx=\"8\" /><text x=\"150\" y=\"58\" font-size=\"10\" font-family=\"monospace\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">Ecuación: d = v&bull;t + ½&bull;a&bull;t²</text><text x=\"150\" y=\"78\" font-size=\"9\" font-family=\"monospace\" fill=\"#2563eb\" font-weight=\"extrabold\" text-anchor=\"middle\">Dimensiones: [L] = [L] = [L]</text><text x=\"150\" y=\"90\" font-size=\"7\" fill=\"#64748b\" text-anchor=\"middle\">¡Ecuación dimensionalmente correcta!</text></svg>",
+                    "svgDescription": "Evaluación dimensional de Fourier. Prueba la homogeneidad del movimiento rectilíneo acelerado, verificando que cada término sumado resulte en longitud.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Comprueba si la famosa ecuación de energía de Einstein es dimensionalmente correcta: $E = m\\cdot c^2$ (donde $m$ es masa y $c$ es la velocidad de la luz).</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1 Dimensiones de la energía:</strong> La energía se mide en Julios ($N\\cdot m = \\text{kg}\\cdot\\text{m}^2/\\text{s}^2$). Sus dimensiones son: <br>$[E] = M L^2 T^{-2}$.</li><li><strong>Paso 2 Dimensiones de la derecha:</strong> Masa $m$ tiene dimensión $M$. Velocidad $c$ tiene dimensión $L T^{-1}$. Al estar al cuadrado: <br>$[m \\cdot c^2] = M \\cdot (L T^{-1})^2 = M L^2 T^{-2}$.</li><li><strong>Paso 3 Compara:</strong> Las dimensiones de la izquierda ($M L^2 T^{-2}$) coinciden perfectamente con las de la derecha. La fórmula es **Dimensionalmente Correcta**.</li></ol>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Introducir constantes numéricas en el análisis:</strong> Intentar asignar dimensiones físicas a constantes como $1/2$ o $\\pi$. Recuerda que los números puros son adimensionales y se descartan en el análisis dimensional colocándolos algebraicamente como la unidad $1$.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "¿Cuáles son las dimensiones fundamentales asociadas a la aceleración física? Escribe en formato estándar usando corchetes y exponentes (ej: [L][T]^-2):",
+                            "correctAnswer": "[L][T]^-2",
+                            "hint": "La aceleración es el cambio de velocidad en el tiempo: m/s².",
+                            "feedbackCorrect": "¡Excelente! La aceleración tiene dimensiones de longitud por tiempo a la menos dos.",
+                            "feedbackIncorrect": "Incorrecto. Se representa como '[L][T]^-2'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cuál es la dimensión de la fuerza física resultante de aplicar Masa x Aceleración?",
+                            "correctAnswer": "[M][L][T]^-2",
+                            "hint": "Masa [M] multiplicada por las dimensiones de aceleración [L][T]^-2.",
+                            "feedbackCorrect": "¡Perfecto! Newton es [M][L][T]^-2.",
+                            "feedbackIncorrect": "Incorrecto. La fuerza posee la dimensión '[M][L][T]^-2'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cuál es la dimensión de la presión física definida como Fuerza dividida entre Área?",
+                            "correctAnswer": "[M][L]^-1[T]^-2",
+                            "hint": "Divide las dimensiones de fuerza [M][L][T]^-2 entre las de área [L]².",
+                            "feedbackCorrect": "¡Excelente! Presión es [M][L]^-1[T]^-2.",
+                            "feedbackIncorrect": "Incorrecto. Queda como '[M][L]^-1[T]^-2'.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si sumamos dos variables en física A = B + C, ¿cuál es la regla de oro que exige el principio de homogeneidad de Fourier?",
+                            "options": [
+                                "Que los tres términos A, B y C posean exactamente las mismas dimensiones físicas fundamentales",
+                                "Que el término C deba ser siempre un número entero adimensional",
+                                "Que la suma de B y C deba ser igual a la unidad adimensional 1",
+                                "Que las unidades de B deban cancelarse con las del denominador de C"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "No podemos sumar físicamente peras con manzanas; solo podemos sumar variables de idéntica naturaleza física.",
+                            "feedbackCorrect": "¡Excelente! Homogeneidad implica consistencia dimensional mutua.",
+                            "feedbackIncorrect": "Incorrecto. Fourier exige que todos los términos de una suma tengan exactamente la misma dimensión física.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "¿Es el radián (unidad de medida de ángulos en geometría y física) una variable dimensional?",
+                            "options": [
+                                "No. El radián es adimensional ya que representa el cociente de dos longitudes (arco/radio), quedando [L]/[L] = 1",
+                                "Sí. Tiene dimensión de longitud [L] porque se mide sobre la circunferencia circular",
+                                "Sí. Su dimensión fundamental es el Tiempo [T] debido a que describe rotaciones periódicas",
+                                "No. Ninguna unidad de medida geométrica puede utilizarse en el análisis de física"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Analiza la fórmula trigonométrica del radián: ángulo = longitud del arco circular dividida por la longitud del radio.",
+                            "feedbackCorrect": "¡Excelente! Los ángulos son puramente adimensionales en ciencia.",
+                            "feedbackIncorrect": "Incorrecto. El radián es adimensional porque resulta de la proporción lineal de dos longitudes, cancelando sus dimensiones.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "El análisis dimensional valida la homogeneidad y consistencia matemática de las ecuaciones físicas analizando las variables en dimensiones fundamentales.",
+                    "videoPlaceholderText": "Video de Física: Introducción al análisis dimensional y principio de homogeneidad."
+                }
+            ]
+        },
+        {
+            "title": "Unidad 2: Conversión de Unidades y Notación Científica",
+            "lessons": [
+                {
+                    "id": "metodo-factor-conversion",
+                    "title": "Lección 2.1: El Método del Factor de Conversión",
+                    "introduction": "Elimina toda posibilidad de error en tus mediciones multiplicando por factores de fracción equivalentes a la unidad.",
+                    "explanationHtml": "<p>Para realizar conversiones de unidades científicas con total seguridad y evitar confusiones aritméticas, aplicamos el **Método del Factor de Conversión**:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li>Consiste en multiplicar la cantidad original por una fracción de equivalencia física cuyo valor real es igual a 1 (ej. $1 \\text{ m} / 100 \\text{ cm} = 1$).</li><li>La unidad que deseamos eliminar debe colocarse en la posición cruzada u opuesta de la fracción (si la original está en el numerador, en el factor debe ir en el denominador) para permitir su cancelación algebraica.</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Cancelación de Unidades</p><p class=\"text-xs font-mono font-bold text-primary\">Unidad_Original &times; (Unidad_Nueva / Unidad_Original) = Unidad_Nueva</p><p class=\"text-xs text-slate-505\">Cruzar las unidades asegura algebraicamente que la unidad no deseada se reduzca a la unidad mediante la división.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">FACTOR DE CONVERSIÓN SIMPLE</text><rect x=\"30\" y=\"40\" width=\"240\" height=\"55\" fill=\"#eff6ff\" stroke=\"#bfdbfe\" rx=\"8\" /><text x=\"150\" y=\"60\" font-size=\"11\" font-family=\"monospace\" fill=\"#1e40af\" font-weight=\"extrabold\" text-anchor=\"middle\">150 cm &times; ( 1 m / 100 cm ) = 1.5 m</text><text x=\"75\" y=\"80\" font-size=\"7\" fill=\"#64748b\" text-anchor=\"middle\">cm tachado</text><text x=\"210\" y=\"80\" font-size=\"7\" fill=\"#64748b\" text-anchor=\"middle\">cm tachado</text></svg>",
+                    "svgDescription": "Operación de factor de conversión. Muestra cómo se tachan algebraicamente las unidades homólogas cruzadas en el numerador y denominador.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Convierte de forma estructurada 350 metros a kilómetros utilizando el método del factor de conversión.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1 Identifica la equivalencia:</strong> $1 \\text{ km} = 1000 \\text{ m}$.</li><li><strong>Paso 2 Plantea el factor:</strong> Colocamos metros en el denominador para cancelar los metros originales del numerador: <br>$350 \\text{ m} \\times \\left( \\frac{1 \\text{ km}}{1,000 \\text{ m}} \\right)$.</li><li><strong>Paso 3 Opera y cancela:</strong> Tachamos metros y operamos numéricamente: <br>$350 \\div 1,000 = 0.35 \\text{ km}$.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> Equivale a **0.35 kilómetros**.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Multiplicar en lugar de dividir por error de posición:</strong> Colocar las unidades al revés en el factor de fracción (ej: multiplicar 150 cm por 100 cm / 1 m, dando como resultado erróneo 15,000 cm²/m). Siempre cancela de forma diagonal cruzada.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Convierte 4.5 kilómetros de distancia a metros. Ingresa el número entero:",
+                            "correctAnswer": "4500",
+                            "hint": "Multiplica por el factor 1,000 m / 1 km.",
+                            "feedbackCorrect": "¡Excelente! 4.5 km equivalen a 4,500 metros.",
+                            "feedbackIncorrect": "Incorrecto. 4.5 × 1,000 = 4,500 metros.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si una tubería importada mide 60 pulgadas de largo, ¿cuál es su longitud en pies? (1 pie = 12 pulgadas):",
+                            "correctAnswer": "5",
+                            "hint": "Divide las pulgadas entre 12 utilizando el factor de conversión (1 pie / 12 in).",
+                            "feedbackCorrect": "¡Perfecto! 60 pulgadas equivalen a 5 pies de largo.",
+                            "feedbackIncorrect": "Incorrecto. 60 / 12 = 5 pies.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Convierte una masa de 300 libras a Quintales. Ingresa el número entero:",
+                            "correctAnswer": "3",
+                            "hint": "Multiplica 300 lb por el factor (1 Qq / 100 lb).",
+                            "feedbackCorrect": "¡Excelente! Equivale a 3 Quintales.",
+                            "feedbackIncorrect": "Incorrecto. 300 lb / 100 = 3 Quintales.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si corres una distancia de 10 kilómetros por las calles de Antigua Guatemala, ¿a cuántas millas equivale aproximadamente la carrera? (Dato: 1 milla ≈ 1.609 km):",
+                            "options": [
+                                "6.22 millas",
+                                "16.09 millas",
+                                "10.00 millas",
+                                "4.50 millas"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Aplica el factor de conversión dividiendo los 10 kilómetros entre 1.609 km/milla.",
+                            "feedbackCorrect": "¡Excelente! Equivale a aproximadamente 6.22 millas.",
+                            "feedbackIncorrect": "Incorrecto. 10 / 1.609 ≈ 6.22 millas.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Si un rollo de alambre de cobre de precisión marca 240 centímetros, ¿cuál es su longitud exacta expresada en metros?",
+                            "options": [
+                                "2.40 metros",
+                                "24.0 metros",
+                                "0.24 metros",
+                                "240.0 metros"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Divide 240 centímetros entre la constante métrica de 100 cm por metro.",
+                            "feedbackCorrect": "¡Perfecto! Equivale a 2.4 metros.",
+                            "feedbackIncorrect": "Incorrecto. 240 cm / 100 = 2.4 metros.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "El método del factor de conversión elimina errores cruzando algebraicamente las unidades homólogas a descartar mediante fracciones de valor unitario.",
+                    "videoPlaceholderText": "Video de Física: Método del factor de conversión paso a paso."
+                },
+                {
+                    "id": "conversion-unidades-compuestas",
+                    "title": "Lección 2.2: Conversión de Unidades Compuestas (Velocidad y Densidad)",
+                    "introduction": "Aprende a encadenar múltiples fracciones para realizar conversiones complejas de unidades compuestas simultáneamente.",
+                    "explanationHtml": "<p>Las variables físicas avanzadas suelen ser compuestas (ej. velocidad: $\\text{km/h}$, densidad: $\\text{g/cm}^3$). Para convertirlas de forma limpia, aplicamos **factores de conversión encadenados consecutivos**, cancelando una a una las dimensiones físicas:</p><p class=\"mt-3\"><strong>Ejemplo de Conversión de Velocidad:</strong> Para pasar de $\\text{km/h}$ a $\\text{m/s}$ encadenamos los factores de longitud y tiempo:</p><p class=\"text-center font-mono font-extrabold text-primary my-2\">Vel_m/s = (Vel_km/h &times; 1000 m / 1 km) &times; (1 h / 3600 s)</p><p class=\"mt-3\">Esto simplifica la operación a un atajo directo muy útil en cinemática:</p><ul class=\"list-disc pl-5 space-y-1 my-2\"><li>De $\\text{km/h}$ a $\\text{m/s}$ &rArr; **Dividir entre 3.6**</li><li>De $\\text{m/s}$ a $\\text{km/h}$ &rArr; **Multiplicar por 3.6**</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Atajo de Conversión de Velocidad</p><p class=\"text-base font-mono font-extrabold text-primary\">km/h &divide; 3.6 = m/s &nbsp;&bull;&nbsp; m/s &times; 3.6 = km/h</p><p class=\"text-xs text-slate-505\">Ejemplo: 90 km/h &divide; 3.6 = 25 m/s. 10 m/s &times; 3.6 = 36 km/h.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">CONVERSIÓN COMPUESTA EN CADENA</text><rect x=\"20\" y=\"40\" width=\"260\" height=\"55\" fill=\"#eff6ff\" stroke=\"#bfdbfe\" rx=\"8\" /><text x=\"150\" y=\"60\" font-size=\"9\" font-family=\"monospace\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">36 km/h &times; (1000m / 1km) &times; (1h / 3600s)</text><text x=\"150\" y=\"78\" font-size=\"10\" font-family=\"monospace\" fill=\"#2563eb\" font-weight=\"extrabold\" text-anchor=\"middle\">Resultado = 10 m/s</text></svg>",
+                    "svgDescription": "Encadenamiento de factores. Muestra la multiplicación simultánea por factores de longitud y de tiempo para transformar km/h a m/s.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Un camión viaja por la autopista a Palín a $108 \\text{ km/h}$. Convierte su velocidad a metros por segundo ($m/s$) aplicando el método estructurado y el atajo.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1 Método encadenado:</strong> <br>$\\frac{108 \\text{ km}}{\\text{h}} \\times \\left(\\frac{1,000 \\text{ m}}{1 \\text{ km}}\\right) \\times \\left(\\frac{1 \\text{ h}}{3,600 \\text{ s}}\\right) = \\frac{108,000 \\text{ m}}{3,600 \\text{ s}} = 30 \\text{ m/s}$.</li><li><strong>Paso 2 Aplicación del Atajo:</strong> Dividimos directamente el valor lineal entre 3.6: <br>$108 \\div 3.6 = 30 \\text{ m/s}$.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> La velocidad es de **30 m/s**.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Olvidar potencias en áreas o volúmenes:</strong> Decir que $1 \\text{ m}^3$ equivale a $100 \\text{ cm}^3$ al convertir densidades. Recuerda elevar la equivalencia lineal a la potencia volumétrica: $(1 \\text{ m})^3 = (100 \\text{ cm})^3 \\rArr 1 \\text{ m}^3 = 1,000,000 \\text{ cm}^3$.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Convierte una velocidad de 72 km/h a metros por segundo (m/s). Ingresa el número entero:",
+                            "correctAnswer": "20",
+                            "hint": "Aplica el atajo directo: divide 72 entre 3.6.",
+                            "feedbackCorrect": "¡Excelente! 72 km/h equivale a 20 m/s.",
+                            "feedbackIncorrect": "Incorrecto. 72 / 3.6 = 20 m/s.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Convierte una velocidad de 15 m/s a kilómetros por hora (km/h). Ingresa el número entero:",
+                            "correctAnswer": "54",
+                            "hint": "Aplica el atajo directo: multiplica 15 por 3.6.",
+                            "feedbackCorrect": "¡Perfecto! 15 m/s equivale a 54 km/h.",
+                            "feedbackIncorrect": "Incorrecto. 15 × 3.6 = 54 km/h.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si la densidad de una muestra mineral de Petén es de 3.5 g/cm³, ¿cuál es su densidad equivalente en kg/m³?",
+                            "correctAnswer": "3500",
+                            "hint": "Multiplica la densidad en g/cm³ por el factor de 1,000 para escalar a la unidad estándar del SI.",
+                            "feedbackCorrect": "¡Excelente! Equivale a 3,500 kg/m³.",
+                            "feedbackIncorrect": "Incorrecto. 3.5 g/cm³ * 1000 = 3,500 kg/m³.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si una alfombra de habitación cubre un área de exactamente 8 metros cuadrados, ¿cuántos centímetros cuadrados de área cubre?",
+                            "options": [
+                                "80,000 cm²",
+                                "800 cm²",
+                                "8,000 cm²",
+                                "80 cm²"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Un metro cuadrado contiene (100 cm) x (100 cm) = 10,000 cm². Multiplica 8 por 10,000.",
+                            "feedbackCorrect": "¡Excelente! Equivale a 80,000 cm².",
+                            "feedbackIncorrect": "Incorrecto. 8 m² * 10,000 cm²/m² = 80,000 cm².",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Si un grifo vierte agua a una tasa de caudal de 18 litros por minuto (L/min) en Antigua, ¿cuál es su caudal equivalente expresado en litros por segundo (L/s)?",
+                            "options": [
+                                "0.3 L/s",
+                                "1.8 L/s",
+                                "3.0 L/s",
+                                "1,080 L/s"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Multiplica por el factor de tiempo: (1 min / 60 segundos). Divide 18 entre 60.",
+                            "feedbackCorrect": "¡Perfecto! El caudal es de 0.3 L/s.",
+                            "feedbackIncorrect": "Incorrecto. 18 L / 60 s = 0.3 L/s.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "Las variables compuestas exigen la multiplicación sucesiva ordenada de factores o la aplicación de atajos de escala (como dividir entre 3.6 para velocidades) para garantizar consistencia.",
+                    "videoPlaceholderText": "Video de Física: Conversión de km/h a m/s y densidades complejas."
+                },
+                {
+                    "id": "notacion-cientifica-prefijos",
+                    "title": "Lección 2.3: Notación Científica y Prefijos Métricos",
+                    "introduction": "Aprende a simplificar la escritura de números extremadamente grandes o pequeños utilizando potencias de 10 y los prefijos estándar del SI.",
+                    "explanationHtml": "<p>En física trabajamos con escalas inmensas (como la masa planetaria) o ínfimas (como el radio de un protón). La <strong>notación científica</strong> simplifica su expresión escribiendo los números como el producto de una mantisa entre 1 y 10 multiplicada por una potencia de 10:</p><p class=\"text-center font-mono font-extrabold text-primary my-2\">a &times; 10^n &nbsp;&nbsp; (donde 1 &le; a &lt; 10)</p><p class=\"mt-3\">El Sistema Internacional complementa esto con **prefijos métricos** estándar:</p><ul class=\"list-disc pl-5 space-y-1.5 my-2\"><li><strong>Mega (M):</strong> $10^6$ (un millón)</li><li><strong>Kilo (k):</strong> $10^3$ (mil)</li><li><strong>mili (m):</strong> $10^{-3}$ (un milésimo)</li><li><strong>micro ($mu$):</strong> $10^{-6}$ (un millonésimo)</li><li><strong>nano (n):</strong> $10^{-9}$ (un billonésimo)</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Escala de Prefijos Comunes</p><p class=\"text-xs font-mono font-bold text-primary\">M (Mega - 10⁶) | k (kilo - 10³) || m (mili - 10⁻³) | &mu; (micro - 10⁻⁶) | n (nano - 10⁻⁹)</p><p class=\"text-xs text-slate-555\">Mover el punto decimal a la izquierda aumenta el exponente de 10; moverlo a la derecha lo disminuye.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">PREFIJOS DEL SISTEMA INTERNACIONAL</text><rect x=\"25\" y=\"38\" width=\"75\" height=\"40\" fill=\"#eff6ff\" stroke=\"#bfdbfe\" rx=\"6\" /><text x=\"62.5\" y=\"53\" font-size=\"8\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">MEGA (M)</text><text x=\"62.5\" y=\"68\" font-size=\"9\" font-family=\"monospace\" fill=\"#1e40af\" text-anchor=\"middle\">10⁶</text><rect x=\"112.5\" y=\"38\" width=\"75\" height=\"40\" fill=\"#eff6ff\" stroke=\"#bfdbfe\" rx=\"6\" /><text x=\"150\" y=\"53\" font-size=\"8\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">KILO (k)</text><text x=\"150\" y=\"68\" font-size=\"9\" font-family=\"monospace\" fill=\"#1e40af\" text-anchor=\"middle\">10³</text><rect x=\"200\" y=\"38\" width=\"75\" height=\"40\" fill=\"#fef2f2\" stroke=\"#fca5a5\" rx=\"6\" /><text x=\"237.5\" y=\"53\" font-size=\"8\" fill=\"#991b1b\" font-weight=\"bold\" text-anchor=\"middle\">NANO (n)</text><text x=\"237.5\" y=\"68\" font-size=\"9\" font-family=\"monospace\" fill=\"#991b1b\" text-anchor=\"middle\">10⁻⁹</text></svg>",
+                    "svgDescription": "Diagrama de prefijos SI. Estructura visual de los prefijos más utilizados para denotar escalas millonésimas o de gran magnitud.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Expresa la longitud de onda de un haz láser escolar medido en el laboratorio de $0.00000065 \\text{ metros}$ en notación científica y en nanómetros ($nm$).</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1 Notación Científica:</strong> Corremos el punto decimal 7 posiciones hacia la derecha: <br>$6.5 \\times 10^{-7} \\text{ metros}$.</li><li><strong>Paso 2 Conversión a nanómetros:</strong> Sabemos que nano ($n$) equivale a $10^{-9}$ metros: <br>$0.00000065 \\text{ m} = 650 \\times 10^{-9} \\text{ m} = 650 \\text{ nm}$.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> $6.5 \\times 10^{-7}$ m o **650 nm**.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Usar exponentes positivos para valores infinitesimales:</strong> Escribir que el tamaño de una bacteria es $1.5 \\times 10^6$ m en lugar de $1.5 \\times 10^{-6}$ m. Recuerda que los exponentes negativos representan divisiones sucesivas entre 10 (decimales pequeños).</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Expresa en notación científica estándar el valor 0.00025. Utiliza la letra x para la multiplicación (ej: 2.5x10^-4):",
+                            "correctAnswer": "2.5x10^-4",
+                            "hint": "Mueve el punto decimal 4 posiciones a la derecha para ubicarlo entre el 2 y el 5.",
+                            "feedbackCorrect": "¡Excelente! Se escribe como 2.5x10^-4.",
+                            "feedbackIncorrect": "Incorrecto. Moviendo 4 lugares da '2.5x10^-4'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Expresa en notación científica extendida el valor 45,000,000 (ej: 4.5x10^7):",
+                            "correctAnswer": "4.5x10^7",
+                            "hint": "Mueve el punto decimal 7 posiciones a la izquierda.",
+                            "feedbackCorrect": "¡Perfecto! Se escribe como 4.5x10^7.",
+                            "feedbackIncorrect": "Incorrecto. Se representa como '4.5x10^7'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si compras un componente con una resistencia de 5 Kilohmios (kΩ), ¿a cuántos Ohmios equivale linealmente? Ingresa el entero:",
+                            "correctAnswer": "5000",
+                            "hint": "El prefijo kilo (k) indica multiplicación directa por 10³ (1,000).",
+                            "feedbackCorrect": "¡Excelente! Equivale a 5,000 Ohmios.",
+                            "feedbackIncorrect": "Incorrecto. 5 kΩ = 5,000 Ohmios.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "La distancia promedio del planeta Tierra al Sol es de aproximadamente 150,000,000,000 de metros. Expresa este gigantesco valor en notación científica:",
+                            "options": [
+                                "1.5 x 10¹¹ metros",
+                                "1.5 x 10⁹ metros",
+                                "15.0 x 10¹⁰ metros",
+                                "1.5 x 10⁻¹¹ metros"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Corrobora el desplazamiento del punto decimal: debes moverlo 11 posiciones completas a la izquierda.",
+                            "feedbackCorrect": "¡Excelente! Es 1.5 x 10¹¹ metros.",
+                            "feedbackIncorrect": "Incorrecto. Corresponde a 1.5 x 10¹¹ metros.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Si la capacidad de almacenamiento de un disco de computadora se detalla como 8 Megabytes (MB), ¿a cuántos Bytes equivale de forma estándar?",
+                            "options": [
+                                "8,000,000 Bytes",
+                                "8,000 Bytes",
+                                "800,000 Bytes",
+                                "80,000,000 Bytes"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "El prefijo Mega (M) representa exactamente un millón ($10^6$) de unidades.",
+                            "feedbackCorrect": "¡Perfecto! Equivale a 8,000,000 de Bytes.",
+                            "feedbackIncorrect": "Incorrecto. Mega indica un millón, por lo que son 8,000,000 Bytes.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "La notación científica simplifica la escritura de escalas extremas del universo y los prefijos métricos del SI actúan como abreviaciones algebraicas de potencias comunes de diez.",
+                    "videoPlaceholderText": "Video de Física: Notación científica y prefijos Mega, kilo, micro y nano."
+                }
+            ]
+        },
+        {
+            "title": "Unidad 3: Cifras Significativas y Redondeo",
+            "lessons": [
+                {
+                    "id": "identificacion-cifras-significativas",
+                    "title": "Lección 3.1: Identificación de Cifras Significativas",
+                    "introduction": "Domina las reglas metrológicas para identificar qué dígitos de un número medido aportan información real de precisión.",
+                    "explanationHtml": "<p>Toda medición física experimental posee un límite de precisión dado por el instrumento. Las <strong>cifras significativas</strong> son los dígitos válidos que se reportan con honestidad instrumental. Para identificarlas aplicamos reglas estrictas:</p><ol class=\"list-decimal pl-5 space-y-1.5 my-3\"><li>Todos los dígitos distintos de cero son significativos (ej. $12.3$ tiene 3 cifras).</li><li>Los ceros situados entre dígitos distintos de cero son significativos (ej. $105$ tiene 3 cifras, $8,002$ tiene 4 cifras).</li><li>Los ceros a la izquierda del primer dígito distinto de cero **no** son significativos, solo marcan posición decimal (ej. $0.0025$ tiene 2 cifras).</li><li>Los ceros finales a la derecha de un punto decimal **sí** son significativos por indicar resolución instrumental (ej. $45.00$ tiene 4 cifras).</li></ol>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Resumen de Ceros Significativos</p><p class=\"text-xs font-mono font-bold text-primary\">Cero a la Izquierda: NO cuenta || Cero Intercalado: SÍ cuenta || Cero Final Decimal: SÍ cuenta</p><p class=\"text-xs text-slate-505\">Escribir 2.50 g expresa mayor precisión instrumental de laboratorio que escribir simplemente 2.5 g.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">CIFRAS SIGNIFICATIVAS EN ACCIÓN</text><rect x=\"30\" y=\"38\" width=\"240\" height=\"65\" fill=\"#eff6ff\" stroke=\"#bfdbfe\" rx=\"8\" /><text x=\"150\" y=\"58\" font-size=\"13\" font-family=\"monospace\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">Valor: 0.004050</text><text x=\"75\" y=\"80\" font-size=\"7\" fill=\"#dc2626\" text-anchor=\"middle\">NO significativos</text><text x=\"200\" y=\"80\" font-size=\"7\" fill=\"#059669\" font-weight=\"bold\" text-anchor=\"middle\">SÍ significativos (4 cifras)</text></svg>",
+                    "svgDescription": "Análisis de cifras significativas. Detalla con colores la diferencia reglamentaria entre ceros no significativos a la izquierda y ceros significativos.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Determina la cantidad de cifras significativas en las siguientes mediciones del laboratorio: a) $0.00204 \\text{ metros}$, b) $120.0 \\text{ gramos}$.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1 en 0.00204:</strong> Los tres ceros iniciales a la izquierda no cuentan. El cero del medio está intercalado entre no nulos ($2$ y $4$), por lo que sí cuenta. Hay **3 cifras significativas** (el 2, 0 y 4).</li><li><strong>Paso 2 en 120.0:</strong> Los ceros finales después del punto decimal indican precisión instrumental, por lo que cuentan todos. Hay **4 cifras significativas** (el 1, 2, 0 y 0).</li></ol>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Pensar que contar cifras es solo contar dígitos escritos:</strong> Asumir que todos los números tienen el mismo peso y contar los ceros posicionales de decimales muy pequeños como significativos (ej: decir que 0.005 g tiene 4 cifras en lugar de 1 sola cifra).</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "¿Cuántas cifras significativas tiene el valor de medida experimental 0.005? Ingresa el entero:",
+                            "correctAnswer": "1",
+                            "hint": "Los ceros a la izquierda del primer dígito no nulo no se cuentan en las cifras significativas.",
+                            "feedbackCorrect": "¡Excelente! Tiene una única cifra significativa (el 5).",
+                            "feedbackIncorrect": "Incorrecto. Los ceros a la izquierda no aportan precisión de escala, tiene '1' cifra.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cuántas cifras significativas posee el valor reportado de 145.00 metros?",
+                            "correctAnswer": "5",
+                            "hint": "Los ceros situados a la derecha del punto decimal sí cuentan en las cifras significativas.",
+                            "feedbackCorrect": "¡Perfecto! Posee 5 cifras significativas.",
+                            "feedbackIncorrect": "Incorrecto. Al indicar precisión sub-decimal, los ceros cuentan, sumando '5' cifras.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cuántas cifras significativas tiene el valor 8,002 kilogramos?",
+                            "correctAnswer": "4",
+                            "hint": "Los ceros intercalados entre dígitos no nulos sí son significativos.",
+                            "feedbackCorrect": "¡Excelente! Al estar rodeados por el 8 y el 2, los ceros cuentan, dando 4 cifras.",
+                            "feedbackIncorrect": "Incorrecto. Los ceros intercalados cuentan, por lo que tiene '4' cifras.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si medimos con un vernier la longitud de una pieza en Antigua y obtenemos exactamente 1.050 centímetros, ¿cuántas cifras significativas reportamos?",
+                            "options": [
+                                "4 cifras significativas",
+                                "3 cifras significativas",
+                                "2 cifras significativas",
+                                "5 cifras significativas"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "El cero intercalado y el cero final decimal cumplen con los requisitos de conteo significativos.",
+                            "feedbackCorrect": "¡Excelente! Son 4 cifras significativas en total.",
+                            "feedbackIncorrect": "Incorrecto. Cuenta tanto el cero central como el final decimal, sumando 4 cifras.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Expresa el número aproximado 30,000 en notación científica de modo que refleje que posee exactamente 2 cifras significativas:",
+                            "options": [
+                                "3.0 x 10⁴",
+                                "3 x 10⁴",
+                                "3.00 x 10⁴",
+                                "3.000 x 10⁴"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "La mantisa de la notación científica debe mostrar explícitamente solo los dígitos significativos a reportar.",
+                            "feedbackCorrect": "¡Perfecto! 3.0 tiene exactamente 2 cifras significativas.",
+                            "feedbackIncorrect": "Incorrecto. '3 x 10⁴' tiene 1 cifra, y '3.00 x 10⁴' tiene 3 cifras. La correcta es 3.0 x 10⁴.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "Las cifras significativas delimitan de forma honesta y técnica el límite de resolución instrumental de laboratorio, rigiéndose por reglas cerradas de conteo de ceros.",
+                    "videoPlaceholderText": "Video de Física: Reglas de identificación de cifras significativas."
+                },
+                {
+                    "id": "operaciones-cifras-significativas",
+                    "title": "Lección 3.2: Operaciones con Cifras Significativas",
+                    "introduction": "Aprende a acotar con rigor la precisión del resultado final de sumas, restas, productos y cocientes experimentales.",
+                    "explanationHtml": "<p>Al procesar datos de laboratorio, el resultado calculado no puede ser más preciso que los datos de los que proviene. Para operar aplicamos reglas estrictas:</p><p class=\"mt-3\"><strong>1. Regla para Suma y Resta:</strong> El resultado se limita a la menor cantidad de **posiciones decimales** que tenga cualquiera de los datos originales (ej. $12.3$ m + $1.45$ m = $13.75$ m &asymp; $13.8$ m por limitarse a 1 decimal).</p><p class=\"mt-3\"><strong>2. Regla para Multiplicación y División:</strong> El resultado se limita a la menor cantidad de **cifras significativas totales** de cualquiera de los factores (ej. $4.50$ m &times; $2.0$ m = $9.00$ m² &asymp; $9.0$ m² por limitarse a 2 cifras).</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Reglas Operativas de Precisión</p><p class=\"text-xs font-mono font-bold text-primary\">Suma/Resta: menor número de decimales</p><p class=\"text-xs font-mono font-bold text-primary\">Mult/Div: menor número de cifras significativas totales</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">REGLAS DE OPERACIÓN</text><rect x=\"20\" y=\"40\" width=\"115\" height=\"55\" fill=\"#eff6ff\" stroke=\"#bfdbfe\" rx=\"8\" /><text x=\"77.5\" y=\"58\" font-size=\"9\" fill=\"#1e40af\" font-weight=\"extrabold\" text-anchor=\"middle\">SUMA &amp; RESTA</text><text x=\"77.5\" y=\"78\" font-size=\"8\" fill=\"#1e40af\" text-anchor=\"middle\">Menor cantidad</text><text x=\"77.5\" y=\"88\" font-size=\"8\" fill=\"#1e40af\" text-anchor=\"middle\">de decimales</text><rect x=\"165\" y=\"40\" width=\"115\" height=\"55\" fill=\"#ecfdf5\" stroke=\"#a7f3d0\" rx=\"8\" /><text x=\"222.5\" y=\"58\" font-size=\"9\" fill=\"#065f46\" font-weight=\"extrabold\" text-anchor=\"middle\">MULT &amp; DIV</text><text x=\"222.5\" y=\"78\" font-size=\"8\" fill=\"#065f46\" text-anchor=\"middle\">Menor cantidad</text><text x=\"222.5\" y=\"88\" font-size=\"8\" fill=\"#065f46\" text-anchor=\"middle\">de cifras totales</text></svg>",
+                    "svgDescription": "Reglas de propagación de cifras significativas. Distingue los límites de decimales (suma/resta) frente a los límites de cifras totales (multiplicación/división).",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Mides las aristas de una chapa metálica: largo = $12.35 \\text{ cm}$ (4 cifras, 2 decimales) y ancho = $4.2 \\text{ cm}$ (2 cifras, 1 decimal). Calcula el área total con el rigor de cifras significativas.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1 Multiplicación básica:</strong> Operamos los factores: <br>$12.35 \\times 4.2 = 51.87 \\text{ cm}^2$.</li><li><strong>Paso 2 Aplica la regla:</strong> Al tratarse de una multiplicación, el resultado se acota a la menor cantidad de cifras significativas de los factores. El ancho 4.2 tiene 2 cifras (el menor).</li><li><strong>Paso 3 Redondea a 2 cifras totales:</strong> 51.87 se redondea a 52.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> El área es de **52 cm²**.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Copiar todos los decimales de la calculadora:</strong> Reportar un área de 51.870000 cm² en tu reporte escolar. La calculadora asume precisión infinita pura, pero físicamente tu instrumento de medida limita la validez a solo dos cifras reales.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Resuelve aplicando cifras significativas la suma lineal: 15.42 + 8.1. Escribe el número decimal con punto:",
+                            "correctAnswer": "23.5",
+                            "hint": "Suma básica = 23.52. Regla de suma: limítalo a la menor cantidad de posiciones decimales (8.1 tiene solo 1 decimal).",
+                            "feedbackCorrect": "¡Excelente! Se limita a un único decimal, dando 23.5.",
+                            "feedbackIncorrect": "Incorrecto. 15.42 (2 dec) + 8.1 (1 dec) = 23.52. Redondeado a 1 decimal es '23.5'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Resuelve aplicando cifras significativas la multiplicación: 4.0 x 1.25. Escribe el decimal con punto:",
+                            "correctAnswer": "5.0",
+                            "hint": "Multiplicación básica = 5. Regla de multiplicación: limítalo a la menor cantidad de cifras totales (4.0 tiene 2 cifras).",
+                            "feedbackCorrect": "¡Perfecto! Se acota a dos cifras significativas totales, resultando en 5.0.",
+                            "feedbackIncorrect": "Incorrecto. Multiplicación básica = 5. Como el factor 4.0 limita a 2 cifras, debe reportarse como '5.0'.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Resuelve aplicando cifras significativas la resta lineal: 125.37 - 100.0. Escribe el decimal con punto:",
+                            "correctAnswer": "25.4",
+                            "hint": "Resta básica = 25.37. Limítalo a la menor cantidad de posiciones decimales (100.0 tiene 1 decimal).",
+                            "feedbackCorrect": "¡Excelente! Se acota a 1 decimal, resultando en 25.4.",
+                            "feedbackIncorrect": "Incorrecto. 25.37 redondeado a 1 decimal da '25.4'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si divides una distancia de 36.0 metros (3 cifras) entre un tiempo de 3.00 segundos (3 cifras), ¿cómo debes reportar el resultado de velocidad?",
+                            "options": [
+                                "12.0 m/s",
+                                "12 m/s",
+                                "12.00 m/s",
+                                "12.000 m/s"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Al ser una división, se conserva la menor cantidad de cifras significativas totales de los datos originales (ambos poseen 3 cifras).",
+                            "feedbackCorrect": "¡Excelente! Se reportan 3 cifras: 12.0 m/s.",
+                            "feedbackIncorrect": "Incorrecto. Se limita a 3 cifras significativas totales por regla de división, quedando 12.0 m/s.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Si multiplicamos una longitud de 0.0050 metros (2 cifras) por un factor de escala de 20.0 metros (3 cifras), el área resultante expresada en cifras significativas es:",
+                            "options": [
+                                "0.10 m²",
+                                "0.1 m²",
+                                "0.100 m²",
+                                "0.1000 m²"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Multiplicación básica = 0.1. Se limita a la menor cantidad de cifras totales (0.0050 tiene 2 cifras).",
+                            "feedbackCorrect": "¡Perfecto! Se acota a 2 cifras, resultando en 0.10 m².",
+                            "feedbackIncorrect": "Incorrecto. 0.0050 limita a 2 cifras, por lo que el resultado debe escribirse con 2 cifras: 0.10 m².",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "Las operaciones exigen limitar las posiciones decimales (sumas y restas) o las cifras significativas totales (multiplicación y división) para no falsear la resolución instrumental.",
+                    "videoPlaceholderText": "Video de Física: Cómo operar y redondear con cifras significativas."
+                },
+                {
+                    "id": "criterios-redondeo-ciencias",
+                    "title": "Lección 3.3: Criterios de Redondeo en Ciencias",
+                    "introduction": "Domina las normas y criterios de redondeo científicos, aprendiendo la regla del entero par más cercano para evitar sesgar bases de datos.",
+                    "explanationHtml": "<p>Para ajustar el resultado final a la cantidad correspondiente de cifras significativas, aplicamos criterios de redondeo estandarizados:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li>Si el dígito a eliminar es menor que 5, el último dígito conservado se queda igual (ej. $4.234$ redondeado a 3 cifras da $4.23$).</li><li>Si el dígito a eliminar es mayor que 5, el último dígito conservado aumenta en 1 (ej. $8.126$ redondeado a 3 cifras da $8.13$).</li><li><strong>Regla del Entero Par más Cercano (Redondeo Simétrico):</strong> Si el dígito a eliminar es exactamente 5 (o 5 seguido de ceros), se redondea al número par más cercano. Esto evita la acumulación de sesgos estadísticos positivos sistemáticos al promediar grandes bases de datos.</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Regla del 5 Impar/Par</p><p class=\"text-xs font-mono font-bold text-primary\">2.345 &rArr; 2.34 (4 es par) || 2.335 &rArr; 2.34 (3 es impar, sube al par)</p><p class=\"text-xs text-slate-555\">Redondear siempre hacia arriba cuando termina en 5 introduce un sesgo positivo sistemático en el análisis de datos masivos.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">REGLA DEL ENTERO PAR (EL 5 EXACTO)</text><rect x=\"20\" y=\"40\" width=\"115\" height=\"55\" fill=\"#eff6ff\" stroke=\"#bfdbfe\" rx=\"8\" /><text x=\"77.5\" y=\"58\" font-size=\"9\" fill=\"#1e40af\" font-weight=\"extrabold\" text-anchor=\"middle\">15.65 &rarr; 15.6</text><text x=\"77.5\" y=\"78\" font-size=\"8\" fill=\"#1e40af\" text-anchor=\"middle\">El 6 es par</text><text x=\"77.5\" y=\"88\" font-size=\"8\" fill=\"#1e40af\" text-anchor=\"middle\">Se queda igual</text><rect x=\"165\" y=\"40\" width=\"115\" height=\"55\" fill=\"#fef2f2\" stroke=\"#fca5a5\" rx=\"8\" /><text x=\"222.5\" y=\"58\" font-size=\"9\" fill=\"#991b1b\" font-weight=\"extrabold\" text-anchor=\"middle\">15.75 &rarr; 15.8</text><text x=\"222.5\" y=\"78\" font-size=\"8\" fill=\"#991b1b\" text-anchor=\"middle\">El 7 es impar</text><text x=\"222.5\" y=\"88\" font-size=\"8\" fill=\"#991b1b\" text-anchor=\"middle\">Sube a par (8)</text></svg>",
+                    "svgDescription": "Esquema de redondeo simétrico al par. Ilustra cómo el dígito final 5 se comporta frente a un término anterior par (se mantiene) e impar (sube al par).",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Redondea a exactamente 3 cifras significativas las mediciones: a) $4.234 \\text{ m}$, b) $8.126 \\text{ g}$, c) $2.345 \\text{ s}$ (el término a eliminar es exactamente 5).</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1 en 4.234:</strong> El cuarto dígito es 4 (<5). Se trunca directamente a **4.23**.</li><li><strong>Paso 2 en 8.126:</strong> El cuarto dígito es 6 (>5). Sube el anterior en uno: **8.13**.</li><li><strong>Paso 3 en 2.345:</strong> El dígito a eliminar es exactamente 5. El dígito anterior es 4 (que es par). Por lo tanto, se queda como **2.34** para aproximarlo al par más cercano.</li></ol>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Redondear siempre hacia arriba cuando termina en 5:</strong> Creer que 5 siempre obliga a subir el término anterior de forma absoluta. En ciencia formal, esto acumula un sesgo positivo sistemático estadístico. La regla del par equilibra matemáticamente la mitad hacia arriba y la mitad hacia abajo.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Redondea el valor decimal 15.65 a exactamente 3 cifras significativas aplicando la regla del entero par más cercano. Escribe el decimal con punto:",
+                            "correctAnswer": "15.6",
+                            "hint": "El término a eliminar es exactamente 5. El dígito anterior es 6 (par), por lo que se conserva intacto.",
+                            "feedbackCorrect": "¡Excelente! Al ser 6 par, se conserva como 15.6.",
+                            "feedbackIncorrect": "Incorrecto. Por regla del par, 15.65 redondeado a 3 cifras es '15.6'.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Redondea el valor decimal 0.002376 a exactamente 2 cifras significativas. Escribe el decimal con punto:",
+                            "correctAnswer": "0.0024",
+                            "hint": "Las dos cifras significativas inician en el 2. El dígito siguiente es 7 (>5), por lo que aumenta en uno.",
+                            "feedbackCorrect": "¡Perfecto! Se redondea a 0.0024.",
+                            "feedbackIncorrect": "Incorrecto. 0.002376 redondeado a 2 cifras es '0.0024'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Redondea el valor 98.25 a exactamente 3 cifras significativas usando la regla del entero par más cercano. Escribe el decimal con punto:",
+                            "correctAnswer": "98.2",
+                            "hint": "El dígito a eliminar es exactamente 5. El dígito anterior es 2 (par), por lo que se conserva intacto.",
+                            "feedbackCorrect": "¡Excelente! Queda como 98.2.",
+                            "feedbackIncorrect": "Incorrecto. Al ser 2 un entero par, se conserva como '98.2'.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si sumamos tres longitudes medidas por diferentes personas en un terreno de Antigua: 12.3 m (1 decimal), 150.45 m (2 decimales) y 0.234 m (3 decimales). ¿Cuál es la longitud total reportada con el número correcto de cifras significativas?",
+                            "options": [
+                                "163.0 m",
+                                "162.984 m",
+                                "162.98 m",
+                                "163 m"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Suma lineal = 162.984 m. Por regla de suma, el resultado se limita a 1 decimal (por el término 12.3). Redondea 162.984 a 1 decimal.",
+                            "feedbackCorrect": "¡Excelente! Redondeado a 1 decimal da 163.0 m.",
+                            "feedbackIncorrect": "Incorrecto. Se limita a 1 decimal: 162.984 se redondea a 163.0 m.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Resuelve y redondea correctamente la operación de división: 45.3 / 2.50.",
+                            "options": [
+                                "18.1",
+                                "18",
+                                "18.12",
+                                "18.120"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "45.3 (3 cifras) / 2.50 (3 cifras) = 18.12. El resultado debe reportarse con exactamente 3 cifras significativas totales.",
+                            "feedbackCorrect": "¡Perfecto! Redondeado a 3 cifras totales da 18.1.",
+                            "feedbackIncorrect": "Incorrecto. 18.12 redondeado a 3 cifras totales es 18.1.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "Los criterios científicos de redondeo unifican el ajuste de resultados instrumentales de laboratorio, aplicando el redondeo al par simétrico para evitar sesgos acumulativos de datos.",
+                    "videoPlaceholderText": "Video de Física: Reglas internacionales de redondeo y simetría del 5."
+                }
+            ]
+        }
+    ]
+},
 
     "vectores-fisica": `# Curso: Vectores en Física
 * **Materia:** Ciencias | **Nivel sugerido:** Diversificado
