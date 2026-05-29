@@ -4161,7 +4161,677 @@ e$) en la hipótesis nula, lo que invalida el diseño probabilístico de la prue
 * Un modelo de regresión lineal estima los ingresos mensuales de un local de artesanías en Antigua en miles de Quetzales (y) a partir de las visitas de turistas extranjeros en cientos (x): ŷ = 2.5x + 3.0. Si el local recibe 400 turistas extranjeros al mes (x = 4), calcula la proyección de ingresos y explica el significado de la ordenada b = 3.0. (R: Proyección de ingresos = Q13,000.00 al mes; b = 3.0 representa un ingreso base promedio de Q3,000.00 mensuales generados por clientes locales fijos sin visitas de turistas extranjeros. Retroalimentación: ŷ = 2.5*4 + 3 = 10 + 3 = 13 (en miles = Q13,000). b = 3.0 es el valor cuando x = 0).
 * Si r = -0.95 entre la temperatura ambiente de almacenamiento y la vida útil del café pergamino en días, ¿cuánto vale la bondad de ajuste R²? (R: 0.9025 o 90.25%).
 * ¿Qué nos indica un residuo positivo alto e = 8.5 en el caso práctico de ingresos de artesanías? (R: Que el local obtuvo Q8,500.00 de ingresos reales adicionales por encima de lo que el promedio de visitas del mes estimaba, indicando una venta excepcional o de gran valor).
-`
+`,
+
+    "algebra-lineal": {
+        isRichCourse: true,
+        title: "Álgebra Lineal",
+        units: [
+            {
+                title: "Unidad 1: Vectores y espacio vectorial",
+                lessons: [
+                    {
+                        id: "que-es-un-vector",
+                        title: "Lección 1.1: ¿Qué es un vector?",
+                        introduction: "Un vector es el bloque fundamental del álgebra lineal. Representa una cantidad física con magnitud, dirección y sentido, o una lista de números en ciencias de datos.",
+                        explanationHtml: '<p>En el mundo físico, existen cantidades que podemos describir con un solo número (escalares), como la temperatura (25 °C) o la masa (5 kg). Sin embargo, otras cantidades requieren más información: si te dicen que empujes una caja con una fuerza de 10 Newtons, preguntarás: <strong>¿hacia dónde?</strong></p><p class="mt-3">Un <strong>vector</strong> resuelve este problema agrupando tres propiedades esenciales:</p><ol class="list-decimal pl-5 space-y-1.5 my-3"><li><strong>Magnitud:</strong> El tamaño o longitud del vector (cuánto mide).</li><li><strong>Dirección:</strong> La línea sobre la que actúa (ej. horizontal o a 30° respecto al eje x).</li><li><strong>Sentido:</strong> Hacia dónde apunta (indicado por la punta de la flecha).</li></ol><p class="mt-3">En álgebra lineal, representamos un vector en el plano bidimensional como un par ordenado <span class="px-2 py-0.5 bg-slate-100 rounded text-slate-800 font-mono font-bold">v = (x, y)</span>, donde <em>x</em> indica el desplazamiento horizontal y <em>y</em> el vertical desde el origen.</p>',
+                        formulaBoxHtml: '<div class="space-y-1"><p class="text-[10px] font-extrabold uppercase text-slate-400">Fórmula Clave: Magnitud (o Norma)</p><p class="text-xl font-mono font-extrabold text-primary">|\\vec{v}| = \\sqrt{x^2 + y^2}</p><p class="text-xs text-slate-500">Derivada directamente del Teorema de Pitágoras, donde las componentes del vector son los catetos y la magnitud es la hipotenusa.</p></div>',
+                        svgGraphic: '<svg viewBox="-10 -10 220 220" class="w-full max-w-[280px]" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="200" height="200" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" /><line x1="0" y1="160" x2="200" y2="160" stroke="#94a3b8" stroke-width="1.5" /><line x1="40" y1="0" x2="40" y2="200" stroke="#94a3b8" stroke-width="1.5" /><polygon points="200,160 193,156 193,164" fill="#94a3b8" /><polygon points="40,0 36,7 44,7" fill="#94a3b8" /><text x="185" y="175" font-size="10" font-family="sans-serif" font-weight="bold" fill="#64748b">X</text><text x="25" y="15" font-size="10" font-family="sans-serif" font-weight="bold" fill="#64748b">Y</text><line x1="40" y1="160" x2="160" y2="160" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="3,3" /><line x1="160" y1="160" x2="160" y2="70" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="3,3" /><line x1="40" y1="160" x2="157" y2="72" stroke="#2563eb" stroke-width="3" /><polygon points="160,70 149,74 154,82" fill="#2563eb" /><circle cx="160" cy="70" r="4" fill="#1e3a8a" /><text x="90" y="172" font-size="9" font-family="sans-serif" fill="#2563eb" font-weight="bold">x = 4</text><text x="168" y="120" font-size="9" font-family="sans-serif" fill="#10b981" font-weight="bold">y = 3</text><text x="100" y="100" font-size="11" font-family="sans-serif" fill="#2563eb" font-weight="extrabold">v = (4, 3)</text><text x="65" y="135" font-size="11" font-family="sans-serif" fill="#f59e0b" font-weight="extrabold">|v| = 5</text></svg>',
+                        svgDescription: "Representación gráfica del vector v = (4, 3) en el plano cartesiano. La magnitud se calcula como la raíz de 4² + 3² = 5.",
+                        workedExampleHtml: '<p><strong>Problema:</strong> Calcula la magnitud de un vector fuerza representado por <span class="font-mono font-bold">f = (-5, 12)</span> Newtons.</p><ol class="list-decimal pl-5 space-y-2 mt-2"><li><strong>Paso 1: Identifica las componentes.</strong> La componente horizontal es <em>x = -5</em> y la vertical es <em>y = 12</em>.</li><li><strong>Paso 2: Aplica la fórmula.</strong> Elevamos al cuadrado: <em>(-5)² = 25</em> y <em>12² = 144</em>. Cualquier negativo al cuadrado se vuelve positivo.</li><li><strong>Paso 3: Suma los resultados.</strong> <em>25 + 144 = 169</em>.</li><li><strong>Paso 4: Extrae la raíz cuadrada.</strong> <em>\\sqrt{169} = 13</em>.</li></ol><p class="mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl"><strong>Resultado:</strong> La magnitud del vector fuerza es exactamente <strong>13 Newtons</strong>.</p>',
+                        commonMistakesHtml: '<ul class="list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl"><li><strong>Ignorar el signo negativo al elevar al cuadrado:</strong> Escribir (-5)² = -25 es un error común. La magnitud física siempre es un número positivo y real.</li><li><strong>Confundir coordenadas con distancias:</strong> Un vector con componente (-3, 0) tiene una longitud real de 3 unidades positivas, nunca negativa.</li></ul>',
+                        exercises: [
+                            {
+                                question: "Si el vector velocidad de un móvil es v = (3, 4), ¿cuál es su rapidez (magnitud del vector)?",
+                                correctAnswer: "5",
+                                hint: "Usa la fórmula de la magnitud: \\sqrt{x^2 + y^2}.",
+                                feedbackCorrect: "¡Excelente! La rapidez es de 5 unidades. 3² + 4² = 25, y la raíz cuadrada de 25 es 5.",
+                                feedbackIncorrect: "Revisa los cálculos: eleva 3 al cuadrado (9) y 4 al cuadrado (16). Suma ambos (25) y calcula la raíz cuadrada.",
+                                difficulty: "básico",
+                                type: "short"
+                            },
+                            {
+                                question: "¿Cuál es la componente en el eje Y (vertical) del vector de posición w = (-8, 15)?",
+                                correctAnswer: "15",
+                                hint: "En el par ordenado (x, y), el primer valor representa a la X y el segundo a la Y.",
+                                feedbackCorrect: "¡Correcto! En el vector (-8, 15), la componente en X es -8 y la componente en Y es 15.",
+                                feedbackIncorrect: "Ten cuidado, la primera componente es X (-8) y la segunda componente es Y.",
+                                difficulty: "básico",
+                                type: "short"
+                            },
+                            {
+                                question: "Si un vector tiene origen en el punto (0, 0) y su extremo final se ubica en las coordenadas (6, 8), ¿cuánto mide su vector?",
+                                correctAnswer: "10",
+                                hint: "Las coordenadas del extremo representan las componentes del vector. Aplica la magnitud para (6, 8).",
+                                feedbackCorrect: "¡Perfecto! La longitud del vector es 10. \\sqrt{6^2 + 8^2} = 10.",
+                                feedbackIncorrect: "Revisa la suma: 6² = 36 y 8² = 64. 36 + 64 = 100. La raíz de 100 es 10.",
+                                difficulty: "intermedio",
+                                type: "short"
+                            },
+                            {
+                                question: "¿Cuál de las siguientes magnitudes físicas se clasifica como una cantidad ESCALAR en lugar de una cantidad vectorial?",
+                                options: [
+                                    "La velocidad de un viento soplando a 40 km/h al Norte",
+                                    "El desplazamiento de una hormiga 2 metros a la izquierda",
+                                    "La temperatura ambiental registrada de 22 °C",
+                                    "La fuerza de atracción magnética de 3 Newtons hacia abajo"
+                                ],
+                                correctAnswer: 2,
+                                hint: "Una cantidad escalar queda completamente explicada con un número y su unidad, sin requerir dirección ni sentido.",
+                                feedbackCorrect: "¡Muy bien! La temperatura de 22 °C es una cantidad escalar, ya que no tiene sentido decir '22 °C hacia el Norte'. Las demás sí requieren dirección y sentido.",
+                                feedbackIncorrect: "Incorrecto. Recuerda que la velocidad, fuerza y desplazamiento tienen dirección y sentido (son vectores). La temperatura no.",
+                                difficulty: "básico",
+                                type: "multiple"
+                            },
+                            {
+                                question: "Si un vector en el plano cartesiano es a = (0, -6), ¿hacia qué dirección y sentido apunta exactamente?",
+                                options: [
+                                    "Hacia la derecha (eje X positivo)",
+                                    "Hacia la izquierda (eje X negativo)",
+                                    "Hacia arriba (eje Y positivo)",
+                                    "Hacia abajo (eje Y negativo)"
+                                ],
+                                correctAnswer: 3,
+                                hint: "Dado que x = 0, no hay movimiento lateral. Observa que y = -6 (negativa).",
+                                feedbackCorrect: "¡Correcto! Como x = 0 y la componente y es negativa (-6), el vector apunta directamente sobre el eje Y negativo, es decir, hacia abajo.",
+                                feedbackIncorrect: "Revisa las componentes: x = 0 significa que no se desplaza horizontalmente. La componente y es -6, que al ser negativa indica dirección hacia abajo.",
+                                difficulty: "intermedio",
+                                type: "multiple"
+                            }
+                        ],
+                        summaryHtml: "En esta lección aprendimos que un vector representa magnitud, dirección y sentido, formalizándose como un par ordenado (x, y) cuya magnitud se calcula usando el Teorema de Pitágoras.",
+                        videoPlaceholderText: "Video de Álgebra Lineal: Conceptos fundamentales y representación de vectores."
+                    },
+                    {
+                        id: "suma-resta-vectores",
+                        title: "Lección 1.2: Suma y resta de vectores",
+                        introduction: "La suma y resta de vectores nos permite combinar desplazamientos o fuerzas. Aprenderás a resolverlo analítica y geométricamente.",
+                        explanationHtml: '<p>Para sumar dos vectores de forma analítica, simplemente sumamos sus componentes correspondientes. Es decir, sumamos X con X, e Y con Y.</p><p class="mt-3">Si <span class="font-mono font-bold">u = (u1, u2)</span> y <span class="font-mono font-bold">v = (v1, v2)</span>, entonces:</p><p class="mt-2 text-center font-mono font-bold text-primary text-base">u + v = (u1 + v1, u2 + v2)</p><p class="mt-3">De la misma manera, para restar restamos componente a componente:</p><p class="mt-2 text-center font-mono font-bold text-primary text-base">u - v = (u1 - v1, u2 - v2)</p><p class="mt-3 font-semibold">Interpretación geométrica (Método del Triángulo):</p><p>Colocamos el origen del segundo vector en el extremo del primero. El vector suma resultante se dibuja desde el origen del primero hasta el extremo del segundo.</p>',
+                        formulaBoxHtml: '<div class="space-y-1"><p class="text-[10px] font-extrabold uppercase text-slate-400">Suma y Resta Analítica</p><p class="text-lg font-mono font-extrabold text-primary">\\vec{u} \\pm \\vec{v} = (u_x \\pm v_x, u_y \\pm v_y)</p><p class="text-xs text-slate-500">Se opera estrictamente componente a componente respetando las leyes de signos.</p></div>',
+                        svgGraphic: '<svg viewBox="-10 -10 220 220" class="w-full max-w-[280px]" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="200" height="200" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" /><line x1="0" y1="160" x2="200" y2="160" stroke="#94a3b8" stroke-width="1.5" /><line x1="40" y1="0" x2="40" y2="200" stroke="#94a3b8" stroke-width="1.5" /><polygon points="200,160 193,156 193,164" fill="#94a3b8" /><polygon points="40,0 36,7 44,7" fill="#94a3b8" /><!-- Vector u (1, 3) --><line x1="40" y1="160" x2="68" y2="73" stroke="#2563eb" stroke-width="3" /><polygon points="70,70 59,76 66,82" fill="#2563eb" /><text x="45" y="110" font-size="10" font-family="sans-serif" fill="#2563eb" font-weight="bold">u</text><!-- Vector v (3, 1) colocado en extremo de u --><line x1="70" y1="70" x2="157" y2="42" stroke="#10b981" stroke-width="3" /><polygon points="160,40 149,44 154,52" fill="#10b981" /><text x="110" y="50" font-size="10" font-family="sans-serif" fill="#10b981" font-weight="bold">v</text><!-- Resultante u + v (4, 4) --><line x1="40" y1="160" x2="157" y2="42" stroke="#f59e0b" stroke-width="3" /><polygon points="160,40 148,46 153,54" fill="#f59e0b" /><text x="95" y="90" font-size="11" font-family="sans-serif" fill="#f59e0b" font-weight="extrabold">u + v = (4, 4)</text></svg>',
+                        svgDescription: "Suma geométrica por método del triángulo. El vector u = (1, 3) y el vector v = (3, 1) se combinan para dar el vector resultante u + v = (4, 4).",
+                        workedExampleHtml: '<p><strong>Problema:</strong> Dados los vectores <span class="font-mono">u = (3, 8)</span> y <span class="font-mono">v = (-1, 4)</span>, calcula <span class="font-mono">u + v</span> y <span class="font-mono">u - v</span>.</p><ol class="list-decimal pl-5 space-y-2 mt-2"><li><strong>Suma u + v:</strong> Sumamos componentes: <br>x: 3 + (-1) = 2 <br>y: 8 + 4 = 12. <br>Resultado suma: <strong>(2, 12)</strong>.</li><li><strong>Resta u - v:</strong> Restamos componentes respetando signos: <br>x: 3 - (-1) = 3 + 1 = 4 <br>y: 8 - 4 = 4. <br>Resultado resta: <strong>(4, 4)</strong>.</li></ol>',
+                        commonMistakesHtml: '<ul class="list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl"><li><strong>Sumar componentes cruzadas:</strong> Sumar la X del primero con la Y del segundo es un error muy común bajo presión. Mantén X con X, e Y con Y.</li><li><strong>Errores de signo en la resta:</strong> Al restar una componente negativa, recuerda que menos por menos da más: 5 - (-2) = 5 + 2 = 7.</li></ul>',
+                        exercises: [
+                            {
+                                question: "Si u = (2, 5) y v = (4, -1), ¿cuál es la componente horizontal X del vector suma u + v?",
+                                correctAnswer: "6",
+                                hint: "Suma directamente las primeras componentes de ambos vectores: 2 + 4.",
+                                feedbackCorrect: "¡Excelente! La componente X de la suma es 6.",
+                                feedbackIncorrect: "Revisa la suma simple de las primeras componentes: 2 + 4 = 6.",
+                                difficulty: "básico",
+                                type: "short"
+                            },
+                            {
+                                question: "Si a = (7, 3) y b = (2, -4), ¿cuál es la componente vertical Y del vector resta a - b?",
+                                correctAnswer: "7",
+                                hint: "Resta la componente Y de b a la de a: 3 - (-4). Ten cuidado con la ley de signos.",
+                                feedbackCorrect: "¡Perfecto! Al restar un negativo se suma: 3 - (-4) = 3 + 4 = 7.",
+                                feedbackIncorrect: "Recuerda la ley de signos: 3 - (-4) equivale a 3 + 4.",
+                                difficulty: "básico",
+                                type: "short"
+                            },
+                            {
+                                question: "Dados u = (-3, 2) y v = (3, 2), ¿cuál es el vector suma resultante en formato de par ordenado? (Escríbelo sin espacios, ej: (0,4))",
+                                correctAnswer: "(0,4)",
+                                hint: "Suma las componentes correspondientes: X: -3 + 3 = 0, Y: 2 + 2 = 4.",
+                                feedbackCorrect: "¡Excelente trabajo! El vector suma es el vector vertical (0, 4).",
+                                feedbackIncorrect: "Revisa las sumas por componente: X: -3+3 = 0. Y: 2+2 = 4. Formato esperado: (0,4).",
+                                difficulty: "intermedio",
+                                type: "short"
+                            },
+                            {
+                                question: "Geométricamente, si sumas dos vectores u y v colocando el inicio de v en el extremo final de u, ¿cómo se dibuja la resultante u + v?",
+                                options: [
+                                    "Desde la punta de v hasta el origen de u",
+                                    "Desde el origen de u hasta la punta final de v",
+                                    "Uniendo los dos orígenes en el punto medio",
+                                    "Dibujando una línea perpendicular al eje X"
+                                ],
+                                correctAnswer: 1,
+                                hint: "El vector resultante representa el camino directo desde el punto de partida inicial hasta el destino final.",
+                                feedbackCorrect: "¡Correcto! El método del triángulo define la resultante trazando el vector desde el punto de partida (origen de u) hasta el de llegada (punta de v).",
+                                feedbackIncorrect: "Incorrecto. El vector resultante va del inicio de la trayectoria (origen del primer vector) al final de la misma (punta del segundo vector).",
+                                difficulty: "básico",
+                                type: "multiple"
+                            },
+                            {
+                                question: "La resta de vectores u - v se puede definir matemáticamente como:",
+                                options: [
+                                    "La multiplicación cruzada de sus componentes",
+                                    "Sumar a u el opuesto de v, es decir: u + (-v)",
+                                    "Dividir las magnitudes de u y v respectivamente",
+                                    "La distancia absoluta entre sus coordenadas de extremo"
+                                ],
+                                correctAnswer: 1,
+                                hint: "Restar una cantidad es equivalente a sumar su inverso aditivo.",
+                                feedbackCorrect: "¡Excelente! Restar el vector v es exactamente igual a sumar el vector opuesto -v (mismo tamaño pero en sentido contrario).",
+                                feedbackIncorrect: "Incorrecto. En álgebra lineal, la resta u - v se formaliza y visualiza como la suma u + (-v).",
+                                difficulty: "intermedio",
+                                type: "multiple"
+                            }
+                        ],
+                        summaryHtml: "En esta lección aprendimos que la suma y resta de vectores se realiza componente a componente en la parte analítica, y mediante el método del triángulo en la parte geométrica.",
+                        videoPlaceholderText: "Video de Álgebra Lineal: Suma y resta analítica y geométrica de vectores."
+                    },
+                    {
+                        id: "multiplicacion-escalar",
+                        title: "Lección 1.3: Multiplicación de un vector por un escalar",
+                        introduction: "Aprende cómo un número real (escalar) altera la magnitud y el sentido de un vector al multiplicarlo.",
+                        explanationHtml: '<p>En álgebra lineal, un número real se denomina <strong>escalar</strong>. Cuando multiplicamos un vector por un escalar, multiplicamos cada una de sus componentes por ese número.</p><p class="mt-3">Si <span class="font-mono font-bold">v = (x, y)</span> y <span class="font-mono font-bold">k</span> es un escalar, el vector resultante es:</p><p class="mt-2 text-center font-mono font-bold text-primary text-base">k * v = (k*x, k*y)</p><p class="mt-3 font-semibold">Efectos geométricos del escalar k:</p><ul class="list-disc pl-5 space-y-1.5 my-3"><li>Si <strong>k > 1</strong>, el vector se estira (amplifica su magnitud).</li><li>Si <strong>0 < k < 1</strong>, el vector se encoge.</li><li>Si <strong>k < 0</strong>, el vector cambia a la dirección opuesta (sentido contrario).</li></ul>',
+                        formulaBoxHtml: '<div class="space-y-1"><p class="text-[10px] font-extrabold uppercase text-slate-400">Multiplicación Escalar</p><p class="text-lg font-mono font-extrabold text-primary">k \\vec{v} = (k x, k y)</p><p class="text-xs text-slate-500">El escalar se distribuye multiplicando a todas y cada una de las componentes del vector.</p></div>',
+                        svgGraphic: '<svg viewBox="-10 -10 220 220" class="w-full max-w-[280px]" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="200" height="200" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" /><line x1="0" y1="100" x2="200" y2="100" stroke="#94a3b8" stroke-width="1.5" /><line x1="100" y1="0" x2="100" y2="200" stroke="#94a3b8" stroke-width="1.5" /><polygon points="200,100 193,96 193,104" fill="#94a3b8" /><polygon points="100,0 96,7 104,7" fill="#94a3b8" /><!-- Vector original u (2, 1) -> (40, 20) px --><line x1="100" y1="100" x2="140" y2="80" stroke="#2563eb" stroke-width="3" /><polygon points="140,80 131,83 135,91" fill="#2563eb" /><text x="120" y="75" font-size="9" font-family="sans-serif" fill="#2563eb" font-weight="bold">u (2,1)</text><!-- Vector 2u (4, 2) --><line x1="100" y1="100" x2="180" y2="60" stroke="#f59e0b" stroke-width="2" stroke-dasharray="2,2" /><polygon points="180,60 171,63 175,71" fill="#f59e0b" /><text x="155" y="55" font-size="9" font-family="sans-serif" fill="#f59e0b" font-weight="bold">2u (4,2)</text><!-- Vector -u (-2, -1) --><line x1="100" y1="100" x2="60" y2="120" stroke="#ef4444" stroke-width="3" /><polygon points="60,120 69,117 65,109" fill="#ef4444" /><text x="65" y="135" font-size="9" font-family="sans-serif" fill="#ef4444" font-weight="bold">-u (-2,-1)</text></svg>',
+                        svgDescription: "Multiplicación de un vector por un escalar. Se muestra u = (2, 1), su duplicado 2u = (4, 2) y su opuesto -u = (-2, -1).",
+                        workedExampleHtml: '<p><strong>Problema:</strong> Dado el vector <span class="font-mono font-bold">v = (-3, 6)</span>, calcula el vector resultante al multiplicarlo por los escalares <em>k = 3</em> y <em>k = -0.5</em>.</p><ol class="list-decimal pl-5 space-y-2 mt-2"><li><strong>Multiplicación por k = 3:</strong> Multiplicamos componentes: <br>x: 3 * (-3) = -9 <br>y: 3 * 6 = 18. <br>Resultado: <strong>(-9, 18)</strong>.</li><li><strong>Multiplicación por k = -0.5:</strong> Multiplicamos componentes: <br>x: -0.5 * (-3) = 1.5 <br>y: -0.5 * 6 = -3. <br>Resultado: <strong>(1.5, -3)</strong>.</li></ol>',
+                        commonMistakesHtml: '<ul class="list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl"><li><strong>Multiplicar solo una componente:</strong> Olvidar multiplicar la Y por el escalar es sumamente común. El escalar escala a todo el espacio vector uniformemente.</li><li><strong>Errores de signo con escalares negativos:</strong> No olvides cambiar el sentido (y los signos) de todas las componentes al multiplicar por números negativos.</li></ul>',
+                        exercises: [
+                            {
+                                question: "Si v = (3, -2) y lo multiplicamos por el escalar k = 4, ¿cuál es la nueva componente vertical Y?",
+                                correctAnswer: "-8",
+                                hint: "Multiplica directamente la componente Y del vector original (-2) por el escalar 4.",
+                                feedbackCorrect: "¡Excelente! La componente Y del vector resultante es -8.",
+                                feedbackIncorrect: "Calcula el producto simple respetando el signo: -2 * 4 = -8.",
+                                difficulty: "básico",
+                                type: "short"
+                            },
+                            {
+                                question: "Si al multiplicar el vector original w por 3 se obtiene el vector (12, -9), ¿cuál es la componente horizontal X de w?",
+                                correctAnswer: "4",
+                                hint: "Haz el proceso inverso: divide la componente X del vector resultante (12) entre el escalar 3.",
+                                feedbackCorrect: "¡Perfecto! La componente X del vector original es 4, ya que 4 * 3 = 12.",
+                                feedbackIncorrect: "Divide 12 entre 3 para hallar el valor inicial de la componente X.",
+                                difficulty: "intermedio",
+                                type: "short"
+                            },
+                            {
+                                question: "Si multiplicamos el vector v = (-6, 8) por el escalar k = 0.5, ¿cuál es la magnitud o norma del vector resultante?",
+                                correctAnswer: "5",
+                                hint: "Primero calcula el vector resultante (0.5 * -6, 0.5 * 8) = (-3, 4) y luego calcula su magnitud.",
+                                feedbackCorrect: "¡Brillante! El vector escalado es (-3, 4), cuya magnitud es exactamente 5.",
+                                feedbackIncorrect: "Multiplica las componentes por 0.5 para obtener (-3, 4). Luego calcula la raíz de (-3)² + 4² = 25.",
+                                difficulty: "intermedio",
+                                type: "short"
+                            },
+                            {
+                                question: "¿Qué efecto geométrico produce en un vector multiplicarlo por el escalar k = -2?",
+                                options: [
+                                    "Duplica su tamaño y mantiene su sentido original",
+                                    "Reduce su longitud a la mitad y cambia a sentido opuesto",
+                                    "Duplica su longitud y gira su sentido a la dirección opuesta (180°)",
+                                    "Rota el vector 90° hacia la derecha manteniendo su tamaño"
+                                ],
+                                correctAnswer: 2,
+                                hint: "El valor absoluto del escalar (|2|) duplica la longitud. El signo negativo invierte el sentido.",
+                                feedbackCorrect: "¡Correcto! Multiplicar por -2 duplica la longitud del vector y, debido al signo negativo, invierte su sentido a 180°.",
+                                feedbackIncorrect: "Incorrecto. El número 2 duplica su tamaño y el signo menos cambia el sentido al opuesto.",
+                                difficulty: "básico",
+                                type: "multiple"
+                            },
+                            {
+                                question: "Si multiplicamos cualquier vector v = (x, y) por el escalar k = 0, el resultado es:",
+                                options: [
+                                    "El mismo vector original v",
+                                    "Un número escalar de valor cero",
+                                    "El vector nulo (0, 0)",
+                                    "Un vector con componentes infinitas"
+                                ],
+                                correctAnswer: 2,
+                                hint: "Multiplica cada componente (x, y) por 0.",
+                                feedbackCorrect: "¡Exacto! Cualquier vector multiplicado por cero colapsa en el origen, dando origen al vector nulo (0, 0).",
+                                feedbackIncorrect: "Incorrecto. Multiplicar las componentes (x, y) por 0 da como resultado las componentes (0, 0), que representa el vector nulo.",
+                                difficulty: "básico",
+                                type: "multiple"
+                            }
+                        ],
+                        summaryHtml: "En esta lección aprendimos que la multiplicación escalar altera la magnitud del vector proporcionalmente y puede cambiar su sentido si el escalar es negativo.",
+                        videoPlaceholderText: "Video de Álgebra Lineal: Multiplicación por un escalar y sus propiedades visuales."
+                    }
+                ]
+            },
+            {
+                title: "Unidad 2: Matrices y operaciones",
+                lessons: [
+                    {
+                        id: "que-es-una-matriz",
+                        title: "Lección 2.1: ¿Qué es una matriz?",
+                        introduction: "Una matriz es un arreglo bidimensional de números ordenados en filas y columnas. Se usa para representar datos y sistemas complejos.",
+                        explanationHtml: '<p>En matemáticas, una <strong>matriz</strong> es una tabla rectangular de números. Decimos que tiene dimensión <strong>m x n</strong>, donde <em>m</em> es el número de filas (horizontales) y <em>n</em> es el número de columnas (verticales).</p><p class="mt-3">Ejemplo de una matriz A de dimensión 2x3:</p><p class="mt-2 text-center font-mono font-bold text-primary text-base">A = [ [1, 2, 3], [4, 5, 6] ]</p>',
+                        formulaBoxHtml: '<div class="space-y-1"><p class="text-[10px] font-extrabold uppercase text-slate-400">Representación General</p><p class="text-base font-mono font-extrabold text-primary">A_{m \\times n} = [a_{i,j}]</p><p class="text-xs text-slate-500">Donde i indica la fila y j la columna de cada elemento de la matriz.</p></div>',
+                        svgGraphic: '<svg viewBox="0 0 200 100" class="w-full max-w-[280px]" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="200" height="100" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" /><!-- Brackets --><path d="M 30 15 L 15 15 L 15 85 L 30 85" fill="none" stroke="#1e3a8a" stroke-width="3" /><path d="M 170 15 L 185 15 L 185 85 L 170 85" fill="none" stroke="#1e3a8a" stroke-width="3" /><!-- Matrix Elements --><text x="40" y="45" font-size="16" font-family="sans-serif" font-weight="bold" fill="#1e293b">a11</text><text x="100" y="45" font-size="16" font-family="sans-serif" font-weight="bold" fill="#1e293b">a12</text><text x="150" y="45" font-size="16" font-family="sans-serif" font-weight="bold" fill="#1e293b">a13</text><text x="40" y="75" font-size="16" font-family="sans-serif" font-weight="bold" fill="#1e293b">a21</text><text x="100" y="75" font-size="16" font-family="sans-serif" font-weight="bold" fill="#1e293b">a22</text><text x="150" y="75" font-size="16" font-family="sans-serif" font-weight="bold" fill="#1e293b">a23</text></svg>',
+                        svgDescription: "Representación visual de una matriz A de dimensión 2x3 con sus respectivos índices de fila y columna.",
+                        workedExampleHtml: '<p><strong>Problema:</strong> Identifica el tamaño de la matriz y el elemento a21 en: B = [ [3, 5], [-1, 8], [0, 4] ].</p><p class="mt-2">Tiene 3 filas y 2 columnas, por lo que su dimensión es <strong>3x2</strong>. El elemento a21 está en la fila 2, columna 1, el cual es <strong>-1</strong>.</p>',
+                        commonMistakesHtml: '<ul class="list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl"><li><strong>Confundir Filas con Columnas:</strong> Recuerda siempre mencionar primero las filas (horizontal) y luego las columnas (vertical).</li></ul>',
+                        exercises: [
+                            {
+                                question: "¿Cuántas filas tiene una matriz de tamaño 4x3?",
+                                correctAnswer: "4",
+                                hint: "La dimensión se expresa como filas x columnas.",
+                                feedbackCorrect: "¡Muy bien! Tiene 4 filas.",
+                                feedbackIncorrect: "Recuerda que la dimensión se escribe como fila x columna. El primer número es el número de filas.",
+                                difficulty: "básico",
+                                type: "short"
+                            },
+                            {
+                                question: "Si C = [ [9, 2], [5, -3] ], ¿cuál es el valor del elemento c22?",
+                                correctAnswer: "-3",
+                                hint: "Busca la fila 2 and la columna 2.",
+                                feedbackCorrect: "¡Correcto! El valor es -3.",
+                                feedbackIncorrect: "El elemento c22 se ubica en la segunda fila, segunda columna.",
+                                difficulty: "básico",
+                                type: "short"
+                            },
+                            {
+                                question: "Si una matriz tiene 10 elementos en total y tiene 5 filas, ¿cuántas columnas debe tener?",
+                                correctAnswer: "2",
+                                hint: "Multiplica filas por columnas para obtener los elementos totales.",
+                                feedbackCorrect: "¡Excelente! 5 filas * 2 columnas = 10 elementos.",
+                                feedbackIncorrect: "Divide el número total de elementos (10) entre el número de filas (5).",
+                                difficulty: "intermedio",
+                                type: "short"
+                            },
+                            {
+                                question: "¿Cómo se le llama a una matriz que tiene el mismo número de filas y columnas?",
+                                options: [
+                                    "Matriz rectangular",
+                                    "Matriz identidad",
+                                    "Matriz cuadrada",
+                                    "Matriz nula"
+                                ],
+                                correctAnswer: 2,
+                                hint: "Al tener lados iguales se asemeja a un cuadrado geométrico.",
+                                feedbackCorrect: "¡Exacto! Una matriz con igual número de filas y columnas es una matriz cuadrada.",
+                                feedbackIncorrect: "Incorrecto. Se llama matriz cuadrada porque su disposición forma un cuadrado.",
+                                difficulty: "básico",
+                                type: "multiple"
+                            },
+                            {
+                                question: "Si una matriz tiene dimensión 1x5, se le conoce comúnmente como:",
+                                options: [
+                                    "Matriz columna",
+                                    "Matriz fila o vector fila",
+                                    "Matriz transpuesta",
+                                    "Matriz diagonal"
+                                ],
+                                correctAnswer: 1,
+                                hint: "Tiene una única fila y múltiples columnas.",
+                                feedbackCorrect: "¡Correcto! Una matriz de 1xn es un vector fila o matriz fila.",
+                                feedbackIncorrect: "Incorrecto. Al tener una única fila, es una matriz fila.",
+                                difficulty: "básico",
+                                type: "multiple"
+                            }
+                        ],
+                        summaryHtml: "Una matriz es un arreglo rectangular de m filas y n columnas. Su dimensión se indica como m x n y cada elemento se denota por su posición a(i,j).",
+                        videoPlaceholderText: "Video de Álgebra Lineal: Introducción a las matrices y dimensiones."
+                    },
+                    {
+                        id: "suma-resta-matrices",
+                        title: "Lección 2.2: Suma y resta de matrices",
+                        introduction: "La suma y resta de matrices requiere que tengan la misma dimensión. Se realiza elemento a elemento.",
+                        explanationHtml: '<p>Para poder sumar o restar dos matrices, es un **requisito indispensable** que tengan exactamente la misma dimensión. Si tienen dimensiones distintas, la operación **no está definida**.</p><p class="mt-3">La suma se realiza sumando los elementos correspondientes que ocupan la misma posición:</p><p class="mt-2 text-center font-mono font-bold text-primary text-base">C_{ij} = A_{ij} + B_{ij}</p>',
+                        formulaBoxHtml: '<div class="space-y-1"><p class="text-[10px] font-extrabold uppercase text-slate-400">Operación Matricial</p><p class="text-base font-mono font-extrabold text-primary">A + B = [a_{i,j} + b_{i,j}]</p><p class="text-xs text-slate-500">Se opera cada posición por separado y de forma independiente.</p></div>',
+                        svgGraphic: '<svg viewBox="0 0 200 80" class="w-full max-w-[280px]" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="200" height="80" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" /><text x="15" y="45" font-size="12" font-family="sans-serif" font-weight="bold" fill="#1e293b">[A] 2x2</text><text x="75" y="45" font-size="14" font-family="sans-serif" font-weight="bold" fill="#1e293b">+</text><text x="95" y="45" font-size="12" font-family="sans-serif" font-weight="bold" fill="#1e293b">[B] 2x2</text><text x="150" y="45" font-size="14" font-family="sans-serif" font-weight="bold" fill="#1e293b">=</text><text x="170" y="45" font-size="12" font-family="sans-serif" font-weight="bold" fill="#2563eb">[C] 2x2</text></svg>',
+                        svgDescription: "Suma de matrices. Únicamente se pueden operar matrices de la misma dimensión, dando como resultado otra matriz de igual dimensión.",
+                        workedExampleHtml: '<p><strong>Ejemplo:</strong> Suma [ [1, 2], [3, 4] ] y [ [5, 6], [7, 8] ]. <br>El resultado es [ [1+5, 2+6], [3+7, 4+8] ] = <strong>[ [6, 8], [10, 12] ]</strong>.</p>',
+                        commonMistakesHtml: '<ul class="list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl"><li><strong>Intentar sumar dimensiones distintas:</strong> Un error común en exámenes es intentar sumar una matriz de 2x3 con una de 3x2. ¡Es imposible!</li></ul>',
+                        exercises: [
+                            {
+                                question: "Si sumamos A de 3x4 y B de 3x4, ¿cuál es la dimensión de la matriz resultante?",
+                                correctAnswer: "3x4",
+                                hint: "La dimensión de la matriz suma es idéntica a la de las matrices originales.",
+                                feedbackCorrect: "¡Correcto! La dimensión se mantiene igual: 3x4.",
+                                feedbackIncorrect: "Recuerda que la suma no altera las dimensiones de las matrices.",
+                                difficulty: "básico",
+                                type: "short"
+                            },
+                            {
+                                question: "Si A = [ [2] ] y B = [ [-5] ], ¿cuál es el único elemento de A + B?",
+                                correctAnswer: "-3",
+                                hint: "Suma los elementos correspondientes: 2 + (-5).",
+                                feedbackCorrect: "¡Muy bien! 2 + (-5) = -3.",
+                                feedbackIncorrect: "Opera la suma respetando las leyes de signos: 2 - 5.",
+                                difficulty: "básico",
+                                type: "short"
+                            },
+                            {
+                                question: "Si C = A - B, donde a11 = 10 y b11 = -3, ¿cuál es el elemento c11?",
+                                correctAnswer: "13",
+                                hint: "Resta los elementos respetando signos: 10 - (-3).",
+                                feedbackCorrect: "¡Excelente! Menos por menos da más: 10 - (-3) = 13.",
+                                feedbackIncorrect: "Ten cuidado: 10 - (-3) es equivalente a 10 + 3.",
+                                difficulty: "intermedio",
+                                type: "short"
+                            },
+                            {
+                                question: "¿Es posible realizar la suma de una matriz columna de 3x1 con una matriz fila de 1x3?",
+                                options: [
+                                    "Sí, sumando de forma cruzada",
+                                    "No, porque tienen distintas dimensiones y la suma no está definida",
+                                    "Sí, transponiendo ambas primero",
+                                    "Sólo si todos los elementos son positivos"
+                                ],
+                                correctAnswer: 1,
+                                hint: "Verifica si las dimensiones 3x1 y 1x3 son idénticas.",
+                                feedbackCorrect: "¡Correcto! No se pueden sumar ya que 3x1 no es igual a 1x3.",
+                                feedbackIncorrect: "Incorrecto. Al no tener la misma dimensión, la suma matricial es imposible y no está definida.",
+                                difficulty: "básico",
+                                type: "multiple"
+                            },
+                            {
+                                question: "La resta matricial A - B cumple con la propiedad conmutativa (es decir, A - B = B - A):",
+                                options: [
+                                    "Sí, siempre",
+                                    "No, al igual que en los números reales el orden altera el signo resultante",
+                                    "Sí, pero sólo para matrices cuadradas",
+                                    "Sí, si todos sus elementos son ceros"
+                                ],
+                                correctAnswer: 1,
+                                hint: "Piensa si en los números reales 5 - 3 es igual a 3 - 5.",
+                                feedbackCorrect: "¡Excelente! La resta no es conmutativa. A - B da como resultado la matriz opuesta a B - A.",
+                                feedbackIncorrect: "Incorrecto. Al igual que en aritmética básica, restar altera los signos si se cambia el orden del minuendo y sustraendo.",
+                                difficulty: "intermedio",
+                                type: "multiple"
+                            }
+                        ],
+                        summaryHtml: "Para sumar o restar matrices deben tener igual dimensión. La operación se hace componente por componente.",
+                        videoPlaceholderText: "Video de Álgebra Lineal: Suma y resta de matrices con ejemplos reales."
+                    },
+                    {
+                        id: "multiplicacion-matrices",
+                        title: "Lección 2.3: Multiplicación de matrices",
+                        introduction: "La multiplicación de matrices es una operación de filas por columnas. Conoce el método y sus restricciones.",
+                        explanationHtml: '<p>La multiplicación de dos matrices **A** y **B** es posible **únicamente** si el número de columnas de A es igual al número de filas de B.</p><p class="mt-3">Si multiplicamos A de dimensión <em>m x n</em> por B de dimensión <em>n x p</em>, la matriz resultante C tendrá dimensiones <strong>m x p</strong>.</p><p class="mt-3">El elemento Cij se obtiene multiplicando la fila <em>i</em> de A por la columna <em>j</em> de B, sumando los productos parciales.</p>',
+                        formulaBoxHtml: '<div class="space-y-1"><p class="text-[10px] font-extrabold uppercase text-slate-400">Multiplicación de Matrices</p><p class="text-base font-mono font-extrabold text-primary">C_{i,j} = \\sum_{k=1}^n a_{i,k} \\cdot b_{k,j}</p><p class="text-xs text-slate-500">Se realiza multiplicando término a término fila por columna.</p></div>',
+                        svgGraphic: '<svg viewBox="0 0 200 80" class="w-full max-w-[280px]" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="200" height="80" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" /><text x="15" y="45" font-size="11" font-family="sans-serif" font-weight="bold" fill="#1e293b">[A] 2x3</text><text x="75" y="45" font-size="14" font-family="sans-serif" font-weight="bold" fill="#1e293b">×</text><text x="95" y="45" font-size="11" font-family="sans-serif" font-weight="bold" fill="#1e293b">[B] 3x5</text><text x="150" y="45" font-size="14" font-family="sans-serif" font-weight="bold" fill="#1e293b">=</text><text x="170" y="45" font-size="11" font-family="sans-serif" font-weight="bold" fill="#2563eb">[C] 2x5</text></svg>',
+                        svgDescription: "Multiplicación de matrices. Las dimensiones internas de ambas matrices deben coincidir (3 = 3), resultando en las dimensiones externas (2x5).",
+                        workedExampleHtml: '<p><strong>Ejemplo:</strong> Multiplica [ [1, 2] ] (1x2) por [ [3], [4] ] (2x1). <br>El elemento único es 1*3 + 2*4 = 3 + 8 = 11. La matriz resultante es <strong>[ [11] ]</strong> de 1x1.</p>',
+                        commonMistakesHtml: '<ul class="list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl"><li><strong>Multiplicar elemento a elemento:</strong> Es el error más grave de principiantes. Multiplicar matrices no es multiplicar sus elementos en la misma posición, sino filas por columnas.</li></ul>',
+                        exercises: [
+                            {
+                                question: "Si multiplicamos A de dimensión 2x3 por B de dimensión 3x4, ¿cuál es la dimensión de la matriz resultante?",
+                                correctAnswer: "2x4",
+                                hint: "La matriz resultante tiene las filas de la primera y las columnas de la segunda.",
+                                feedbackCorrect: "¡Excelente! La matriz resultante C es de 2x4.",
+                                feedbackIncorrect: "Incorrecto. Se toman las filas de A (2) y las columnas de B (4) para obtener la dimensión final.",
+                                difficulty: "básico",
+                                type: "short"
+                            },
+                            {
+                                question: "Si multiplicamos una matriz de 5x2 por otra de 2x1, ¿cuántos elementos tendrá en total la matriz resultante?",
+                                correctAnswer: "5",
+                                hint: "Calcula la dimensión resultante (5x1) y multiplica filas por columnas.",
+                                feedbackCorrect: "¡Muy bien! El resultado es una matriz columna de 5x1, con 5 elementos.",
+                                feedbackIncorrect: "Primero determina las dimensiones finales (5x1). Una matriz de 5x1 contiene exactamente 5 elementos.",
+                                difficulty: "intermedio",
+                                type: "short"
+                            },
+                            {
+                                question: "Si A = [ [1, 3] ] y B = [ [2], [4] ], ¿cuál es el valor del único elemento en el resultado A × B?",
+                                correctAnswer: "14",
+                                hint: "Calcula 1*2 + 3*4.",
+                                feedbackCorrect: "¡Perfecto! 1*2 + 3*4 = 2 + 12 = 14.",
+                                feedbackIncorrect: "Revisa la operación de filas por columnas: 1*2 = 2, 3*4 = 12. Suma ambos resultados.",
+                                difficulty: "intermedio",
+                                type: "short"
+                            },
+                            {
+                                question: "La multiplicación de matrices cumple con la propiedad conmutativa (es decir, A × B = B × A):",
+                                options: [
+                                    "Sí, siempre",
+                                    "No, en general la multiplicación matricial NO es conmutativa",
+                                    "Sí, pero sólo si ambas son cuadradas",
+                                    "Sí, si una de ellas es la matriz nula"
+                                ],
+                                correctAnswer: 1,
+                                hint: "Piensa si cambiar el orden de las matrices puede alterar la factibilidad de la multiplicación o su tamaño.",
+                                feedbackCorrect: "¡Excelente! La multiplicación matricial no es conmutativa. De hecho, a menudo A x B es factible pero B x A ni siquiera se puede calcular.",
+                                feedbackIncorrect: "Incorrecto. El orden en la multiplicación matricial es sumamente estricto y en general A × B ≠ B × A.",
+                                difficulty: "básico",
+                                type: "multiple"
+                            },
+                            {
+                                question: "¿Qué requisito deben cumplir dos matrices A y B para que se pueda calcular la multiplicación A × B?",
+                                options: [
+                                    "Tener exactamente la misma dimensión",
+                                    "Que el número de columnas de A sea igual al número de filas de B",
+                                    "Que ambas sean matrices cuadradas del mismo tamaño",
+                                    "Que todos los elementos de ambas matrices sean enteros y positivos"
+                                ],
+                                correctAnswer: 1,
+                                hint: "Revisa la dimensión interna de los factores en la multiplicación.",
+                                feedbackCorrect: "¡Correcto! El número de columnas del primer factor (A) debe coincidir estrictamente con el número de filas del segundo factor (B).",
+                                feedbackIncorrect: "Incorrecto. Revisa las reglas de multiplicación matricial: columnas de la primera igual a filas de la segunda.",
+                                difficulty: "básico",
+                                type: "multiple"
+                            }
+                        ],
+                        summaryHtml: "La multiplicación de matrices opera filas por columnas. Solo es factible si las columnas de A igualan las filas de B, dando una matriz C de tamaño filas de A x columnas de B.",
+                        videoPlaceholderText: "Video de Álgebra Lineal: Multiplicación de matrices paso a paso."
+                    }
+                ]
+            },
+            {
+                title: "Unidad 3: Sistemas de ecuaciones lineales",
+                lessons: [
+                    {
+                        id: "sistemas-lineales-representacion",
+                        title: "Lección 3.1: Sistemas lineales y representación matricial",
+                        introduction: "Aprende cómo plantear sistemas de ecuaciones de forma matricial usando la elegante forma A * X = B.",
+                        explanationHtml: '<p>Un **sistema de ecuaciones lineales** puede expresarse de forma matricial compacta. Esto simplifica enormemente su resolución y análisis.</p><p class="mt-3">El sistema de ecuaciones:</p><p class="font-mono text-center my-2">2x + 3y = 8 <br> 4x - y = 2</p><p class="mt-3">Se representa en forma matricial como <strong>AX = B</strong>, donde A es la matriz de coeficientes, X es el vector de variables, y B es el de constantes:</p>',
+                        formulaBoxHtml: '<div class="space-y-1"><p class="text-[10px] font-extrabold uppercase text-slate-400">Forma Matricial Compacta</p><p class="text-base font-mono font-extrabold text-primary">A \\cdot X = B</p><p class="text-xs text-slate-500">Donde A es la matriz de coeficientes, X es el vector de incógnitas y B el de resultados.</p></div>',
+                        svgGraphic: '<svg viewBox="0 0 200 80" class="w-full max-w-[280px]" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="200" height="80" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" /><text x="25" y="45" font-size="12" font-family="sans-serif" font-weight="bold" fill="#1e293b">[A]</text><text x="55" y="45" font-size="14" font-family="sans-serif" font-weight="bold" fill="#1e293b">·</text><text x="75" y="45" font-size="12" font-family="sans-serif" font-weight="bold" fill="#1e293b">[X]</text><text x="110" y="45" font-size="14" font-family="sans-serif" font-weight="bold" fill="#1e293b">=</text><text x="135" y="45" font-size="12" font-family="sans-serif" font-weight="bold" fill="#2563eb">[B]</text></svg>',
+                        svgDescription: "Forma matricial compacta AX = B. Une la matriz de coeficientes A y las variables X con el vector columna B.",
+                        workedExampleHtml: '<p><strong>Ejemplo:</strong> Representa matricialmente: <br>x + y = 3 <br>2x + 5y = 12. <br>La matriz A es [ [1, 1], [2, 5] ], X es [ [x], [y] ] y B es [ [3], [12] ].</p>',
+                        commonMistakesHtml: '<ul class="list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl"><li><strong>Olvidar ordenar las variables:</strong> Si una ecuación tiene variables desordenadas (ej. 3y + 2x = 8), debes ordenarla primero respecto a X e Y antes de escribir la matriz de coeficientes.</li></ul>',
+                        exercises: [
+                            {
+                                question: "Si el sistema es: 5x = 10, ¿cuál es el coeficiente a11 en la matriz de coeficientes A?",
+                                correctAnswer: "5",
+                                hint: "El coeficiente que acompaña a la variable x en la primera ecuación.",
+                                feedbackCorrect: "¡Muy bien! El coeficiente es 5.",
+                                feedbackIncorrect: "Revisa el coeficiente que acompaña a la única variable x.",
+                                difficulty: "básico",
+                                type: "short"
+                            },
+                            {
+                                question: "Si representamos: 2x - 3y = 7, ¿cuál es el valor del elemento a12 en la matriz A?",
+                                correctAnswer: "-3",
+                                hint: "Es el coeficiente de la segunda variable (y) en la primera fila. Recuerda el signo.",
+                                feedbackCorrect: "¡Correcto! El coeficiente es -3.",
+                                feedbackIncorrect: "Ten cuidado con los signos: el coeficiente de y es -3.",
+                                difficulty: "básico",
+                                type: "short"
+                            },
+                            {
+                                question: "En AX = B, si la matriz A es de dimensión 3x3, ¿de qué tamaño debe ser el vector columna de incógnitas X?",
+                                correctAnswer: "3x1",
+                                hint: "Para poder multiplicarse, el número de filas de X debe coincidir con las columnas de A (3).",
+                                feedbackCorrect: "¡Excelente! X debe ser un vector columna de 3x1.",
+                                feedbackIncorrect: "Para cumplir la regla de multiplicación matricial, X debe ser de tamaño 3x1.",
+                                difficulty: "intermedio",
+                                type: "short"
+                            },
+                            {
+                                question: "¿Qué elementos componen la llamada Matriz Ampliada (o aumentada) de un sistema de ecuaciones?",
+                                options: [
+                                    "Las incógnitas unidas a las constantes",
+                                    "La matriz de coeficientes A con el vector columna B como columna adicional",
+                                    "La suma de la matriz A y la matriz B",
+                                    "Los determinantes de las submatrices cuadradas"
+                                ],
+                                correctAnswer: 1,
+                                hint: "Es la matriz que resume toda la información numérica del sistema de forma consolidada.",
+                                feedbackCorrect: "¡Perfecto! La matriz aumentada coloca el vector B al lado derecho de la matriz A, separado comúnmente por una línea vertical.",
+                                feedbackIncorrect: "Incorrecto. Se construye acoplando el vector B al lado derecho de la matriz A.",
+                                difficulty: "básico",
+                                type: "multiple"
+                            },
+                            {
+                                question: "Si un sistema de ecuaciones lineales tiene más variables que ecuaciones, se clasifica como un sistema:",
+                                options: [
+                                    "Sobredeterminado",
+                                    "Subdeterminado",
+                                    "Incompatible",
+                                    "Homogéneo"
+                                ],
+                                correctAnswer: 1,
+                                hint: "Tiene pocas restricciones y típicamente poseerá infinitas soluciones.",
+                                fillbackCorrect: "¡Brillante! Se conoce como sistema subdeterminado.",
+                                feedbackIncorrect: "Incorrecto. Al tener menos ecuaciones que incógnitas, es un sistema subdeterminado.",
+                                difficulty: "intermedio",
+                                type: "multiple"
+                            }
+                        ],
+                        summaryHtml: "Un sistema de ecuaciones se puede representar de forma matricial compacta como AX = B, o resumida como una matriz aumentada [A|B].",
+                        videoPlaceholderText: "Video de Álgebra Lineal: Representación matricial de sistemas de ecuaciones."
+                    },
+                    {
+                        id: "eliminacion-gauss",
+                        title: "Lección 3.2: Método de eliminación de Gauss",
+                        introduction: "Aprende el poderoso algoritmo de Gauss para resolver sistemas lineales transformando matrices.",
+                        explanationHtml: '<p>El <strong>Método de Eliminación de Gauss</strong> consiste en aplicar operaciones elementales por fila sobre la matriz aumentada para transformarla en una **matriz triangular superior**.</p><p class="mt-3">Las operaciones válidas sobre las filas son:</p><ul class="list-disc pl-5 space-y-1.5 my-3"><li>Intercambiar dos filas entre sí.</li><li>Multiplicar una fila por un número real distinto de cero.</li><li>Sumar a una fila el múltiplo de otra fila.</li></ul><p class="mt-3">Una vez triangularizada la matriz, resolvemos las incógnitas de abajo hacia arriba mediante sustitución hacia atrás.</p>',
+                        formulaBoxHtml: '<div class="space-y-1"><p class="text-[10px] font-extrabold uppercase text-slate-400">Eliminación de Gauss</p><p class="text-base font-mono font-extrabold text-primary">[A | B] \\rightarrow [U | Y]</p><p class="text-xs text-slate-500">Donde U representa una matriz triangular superior facilitando el despeje secuencial.</p></div>',
+                        svgGraphic: '<svg viewBox="0 0 200 80" class="w-full max-w-[280px]" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="200" height="80" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" /><path d="M 25 15 L 10 15 L 10 65 L 25 65" fill="none" stroke="#64748b" stroke-width="2" /><path d="M 175 15 L 190 15 L 190 65 L 175 65" fill="none" stroke="#64748b" stroke-width="2" /><!-- Matrix Elements (Triangular Superior) --><text x="35" y="35" font-size="12" font-family="sans-serif" font-weight="bold" fill="#1e293b">1</text><text x="75" y="35" font-size="12" font-family="sans-serif" fill="#64748b">3</text><text x="115" y="35" font-size="12" font-family="sans-serif" fill="#64748b">5</text><text x="35" y="55" font-size="12" font-family="sans-serif" font-weight="bold" fill="#ef4444">0</text><text x="75" y="55" font-size="12" font-family="sans-serif" font-weight="bold" fill="#1e293b">1</text><text x="115" y="55" font-size="12" font-family="sans-serif" fill="#64748b">2</text><line x1="140" y1="15" x2="140" y2="65" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="2,2" /><text x="155" y="35" font-size="12" font-family="sans-serif" fill="#10b981" font-weight="bold">6</text><text x="155" y="55" font-size="12" font-family="sans-serif" fill="#10b981" font-weight="bold">4</text></svg>',
+                        svgDescription: "Eliminación de Gauss. Se busca obtener ceros por debajo de la diagonal principal para facilitar la resolución.",
+                        workedExampleHtml: '<p><strong>Ejemplo:</strong> Resuelve [ [1, 1 | 3], [0, 2 | 4] ]. <br>De la segunda fila: 2y = 4 => <strong>y = 2</strong>. <br>Sustituyendo en la primera: x + y = 3 => x + 2 = 3 => <strong>x = 1</strong>.</p>',
+                        commonMistakesHtml: '<ul class="list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl"><li><strong>Olvidar aplicar operaciones al vector B:</strong> Al modificar una fila, debes aplicar la misma operación aritmética a la constante del lado derecho. ¡Si lo olvidas, dañarás el resultado!</li></ul>',
+                        exercises: [
+                            {
+                                question: "Si en la fila F2 = (2, 4, 8) restamos 2 veces la fila F1 = (1, 1, 3), ¿cuál es el nuevo primer elemento de la fila F2?",
+                                correctAnswer: "0",
+                                hint: "Calcula 2 - 2*(1). El objetivo de Gauss es precisamente crear ceros.",
+                                feedbackCorrect: "¡Muy bien! Se ha eliminado el primer elemento, creando el cero deseado.",
+                                feedbackIncorrect: "Revisa la resta elemental: 2 - 2 * 1 = 0.",
+                                difficulty: "básico",
+                                type: "short"
+                            },
+                            {
+                                question: "Si la matriz aumentada triangular final es: [ [1, 2 | 5], [0, 1 | 2] ], ¿cuál es el valor final de la variable Y?",
+                                correctAnswer: "2",
+                                hint: "Observa la segunda fila: 0*x + 1*y = 2.",
+                                feedbackCorrect: "¡Correcto! Directamente y = 2.",
+                                feedbackIncorrect: "La última ecuación simplificada define de forma directa que 1y = 2.",
+                                difficulty: "básico",
+                                type: "short"
+                            },
+                            {
+                                question: "Con la matriz anterior, calcula el valor final de la variable X mediante sustitución hacia atrás.",
+                                correctAnswer: "1",
+                                hint: "Sustituye y = 2 en la primera ecuación: x + 2*(2) = 5.",
+                                feedbackCorrect: "¡Excelente! x + 4 = 5 => x = 1.",
+                                feedbackIncorrect: "Sustituye y = 2: x + 2(2) = 5 => x + 4 = 5 => x = 1.",
+                                difficulty: "intermedio",
+                                type: "short"
+                            },
+                            {
+                                question: "¿Cuál de las siguientes NO se clasifica como una operación fila elemental permitida en el método de Gauss?",
+                                options: [
+                                    "Intercambiar el orden de dos filas",
+                                    "Sumar una constante diferente de cero a cada elemento de la fila",
+                                    "Multiplicar todos los elementos de una fila por una constante no nula",
+                                    "Sumar a una fila el múltiplo escalar de otra fila"
+                                ],
+                                correctAnswer: 1,
+                                hint: "Las operaciones deben preservar las soluciones de las ecuaciones lineales. Pensar si sumar una constante a una ecuación la mantiene equivalente.",
+                                feedbackCorrect: "¡Correcto! Sumar una constante a una fila no es una operación elemental válida, ya que altera por completo la equivalencia del sistema.",
+                                feedbackIncorrect: "Incorrecto. Recuerda que no está permitido sumar un número suelto a los elementos de una fila. Las demás sí son operaciones elementales.",
+                                difficulty: "básico",
+                                type: "multiple"
+                            },
+                            {
+                                question: "Si durante la eliminación de Gauss una fila de coeficientes se vuelve completamente ceros, pero el elemento constante de B correspondiente es diferente de cero (ej. 0 = 5), el sistema se clasifica como:",
+                                options: [
+                                    "Sistema con infinitas soluciones",
+                                    "Sistema incompatible (sin solución)",
+                                    "Sistema compatible determinado",
+                                    "Sistema de rango nulo"
+                                ],
+                                correctAnswer: 1,
+                                hint: "La expresión 0 = 5 representa una contradicción matemática insalvable.",
+                                feedbackCorrect: "¡Exacto! El sistema no posee ninguna combinación de soluciones y se clasifica como incompatible.",
+                                feedbackIncorrect: "Incorrecto. Obtener 0 = 5 es una contradicción absurda, lo que significa que el sistema no tiene solución.",
+                                difficulty: "intermedio",
+                                type: "multiple"
+                            }
+                        ],
+                        summaryHtml: "El algoritmo de eliminación de Gauss simplifica matrices aumentadas aplicando operaciones elementales sobre filas hasta obtener una forma triangular superior.",
+                        videoPlaceholderText: "Video de Álgebra Lineal: Algoritmo de Gauss y operaciones elementales."
+                    },
+                    {
+                        id: "interpretacion-geometrica-sistemas",
+                        title: "Lección 3.3: Interpretación geométrica de los sistemas",
+                        introduction: "Descubre la geometría detrás de las ecuaciones. Rectas en el plano e intersecciones de soluciones.",
+                        explanationHtml: '<p>Cada ecuación lineal en un sistema de dos variables representa una **recta en el plano bidimensional**.</p><p class="mt-3">El conjunto de soluciones del sistema corresponde al **punto exacto de intersección** de las rectas:</p><ul class="list-disc pl-5 space-y-1.5 my-3"><li><strong>Una solución (Determinado):</strong> Las rectas se cruzan en un solo punto.</li><li><strong>Sin solución (Incompatible):</strong> Las rectas son paralelas y nunca se tocan.</li><li><strong>Infinitas soluciones (Indeterminado):</strong> Las rectas son coincidentes (la misma recta sobrepuesta).</li></ul>',
+                        formulaBoxHtml: '<div class="space-y-1"><p class="text-[10px] font-extrabold uppercase text-slate-400">Clasificación Geométrica</p><p class="text-xs text-slate-600">Determinado = Secantes | Incompatible = Paralelas distantes | Indeterminado = Paralelas coincidentes.</p></div>',
+                        svgGraphic: '<svg viewBox="-10 -10 220 220" class="w-full max-w-[280px]" xmlns="http://www.w3.org/2000/svg"><rect x="0" y="0" width="200" height="200" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" /><line x1="0" y1="100" x2="200" y2="100" stroke="#94a3b8" stroke-width="1.5" /><line x1="100" y1="0" x2="100" y2="200" stroke="#94a3b8" stroke-width="1.5" /><!-- Recta 1: y = x (diagonal) --><line x1="20" y1="180" x2="180" y2="20" stroke="#2563eb" stroke-width="2.5" /><!-- Recta 2: y = -x + 200 (inversa) --><line x1="20" y1="20" x2="180" y2="180" stroke="#ef4444" stroke-width="2.5" /><!-- Point (100, 100) --><circle cx="100" cy="100" r="5" fill="#f59e0b" /><text x="110" y="95" font-size="10" font-family="sans-serif" fill="#f59e0b" font-weight="extrabold">Solución Única</text></svg>',
+                        svgDescription: "Dos rectas secantes cruzándose en un único punto del plano, representando la solución única de un sistema compatible determinado.",
+                        workedExampleHtml: '<p><strong>Ejemplo práctico:</strong> Las rectas y = x y y = -x + 4 se cruzan en el punto <strong>(2, 2)</strong>. Este punto es la única solución del sistema.</p>',
+                        commonMistakesHtml: '<ul class="list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl"><li><strong>Asumir que paralelas se cruzan en el infinito:</strong> En el plano real bidimensional de estudio, las rectas paralelas simplemente no tienen puntos en común, indicando ausencia absoluta de soluciones.</li></ul>',
+                        exercises: [
+                            {
+                                question: "Si dos rectas son paralelas y distintas, ¿cuántas soluciones tiene el sistema de ecuaciones?",
+                                correctAnswer: "0",
+                                hint: "Las rectas paralelas nunca se intersectan.",
+                                feedbackCorrect: "¡Correcto! Al no cruzarse nunca, no hay ningún punto en común, teniendo cero soluciones.",
+                                feedbackIncorrect: "Recuerda que paralelas distantes nunca se cruzan en ningún punto.",
+                                difficulty: "básico",
+                                type: "short"
+                            },
+                            {
+                                question: "Si dos rectas se cruzan en el punto (3, 5), ¿cuál es el valor de la variable Y en la solución?",
+                                correctAnswer: "5",
+                                hint: "La solución del sistema se expresa en coordenadas cartesianas como (x, y).",
+                                feedbackCorrect: "¡Muy bien! El valor de Y es 5.",
+                                feedbackIncorrect: "En el par ordenado (3, 5), la coordenada vertical es Y = 5.",
+                                difficulty: "básico",
+                                type: "short"
+                            },
+                            {
+                                question: "Si una ecuación es el doble exacto de la otra (ej. x+y=2 y 2x+2y=4), ¿cuántas soluciones tiene el sistema?",
+                                correctAnswer: "infinitas",
+                                hint: "Las rectas son coincidentes (es exactamente la misma recta). Escribe 'infinitas'.",
+                                feedbackCorrect: "¡Excelente! Al ser la misma recta, todos sus puntos coinciden, teniendo infinitas soluciones.",
+                                feedbackIncorrect: "Al ser coincidentes, todos los puntos de la línea son soluciones. Escribe 'infinitas'.",
+                                difficulty: "intermedio",
+                                type: "short"
+                            },
+                            {
+                                question: "¿Qué representa gráficamente cada una de las ecuaciones en un sistema de dos variables?",
+                                options: [
+                                    "Una parábola o curva cuadrática",
+                                    "Una línea recta en el plano cartesiano",
+                                    "Un plano tridimensional",
+                                    "Un círculo con centro en el origen"
+                                ],
+                                correctAnswer: 1,
+                                hint: "Se llaman ecuaciones 'lineales' por una razón geométrica muy particular.",
+                                feedbackCorrect: "¡Correcto! Cada ecuación lineal de dos variables define de forma exacta una recta en el plano de dos dimensiones.",
+                                feedbackIncorrect: "Incorrecto. Al ser de grado uno (lineales), definen geométricamente líneas rectas en el plano cartesiano.",
+                                difficulty: "básico",
+                                type: "multiple"
+                            },
+                            {
+                                question: "Si un sistema lineal tiene tres variables (x, y, z), ¿qué figura geométrica representa cada ecuación en el espacio tridimensional?",
+                                options: [
+                                    "Una recta en el espacio",
+                                    "Un plano infinito",
+                                    "Una esfera centrada",
+                                    "Un cilindro recto"
+                                ],
+                                correctAnswer: 1,
+                                hint: "Las ecuaciones lineales de tres dimensiones definen superficies planas.",
+                                fillbackCorrect: "¡Brillante! En el espacio tridimensional R³, cada ecuación representa un plano bidimensional infinito.",
+                                feedbackIncorrect: "Incorrecto. En 3D, una ecuación lineal define un plano tridimensional.",
+                                difficulty: "intermedio",
+                                type: "multiple"
+                            }
+                        ],
+                        summaryHtml: "Los sistemas de ecuaciones representan rectas en el plano. Pueden cruzarse en un único punto (compatible determinado), ser paralelas (incompatible), o coincidir en toda su extensión (indeterminado).",
+                        videoPlaceholderText: "Video de Álgebra Lineal: Geometría de los sistemas lineales y planos cartesianos."
+                    }
+                ]
+            }
+        ]
+    }
 };
 
 // Sincronizar el contenido con la colección estática de cursos

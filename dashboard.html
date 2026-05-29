@@ -872,6 +872,7 @@
             { id: 107, title: 'Geometría Plana', slug: 'geometria-plana', category_id: 1, category_slug: 'matematicas', academic_level: 'Secundaria / Diversificado', access_type: 'premium', description: 'Cálculo de áreas, perímetros, Teorema de Pitágoras y propiedades de figuras geométricas.', lessons_count: 8, exercises_count: 22 },
             { id: 108, title: 'Trigonometría Fundamental', slug: 'trigonometria-fundamental', category_id: 1, category_slug: 'matematicas', academic_level: 'Diversificado', access_type: 'premium', description: 'Funciones trigonométricas, identidades y resolución de triángulos oblicuángulos.', lessons_count: 10, exercises_count: 28 },
             { id: 109, title: 'Cálculo Diferencial e Integral', slug: 'calculo-universitario', category_id: 1, category_slug: 'matematicas', academic_level: 'Universidad', access_type: 'premium', description: 'Límites, derivadas, integrales y sus aplicaciones prácticas en ciencias e ingeniería.', lessons_count: 15, exercises_count: 45 },
+            { id: 110, title: 'Álgebra Lineal', slug: 'algebra-lineal', category_id: 1, category_slug: 'matematicas', academic_level: 'Diversificado / Universidad', access_type: 'premium', description: 'Aprende vectores, matrices y sistemas lineales con explicaciones visuales, ejemplos paso a paso y ejercicios interactivos.', lessons_count: 9, exercises_count: 45 },
             
             // CIENCIAS (5)
             { id: 201, title: 'Ciencias Naturales Introductorio', slug: 'ciencias-naturales', category_id: 2, category_slug: 'ciencias', academic_level: 'Primaria', access_type: 'free', description: 'Explora el reino animal, vegetal, el ciclo del agua y el cuerpo humano.', lessons_count: 6, exercises_count: 15 },
@@ -932,12 +933,25 @@
         let allCetuCourses = [...STATIC_COURSES];
 
         function mergeCourses() {
-            // Sincronizar contenidos académicos del archivo modular
+            // Sincronizar contenidos académicos del archivo modular y establecer banderas de visibilidad
             if (window.ACADEMIC_CONTENT) {
                 STATIC_COURSES.forEach(c => {
                     if (window.ACADEMIC_CONTENT[c.slug]) {
                         c.body_content = window.ACADEMIC_CONTENT[c.slug];
+                        c.has_content = true;
+                        c.content_status = 'published';
+                        c.visible_to_students = true;
+                    } else {
+                        c.has_content = false;
+                        c.content_status = 'draft';
+                        c.visible_to_students = false;
                     }
+                });
+            } else {
+                STATIC_COURSES.forEach(c => {
+                    c.has_content = false;
+                    c.content_status = 'draft';
+                    c.visible_to_students = false;
                 });
             }
             const merged = [...STATIC_COURSES];
@@ -959,8 +973,23 @@
                         video_url: dbItem.video_url,
                         document_url: dbItem.document_url,
                         body_content: dbItem.body_content,
-                        is_from_db: true
+                        is_from_db: true,
+                        has_content: !!dbItem.body_content,
+                        content_status: dbItem.body_content ? 'published' : 'draft',
+                        visible_to_students: !!dbItem.body_content && dbItem.status === 'active'
                     });
+                } else {
+                    // Si ya existe en static pero está en la base de datos, mezclar también sus banderas
+                    const staticItem = merged.find(item => item.slug === dbItem.slug);
+                    if (staticItem) {
+                        staticItem.is_from_db = true;
+                        if (dbItem.body_content) {
+                            staticItem.body_content = dbItem.body_content;
+                            staticItem.has_content = true;
+                            staticItem.content_status = 'published';
+                            staticItem.visible_to_students = dbItem.status === 'active';
+                        }
+                    }
                 }
             });
             allCetuCourses = merged;
@@ -1383,40 +1412,47 @@
                     }
 
                     if (error || !data) {
-                        console.warn('No se pudo cargar perfil de usuario publico, usando fallback de metadata:', error);
-                        // Fallback rápido si el trigger aún no populatea
-                        currentUser = {
-                            id: session.user.id,
-                            full_name: session?.user?.user_metadata?.full_name || session?.user?.email?.split('@')[0] || 'Estudiante Nuevo',
-                            email: session.user.email,
-                            phone: session?.user?.user_metadata?.phone || '',
-                            role: session?.user?.user_metadata?.role || 'free_user',
-                            subscription_status: 'inactive',
-                            academic_level: session?.user?.user_metadata?.academic_level || 'Secundaria',
-                            main_interest: session?.user?.user_metadata?.main_interest || 'Matemática'
-                        };
+                        console.warn('No se pudo cargar perfil de usuario publico, usando fallback de metadata o perfil existente:', error);
+                        
+                        // EVITAR DEGRADACIÓN / PARPADEO: Si ya tenemos un perfil cargado para este usuario,
+                        // no sobreescribir ni degradar a free_user ante un error temporal de consulta.
+                        if (currentUser && currentUser.id === session.user.id) {
+                            console.log("Conservando perfil actual cargado para evitar parpadeo o degradación temporal.");
+                        } else {
+                            // Fallback rápido si el trigger aún no populatea o es primera carga y falló
+                            currentUser = {
+                                id: session.user.id,
+                                full_name: session?.user?.user_metadata?.full_name || session?.user?.email?.split('@')[0] || 'Estudiante Nuevo',
+                                email: session.user.email,
+                                phone: session?.user?.user_metadata?.phone || '',
+                                role: session?.user?.user_metadata?.role || 'free_user',
+                                subscription_status: 'inactive',
+                                academic_level: session?.user?.user_metadata?.academic_level || 'Secundaria',
+                                main_interest: session?.user?.user_metadata?.main_interest || 'Matemática'
+                            };
 
-                        // INTENTAR CREACIÓN DINÁMICA DEL PERFIL EN CASO DE HUÉRFANOS (Desarrollo / Cuentas antiguas)
-                        try {
-                            console.log("Intentando auto-creación de perfil en tabla public.users...");
-                            supabase.from('users').insert({
-                                id: currentUser.id,
-                                full_name: currentUser.full_name,
-                                email: currentUser.email,
-                                phone: currentUser.phone,
-                                role: currentUser.role,
-                                subscription_status: currentUser.subscription_status,
-                                academic_level: currentUser.academic_level,
-                                main_interest: currentUser.main_interest
-                            }).then(({ error: insertErr }) => {
-                                if (insertErr) {
-                                    console.warn("Fallo el autoregistro del perfil:", insertErr.message);
-                                } else {
-                                    console.log("Autoregistro del perfil completado exitosamente.");
-                                }
-                            });
-                        } catch (insertEx) {
-                            console.warn("Excepción en autoregistro de perfil:", insertEx.message);
+                            // INTENTAR CREACIÓN DINÁMICA DEL PERFIL EN CASO DE HUÉRFANOS (Desarrollo / Cuentas antiguas)
+                            try {
+                                console.log("Intentando auto-creación de perfil en tabla public.users...");
+                                supabase.from('users').insert({
+                                    id: currentUser.id,
+                                    full_name: currentUser.full_name,
+                                    email: currentUser.email,
+                                    phone: currentUser.phone,
+                                    role: currentUser.role,
+                                    subscription_status: currentUser.subscription_status,
+                                    academic_level: currentUser.academic_level,
+                                    main_interest: currentUser.main_interest
+                                }).then(({ error: insertErr }) => {
+                                    if (insertErr) {
+                                        console.warn("Fallo el autoregistro del perfil:", insertErr.message);
+                                    } else {
+                                        console.log("Autoregistro del perfil completado exitosamente.");
+                                    }
+                                });
+                            } catch (insertEx) {
+                                console.warn("Excepción en autoregistro de perfil:", insertEx.message);
+                            }
                         }
                     } else {
                         currentUser = data;
@@ -2195,8 +2231,17 @@
             if (!grid) return;
 
             const q = searchQuery.toLowerCase().trim();
+            const isAdmin = currentUser && (currentUser.role === 'admin' || currentUser.is_admin === true);
 
             const filtered = allCetuCourses.filter(item => {
+                // Si no es administrador, filtrar cursos que no tienen contenido o no están publicados/visibles
+                if (!isAdmin) {
+                    const hasRealContent = item.body_content || (window.ACADEMIC_CONTENT && window.ACADEMIC_CONTENT[item.slug]);
+                    const isPublished = item.content_status === 'published';
+                    const isVisible = item.visible_to_students !== false;
+                    if (!hasRealContent || !isPublished || !isVisible) return false;
+                }
+
                 if (q) {
                     const matchesTitle = item.title.toLowerCase().includes(q);
                     const matchesDesc = item.description.toLowerCase().includes(q);
@@ -2220,13 +2265,30 @@
             });
 
             if (filtered.length === 0) {
-                grid.innerHTML = `
-                    <div class="col-span-full py-16 text-center bg-white rounded-3xl border border-slate-100 shadow-sm">
-                        <div class="w-16 h-16 bg-slate-50 rounded-full flex items-center justify-center mx-auto mb-4 text-slate-400 text-3xl font-bold">🔍</div>
-                        <h4 class="font-bold text-slate-800 text-lg">No encontramos temas que coincidan</h4>
-                        <p class="text-sm text-slate-505 max-w-sm mx-auto mt-1 px-4">Prueba seleccionando otra materia, nivel académico o cambiando los términos del buscador.</p>
-                    </div>
-                `;
+                if (selectedMateriaFilter && !q) {
+                    grid.innerHTML = `
+                        <div class="col-span-full py-16 text-center bg-white/75 backdrop-blur-md rounded-3xl border border-slate-150 shadow-sm p-8 space-y-4">
+                            <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center mx-auto mb-2 text-2xl animate-pulse">📚</div>
+                            <h3 class="font-extrabold text-slate-800 text-lg">Contenido en preparación</h3>
+                            <p class="text-sm text-slate-500 max-w-md mx-auto leading-relaxed px-4">
+                                Estamos preparando cursos espectaculares para esta área. Mientras tanto, puedes solicitar una tutoría personalizada para resolver tus dudas de inmediato de forma directa.
+                            </p>
+                            <div class="pt-2">
+                                <a href="#mis-tutorias" class="inline-flex items-center gap-2 bg-primary hover:bg-primary/95 text-white font-bold px-6 py-3 rounded-2xl text-xs shadow-sm hover:shadow-md transition-all duration-300">
+                                    Solicitar Tutoría Personalizada 🎯
+                                </a>
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    grid.innerHTML = `
+                        <div class="col-span-full py-16 text-center bg-white rounded-3xl border border-slate-150 shadow-sm p-8">
+                            <div class="w-16 h-16 bg-slate-50 rounded-full flex items-center justify-center mx-auto mb-4 text-slate-400 text-3xl font-bold">🔍</div>
+                            <h4 class="font-bold text-slate-800 text-lg">No encontramos temas que coincidan</h4>
+                            <p class="text-sm text-slate-500 max-w-sm mx-auto mt-1 px-4">Prueba seleccionando otra materia, nivel académico o cambiando los términos del buscador.</p>
+                        </div>
+                    `;
+                }
                 return;
             }
 
@@ -2241,11 +2303,48 @@
                 const categoryObj = STATIC_CATEGORIES.find(c => c.id === item.category_id);
                 const categoryName = categoryObj ? categoryObj.name : 'Curso';
 
+                // Generar etiqueta de administración
+                let adminBadgeHtml = '';
+                if (isAdmin) {
+                    const hasContent = item.body_content || (window.ACADEMIC_CONTENT && window.ACADEMIC_CONTENT[item.slug]);
+                    const status = item.content_status || 'draft';
+                    const isVisible = item.visible_to_students !== false;
+                    
+                    if (!hasContent) {
+                        adminBadgeHtml = `
+                            <span class="text-[9px] font-extrabold text-rose-600 bg-rose-50 border border-rose-100 px-2 py-0.5 rounded-full shrink-0 uppercase tracking-wide">
+                                ❌ Sin Contenido
+                            </span>
+                        `;
+                    } else if (status === 'draft') {
+                        adminBadgeHtml = `
+                            <span class="text-[9px] font-extrabold text-amber-600 bg-amber-50 border border-amber-100 px-2 py-0.5 rounded-full shrink-0 uppercase tracking-wide">
+                                📝 Borrador
+                            </span>
+                        `;
+                    } else if (!isVisible) {
+                        adminBadgeHtml = `
+                            <span class="text-[9px] font-extrabold text-slate-500 bg-slate-50 border border-slate-200 px-2 py-0.5 rounded-full shrink-0 uppercase tracking-wide">
+                                👁️ Oculto
+                            </span>
+                        `;
+                    } else {
+                        adminBadgeHtml = `
+                            <span class="text-[9px] font-extrabold text-emerald-600 bg-emerald-50 border border-emerald-100 px-2 py-0.5 rounded-full shrink-0 uppercase tracking-wide">
+                                ✅ Publicado
+                            </span>
+                        `;
+                    }
+                }
+
                 cardsHtml += `
                     <div class="bg-white rounded-3xl border border-slate-150 overflow-hidden shadow-sm hover:shadow-lg hover:-translate-y-1 transition-all duration-300 flex flex-col h-full justify-between group">
                         <div class="p-6 space-y-4">
                             <div class="flex justify-between items-center gap-2">
-                                <span class="text-[10px] font-extrabold text-slate-400 uppercase tracking-wider">${categoryName}</span>
+                                <div class="flex items-center gap-1.5 min-w-0">
+                                    <span class="text-[10px] font-extrabold text-slate-400 uppercase tracking-wider truncate">${categoryName}</span>
+                                    ${adminBadgeHtml}
+                                </div>
                                 <span class="text-[9px] font-extrabold text-primary bg-blue-50 px-2.5 py-1 rounded-full uppercase tracking-wide shrink-0">${item.academic_level}</span>
                             </div>
 
@@ -2389,6 +2488,12 @@
                 await updateContentProgress(item.id, 'in_progress', 10);
             }
 
+            // --- DETECTAR CURSO INTERACTIVO ENRIQUECIDO ---
+            if (item.body_content && typeof item.body_content === 'object' && item.body_content.isRichCourse) {
+                renderInteractiveCourse(container, item);
+                return;
+            }
+
             // Preparar vistas de video u otros tipos
             let mediaArea = '';
             if (item.content_type === 'video' || item.video_url) {
@@ -2472,6 +2577,474 @@
                     </div>
                 </div>
             `;
+        }
+
+        // =====================================================================
+        // REPRODUCTOR DE CURSOS INTERACTIVOS PREMIUM - CENTRO DE TUTORÍAS
+        // =====================================================================
+        async function renderInteractiveCourse(container, course) {
+            const courseData = course.body_content;
+            window.LINEAR_ALGEBRA_COURSE_DATA = courseData;
+            
+            if (!window.cetuActiveLesson || window.cetuActiveLesson.courseSlug !== course.slug) {
+                window.cetuActiveLesson = {
+                    courseSlug: course.slug,
+                    unitIndex: 0,
+                    lessonIndex: 0,
+                    completedLessons: JSON.parse(localStorage.getItem(`cetu_lessons_completed_${currentUser.id}_${course.slug}`) || '[]'),
+                    score: {}
+                };
+            }
+            
+            const activeUnitIdx = window.cetuActiveLesson.unitIndex;
+            const activeLessonIdx = window.cetuActiveLesson.lessonIndex;
+            const activeUnit = courseData.units[activeUnitIdx];
+            const activeLesson = activeUnit.lessons[activeLessonIdx];
+            
+            // Calculate progress percentage
+            const totalLessons = courseData.units.reduce((acc, u) => acc + u.lessons.length, 0);
+            const completedCount = window.cetuActiveLesson.completedLessons.length;
+            const progressPct = Math.min(100, Math.round((completedCount / totalLessons) * 100));
+            
+            // Generate Sidebar Navigation HTML
+            let navHtml = '';
+            courseData.units.forEach((unit, uIdx) => {
+                navHtml += `
+                    <div class="space-y-2">
+                        <h4 class="text-[10px] font-extrabold text-slate-400 uppercase tracking-widest font-display border-b border-slate-100 pb-1.5">${unit.title}</h4>
+                        <div class="space-y-1">
+                `;
+                unit.lessons.forEach((les, lIdx) => {
+                    const isActive = uIdx === activeUnitIdx && lIdx === activeLessonIdx;
+                    const isCompleted = window.cetuActiveLesson.completedLessons.includes(les.id);
+                    navHtml += `
+                        <button onclick="switchLesson(${uIdx}, ${lIdx})" class="w-full text-left px-3.5 py-2.5 rounded-xl text-xs font-bold transition-all flex items-center justify-between gap-2 border ${
+                            isActive 
+                            ? 'bg-primary text-white border-primary shadow-md hover:bg-blue-900' 
+                            : 'text-slate-650 hover:bg-slate-50 border-transparent hover:text-slate-900'
+                        }">
+                            <span class="truncate pr-1">${les.title}</span>
+                            <span class="shrink-0 flex items-center justify-center w-4.5 h-4.5 rounded-full text-[9px] font-extrabold border ${
+                                isCompleted 
+                                ? (isActive ? 'bg-white text-primary border-white' : 'bg-emerald-50 text-emerald-600 border-emerald-200') 
+                                : (isActive ? 'text-blue-200 border-blue-400' : 'text-slate-300 border-slate-200')
+                            }">
+                                ${isCompleted ? '✓' : '○'}
+                            </span>
+                        </button>
+                    `;
+                });
+                navHtml += `
+                        </div>
+                    </div>
+                `;
+            });
+            
+            container.innerHTML = `
+                <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-4 gap-8">
+                    <!-- LEFT SIDEBAR: Course Navigation -->
+                    <aside class="lg:col-span-1 bg-white border border-slate-150 rounded-3xl p-6 shadow-sm space-y-6 h-fit max-h-[85vh] overflow-y-auto sticky top-24">
+                        <div>
+                            <span class="text-[9px] font-extrabold text-primary bg-blue-50 px-2.5 py-1 rounded-full uppercase tracking-widest border border-blue-100">${courseData.title}</span>
+                            <h3 class="text-base font-extrabold text-slate-800 mt-3 font-display">Contenido del Curso</h3>
+                            <div class="w-full bg-slate-100 h-1.5 rounded-full mt-3 overflow-hidden">
+                                <div id="course-progress-bar" class="bg-secondary h-full rounded-full transition-all duration-500" style="width: ${progressPct}%"></div>
+                            </div>
+                            <span id="course-progress-text" class="text-[10px] font-extrabold text-slate-400 mt-1.5 block">${progressPct}% Completado</span>
+                        </div>
+                        
+                        <div class="space-y-4">
+                            ${navHtml}
+                        </div>
+                    </aside>
+
+                    <!-- MAIN WORKSPACE: Active Lesson -->
+                    <main class="lg:col-span-3 space-y-6">
+                        <article class="bg-white rounded-3xl p-6 md:p-8 border border-slate-100 shadow-sm space-y-8">
+                            <!-- 1. HERO OF LESSON -->
+                            <section class="border-b border-slate-100 pb-6 space-y-3">
+                                <div class="flex items-center justify-between gap-4 flex-wrap">
+                                    <span class="text-[9px] font-extrabold text-amber-700 bg-amber-50 px-2.5 py-1 rounded-full uppercase tracking-wider border border-amber-100 font-display">${activeUnit.title}</span>
+                                    <div class="flex items-center gap-1.5" id="completion-header">
+                                        <!-- Completed chip loaded dynamically -->
+                                    </div>
+                                </div>
+                                <h1 class="text-2xl md:text-3xl font-extrabold text-slate-800 leading-snug font-display">${activeLesson.title}</h1>
+                                <p class="text-slate-500 text-sm md:text-base leading-relaxed font-medium">${activeLesson.introduction}</p>
+                            </section>
+
+                            <!-- 2. CONCEPT EXPLANATION -->
+                            <section class="space-y-4">
+                                <h3 class="text-base font-bold text-slate-800 flex items-center gap-2">
+                                    <span class="w-1.5 h-5 bg-primary rounded-full"></span> Explicación Conceptual
+                                </h3>
+                                <div class="text-slate-650 text-sm md:text-base leading-relaxed space-y-4">
+                                    ${activeLesson.explanationHtml}
+                                </div>
+                            </section>
+
+                            <!-- 3. FORMULA BOX -->
+                            ${activeLesson.formulaBoxHtml ? `
+                            <section class="bg-slate-50 p-6 rounded-2xl border border-slate-150 shadow-inner">
+                                ${activeLesson.formulaBoxHtml}
+                            </section>
+                            ` : ''}
+
+                            <!-- 4. VISUAL REPRESENTATION -->
+                            ${activeLesson.svgGraphic ? `
+                            <section class="space-y-4 bg-slate-50 p-6 rounded-2xl border border-slate-150 flex flex-col items-center">
+                                <h4 class="text-[10px] font-extrabold text-slate-500 w-full text-left uppercase tracking-wider font-display">Representación Gráfica</h4>
+                                <div class="w-full flex justify-center py-4 bg-white rounded-2xl border border-slate-100 shadow-sm">
+                                    ${activeLesson.svgGraphic}
+                                </div>
+                                <p class="text-xs text-slate-400 italic text-center w-full mt-2">${activeLesson.svgDescription}</p>
+                            </section>
+                            ` : ''}
+
+                            <!-- 5. WORKED EXAMPLE -->
+                            <section class="bg-blue-50/40 p-6 rounded-2xl border border-blue-100/70 space-y-3">
+                                <h3 class="text-xs font-extrabold text-blue-900 uppercase tracking-wider font-display flex items-center gap-1.5">
+                                    💡 Ejemplo Resuelto
+                                </h3>
+                                <div class="text-slate-700 text-sm leading-relaxed">
+                                    ${activeLesson.workedExampleHtml}
+                                </div>
+                            </section>
+
+                            <!-- 6. COMMON MISTAKES -->
+                            <section class="bg-red-50/30 p-6 rounded-2xl border border-red-100/70 space-y-3">
+                                <h3 class="text-xs font-extrabold text-red-900 uppercase tracking-wider font-display flex items-center gap-1.5">
+                                    ⚠️ Errores Comunes
+                                </h3>
+                                <div class="text-slate-700 text-sm leading-relaxed">
+                                    ${activeLesson.commonMistakesHtml}
+                                </div>
+                            </section>
+
+                            <!-- 7. INTERACTIVE EXERCISES -->
+                            <section class="space-y-6">
+                                <h3 class="text-base font-bold text-slate-800 flex items-center gap-2">
+                                    <span class="w-1.5 h-5 bg-secondary rounded-full"></span> Práctica de Autoevaluación
+                                </h3>
+                                
+                                <div class="space-y-6" id="exercises-container">
+                                    <!-- Exercises loaded dynamically -->
+                                </div>
+                            </section>
+
+                            <!-- 8. VIDEO SUPPORT PLACEHOLDER -->
+                            <section class="space-y-4">
+                                <h3 class="text-base font-bold text-slate-800 flex items-center gap-2">
+                                    <span class="w-1.5 h-5 bg-red-500 rounded-full"></span> Video de Apoyo
+                                </h3>
+                                <div class="bg-slate-900 text-white rounded-3xl p-8 relative flex flex-col items-center justify-center min-h-[220px] shadow-md border border-slate-850 overflow-hidden group">
+                                    <div class="relative z-10 w-14 h-14 rounded-full bg-red-600 group-hover:bg-red-500 text-white flex items-center justify-center text-xl font-bold cursor-pointer transition-all duration-300 shadow-md transform group-hover:scale-105">▶</div>
+                                    <p class="relative z-10 font-bold text-sm mt-4 text-slate-200">Video explicativo de la lección</p>
+                                    <p class="relative z-10 text-[9px] text-slate-400 mt-1.5 uppercase tracking-widest font-semibold">${activeLesson.videoPlaceholderText || 'Explicación del tutor de CEDETU'}</p>
+                                </div>
+                            </section>
+
+                            <!-- 9. LESSON SUMMARY -->
+                            <section class="border-t border-slate-100 pt-6 space-y-2">
+                                <h3 class="text-xs font-extrabold text-slate-700 uppercase tracking-wider font-display">Resumen</h3>
+                                <p class="text-slate-500 text-sm leading-relaxed">${activeLesson.summaryHtml}</p>
+                            </section>
+
+                            <!-- 10. TUTORING CTA -->
+                            <section class="bg-gradient-to-r from-blue-950 to-slate-900 text-white p-8 rounded-3xl border border-slate-850 shadow-md space-y-4 flex flex-col md:flex-row md:items-center justify-between gap-6">
+                                <div class="space-y-2 max-w-lg">
+                                    <h3 class="text-lg font-bold font-display text-amber-400">¿Este tema te resulta difícil de comprender?</h3>
+                                    <p class="text-xs text-slate-300 leading-relaxed">
+                                        Nuestros tutores expertos están disponibles para clases particulares personalizadas, hojas de trabajo o preparación de exámenes a tu propio ritmo.
+                                    </p>
+                                </div>
+                                <button onclick="requestTutoringForLesson('${activeLesson.title}')" class="bg-amber-500 hover:bg-amber-600 active:scale-98 text-slate-950 font-extrabold px-6 py-3.5 rounded-2xl text-xs whitespace-nowrap shadow-md transition-all">
+                                    Solicitar Tutoría Particular
+                                </button>
+                            </section>
+                        </article>
+                        
+                        <!-- Navigation footer -->
+                        <div class="flex items-center justify-between gap-4 pt-2">
+                            <button id="btn-prev-lesson" onclick="goToPrevLesson()" class="bg-white hover:bg-slate-50 active:scale-98 text-slate-700 font-bold border border-slate-200 px-5 py-3 rounded-2xl text-xs transition-all flex items-center gap-1.5">
+                                ← Anterior
+                            </button>
+                            <button id="btn-complete-lesson" onclick="completeActiveLesson()" class="bg-emerald-500 hover:bg-emerald-600 text-white font-extrabold px-8 py-3.5 rounded-2xl text-xs shadow-md transition-all flex items-center gap-1.5">
+                                Completar y Siguiente →
+                            </button>
+                        </div>
+                    </main>
+                </div>
+            `;
+            
+            renderLessonExercises(activeLesson.exercises);
+            updateCompletionHeaderState(activeLesson.id);
+            updateLessonFooterNavigation(courseData);
+        }
+
+        window.switchLesson = function(unitIdx, lessonIdx) {
+            window.cetuActiveLesson.unitIndex = unitIdx;
+            window.cetuActiveLesson.lessonIndex = lessonIdx;
+            
+            const slug = window.cetuActiveLesson.courseSlug;
+            const container = document.getElementById('main-content-area');
+            const course = allCetuCourses.find(c => c.slug === slug);
+            if (course && container) {
+                renderInteractiveCourse(container, course);
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        };
+
+        window.requestTutoringForLesson = function(lessonTitle) {
+            window.prepopulatedTutoringSubject = "Álgebra Lineal: " + lessonTitle;
+            window.location.hash = "#mis-tutorias";
+        };
+
+        window.toggleExerciseHint = function(idx) {
+            const el = document.getElementById('ex-hint-' + idx);
+            if (el) el.classList.toggle('hidden');
+        };
+
+        window.checkShortExercise = function(idx, correctVal, feedbackCorrect, feedbackIncorrect) {
+            const val = document.getElementById('ex-input-' + idx).value.trim().toLowerCase();
+            const feedback = document.getElementById('ex-feedback-' + idx);
+            if (!feedback) return;
+            
+            feedback.classList.remove('hidden', 'bg-green-50', 'text-green-800', 'border-green-200', 'bg-red-50', 'text-red-800', 'border-red-200');
+            
+            const isMatch = val === correctVal.toLowerCase() || 
+                            (parseFloat(val) === parseFloat(correctVal)) ||
+                            (val.replace(/\s+/g, '') === correctVal.toLowerCase().replace(/\s+/g, ''));
+                            
+            if (isMatch) {
+                feedback.classList.add('bg-green-50', 'text-green-800', 'border-green-200');
+                feedback.innerHTML = `🎉 <strong>¡Correcto!</strong> ${feedbackCorrect}`;
+                document.getElementById('ex-input-' + idx).disabled = true;
+                
+                const activeLesson = window.LINEAR_ALGEBRA_COURSE_DATA.units[window.cetuActiveLesson.unitIndex].lessons[window.cetuActiveLesson.lessonIndex];
+                window.cetuActiveLesson.score[activeLesson.id + '_' + idx] = 'correct';
+            } else {
+                feedback.classList.add('bg-red-50', 'text-red-800', 'border-red-200');
+                feedback.innerHTML = `❌ <strong>Intenta de nuevo:</strong> ${feedbackIncorrect}`;
+            }
+            feedback.classList.remove('hidden');
+        };
+
+        window.checkMultipleExercise = function(idx, correctIdx, feedbackCorrect, feedbackIncorrect) {
+            const selected = document.querySelector(`input[name="ex-radio-${idx}"]:checked`);
+            const feedback = document.getElementById('ex-feedback-' + idx);
+            if (!feedback) return;
+            
+            feedback.classList.remove('hidden', 'bg-green-50', 'text-green-800', 'border-green-200', 'bg-red-50', 'text-red-800', 'border-red-200');
+            
+            if (!selected) {
+                feedback.classList.add('bg-red-50', 'text-red-800', 'border-red-200');
+                feedback.innerHTML = `⚠️ <strong>Por favor, selecciona una opción antes de comprobar.</strong>`;
+                feedback.classList.remove('hidden');
+                return;
+            }
+            
+            const val = parseInt(selected.value);
+            if (val === correctIdx) {
+                feedback.classList.add('bg-green-50', 'text-green-800', 'border-green-200');
+                feedback.innerHTML = `🎉 <strong>¡Correcto!</strong> ${feedbackCorrect}`;
+                
+                document.querySelectorAll(`input[name="ex-radio-${idx}"]`).forEach(el => el.disabled = true);
+                
+                const activeLesson = window.LINEAR_ALGEBRA_COURSE_DATA.units[window.cetuActiveLesson.unitIndex].lessons[window.cetuActiveLesson.lessonIndex];
+                window.cetuActiveLesson.score[activeLesson.id + '_' + idx] = 'correct';
+            } else {
+                feedback.classList.add('bg-red-50', 'text-red-800', 'border-red-200');
+                feedback.innerHTML = `❌ <strong>Intenta de nuevo:</strong> ${feedbackIncorrect}`;
+            }
+            feedback.classList.remove('hidden');
+        };
+
+        window.goToPrevLesson = function() {
+            let uIdx = window.cetuActiveLesson.unitIndex;
+            let lIdx = window.cetuActiveLesson.lessonIndex;
+            const courseData = window.LINEAR_ALGEBRA_COURSE_DATA;
+            
+            if (lIdx > 0) {
+                lIdx--;
+            } else if (uIdx > 0) {
+                uIdx--;
+                lIdx = courseData.units[uIdx].lessons.length - 1;
+            } else {
+                return;
+            }
+            window.switchLesson(uIdx, lIdx);
+        };
+
+        window.completeActiveLesson = async function() {
+            const uIdx = window.cetuActiveLesson.unitIndex;
+            const lIdx = window.cetuActiveLesson.lessonIndex;
+            const courseData = window.LINEAR_ALGEBRA_COURSE_DATA;
+            const activeLesson = courseData.units[uIdx].lessons[lIdx];
+            
+            if (!window.cetuActiveLesson.completedLessons.includes(activeLesson.id)) {
+                window.cetuActiveLesson.completedLessons.push(activeLesson.id);
+                localStorage.setItem(`cetu_lessons_completed_${currentUser.id}_${window.cetuActiveLesson.courseSlug}`, JSON.stringify(window.cetuActiveLesson.completedLessons));
+            }
+            
+            const totalLessons = courseData.units.reduce((acc, u) => acc + u.lessons.length, 0);
+            const completedCount = window.cetuActiveLesson.completedLessons.length;
+            const progressPct = Math.min(100, Math.round((completedCount / totalLessons) * 100));
+            
+            const cetuCourse = allCetuCourses.find(c => c.slug === window.cetuActiveLesson.courseSlug);
+            const isDone = completedCount === totalLessons;
+            const newStatus = isDone ? 'completed' : 'in_progress';
+            await updateContentProgress(cetuCourse.id, newStatus, progressPct);
+            
+            let nextU = uIdx;
+            let nextL = lIdx + 1;
+            
+            if (nextL >= courseData.units[uIdx].lessons.length) {
+                nextL = 0;
+                nextU = uIdx + 1;
+            }
+            
+            if (nextU < courseData.units.length) {
+                window.switchLesson(nextU, nextL);
+            } else {
+                const mainArea = document.getElementById('main-content-area');
+                mainArea.innerHTML = `
+                    <div class="max-w-xl mx-auto py-16 text-center space-y-6 bg-white rounded-3xl border border-slate-100 p-8 shadow-sm">
+                        <div class="w-20 h-20 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto text-4xl shadow-inner border border-emerald-100">🏆</div>
+                        <h2 class="text-3xl font-extrabold font-display text-slate-800">¡Felicitaciones!</h2>
+                        <p class="text-sm text-slate-500 leading-relaxed font-medium">
+                            Has completado el curso piloto de <strong>Álgebra Lineal</strong> con éxito. Dominar los conceptos de vectores, matrices y sistemas de ecuaciones lineales es un gran logro académico.
+                        </p>
+                        <div class="pt-4 flex flex-col sm:flex-row justify-center gap-4">
+                            <a href="#contenidos" class="bg-primary hover:bg-blue-900 text-white font-bold px-8 py-3.5 rounded-2xl text-xs shadow-md transition-all">Volver al Catálogo</a>
+                            <a href="#mis-tutorias" class="bg-slate-50 hover:bg-slate-100 border border-slate-200 text-slate-700 font-bold px-8 py-3.5 rounded-2xl text-xs transition-all">Solicitar Sesión de Repaso</a>
+                        </div>
+                    </div>
+                `;
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        };
+
+        function renderLessonExercises(exercises) {
+            const container = document.getElementById('exercises-container');
+            if (!container) return;
+            
+            const activeLesson = window.LINEAR_ALGEBRA_COURSE_DATA.units[window.cetuActiveLesson.unitIndex].lessons[window.cetuActiveLesson.lessonIndex];
+            let exercisesHtml = '';
+            exercises.forEach((ex, idx) => {
+                const score = window.cetuActiveLesson.score[activeLesson.id + '_' + idx];
+                const isCorrect = score === 'correct';
+                
+                if (ex.type === 'short') {
+                    exercisesHtml += `
+                        <div class="bg-slate-50 border border-slate-150 p-6 rounded-2xl space-y-4 exercise-card shadow-sm" id="ex-card-${idx}">
+                            <div class="flex justify-between items-center gap-2">
+                                <span class="text-[10px] font-extrabold text-slate-400 uppercase tracking-widest font-display">Ejercicio ${idx + 1} • Nivel ${ex.difficulty}</span>
+                                <span class="inline-flex px-2 py-0.5 rounded-full text-[9px] font-extrabold bg-slate-100 text-slate-650 border border-slate-200">Respuesta Corta</span>
+                            </div>
+                            <p class="text-slate-700 text-sm font-semibold leading-relaxed">${ex.question}</p>
+                            <div class="flex flex-wrap gap-3 items-center">
+                                <input type="text" id="ex-input-${idx}" class="px-4 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:ring-2 focus:ring-secondary text-sm bg-white text-slate-800 font-bold max-w-[200px]" placeholder="Respuesta" ${isCorrect ? 'disabled value="' + ex.correctAnswer + '"' : ''}>
+                                <button onclick="checkShortExercise(${idx}, '${ex.correctAnswer.replace(/'/g, "\\'")}', '${ex.feedbackCorrect.replace(/'/g, "\\'")}', '${ex.feedbackIncorrect.replace(/'/g, "\\'")}')" class="bg-primary hover:bg-blue-900 active:scale-98 text-white font-bold px-5 py-2.5 rounded-xl text-xs transition-all" ${isCorrect ? 'disabled' : ''}>Comprobar</button>
+                                <button onclick="toggleExerciseHint(${idx})" class="bg-white hover:bg-slate-50 border border-slate-200 text-slate-655 font-bold px-4 py-2.5 rounded-xl text-xs transition-all">Ver Pista</button>
+                            </div>
+                            <div id="ex-hint-${idx}" class="hidden p-3.5 bg-amber-50 text-amber-800 border border-amber-200 rounded-xl text-xs leading-relaxed font-semibold">
+                                💡 <strong>Pista:</strong> ${ex.hint}
+                            </div>
+                            <div id="ex-feedback-${idx}" class="hidden p-4 rounded-xl text-xs font-semibold leading-relaxed border">
+                            </div>
+                        </div>
+                    `;
+                } else {
+                    let optionsHtml = '';
+                    ex.options.forEach((opt, optIdx) => {
+                        optionsHtml += `
+                            <label class="flex items-center gap-3 bg-white p-3 rounded-xl border border-slate-200 hover:bg-slate-55 cursor-pointer transition-all">
+                                <input type="radio" name="ex-radio-${idx}" value="${optIdx}" class="w-4 h-4 text-primary focus:ring-secondary border-slate-300 cursor-pointer" ${isCorrect ? 'disabled' : ''}>
+                                <span class="text-xs sm:text-sm text-slate-700 font-semibold">${opt}</span>
+                            </label>
+                        `;
+                    });
+                    
+                    exercisesHtml += `
+                        <div class="bg-slate-50 border border-slate-150 p-6 rounded-2xl space-y-4 exercise-card shadow-sm" id="ex-card-${idx}">
+                            <div class="flex justify-between items-center gap-2">
+                                <span class="text-[10px] font-extrabold text-slate-400 uppercase tracking-widest font-display">Ejercicio ${idx + 1} • Nivel ${ex.difficulty}</span>
+                                <span class="inline-flex px-2 py-0.5 rounded-full text-[9px] font-extrabold bg-slate-100 text-slate-655 border border-slate-200">Opción Múltiple</span>
+                            </div>
+                            <p class="text-slate-700 text-sm font-semibold leading-relaxed">${ex.question}</p>
+                            <div class="space-y-2">
+                                ${optionsHtml}
+                            </div>
+                            <div class="flex flex-wrap gap-3 items-center pt-2">
+                                <button onclick="checkMultipleExercise(${idx}, ${ex.correctAnswer}, '${ex.feedbackCorrect.replace(/'/g, "\\'")}', '${ex.feedbackIncorrect.replace(/'/g, "\\'")}')" class="bg-primary hover:bg-blue-900 active:scale-98 text-white font-bold px-5 py-2.5 rounded-xl text-xs transition-all" ${isCorrect ? 'disabled' : ''}>Comprobar</button>
+                                <button onclick="toggleExerciseHint(${idx})" class="bg-white hover:bg-slate-50 border border-slate-200 text-slate-655 font-bold px-4 py-2.5 rounded-xl text-xs transition-all">Ver Pista</button>
+                            </div>
+                            <div id="ex-hint-${idx}" class="hidden p-3.5 bg-amber-50 text-amber-800 border border-amber-200 rounded-xl text-xs leading-relaxed font-semibold">
+                                💡 <strong>Pista:</strong> ${ex.hint}
+                            </div>
+                            <div id="ex-feedback-${idx}" class="hidden p-4 rounded-xl text-xs font-semibold leading-relaxed border">
+                            </div>
+                        </div>
+                    `;
+                }
+            });
+            container.innerHTML = exercisesHtml;
+            
+            // Re-apply correct feedbacks
+            exercises.forEach((ex, idx) => {
+                const score = window.cetuActiveLesson.score[activeLesson.id + '_' + idx];
+                if (score === 'correct') {
+                    const feedback = document.getElementById('ex-feedback-' + idx);
+                    if (feedback) {
+                        feedback.classList.remove('hidden');
+                        feedback.classList.add('bg-green-50', 'text-green-800', 'border-green-200');
+                        feedback.innerHTML = `🎉 <strong>¡Correcto!</strong> ${ex.feedbackCorrect}`;
+                    }
+                }
+            });
+        }
+
+        function updateCompletionHeaderState(lessonId) {
+            const el = document.getElementById('completion-header');
+            if (!el) return;
+            
+            const isCompleted = window.cetuActiveLesson.completedLessons.includes(lessonId);
+            if (isCompleted) {
+                el.innerHTML = `
+                    <span class="inline-flex items-center gap-1 text-[9px] font-extrabold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-full uppercase border border-emerald-150">
+                        ✓ Completado
+                    </span>
+                `;
+            } else {
+                el.innerHTML = `
+                    <span class="inline-flex items-center gap-1 text-[9px] font-extrabold text-slate-400 bg-slate-50 px-2.5 py-1 rounded-full uppercase border border-slate-150">
+                        ○ En Progreso
+                    </span>
+                `;
+            }
+        }
+
+        function updateLessonFooterNavigation(courseData) {
+            const uIdx = window.cetuActiveLesson.unitIndex;
+            const lIdx = window.cetuActiveLesson.lessonIndex;
+            
+            const prevBtn = document.getElementById('btn-prev-lesson');
+            if (prevBtn) {
+                if (uIdx === 0 && lIdx === 0) {
+                    prevBtn.disabled = true;
+                    prevBtn.classList.add('opacity-40', 'cursor-not-allowed');
+                } else {
+                    prevBtn.disabled = false;
+                    prevBtn.classList.remove('opacity-40', 'cursor-not-allowed');
+                }
+            }
+            
+            const compBtn = document.getElementById('btn-complete-lesson');
+            if (compBtn) {
+                const isLast = uIdx === courseData.units.length - 1 && lIdx === courseData.units[uIdx].lessons.length - 1;
+                compBtn.innerText = isLast ? 'Finalizar Curso 🏆' : 'Completar y Siguiente →';
+            }
         }
 
         function saveProgressLocalStorage(contentId, status, percentage) {
@@ -2653,6 +3226,11 @@
                     </div>
                 </div>
             `;
+            if (window.prepopulatedTutoringSubject) {
+                const subjectInput = document.getElementById('tut-subject');
+                if (subjectInput) subjectInput.value = window.prepopulatedTutoringSubject;
+                window.prepopulatedTutoringSubject = null;
+            }
         }
 
         async function handleTutoringRequest(e) {
