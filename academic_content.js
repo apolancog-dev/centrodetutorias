@@ -7919,197 +7919,681 @@ window.ACADEMIC_CONTENT = {
     ]
 },
 
-    "curso-estadistica-aplicada": `# Curso: Estadística Descriptiva
-* **Materia:** Matemáticas | **Nivel sugerido:** Diversificado / Universidad
-* **Público objetivo:** Estudiantes de bachillerato, administración o ingeniería que se inician en el análisis exploratorio de datos.
-* **Objetivos de aprendizaje:** Organizar datos en tablas de frecuencia, graficar distribuciones de datos, calcular las medidas de tendencia central y medir la variabilidad de una muestra.
-
-## Unidad 1: Organización y Presentación de Datos
-### Lección 1.1: Tablas de Frecuencia para Datos No Agrupados
-* **Objetivo:** Organizar un conjunto de datos brutos en una tabla estructurada que muestre la frecuencia absoluta, acumulada, relativa y porcentual.
-* **Explicación:** 
-  * **Frecuencia Absoluta ($f$):** Número de veces que aparece un valor.
-  * **Frecuencia Acumulada ($F$):** Suma sucesiva de las frecuencias absolutas.
-  * **Frecuencia Relativa ($fr$):** Frecuencia absoluta dividida entre el total de datos ($n$).
-  * **Frecuencia Porcentual ($f\%$):** Frecuencia relativa multiplicada por 100.
-* **Ejemplo Resuelto:** Durante una semana se encuestó a 10 familias de un condominio sobre la cantidad de hijos que tienen. Los datos fueron: 2, 1, 0, 2, 3, 2, 1, 0, 1, 2. Organiza el dato '2 hijos' en la tabla.
-  - *Paso 1 Frecuencia Absoluta:* Cuenta cuántas familias tienen exactamente 2 hijos. Los datos son: [2, 2, 2, 2]. Hay 4 familias. Frecuencia absoluta ($f = 4$).
-  - *Paso 2 Frecuencia Relativa:* Divide el valor entre el total de encuestados ($n = 10$): $fr = 4 ÷ 10 = 0.40$.
-  - *Paso 3 Frecuencia Porcentual:* Multiplica por 100: $f\% = 0.40 \times 100 = 40\%$.
-  - *Resultado:* El valor 2 tiene una frecuencia de 4 familias, que representa el 40% del total.
-* **Errores Comunes:** Sumar incorrectamente las frecuencias relativas; la suma de todas las frecuencias relativas debe dar exactamente 1 (o 100% en porcentuales).
-* **Ejercicios de Práctica:**
-  1. En una muestra de 20 estudiantes, 5 tienen notas excelentes. ¿Cuál es la frecuencia relativa de alumnos excelentes? (R: 0.25).
-  2. Con los datos anteriores, ¿a qué porcentaje equivale? (R: 25%).
-  3. Si la frecuencia acumulada del tercer intervalo en una tabla es 15 y la frecuencia absoluta del cuarto intervalo es 6, ¿cuál es la frecuencia acumulada del cuarto intervalo? (R: 21. Retroalimentación: F_4 = F_3 + f_4 = 15 + 6 = 21).
-  4. ¿Qué tipo de gráfico es el más adecuado para representar la frecuencia de una variable cualitativa nominal (como el color favorito)? (R: Gráfico de barras o circular).
-  5. En una encuesta de satisfacción, 8 personas respondieron "Muy Bueno" de un total de 40. ¿Cuál es el porcentaje de esta respuesta? (R: 20%).
-* **¿Necesitas ayuda?** Construir tablas de frecuencias largas puede ser monótono y dar lugar a errores de conteo sencillos. ¡Aprende a estructurarlas con ayuda de tu tutor de forma divertida!
-
-### Lección 1.2: Histogramas y Polígonos de Frecuencia
-* **Objetivo:** Diseñar e interpretar gráficos de distribución de datos agrupados para variables cuantitativas continuas.
-* **Explicación:** Un **histograma** es un gráfico de barras verticales pegadas entre sí, donde el ancho de la barra representa el intervalo de la clase (límites reales) y la altura representa la frecuencia. El **polígono de frecuencia** se forma uniendo con líneas rectas los puntos medios (marcas de clase) de las partes superiores de las barras del histograma.
-* **Ejemplo Resuelto:** Un grupo de estudio midió la estatura en metros de 30 estudiantes y agrupó los datos en intervalos. El intervalo [1.50 - 1.60) tiene una frecuencia de 12 alumnos. ¿Cómo se dibuja esta barra en el histograma?
-  - *Paso 1:* En el eje horizontal (X), marca el inicio en 1.50 y el final en 1.60.
-  - *Paso 2:* En el eje vertical (Y), rotula las frecuencias de 1 en 1 o de 2 en 2 hasta llegar al menos a 12.
-  - *Paso 3:* Dibuja una barra que inicie exactamente en 1.50, termine en 1.60 y tenga una altura de 12 unidades.
-  - *Resultado:* Una barra rectangular de ancho 0.10 y altura 12.
-* **Errores Comunes:** Dibujar el histograma con las barras separadas (esto es un gráfico de barras para datos categóricos, no un histograma de variables continuas).
-* **Ejercicios de Práctica:**
-  1. ¿Qué representa la "marca de clase" en una tabla de datos agrupados? (R: El punto medio del intervalo. Se calcula sumando el límite inferior más el superior y dividiendo entre 2).
-  2. Si el intervalo es [20, 30), ¿cuál es su marca de clase? (R: 25).
-  3. Si la base de una barra en un histograma va de 10.5 a 15.5, ¿cuál es la amplitud del intervalo? (R: 5).
-  4. ¿Para qué tipo de datos es ideal el uso de una gráfica de sectores o pastel? (R: Para variables categóricas que representan porcentajes de un todo).
-  5. Si el polígono de frecuencias toca el eje X al inicio y al final, ¿en qué valores lo hace? (R: En las marcas de clase ficticias anterior a la primera y posterior a la última con frecuencia cero).
-* **¿Necesitas ayuda?** Interpretar gráficos estadísticos es una de las preguntas fijas del examen de matemáticas de admisión a la universidad. ¡Toma una tutoría en CEDETU y asegúrate esos puntos!
-
-### Lección 1.3: Diagramas de Caja y Bigotes (Boxplot)
-* **Objetivo:** Representar y analizar de forma visual la dispersión y asimetría de un conjunto de datos a partir de sus cinco medidas clave (mínimo, Q1, mediana, Q3 y máximo).
-* **Explicación:** Un boxplot resume gráficamente la distribución de los datos. La "caja" contiene el 50% central de los datos, delimitada por el Primer Cuartil (Q1) a la izquierda y el Tercer Cuartil (Q3) a la derecha. Una línea interna marca la Mediana (Q2). Los "bigotes" se extienden hasta el valor mínimo y máximo no atípicos.
-* **Ejemplo Resuelto:** Dados los cuartiles de un examen sobre 100 puntos: Mínimo = 40, Q1 = 55, Mediana = 70, Q3 = 85, Máximo = 95. ¿Qué porcentaje de alumnos obtuvieron una nota superior a 85 puntos?
-  - *Paso 1:* Identifica que 85 puntos corresponde al Tercer Cuartil (Q3).
-  - *Paso 2:* Por definición de cuartiles, el Q3 divide los datos dejando el 75% por debajo y el 25% por encima de su valor.
-  - *Resultado:* El 25% de los alumnos obtuvo una nota superior a 85 puntos.
-* **Errores Comunes:** Pensar que las cuatro secciones del boxplot (mínimo-Q1, Q1-mediana, mediana-Q3, Q3-máximo) tienen diferente cantidad de datos porque tienen diferente tamaño visual. Cada sección contiene exactamente el 25% de los datos.
-* **Ejercicios de Práctica:**
-  1. ¿Qué porcentaje de los datos se encuentra dentro de la "caja" de un boxplot? (R: El 50% de los datos).
-  2. ¿Cómo se calcula el Rango Intercuartílico (RIC)? (R: Restando Q3 - Q1).
-  3. Si Q1 = 12 y Q3 = 20, ¿cuánto vale el Rango Intercuartílico? (R: 8).
-  4. En un boxplot, ¿cómo se representan los datos atípicos o muy extremos? (R: Con puntos o asteriscos fuera de los límites de los bigotes).
-  5. Si la línea de la mediana está muy cerca del lado izquierdo de la caja (Q1), ¿qué nos indica sobre la asimetría de los datos? (R: Que los datos tienen una asimetría positiva o hacia la derecha).
-* **¿Necesitas ayuda?** Los cuartiles y los diagramas de caja son abstractos y difíciles de graficar a mano. ¡Un tutor de CEDETU te enseñará a dominarlos de manera interactiva y muy sencilla!
-
-## Unidad 2: Medidas de Tendencia Central
-### Lección 2.1: Media Aritmética (Promedio)
-* **Objetivo:** Calcular la media aritmética para conjuntos de datos agrupados y no agrupados, y comprender su sensibilidad ante valores extremos.
-* **Explicación:** La media (promedio) es la suma de todos los valores de la muestra dividida entre el tamaño total de la muestra ($n$).
-  * Media: $\bar{x} = \sum x_i / n$
-* **Ejemplo Resuelto:** Las notas de 5 tareas de matemáticas de un alumno son: 80, 95, 90, 40 y 95. Calcula su promedio.
-  - *Paso 1:* Suma todos los valores: 80 + 95 + 90 + 40 + 95 = 400.
-  - *Paso 2:* Divide el total de la suma entre la cantidad de tareas ($n = 5$): 400 ÷ 5 = 80.
-  - *Resultado:* La nota promedio es 80 puntos. (Nota cómo la tarea de 40 puntos jaló el promedio hacia abajo notablemente).
-* **Errores Comunes:** No dividir por el total de elementos reales, o ignorar los valores que valen cero al hacer el promedio.
-* **Ejercicios de Práctica:**
-  1. Calcula la media de los siguientes datos: 12, 15, 18, 20, 25. (R: 18. Retroalimentación: Suma = 90; n = 5; 90 / 5 = 18).
-  2. Un comerciante vende Q200 el lunes, Q350 el martes y Q650 el miércoles. ¿Cuál fue su venta promedio diaria en esos 3 días? (R: Q400).
-  3. Si el promedio de 4 exámenes es 85, ¿cuánto deben sumar las notas de los 4 exámenes en total? (R: 340 puntos. Retroalimentación: Suma = Promedio × n = 85 × 4 = 340).
-  4. Si agregas un dato extremo gigante (como 1,000) a una muestra de números entre 10 y 20, ¿qué le ocurre a la media? (R: Aumenta drásticamente. La media es muy sensible a datos atípicos).
-  5. En una oficina de 6 empleados, las edades son: 25, 28, 30, 25, 40, 26. ¿Cuál es el promedio de edad? (R: 29 años).
-* **¿Necesitas ayuda?** La media ponderada es otro concepto clave (usada para promedios de colegios y universidades). ¡Aprende a calcular tu zona académica con la guía de tu tutor de CEDETU!
-
-### Lección 2.2: Mediana (El Valor Central)
-* **Objetivo:** Determinar la mediana de un conjunto de datos ordenándolos previamente y diferenciando si el tamaño de la muestra es par o impar.
-* **Explicación:** La mediana es el valor central que divide la muestra en dos partes exactamente iguales: el 50% de los datos queda por debajo y el 50% por encima.
-  * *Paso Obligatorio:* Ordenar los datos de menor a mayor.
-  * Si $n$ es **impar**: La mediana es el dato de la posición central: $(n + 1)/2$.
-  * Si $n$ es **par**: La mediana es el promedio de los dos datos centrales del medio.
-* **Ejemplo Resuelto:** Encuentra la mediana de las siguientes velocidades: 12 m/s, 5 m/s, 20 m/s, 8 m/s, 15 m/s, 10 m/s.
-  - *Paso 1 Ordenar:* 5, 8, 10, 12, 15, 20.
-  - *Paso 2 Identificar n:* Hay 6 datos ($n$ es par).
-  - *Paso 3 Promediar los centrales:* Los dos datos del medio son 10 y 12. Mediana = (10 + 12) ÷ 2 = 11 m/s.
-  - *Resultado:* Mediana = 11 m/s.
-* **Errores Comunes:** Calcular la mediana directamente de la lista desordenada sin ordenarla previamente.
-* **Ejercicios de Práctica:**
-  1. Encuentra la mediana de: 7, 3, 9, 12, 5. (R: 7. Retroalimentación: Ordenados son 3, 5, 7, 9, 12. El del centro es 7).
-  2. Encuentra la mediana de: 150, 200, 180, 160. (R: 170. Retroalimentación: Ordenados son 150, 160, 180, 200. Promedio de 160 y 180 es 170).
-  3. Si la mediana de los salarios de una empresa es de Q4,500, ¿qué significa con respecto a los trabajadores? (R: Que el 50% de los trabajadores gana Q4,500 o menos, y el otro 50% gana Q4,500 o más).
-  4. Encuentra la mediana de: 0, 0, 1, 2, 5, 8, 10. (R: 2).
-  5. ¿Se ve afectada la mediana si cambiamos el dato más grande de una muestra por uno diez veces mayor? (R: No. La mediana es robusta y no le afectan los valores extremos atípicos).
-* **¿Necesitas ayuda?** La robustez de la mediana es un concepto hermoso de la estadística. ¡Entiéndelo perfectamente con tu tutor de CEDETU y sácate un 100!
-
-### Lección 2.3: Moda (El Valor Más Frecuente)
-* **Objetivo:** Identificar el valor o valores con mayor frecuencia absoluta y comprender cuándo una muestra es bimodal, multimodal o no tiene moda.
-* **Explicación:** La moda es simplemente el valor que ocurre con mayor frecuencia en una distribución de datos. Una muestra puede tener una única moda (unimodal), dos modas (bimodal), varias modas (multimodal) o ninguna moda si todos los datos se repiten la misma cantidad de veces (amodal).
-* **Ejemplo Resuelto:** Determina la moda de los siguientes datos de colores de camisas vendidos en un almacén de Xela: Azul, Rojo, Azul, Verde, Rojo, Azul, Negro.
-  - *Paso 1 Contar frecuencias:* Negro: 1, Verde: 1, Rojo: 2, Azul: 3.
-  - *Paso 2 Identificar el mayor:* El color con mayor frecuencia es el Azul, con 3 repeticiones.
-  - *Resultado:* Moda = Azul.
-* **Errores Comunes:** Pensar que la moda siempre es un número único, o decir que la moda es cero en lugar de "no tiene moda" cuando todos los datos se repiten igual.
-* **Ejercicios de Práctica:**
-  1. ¿Cuál es la moda de: 4, 5, 5, 6, 7, 7, 8? (R: 5 y 7. Retroalimentación: Esta muestra es bimodal).
-  2. ¿Cuál es la moda de: 10, 12, 14, 16? (R: No tiene moda. Retroalimentación: Todos los datos se repiten exactamente una vez).
-  3. En un salón de clases, las estaturas son: 1.60m, 1.65m, 1.60m, 1.70m, 1.60m, 1.65m. ¿Cuál es la moda? (R: 1.60m).
-  4. ¿Para qué tipo de variables (cualitativas o cuantitativas) es la moda la única medida de tendencia central que se puede aplicar? (R: Para variables cualitativas nominales).
-  5. Si los datos son: 3, 3, 3, 5, 5, 5, 8, 8, 8. ¿Cuál es la moda? (R: No tiene moda. Retroalimentación: Aunque se repiten 3 veces, todos tienen la misma frecuencia máxima, por lo que no hay un valor único dominante).
-* **¿Necesitas ayuda?** La moda es el dato de mayor popularidad. ¡Aprende a analizarla y graficarla en curvas de distribución con tu tutor!
-
-## Evaluación Unidad 2
-* Las edades de 7 amigos son: 12, 15, 12, 14, 13, 12, 16. Calcula la media, mediana y moda de sus edades. (R: Media = 13.0 años, Mediana = 12.0 años, Moda = 12.0 años. Retroalimentación: Suma = 91; 91/7 = 13. Ordenados: 12, 12, 12, 13, 14, 15, 16. El central es 13. El que más se repite es 12).
-* Si las notas promedio de un estudiante en 3 materias son 70, 80 y 90, pero cada materia vale diferente porcentaje (Materia 1 vale 20%, Materia 2 vale 30% y Materia 3 vale 50%), ¿cuál es su promedio ponderado real? (R: 82 puntos. Retroalimentación: Promedio = 70×0.20 + 80×0.30 + 90×0.50 = 14 + 24 + 45 = 83).
-* En un conjunto de datos ordenados de menor a mayor, el dato central es la mediana. ¿A qué percentil equivale esta medida? (R: Percentil 50. Retroalimentación: La mediana divide los datos exactamente al 50%).
-
----
-
-## Unidad 3: Medidas de Dispersión
-### Lección 3.1: Rango y Desviación Media
-* **Objetivo:** Calcular el rango total y la desviación media de una muestra para cuantificar la dispersión de los datos respecto a la media.
-* **Explicación:** 
-  * **Rango:** La diferencia entre el valor máximo y el valor mínimo: $R = \text{Máx} - \text{Mín}$.
-  * **Desviación Media (DM):** El promedio de las diferencias absolutas de cada dato respecto a la media aritmética de la muestra:
-    $\text{DM} = \sum |x_i - \bar{x}| / n$
-* **Ejemplo Resuelto:** Calcula el rango y la desviación media de los datos: 2, 4, 6 (la media de estos datos es $\bar{x} = 4$).
-  - *Paso 1 Rango:* Máximo (6) - Mínimo (2) = 4.
-  - *Paso 2 Desviaciones:*
-    * Para 2: $|2 - 4| = 2$
-    * Para 4: $|4 - 4| = 0$
-    * Para 6: $|6 - 4| = 2$
-  - *Paso 3 Desviación Media:* Promedia los valores absolutos: $(2 + 0 + 2) ÷ 3 = 4 ÷ 3 = 1.33$.
-  - *Resultado:* Rango = 4, Desviación Media = 1.33.
-* **Errores Comunes:** Olvidar aplicar el valor absoluto en la desviación media, lo que causaría que las desviaciones positivas y negativas se anularan sumando cero.
-* **Ejercicios de Práctica:**
-  1. Calcula el rango de los datos: 15, 30, 20, 85, 40. (R: 70. Retroalimentación: 85 - 15 = 70).
-  2. ¿Qué significa un rango muy pequeño en una muestra de notas de exámenes? (R: Que el grupo es muy homogéneo y casi todos obtuvieron notas similares).
-  3. Calcula la desviación media de los datos: 10 y 20 (la media es 15). (R: 5. Retroalimentación: |10-15| = 5; |20-15| = 5. Promedio = (5+5)/2 = 5).
-  4. Si todos los datos de una muestra son idénticos (ej. 5, 5, 5, 5), ¿cuánto vale su desviación media? (R: 0).
-  5. En una carrera de atletismo, el tiempo promedio es 12 segundos y la desviación media es 0.5 segundos. ¿En qué rango aproximado están la mayoría de los tiempos? (R: Entre 11.5 y 12.5 segundos).
-* **¿Necesitas ayuda?** La dispersión mide qué tan "confiables" son los promedios. ¡Comprende este concepto crucial con ayuda de tu tutor de CEDETU!
-
-### Lección 3.2: Varianza y Desviación Estándar Muestral
-* **Objetivo:** Calcular la varianza y la desviación estándar de una muestra analizando el grado de dispersión promedio de los datos elevados al cuadrado.
-* **Explicación:** La **varianza ($s^2$)** mide la dispersión promediando los cuadrados de las diferencias de cada dato respecto a la media. Para una muestra dividimos entre $n - 1$ (corrección de Bessel). La **desviación estándar ($s$)** es la raíz cuadrada de la varianza, lo que regresa la medida a las unidades originales de los datos.
-  * Varianza muestral: $s^2 = \sum (x_i - \bar{x})^2 / (n - 1)$
-  * Desviación estándar: $s = \sqrt{s^2}$
-* **Ejemplo Resuelto:** Calcula la varianza y la desviación estándar de los datos: 3, 5, 7 (la media es $\bar{x} = 5$, tamaño $n = 3$).
-  - *Paso 1 Diferencias al cuadrado:*
-    * $(3 - 5)^2 = (-2)^2 = 4$
-    * $(5 - 5)^2 = 0^2 = 0$
-    * $(7 - 5)^2 = 2^2 = 4$
-  - *Paso 2 Suma de cuadrados:* $4 + 0 + 4 = 8$.
-  - *Paso 3 Varianza (dividir entre n - 1):* $s^2 = 8 ÷ (3 - 1) = 8 ÷ 2 = 4$.
-  - *Paso 4 Desviación Estándar:* $s = \sqrt{4} = 2$.
-  - *Resultado:* Varianza = 4, Desviación Estándar = 2.
-* **Errores Comunes:** Dividir entre $n$ en lugar de $n - 1$ cuando se trata de una muestra y no de la población completa.
-* **Ejercicios de Práctica:**
-  1. Si la varianza de un conjunto de datos es 16, ¿cuál es su desviación estándar? (R: 4. Retroalimentación: √16 = 4).
-  2. Si la desviación estándar del peso de unos sacos de café es de 3 libras, ¿cuánto vale su varianza? (R: 9. Retroalimentación: 3² = 9).
-  3. Calcula la varianza muestral de los datos: 10 y 20 (la media es 15, n = 2). (R: 50. Retroalimentación: (10-15)² + (20-15)² = 25 + 25 = 50. Dividimos entre n - 1 = 1: 50/1 = 50).
-  4. Con los datos anteriores, ¿cuál es su desviación estándar? (R: 7.07. Retroalimentación: √50 = 7.07).
-  5. ¿Puede una varianza dar alguna vez un resultado negativo? (R: No. Al estar las diferencias elevadas al cuadrado, el resultado siempre es positivo o cero).
-* **¿Necesitas ayuda?** La desviación estándar es la medida de dispersión más utilizada en ciencias y finanzas. ¡Asegura tu comprensión de esta fórmula con tu tutor de CEDETU!
-
-### Lección 3.3: Coeficiente de Variación (CV)
-* **Objetivo:** Calcular el coeficiente de variación para comparar la variabilidad relativa de dos muestras que tienen diferentes unidades de medida o medias muy distintas.
-* **Explicación:** El coeficiente de variación ($CV$) expresa la desviación estándar como un porcentaje de la media aritmética. Al ser una unidad adimensional, nos permite saber con precisión cuál de dos conjuntos de datos es más homogéneo o tiene menor dispersión relativa.
-  * Coeficiente de Variación: $CV = (s / \bar{x}) \times 100\%$
-* **Ejemplo Resuelto:** Un salón de clases tiene una estatura media de 1.60 m con desviación estándar de 0.08 m. Otro salón tiene un peso medio de 50 kg con desviación estándar de 5 kg. ¿Cuál salón tiene datos más dispersos relativamente?
-  - *Paso 1 CV Estaturas:* $(0.08 ÷ 1.60) \times 100\% = 0.05 \times 100\% = 5\%$.
-  - *Paso 2 CV Pesos:* $(5 ÷ 50) \times 100\% = 0.10 \times 100\% = 10\%$.
-  - *Paso 3 Comparación:* El CV de los pesos (10%) es mayor que el de las estaturas (5%).
-  - *Resultado:* El peso de los alumnos tiene una variabilidad relativa mayor que su estatura.
-* **Errores Comunes:** Expresar el coeficiente de variación sin el símbolo de porcentaje o dividir la media entre la desviación en lugar del revés.
-* **Ejercicios de Práctica:**
-  1. Si la media es 40 y la desviación estándar es 8, ¿cuál es el coeficiente de variación? (R: 20%. Retroalimentación: (8 / 40) × 100% = 20%).
-  2. Si una muestra de salarios tiene un CV del 45% y otra del 15%, ¿cuál muestra es más homogénea? (R: La muestra con CV del 15%).
-  3. Calcula el CV si la media es 10 y la desviación estándar es 1.5. (R: 15%).
-  4. ¿Para qué sirve el coeficiente de variación en comparación con la desviación estándar común? (R: Para comparar la dispersión entre variables con diferentes unidades de medida o medias muy diferentes).
-  5. Si el CV de las ventas semanales de un negocio es de 8%, ¿indica esto una gran estabilidad en las ventas? (R: Sí. Un CV menor al 10% se considera de muy baja variabilidad o alta estabilidad).
-* **¿Necesitas ayuda?** Aprender a interpretar el coeficiente de variación te dará una ventaja analítica enorme en tus cursos de estadística. ¡Consúltalo con tu tutor de CEDETU!
-
-## Evaluación Unidad 3
-* Calcula el Rango, Varianza Muestral y Desviación Estándar de las siguientes temperaturas: 18°C, 20°C, 22°C (la media es 20°C). (R: Rango = 4°C, Varianza = 4, Desviación Estándar = 2°C. Retroalimentación: Suma de diferencias al cuadrado = (18-20)² + (20-20)² + (22-20)² = 4 + 0 + 4 = 8. Varianza = 8 / (3-1) = 4. Desviación = √4 = 2).
-* Si dos proyectos de inversión tienen el mismo rendimiento promedio del 15% anual, pero el Proyecto A tiene una desviación estándar del 2% y el Proyecto B del 8%, ¿cuál proyecto es más riesgoso y por qué? (R: El Proyecto B. Tiene mayor desviación estándar, lo que representa una mayor variabilidad y por ende mayor riesgo).
-* Si un conjunto de datos tiene una media de 50 y una desviación estándar de 5, ¿cuál es su coeficiente de variación? (R: 10%).
-`,
+    "curso-estadistica-aplicada": {
+    "isRichCourse": true,
+    "title": "Estadística Descriptiva",
+    "units": [
+        {
+            "title": "Unidad 1: Organización y Presentación de Datos",
+            "lessons": [
+                {
+                    "id": "tablas-frecuencia-datos-no-agrupados",
+                    "title": "Lección 1.1: Tablas de Frecuencia para Datos No Agrupados",
+                    "introduction": "Aprende a estructurar un conjunto de datos desordenados en una tabla de distribución de frecuencias absolutas, acumuladas, relativas y porcentuales.",
+                    "explanationHtml": "<p>En estadística, la organización de la información recolectada es el primer paso indispensable. Para datos cuantitativos no agrupados o cualitativos discretos, utilizamos una <strong>tabla de distribución de frecuencias</strong> que contiene las siguientes variables:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Frecuencia Absoluta ($f_i$):</strong> Es el número de veces que se repite un valor específico ($x_i$) en el conjunto de observaciones. La suma de todas las frecuencias absolutas es igual al tamaño de la muestra ($n$).</li><li><strong>Frecuencia Acumulada ($F_i$):</strong> Es la suma sucesiva acumulada de las frecuencias absolutas hasta el intervalo o valor actual.</li><li><strong>Frecuencia Relativa ($fr_i$):</strong> Es la proporción que representa la frecuencia absoluta con respecto al tamaño de la muestra. Se calcula como: <br>$$fr_i = \\frac{f_i}{n}$$ la suma de todas las frecuencias relativas debe ser exactamente igual a **1.00**.</li><li><strong>Frecuencia Porcentual ($f\\%_i$):</strong> Es la frecuencia relativa expresada en términos de porcentaje. Se calcula multiplicándola por 100: <br>$$f\\%_i = fr_i \\times 100\\%$$ la suma de todas las frecuencias porcentuales debe dar exactamente **100%**.</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Ecuaciones de Frecuencia</p><p class=\"text-xs font-mono font-bold text-primary\">n = &sum;f_i &nbsp;|&nbsp; fr_i = f_i / n &nbsp;|&nbsp; f%_i = fr_i &times; 100%</p><p class=\"text-xs text-slate-550\">Herramienta: La suma de fr_i siempre es 1.00, y la suma de f%_i siempre es 100%.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"18\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">TABLA DE FRECUENCIAS</text><rect x=\"20\" y=\"28\" width=\"260\" height=\"18\" fill=\"#eff6ff\" stroke=\"#bfdbfe\" rx=\"3\" /><text x=\"40\" y=\"40\" font-size=\"8\" font-weight=\"bold\" fill=\"#1e40af\" text-anchor=\"middle\">Valor x</text><text x=\"90\" y=\"40\" font-size=\"8\" font-weight=\"bold\" fill=\"#1e40af\" text-anchor=\"middle\">f (abs)</text><text x=\"140\" y=\"40\" font-size=\"8\" font-weight=\"bold\" fill=\"#1e40af\" text-anchor=\"middle\">F (acum)</text><text x=\"190\" y=\"40\" font-size=\"8\" font-weight=\"bold\" fill=\"#1e40af\" text-anchor=\"middle\">fr (rel)</text><text x=\"240\" y=\"40\" font-size=\"8\" font-weight=\"bold\" fill=\"#1e40af\" text-anchor=\"middle\">f% (porc)</text><line x1=\"20\" y1=\"46\" x2=\"280\" y2=\"46\" stroke=\"#e2e8f0\" stroke-width=\"1\" /><text x=\"40\" y=\"58\" font-size=\"8\" fill=\"#334155\" text-anchor=\"middle\">0 hijos</text><text x=\"90\" y=\"58\" font-size=\"8\" fill=\"#334155\" text-anchor=\"middle\">2</text><text x=\"140\" y=\"58\" font-size=\"8\" fill=\"#334155\" text-anchor=\"middle\">2</text><text x=\"190\" y=\"58\" font-size=\"8\" fill=\"#334155\" text-anchor=\"middle\">0.20</text><text x=\"240\" y=\"58\" font-size=\"8\" fill=\"#334155\" text-anchor=\"middle\">20%</text><line x1=\"20\" y1=\"64\" x2=\"280\" y2=\"64\" stroke=\"#e2e8f0\" stroke-width=\"1\" /><text x=\"40\" y=\"76\" font-size=\"8\" fill=\"#334155\" text-anchor=\"middle\">1 hijo</text><text x=\"90\" y=\"76\" font-size=\"8\" fill=\"#334155\" text-anchor=\"middle\">4</text><text x=\"140\" y=\"76\" font-size=\"8\" fill=\"#334155\" text-anchor=\"middle\">6</text><text x=\"190\" y=\"76\" font-size=\"8\" fill=\"#334155\" text-anchor=\"middle\">0.40</text><text x=\"240\" y=\"76\" font-size=\"8\" fill=\"#334155\" text-anchor=\"middle\">40%</text><line x1=\"20\" y1=\"82\" x2=\"280\" y2=\"82\" stroke=\"#e2e8f0\" stroke-width=\"1\" /><text x=\"40\" y=\"94\" font-size=\"8\" fill=\"#334155\" text-anchor=\"middle\">2 hijos</text><text x=\"90\" y=\"94\" font-size=\"8\" fill=\"#334155\" text-anchor=\"middle\">4</text><text x=\"140\" y=\"94\" font-size=\"8\" fill=\"#334155\" text-anchor=\"middle\">10</text><text x=\"190\" y=\"94\" font-size=\"8\" fill=\"#334155\" text-anchor=\"middle\">0.40</text><text x=\"240\" y=\"94\" font-size=\"8\" fill=\"#334155\" text-anchor=\"middle\">40%</text><line x1=\"20\" y1=\"100\" x2=\"280\" y2=\"100\" stroke=\"#cbd5e1\" stroke-width=\"1\" /><text x=\"40\" y=\"112\" font-size=\"8.5\" font-weight=\"bold\" fill=\"#475569\" text-anchor=\"middle\">Total</text><text x=\"90\" y=\"112\" font-size=\"8.5\" font-weight=\"bold\" fill=\"#475569\" text-anchor=\"middle\">n = 10</text><text x=\"140\" y=\"112\" font-size=\"8.5\" fill=\"#475569\" text-anchor=\"middle\">-</text><text x=\"190\" y=\"112\" font-size=\"8.5\" font-weight=\"bold\" fill=\"#475569\" text-anchor=\"middle\">1.00</text><text x=\"240\" y=\"112\" font-size=\"8.5\" font-weight=\"bold\" fill=\"#475569\" text-anchor=\"middle\">100%</text></svg>",
+                    "svgDescription": "Tabla de distribución de frecuencias estructurada para una muestra de 10 familias según número de hijos. Muestra las sumatorias de frecuencias absolutas n = 10, relativas 1.00 y porcentuales 100%.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Se encuestó a $10\\text{ familias}$ de un condominio en Guatemala sobre la cantidad de hijos que tienen. Los datos brutos fueron: 2, 1, 0, 2, 3, 2, 1, 0, 1, 2. Organiza y calcula las frecuencias del valor \"2 hijos\" en la tabla.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1 (Frecuencia Absoluta $f$):</strong> Contamos cuántas familias tienen exactamente 2 hijos en los datos: [2, 2, 2, 2]. Son exactamente 4 familias: <br>$$f = 4$$</li><li><strong>Paso 2 (Frecuencia Acumulada $F$):</strong> Sumamos las frecuencias de las filas anteriores (0 hijos = 2 familias; 1 hijo = 3 familias) más las 4 familias de esta fila: <br>$$F = 2 + 3 + 4 = 9\\text{ familias}$$</li><li><strong>Paso 3 (Frecuencia Relativa $fr$):</strong> Dividimos la absoluta entre el tamaño de la muestra ($n = 10$): <br>$$fr = \\frac{4}{10} = 0.40$$</li><li><strong>Paso 4 (Frecuencia Porcentual $f\\%$):</strong> Multiplicamos la relativa por 100: <br>$$f\\% = 0.40 \\times 100\\% = 40\\%$$</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> El valor de \"2 hijos\" posee una frecuencia absoluta de <strong>4</strong>, acumulada de <strong>9</strong>, relativa de <strong>0.40</strong> y porcentual de <strong>40%</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Sumatorias erróneas:</strong> Cometer errores aritméticos al sumar de corrido las frecuencias relativas o porcentuales. Recuerda que la relativa **debe** sumar exactamente 1.00 (o 0.999 por redondeo) y las porcentuales 100%.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "En una muestra de 20 estudiantes de bachillerato en Antigua, 5 obtuvieron una nota de excelencia. ¿Cuál es el valor decimal de la frecuencia relativa de alumnos excelentes? (Ingresa el número decimal con punto):",
+                            "correctAnswer": "0.25",
+                            "hint": "Aplica fr = f / n. Reemplaza f = 5 y n = 20.",
+                            "feedbackCorrect": "¡Excelente! fr = 5 / 20 = 0.25.",
+                            "feedbackIncorrect": "Incorrecto. La frecuencia relativa es 5 / 20 = 0.25.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Con los mismos datos del ejercicio anterior (frecuencia relativa = 0.25), ¿a qué porcentaje de alumnos equivale? (Ingresa solo el número entero sin el símbolo %):",
+                            "correctAnswer": "25",
+                            "hint": "Multiplica la frecuencia relativa 0.25 por 100 para convertirla a porcentual.",
+                            "feedbackCorrect": "¡Perfecto! 0.25 * 100 = 25%.",
+                            "feedbackIncorrect": "Incorrecto. Equivale a 0.25 * 100 = 25%.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si la frecuencia acumulada del tercer intervalo en una tabla de datos es 15 y la frecuencia absoluta del cuarto intervalo es 6, ¿cuál es la frecuencia acumulada del cuarto intervalo? (Ingresa solo el número entero):",
+                            "correctAnswer": "21",
+                            "hint": "La frecuencia acumulada actual es la acumulada anterior más la absoluta actual: F_actual = F_anterior + f_actual.",
+                            "feedbackCorrect": "¡Excelente! F_4 = F_3 + f_4 = 15 + 6 = 21.",
+                            "feedbackIncorrect": "Incorrecto. F_4 = F_3 + f_4 = 15 + 6 = 21.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Qué tipo de gráfico estadístico es el más adecuado y formal para representar las frecuencias de una variable cualitativa nominal (como el color favorito)?",
+                            "options": [
+                                "Histograma de barras pegadas.",
+                                "Gráfico de sectores circulares (pastel) o de barras separadas.",
+                                "Polígono de frecuencias continuas.",
+                                "Ojiva acumulada."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Las variables cualitativas no son numéricas continuas, por lo que no deben graficarse con barras adyacentes pegadas.",
+                            "feedbackCorrect": "¡Perfecto! Las variables categóricas o nominales se ilustran de forma ideal en diagramas de pastel o gráficos de barra clásicos con espacios de separación.",
+                            "feedbackIncorrect": "Incorrecto. Para variables cualitativas nominales lo adecuado es usar pastel o barras separadas.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "En una encuesta de satisfacción en Xela, 8 personas respondieron estar en nivel 'Muy Satisfecho' de un total de 40 encuestados. ¿Cuál es el porcentaje que representa esta respuesta? (Ingresa solo el número entero sin el símbolo %):",
+                            "correctAnswer": "20",
+                            "hint": "Primero calcula la frecuencia relativa: 8 / 40. Luego multiplica por 100.",
+                            "feedbackCorrect": "¡Excelente! fr = 8/40 = 0.20. Porcentaje = 0.20 * 100 = 20%.",
+                            "feedbackIncorrect": "Incorrecto. El porcentaje es (8 / 40) * 100 = 20%.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        }
+                    ],
+                    "summaryHtml": "Las tablas de frecuencias organizan observaciones mediante el cálculo de frecuencias absolutas ($f$), acumuladas ($F$), relativas ($fr = f/n$) y porcentuales ($f\\% = fr \\times 100\\%$).",
+                    "videoPlaceholderText": "Video de Matemáticas: Cómo estructurar una tabla de frecuencias paso a paso sin cometer errores."
+                },
+                {
+                    "id": "histogramas-poligonos-frecuencia",
+                    "title": "Lección 1.2: Histogramas y Polígonos de Frecuencia",
+                    "introduction": "Aprende a diseñar e interpretar diagramas de barras pegadas e histogramas para variables cuantitativas continuas agrupadas.",
+                    "explanationHtml": "<p>Cuando trabajamos con variables cuantitativas continuas (como estaturas, pesos o tiempo) que poseen una gran cantidad de valores únicos, agrupamos los datos en **intervalos de clase**. Para representarlos gráficamente, disponemos de dos herramientas muy potentes:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Histograma:</strong> Es un gráfico formado por barras verticales rectangulares **unidas y pegadas entre sí** (sin espacios intermedios). La base de cada barra representa el intervalo de clase (delimitado por sus límites reales) en el eje horizontal ($X$), y la altura representa la frecuencia absoluta ($f_i$) en el eje vertical ($Y$).</li><li><strong>Polígono de Frecuencias:</strong> Es un gráfico de líneas que se forma uniendo con segmentos rectos los puntos medios de la base superior de cada barra del histograma. Estos puntos medios corresponden a las **marcas de clase ($x_m$)**, que representan el valor central de cada intervalo: <br>$$x_m = \\frac{\\text{Límite inferior} + \\text{Límite superior}}{2}$$</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Marca de Clase e Intervalo</p><p class=\"text-xs font-mono font-bold text-primary\">x_m = (L_inf + L_sup) / 2</p><p class=\"text-xs text-slate-550\">Amplitud = L_sup - L_inf. En el histograma, las barras van pegadas.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"18\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">HISTOGRAMA Y POLÍGONO</text><line x1=\"40\" y1=\"100\" x2=\"270\" y2=\"100\" stroke=\"#94a3b8\" stroke-width=\"1.5\" /><line x1=\"40\" y1=\"30\" x2=\"40\" y2=\"100\" stroke=\"#94a3b8\" stroke-width=\"1\" /><text x=\"32\" y=\"93\" font-size=\"7\" fill=\"#64748b\" text-anchor=\"end\">0</text><text x=\"32\" y=\"70\" font-size=\"7\" fill=\"#64748b\" text-anchor=\"end\">6</text><text x=\"32\" y=\"47\" font-size=\"7\" fill=\"#64748b\" text-anchor=\"end\">12</text><rect x=\"50\" y=\"85\" width=\"40\" height=\"15\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"1\" /><rect x=\"90\" y=\"45\" width=\"40\" height=\"55\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"1\" /><rect x=\"130\" y=\"60\" width=\"40\" height=\"40\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"1\" /><rect x=\"170\" y=\"70\" width=\"40\" height=\"30\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"1\" /><text x=\"50\" y=\"109\" font-size=\"7.5\" fill=\"#475569\" text-anchor=\"middle\">1.40</text><text x=\"90\" y=\"109\" font-size=\"7.5\" fill=\"#475569\" text-anchor=\"middle\">1.50</text><text x=\"130\" y=\"109\" font-size=\"7.5\" fill=\"#475569\" text-anchor=\"middle\">1.60</text><text x=\"170\" y=\"109\" font-size=\"7.5\" fill=\"#475569\" text-anchor=\"middle\">1.70</text><text x=\"210\" y=\"109\" font-size=\"7.5\" fill=\"#475569\" text-anchor=\"middle\">1.80</text><path d=\"M 30 100 L 70 92.5 L 110 45 L 150 60 L 190 70 L 230 100\" fill=\"none\" stroke=\"#ef4444\" stroke-width=\"2\" /><circle cx=\"70\" cy=\"92.5\" r=\"2.5\" fill=\"#b91c1c\" /><circle cx=\"110\" cy=\"45\" r=\"2.5\" fill=\"#b91c1c\" /><circle cx=\"150\" cy=\"60\" r=\"2.5\" fill=\"#b91c1c\" /><circle cx=\"190\" cy=\"70\" r=\"2.5\" fill=\"#b91c1c\" /></svg>",
+                    "svgDescription": "Un histograma de estaturas en metros de estudiantes con barras continuas. Se ilustra superpuesto el polígono de frecuencias (línea roja) uniendo las marcas de clase de cada barra.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Un grupo de estudio midió la estatura de varios estudiantes en Antigua, organizando los datos en intervalos. Si la clase [1.50m - 1.60m) posee una frecuencia de $12\\text{ alumnos}$, calcula su marca de clase e indica cómo se representa visualmente esta barra en el histograma.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1 (Calcular Marca de Clase $x_m$):</strong> La marca de clase es el punto medio del intervalo: <br>$$x_m = \\frac{1.50 + 1.60}{2} = \\frac{3.10}{2} = 1.55\\text{ metros}$$</li><li><strong>Paso 2 (Amplitud del Intervalo):</strong> El ancho de la barra en el eje X es la diferencia de los límites: <br>$$\\text{Amplitud} = 1.60 - 1.50 = 0.10\\text{ m}$$</li><li><strong>Paso 3 (Trazado en Histograma):</strong> La barra se dibuja como un rectángulo vertical que inicia exactamente sobre el valor 1.50 de la recta X, termina en 1.60 (ancho de 0.10) y se eleva verticalmente hasta una altura de 12 unidades en el eje Y. Al ser un histograma, esta barra queda perfectamente unida y pegada a las barras colindantes de los intervalos adyacentes.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Conclusión:</strong> La marca de clase es de <strong>1.55m</strong> y la barra tiene un ancho de <strong>0.10m</strong> y una altura de <strong>12</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Barras separadas:</strong> Dibujar el histograma con espacios de separación entre las columnas verticales. Esto es un error muy común; las barras separadas se usan solo para categorías cualitativas discretas (gráfico de barras). En variables cuantitativas continuas (histograma), las barras deben ir pegadas para ilustrar la continuidad del eje X.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "¿Qué representa conceptualmente la 'marca de clase' en una tabla de distribución de frecuencias agrupadas?",
+                            "options": [
+                                "La suma acumulada de las frecuencias absolutas.",
+                                "El punto medio o valor central representativo de un intervalo de clase.",
+                                "El límite superior del último intervalo de datos.",
+                                "La altura de la barra en el histograma."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Se calcula sumando el límite inferior más el superior y dividiendo el resultado entre 2.",
+                            "feedbackCorrect": "¡Excelente! La marca de clase representa el valor central que tipifica al intervalo.",
+                            "feedbackIncorrect": "Incorrecto. Representa el punto medio o promedio central de los límites del intervalo.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Si un intervalo de clase en una tabla de datos de Xela va de [20 a 30) años, ¿cuál es el valor numérico de su marca de clase? (Ingresa solo el número entero):",
+                            "correctAnswer": "25",
+                            "hint": "Suma los límites: 20 + 30. Luego divide el resultado de la suma entre 2.",
+                            "feedbackCorrect": "¡Perfecto! x_m = (20 + 30) / 2 = 50 / 2 = 25.",
+                            "feedbackIncorrect": "Incorrecto. La marca de clase es (20 + 30) / 2 = 25.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si la base de una columna en un histograma de pesos va desde 10.5 kg hasta 15.5 kg, ¿cuál es el valor numérico de la amplitud o ancho de ese intervalo? (Ingresa solo el número entero):",
+                            "correctAnswer": "5",
+                            "hint": "La amplitud es la diferencia entre el límite superior y el límite inferior de la clase.",
+                            "feedbackCorrect": "¡Excelente! Amplitud = 15.5 - 10.5 = 5 kg.",
+                            "feedbackIncorrect": "Incorrecto. La amplitud es la resta de los límites: 15.5 - 10.5 = 5.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Para qué tipo de variables estadísticas es ideal y recomendado el uso de una gráfica de sectores circulares (pastel) en lugar de un histograma?",
+                            "options": [
+                                "Para variables cuantitativas continuas agrupadas.",
+                                "Para variables cualitativas nominales o categóricas que representan porcentajes de un todo.",
+                                "Para variables algebraicas de límites infinitos.",
+                                "Para análisis de correlaciones lineales."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "El pastel ilustra cómo se divide una torta total en porciones porcentuales de categorías no continuas.",
+                            "feedbackCorrect": "¡Perfecto! La gráfica de pastel es idónea para ilustrar la partición porcentual de variables categóricas o cualitativas.",
+                            "feedbackIncorrect": "Incorrecto. Es recomendado para variables cualitativas nominales o categóricas.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "El polígono de frecuencias se forma conectando marcas de clase. Para cerrarlo sobre el eje X, ¿qué valor de frecuencia se asume para las marcas de clase adicionales añadidas a los extremos? (Ingresa solo el número entero):",
+                            "correctAnswer": "0",
+                            "hint": "Para que la línea toque el suelo (eje X), la altura o frecuencia en esos puntos extremos debe ser nula.",
+                            "feedbackCorrect": "¡Excelente! Se añaden marcas de clase ficticias a los extremos con frecuencia 0 para anclar y cerrar el polígono.",
+                            "feedbackIncorrect": "Incorrecto. Se asume frecuencia 0 para que la gráfica toque el eje X y cierre el área.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        }
+                    ],
+                    "summaryHtml": "Los histogramas grafican variables continuas mediante barras adyacentes pegadas. Los polígonos de frecuencia conectan linealmente las marcas de clase ($x_m = (L_{inf} + L_{sup})/2$).",
+                    "videoPlaceholderText": "Video de Matemáticas: Cómo dibujar histogramas y polígonos de frecuencia de forma fácil en excel y a mano."
+                },
+                {
+                    "id": "diagramas-caja-bigotes-boxplot",
+                    "title": "Lección 1.3: Diagramas de Caja y Bigotes (Boxplot)",
+                    "introduction": "Representa visualmente la dispersión, mediana y asimetría de un conjunto de datos a partir del resumen de los cinco números.",
+                    "explanationHtml": "<p>El <strong>Diagrama de Caja y Bigotes (o Boxplot)</strong> es una representación gráfica sumamente potente para evaluar visualmente la dispersión, simetría y presencia de valores atípicos en una muestra. Se construye a partir del **resumen de los cinco números**:</p><ol class=\"list-decimal pl-5 space-y-1.5 my-3\"><li>Valor Mínimo (no atípico).</li><li>Primer Cuartil ($Q_1$): Marca el 25% de los datos acumulados.</li><li>Mediana o Segundo Cuartil ($Q_2$): Divide la muestra al 50%.</li><li>Tercer Cuartil ($Q_3$): Marca el 75% de los datos acumulados.</li><li>Valor Máximo (no atípico).</li></ol><p class=\"mt-2 text-slate-700\">La \"caja\" del diagrama abarca desde $Q_1$ hasta $Q_3$, concentrando el **50% central de los datos**. Su ancho se denomina **Rango Intercuartílico ($RIC$)**: $$RIC = Q_3 - Q_1$$ Los \"bigotes\" son líneas que se extienden desde la caja hasta los valores límites mínimo y máximo no atípicos.</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Rango Intercuartílico</p><p class=\"text-xs font-mono font-bold text-primary\">RIC = Q3 - Q1</p><p class=\"text-xs text-slate-500\">Límites para atípicos: Inferior = Q1 - 1.5*RIC &nbsp;|&nbsp; Superior = Q3 + 1.5*RIC</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"18\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">DIAGRAMA DE CAJA Y BIGOTES</text><line x1=\"30\" y1=\"95\" x2=\"270\" y2=\"95\" stroke=\"#cbd5e1\" stroke-width=\"1\" /><text x=\"30\" y=\"107\" font-size=\"7\" fill=\"#64748b\" text-anchor=\"middle\">40</text><text x=\"90\" y=\"107\" font-size=\"7\" fill=\"#64748b\" text-anchor=\"middle\">55</text><text x=\"150\" y=\"107\" font-size=\"7\" fill=\"#64748b\" text-anchor=\"middle\">70</text><text x=\"210\" y=\"107\" font-size=\"7\" fill=\"#64748b\" text-anchor=\"middle\">85</text><text x=\"250\" y=\"107\" font-size=\"7\" fill=\"#64748b\" text-anchor=\"middle\">95</text><line x1=\"30\" y1=\"60\" x2=\"90\" y2=\"60\" stroke=\"#475569\" stroke-width=\"1.5\" /><line x1=\"30\" y1=\"50\" x2=\"30\" y2=\"70\" stroke=\"#475569\" stroke-width=\"1.5\" /><rect x=\"90\" y=\"40\" width=\"120\" height=\"40\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"1.5\" /><line x1=\"150\" y1=\"40\" x2=\"150\" y2=\"80\" stroke=\"#10b981\" stroke-width=\"2\" /><line x1=\"210\" y1=\"60\" x2=\"250\" y2=\"60\" stroke=\"#475569\" stroke-width=\"1.5\" /><line x1=\"250\" y1=\"50\" x2=\"250\" y2=\"70\" stroke=\"#475569\" stroke-width=\"1.5\" /><text x=\"30\" y=\"32\" font-size=\"7\" fill=\"#475569\" text-anchor=\"middle\" font-weight=\"bold\">Min: 40</text><text x=\"90\" y=\"32\" font-size=\"7\" fill=\"#1e40af\" text-anchor=\"middle\" font-weight=\"bold\">Q1: 55</text><text x=\"150\" y=\"32\" font-size=\"7\" fill=\"#047857\" text-anchor=\"middle\" font-weight=\"bold\">Med: 70</text><text x=\"210\" y=\"32\" font-size=\"7\" fill=\"#1e40af\" text-anchor=\"middle\" font-weight=\"bold\">Q3: 85</text><text x=\"250\" y=\"32\" font-size=\"7\" fill=\"#475569\" text-anchor=\"middle\" font-weight=\"bold\">Max: 95</text></svg>",
+                    "svgDescription": "Un diagrama de caja y bigotes (boxplot) dibujado a escala sobre una línea numérica. La caja azul encierra desde Q1=55 a Q3=85 (RIC=30). La línea central verde marca la mediana de 70 y los bigotes conectan con el mínimo 40 y máximo 95.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Un docente recopila los cuartiles de las calificaciones de su grupo sobre 100 puntos en Xela: Mínimo = 40, $Q_1 = 55$, Mediana = 70, $Q_3 = 85$, Máximo = 95. Diseña el Boxplot, calcula el Rango Intercuartílico e indica qué porcentaje de estudiantes obtuvo notas superiores a 85 puntos.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1 (Calcular Rango Intercuartílico $RIC$):</strong> Restamos el tercer cuartil menos el primer cuartil: <br>$$RIC = Q_3 - Q_1 = 85 - 55 = 30\\text{ puntos}$$</li><li><strong>Paso 2 (Diseñar visualmente la Caja):</strong> La caja se traza como un rectángulo que inicia en 55 en la escala horizontal y termina en 85. Se dibuja una línea vertical verde en la mediana de 70. Los bigotes se extienden a la izquierda hasta 40 y a la derecha hasta 95.</li><li><strong>Paso 3 (Porcentaje superior a 85):</strong> 85 puntos corresponde al tercer cuartil ($Q_3$). Por definición estadística, los cuartiles dividen la distribución en partes iguales de 25%. El área por encima de $Q_3$ representa exactamente el 25% de la muestra.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultados:</strong> El Rango Intercuartílico es de <strong>30 puntos</strong>, y el <strong>25% de los alumnos</strong> obtuvo una nota superior a 85 puntos.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Confundir proporciones por el tamaño visual de la caja:</strong> Pensar que la sección entre $Q_1$ y la Mediana tiene más datos que la sección entre Mediana y $Q_3$ porque la primera es más ancha visualmente en la caja. ¡Falso! Cada una de las cuatro regiones (Min-$Q_1$, $Q_1$-Med, Med-$Q_3$, $Q_3$-Max) contiene de forma exacta el **25% de las observaciones**. El ancho solo indica la dispersión de ese tramo.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "¿Qué porcentaje de las observaciones de una muestra se encuentra acumulado de forma exacta dentro de la 'caja' de un boxplot (entre Q1 y Q3)? (Ingresa solo el número entero sin el símbolo %):",
+                            "correctAnswer": "50",
+                            "hint": "La caja abarca desde el primer cuartil (25%) hasta el tercer cuartil (75%). Resta ambas proporciones.",
+                            "feedbackCorrect": "¡Excelente! La caja concentra el 50% central de la distribución de datos.",
+                            "feedbackIncorrect": "Incorrecto. La caja contiene exactamente el 50% de las observaciones.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cómo se calcula formalmente el Rango Intercuartílico (RIC) de una distribución?",
+                            "options": [
+                                "Restando el valor máximo menos el valor mínimo.",
+                                "Sumando el primer cuartil más el tercer cuartil y dividiendo por dos.",
+                                "Restando el tercer cuartil menos el primer cuartil (Q3 - Q1).",
+                                "Multiplicando la mediana por la desviación estándar."
+                            ],
+                            "correctAnswer": 2,
+                            "hint": "Mide el ancho de la caja del boxplot. Se calcula como...",
+                            "feedbackCorrect": "¡Perfecto! El RIC es la diferencia Q3 - Q1, midiendo la dispersión del 50% central.",
+                            "feedbackIncorrect": "Incorrecto. El Rango Intercuartílico se calcula como Q3 - Q1.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Si el primer cuartil (Q1) de una muestra es 12 y el tercer cuartil (Q3) es 20, ¿cuál es el valor numérico del Rango Intercuartílico (RIC)? (Ingresa solo el número entero):",
+                            "correctAnswer": "8",
+                            "hint": "Aplica la fórmula RIC = Q3 - Q1. Reemplaza Q3 = 20 y Q1 = 12.",
+                            "feedbackCorrect": "¡Excelente! RIC = 20 - 12 = 8.",
+                            "feedbackIncorrect": "Incorrecto. RIC = 20 - 12 = 8.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cómo se representan típicamente de forma visual los datos atípicos extremos (outliers) en un Boxplot estándar?",
+                            "options": [
+                                "Con una línea gruesa vertical continua.",
+                                "Mediante puntos, asteriscos o círculos dibujados de forma aislada fuera de la línea de los bigotes.",
+                                "Haciendo la caja del diagrama más ancha.",
+                                "No se dibujan, se omiten del gráfico."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Los datos atípicos caen más allá de 1.5 veces el RIC desde los cuartiles y se marcan por separado.",
+                            "feedbackCorrect": "¡Excelente! Los outliers se dibujan como puntos o asteriscos aislados fuera de los bigotes.",
+                            "feedbackIncorrect": "Incorrecto. Se marcan como puntos o asteriscos fuera de los límites de los bigotes.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Si observas que la línea de la mediana en un Boxplot está situada muy cerca del borde izquierdo de la caja (cercana a Q1), ¿qué nos indica sobre la asimetría de los datos?",
+                            "options": [
+                                "Que la distribución es perfectamente simétrica.",
+                                "Que existe una asimetría positiva (o hacia la derecha).",
+                                "Que la varianza de la muestra es cero.",
+                                "Que no hay datos en el primer cuartil."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Si la mediana está a la izquierda, hay una cola de valores más estirada hacia la derecha de la distribución.",
+                            "feedbackCorrect": "¡Perfecto! Una mediana desplazada a la izquierda de la caja revela una distribución con asimetría positiva o a la derecha.",
+                            "feedbackIncorrect": "Incorrecto. Indica asimetría positiva o hacia la derecha.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "Los diagramas de caja (Boxplots) resumen gráficamente la mediana, dispersión ($RIC = Q_3 - Q_1$) y asimetría de datos mediante el resumen de cinco números.",
+                    "videoPlaceholderText": "Video de Matemáticas: Cómo interpretar un diagrama de caja y bigotes en segundos."
+                }
+            ]
+        },
+        {
+            "title": "Unidad 2: Medidas de Tendencia Central",
+            "lessons": [
+                {
+                    "id": "media-aritmetica-promedio",
+                    "title": "Lección 2.1: Media Aritmética (Promedio)",
+                    "introduction": "Calcula el promedio aritmético de datos no agrupados e interpreta analíticamente su sensibilidad ante valores extremos.",
+                    "explanationHtml": "<p>Las <strong>medidas de tendencia central</strong> son valores numéricos que localizan el centro de gravedad o punto medio de una distribución de datos. La más conocida y utilizada es la <strong>media aritmética (o promedio, $\\bar{x}$)</strong>.</p><p class=\"mt-2 text-slate-700\">Para datos no agrupados, se calcula sumando la totalidad de los valores observados y dividiendo el resultado de la suma entre el tamaño total de la muestra ($n$):</p><p class=\"text-center font-mono font-extrabold text-primary text-base my-2\">$$\\bar{x} = \\frac{\\sum x_i}{n}$$</p><p class=\"mt-2 text-slate-700\"><strong>Sensibilidad ante datos atípicos:</strong> La media es una medida **muy sensible** a valores extremadamente altos o bajos (outliers). Un solo examen con nota cero jalará el promedio del estudiante hacia abajo dramáticamente, incluso si en los demás exámenes obtuvo notas sobresalientes. Por ende, la media no es representativa en distribuciones con asimetría extrema.</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Media Aritmética Muestral</p><p class=\"text-xs font-mono font-bold text-primary\">x̄ = &sum;x_i / n</p><p class=\"text-xs text-slate-550\">Suma total de los datos dividida entre la cantidad de observaciones n.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"18\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">MEDIA COMO PUNTO DE APOYO</text><line x1=\"30\" y1=\"80\" x2=\"270\" y2=\"80\" stroke=\"#475569\" stroke-width=\"2\" /><circle cx=\"50\" cy=\"72\" r=\"6\" fill=\"#3b82f6\" stroke=\"#1d4ed8\" /><text x=\"50\" y=\"62\" font-size=\"7.5\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">40</text><circle cx=\"170\" cy=\"72\" r=\"6\" fill=\"#3b82f6\" stroke=\"#1d4ed8\" /><text x=\"170\" y=\"62\" font-size=\"7.5\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">80</text><circle cx=\"210\" cy=\"72\" r=\"6\" fill=\"#3b82f6\" stroke=\"#1d4ed8\" /><text x=\"210\" y=\"62\" font-size=\"7.5\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">90</text><circle cx=\"250\" cy=\"72\" r=\"6\" fill=\"#3b82f6\" stroke=\"#1d4ed8\" /><circle cx=\"250\" cy=\"59\" r=\"6\" fill=\"#3b82f6\" stroke=\"#1d4ed8\" /><text x=\"250\" y=\"49\" font-size=\"7.5\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">95 (x2)</text><polygon points=\"170,80 162,98 178,98\" fill=\"#ef4444\" stroke=\"#b91c1c\" stroke-width=\"1\" /><text x=\"170\" y=\"110\" font-size=\"8.5\" fill=\"#b91c1c\" font-weight=\"bold\" text-anchor=\"middle\">Media &mu; = 80</text></svg>",
+                    "svgDescription": "La media aritmética interpretada como el centro de equilibrio o punto de apoyo de una palanca. Los pesos representan las notas [40, 80, 90, 95, 95]. El punto de equilibrio perfecto se ubica exactamente en la media 80.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Las calificaciones de un estudiante en $5\\text{ tareas}$ de matemáticas de CEDETU son: 80, 95, 90, 40 y 95. Calcula su nota promedio e interpreta el efecto de la nota más baja.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1 (Sumar la totalidad de datos):</strong> <br>$$\\sum x_i = 80 + 95 + 90 + 40 + 95 = 400\\text{ puntos}$$</li><li><strong>Paso 2 (Dividir por el total de tareas $n = 5$):</strong> <br>$$\\bar{x} = \\frac{400}{5} = 80\\text{ puntos}$$</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado y Análisis:</strong> El promedio del alumno es de <strong>80 puntos</strong>. Nota cómo el dato atípico bajo de 40 puntos (producido quizás por no entregar una tarea) afectó drásticamente el promedio final, restándole representatividad al esfuerzo de sus otras notas de 90 y 95.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Ignorar valores nulos (ceros):</strong> Omitir los datos con valor cero al calcular la suma en el numerador pero incluirlos en $n$ en el denominador (o viceversa, no contarlos en $n$ lo que inflaría falsamente la media real). Todo dato, valga cero o no, es parte de la muestra.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Calcula el valor de la media aritmética de los siguientes datos numéricos: 12, 15, 18, 20, 25. (Ingresa solo el número entero):",
+                            "correctAnswer": "18",
+                            "hint": "Suma los 5 datos y divide el resultado total entre 5.",
+                            "feedbackCorrect": "¡Excelente! Suma = 90. Media = 90 / 5 = 18.",
+                            "feedbackIncorrect": "Incorrecto. La suma es 90, dividida entre 5 es 18.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Un comerciante en Sololá registra ventas diarias de Q200 el lunes, Q350 el martes y Q650 el miércoles. ¿Cuál fue su venta promedio diaria en Quetzales en ese lapso de 3 días? (Ingresa solo el número entero):",
+                            "correctAnswer": "400",
+                            "hint": "Suma las tres ventas y divide el total entre 3 días.",
+                            "feedbackCorrect": "¡Perfecto! Suma = 1200. Promedio = 1200 / 3 = 400 Quetzales.",
+                            "feedbackIncorrect": "Incorrecto. (200 + 350 + 650) / 3 = 1200 / 3 = 400.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si el promedio de las notas de 4 exámenes de un estudiante es exactamente 85 puntos, ¿cuántos puntos sumaron en total sus 4 exámenes? (Ingresa solo el número entero):",
+                            "correctAnswer": "340",
+                            "hint": "A partir de x̄ = Suma / n, despeja la Suma multiplicando el Promedio por n.",
+                            "feedbackCorrect": "¡Excelente! Suma total = Promedio * n = 85 * 4 = 340 puntos.",
+                            "feedbackIncorrect": "Incorrecto. Suma = 85 * 4 = 340 puntos.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si agregas un valor atípico extremadamente grande (por ejemplo, 1,000) a una pequeña muestra de datos cuyos valores oscilan entre 10 y 20, ¿qué le ocurre a la media?",
+                            "options": [
+                                "Se reduce a la mitad por la ley de compensación.",
+                                "Aumenta de forma drástica, demostrando la alta sensibilidad de la media ante outliers.",
+                                "Se mantiene estrictamente igual porque la media solo mide el centro modal.",
+                                "Se reduce a cero instantáneamente."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "La media suma todos los datos individuales; un dato gigante elevará fuertemente el numerador.",
+                            "feedbackCorrect": "¡Perfecto! La media es sumamente sensible a los datos atípicos, arrastrándose en su dirección.",
+                            "feedbackIncorrect": "Incorrecto. Al ser sensible, aumenta fuertemente en presencia de valores extremos altos.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "En una oficina pequeña de Antigua Guatemala, las edades de los 6 empleados son: 25, 28, 30, 25, 40, 26 años. ¿Cuál es el promedio de edad del personal? (Ingresa solo el número entero):",
+                            "correctAnswer": "29",
+                            "hint": "Suma las 6 edades y divide el resultado de la suma entre 6.",
+                            "feedbackCorrect": "¡Excelente! Suma = 174. Promedio = 174 / 6 = 29 años.",
+                            "feedbackIncorrect": "Incorrecto. La media es 174 / 6 = 29 años.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        }
+                    ],
+                    "summaryHtml": "La media aritmética es el promedio de los datos ($\\bar{x} = \\sum x_i/n$). Es altamente sensible a los valores extremos y outliers de la distribución.",
+                    "videoPlaceholderText": "Video de Matemáticas: Concepto de media aritmética y su sensibilidad ante extremos explicada visualmente."
+                },
+                {
+                    "id": "mediana-valor-central",
+                    "title": "Lección 2.2: Mediana (El Valor Central)",
+                    "introduction": "Aprende a determinar la mediana de una muestra ordenando los datos y diferenciando muestras pares e impares.",
+                    "explanationHtml": "<p>La <strong>mediana (denotada como $\\tilde{x}$ o $Me$)</strong> es la medida de tendencia central que representa el valor de la posición intermedia o central de una distribución. Divide la muestra en dos partes exactamente iguales: el 50% de los datos queda por debajo y el 50% por encima.</p><p class=\"mt-2 text-slate-700\"><strong>Paso Obligatorio e Indispensable:</strong> Para hallar la mediana, los datos **deben ordenarse de menor a mayor** (o mayor a menor) de forma estricta.</p><p class=\"mt-2 text-slate-700\">Una vez ordenados, identificamos el tamaño de la muestra ($n$):</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li>Si $n$ es <strong>impar:</strong> La mediana es el dato que ocupa la posición central exacta: <br>$$\\text{Posición} = \\frac{n+1}{2}$$</li><li>Si $n$ es <strong>par:</strong> No hay un único dato central. La mediana se calcula como el **promedio aritmético de los dos datos centrales del medio**.</li></ul><p class=\"mt-2 text-slate-705\">A diferencia de la media, la mediana es una medida **robusta**; no se altera en absoluto por la presencia de datos extremos o atípicos.</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Determinación de la Mediana</p><p class=\"text-xs font-mono font-bold text-primary\">Ordenar Datos &rArr; Buscar posición central</p><p class=\"text-xs text-slate-500\">n impar: central directo &nbsp;|&nbsp; n par: promedio de los dos datos centrales.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"18\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">MEDIANA: DATOS ORDENADOS</text><text x=\"150\" y=\"32\" font-size=\"7.5\" fill=\"#475569\" font-weight=\"bold\" text-anchor=\"middle\">Ejemplo n = 6 (Par): Promedio de los del centro</text><rect x=\"35\" y=\"42\" width=\"30\" height=\"20\" fill=\"#eff6ff\" stroke=\"#cbd5e1\" rx=\"3\" /><text x=\"50\" y=\"55\" font-size=\"8\" fill=\"#1e40af\" text-anchor=\"middle\">5</text><rect x=\"75\" y=\"42\" width=\"30\" height=\"20\" fill=\"#eff6ff\" stroke=\"#cbd5e1\" rx=\"3\" /><text x=\"90\" y=\"55\" font-size=\"8\" fill=\"#1e40af\" text-anchor=\"middle\">8</text><rect x=\"115\" y=\"42\" width=\"30\" height=\"20\" fill=\"#ecfdf5\" stroke=\"#10b981\" stroke-width=\"1.5\" rx=\"3\" /><text x=\"130\" y=\"55\" font-size=\"8.5\" font-weight=\"bold\" fill=\"#047857\" text-anchor=\"middle\">10</text><rect x=\"155\" y=\"42\" width=\"30\" height=\"20\" fill=\"#ecfdf5\" stroke=\"#10b981\" stroke-width=\"1.5\" rx=\"3\" /><text x=\"170\" y=\"55\" font-size=\"8.5\" font-weight=\"bold\" fill=\"#047857\" text-anchor=\"middle\">12</text><rect x=\"195\" y=\"42\" width=\"30\" height=\"20\" fill=\"#eff6ff\" stroke=\"#cbd5e1\" rx=\"3\" /><text x=\"210\" y=\"55\" font-size=\"8\" fill=\"#1e40af\" text-anchor=\"middle\">15</text><rect x=\"235\" y=\"42\" width=\"30\" height=\"20\" fill=\"#eff6ff\" stroke=\"#cbd5e1\" rx=\"3\" /><text x=\"250\" y=\"55\" font-size=\"8\" fill=\"#1e40af\" text-anchor=\"middle\">20</text><path d=\"M 130 67 L 130 78 L 150 78 L 150 67\" fill=\"none\" stroke=\"#10b981\" stroke-width=\"1.2\" /><text x=\"150\" y=\"92\" font-size=\"9.5\" fill=\"#047857\" font-weight=\"bold\" text-anchor=\"middle\">Mediana = (10 + 12)/2 = 11</text></svg>",
+                    "svgDescription": "Cálculo de la mediana de una muestra de tamaño par (n=6). Los datos ordenados muestran como valores centrales a 10 y 12. La mediana es el promedio de ambos: 11.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Se registraron las siguientes velocidades de motociclistas en una avenida de Xela: 12 m/s, 5 m/s, 20 m/s, 8 m/s, 15 m/s, 10 m/s. Determina el valor de la mediana.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1 (Ordenar de menor a mayor):</strong> <br>$$5, \\; 8, \\; 10, \\; 12, \\; 15, \\; 20$$</li><li><strong>Paso 2 (Identificar n):</strong> Contamos las observaciones: hay 6 datos ($n = 6$, que es una cantidad **par**).</li><li><strong>Paso 3 (Promediar los dos datos del medio):</strong> Los dos datos centrales en las posiciones 3 y 4 son **10** y **12**: <br>$$\\text{Mediana} = \\frac{10 + 12}{2} = \\frac{22}{2} = 11\\text{ m/s}$$</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> El valor de la mediana de velocidades es de <strong>11 m/s</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Calcular sin ordenar:</strong> Tomar los datos desordenados originales y buscar el del medio [2, 1, 0, 2, 3...]. Esto anula por completo el concepto de mediana; los datos **deben** estar ordenados en una serie de menor a mayor primero.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Calcula el valor numérico de la mediana de la siguiente serie de datos desordenada: 7, 3, 9, 12, 5. (Ingresa solo el número entero):",
+                            "correctAnswer": "7",
+                            "hint": "Primero ordena los 5 datos de menor a mayor. Al ser impar (n=5), selecciona el dato de la posición central.",
+                            "feedbackCorrect": "¡Excelente! Ordenados: 3, 5, 7, 9, 12. El dato del centro es 7.",
+                            "feedbackIncorrect": "Incorrecto. Ordenados: 3, 5, 7, 9, 12. La mediana es 7.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Calcula el valor de la mediana para las siguientes mediciones: 150, 200, 180, 160. (Ingresa solo el número entero):",
+                            "correctAnswer": "170",
+                            "hint": "Ordena los 4 datos de menor a mayor. Al ser par (n=4), promedia los dos datos que quedan en el centro.",
+                            "feedbackCorrect": "¡Perfecto! Ordenados: 150, 160, 180, 200. Mediana = (160 + 180) / 2 = 170.",
+                            "feedbackIncorrect": "Incorrecto. Ordenados: 150, 160, 180, 200. Promedio central = (160 + 180) / 2 = 170.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si reportas que la mediana de salarios de una cooperativa en Antigua es de Q4,500, ¿cuál es su interpretación estadística correcta?",
+                            "options": [
+                                "Que el salario promedio de todos es Q4,500.",
+                                "Que el 50% de los trabajadores gana un salario de Q4,500 o menos, y el otro 50% gana Q4,500 o más.",
+                                "Que el salario más común y repetido es Q4,500.",
+                                "Que ningún trabajador gana más de Q4,500."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "La mediana divide de forma exacta a la muestra ordenada en dos mitades del 50%.",
+                            "feedbackCorrect": "¡Excelente! La mediana divide exactamente al 50% de la población de datos.",
+                            "feedbackIncorrect": "Incorrecto. Significa que la mitad (50%) gana Q4,500 o menos y la otra mitad Q4,500 o más.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Calcula la mediana de la serie de datos: 0, 0, 1, 2, 5, 8, 10. (Ingresa solo el número entero):",
+                            "correctAnswer": "2",
+                            "hint": "Los datos ya están ordenados de menor a mayor. Cuenta el tamaño n (impar) e identifica el elemento central.",
+                            "feedbackCorrect": "¡Excelente! n = 7 (impar). La posición central 4 es ocupada por el valor 2.",
+                            "feedbackIncorrect": "Incorrecto. Al estar ordenados, el valor del centro es 2.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Qué ocurre con el valor numérico de la mediana si cambiamos el valor del dato más grande de una muestra por otro valor diez veces mayor?",
+                            "options": [
+                                "La mediana se multiplica por 10.",
+                                "La mediana permanece sin cambios, demostrando su robustez ante valores extremos.",
+                                "La mediana se reduce a cero.",
+                                "La mediana se vuelve igual a la media."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "El cambio de un valor extremo no altera el orden ni el valor del elemento que se sitúa en la posición central.",
+                            "feedbackCorrect": "¡Perfecto! La mediana es robusta y los cambios en extremos lejanos no le afectan.",
+                            "feedbackIncorrect": "Incorrecto. Se mantiene idéntica al ser una medida robusta no afectada por atípicos.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "La mediana divide la muestra ordenada al 50% ($Me$). En muestras impares es el dato central; en pares es el promedio de los dos centrales.",
+                    "videoPlaceholderText": "Video de Matemáticas: El concepto de mediana y por qué los analistas la prefieren a la media en salarios."
+                },
+                {
+                    "id": "moda-valor-mas-frecuente",
+                    "title": "Lección 2.3: Moda (El Valor Más Frecuente)",
+                    "introduction": "Identifica el valor o valores con mayor frecuencia absoluta e interpreta asimetrías de curvas.",
+                    "explanationHtml": "<p>La tercera medida de tendencia central es la <strong>moda (denotada como $Mo$)</strong>. Se define simplemente como el valor o categoría que ocurre con la **mayor frecuencia absoluta** en un conjunto de observaciones.</p><p class=\"mt-2 text-slate-700\">Propiedades y clasificaciones de la moda:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Cualitativa y Cuantitativa:</strong> Es la única medida de tendencia central que se puede aplicar a variables de tipo cualitativo nominal (como color favorito, marca o procedencia).</li><li><strong>Unimodal:</strong> La muestra tiene un único valor dominante.</li><li><strong>Bimodal:</strong> Hay dos valores distintos que empatan con la misma frecuencia máxima absoluta.</li><li><strong>Multimodal:</strong> Existen tres o más valores con la misma frecuencia máxima absoluta.</li><li><strong>Amodal (Sin moda):</strong> Ocurre cuando todos los valores de la muestra se repiten exactamente la misma cantidad de veces, no existiendo un valor dominante.</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Moda en Distribuciones</p><p class=\"text-xs font-mono font-bold text-primary\">Moda = Valor con mayor frecuencia absoluta (f)</p><p class=\"text-xs text-slate-550\">Una muestra puede no tener moda o tener múltiples modas.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"18\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">MODA: MÁXIMA FRECUENCIA</text><line x1=\"40\" y1=\"95\" x2=\"260\" y2=\"95\" stroke=\"#94a3b8\" stroke-width=\"1.5\" /><rect x=\"60\" y=\"80\" width=\"30\" height=\"15\" fill=\"#eff6ff\" stroke=\"#3b82f6\" /><text x=\"75\" y=\"106\" font-size=\"7\" fill=\"#475569\" text-anchor=\"middle\">Negro (1)</text><rect x=\"105\" y=\"80\" width=\"30\" height=\"15\" fill=\"#eff6ff\" stroke=\"#3b82f6\" /><text x=\"120\" y=\"106\" font-size=\"7\" fill=\"#475569\" text-anchor=\"middle\">Verde (1)</text><rect x=\"150\" y=\"65\" width=\"30\" height=\"30\" fill=\"#eff6ff\" stroke=\"#3b82f6\" /><text x=\"165\" y=\"106\" font-size=\"7\" fill=\"#475569\" text-anchor=\"middle\">Rojo (2)</text><rect x=\"195\" y=\"50\" width=\"30\" height=\"45\" fill=\"#fffbeb\" stroke=\"#d97706\" stroke-width=\"2\" /><text x=\"210\" y=\"106\" font-size=\"7.5\" font-weight=\"bold\" fill=\"#b45309\" text-anchor=\"middle\">Azul (3)</text><text x=\"210\" y=\"44\" font-size=\"7\" font-weight=\"bold\" fill=\"#b45309\" text-anchor=\"middle\">MODA</text></svg>",
+                    "svgDescription": "Un gráfico de barras para la venta de camisas. Las frecuencias muestran como moda de categoría al color Azul (altura de 3), por encima del Rojo (2), Verde (1) y Negro (1).",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Un comerciante en Xela registra los colores de camisas vendidos en su tienda durante la mañana: Azul, Rojo, Azul, Verde, Rojo, Azul, Negro. Determina el valor de la moda.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1 (Contar las frecuencias individuales):</strong> <br>- Negro: 1 venta <br>- Verde: 1 venta <br>- Rojo: 2 ventas <br>- Azul: 3 ventas</li><li><strong>Paso 2 (Identificar el valor de frecuencia dominante):</strong> El color **Azul** se repite 3 veces, siendo la mayor frecuencia absoluta.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> La moda ($Mo$) es de categoría <strong>Azul</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Confundir la frecuencia con el valor modal:</strong> Responder que la moda es \"3\" en lugar de \"Azul\" en el ejemplo anterior. Recuerda que la moda es la variable o categoría ($x_i = \\text{Azul}$), y \"3\" es solo el contador de su frecuencia.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "¿Cuál es el valor o valores modales de la siguiente serie de datos: 4, 5, 5, 6, 7, 7, 8?",
+                            "options": [
+                                "Únicamente 6.",
+                                "Únicamente 5.",
+                                "5 y 7 (bimodal).",
+                                "No tiene moda."
+                            ],
+                            "correctAnswer": 2,
+                            "hint": "Cuenta cuántas veces se repite cada número e identifica cuál o cuáles tienen el mayor conteo.",
+                            "feedbackCorrect": "¡Excelente! Los números 5 y 7 se repiten 2 veces cada uno, empatando en la máxima frecuencia. La muestra es bimodal.",
+                            "feedbackIncorrect": "Incorrecto. Es bimodal con valores de 5 y 7.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "¿Cuál es la moda de la siguiente serie de observaciones: 10, 12, 14, 16?",
+                            "options": [
+                                "La moda es 0.",
+                                "La moda es 13.",
+                                "No tiene moda (es amodal), ya que todos los datos se repiten exactamente una vez.",
+                                "16 por ser el valor máximo."
+                            ],
+                            "correctAnswer": 2,
+                            "hint": "Cuando no hay ningún valor que tenga una frecuencia superior a los demás, la muestra carece de moda.",
+                            "feedbackCorrect": "¡Excelente! Como no hay un dato dominante, se reporta que no tiene moda.",
+                            "feedbackIncorrect": "Incorrecto. Carece de moda al repetirse todos igual.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "En un salón de clases, las estaturas medidas son: 1.60m, 1.65m, 1.60m, 1.70m, 1.60m, 1.65m. ¿Cuál es el valor de la moda en metros? (Ingresa el decimal con punto):",
+                            "correctAnswer": "1.6",
+                            "hint": "Cuenta las repeticiones: 1.60m aparece 3 veces, 1.65m aparece 2 veces y 1.70m una vez.",
+                            "feedbackCorrect": "¡Excelente! La moda es 1.6m (o 1.60m) con 3 repeticiones.",
+                            "feedbackIncorrect": "Incorrecto. La moda es 1.6m con 3 repeticiones.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Para qué tipo de variables estadísticas es la Moda la ÚNICA medida de tendencia central que se puede aplicar matemáticamente?",
+                            "options": [
+                                "Variables cuantitativas continuas.",
+                                "Variables cualitativas nominales o categóricas.",
+                                "Variables algebraicas vectoriales.",
+                                "Distribuciones logarítmicas."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "No puedes sumar ni ordenar categorías nominales como 'marca de auto' para hacer promedios o medianas.",
+                            "feedbackCorrect": "¡Perfecto! Para variables nominales cualitativas, la moda es la única medida de centro aplicable.",
+                            "feedbackIncorrect": "Incorrecto. Es aplicable únicamente como centro a variables cualitativas nominales.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Si analizas la serie: 3, 3, 3, 5, 5, 5, 8, 8, 8. ¿Cuál es la moda de esta serie de datos?",
+                            "options": [
+                                "La moda es 3, 5 y 8.",
+                                "No tiene moda, ya que todos los datos presentan la misma frecuencia máxima (3 veces cada uno), no habiendo dominancia.",
+                                "La moda es 5.",
+                                "La moda es la media 5.33."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Si todos los elementos de la muestra tienen idéntica frecuencia, ningún elemento destaca sobre otro.",
+                            "feedbackCorrect": "¡Excelente! Al repetirse todos exactamente la misma cantidad de veces, la muestra es amodal.",
+                            "feedbackIncorrect": "Incorrecto. No tiene moda al no haber dominancia de frecuencia.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "La moda es el valor o categoría con mayor frecuencia absoluta ($Mo$). Es aplicable a variables cuantitativas y cualitativas nominales.",
+                    "videoPlaceholderText": "Video de Matemáticas: Las medidas de tendencia central comparadas en curvas simétricas y asimétricas."
+                }
+            ]
+        },
+        {
+            "title": "Unidad 3: Medidas de Dispersión",
+            "lessons": [
+                {
+                    "id": "rango-desviacion-media",
+                    "title": "Lección 3.1: Rango y Desviación Media",
+                    "introduction": "Calcula el rango total y evalúa la desviación media de una muestra para cuantificar la dispersión respecto al promedio.",
+                    "explanationHtml": "<p>Las medidas de tendencia central nos indican dónde está el centro de los datos, pero no nos dicen qué tan dispersos o separados están. Las <strong>medidas de dispersión</strong> evalúan esta variabilidad:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Rango ($R$):</strong> Es la medida de dispersión más sencilla. Mide la distancia total de la distribución restando el valor máximo menos el valor mínimo: <br>$$R = X_{\\text{máx}} - X_{\\text{mín}}$$</li><li><strong>Desviación Media ($DM$):</strong> Es el promedio aritmético de las distancias o diferencias absolutas de cada dato de la muestra con respecto a la media aritmética ($\\bar{x}$): <br>$$DM = \\frac{\\sum |x_i - \\bar{x}|}{n}$$</li></ul><p class=\"mt-2 text-slate-700\">El uso de las barras de **valor absoluto** en la desviación media es de carácter obligatorio; de lo contrario, las desviaciones negativas se cancelarían matemáticamente con las positivas, sumando siempre exactamente cero.</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Rango y Desviación Media</p><p class=\"text-xs font-mono font-bold text-primary\">R = X_max - X_min &nbsp;|&nbsp; DM = &sum;|x_i - x̄| / n</p><p class=\"text-xs text-slate-550\">Nota: El valor absoluto |x_i - x̄| elimina los signos negativos de las desviaciones.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"18\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">RANGO Y DESVIACIÓN MEDIA</text><line x1=\"30\" y1=\"65\" x2=\"270\" y2=\"65\" stroke=\"#94a3b8\" stroke-width=\"1.5\" /><circle cx=\"50\" cy=\"65\" r=\"4.5\" fill=\"#ef4444\" /><text x=\"50\" y=\"80\" font-size=\"7.5\" fill=\"#b91c1c\" font-weight=\"bold\" text-anchor=\"middle\">Mín = 2</text><circle cx=\"150\" cy=\"65\" r=\"4\" fill=\"#10b981\" /><text x=\"150\" y=\"80\" font-size=\"7.5\" fill=\"#047857\" font-weight=\"bold\" text-anchor=\"middle\">Media = 4</text><circle cx=\"250\" cy=\"65\" r=\"4.5\" fill=\"#ef4444\" /><text x=\"250\" y=\"80\" font-size=\"7.5\" fill=\"#b91c1c\" font-weight=\"bold\" text-anchor=\"middle\">Máx = 6</text><line x1=\"50\" y1=\"38\" x2=\"250\" y2=\"38\" stroke=\"#3b82f6\" stroke-width=\"1.5\" /><polygon points=\"53,35 45,38 53,41\" fill=\"#3b82f6\" /><polygon points=\"247,35 255,38 247,41\" fill=\"#3b82f6\" /><text x=\"150\" y=\"32\" font-size=\"8.5\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">Rango = 6 - 2 = 4</text><path d=\"M 50 65 Q 100 50 150 65\" fill=\"none\" stroke=\"#f59e0b\" stroke-width=\"1.2\" stroke-dasharray=\"2,2\" /><text x=\"100\" y=\"47\" font-size=\"7.5\" fill=\"#b45309\" font-weight=\"bold\" text-anchor=\"middle\">d_1 = 2</text><path d=\"M 150 65 Q 200 50 250 65\" fill=\"none\" stroke=\"#f59e0b\" stroke-width=\"1.2\" stroke-dasharray=\"2,2\" /><text x=\"200\" y=\"47\" font-size=\"7.5\" fill=\"#b45309\" font-weight=\"bold\" text-anchor=\"middle\">d_2 = 2</text><text x=\"150\" y=\"106\" font-size=\"8\" fill=\"#475569\" text-anchor=\"middle\">Desviación Media = (2 + 0 + 2) / 3 = 1.33</text></svg>",
+                    "svgDescription": "Cálculo visual de rango y desviaciones en una serie [2, 4, 6] (media = 4). Muestra la envergadura del Rango (azul) y las desviaciones absolutas a la media (arcos amarillos) de 2 unidades cada una.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Calcula el rango y la desviación media del conjunto de datos: 2, 4, 6 (sabiendo que su media aritmética es $\\bar{x} = 4$).</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1 (Calcular Rango $R$):</strong> Identificamos el máximo (6) y mínimo (2): <br>$$R = X_{\\text{máx}} - X_{\\text{mín}} = 6 - 2 = 4$$</li><li><strong>Paso 2 (Calcular desviaciones absolutas $|x_i - \\bar{x}|$):</strong> <br>- Para 2: $|2 - 4| = |-2| = 2$ <br>- Para 4: $|4 - 4| = |0| = 0$ <br>- Para 6: $|6 - 4| = |2| = 2$</li><li><strong>Paso 3 (Promediar desviaciones):</strong> Sumamos los valores absolutos y dividimos entre $n = 3$: <br>$$DM = \\frac{2 + 0 + 2}{3} = \\frac{4}{3} \\approx 1.33$$</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultados:</strong> El Rango es de <strong>4</strong> y la Desviación Media es de aproximadamente <strong>1.33</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Ignorar las barras de valor absoluto:</strong> Sumar las desviaciones con sus signos originales: $(2 - 4) + (4 - 4) + (6 - 4) = -2 + 0 + 2 = 0$. En matemáticas, la suma de las desviaciones directas con respecto a la media siempre es **cero**, por lo que usar valor absoluto es obligatorio para medir distancias reales.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Calcula el valor del rango de la siguiente serie de observaciones: 15, 30, 20, 85, 40. (Ingresa solo el número entero):",
+                            "correctAnswer": "70",
+                            "hint": "Identifica el valor máximo (85) y el valor mínimo (15) y restalos.",
+                            "feedbackCorrect": "¡Excelente! Rango = 85 - 15 = 70.",
+                            "feedbackIncorrect": "Incorrecto. Rango = 85 - 15 = 70.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si observas que la muestra de calificaciones de un colegio en Antigua tiene un rango extremadamente pequeño (por ejemplo, 3 puntos sobre 100), ¿qué nos indica sobre el grupo?",
+                            "options": [
+                                "Que el grupo tiene una altísima dispersión y es muy heterogéneo.",
+                                "Que el grupo es sumamente homogéneo y casi todos obtuvieron notas casi idénticas.",
+                                "Que la media de calificaciones es muy baja.",
+                                "Que todos los alumnos reprobaron."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Un rango pequeño significa que la distancia entre el mejor y el peor alumno es mínima.",
+                            "feedbackCorrect": "¡Perfecto! Un rango reducido revela homogeneidad extrema en los datos.",
+                            "feedbackIncorrect": "Incorrecto. Significa que el grupo de datos es muy homogéneo.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Calcula el valor de la desviación media de los datos: 10 y 20 (cuya media aritmética es 15). (Ingresa solo el número entero):",
+                            "correctAnswer": "5",
+                            "hint": "Calcula la distancia absoluta de cada dato a la media: |10 - 15| = 5, |20 - 15| = 5. Luego promedia ambas distancias.",
+                            "feedbackCorrect": "¡Excelente! Distancias = 5 y 5. Promedio de desviaciones = (5 + 5) / 2 = 5.",
+                            "feedbackIncorrect": "Incorrecto. Las desviaciones a la media son 5 y 5; su promedio es 5.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si todos los datos recolectados en una muestra son idénticos (por ejemplo: 5, 5, 5, 5), ¿cuánto vale la desviación media? (Ingresa solo el número entero):",
+                            "correctAnswer": "0",
+                            "hint": "Si todos los datos son iguales a 5, la media es 5. La distancia de cada dato a la media es nula.",
+                            "feedbackCorrect": "¡Perfecto! Al no haber dispersión ni diferencias, la desviación media es exactamente 0.",
+                            "feedbackIncorrect": "Incorrecto. Si no hay dispersión la desviación media es 0.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "En una carrera de atletismo escolar, el tiempo promedio de los corredores es de 12 segundos con una desviación media de 0.5 segundos. ¿Qué nos indica esto?",
+                            "options": [
+                                "Que todos los atletas corrieron en exactamente 12.5 segundos.",
+                                "Que la mayoría de los atletas registraron tiempos situados a una distancia promedio de 0.5 segundos del promedio general (entre 11.5 y 12.5 segundos).",
+                                "Que el atleta más lento tardó 12.5 segundos.",
+                                "Que la varianza de los tiempos es infinita."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "La desviación media cuantifica la distancia típica o separación promedio de los datos respecto al centro.",
+                            "feedbackCorrect": "¡Perfecto! Describe de forma intuitiva la separación promedio de los tiempos individuales del promedio central.",
+                            "feedbackIncorrect": "Incorrecto. Indica que la dispersión promedio de los corredores respecto a la media es de 0.5 segundos.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "El rango mide la envergadura de los extremos ($R = Max - Min$). La desviación media promedia las distancias absolutas de cada dato a la media ($DM = \\sum |x_i - \\bar{x}|/n$).",
+                    "videoPlaceholderText": "Video de Matemáticas: Concepto intuitivo de dispersión y cómo calcular el rango y desviación media."
+                },
+                {
+                    "id": "varianza-desviacion-estandar-muestral",
+                    "title": "Lección 3.2: Varianza y Desviación Estándar Muestral",
+                    "introduction": "Domina el cálculo y la interpretación de la varianza y la desviación estándar muestral aplicando el factor corrector n - 1.",
+                    "explanationHtml": "<p>En la práctica estadística avanzada, la desviación media es poco utilizada porque el valor absoluto es difícil de operar algebraicamente en cálculo diferencial. En su lugar, elevamos las desviaciones al cuadrado para eliminar los signos negativos, lo que da origen a las dos medidas reinas de la dispersión:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Varianza Muestral ($s^2$):</strong> Promedia los cuadrados de las diferencias de cada dato respecto a la media. Para una **muestra**, dividimos entre $n - 1$ (corrección de Bessel) para corregir el sesgo de subestimación poblacional: <br>$$s^2 = \\frac{\\sum (x_i - \\bar{x})^2}{n - 1}$$</li><li><strong>Desviación Estándar Muestral ($s$):</strong> Al elevar al cuadrado en la varianza, las unidades físicas también se elevan (ej. pesos en $kg^2$). Para regresar a las unidades originales del problema, extraemos la raíz cuadrada de la varianza: <br>$$s = \\sqrt{s^2}$$</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Varianza y Desviación Estándar Muestral</p><p class=\"text-xs font-mono font-bold text-primary\">s&sup2; = &sum;(x_i - x̄)&sup2; / (n - 1) &nbsp;|&nbsp; s = &radic;s&sup2;</p><p class=\"text-xs text-slate-550\">Nota: Usar n - 1 en el denominador de la varianza al trabajar con muestras.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"18\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">VARIANZA &amp; DESVIACIÓN ESTÁNDAR</text><rect x=\"15\" y=\"32\" width=\"80\" height=\"40\" fill=\"#eff6ff\" stroke=\"#bfdbfe\" rx=\"4\" /><text x=\"55\" y=\"45\" font-size=\"7\" font-weight=\"bold\" fill=\"#1e40af\" text-anchor=\"middle\">1. Restas</text><text x=\"55\" y=\"55\" font-size=\"7\" fill=\"#64748b\" text-anchor=\"middle\">(x_i - &mu;)</text><text x=\"55\" y=\"65\" font-size=\"7\" fill=\"#64748b\" text-anchor=\"middle\">-2, 0, +2</text><rect x=\"110\" y=\"32\" width=\"80\" height=\"40\" fill=\"#ecfdf5\" stroke=\"#a7f3d0\" rx=\"4\" /><text x=\"150\" y=\"45\" font-size=\"7\" font-weight=\"bold\" fill=\"#065f46\" text-anchor=\"middle\">2. Cuadrados</text><text x=\"150\" y=\"55\" font-size=\"7\" fill=\"#64748b\" text-anchor=\"middle\">(x_i - &mu;)&sup2;</text><text x=\"150\" y=\"65\" font-size=\"7\" fill=\"#64748b\" text-anchor=\"middle\">4, 0, 4 (Suma=8)</text><rect x=\"205\" y=\"32\" width=\"80\" height=\"40\" fill=\"#fffbeb\" stroke=\"#fde68a\" rx=\"4\" /><text x=\"245\" y=\"45\" font-size=\"7\" font-weight=\"bold\" fill=\"#d97706\" text-anchor=\"middle\">3. Varianza (s&sup2;)</text><text x=\"245\" y=\"55\" font-size=\"7\" fill=\"#64748b\" text-anchor=\"middle\">Suma / (n - 1)</text><text x=\"245\" y=\"65\" font-size=\"7\" fill=\"#d97706\" font-weight=\"bold\" text-anchor=\"middle\">s&sup2; = 8 / 2 = 4</text><path d=\"M 150 78 L 150 88\" stroke=\"#cbd5e1\" stroke-width=\"1.5\" /><polygon points=\"147,86 150,91 153,86\" fill=\"#cbd5e1\" /><text x=\"150\" y=\"106\" font-size=\"10\" fill=\"#047857\" font-weight=\"bold\" text-anchor=\"middle\">Desviación Estándar s = &radic;s&sup2; = &radic;4 = 2</text></svg>",
+                    "svgDescription": "Flujo paso a paso para el cálculo muestral de la varianza s² y la desviación estándar s de una serie [3, 5, 7] (media=5). Se detalla la resta de la media, elevación al cuadrado, división entre n-1 (muestral) y la extracción final de la raíz.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Calcula la varianza muestral y la desviación estándar de la serie de datos: 3, 5, 7 (la media es $\\bar{x} = 5$, tamaño de la muestra $n = 3$).</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1 (Calcular diferencias al cuadrado $(x_i - \\bar{x})^2$):</strong> <br>- Para 3: $(3 - 5)^2 = (-2)^2 = 4$ <br>- Para 5: $(5 - 5)^2 = (0)^2 = 0$ <br>- Para 7: $(7 - 5)^2 = (2)^2 = 4$</li><li><strong>Paso 2 (Sumatoria de cuadrados):</strong> Sumamos las diferencias cuadráticas: <br>$$\\sum (x_i - \\bar{x})^2 = 4 + 0 + 4 = 8$$</li><li><strong>Paso 3 (Calcular Varianza Muestral dividiendo entre $n - 1$):</strong> Como $n = 3$, dividimos entre $3 - 1 = 2$: <br>$$s^2 = \\frac{8}{2} = 4\\text{ unidades}^2$$</li><li><strong>Paso 4 (Calcular Desviación Estándar):</strong> Extraemos la raíz cuadrada de la varianza: <br>$$s = \\sqrt{s^2} = \\sqrt{4} = 2\\text{ unidades}$$</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultados:</strong> La varianza muestral es de <strong>4</strong> y la desviación estándar muestral es de <strong>2</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Dividir entre n en muestras:</strong> Dividir la suma de cuadrados entre $n$ directamente ($8 / 3 = 2.67$) para calcular la varianza de una muestra. Recuerda usar siempre $n - 1$ en el denominador para varianzas **muestrales** (la división entre $n$ se reserva de forma exclusiva para poblaciones completas).</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Si la varianza muestral de un conjunto de mediciones es de 16, ¿cuál es el valor numérico de la desviación estándar? (Ingresa solo el número entero):",
+                            "correctAnswer": "4",
+                            "hint": "La desviación estándar es la raíz cuadrada de la varianza: s = sqrt(s²).",
+                            "feedbackCorrect": "¡Excelente! s = sqrt(16) = 4.",
+                            "feedbackIncorrect": "Incorrecto. La desviación estándar es la raíz cuadrada de la varianza: sqrt(16) = 4.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si la desviación estándar medida de los pesos de sacos de café es de 3 libras, ¿cuánto vale su varianza muestral? (Ingresa solo el número entero):",
+                            "correctAnswer": "9",
+                            "hint": "La varianza es el cuadrado de la desviación estándar: s² = s * s.",
+                            "feedbackCorrect": "¡Excelente! Varianza = 3² = 9.",
+                            "feedbackIncorrect": "Incorrecto. La varianza es el cuadrado de la desviación estándar: 3² = 9.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Calcula el valor numérico de la varianza muestral de las observaciones: 10 y 20 (la media es 15, n = 2). (Ingresa solo el número entero):",
+                            "correctAnswer": "50",
+                            "hint": "Calcula las diferencias al cuadrado: (10 - 15)² = 25 y (20 - 15)² = 25 (Suma = 50). Divide entre n - 1, que para n = 2 es exactamente 1.",
+                            "feedbackCorrect": "¡Perfecto! Varianza muestral = 50 / (2 - 1) = 50.",
+                            "feedbackIncorrect": "Incorrecto. Suma de cuadrados = 50. Dividiendo entre 2-1=1 da 50.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Con los datos del ejercicio anterior (varianza muestral = 50), calcula el valor de su desviación estándar aproximada: (Ingresa el número decimal con punto aproximado, ej: 7.07):",
+                            "correctAnswer": "7.07",
+                            "hint": "Extrae la raíz cuadrada de la varianza: s = sqrt(50).",
+                            "feedbackCorrect": "¡Excelente! s = sqrt(50) ≈ 7.07.",
+                            "feedbackIncorrect": "Incorrecto. La desviación estándar es sqrt(50) ≈ 7.07.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Puede la varianza o desviación estándar de una muestra de datos reales dar alguna vez un resultado numérico negativo?",
+                            "options": [
+                                "Sí, si la media es negativa.",
+                                "No, al basarse en sumatorias de diferencias elevadas al cuadrado y raíces de números positivos, el resultado es siempre positivo o cero.",
+                                "Solo si todos los datos son negativos.",
+                                "Solo si el tamaño de muestra n es menor a 10."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Los cuadrados de números reales son siempre positivos o nulos, y las raíces cuadradas principales son no negativas.",
+                            "feedbackCorrect": "¡Perfecto! Tanto la varianza como la desviación estándar son medidas de magnitud absoluta siempre no negativas.",
+                            "feedbackIncorrect": "Incorrecto. Son medidas intrínsecamente no negativas por sus definiciones cuadráticas.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "La varianza muestral ($s^2 = \\frac{\\sum (x_i - \\bar{x})^2}{n - 1}$) promedia diferencias cuadráticas. La desviación estándar ($s = \\sqrt{s^2}$) retorna las unidades originales.",
+                    "videoPlaceholderText": "Video de Matemáticas: Varianza muestral y desviación estándar explicadas con fórmulas y calculadora de bolsillo."
+                },
+                {
+                    "id": "coeficiente-de-variacion-cv",
+                    "title": "Lección 3.3: Coeficiente de Variación (CV)",
+                    "introduction": "Compara la variabilidad relativa de muestras con diferentes medias o unidades calculando el Coeficiente de Variación.",
+                    "explanationHtml": "<p>La desviación estándar ($s$) mide la dispersión en unidades absolutas. Sin embargo, no nos permite comparar la variabilidad de dos variables con **unidades de medida diferentes** (ej. comparar la dispersión de la estatura en metros con el peso en kilogramos), ni de variables con **promedios muy distantes** (ej. la dispersión del peso de ratones vs el peso de elefantes).</p><p class=\"mt-2 text-slate-700\">Para solucionar esto, definimos el <strong>Coeficiente de Variación ($CV$)</strong>. Es una medida de dispersión relativa adimensional que expresa la desviación estándar como un porcentaje de la media aritmética de la muestra:</p><p class=\"text-center font-mono font-extrabold text-primary text-base my-2\">$$CV = \\left( \\frac{s}{\\bar{x}} \\right) \\times 100\\%$$</p><p class=\"mt-2 text-slate-700\"><strong>Interpretación de la Homogeneidad:</strong></p><ul class=\"list-disc pl-5 space-y-1.5 my-2\"><li>Un $CV \\le 10\\%$ indica una dispersión muy baja (los datos son **altamente homogéneos** y estables).</li><li>Un $CV > 30\\%$ revela una alta dispersión relativa (datos **heterogéneos** con alta variabilidad).</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Coeficiente de Variación</p><p class=\"text-xs font-mono font-bold text-primary\">CV = (s / x̄) &times; 100%</p><p class=\"text-xs text-slate-550\">s representa la desviación estándar, x̄ representa la media de la muestra.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"18\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">COEFICIENTE DE VARIACIÓN (CV)</text><rect x=\"25\" y=\"32\" width=\"115\" height=\"50\" fill=\"#eff6ff\" stroke=\"#bfdbfe\" rx=\"6\" /><text x=\"82\" y=\"44\" font-size=\"7.5\" font-weight=\"bold\" fill=\"#1e40af\" text-anchor=\"middle\">ESTATURAS</text><text x=\"82\" y=\"55\" font-size=\"7\" fill=\"#475569\" text-anchor=\"middle\">Media = 1.60 m</text><text x=\"82\" y=\"65\" font-size=\"7\" fill=\"#475569\" text-anchor=\"middle\">Desv. s = 0.08 m</text><text x=\"82\" y=\"76\" font-size=\"8\" font-weight=\"bold\" fill=\"#10b981\" text-anchor=\"middle\">CV = 5% (Homogéneo)</text><rect x=\"160\" y=\"32\" width=\"115\" height=\"50\" fill=\"#fffbeb\" stroke=\"#fde68a\" rx=\"6\" /><text x=\"217\" y=\"44\" font-size=\"7.5\" font-weight=\"bold\" fill=\"#b45309\" text-anchor=\"middle\">PESOS</text><text x=\"217\" y=\"55\" font-size=\"7\" fill=\"#475569\" text-anchor=\"middle\">Media = 50 kg</text><text x=\"217\" y=\"65\" font-size=\"7\" fill=\"#475569\" text-anchor=\"middle\">Desv. s = 5 kg</text><text x=\"217\" y=\"76\" font-size=\"8\" font-weight=\"bold\" fill=\"#ef4444\" text-anchor=\"middle\">CV = 10% (Más disperso)</text><text x=\"150\" y=\"106\" font-size=\"8.5\" fill=\"#334155\" font-weight=\"bold\" text-anchor=\"middle\">CV = (s / &mu;) &times; 100%</text></svg>",
+                    "svgDescription": "Comparación de dispersión relativa mediante el Coeficiente de Variación. Las estaturas (CV=5%) presentan menor variabilidad relativa y son más homogéneas que los pesos (CV=10%), a pesar de tener unidades distintas.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Un salón de clases de Antigua tiene una estatura media de $1.60\\text{ m}$ con desviación estándar $s = 0.08\\text{ m}$. Otro grupo de estudiantes tiene un peso medio de $50\\text{ kg}$ con desviación estándar $s = 5\\text{ kg}$. ¿Cuál de los dos conjuntos de datos presenta mayor variabilidad relativa?</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1 (Calcular CV de Estaturas):</strong> <br>$$CV_{\\text{estaturas}} = \\left( \\frac{0.08}{1.60} \\right) \\times 100\\% = 0.05 \\times 100\\% = 5\\%$$</li><li><strong>Paso 2 (Calcular CV de Pesos):</strong> <br>$$CV_{\\text{pesos}} = \\left( \\frac{5}{50} \\right) \\times 100\\% = 0.10 \\times 100\\% = 10\\%$$</li><li><strong>Paso 3 (Comparar):</strong> El Coeficiente de Variación de los pesos (10%) duplica al de las estaturas (5%).</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> El **peso de los alumnos** exhibe una variabilidad relativa mayor (es más heterogéneo) que su estatura.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Invertir el cociente de la fórmula:</strong> Dividir la media entre la desviación estándar: $\\bar{x} / s$. Recuerde que la desviación estándar ($s$) va en el numerador para reflejar el cambio relativo de la variabilidad respecto a la media de la distribución.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Si la media de una muestra de datos es 40 y su desviación estándar es 8, ¿cuál es el porcentaje del Coeficiente de Variación? (Ingresa solo el número entero sin el símbolo %):",
+                            "correctAnswer": "20",
+                            "hint": "Aplica CV = (s / x̄) * 100. Reemplaza s = 8 y x̄ = 40.",
+                            "feedbackCorrect": "¡Excelente! CV = (8 / 40) * 100% = 0.20 * 100 = 20%.",
+                            "feedbackIncorrect": "Incorrecto. CV = (8 / 40) * 100 = 20%.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si comparas dos muestras de salarios en Antigua, la Muestra A con CV del 45% y la Muestra B con CV del 15%. ¿Cuál muestra se considera más homogénea?",
+                            "options": [
+                                "La Muestra A con CV de 45%.",
+                                "La Muestra B con CV de 15%.",
+                                "Ambas son igual de homogéneas.",
+                                "Ninguna, el CV no mide la homogeneidad."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Un menor coeficiente de variación indica que los datos están más concentrados y estables alrededor de la media.",
+                            "feedbackCorrect": "¡Perfecto! A menor CV, mayor homogeneidad y estabilidad de los datos.",
+                            "feedbackIncorrect": "Incorrecto. La Muestra B (15%) es mucho más homogénea al tener menor variabilidad relativa.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Calcula el Coeficiente de Variación si la media de las observaciones es 10 y su desviación estándar es 1.5. (Ingresa el número decimal con punto y sin el símbolo %):",
+                            "correctAnswer": "15",
+                            "hint": "Aplica CV = (1.5 / 10) * 100.",
+                            "feedbackCorrect": "¡Excelente! CV = (1.5 / 10) * 100% = 15%.",
+                            "feedbackIncorrect": "Incorrecto. CV = (1.5 / 10) * 100 = 15.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cuál es la ventaja fundamental de usar el Coeficiente de Variación (CV) frente a la desviación estándar común (s)?",
+                            "options": [
+                                "El CV calcula la mediana de forma directa.",
+                                "El CV es una medida adimensional que permite comparar la dispersión relativa de variables con diferentes unidades de medida o medias muy diferentes.",
+                                "El CV elimina la necesidad de contar con una media.",
+                                "El CV es independiente del tamaño de muestra n."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "La desviación estándar tiene unidades físicas, el CV es un porcentaje puro.",
+                            "feedbackCorrect": "¡Excelente! Al ser un porcentaje adimensional, el CV es ideal para comparar dispersiones de escalas o variables totalmente diferentes.",
+                            "feedbackIncorrect": "Incorrecto. Permite comparar la variabilidad relativa de muestras con diferentes medias o unidades.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Si el Coeficiente de Variación de las ventas semanales de una sucursal en Escuintla es de apenas 8%, ¿qué diagnóstico reportas a la gerencia?",
+                            "options": [
+                                "Que las ventas tienen una dispersión altísima y caótica.",
+                                "Que las ventas son sumamente estables y tienen una variabilidad muy baja, indicando consistencia comercial.",
+                                "Que las ventas promedio cayeron a cero.",
+                                "Que se debe cambiar el modelo de negocio."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Un CV menor al 10% se considera de muy baja variabilidad o alta estabilidad.",
+                            "feedbackCorrect": "¡Perfecto! Un CV del 8% representa una excelente estabilidad y baja variabilidad en la facturación semanal.",
+                            "feedbackIncorrect": "Incorrecto. Indica consistencia y estabilidad comercial al ser menor al 10%.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "El coeficiente de variación ($CV = \\frac{s}{\\bar{x}} \\times 100\\%$) es adimensional y permite comparar la dispersión relativa de variables con diferentes medias o unidades.",
+                    "videoPlaceholderText": "Video de Matemáticas: Comparando variabilidad de variables con el Coeficiente de Variación."
+                }
+            ]
+        }
+    ]
+},
 
     "intro-estadistica": {
     "isRichCourse": true,
@@ -9009,607 +9493,2009 @@ window.ACADEMIC_CONTENT = {
     ]
 },
 
-    "distribuciones-probabilidad": `# Curso: Distribuciones de Probabilidad
-* **Materia:** Matemáticas | **Nivel sugerido:** Universidad
-* **Público objetivo:** Estudiantes universitarios y de diversificado que necesitan dominar el comportamiento probabilístico de variables aleatorias discretas y continuas.
-* **Objetivos de aprendizaje:** Operar con variables aleatorias, calcular probabilidades binomiales exactas usando la fórmula combinatoria y resolver aplicaciones de la distribución normal estándar mediante tablas Z.
+    "distribuciones-probabilidad": {
+    "isRichCourse": true,
+    "title": "Distribuciones de Probabilidad",
+    "units": [
+        {
+            "title": "Unidad 1: Variables Aleatorias y Distribuciones Discretas",
+            "lessons": [
+                {
+                    "id": "concepto-variable-aleatoria",
+                    "title": "Lección 1.1: Concepto de Variable Aleatoria",
+                    "introduction": "Define y clasifica variables aleatorias en discretas y continuas mediante el análisis lógico de su dominio y rango.",
+                    "explanationHtml": "<p>En la teoría de la probabilidad, una <strong>variable aleatoria ($X$)</strong> no es una variable algebraica común. Es una <strong>función matemática</strong> que asigna un valor numérico real a cada uno de los resultados posibles de un espacio muestral ($\\Omega$) generado por un experimento aleatorio.</p><p class=\"mt-2\">Las variables aleatorias se clasifican de forma estricta según el conjunto de valores que pueden tomar:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Variables Aleatorias Discretas:</strong> Son aquellas cuyo rango es un conjunto finito o infinito numerable (contable). Toman valores enteros y aislados (ej. número de alumnos que asisten a tutoría: 0, 1, 2...).</li><li><strong>Variables Aleatorias Continuas:</strong> Son aquellas cuyo rango abarca un intervalo infinito no numerable de números reales. Pueden tomar cualquier valor decimal intermedio y provienen de mediciones físicas (ej. el tiempo exacto que dura una tutoría: 45.23 minutos, la temperatura en Quetzaltenango).</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Definición Formal</p><p class=\"text-xs font-mono font-bold text-primary\">X: &Omega; &rarr; &reals; &nbsp;|&nbsp; Discreta (Contable) vs Continua (Medible)</p><p class=\"text-xs text-slate-550\">Una variable aleatoria traduce sucesos del mundo real (ej. \"cae cara\") a números reales puros (ej. \"1\").</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"18\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">VARIABLE ALEATORIA COMO FUNCIÓN</text><ellipse cx=\"60\" cy=\"65\" rx=\"35\" ry=\"25\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"1\" /><text x=\"60\" y=\"60\" font-size=\"8\" font-weight=\"bold\" fill=\"#1e40af\" text-anchor=\"middle\">Espacio &Omega;</text><text x=\"45\" y=\"75\" font-size=\"7.5\" fill=\"#1e40af\" text-anchor=\"middle\">{Cara}</text><text x=\"75\" y=\"75\" font-size=\"7.5\" fill=\"#1e40af\" text-anchor=\"middle\">{Escudo}</text><line x1=\"125\" y1=\"90\" x2=\"255\" y2=\"90\" stroke=\"#475569\" stroke-width=\"1.5\" /><circle cx=\"160\" cy=\"90\" r=\"3\" fill=\"#ef4444\" /><text x=\"160\" y=\"102\" font-size=\"8\" font-weight=\"bold\" fill=\"#b91c1c\" text-anchor=\"middle\">0</text><circle cx=\"220\" cy=\"90\" r=\"3\" fill=\"#10b981\" /><text x=\"220\" y=\"102\" font-size=\"8\" font-weight=\"bold\" fill=\"#047857\" text-anchor=\"middle\">1</text><text x=\"260\" y=\"93\" font-size=\"8.5\" font-family=\"serif\" font-style=\"italic\" fill=\"#475569\">R</text><path d=\"M 60 78 C 80 110, 130 95, 155 90.5\" fill=\"none\" stroke=\"#ef4444\" stroke-width=\"1.2\" stroke-dasharray=\"2,2\" marker-end=\"url(#arrow)\" /><path d=\"M 75 75 C 110 50, 180 65, 215 88.5\" fill=\"none\" stroke=\"#10b981\" stroke-width=\"1.2\" stroke-dasharray=\"2,2\" marker-end=\"url(#arrow)\" /><text x=\"135\" y=\"45\" font-size=\"9.5\" font-weight=\"bold\" fill=\"#3b82f6\" text-anchor=\"middle\">X(s)</text></svg>",
+                    "svgDescription": "Representación de una variable aleatoria X como una función que mapea los sucesos cualitativos del espacio muestral {Cara, Escudo} a los valores numéricos discretos {1, 0} en la recta real.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Clasifica de forma analítica las siguientes variables en un centro escolar: a) La cantidad de respuestas correctas en un test de 5 preguntas, b) La estatura en metros de los tutores de CEDETU en Antigua Guatemala.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1: Analizar variable a:</strong> Las respuestas correctas se obtienen mediante un conteo de elementos individuales. El rango de valores posibles es $\\{0, 1, 2, 3, 4, 5\\}$. Son valores discretos y aislados. Por lo tanto, es una **Variable Aleatoria Discreta**.</li><li><strong>Paso 2: Analizar variable b:</strong> La estatura es una magnitud física continua que se mide con un instrumento. No pasa saltando de 1.70m a 1.80m de golpe; admite infinitos valores decimales intermedios (ej. 1.7345m) dependiendo de la precisión del metro. Por lo tanto, es una **Variable Aleatoria Continua**.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Conclusión:</strong> a) Variable aleatoria discreta, b) Variable aleatoria continua.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Creer que el dinero es discreto:</strong> Pensar que la variable \"salario\" es discreta porque los centavos se cortan en dos decimales. Teóricamente, el dinero mide valor financiero continuo y se modela en estadística avanzada utilizando variables continuas.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Clasifica la variable aleatoria 'número de materias reprobadas por un estudiante en el ciclo escolar'. Escribe 'discreta' o 'continua':",
+                            "correctAnswer": "discreta",
+                            "hint": "Piensa si puedes reprobar 1.5 materias o si solo toma valores enteros contables como 0, 1, 2...",
+                            "feedbackCorrect": "¡Excelente! Solo se pueden reprobar números enteros de materias, por lo tanto es una variable discreta.",
+                            "feedbackIncorrect": "Incorrecto. Se mide en valores enteros contables, por lo que es 'discreta'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Clasifica 'la temperatura exacta del aula de tutorías en Quetzaltenango medida con un termómetro digital de alta precisión'. Escribe 'discreta' o 'continua':",
+                            "correctAnswer": "continua",
+                            "hint": "La temperatura es una medición física que admite infinitos decimales intermedios.",
+                            "feedbackCorrect": "¡Perfecto! Al ser una magnitud física que admite decimales en un intervalo, es continua.",
+                            "feedbackIncorrect": "Incorrecto. La temperatura varía de forma fluida y continua, por lo que es 'continua'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cuál es el dominio de definición matemático de una función de variable aleatoria X?",
+                            "options": [
+                                "La recta de los números reales R.",
+                                "El espacio muestral Omega que contiene todos los resultados posibles del experimento.",
+                                "La suma de las probabilidades individuales.",
+                                "El conjunto vacío de sucesos imposibles."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "La función toma elementos del espacio de resultados reales y los convierte en números.",
+                            "feedbackCorrect": "¡Brillante! El dominio es el espacio muestral Omega, y su rango es un subconjunto de los reales.",
+                            "feedbackIncorrect": "Incorrecto. Su dominio es el espacio muestral Omega del experimento.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Clasifica 'la distancia en kilómetros que recorre un estudiante para llegar al centro de tutorías'. Escribe 'discreta' o 'continua':",
+                            "correctAnswer": "continua",
+                            "hint": "La distancia se mide en longitud y admite fracciones y decimales de cualquier tamaño.",
+                            "feedbackCorrect": "¡Excelente! La distancia es de naturaleza continua, admite decimales.",
+                            "feedbackIncorrect": "Incorrecto. Admite infinitas subdivisiones métricas, por lo tanto es 'continua'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Clasifica la variable aleatoria 'número de caras obtenidas al lanzar 3 monedas al aire'. Escribe 'discreta' o 'continua':",
+                            "correctAnswer": "discreta",
+                            "hint": "Solo puedes obtener 0, 1, 2 o 3 caras. Valores enteros contables.",
+                            "feedbackCorrect": "¡Perfecto! Los resultados son contables e individuales, es una variable discreta.",
+                            "feedbackIncorrect": "Incorrecto. Se cuentan elementos enteros, es 'discreta'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        }
+                    ],
+                    "summaryHtml": "Una variable aleatoria ($X$) asigna números a los resultados de un espacio muestral. Puede ser discreta (valores enteros contables) o continua (valores decimales medibles).",
+                    "videoPlaceholderText": "Video de Probabilidad: Qué es una variable aleatoria y ejemplos de clasificación."
+                },
+                {
+                    "id": "funcion-masa-probabilidad",
+                    "title": "Lección 1.2: Función de Masa de Probabilidad",
+                    "introduction": "Estructura y valida distribuciones de probabilidad discreta aplicando los dos axiomas fundamentales de probabilidad.",
+                    "explanationHtml": "<p>Para una variable aleatoria discreta $X$, no utilizamos curvas continuas. En su lugar, definimos una <strong>Función de Masa de Probabilidad (FMP)</strong>, denotada como $P(X = x)$ o $p(x)$, que asigna de forma directa una probabilidad exacta a cada valor posible $x$ de la variable.</p><p class=\"mt-2\">Para que una función sea una FMP válida, debe cumplir estrictamente con los siguientes **dos axiomas fundamentales**:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>1. No negatividad:</strong> Cada probabilidad individual debe ser mayor o igual a cero y menor o igual a uno: <br>$$0 \\le P(X = x) \\le 1$$</li><li><strong>2. Suma Unitaria:</strong> La suma de todas las probabilidades asociadas a cada uno de los valores posibles del rango de la variable debe ser exactamente igual a uno: <br>$$\\sum P(X = x) = 1.00$$</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Condiciones de Masa de Probabilidad</p><p class=\"text-xs font-mono font-bold text-primary\">0 &le; P(X = x) &le; 1 &nbsp;|&nbsp; &sum; P(X = x) = 1.00</p><p class=\"text-xs text-slate-550\">Si la suma de probabilidades es diferente de 1.00, la distribución está mal definida.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"18\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">FUNCIÓN DE MASA DE PROBABILIDAD</text><line x1=\"40\" y1=\"100\" x2=\"260\" y2=\"100\" stroke=\"#94a3b8\" stroke-width=\"1.5\" /><line x1=\"40\" y1=\"30\" x2=\"40\" y2=\"100\" stroke=\"#94a3b8\" stroke-width=\"1\" /><text x=\"32\" y=\"93\" font-size=\"7\" fill=\"#64748b\" text-anchor=\"end\">0.0</text><text x=\"32\" y=\"65\" font-size=\"7\" fill=\"#64748b\" text-anchor=\"end\">0.5</text><text x=\"32\" y=\"37\" font-size=\"7\" fill=\"#64748b\" text-anchor=\"end\">1.0</text><line x1=\"80\" y1=\"100\" x2=\"80\" y2=\"72\" stroke=\"#3b82f6\" stroke-width=\"3\" /><circle cx=\"80\" cy=\"72\" r=\"4.5\" fill=\"#1d4ed8\" /><text x=\"80\" y=\"112\" font-size=\"8\" font-weight=\"bold\" fill=\"#475569\" text-anchor=\"middle\">x = 0</text><text x=\"80\" y=\"62\" font-size=\"7.5\" font-weight=\"bold\" fill=\"#1d4ed8\" text-anchor=\"middle\">0.40</text><line x1=\"150\" y1=\"100\" x2=\"150\" y2=\"65\" stroke=\"#10b981\" stroke-width=\"3\" /><circle cx=\"150\" cy=\"65\" r=\"4.5\" fill=\"#047857\" /><text x=\"150\" y=\"112\" font-size=\"8\" font-weight=\"bold\" fill=\"#475569\" text-anchor=\"middle\">x = 1</text><text x=\"150\" y=\"55\" font-size=\"7.5\" font-weight=\"bold\" fill=\"#047857\" text-anchor=\"middle\">0.50</text><line x1=\"220\" y1=\"100\" x2=\"220\" y2=\"93\" stroke=\"#f59e0b\" stroke-width=\"3\" /><circle cx=\"220\" cy=\"93\" r=\"4.5\" fill=\"#b45309\" /><text x=\"220\" y=\"112\" font-size=\"8\" font-weight=\"bold\" fill=\"#475569\" text-anchor=\"middle\">x = 2</text><text x=\"220\" y=\"83\" font-size=\"7.5\" font-weight=\"bold\" fill=\"#b45309\" text-anchor=\"middle\">0.10</text></svg>",
+                    "svgDescription": "Gráfico de bastones de una función de masa de probabilidad para x = {0, 1, 2} con probabilidades {0.40, 0.50, 0.10}. Nota que la suma total es exactamente 1.00.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Se diseña una variable discreta $X$ que describe la cantidad de tutorías solicitadas al día. Se proponen las probabilidades: $P(1) = 0.45$, $P(2) = 0.35$ y $P(3) = k$. Determina analíticamente el valor que debe tomar la constante $k$ para que la distribución sea válida.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1: Aplicar axioma de la suma unitaria:</strong> La suma de todas las probabilidades debe dar exactamente 1: <br>$$P(1) + P(2) + P(3) = 1.00$$</li><li><strong>Paso 2: Reemplazar valores conocidos:</strong> <br>$$0.45 + 0.35 + k = 1.00$$</li><li><strong>Paso 3: Despejar la variable k:</strong> <br>$$0.80 + k = 1.00 \\implies k = 1.00 - 0.80 = 0.20$$</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> El valor de $k$ debe ser exactamente <strong>0.20</strong>. Dado que $0.20$ es positivo y menor a 1, la FMP es válida.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Ignorar probabilidades negativas:</strong> Dar como válida una distribución cuya suma da 1.00 pero que tiene un valor negativo como $P(X) = -0.20$ y otro mayor a 1 como $P(Y) = 1.20$. Recuerda que cada probabilidad individual debe estar estrictamente en el intervalo $[0, 1]$.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Si una distribución discreta tiene P(0) = 0.15, P(1) = 0.55 y P(2) = k, ¿cuál debe ser el valor numérico decimal de k para que sea válida? (Ingresa el número con punto decimal):",
+                            "correctAnswer": "0.3",
+                            "hint": "Aplica el axioma de la suma: 0.15 + 0.55 + k = 1.00.",
+                            "feedbackCorrect": "¡Excelente! k = 1.00 - 0.70 = 0.30.",
+                            "feedbackIncorrect": "Incorrecto. k debe ser 1.00 - (0.15 + 0.55) = 0.30.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Es válida la siguiente función de probabilidad: P(1) = 0.70, P(2) = -0.10, P(3) = 0.40? Escribe 'si' o 'no':",
+                            "correctAnswer": "no",
+                            "hint": "Verifica si alguna de las probabilidades propuestas viola la regla de no negatividad.",
+                            "feedbackCorrect": "¡Perfecto! No es válida porque existe una probabilidad negativa (P(2) = -0.10), lo cual es imposible.",
+                            "feedbackIncorrect": "Incorrecto. No es válida porque las probabilidades no pueden ser negativas.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si lanzas un dado justo de 6 caras, ¿cuál es el valor decimal exacto de la probabilidad acumulada F(2) = P(X <= 2)? (Redondea a 3 decimales usando punto):",
+                            "correctAnswer": "0.333",
+                            "hint": "Suma la probabilidad de obtener 1 y obtener 2: 1/6 + 1/6 = 2/6 = 1/3.",
+                            "feedbackCorrect": "¡Excelente! F(2) = P(1) + P(2) = 2/6 = 0.333.",
+                            "feedbackIncorrect": "Incorrecto. P(X <= 2) = P(1) + P(2) = 2/6 = 0.333.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si la función de distribución acumulada para X = 2 es F(2) = 0.75 y para X = 3 es F(3) = 0.90, ¿cuál es la probabilidad exacta de que la variable tome el valor 3, P(X = 3)? (Ingresa el número con punto):",
+                            "correctAnswer": "0.15",
+                            "hint": "Aplica la propiedad de la acumulada: P(X = x) = F(x) - F(x-1).",
+                            "feedbackCorrect": "¡Excelente! P(X=3) = F(3) - F(2) = 0.90 - 0.75 = 0.15.",
+                            "feedbackIncorrect": "Incorrecto. P(X=3) = F(3) - F(2) = 0.90 - 0.75 = 0.15.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cuál de las siguientes condiciones define de forma correcta la función de distribución acumulada F(x) para una variable discreta?",
+                            "options": [
+                                "F(x) = P(X = x)",
+                                "F(x) = P(X <= x) = sum_{x_i <= x} P(X = x_i)",
+                                "F(x) = P(X > x) = 1 - P(X <= x)",
+                                "F(x) = sum P(X = x) = 1.00"
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "La palabra 'acumulada' indica que suma todas las probabilidades hasta el valor de interés inclusive.",
+                            "feedbackCorrect": "¡Perfecto! F(x) representa la probabilidad acumulada P(X <= x).",
+                            "feedbackIncorrect": "Incorrecto. Por definición acumulada, F(x) = P(X <= x).",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "La función de masa de probabilidad $P(X = x)$ asigna probabilidades a valores discretos de modo que $0 \\le P(X) \\le 1$ y su suma sea exactamente 1.00.",
+                    "videoPlaceholderText": "Video de Probabilidad: Cómo verificar si una tabla es una distribución de probabilidad válida."
+                },
+                {
+                    "id": "valor-esperado-varianza-discreta",
+                    "title": "Lección 1.3: Valor Esperado y Varianza Discreta",
+                    "introduction": "Calcula el valor esperado, varianza y desviación estándar de variables discretas para predecir comportamientos promedio.",
+                    "explanationHtml": "<p>Para resumir el comportamiento de una variable aleatoria discreta, calculamos sus parámetros poblacionales principales:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Valor Esperado ($E[X]$ o $\\mu$):</strong> Es el promedio ponderado de todos los valores posibles de la variable, utilizando sus probabilidades individuales como ponderación. Representa el valor medio teórico a largo plazo si repitiéramos el experimento infinitas veces: <br>$$E[X] = \\mu = \\sum x_i \\cdot P(X = x_i)$$</li><li><strong>Varianza ($Var[X]$ o $\\sigma^2$):</strong> Mide la dispersión promedio al cuadrado de los valores con respecto a su media: <br>$$Var[X] = \\sigma^2 = \\sum (x_i - \\mu)^2 \\cdot P(X = x_i)$$ o mediante la fórmula computacional simplificada: <br>$$Var[X] = E[X^2] - \\mu^2 = \\left(\\sum x_i^2 \\cdot P(X = x_i)\\right) - \\mu^2$$</li><li><strong>Desviación Estándar ($\\sigma$):</strong> Es la raíz cuadrada de la varianza, expresada en las mismas unidades originales de la variable.</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Ecuaciones Clave de Parámetros</p><p class=\"text-xs font-mono font-bold text-primary\">&mu; = &sum;x_i P(x_i) &nbsp;|&nbsp; &sigma;^2 = &sum;x_i^2 P(x_i) - &mu;^2 &nbsp;|&nbsp; &sigma; = &radic;&sigma;^2</p><p class=\"text-xs text-slate-550\">El valor esperado no tiene que ser un valor que la variable pueda tomar realmente (ej. 2.2 hijos).</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"18\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">VALOR ESPERADO COMO BALANCÍN</text><line x1=\"30\" y1=\"80\" x2=\"270\" y2=\"80\" stroke=\"#475569\" stroke-width=\"2\" /><circle cx=\"60\" cy=\"72\" r=\"6\" fill=\"#3b82f6\" stroke=\"#1d4ed8\" /><text x=\"60\" y=\"62\" font-size=\"7.5\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">x = 1</text><circle cx=\"210\" cy=\"72\" r=\"6\" fill=\"#3b82f6\" stroke=\"#1d4ed8\" /><text x=\"210\" y=\"62\" font-size=\"7.5\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">x = 3</text><polygon points=\"150,80 142,98 158,98\" fill=\"#ef4444\" stroke=\"#b91c1c\" stroke-width=\"1\" /><text x=\"150\" y=\"110\" font-size=\"8.5\" fill=\"#b91c1c\" font-weight=\"bold\" text-anchor=\"middle\">Media &mu; = 2.2</text></svg>",
+                    "svgDescription": "El valor esperado interpretado físicamente como el punto de equilibrio o baricentro de una palanca. Con valores x=1 (prob 0.40) y x=3 (prob 0.60), el balancín se equilibra exactamente en 2.2.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Una variable discreta $X$ toma los valores $1$ y $3$ con probabilidades $P(1) = 0.40$ y $P(3) = 0.60$. Calcula de forma detallada su valor esperado, varianza y desviación estándar.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1: Calcular el Valor Esperado ($\\mu$):</strong> <br>$$\\mu = (1 \\cdot 0.40) + (3 \\cdot 0.60) = 0.40 + 1.80 = 2.20$$</li><li><strong>Paso 2: Calcular el segundo momento ($E[X^2]$):</strong> <br>$$E[X^2] = (1^2 \\cdot 0.40) + (3^2 \\cdot 0.60) = (1 \\cdot 0.40) + (9 \\cdot 0.60) = 0.40 + 5.40 = 5.80$$</li><li><strong>Paso 3: Calcular la Varianza ($\\sigma^2$):</strong> <br>$$\\sigma^2 = E[X^2] - \\mu^2 = 5.80 - (2.20)^2 = 5.80 - 4.84 = 0.96$$</li><li><strong>Paso 4: Calcular la Desviación Estándar ($\\sigma$):</strong> <br>$$\\sigma = \\sqrt{0.96} \\approx 0.98$$</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultados:</strong> El valor esperado es <strong>2.20</strong>, la varianza es <strong>0.96</strong> y la desviación estándar es <strong>0.98</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Olvidar elevar la media al cuadrado:</strong> Restar la media directamente $\\mu$ en lugar de restar su cuadrado $\\mu^2$ al calcular la varianza: $Var[X] = E[X^2] - \\mu$ (Incorrecto). Recuerda usar siempre la fórmula correcta $E[X^2] - \\mu^2$.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Calcula el valor esperado de una variable aleatoria X que toma los valores 0 y 10 con igual probabilidad de 0.50 cada uno. (Ingresa solo el número entero):",
+                            "correctAnswer": "5",
+                            "hint": "Multiplica cada valor por su probabilidad y suma: E[X] = 0*0.50 + 10*0.50.",
+                            "feedbackCorrect": "¡Excelente! E[X] = 0 + 5 = 5.",
+                            "feedbackIncorrect": "Incorrecto. El valor esperado es (0 * 0.5) + (10 * 0.5) = 5.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si el valor esperado de una distribución es 3 y E[X^2] es 13, ¿cuál es el valor numérico entero de la varianza? (Ingresa solo el número entero):",
+                            "correctAnswer": "4",
+                            "hint": "Aplica la fórmula Var[X] = E[X^2] - (E[X])^2.",
+                            "feedbackCorrect": "¡Perfecto! Varianza = 13 - 3^2 = 13 - 9 = 4.",
+                            "feedbackIncorrect": "Incorrecto. Varianza = E[X^2] - μ^2 = 13 - 3^2 = 4.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Con los datos del ejercicio anterior (Varianza = 4), ¿cuánto vale la desviación estándar? (Ingresa solo el número entero):",
+                            "correctAnswer": "2",
+                            "hint": "Calcula la raíz cuadrada de la varianza obtenida.",
+                            "feedbackCorrect": "¡Excelente! La desviación estándar es la raíz cuadrada de 4, que es 2.",
+                            "feedbackIncorrect": "Incorrecto. σ = √Var = √4 = 2.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si una rifa en Antigua vende boletos a Q10 y el premio tiene un valor esperado de ganancia matemática neta de -Q3 para el jugador, ¿cuál es la interpretación correcta?",
+                            "options": [
+                                "Que el jugador ganará Q3 fijos en cada boleto que compre.",
+                                "Que si el jugador compra muchos boletos a largo plazo, perderá en promedio Q3 por cada boleto comprado.",
+                                "Que la rifa es una estafa y nadie ganará nada.",
+                                "Que la varianza del premio es cero."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Un valor esperado negativo de ganancia indica pérdidas promedio acumuladas en repeticiones.",
+                            "feedbackCorrect": "¡Perfecto! Representa el comportamiento promedio a largo plazo: una pérdida promedio de Q3 por boleto.",
+                            "feedbackIncorrect": "Incorrecto. Significa que a la larga se perderán en promedio Q3 por boleto comprado.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Calcula E[X^2] si la variable X toma el valor 2 con probabilidad 0.30 y el valor 4 con probabilidad 0.70. (Ingresa el número con punto decimal):",
+                            "correctAnswer": "12.4",
+                            "hint": "Eleva cada valor al cuadrado, multiplícalo por su probabilidad y suma: E[X^2] = 2^2*0.30 + 4^2*0.70.",
+                            "feedbackCorrect": "¡Excelente! E[X^2] = 4*0.30 + 16*0.70 = 1.20 + 11.20 = 12.40.",
+                            "feedbackIncorrect": "Incorrecto. E[X^2] = 4*0.30 + 16*0.70 = 12.40.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        }
+                    ],
+                    "summaryHtml": "El valor esperado ($\\mu = \\sum x_i P(x_i)$) representa la media teórica a largo plazo, y la varianza ($\\sigma^2 = E[X^2] - \\mu^2$) mide la variabilidad de la distribución.",
+                    "videoPlaceholderText": "Video de Probabilidad: Cómo calcular media y varianza de una tabla de probabilidad paso a paso."
+                }
+            ]
+        },
+        {
+            "title": "Unidad 2: La Distribución Binomial",
+            "lessons": [
+                {
+                    "id": "proceso-bernoulli-binomial",
+                    "title": "Lección 2.1: El Proceso de Bernoulli y la Distribución Binomial",
+                    "introduction": "Identifica si un problema del mundo real cumple con los 4 supuestos lógicos de un experimento binomial.",
+                    "explanationHtml": "<p>Muchos experimentos aleatorios prácticos consisten en una serie de pruebas repetidas donde solo hay dos resultados lógicos posibles: el cliente compra o no compra, el examen es aprobado o reprobado, el artículo está defectuoso o excelente. Estos problemas se modelan con la <strong>distribución binomial</strong>.</p><p class=\"mt-2\">Un experimento binomial es el resultado de un <strong>Proceso de Bernoulli</strong> que debe cumplir de forma rigurosa con los siguientes 4 postulados:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>1. n Ensayos Fijos:</strong> El experimento consta de un número entero fijo y predeterminado de ensayos repetidos independientes ($n$).</li><li><strong>2. Resultados Dicotómicos:</strong> Cada ensayo admite únicamente dos resultados posibles: **Éxito** (lo que buscamos medir) y **Fracaso** (el complemento).</li><li><strong>3. Probabilidad Constante:</strong> La probabilidad de éxito ($p$) es constante en cada una de las pruebas. La probabilidad de fracaso se denota como $q = 1 - p$.</li><li><strong>4. Independencia:</strong> El resultado de cualquier ensayo no afecta ni tiene influencia sobre el resultado de los demás ensayos.</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Parámetros Binomiales</p><p class=\"text-xs font-mono font-bold text-primary\">n = ensayos &nbsp;|&nbsp; p = prob. éxito &nbsp;|&nbsp; q = 1 - p (prob. fracaso)</p><p class=\"text-xs text-slate-550\">Si las extracciones son sin reemplazo en grupos pequeños, p cambia y el proceso deja de ser binomial.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"18\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">ÁRBOL DE BERNOULLI</text><circle cx=\"60\" cy=\"60\" r=\"6\" fill=\"#475569\" /><line x1=\"66\" y1=\"60\" x2=\"160\" y2=\"35\" stroke=\"#3b82f6\" stroke-width=\"1.5\" /><line x1=\"66\" y1=\"60\" x2=\"160\" y2=\"85\" stroke=\"#ef4444\" stroke-width=\"1.5\" /><rect x=\"160\" y=\"25\" width=\"80\" height=\"20\" fill=\"#eff6ff\" stroke=\"#3b82f6\" rx=\"4\" /><text x=\"200\" y=\"37\" font-size=\"8\" font-weight=\"bold\" fill=\"#1e40af\" text-anchor=\"middle\">Éxito (p)</text><rect x=\"160\" y=\"75\" width=\"80\" height=\"20\" fill=\"#fef2f2\" stroke=\"#ef4444\" rx=\"4\" /><text x=\"200\" y=\"87\" font-size=\"8\" font-weight=\"bold\" fill=\"#b91c1c\" text-anchor=\"middle\">Fracaso (q = 1-p)</text><text x=\"110\" y=\"40\" font-size=\"8.5\" font-weight=\"bold\" fill=\"#2563eb\" text-anchor=\"middle\">p</text><text x=\"110\" y=\"85\" font-size=\"8.5\" font-weight=\"bold\" fill=\"#dc2626\" text-anchor=\"middle\">1 - p</text></svg>",
+                    "svgDescription": "Diagrama de decisión de un único ensayo de Bernoulli. Se ramifica en un éxito con probabilidad p o en un fracaso con probabilidad q = 1-p.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Lanzas un dado de 6 caras 8 veces. Consideras como \"éxito\" obtener un número par en el dado. Analiza de forma teórica si este caso se modela como una distribución binomial y define sus parámetros.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1: Evaluar los postulados.</strong> <br>1) Hay $n = 8$ lanzamientos fijos. (Cumple).<br>2) Cada dado solo puede dar Par (Éxito) o Impar (Fracaso). (Dicotómico, cumple).<br>3) La probabilidad de obtener par es constante: 3 de 6 caras $\\implies p = 0.50$ en cada lanzamiento. (Cumple).<br>4) Lanzar un dado no afecta los resultados siguientes. (Independiente, cumple).</li><li><strong>Paso 2: Definir parámetros de la distribución.</strong> <br>El número de ensayos es $n = 8$, y la probabilidad de éxito es $p = 0.50$. La variable $X$ modela la cantidad de éxitos obtenidos, denotado como: <br>$$X \\sim B(8, 0.50)$$</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Conclusión:</strong> El experimento es perfectamente binomial con parámetros $n = 8$ y $p = 0.50$.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Aplicar binomial en muestreos sin reemplazo:</strong> Extraer 5 cartas consecutivas de una baraja sin volver a meterlas. Al no haber reemplazo, la probabilidad de éxito $p$ cambia en cada extracción, violando el postulado 3. Esto se modela con la distribución hipergeométrica, no la binomial.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Si la probabilidad de éxito p de un experimento binomial es 0.18, ¿cuál es el valor decimal de la probabilidad de fracaso q? (Ingresa el número con punto decimal):",
+                            "correctAnswer": "0.82",
+                            "hint": "Aplica q = 1 - p. Resta 1.00 - 0.18.",
+                            "feedbackCorrect": "¡Excelente! q = 1.00 - 0.18 = 0.82.",
+                            "feedbackIncorrect": "Incorrecto. q se calcula como 1 - p = 1.00 - 0.18 = 0.82.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si una variable aleatoria X sigue una distribución binomial de la forma X ~ B(12, 0.35), ¿cuál es el número total de ensayos n en el experimento? (Ingresa solo el número entero):",
+                            "correctAnswer": "12",
+                            "hint": "En la denotación X ~ B(n, p), el primer número entero corresponde a la cantidad de ensayos.",
+                            "feedbackCorrect": "¡Perfecto! n = 12.",
+                            "feedbackIncorrect": "Incorrecto. La denotación X ~ B(n, p) indica que n = 12.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Con los mismos datos del ejercicio anterior X ~ B(12, 0.35), ¿cuál es el número máximo posible de éxitos que se pueden obtener en la práctica? (Ingresa solo el número entero):",
+                            "correctAnswer": "12",
+                            "hint": "No se pueden obtener más éxitos que el número total de ensayos realizados.",
+                            "feedbackCorrect": "¡Excelente! El máximo de éxitos posible es n = 12.",
+                            "feedbackIncorrect": "Incorrecto. El número máximo de éxitos es igual al total de ensayos: 12.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Se extraen 3 bolas sin reemplazo de una urna pequeña que contiene 5 bolas rojas y 5 azules. ¿Es un experimento binomial si definimos éxito como extraer bola roja?",
+                            "options": [
+                                "Sí, porque solo hay dos colores posibles (rojo o azul).",
+                                "No, porque al ser 'sin reemplazo' la probabilidad de extraer roja cambia en cada turno, violando el supuesto de probabilidad constante.",
+                                "Sí, porque el número de ensayos es pequeño (n = 3).",
+                                "No, porque las bolas azules pesan más."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "La clave está en si la probabilidad p permanece constante en cada bola que sacamos.",
+                            "feedbackCorrect": "¡Excelente! Sin reemplazo las extracciones no son independientes, por lo que no es binomial.",
+                            "feedbackIncorrect": "Incorrecto. Al ser sin reemplazo la probabilidad p no es constante; no es binomial.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "En un examen de selección múltiple de 10 preguntas, cada pregunta tiene 4 opciones y solo una es correcta. Si respondes al azar, ¿cuál es el valor decimal de p?",
+                            "correctAnswer": "0.25",
+                            "hint": "Divide 1 opción correcta entre 4 opciones posibles.",
+                            "feedbackCorrect": "¡Perfecto! p = 1/4 = 0.25.",
+                            "feedbackIncorrect": "Incorrecto. Al haber una opción correcta de cuatro, p = 1/4 = 0.25.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        }
+                    ],
+                    "summaryHtml": "Un proceso binomial consta de $n$ ensayos independientes con resultados dicotómicos (éxito con probabilidad $p$ constante, o fracaso con $q = 1-p$).",
+                    "videoPlaceholderText": "Video de Probabilidad: Qué es un experimento binomial y sus condiciones teóricas."
+                },
+                {
+                    "id": "formula-binomial",
+                    "title": "Lección 2.2: La Fórmula Binomial",
+                    "introduction": "Calcula probabilidades binomiales exactas para k éxitos utilizando la fórmula combinatoria y factoriales.",
+                    "explanationHtml": "<p>La <strong>Fórmula de Probabilidad Binomial</strong> calcula de forma exacta la probabilidad de obtener exactamente $k$ éxitos en un total de $n$ ensayos independientes:</p><p class=\"text-center font-mono font-extrabold text-primary text-base my-2\">$$P(X = k) = \\binom{n}{k} \\cdot p^k \\cdot q^{n-k}$$</p><p class=\"mt-2 text-slate-700\">Donde:</p><ul class=\"list-disc pl-5 space-y-1.5 my-2\"><li><strong>$\\binom{n}{k}$ (Coeficiente Combinatorio):</strong> Representa el número de formas diferentes en que se pueden ordenar $k$ éxitos en $n$ posiciones. Se calcula mediante factoriales: <br>$$\\binom{n}{k} = C(n, k) = \\frac{n!}{k! \\cdot (n-k)!}$$</li><li><strong>$p^k$:</strong> Probabilidad de que ocurran los $k$ éxitos individuales.</li><li><strong>$q^{n-k}$:</strong> Probabilidad de que ocurran los $n-k$ fracasos restantes.</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Ecuación Binomial Exacta</p><p class=\"text-xs font-mono font-bold text-primary\">P(X=k) = C(n,k) * p^k * q^(n-k) &nbsp;|&nbsp; C(n,k) = n! / [k!(n-k)!]</p><p class=\"text-xs text-slate-550\">Herramienta: n! es el producto de todos los enteros desde 1 hasta n (ej: 3! = 3*2*1 = 6).</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"18\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">DESGLOSE FÓRMULA BINOMIAL</text><rect x=\"20\" y=\"28\" width=\"260\" height=\"82\" fill=\"#eff6ff\" stroke=\"#bfdbfe\" rx=\"8\" /><text x=\"150\" y=\"48\" font-size=\"11.5\" font-family=\"monospace\" font-weight=\"extrabold\" fill=\"#1e40af\" text-anchor=\"middle\">P(X = k) = C(n, k) &middot; p^k &middot; q^(n-k)</text><line x1=\"60\" y1=\"58\" x2=\"60\" y2=\"78\" stroke=\"#3b82f6\" stroke-width=\"1\" stroke-dasharray=\"2,2\" /><text x=\"60\" y=\"88\" font-size=\"7\" fill=\"#1d4ed8\" font-weight=\"bold\" text-anchor=\"middle\">Combinatoria</text><text x=\"60\" y=\"96\" font-size=\"6.5\" fill=\"#475569\" text-anchor=\"middle\">Formas de ordenar</text><line x1=\"148\" y1=\"58\" x2=\"148\" y2=\"78\" stroke=\"#10b981\" stroke-width=\"1\" stroke-dasharray=\"2,2\" /><text x=\"148\" y=\"88\" font-size=\"7\" fill=\"#047857\" font-weight=\"bold\" text-anchor=\"middle\">Éxitos</text><text x=\"148\" y=\"96\" font-size=\"6.5\" fill=\"#475569\" text-anchor=\"middle\">p elevado a k</text><line x1=\"225\" y1=\"58\" x2=\"225\" y2=\"78\" stroke=\"#f59e0b\" stroke-width=\"1\" stroke-dasharray=\"2,2\" /><text x=\"225\" y=\"88\" font-size=\"7\" fill=\"#b45309\" font-weight=\"bold\" text-anchor=\"middle\">Fracasos</text><text x=\"225\" y=\"96\" font-size=\"6.5\" fill=\"#475569\" text-anchor=\"middle\">q elevado a (n-k)</text></svg>",
+                    "svgDescription": "Desglose visual y pedagógico de cada término en la fórmula binomial: combinaciones posibles, potencia de éxitos y potencia de fracasos.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Un vendedor de CEDETU en Antigua sabe que la probabilidad de cerrar una venta con un interesado es del 80% ($p = 0.80$, $q = 0.20$). Si hoy atiende a $3\\text{ clientes}$ independientes ($n = 3$), calcula la probabilidad de que cierre exactamente 2 ventas ($k = 2$).</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1: Calcular el coeficiente combinatorio $\\binom{3}{2}$ o $C(3,2)$:</strong> <br>$$\\binom{3}{2} = \\frac{3!}{2! \\cdot (3-2)!} = \\frac{3 \\cdot 2 \\cdot 1}{(2 \\cdot 1) \\cdot 1!} = \\frac{6}{2 \\cdot 1} = 3$$ Existen 3 combinaciones ordenadas posibles (V-V-N, V-N-V, N-V-V).</li><li><strong>Paso 2: Calcular el término de éxitos y fracasos:</strong> <br>$$p^k = (0.80)^2 = 0.64$$ <br>$$q^{n-k} = (0.20)^{3-2} = (0.20)^1 = 0.20$$</li><li><strong>Paso 3: Multiplicar todo en la fórmula binomial:</strong> <br>$$P(X = 2) = 3 \\cdot 0.64 \\cdot 0.20 = 3 \\cdot 0.128 = 0.384$$</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> La probabilidad de cerrar exactamente 2 ventas es del <strong>0.384</strong> o <strong>38.4%</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Confundir las potencias de p y q:</strong> Elevar $p$ al número de fracasos y $q$ al número de éxitos por descuido. Ten presente que el éxito $p$ va asociado a los $k$ éxitos requeridos ($p^k$), y el fracaso $q$ al resto ($q^{n-k}$).</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Calcula el coeficiente combinatorio C(4, 2) de forma exacta. (Ingresa solo el número entero):",
+                            "correctAnswer": "6",
+                            "hint": "Aplica la fórmula: 4! / (2! * 2!). Reemplaza factoriales: 24 / (2 * 2) = 24 / 4.",
+                            "feedbackCorrect": "¡Excelente! C(4,2) = 6.",
+                            "feedbackIncorrect": "Incorrecto. C(4,2) = 24 / (2 * 2) = 6.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Lanzas 3 monedas justas al aire (p = 0.50, q = 0.50). ¿Cuál es el valor decimal de la probabilidad de obtener exactamente 3 caras (k = 3)? (Ingresa el número con punto decimal):",
+                            "correctAnswer": "0.125",
+                            "hint": "Aplica la fórmula binomial con n = 3, k = 3 y p = 0.50. C(3,3) = 1.",
+                            "feedbackCorrect": "¡Perfecto! P(X=3) = 1 * (0.50)^3 * (0.50)^0 = 0.125.",
+                            "feedbackIncorrect": "Incorrecto. La probabilidad es C(3,3)*(0.5)^3 = 0.125.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si la probabilidad de que una semilla germine es 90% (p = 0.90, q = 0.10) en Sololá. Si se plantan 3 semillas, ¿cuál es la probabilidad decimal de que germinen exactamente las 3? (Ingresa el número con punto decimal):",
+                            "correctAnswer": "0.729",
+                            "hint": "Aplica la fórmula binomial con n = 3, k = 3 y p = 0.90. C(3,3) = 1.",
+                            "feedbackCorrect": "¡Excelente! P(X=3) = 1 * (0.90)^3 * (0.10)^0 = 0.729.",
+                            "feedbackIncorrect": "Incorrecto. P(X=3) = (0.90)^3 = 0.729.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Calcula el valor entero del coeficiente combinatorio C(5, 1). (Ingresa solo el número entero):",
+                            "correctAnswer": "5",
+                            "hint": "C(n, 1) siempre es igual a n por definición combinatoria.",
+                            "feedbackCorrect": "¡Excelente! C(5,1) = 5.",
+                            "feedbackIncorrect": "Incorrecto. C(5,1) = 5! / (1! * 4!) = 5.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si X ~ B(3, 0.50), calcula la probabilidad exacta de obtener exactamente 1 éxito, P(X = 1). (Ingresa el número con punto decimal):",
+                            "correctAnswer": "0.375",
+                            "hint": "Aplica la fórmula: C(3, 1) * p^1 * q^2 = 3 * 0.5 * 0.25.",
+                            "feedbackCorrect": "¡Perfecto! P(X=1) = 3 * 0.5 * 0.25 = 0.375.",
+                            "feedbackIncorrect": "Incorrecto. P(X=1) = 3 * 0.125 = 0.375.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        }
+                    ],
+                    "summaryHtml": "La fórmula binomial $P(X = k) = \\binom{n}{k} p^k q^{n-k}$ calcula la probabilidad de obtener exactamente $k$ éxitos en $n$ ensayos repetidos.",
+                    "videoPlaceholderText": "Video de Probabilidad: Cómo calcular probabilidades con la fórmula binomial paso a paso."
+                },
+                {
+                    "id": "media-desviacion-binomial",
+                    "title": "Lección 2.3: Media y Desviación Estándar Binomial",
+                    "introduction": "Calcula de forma simplificada la media, varianza y desviación estándar de una distribución binomial sin usar sumatorias complejas.",
+                    "explanationHtml": "<p>Una de las mayores ventajas de la distribución binomial es que, debido a su estructura simétrica de ensayos idénticos, no necesitamos aplicar las largas fórmulas de sumatoria de variables discretas para calcular sus parámetros poblacionales. Podemos hallarlos de forma **directa e instantánea** mediante las siguientes ecuaciones deducidas analíticamente:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Media (Valor Esperado, $\\mu$):</strong> Representa el número promedio esperado de éxitos que se obtendrán al realizar los $n$ ensayos: <br>$$\\mu = n \\cdot p$$</li><li><strong>Varianza ($\\sigma^2$):</strong> Mide la variabilidad al cuadrado del número de éxitos obtenidos: <br>$$\\sigma^2 = n \\cdot p \\cdot q$$</li><li><strong>Desviación Estándar ($\\sigma$):</strong> Mide la dispersión típica alrededor del promedio en unidades de éxitos: <br>$$\\sigma = \\sqrt{n \\cdot p \\cdot q}$$</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Fórmulas Abreviadas Binomiales</p><p class=\"text-xs font-mono font-bold text-primary\">&mu; = n * p &nbsp;|&nbsp; &sigma;^2 = n * p * q &nbsp;|&nbsp; &sigma; = &radic;(n * p * q)</p><p class=\"text-xs text-slate-550\">Herramienta: Al usar estas fórmulas, recuerda que q = 1 - p siempre.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"18\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">ENVELOPE PARÁMETROS BINOMIALES</text><path d=\"M 40 100 Q 150 20 260 100\" fill=\"none\" stroke=\"#3b82f6\" stroke-width=\"1.5\" stroke-dasharray=\"2,2\" /><line x1=\"150\" y1=\"100\" x2=\"150\" y2=\"40\" stroke=\"#10b981\" stroke-width=\"2.5\" /><circle cx=\"150\" cy=\"40\" r=\"4\" fill=\"#047857\" /><line x1=\"150\" y1=\"60\" x2=\"200\" y2=\"60\" stroke=\"#ef4444\" stroke-width=\"1.5\" /><circle cx=\"200\" cy=\"60\" r=\"3\" fill=\"#b91c1c\" /><text x=\"150\" y=\"112\" font-size=\"8.5\" font-weight=\"bold\" fill=\"#475569\" text-anchor=\"middle\">n = 100 | p = 0.20</text><text x=\"142\" y=\"55\" font-size=\"8.5\" font-weight=\"bold\" fill=\"#047857\" text-anchor=\"end\">Media &mu; = 20</text><text x=\"175\" y=\"53\" font-size=\"8\" font-weight=\"bold\" fill=\"#b91c1c\" text-anchor=\"middle\">Desv &sigma; = 4</text></svg>",
+                    "svgDescription": "Distribución de probabilidad binomial suavizada como una campana. Muestra la media central mu = 20 (verde) y la desviación estándar sigma = 4 (roja) para X ~ B(100, 0.20).",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Una variable binomial se define como $X \\sim B(100, 0.20)$. Calcula su media, varianza y desviación estándar de forma directa.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1: Identificar parámetros base:</strong> <br>$$n = 100$$ <br>$$p = 0.20 \\implies q = 1 - 0.20 = 0.80$$</li><li><strong>Paso 2: Calcular la Media ($\\mu$):</strong> <br>$$\\mu = n \\cdot p = 100 \\cdot 0.20 = 20\\text{ éxitos}$$</li><li><strong>Paso 3: Calcular la Varianza ($\\sigma^2$):</strong> <br>$$\\sigma^2 = n \\cdot p \\cdot q = 100 \\cdot 0.20 \\cdot 0.80 = 20 \\cdot 0.80 = 16$$</li><li><strong>Paso 4: Calcular la Desviación Estándar ($\\sigma$):</strong> <br>$$\\sigma = \\sqrt{16} = 4\\text{ éxitos}$$</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Conclusión:</strong> En 100 ensayos, se esperan obtener en promedio <strong>20 éxitos</strong>, con una desviación estándar típica de <strong>4 éxitos</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Olvidar multiplicar por q:</strong> Calcular la desviación estándar de la binomial como $\\sigma = \\sqrt{n \\cdot p}$ (Incorrecto). Esto corresponde a la aproximación de Poisson, no a la binomial. Recuerda incluir siempre el factor $q$ en la varianza: $\\sigma^2 = n \\cdot p \\cdot q$.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Si X ~ B(50, 0.60), ¿cuál es el valor numérico entero de su media o valor esperado? (Ingresa solo el número entero):",
+                            "correctAnswer": "30",
+                            "hint": "Aplica la fórmula μ = n * p. Reemplaza n = 50 y p = 0.60.",
+                            "feedbackCorrect": "¡Excelente! Media = 50 * 0.60 = 30 éxitos.",
+                            "feedbackIncorrect": "Incorrecto. μ = n * p = 50 * 0.60 = 30.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Calcula el valor numérico decimal de la varianza para la variable X ~ B(10, 0.50). (Ingresa el número con punto decimal):",
+                            "correctAnswer": "2.5",
+                            "hint": "Aplica la fórmula Var = n * p * q. Reemplaza n = 10, p = 0.50 y q = 0.50.",
+                            "feedbackCorrect": "¡Perfecto! Varianza = 10 * 0.50 * 0.50 = 2.50.",
+                            "feedbackIncorrect": "Incorrecto. La varianza es 10 * 0.5 * 0.5 = 2.5.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si la media de una distribución binomial es 10 y p = 0.20, ¿cuál es el valor numérico entero de la cantidad de ensayos n? (Ingresa solo el número entero):",
+                            "correctAnswer": "50",
+                            "hint": "Despeja n de la fórmula de la media: n = μ / p = 10 / 0.20.",
+                            "feedbackCorrect": "¡Excelente! n = 10 / 0.20 = 50.",
+                            "feedbackIncorrect": "Incorrecto. n = μ / p = 10 / 0.20 = 50.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Calcula la desviación estándar de X ~ B(200, 0.50) redondeada a dos decimales con punto:",
+                            "correctAnswer": "7.07",
+                            "hint": "Calcula la raíz cuadrada de la varianza: √(200 * 0.50 * 0.50) = √50.",
+                            "feedbackCorrect": "¡Perfecto! σ = √50 = 7.07.",
+                            "feedbackIncorrect": "Incorrecto. σ = √(200 * 0.25) = √50 ≈ 7.07.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si la varianza de una variable aleatoria binomial es 9 y n = 100, ¿cuál es el valor numérico entero de la desviación estándar? (Ingresa solo el número entero):",
+                            "correctAnswer": "3",
+                            "hint": "La desviación estándar es la raíz cuadrada de la varianza: σ = √Var.",
+                            "feedbackCorrect": "¡Excelente! σ = √9 = 3.",
+                            "feedbackIncorrect": "Incorrecto. La desviación estándar es √Var = √9 = 3.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        }
+                    ],
+                    "summaryHtml": "Los parámetros binomiales abreviados son: media $\\mu = n p$, varianza $\\sigma^2 = n p q$ y desviación estándar $\\sigma = \\sqrt{n p q}$.",
+                    "videoPlaceholderText": "Video de Probabilidad: Media y desviación estándar en la distribución binomial."
+                }
+            ]
+        },
+        {
+            "title": "Unidad 3: La Distribución Normal",
+            "lessons": [
+                {
+                    "id": "caracteristicas-distribucion-normal",
+                    "title": "Lección 3.1: Características de la Distribución Normal",
+                    "introduction": "Comprende la geometría y propiedades teóricas de la campana de Gauss y la Regla Empírica de dispersión.",
+                    "explanationHtml": "<p>La <strong>distribución normal (o campana de Gauss)</strong> es la distribución de probabilidad continua más importante de la ciencia. Modela variables naturales y sociales como estaturas, coeficientes intelectuales, errores de medición y rendimiento académico.</p><p class=\"mt-2\">Sus propiedades teóricas fundamentales son:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Simetría Perfecta:</strong> La curva es perfectamente simétrica con respecto a su centro. La **media, mediana y moda coinciden** exactamente en el punto central.</li><li><strong>Asintótica:</strong> La curva es asintótica al eje $X$, lo que significa que se extiende infinitamente a izquierda ($-\\infty$) y derecha ($+\\infty$) sin tocar nunca el eje horizontal.</li><li><strong>Área Unitaria:</strong> El área total bajo la curva representa la certeza absoluta (100%), por ende es igual a **1.00**.</li><li><strong>Regla Empírica:</strong> <br>1) El intervalo $\\mu \\pm 1\\sigma$ contiene el **68.27%** de los datos.<br>2) El intervalo $\\mu \\pm 2\\sigma$ contiene el **95.45%** de los datos.<br>3) El intervalo $\\mu \\pm 3\\sigma$ contiene el **99.73%** de los datos.</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Regla Empírica Normal</p><p class=\"text-xs font-mono font-bold text-primary\">&mu; &plusmn; 1&sigma; = 68.2% &nbsp;|&nbsp; &mu; &plusmn; 2&sigma; = 95.4% &nbsp;|&nbsp; &mu; &plusmn; 3&sigma; = 99.7%</p><p class=\"text-xs text-slate-550\">El punto más alto de la campana coincide siempre con la media poblacional &mu;.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"18\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">LA CAMPANA DE GAUSS</text><line x1=\"20\" y1=\"100\" x2=\"280\" y2=\"100\" stroke=\"#94a3b8\" stroke-width=\"1.5\" /><path d=\"M 30 100 C 90 100, 100 30, 150 30 C 200 30, 210 100, 270 100\" fill=\"none\" stroke=\"#3b82f6\" stroke-width=\"2\" /><line x1=\"150\" y1=\"30\" x2=\"150\" y2=\"100\" stroke=\"#10b981\" stroke-width=\"1.5\" /><circle cx=\"150\" cy=\"30\" r=\"3\" fill=\"#047857\" /><text x=\"150\" y=\"112\" font-size=\"8.5\" font-weight=\"bold\" fill=\"#047857\" text-anchor=\"middle\">Media &mu; = Mediana = Moda</text><line x1=\"110\" y1=\"65\" x2=\"190\" y2=\"65\" stroke=\"#ef4444\" stroke-width=\"1\" stroke-dasharray=\"2,2\" /><text x=\"150\" y=\"60\" font-size=\"7\" fill=\"#b91c1c\" font-weight=\"bold\" text-anchor=\"middle\">68.2% central</text><line x1=\"110\" y1=\"65\" x2=\"110\" y2=\"100\" stroke=\"#94a3b8\" stroke-width=\"0.8\" /><line x1=\"190\" y1=\"65\" x2=\"190\" y2=\"100\" stroke=\"#94a3b8\" stroke-width=\"0.8\" /><text x=\"110\" y=\"112\" font-size=\"7.5\" fill=\"#475569\" text-anchor=\"middle\">&mu;-&sigma;</text><text x=\"190\" y=\"112\" font-size=\"7.5\" fill=\"#475569\" text-anchor=\"middle\">&mu;+&sigma;</text></svg>",
+                    "svgDescription": "Representación geométrica de la campana de Gauss. Simétrica en la media (línea central verde) y con límites de la Regla Empírica a una desviación estándar (68.2% del área en rojo).",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> El peso medio de unos sacos de abono producidos en Tecpán es de 80 kg, con una desviación estándar de 5 kg. Si la distribución es normal, ¿entre qué pesos exactos cae el 68.2% central de la producción?</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1: Aplicar la Regla Empírica.</strong> De acuerdo con la regla, el 68.2% central de los datos cae en el intervalo de una desviación estándar sobre y bajo la media: <br>$$\\mu \\pm \\sigma$$</li><li><strong>Paso 2: Calcular el límite inferior:</strong> <br>$$\\text{Límite inferior} = \\mu - \\sigma = 80 - 5 = 75\\text{ kg}$$</li><li><strong>Paso 3: Calcular el límite superior:</strong> <br>$$\\text{Límite superior} = \\mu + \\sigma = 80 + 5 = 85\\text{ kg}$$</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Conclusión:</strong> El 68.2% central de los sacos tiene un peso comprendido entre <strong>75 kg y 85 kg</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Pensar que la curva toca el suelo:</strong> Dibujar la campana de Gauss cerrándose y tocando el eje horizontal en los extremos de ±3 o ±4 desviaciones estándar. La campana es asintótica; se acerca infinitamente al eje X pero nunca llega a tocarlo en teoría.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "¿Qué porcentaje aproximado de las observaciones se encuentra dentro de ±2 desviaciones estándar de la media según la Regla Empírica de la distribución normal? (Ingresa solo el número entero sin el símbolo %):",
+                            "correctAnswer": "95",
+                            "hint": "La regla establece porcentajes fijos: ±1σ = 68.2%, ±2σ = 95.4%, ±3σ = 99.7%.",
+                            "feedbackCorrect": "¡Excelente! Aproximadamente el 95% (95.4% de forma exacta) de los datos cae en ±2σ.",
+                            "feedbackIncorrect": "Incorrecto. Equivale a aproximadamente el 95%.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Qué porcentaje de los datos de una muestra cae por encima del valor de la media en una distribución normal perfecta? (Ingresa solo el número entero sin el símbolo %):",
+                            "correctAnswer": "50",
+                            "hint": "La campana de Gauss es perfectamente simétrica con respecto a su promedio central.",
+                            "feedbackCorrect": "¡Perfecto! Al ser simétrica, exactamente la mitad (50%) de los datos se ubican sobre la media.",
+                            "feedbackIncorrect": "Incorrecto. Por simetría perfecta, el 50% de los datos están sobre la media.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si la media de estatura en Antigua es 160 cm con σ = 10 cm, ¿cuál es el rango para el 99.7% central de los datos? (Escribe el rango en formato [min, max] con espacio tras la coma):",
+                            "correctAnswer": "[130, 190]",
+                            "hint": "Para el 99.7% aplicamos la regla: μ ± 3σ. Calcula 160 - 30 y 160 + 30.",
+                            "feedbackCorrect": "¡Excelente! Rango = 160 ± 30 = [130, 190] cm.",
+                            "feedbackIncorrect": "Incorrecto. Rango = 160 ± 3(10) = [130, 190] cm.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cuál es el valor matemático del área total exacta encerrada bajo la curva de densidad normal de probabilidad?",
+                            "correctAnswer": "1",
+                            "hint": "Representa el espacio muestral completo y la certeza absoluta de la variable continua.",
+                            "feedbackCorrect": "¡Excelente! El área total es exactamente 1.00 (el 100%).",
+                            "feedbackIncorrect": "Incorrecto. El área total bajo cualquier curva de densidad siempre es igual a 1.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Qué parámetro de la distribución define de forma geométrica el ancho o grado de aplanamiento de la campana de Gauss?",
+                            "options": [
+                                "La media poblacional (μ)",
+                                "La desviación estándar (σ)",
+                                "La mediana muestral (Me)",
+                                "La asimetría de Pearson"
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Mide la dispersión física de los datos; un valor mayor ensancha la curva.",
+                            "feedbackCorrect": "¡Perfecto! La desviación estándar (σ) determina el grado de dispersión y aplanamiento de la curva.",
+                            "feedbackIncorrect": "Incorrecto. Es la desviación estándar (σ) la que define el ancho de la campana.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "La distribución normal es simétrica y tiene forma de campana. Cumple con la regla empírica, concentrando 68.2% en $\\mu \\pm \\sigma$ y 95.4% en $\\mu \\pm 2\\sigma$.",
+                    "videoPlaceholderText": "Video de Probabilidad: Las increíbles propiedades de la curva de distribución normal."
+                },
+                {
+                    "id": "tipificacion-puntajes-z",
+                    "title": "Lección 3.2: Tipificación y Puntajes Z",
+                    "introduction": "Aprende a transformar cualquier variable normal general X a la normal estándar Z para poder realizar comparaciones directas.",
+                    "explanationHtml": "<p>Dado que cada variable en el mundo real tiene su propia media ($\\mu$) y desviación estándar ($\\sigma$), no podemos tener una tabla de probabilidad para cada caso posible. Para solucionarlo, aplicamos el proceso de <strong>tipificación (o estandarización)</strong>.</p><p class=\"mt-2\">Consiste en transformar la variable aleatoria normal original $X \\sim N(\\mu, \\sigma)$ en una variable normal estándar universal **$Z \\sim N(0, 1)$**, que posee una media fija de **0** y una desviación estándar de **1**.</p><p class=\"mt-2\">El **Puntaje Z** representa la cantidad exacta de desviaciones estándar que un valor específico $X$ se encuentra por encima (Z positivo) o por debajo (Z negativo) de la media poblacional. Se calcula con la fórmula:</p><p class=\"text-center font-mono font-extrabold text-primary text-base my-2\">$$Z = \\frac{X - \\mu}{\\sigma}$$</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Ecuación de Tipificación</p><p class=\"text-xs font-mono font-bold text-primary\">Z = (X - &mu;) / &sigma; &nbsp;|&nbsp; Z ~ N(0, 1)</p><p class=\"text-xs text-slate-550\">Herramienta: Si Z = 1.5, significa que el valor está a 1.5 desviaciones por encima del promedio.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"18\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">PROCESO DE TIPIFICACIÓN</text><line x1=\"30\" y1=\"55\" x2=\"270\" y2=\"55\" stroke=\"#cbd5e1\" stroke-width=\"1.5\" /><circle cx=\"150\" cy=\"55\" r=\"4.5\" fill=\"#3b82f6\" /><text x=\"150\" y=\"47\" font-size=\"8\" font-weight=\"bold\" fill=\"#1e40af\" text-anchor=\"middle\">X = &mu; (60)</text><circle cx=\"210\" cy=\"55\" r=\"4.5\" fill=\"#ef4444\" /><text x=\"210\" y=\"47\" font-size=\"8\" font-weight=\"bold\" fill=\"#b91c1c\" text-anchor=\"middle\">X = 76</text><line x1=\"30\" y1=\"95\" x2=\"270\" y2=\"95\" stroke=\"#94a3b8\" stroke-width=\"1.5\" /><circle cx=\"150\" cy=\"95\" r=\"4.5\" fill=\"#10b981\" /><text x=\"150\" y=\"107\" font-size=\"8.5\" font-weight=\"bold\" fill=\"#047857\" text-anchor=\"middle\">Z = 0</text><circle cx=\"210\" cy=\"95\" r=\"4.5\" fill=\"#f59e0b\" /><text x=\"210\" y=\"107\" font-size=\"8.5\" font-weight=\"bold\" fill=\"#d97706\" text-anchor=\"middle\">Z = 2.00</text><path d=\"M 175 60 C 180 72, 180 78, 175 90\" fill=\"none\" stroke=\"#475569\" stroke-width=\"1\" stroke-dasharray=\"2,2\" marker-end=\"url(#arrow)\" /><text x=\"192\" y=\"77\" font-size=\"7.5\" fill=\"#475569\" font-weight=\"bold\" text-anchor=\"middle\">Transforma</text></svg>",
+                    "svgDescription": "Esquema de tipificación. Un valor original X=76 en una distribución con media 60 y desviación 8, se mapea directamente a un valor tipificado Z=2.00 en la recta Z con media 0.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Un estudiante de bachillerato en Antigua Guatemala obtiene una calificación de 76 puntos en un examen de matemáticas que tiene una media poblacional de $\\mu = 60$ puntos y una desviación estándar de $\\sigma = 8$ puntos. Calcula su puntaje $Z$ e interprétalo.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1: Identificar las variables:</strong> <br>$$X = 76\\text{ puntos}$$ <br>$$\\mu = 60\\text{ puntos}$$ <br>$$\\sigma = 8\\text{ puntos}$$</li><li><strong>Paso 2: Aplicar la fórmula de tipificación:</strong> <br>$$Z = \\frac{X - \\mu}{\\sigma} = \\frac{76 - 60}{8} = \\frac{16}{8} = 2.00$$</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Interpretación:</strong> El puntaje $Z$ del estudiante es de <strong>+2.00</strong>. Esto nos indica que su nota está exactamente a <strong>2 desviaciones estándar por encima del promedio</strong> del grupo, situándolo en un rango de excelencia.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Restar al revés en el numerador:</strong> Calcular $Z$ como $(\\mu - X) / \\sigma$ por descuido. Si el valor es mayor a la media, el puntaje $Z$ debe ser estrictamente positivo. Cambiar el orden de la resta altera el signo algebraico, lo cual conducirá a un cálculo de área de probabilidad erróneo en las tablas.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Calcula el puntaje Z para X = 45, si la media poblacional es μ = 50 y la desviación estándar es σ = 5. (Ingresa el número con signo negativo si corresponde, usando punto):",
+                            "correctAnswer": "-1",
+                            "hint": "Aplica Z = (X - μ) / σ. Reemplaza: Z = (45 - 50) / 5.",
+                            "feedbackCorrect": "¡Excelente! Z = -5 / 5 = -1.00.",
+                            "feedbackIncorrect": "Incorrecto. Z = (45 - 50) / 5 = -1.00.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si el puntaje Z de un estudiante en un examen es exactamente 0, ¿qué podemos afirmar sobre su nota original X?",
+                            "options": [
+                                "Que obtuvo una nota de cero puntos en el examen.",
+                                "Que su nota es exactamente igual a la media aritmética del grupo.",
+                                "Que reprobó el examen con la peor nota.",
+                                "Que su nota es igual a la desviación estándar."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Sustituye Z = 0 en Z = (X - μ) / σ y despeja X.",
+                            "feedbackCorrect": "¡Perfecto! Un Z = 0 indica que el valor coincide de forma exacta con la media poblacional.",
+                            "feedbackIncorrect": "Incorrecto. Un puntaje Z de 0 indica que X es igual a la media.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Calcula el valor numérico original X si sabemos que Z = 1.5, la media es μ = 100 y la desviación estándar es σ = 10. (Ingresa solo el número entero):",
+                            "correctAnswer": "115",
+                            "hint": "Despeja X de la fórmula: X = μ + Z * σ = 100 + 1.5 * 10.",
+                            "feedbackCorrect": "¡Excelente! X = 100 + 15 = 115.",
+                            "feedbackIncorrect": "Incorrecto. X = 100 + (1.5 * 10) = 115.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cuál es el valor numérico de la desviación estándar de la distribución normal estándar Z? (Ingresa solo el número entero):",
+                            "correctAnswer": "1",
+                            "hint": "La distribución normal estándar universal se define como Z ~ N(0, 1). El segundo parámetro es...",
+                            "feedbackCorrect": "¡Excelente! La desviación estándar de Z es exactamente 1.",
+                            "feedbackIncorrect": "Incorrecto. Por definición, la desviación estándar de Z es 1.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Calcula el puntaje Z para X = 120 si la media es μ = 100 y la desviación es σ = 15. (Redondea a dos decimales con punto):",
+                            "correctAnswer": "1.33",
+                            "hint": "Z = (120 - 100) / 15 = 20 / 15 = 4/3.",
+                            "feedbackCorrect": "¡Perfecto! Z = 1.33.",
+                            "feedbackIncorrect": "Incorrecto. Z = 20 / 15 = 1.33.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        }
+                    ],
+                    "summaryHtml": "La tipificación mapea $X$ a la normal estándar $Z \\sim N(0, 1)$ mediante $Z = \\frac{X - \\mu}{\\sigma}$. Un puntaje $Z$ indica a cuántas desviaciones del promedio se sitúa el valor.",
+                    "videoPlaceholderText": "Video de Probabilidad: Qué es el puntaje Z y cómo estandarizar variables continuas."
+                },
+                {
+                    "id": "tablas-normales-calculo-areas",
+                    "title": "Lección 3.3: Uso de Tablas Normales y Cálculo de Áreas",
+                    "introduction": "Aprende a calcular probabilidades acumuladas e intervalos de área utilizando la tabla Z estándar de Gauss.",
+                    "explanationHtml": "<p>Una vez que hemos tipificado la variable al puntaje $Z$, podemos utilizar la <strong>Tabla de Distribución Normal Estándar</strong> (Tabla Z) para hallar el área exacta bajo la curva, que equivale de forma matemática a la probabilidad.</p><p class=\"mt-2\">Las tablas Z entregan por defecto el **área acumulada hacia la izquierda** de un puntaje dado, es decir, $P(Z \\le z)$. Para calcular otros casos de interés, aplicamos las siguientes propiedades de simetría y complemento:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Probabilidad Menor que ($P(Z \\le z)$):</strong> Se busca directamente el valor de la intersección de la fila y columna del puntaje en la tabla.</li><li><strong>Probabilidad Mayor que ($P(Z > z)$):</strong> Como el área total es 1, usamos el complemento: <br>$$P(Z > z) = 1 - P(Z \\le z)$$</li><li><strong>Área entre dos puntos ($P(a \\le Z \\le b)$):</strong> Restamos el área menor de la mayor: <br>$$P(a \\le Z \\le b) = P(Z \\le b) - P(Z \\le a)$$</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Propiedades de Área Z</p><p class=\"text-xs font-mono font-bold text-primary\">P(Z &gt; z) = 1 - P(Z &le; z) &nbsp;|&nbsp; P(a &le; Z &le; b) = P(Z &le; b) - P(Z &le; a)</p><p class=\"text-xs text-slate-550\">Herramienta: Por simetría de la campana, P(Z &le; -z) = P(Z &ge; z) = 1 - P(Z &le; z).</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"18\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">ÁREA BAJO LA CURVA NORMAL</text><line x1=\"20\" y1=\"100\" x2=\"280\" y2=\"100\" stroke=\"#cbd5e1\" stroke-width=\"1.5\" /><path d=\"M 30 100 C 90 100, 100 30, 150 30 C 200 30, 210 100, 270 100\" fill=\"none\" stroke=\"#3b82f6\" stroke-width=\"1.5\" /><path d=\"M 30 100 C 90 100, 100 30, 150 30 C 170 30, 180 50, 190 73.5 L 190 100 Z\" fill=\"#eff6ff\" stroke=\"none\" /><line x1=\"190\" y1=\"73.5\" x2=\"190\" y2=\"100\" stroke=\"#1d4ed8\" stroke-width=\"1.5\" /><circle cx=\"190\" cy=\"73.5\" r=\"3\" fill=\"#1d4ed8\" /><text x=\"190\" y=\"112\" font-size=\"8.5\" font-weight=\"bold\" fill=\"#1d4ed8\" text-anchor=\"middle\">Z = 1.00</text><text x=\"120\" y=\"70\" font-size=\"9\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">Área = 0.8413</text></svg>",
+                    "svgDescription": "Curva normal estándar mostrando el área sombreada en azul a la izquierda de Z = 1.00, que corresponde exactamente a un área de 0.8413 en la tabla Z.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Si la tabla Z indica que para un puntaje $z = 1.00$ el área acumulada a la izquierda es de $0.8413$, calcula la probabilidad de que un valor aleatorio de Z sea mayor a $1.00$, $P(Z > 1.00)$.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1: Identificar el caso de interés:</strong> Se busca la probabilidad \"mayor que\" (área a la derecha de Z = 1.00).</li><li><strong>Paso 2: Aplicar la propiedad del complemento:</strong> <br>$$P(Z > 1.00) = 1 - P(Z \\le 1.00)$$</li><li><strong>Paso 3: Reemplazar el valor de la tabla y calcular:</strong> <br>$$P(Z > 1.00) = 1 - 0.8413 = 0.1587$$</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> La probabilidad es de <strong>0.1587</strong>, equivalente al <strong>15.87%</strong> de la distribución normal.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Olvidar restar el complemento en \"mayor que\":</strong> Tomar directamente el área de la tabla ($0.8413$) para responder a una pregunta de probabilidad \"mayor que\". Las tablas estándar solo dan acumulados izquierdos; si te piden \"mayor que\" o \"más de\", es obligatorio restar el valor de 1.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Calcula P(Z <= 0.00) de forma exacta aplicando simetría de la campana. (Ingresa el número con punto decimal):",
+                            "correctAnswer": "0.5",
+                            "hint": "La media de la normal estándar es 0, lo que divide el área simétrica en dos partes exactamente iguales.",
+                            "feedbackCorrect": "¡Excelente! P(Z <= 0.00) = 0.5000 por simetría perfecta de la campana.",
+                            "feedbackIncorrect": "Incorrecto. Al ser simétrica la campana, la mitad del área es 0.5000.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si P(Z <= 1.96) = 0.9750 y P(Z <= -1.96) = 0.0250, calcula la probabilidad exacta de que Z esté entre -1.96 y 1.96, P(-1.96 <= Z <= 1.96):",
+                            "correctAnswer": "0.95",
+                            "hint": "Resta las áreas acumuladas: P(Z <= 1.96) - P(Z <= -1.96).",
+                            "feedbackCorrect": "¡Perfecto! Área central = 0.9750 - 0.0250 = 0.9500 (el 95% de confianza).",
+                            "feedbackIncorrect": "Incorrecto. Se restan las áreas: 0.9750 - 0.0250 = 0.9500.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si la tabla Z indica que P(Z <= 2.00) = 0.9772, ¿cuál es la probabilidad decimal de que Z sea mayor que 2.00? (Ingresa el número con punto decimal):",
+                            "correctAnswer": "0.0228",
+                            "hint": "Aplica la propiedad del complemento para mayor que: 1.00 - P(Z <= 2.00).",
+                            "feedbackCorrect": "¡Excelente! P(Z > 2.00) = 1.00 - 0.9772 = 0.0228.",
+                            "feedbackIncorrect": "Incorrecto. Se calcula con el complemento: 1 - 0.9772 = 0.0228.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si P(Z <= 1.00) = 0.8413, calcula la probabilidad acumulada P(Z <= -1.00) aplicando la propiedad de simetría de colas. (Ingresa el número con punto decimal):",
+                            "correctAnswer": "0.1587",
+                            "hint": "Por simetría, P(Z <= -z) es idéntico al complemento de P(Z <= z): 1.00 - 0.8413.",
+                            "feedbackCorrect": "¡Perfecto! P(Z <= -1.00) = 1.00 - 0.8413 = 0.1587.",
+                            "feedbackIncorrect": "Incorrecto. Por simetría de la campana es 1.00 - 0.8413 = 0.1587.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Aproximadamente, ¿a qué valor absoluto de puntaje Z crítico corresponde dejar un área central del 95% aproximado?",
+                            "options": [
+                                "1.00",
+                                "1.96",
+                                "2.58",
+                                "3.00"
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Deja un 2.5% libre en cada una de las dos colas extremas de la campana.",
+                            "feedbackCorrect": "¡Excelente! ±1.96 desviaciones estándar contiene el 95.00% del área central normal.",
+                            "feedbackIncorrect": "Incorrecto. El valor crítico es ±1.96.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "Las tablas Z entregan el área a la izquierda $P(Z \\le z)$. Usamos el complemento $1 - P(Z \\le z)$ para áreas derechas y restamos áreas para intervalos centrales.",
+                    "videoPlaceholderText": "Video de Probabilidad: Cómo leer la tabla Z de distribución normal estándar en un minuto."
+                }
+            ]
+        }
+    ]
+},
 
-## Unidad 1: Variables Aleatorias y Distribuciones Discretas
-### Lección 1.1: Concepto de Variable Aleatoria
-* **Objetivo:** Definir y clasificar variables aleatorias en discretas y continuas analizando su dominio.
-* **Explicación:** Una variable aleatoria es una función que asigna un valor numérico real a los resultados de un experimento aleatorio. Las discretas toman valores contables y aislados; las continuas toman infinitos valores en un intervalo medible.
-* **Ejemplo Resuelto:** Clasifica: 1) El número de visitas a un sitio web de tutorías al día, 2) El tiempo que pasa un tutor con un alumno en segundos.
-  - *Paso 1:* Las visitas se cuentan con enteros: 0, 1, 2... Es discreta.
-  - *Paso 2:* El tiempo es continuo y admite fracciones infinitas de segundo. Es continua.
-  - *Resultado:* 1) Discreta, 2) Continua.
-* **Errores Comunes:** Pensar que porque redondeamos los salarios a centavos, la variable salario se vuelve discreta. Su naturaleza teórica sigue siendo continua.
-* **Ejercicios de Práctica:**
-  1. Clasifica la variable "número de respuestas correctas en un test de 5 preguntas". (R: Discreta).
-  2. Clasifica "la temperatura exacta a la que opera el servidor de Supabase en Xela". (R: Continua).
-  3. ¿Cuál es la unidad de medida de una variable aleatoria en sí? (R: Adimensional, el rango son números reales puros).
-  4. Clasifica la "distancia recorrida por un tutor para dar una clase a domicilio en Antigua". (R: Continua).
-  5. Clasifica la "cantidad de correos electrónicos de consulta recibidos hoy". (R: Discreta).
-* **¿Necesitas ayuda?** Aprender a modelar el azar con variables aleatorias es el primer paso de la ciencia. ¡Hazlo con tu tutor de CEDETU!
+    "inferencia-estadistica": {
+    "isRichCourse": true,
+    "title": "Inferencia Estadística Básica",
+    "units": [
+        {
+            "title": "Unidad 1: Distribuciones Muestrales y el Teorema del Límite Central",
+            "lessons": [
+                {
+                    "id": "muestras-distribucion-medias",
+                    "title": "Lección 1.1: Muestras y Distribución de Medias",
+                    "introduction": "Diferencia parámetros y estadísticos comprendiendo la variabilidad aleatoria de los promedios muestrales.",
+                    "explanationHtml": "<p>En la práctica científica, casi nunca medimos a la población entera debido a costos y tiempo. En su lugar, recolectamos una **muestra** de tamaño $n$.</p><p class=\"mt-2\">Es vital distinguir los valores numéricos calculados en ambos niveles:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Parámetro:</strong> Es una medida numérica que describe una característica de la <strong>población entera</strong>. Se representa con letras griegas (ej. la media poblacional $\\mu$, desviación estándar $\\sigma$). Es un valor fijo pero generalmente desconocido.</li><li><strong>Estadístico:</strong> Es una medida numérica calculada a partir de los datos de una <strong>muestra</strong>. Se representa con letras latinas (ej. media muestral $\\bar{x}$, desviación muestral $s$). Es una variable aleatoria porque varía de una muestra a otra.</li></ul><p class=\"mt-2 text-slate-700\">Si tomáramos infinitas muestras aleatorias independientes de tamaño $n$ de una población y calculáramos el promedio $\\bar{x}$ de cada una, esos promedios formarían su propia distribución de probabilidad, conocida como la <strong>Distribución Muestral de Medias</strong>.</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Población vs Muestra</p><p class=\"text-xs font-mono font-bold text-primary\">Media: &mu; (Pob) vs x̄ (Mues) &nbsp;|&nbsp; Desviación: &sigma; (Pob) vs s (Mues)</p><p class=\"text-xs text-slate-550\">La diferencia numérica entre el estadístico muestral x̄ y el parámetro &mu; se llama error de muestreo.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"18\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">POBLACIÓN Y MUESTRAS</text><ellipse cx=\"70\" cy=\"65\" rx=\"40\" ry=\"30\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"1.5\" /><text x=\"70\" y=\"52\" font-size=\"8\" font-weight=\"bold\" fill=\"#1e40af\" text-anchor=\"middle\">Población &mu;</text><circle cx=\"50\" cy=\"72\" r=\"8\" fill=\"#ecfdf5\" stroke=\"#10b981\" /><circle cx=\"85\" cy=\"75\" r=\"8\" fill=\"#ecfdf5\" stroke=\"#10b981\" /><circle cx=\"70\" cy=\"78\" r=\"8\" fill=\"#ecfdf5\" stroke=\"#10b981\" /><line x1=\"110\" y1=\"65\" x2=\"200\" y2=\"65\" stroke=\"#475569\" stroke-width=\"1.2\" stroke-dasharray=\"3,3\" marker-end=\"url(#arrow)\" /><rect x=\"200\" y=\"45\" width=\"80\" height=\"40\" fill=\"#f0fdf4\" stroke=\"#10b981\" stroke-width=\"1.5\" rx=\"6\" /><text x=\"240\" y=\"58\" font-size=\"8.5\" font-weight=\"bold\" fill=\"#047857\" text-anchor=\"middle\">Muestras</text><text x=\"240\" y=\"73\" font-size=\"8\" fill=\"#047857\" text-anchor=\"middle\">x̄_1, x̄_2, x̄_3...</text></svg>",
+                    "svgDescription": "Esquema conceptual de muestreo. De una gran población con media fija mu se extraen múltiples muestras aleatorias representativas, cada una con su propia media muestral x̄.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Se sabe que la media de la estatura de todos los jóvenes en Guatemala es $\\mu = 1.65$ m. Un equipo de CEDETU toma 50 muestras independientes de tamaño $n = 40$ alumnos cada una. ¿Alrededor de qué valor se centrarán los promedios de estas muestras?</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1: Identificar el parámetro de interés.</strong> El promedio poblacional es $\\mu = 1.65$ m.</li><li><strong>Paso 2: Aplicar la propiedad de las medias muestrales.</strong> Por definición y simetría, la media de la distribución muestral de medias (denotada como $\\mu_{\\bar{x}}$) es exactamente igual al promedio real de la población entera: <br>$$\\mu_{\\bar{x}} = \\mu$$</li><li><strong>Paso 3: Concluir en el contexto.</strong> Al ser $\\mu_{\\bar{x}} = 1.65$ m, los promedios de las 50 muestras individuales se centrarán y distribuirán exactamente alrededor de 1.65 metros.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Conclusión:</strong> Los promedios muestrales se agruparán alrededor del parámetro poblacional <strong>1.65m</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Creer que x̄ es igual a &mu; en cada muestra:</strong> Esperar que una sola muestra pequeña nos entregue de forma exacta el valor de la población, olvidando que existe variabilidad muestral (azar) y error de muestreo.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "¿Cómo se denomina formalmente a la diferencia numérica entre el estadístico obtenido en una muestra y el verdadero parámetro de la población?",
+                            "options": [
+                                "Desviación estándar de error.",
+                                "Error de muestreo.",
+                                "Intervalo de sesgo.",
+                                "Diferencia de varianza."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Es el error inevitable debido a que medimos solo una parte de la población en lugar del total.",
+                            "feedbackCorrect": "¡Excelente! La diferencia se denomina error de muestreo y se debe al azar del proceso de selección.",
+                            "feedbackIncorrect": "Incorrecto. Se denomina 'Error de muestreo'.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Si el promedio de edad de todos los habitantes de un municipio (población) es exactamente 28 años, ¿cuál es el valor esperado de la media muestral x̄? (Ingresa solo el número entero):",
+                            "correctAnswer": "28",
+                            "hint": "Por propiedad de estimación insesgada, E[x̄] es idéntico a la media de la población μ.",
+                            "feedbackCorrect": "¡Perfecto! E[x̄] = μ = 28 años.",
+                            "feedbackIncorrect": "Incorrecto. El valor esperado de la media muestral es igual al promedio poblacional μ = 28.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Qué le ocurre a la dispersión o variabilidad de los promedios muestrales a medida que el tamaño n de cada muestra aumenta?",
+                            "options": [
+                                "Aumenta proporcionalmente.",
+                                "Disminuye, haciendo que los promedios muestrales se concentren más cerca de la media poblacional real.",
+                                "Se mantiene estrictamente igual.",
+                                "Se reduce a cero instantáneamente."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "A mayor muestra, más información representativa recopilas y menos dispersión tienen tus promedios.",
+                            "feedbackCorrect": "¡Excelente! Al aumentar el tamaño de muestra, los promedios tienen menor dispersión y mayor precisión.",
+                            "feedbackIncorrect": "Incorrecto. La dispersión disminuye notablemente al aumentar el tamaño n.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "¿Es la media muestral x̄ un estimador insesgado de la media poblacional μ? Escribe 'si' o 'no':",
+                            "correctAnswer": "si",
+                            "hint": "Un estimador es insesgado si su valor esperado (promedio teórico) es idéntico al parámetro real.",
+                            "feedbackCorrect": "¡Excelente! Sí, porque su valor esperado E[x̄] es exactamente igual a μ.",
+                            "feedbackIncorrect": "Incorrecto. Sí, la media de la muestra es un estimador insesgado.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cómo se denota matemáticamente de forma estándar la media de la distribución muestral de medias?",
+                            "options": [
+                                "s_x",
+                                "μ_x̄",
+                                "σ^2",
+                                "x̄_p"
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Lleva la letra mu de promedio poblacional con el subíndice de la media muestral.",
+                            "feedbackCorrect": "¡Perfecto! Se denota como μ_x̄.",
+                            "feedbackIncorrect": "Incorrecto. Se representa mediante el símbolo μ_x̄.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "La distribución muestral de medias es la distribución de los promedios $\\bar{x}$ de infinitas muestras de tamaño $n$. Su media es idéntica a la poblacional ($\\mu_{\\bar{x}} = \\mu$).",
+                    "videoPlaceholderText": "Video de Estadística: Qué es la distribución muestral de medias explicada intuitivamente."
+                },
+                {
+                    "id": "teorema-limite-central",
+                    "title": "Lección 1.2: El Teorema del Límite Central (TLC)",
+                    "introduction": "Comprende el Teorema del Límite Central y aprende a calcular el error estándar de la media.",
+                    "explanationHtml": "<p>El <strong>Teorema del Límite Central (TLC)</strong> es el pilar de la inferencia estadística. Establece que, sin importar la forma de la distribución original de la población (puede ser sesgada, uniforme o totalmente extraña), la **distribución muestral de medias** se aproximará a una **distribución normal** a medida que el tamaño de la muestra ($n$) se vuelva grande.</p><p class=\"mt-2\">Las condiciones y parámetros que establece el TLC son:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Tamaño de Muestra ($n \\ge 30$):</strong> Si la población original no es normal, se considera que una muestra de $n \\ge 30$ observaciones es suficiente para que se cumpla la aproximación normal de forma sólida.</li><li><strong>Media de Medias:</strong> La media de la distribución de medias es igual a la poblacional: <br>$$\\mu_{\\bar{x}} = \\mu$$</li><li><strong>Error Estándar de la Media ($\\sigma_{\\bar{x}}$):</strong> Es la desviación estándar de la distribución de promedios. Mide la variabilidad promedio de las estimaciones y disminuye al aumentar la muestra: <br>$$\\sigma_{\\bar{x}} = \\frac{\\sigma}{\\sqrt{n}}$$</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Error Estándar de la Media</p><p class=\"text-xs font-mono font-bold text-primary\">&sigma;_x̄ = &sigma; / &radic;n</p><p class=\"text-xs text-slate-550\">Herramienta: Si no conoces la desviación poblacional &sigma;, puedes estimarla usando la muestral s.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"18\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">TEOREMA DEL LÍMITE CENTRAL</text><path d=\"M 30 55 L 90 55 L 90 95 L 30 95 Z\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"1\" /><text x=\"60\" y=\"50\" font-size=\"7.5\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">Población Sesgada</text><path d=\"M 170 95 C 200 95, 205 40, 225 40 C 245 40, 250 95, 280 95\" fill=\"none\" stroke=\"#10b981\" stroke-width=\"1.8\" /><text x=\"225\" y=\"32\" font-size=\"7.5\" fill=\"#065f46\" font-weight=\"bold\" text-anchor=\"middle\">Medias Muestrales Normales</text><path d=\"M 105 70 L 155 70\" stroke=\"#475569\" stroke-width=\"1.2\" stroke-dasharray=\"2,2\" marker-end=\"url(#arrow)\" /><text x=\"130\" y=\"82\" font-size=\"7\" fill=\"#475569\" font-weight=\"bold\" text-anchor=\"middle\">n &ge; 30</text></svg>",
+                    "svgDescription": "Esquema del TLC. Una población original sesgada y no normal (izquierda) se convierte en una distribución de medias muestrales perfectamente normal y acampanada (derecha) para muestras n >= 30.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Un productor de café en Antigua Guatemala empaque bolsas cuya desviación estándar poblacional de peso es $\\sigma = 24\\text{ gramos}$. Si un inspector toma una muestra aleatoria de $n = 36\\text{ bolsas}$, calcula analíticamente el error estándar de la media.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1: Identificar las variables.</strong> <br>$$\\sigma = 24\\text{ g}$$ <br>$$n = 36\\text{ bolsas}$$</li><li><strong>Paso 2: Aplicar la fórmula del error estándar ($\\sigma_{\\bar{x}}$):</strong> <br>$$\\sigma_{\\bar{x}} = \\frac{\\sigma}{\\sqrt{n}}$$</li><li><strong>Paso 3: Realizar el cálculo aritmético:</strong> <br>$$\\sigma_{\\bar{x}} = \\frac{24}{\\sqrt{36}} = \\frac{24}{6} = 4\\text{ gramos}$$</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Conclusión:</strong> El error estándar de la media es de <strong>4 gramos</strong>. Esto mide la dispersión promedio esperada de los promedios de las muestras.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Dividir entre n directamente:</strong> Calcular el error estándar como $\\sigma / n$ en lugar de $\\sigma / \\sqrt{n}$. La reducción de la variabilidad muestral es proporcional a la raíz cuadrada de la muestra, no a la muestra directa.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "¿Cuál es el tamaño mínimo de muestra (n) sugerido por la teoría estadística para poder aplicar con seguridad el TLC si la población original no es normal?",
+                            "options": [
+                                "n >= 10",
+                                "n >= 30",
+                                "n >= 100",
+                                "n >= 5"
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Es el valor estándar que garantiza una convergencia de la distribución muestral a la normalidad.",
+                            "feedbackCorrect": "¡Excelente! El umbral estándar sugerido es de n >= 30 observaciones.",
+                            "feedbackIncorrect": "Incorrecto. Se sugiere un tamaño mínimo de muestra de n >= 30.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Si la desviación estándar poblacional es σ = 10 gramos y tomamos una muestra de n = 100 elementos, ¿cuál es el valor decimal del error estándar? (Ingresa el número con punto decimal):",
+                            "correctAnswer": "1",
+                            "hint": "Aplica la fórmula: σ_x̄ = σ / √n. Reemplaza σ = 10 y n = 100.",
+                            "feedbackCorrect": "¡Perfecto! Error estándar = 10 / √100 = 10 / 10 = 1.00.",
+                            "feedbackIncorrect": "Incorrecto. El error estándar es 10 / √100 = 1.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Qué le ocurre al error estándar de la media si cuadruplicamos el tamaño n de la muestra (ej. de 25 a 100)?",
+                            "options": [
+                                "Se cuadruplica también.",
+                                "Se duplica.",
+                                "Se reduce exactamente a la mitad.",
+                                "Se reduce a la cuarta parte."
+                            ],
+                            "correctAnswer": 2,
+                            "hint": "La muestra está dentro de una raíz cuadrada en el denominador: 1 / √4.",
+                            "feedbackCorrect": "¡Excelente! Al cuadruplicar n, su raíz √4 = 2 en el denominador reduce el error estándar a la mitad.",
+                            "feedbackIncorrect": "Incorrecto. Se reduce a la mitad debido al efecto de la raíz cuadrada.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Si la población de origen ya es perfectamente normal, ¿es necesario tener n >= 30 para que la distribución muestral de medias sea normal? Escribe 'si' o 'no':",
+                            "correctAnswer": "no",
+                            "hint": "Si los datos individuales ya son normales, su promedio será perfectamente normal sin importar el tamaño de muestra.",
+                            "feedbackCorrect": "¡Perfecto! Si la población es normal, la distribución muestral es normal para cualquier tamaño n.",
+                            "feedbackIncorrect": "Incorrecto. No, si la población es normal, la distribución de medias es normal para cualquier n.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Calcula el error estándar de la media si la desviación poblacional es σ = 15 y la muestra es n = 25. (Ingresa solo el número entero):",
+                            "correctAnswer": "3",
+                            "hint": "Aplica σ_x̄ = 15 / √25.",
+                            "feedbackCorrect": "¡Excelente! Error estándar = 15 / 5 = 3.",
+                            "feedbackIncorrect": "Incorrecto. σ_x̄ = 15 / 5 = 3.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        }
+                    ],
+                    "summaryHtml": "El TLC garantiza que la distribución muestral de medias es normal para $n \\ge 30$, con media $\\mu$ y error estándar de la media $\\sigma_{\\bar{x}} = \\frac{\\sigma}{\\sqrt{n}}$.",
+                    "videoPlaceholderText": "Video de Inferencia: Demostración visual e intuitiva del Teorema del Límite Central."
+                },
+                {
+                    "id": "aplicaciones-distribucion-muestral",
+                    "title": "Lección 1.3: Aplicaciones de la Distribución Muestral",
+                    "introduction": "Calcula la probabilidad de obtener medias muestrales en rangos específicos aplicando la tipificación normal modificada.",
+                    "explanationHtml": "<p>Una de las mayores aplicaciones del TLC y de las distribuciones muestrales es calcular la probabilidad de que una muestra aleatoria de tamaño $n$ arroje una media muestral ($\\bar{x}$) que se encuentre en un rango de interés.</p><p class=\"mt-2\">Para lograr esto, adaptamos la fórmula de tipificación normal. En lugar de usar la desviación estándar individual $\\sigma$, **debemos utilizar el error estándar de la media en el denominador**:</p><p class=\"text-center font-mono font-extrabold text-primary text-base my-2\">$$Z = \\frac{\\bar{x} - \\mu}{\\sigma_{\\bar{x}}} = \\frac{\\bar{x} - \\mu}{\\sigma / \\sqrt{n}}$$</p><p class=\"mt-2 text-slate-700\">El puntaje $Z$ resultante se busca en la tabla normal estándar Z común para hallar la probabilidad acumulada izquierda o derecha requerida.</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Ecuación de Tipificación de Medias</p><p class=\"text-xs font-mono font-bold text-primary\">Z = (x̄ - &mu;) / (&sigma; / &radic;n)</p><p class=\"text-xs text-slate-550\">Herramienta: Úsala siempre que te pregunten por la probabilidad del promedio de un grupo.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"18\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">PROBABILIDAD DE LA MEDIA</text><line x1=\"20\" y1=\"100\" x2=\"280\" y2=\"100\" stroke=\"#cbd5e1\" stroke-width=\"1.5\" /><path d=\"M 30 100 C 90 100, 100 30, 150 30 C 200 30, 210 100, 270 100\" fill=\"none\" stroke=\"#3b82f6\" stroke-width=\"1.5\" /><path d=\"M 210 73.5 C 210 73.5, 220 95, 230 100 L 270 100 C 270 100, 240 100, 210 100 Z\" fill=\"#fee2e2\" stroke=\"none\" /><line x1=\"210\" y1=\"73.5\" x2=\"210\" y2=\"100\" stroke=\"#ef4444\" stroke-width=\"1.5\" /><circle cx=\"210\" cy=\"73.5\" r=\"3\" fill=\"#ef4444\" /><text x=\"210\" y=\"112\" font-size=\"8.5\" font-weight=\"bold\" fill=\"#ef4444\" text-anchor=\"middle\">Z = 2.00</text><text x=\"245\" y=\"80\" font-size=\"7.5\" fill=\"#b91c1c\" font-weight=\"bold\" text-anchor=\"middle\">Área = 2.28%</text></svg>",
+                    "svgDescription": "Curva muestral de promedios. Ilustra el cálculo de la cola superior para un puntaje Z = 2.00, que corresponde a una probabilidad pequeña de 2.28%.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Las calificaciones de una prueba nacional tienen una media poblacional de $\\mu = 100$ puntos y una desviación estándar de $\\sigma = 15$ puntos. Si seleccionamos una muestra aleatoria de $n = 25$ estudiantes, calcula la probabilidad de que la media de la muestra sea mayor a 106 puntos. (Dato de tabla: $P(Z \\le 2.00) = 0.9772$).</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1: Calcular el error estándar ($\\sigma_{\\bar{x}}$):</strong> <br>$$\\sigma_{\\bar{x}} = \\frac{15}{\\sqrt{25}} = \\frac{15}{5} = 3\\text{ puntos}$$</li><li><strong>Paso 2: Tipificar la media de la muestra ($\\bar{x} = 106$):</strong> <br>$$Z = \\frac{\\bar{x} - \\mu}{\\sigma_{\\bar{x}}} = \\frac{106 - 100}{3} = \\frac{6}{3} = 2.00$$</li><li><strong>Paso 3: Calcular la probabilidad \"mayor a 106\" (cola a la derecha):</strong> <br>$$P(\\bar{x} > 106) = P(Z > 2.00) = 1 - P(Z \\le 2.00) = 1 - 0.9772 = 0.0228$$</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> La probabilidad de que la media muestral sea mayor a 106 puntos es de apenas <strong>0.0228</strong> o <strong>2.28%</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Usar la desviación estándar individual:</strong> Calcular $Z$ usando la desviación estándar $\\sigma = 15$ directamente en el denominador en lugar del error estándar $\\sigma_{\\bar{x}} = 3$. Esto daría un $Z = 0.40$ incorrecto, duplicando falsamente la probabilidad real.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Si μ = 50, σ = 8 y n = 16, calcula el puntaje Z para una media muestral x̄ = 52. (Ingresa el número con punto decimal):",
+                            "correctAnswer": "1",
+                            "hint": "Error estándar = 8 / √16 = 2. Z = (52 - 50) / 2.",
+                            "feedbackCorrect": "¡Excelente! Z = 2 / 2 = 1.00.",
+                            "feedbackIncorrect": "Incorrecto. Z = (52 - 50) / (8 / √16) = 1.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Qué probabilidad hay de obtener un promedio muestral menor o igual a la media poblacional real en una distribución muestral perfectamente simétrica? (Ingresa el número decimal con punto):",
+                            "correctAnswer": "0.5",
+                            "hint": "La media muestral coincide con el centro de simetría de la campana normal.",
+                            "feedbackCorrect": "¡Perfecto! Al ser simétrica la campana, la probabilidad es exactamente 0.5000.",
+                            "feedbackIncorrect": "Incorrecto. Por simetría de la distribución, la probabilidad es 0.5000.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si n = 36 y σ = 12, calcula el puntaje Z para x̄ = 46 si la media poblacional es μ = 50. (Ingresa el signo negativo si corresponde):",
+                            "correctAnswer": "-2",
+                            "hint": "Error estándar = 12 / √36 = 2. Z = (46 - 50) / 2.",
+                            "feedbackCorrect": "¡Excelente! Z = -4 / 2 = -2.00.",
+                            "feedbackIncorrect": "Incorrecto. Z = (46 - 50) / 2 = -2.00.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Por qué es mucho más difícil encontrar una muestra de 100 estudiantes con un promedio de estatura extremo que encontrar a un solo estudiante con ese mismo valor extremo?",
+                            "options": [
+                                "Porque las muestras grandes son más costosas de medir.",
+                                "Porque en grupos grandes las estaturas altas y bajas se promedian y cancelan entre sí, reduciendo el error estándar.",
+                                "Porque los estudiantes altos evitan ser medidos en las muestras.",
+                                "Porque la desviación estándar de la población aumenta."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Piensa en el efecto del tamaño de la muestra n sobre el error estándar σ_x̄.",
+                            "feedbackCorrect": "¡Perfecto! En grupos grandes la variabilidad se compensa y el error estándar es mucho más estrecho.",
+                            "feedbackIncorrect": "Incorrecto. Las variaciones individuales se cancelan al promediarse en grupos grandes.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Si el puntaje Z calculado para una media muestral es exactamente 0, ¿cuánto vale dicha media muestral?",
+                            "options": [
+                                "Es igual a cero.",
+                                "Es exactamente igual al promedio poblacional μ.",
+                                "Es igual a la desviación estándar de la muestra.",
+                                "Es un dato atípico imposible."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Sustituye Z = 0 en Z = (x̄ - μ) / σ_x̄ y despeja x̄.",
+                            "feedbackCorrect": "¡Excelente! Si Z = 0, entonces x̄ es idéntico a la media poblacional μ.",
+                            "feedbackIncorrect": "Incorrecto. Indica que la media de la muestra es igual a la poblacional μ.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "Para calcular probabilidades sobre promedios grupales, tipificamos la media mediante la ecuación $Z = \\frac{\\bar{x} - \\mu}{\\sigma/\\sqrt{n}}$ y buscamos el área en la tabla Z.",
+                    "videoPlaceholderText": "Video de Inferencia: Resolución de problemas prácticos de probabilidad de medias muestrales."
+                }
+            ]
+        },
+        {
+            "title": "Unidad 2: Intervalos de Confianza",
+            "lessons": [
+                {
+                    "id": "estimacion-puntual-margen-error",
+                    "title": "Lección 2.1: Estimación Puntual y Margen de Error",
+                    "introduction": "Comprende qué es un estimador puntual y aprende a calcular el margen de error de una estimación.",
+                    "explanationHtml": "<p>En estadística inferencial, buscamos estimar parámetros poblacionales desconocidos (como la media real $\\mu$) a partir de muestras. Disponemos de dos metodologías:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Estimación Puntual:</strong> Consiste en proponer un **único valor numérico** (un punto) como la mejor aproximación al parámetro. El estimador puntual ideal de la media poblacional $\\mu$ es la **media muestral $\\bar{x}$**.</li><li><strong>Estimación por Intervalo:</strong> Consiste en proponer un **rango de valores** que tiene una alta probabilidad de contener el parámetro real. Se construye sumando y restando un **Margen de Error ($E$)** a la estimación puntual: <br>$$\\text{Intervalo} = \\bar{x} \\pm E$$</li></ul><p class=\"mt-2 text-slate-700\">El **Margen de Error ($E$)** depende del nivel de confianza requerido ($Z$ crítico) y de la variabilidad del estimador:</p><p class=\"text-center font-mono font-extrabold text-primary text-base my-2\">$$E = Z_{\\alpha/2} \\cdot \\left( \\frac{\\sigma}{\\sqrt{n}} \\right)$$</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Margen de Error de la Media</p><p class=\"text-xs font-mono font-bold text-primary\">E = Z_crit * (&sigma; / &radic;n) &nbsp;|&nbsp; I.C. = [x̄ - E, x̄ + E]</p><p class=\"text-xs text-slate-550\">Herramienta: Al sumar y restar E a la media de la muestra, creas los límites de confianza.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"18\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">INTERVALO Y MARGEN DE ERROR</text><line x1=\"30\" y1=\"80\" x2=\"270\" y2=\"80\" stroke=\"#cbd5e1\" stroke-width=\"1.5\" /><circle cx=\"150\" cy=\"80\" r=\"5\" fill=\"#3b82f6\" stroke=\"#1d4ed8\" stroke-width=\"1.5\" /><text x=\"150\" y=\"70\" font-size=\"8.5\" font-weight=\"bold\" fill=\"#1e40af\" text-anchor=\"middle\">Estimador x̄</text><line x1=\"70\" y1=\"92\" x2=\"230\" y2=\"92\" stroke=\"#10b981\" stroke-width=\"2\" /><line x1=\"70\" y1=\"87\" x2=\"70\" y2=\"97\" stroke=\"#10b981\" stroke-width=\"2\" /><line x1=\"230\" y1=\"87\" x2=\"230\" y2=\"97\" stroke=\"#10b981\" stroke-width=\"2\" /><text x=\"110\" y=\"105\" font-size=\"7.5\" font-weight=\"bold\" fill=\"#047857\" text-anchor=\"middle\">- E</text><text x=\"190\" y=\"105\" font-size=\"7.5\" font-weight=\"bold\" fill=\"#047857\" text-anchor=\"middle\">+ E</text><text x=\"150\" y=\"114\" font-size=\"8.5\" font-weight=\"bold\" fill=\"#047857\" text-anchor=\"middle\">Intervalo de Confianza</text></svg>",
+                    "svgDescription": "Visualización gráfica de un intervalo de confianza. La media muestral (estimación puntual) se sitúa en el centro, y los límites del intervalo se extienden a los lados sumando y restando el margen de error E.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Un analista político realiza encuestas en Xela. En una muestra de 100 personas, encuentra que la media muestral de edad es $\\bar{x} = 35\\text{ años}$ y calcula analíticamente un margen de error de $E = 2\\text{ años}$. Construye el intervalo de confianza e interpreta la estimación.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1: Identificar la estimación puntual y margen de error.</strong> <br>$$\\bar{x} = 35\\text{ años}$$ <br>$$E = 2\\text{ años}$$</li><li><strong>Paso 2: Calcular el límite inferior:</strong> <br>$$\\text{Límite inferior} = \\bar{x} - E = 35 - 2 = 33\\text{ años}$$</li><li><strong>Paso 3: Calcular el límite superior:</strong> <br>$$\\text{Límite superior} = \\bar{x} + E = 35 + 2 = 37\\text{ años}$$</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> El intervalo de confianza es <strong>[33, 37] años</strong>. Significa que estimamos con alto nivel de seguridad que el promedio de edad real de la población se encuentra entre 33 y 37 años.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Confundir estimación puntual con por intervalo:</strong> Proponer un rango de valores cuando te preguntan la estimación puntual. La estimación puntual exige estrictamente **un único número entero o decimal** (ej. la media 35).</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "¿Cuál es el estadístico o estimador puntual ideal y más común para estimar la media poblacional μ?",
+                            "options": [
+                                "La mediana muestral (Me).",
+                                "La media aritmética de la muestra (x̄).",
+                                "La desviación estándar muestral (s).",
+                                "El rango intercuartílico de la muestra."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Es el promedio de los datos de la muestra, el cual es un estimador insesgado de la población.",
+                            "feedbackCorrect": "¡Excelente! La media muestral x̄ es el mejor estimador puntual de la media poblacional.",
+                            "feedbackIncorrect": "Incorrecto. Es la media muestral x̄.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Si el intervalo de confianza obtenido para el peso medio es [45, 55] kg, ¿cuál fue la estimación puntual promedio x̄ de la muestra? (Ingresa solo el número entero):",
+                            "correctAnswer": "50",
+                            "hint": "La estimación puntual se encuentra exactamente en el punto medio o promedio del intervalo.",
+                            "feedbackCorrect": "¡Perfecto! x̄ = (45 + 55) / 2 = 50 kg.",
+                            "feedbackIncorrect": "Incorrecto. La media muestral es el punto medio del intervalo: (45+55)/2 = 50.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Con los mismos datos del ejercicio anterior (intervalo [45, 55]), ¿cuál fue el margen de error E utilizado? (Ingresa solo el número entero):",
+                            "correctAnswer": "5",
+                            "hint": "El margen de error es la distancia desde el centro del intervalo (50) hasta cualquiera de los extremos.",
+                            "feedbackCorrect": "¡Excelente! El margen de error E es de 5 kg (50 ± 5).",
+                            "feedbackIncorrect": "Incorrecto. E = Límite superior - Media = 55 - 50 = 5.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si mantenemos los datos de la muestra fijos, ¿qué ocurre con el margen de error si disminuimos el nivel de confianza (por ejemplo, del 95% al 90%)?",
+                            "options": [
+                                "Aumenta.",
+                                "Disminuye, haciendo el intervalo más estrecho y preciso, pero con mayor riesgo de error.",
+                                "Se mantiene estrictamente igual.",
+                                "Se duplica instantáneamente."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Un menor nivel de confianza requiere un Z crítico menor (1.645 < 1.96), lo que reduce el margen E.",
+                            "feedbackCorrect": "¡Perfecto! Al bajar la confianza, el Z crítico disminuye y el margen E se reduce.",
+                            "feedbackIncorrect": "Incorrecto. Disminuye, estrechando el intervalo al requerir un menor Z crítico.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Si aumenta la variabilidad poblacional (desviación σ más alta), ¿qué le ocurre al margen de error E?",
+                            "options": [
+                                "Disminuye.",
+                                "Aumenta, reduciendo la precisión de la estimación.",
+                                "Se mantiene igual.",
+                                "Se reduce a la mitad."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "La desviación estándar σ está en el numerador del margen de error: E = Z * σ / √n.",
+                            "feedbackCorrect": "¡Excelente! A mayor variabilidad de los datos, mayor es el margen de error de la estimación.",
+                            "feedbackIncorrect": "Incorrecto. Aumenta, ya que los datos son más dispersos y la estimación es menos precisa.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "La estimación puntual ofrece un único valor ($\\bar{x}$) para estimar $\\mu$. El intervalo de confianza añade un margen de error ($E = Z \\frac{\\sigma}{\\sqrt{n}}$) para dar un rango de estimación.",
+                    "videoPlaceholderText": "Video de Inferencia: Concepto de estimación puntual y margen de error explicados gráficamente."
+                },
+                {
+                    "id": "construccion-intervalos-media",
+                    "title": "Lección 2.2: Construcción de Intervalos de Confianza para la Media",
+                    "introduction": "Aprende a construir intervalos de confianza para la media poblacional con desviación conocida para niveles del 95% y 99%.",
+                    "explanationHtml": "<p>Para construir un intervalo de confianza de la media poblacional con desviación estándar conocida ($\\sigma$), utilizamos la distribución normal Z.</p><p class=\"mt-2\">La fórmula de construcción es:</p><p class=\"text-center font-mono font-extrabold text-primary text-base my-2\">$$\\text{I.C.} = \\bar{x} \\pm Z_{\\alpha/2} \\cdot \\left( \\frac{\\sigma}{\\sqrt{n}} \\right)$$</p><p class=\"mt-2 text-slate-700\">El valor **Z crítico ($Z_{\\alpha/2}$)** depende del nivel de confianza elegido (área central):</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Nivel de Confianza del 95% ($alpha = 0.05$):</strong> Se utiliza un valor crítico de **$Z = 1.96$**. Deja un 2.5% de probabilidad en cada cola extrema.</li><li><strong>Nivel de Confianza del 99% ($alpha = 0.01$):</strong> Se utiliza un valor crítico de **$Z = 2.58$**. Deja un 0.5% en cada cola extrema.</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Valores Críticos Z Frecuentes</p><p class=\"text-xs font-mono font-bold text-primary\">Confianza 90%: Z = 1.645 &nbsp;|&nbsp; Confianza 95%: Z = 1.96 &nbsp;|&nbsp; Confianza 99%: Z = 2.58</p><p class=\"text-xs text-slate-550\">Herramienta: A mayor nivel de confianza, el valor Z aumenta, ensanchando el intervalo.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"18\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">INTERVALOS DE SIMULACIÓN</text><line x1=\"50\" y1=\"30\" x2=\"50\" y2=\"100\" stroke=\"#ef4444\" stroke-width=\"1.5\" stroke-dasharray=\"3,3\" /><text x=\"42\" y=\"65\" font-size=\"8\" fill=\"#b91c1c\" font-weight=\"bold\" text-anchor=\"end\">Media Real &mu;</text><line x1=\"20\" y1=\"45\" x2=\"110\" y2=\"45\" stroke=\"#10b981\" stroke-width=\"2\" /><circle cx=\"65\" cy=\"45\" r=\"3.5\" fill=\"#047857\" /><line x1=\"30\" y1=\"70\" x2=\"120\" y2=\"70\" stroke=\"#10b981\" stroke-width=\"2\" /><circle cx=\"75\" cy=\"70\" r=\"3.5\" fill=\"#047857\" /><line x1=\"70\" y1=\"95\" x2=\"160\" y2=\"95\" stroke=\"#ef4444\" stroke-width=\"2\" /><circle cx=\"115\" cy=\"95\" r=\"3.5\" fill=\"#b91c1c\" /><text x=\"175\" y=\"99\" font-size=\"7.5\" fill=\"#b91c1c\" font-weight=\"bold\">¡Falla, no contiene a &mu;!</text></svg>",
+                    "svgDescription": "Simulación de múltiples intervalos de confianza. En promedio, el 95% de ellos contienen la media real mu (verde), pero existe un 5% que fallan por el azar de la muestra (rojo).",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> En Antigua Guatemala, una muestra aleatoria de $n = 64\\text{ hogares}$ consume en promedio $\\bar{x} = 12\\text{ litros}$ de leche a la semana. Si sabemos por estudios nacionales que la desviación poblacional es $\\sigma = 2\\text{ litros}$, construye un intervalo de confianza del 95% para estimar el consumo real promedio de toda la ciudad.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1: Identificar datos y Z crítico.</strong> <br>$$\\bar{x} = 12\\text{ l, } \\sigma = 2\\text{ l, } n = 64$$ <br>Para 95% de confianza, $$Z = 1.96$$</li><li><strong>Paso 2: Calcular el Margen de Error ($E$):</strong> <br>$$E = Z \\cdot \\left( \\frac{\\sigma}{\\sqrt{n}} \\right) = 1.96 \\cdot \\left( \\frac{2}{\\sqrt{64}} \\right) = 1.96 \\cdot \\left( \\frac{2}{8} \\right) = 1.96 \\cdot 0.25 = 0.49\\text{ litros}$$</li><li><strong>Paso 3: Calcular límites del I.C.:</strong> <br>$$\\text{Límite inferior} = 12 - 0.49 = 11.51\\text{ litros}$$ <br>$$\\text{Límite superior} = 12 + 0.49 = 12.49\\text{ litros}$$</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Conclusión:</strong> El intervalo de confianza del 95% es <strong>[11.51, 12.49] litros</strong> de leche a la semana.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Usar el Z crítico erróneo:</strong> Utilizar 1.96 para calcular un intervalo de confianza del 99% por distracción. Recuerda que el nivel de confianza y el Z crítico están enlazados; el 99% exige mayor amplitud y usa $Z = 2.58$.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Construye el intervalo de confianza del 99% (Z = 2.58) si x̄ = 100, σ = 10, y n = 100. (Ingresa el rango resultante en formato [min, max] con un espacio tras la coma y dos decimales):",
+                            "correctAnswer": "[97.42, 102.58]",
+                            "hint": "Error estándar = 10 / √100 = 1. Margen de error = 2.58 * 1 = 2.58. Calcula 100 ± 2.58.",
+                            "feedbackCorrect": "¡Excelente! I.C. del 99% = [97.42, 102.58].",
+                            "feedbackIncorrect": "Incorrecto. E = 2.58 * 1 = 2.58. El intervalo es [97.42, 102.58].",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cuál es el valor numérico del Z crítico utilizado de forma estándar para construir un intervalo de confianza del 90%? (Ingresa el número decimal con punto):",
+                            "correctAnswer": "1.645",
+                            "hint": "Deja un 5% de área en cada una de las dos colas extremas de la campana normal estándar.",
+                            "feedbackCorrect": "¡Perfecto! El valor Z crítico para 90% es 1.645.",
+                            "feedbackIncorrect": "Incorrecto. Para el 90% se usa Z = 1.645.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si un intervalo del 95% con ciertos datos da [10.2, 14.8], ¿cómo esperas que sea el intervalo si subes la confianza al 99% con los mismos datos?",
+                            "options": [
+                                "Será más estrecho.",
+                                "Será más ancho, expandiendo el rango para asegurar la mayor confianza solicitada.",
+                                "Se mantendrá estrictamente igual.",
+                                "Se desplazará hacia la izquierda."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "A mayor nivel de seguridad exigido, el rango de estimación debe expandirse.",
+                            "feedbackCorrect": "¡Excelente! Para asegurar una mayor confianza (99% vs 95%), el intervalo debe ensancharse.",
+                            "feedbackIncorrect": "Incorrecto. Será más ancho ya que requiere mayor seguridad, lo que expande el margen.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Calcula el margen de error E para un intervalo de confianza del 95% (Z = 1.96) si la desviación es σ = 6 y el tamaño muestral es n = 36. (Ingresa el número con punto decimal):",
+                            "correctAnswer": "1.96",
+                            "hint": "Error estándar = 6 / √36 = 1. Margen de error = 1.96 * 1.",
+                            "feedbackCorrect": "¡Excelente! Margen de error = 1.96 * (6 / 6) = 1.96.",
+                            "feedbackIncorrect": "Incorrecto. E = 1.96 * 1 = 1.96.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Qué ocurre con el ancho de un intervalo de confianza si multiplicamos el tamaño de la muestra n por 4, manteniendo la confianza y desviación constantes?",
+                            "options": [
+                                "Se cuadruplica.",
+                                "Se reduce exactamente a la mitad, mejorando notablemente la precisión.",
+                                "Se reduce a la cuarta parte.",
+                                "No se altera en absoluto."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "La muestra n está dentro de una raíz cuadrada en el denominador de la fórmula de error.",
+                            "feedbackCorrect": "¡Perfecto! Al cuadruplicar n, la raíz de 4 es 2 en el denominador, lo que divide el margen E entre 2.",
+                            "feedbackIncorrect": "Incorrecto. Al cuadruplicar n, el margen y el ancho se reducen a la mitad.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "Los intervalos de confianza para la media se calculan como $\\bar{x} \\pm Z \\frac{\\sigma}{\\sqrt{n}}$. Se usan valores críticos fijos: $Z = 1.96$ para el 95% y $Z = 2.58$ para el 99%.",
+                    "videoPlaceholderText": "Video de Inferencia: Cómo calcular e interpretar intervalos de confianza con Z paso a paso."
+                },
+                {
+                    "id": "interpretacion-intervalos-confianza",
+                    "title": "Lección 2.3: Interpretación de los Intervalos de Confianza",
+                    "introduction": "Aprende a interpretar de forma correcta y rigurosa el significado estadístico de un intervalo de confianza.",
+                    "explanationHtml": "<p>La interpretación de un intervalo de confianza es una de las tareas más críticas de la analítica. Cometer errores conceptuales al redactar reportes científicos es extremadamente común.</p><p class=\"mt-2\"><strong>Lo que NO significa:</strong> Un intervalo de confianza del 95% de $[10, 20]$ **no** significa que \"el 95% de los datos de la muestra están entre 10 y 20\", ni tampoco que \"hay un 95% de probabilidad de que la media real esté entre 10 y 20\" una vez calculado el intervalo.</p><p class=\"mt-2\"><strong>La Interpretación Correcta:</strong> El término \"confianza\" describe el **comportamiento a largo plazo del método de muestreo**. Significa que si repitiéramos este experimento de muestreo 100 veces y construyéramos 100 intervalos de la misma forma:</p><p class=\"mt-2 text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\">\"Aproximadamente 95 de esos 100 intervalos contendrán el verdadero parámetro poblacional real ($\\mu$), mientras que 5 intervalos fallarán debido al azar del muestreo.\"</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Significancia y Confianza</p><p class=\"text-xs font-mono font-bold text-primary\">Confianza: 1 - &alpha; &nbsp;|&nbsp; Significancia (riesgo de falla): &alpha;</p><p class=\"text-xs text-slate-550\">Una vez calculado con datos reales, el parámetro &mu; está o no está (probabilidad es 0 o 1).</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"18\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">DISTRIBUCIÓN Y CONFIANZA</text><line x1=\"40\" y1=\"90\" x2=\"260\" y2=\"90\" stroke=\"#cbd5e1\" stroke-width=\"1.5\" /><path d=\"M 50 90 C 100 90, 110 35, 150 35 C 190 35, 200 90, 250 90\" fill=\"none\" stroke=\"#3b82f6\" stroke-width=\"1.5\" /><path d=\"M 80 90 C 100 90, 110 35, 150 35 C 190 35, 200 90, 220 90 Z\" fill=\"#ecfdf5\" stroke=\"none\" /><line x1=\"80\" y1=\"67\" x2=\"80\" y2=\"90\" stroke=\"#10b981\" stroke-width=\"1\" /><line x1=\"220\" y1=\"67\" x2=\"220\" y2=\"90\" stroke=\"#10b981\" stroke-width=\"1\" /><text x=\"150\" y=\"70\" font-size=\"9.5\" fill=\"#047857\" font-weight=\"bold\" text-anchor=\"middle\">Confianza 95%</text><text x=\"60\" y=\"85\" font-size=\"7\" fill=\"#b91c1c\" font-weight=\"bold\" text-anchor=\"middle\">2.5%</text><text x=\"240\" y=\"85\" font-size=\"7\" fill=\"#b91c1c\" font-weight=\"bold\" text-anchor=\"middle\">2.5%</text></svg>",
+                    "svgDescription": "Curva de confianza normal. Muestra el 95% del área central de aceptación (verde) y las colas extremas de error alpha que suman el 5% restante.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Una encuesta nacional en Guatemala reporta el apoyo a una propuesta de ley con un intervalo de confianza del 95% de $[48\\%, 52\\%]$. Explica si podemos afirmar con seguridad del 95% que la propuesta tiene el apoyo de la mayoría absoluta de los ciudadanos.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1: Evaluar los límites del intervalo.</strong> El intervalo de confianza abarca desde el 48% (minoría) hasta el 52% (mayoría).</li><li><strong>Paso 2: Analizar el significado.</strong> El rango estimado contiene valores menores a la mayoría absoluta (menores al 50%). Por lo tanto, no podemos asegurar que el verdadero porcentaje de apoyo de toda la población sea mayor al 50%.</li><li><strong>Paso 3: Conclusión.</strong> Existe lo que en política se llama un \"empate técnico\" estadístico; el resultado no es concluyente con respecto al triunfo electoral absoluto de la propuesta.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Conclusión:</strong> No, el intervalo no garantiza la mayoría absoluta porque contiene valores inferiores al 50%.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Afirmar probabilidades fijas sobre límites constantes:</strong> Decir \"la probabilidad de que la media real esté entre 12 y 15 es 95%\". En estadística matemática, una vez calculado el intervalo, los límites son constantes fijas y el parámetro real es otra constante fija; el parámetro o está adentro o está afuera (probabilidad es 1 o 0). Lo correcto es decir que tenemos un \"95% de confianza en el método\".</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "¿Qué parámetro poblacional estamos tratando de estimar de forma exclusiva al construir el intervalo de confianza x̄ ± E?",
+                            "options": [
+                                "La desviación estándar de la población (σ).",
+                                "La media poblacional real (μ).",
+                                "La varianza muestral (s^2).",
+                                "La proporción de datos atípicos."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "x̄ es el estimador de la media central del grupo de estudio.",
+                            "feedbackCorrect": "¡Excelente! Estamos estimando la media poblacional real μ.",
+                            "feedbackIncorrect": "Incorrecto. Se busca estimar la media poblacional real μ.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Si reportas que el promedio de notas en Antigua está en el intervalo [72, 78] con 95% de confianza, ¿dónde estimas que se ubica el promedio real poblacional? (Escribe los límites como rango [min, max] con espacio):",
+                            "correctAnswer": "[72, 78]",
+                            "hint": "El intervalo de confianza contiene los límites de estimación calculados directamente.",
+                            "feedbackCorrect": "¡Perfecto! Estimamos que la media real está entre 72 y 78 puntos.",
+                            "feedbackIncorrect": "Incorrecto. Los límites son [72, 78] puntos.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si un analista afirma: 'El 95% de todos los alumnos individuales obtuvieron notas comprendidas entre 72 y 78 puntos', ¿es correcta esta interpretación? Escribe 'si' o 'no':",
+                            "correctAnswer": "no",
+                            "hint": "El intervalo de confianza estima el promedio de la población de estudiantes, no la nota individual de cada uno.",
+                            "feedbackCorrect": "¡Excelente! Es incorrecta, ya que el intervalo estima el parámetro promedio, no las observaciones individuales.",
+                            "feedbackIncorrect": "Incorrecto. No, describe dispersión individual, no estima la media poblacional.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Qué significa un nivel de significancia de α = 0.05 en el contexto de la estimación por intervalos de confianza?",
+                            "options": [
+                                "Que el 5% de los datos son incorrectos.",
+                                "Que existe un 5% de riesgo o probabilidad de que el intervalo construido no contenga la media poblacional real.",
+                                "Que la media muestral tiene un sesgo de 5 unidades.",
+                                "Que la varianza es igual al 5% de la media."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "α representa la probabilidad de cometer un error al rechazar o estimar (complemento de la confianza).",
+                            "feedbackCorrect": "¡Perfecto! Representa el 5% de riesgo de que el intervalo no capture a la media real.",
+                            "feedbackIncorrect": "Incorrecto. Representa el riesgo del 5% de que el intervalo no contenga al parámetro real.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "¿Es posible construir un intervalo de confianza del 100% de seguridad absoluta que tenga un ancho finito práctico? Escribe 'si' o 'no':",
+                            "correctAnswer": "no",
+                            "hint": "Para tener el 100% de certeza absoluta, el rango tendría que extenderse desde menos infinito a más infinito, lo cual es inútil.",
+                            "feedbackCorrect": "¡Excelente! No es posible en estadística práctica, ya que exigiría límites infinitos.",
+                            "feedbackIncorrect": "Incorrecto. No, un intervalo del 100% de certeza tendría límites infinitos.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        }
+                    ],
+                    "summaryHtml": "Un intervalo de confianza describe la tasa de acierto a largo plazo del método. Una confianza del 95% significa que 95 de cada 100 intervalos construidos contendrán al parámetro $\\mu$.",
+                    "videoPlaceholderText": "Video de Inferencia: Errores comunes al interpretar intervalos de confianza en proyectos reales."
+                }
+            ]
+        },
+        {
+            "title": "Unidad 3: Pruebas de Hipótesis Introductorias",
+            "lessons": [
+                {
+                    "id": "hipotesis-nula-alternativa",
+                    "title": "Lección 3.1: Hipótesis Nula y Alternativa",
+                    "introduction": "Aprende a formular de forma lógica la hipótesis nula ($H_0$) y alternativa ($H_1$) para pruebas de una y dos colas.",
+                    "explanationHtml": "<p>Una <strong>Prueba de Hipótesis</strong> es un procedimiento estadístico estructurado para decidir si la evidencia de una muestra respalda o contradice una afirmación científica o comercial sobre una población.</p><p class=\"mt-2\">Toda prueba requiere formular de forma rigurosa dos hipótesis lógicas excluyentes:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Hipótesis Nula ($H_0$):</strong> Representa el **status quo** o la afirmación de que \"no hay cambios, efectos o diferencias\". Es la hipótesis que se asume verdadera al inicio y que buscamos someter a prueba. **Siempre debe contener el signo de igualdad** ($=$, $\\ge$, o $\\le$).</li><li><strong>Hipótesis Alternativa ($H_1$ o $H_a$):</strong> Representa la afirmación o sospecha que el investigador busca demostrar. Contiene signos de desigualdad o diferencia ($\\ne$, $<$, o $>$) y define la dirección de la prueba (dos colas o una cola).</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Tipos de Pruebas y Signos</p><p class=\"text-xs font-mono font-bold text-primary\">Dos colas: H_1: &mu; &ne; &mu;_0 &nbsp;|&nbsp; Cola derecha: H_1: &mu; &gt; &mu;_0 &nbsp;|&nbsp; Cola izquierda: H_1: &mu; &lt; &mu;_0</p><p class=\"text-xs text-slate-550\">Regla de Oro: La igualdad siempre pertenece a la hipótesis nula H_0.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"18\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">DISEÑO DE HIPÓTESIS</text><rect x=\"20\" y=\"40\" width=\"115\" height=\"55\" fill=\"#eff6ff\" stroke=\"#bfdbfe\" rx=\"8\" /><text x=\"77.5\" y=\"58\" font-size=\"9\" fill=\"#1e40af\" font-weight=\"extrabold\" text-anchor=\"middle\">HIPÓTESIS NULA H₀</text><text x=\"77.5\" y=\"78\" font-size=\"8.5\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">&mu; = 100</text><text x=\"77.5\" y=\"88\" font-size=\"7\" fill=\"#475569\" text-anchor=\"middle\">Status quo (Igualdad)</text><rect x=\"165\" y=\"40\" width=\"115\" height=\"55\" fill=\"#ecfdf5\" stroke=\"#a7f3d0\" rx=\"8\" /><text x=\"222.5\" y=\"58\" font-size=\"9\" fill=\"#065f46\" font-weight=\"extrabold\" text-anchor=\"middle\">HIPÓTESIS ALT H₁</text><text x=\"222.5\" y=\"78\" font-size=\"8.5\" fill=\"#065f46\" font-weight=\"bold\" text-anchor=\"middle\">&mu; &ne; 100 o &mu; &lt; 100</text><text x=\"222.5\" y=\"88\" font-size=\"7\" fill=\"#475569\" text-anchor=\"middle\">Sospecha (Desigualdad)</text></svg>",
+                    "svgDescription": "Comparativa conceptual entre la hipótesis nula H0 (representa igualdad y no cambio) y la hipótesis alternativa H1 (representa sospecha y desigualdad).",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Un fabricante de focos en Escuintla afirma en su publicidad que la duración promedio de sus focos es de $1,000\\text{ horas}$. Un inspector comercial sospecha que la duración real promedio de los focos es menor a la anunciada. Plantea de forma teórica las hipótesis de la prueba.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1: Plantear la Hipótesis Nula ($H_0$).</strong> Representa la afirmación del fabricante (status quo con igualdad): <br>$$H_0: \\mu = 1,000\\text{ horas}$$</li><li><strong>Paso 2: Plantear la Hipótesis Alternativa ($H_1$).</strong> Refleja la sospecha del inspector de que la duración es menor: <br>$$H_1: \\mu < 1,000\\text{ horas}$$</li><li><strong>Paso 3: Definir la dirección.</strong> Al usar el signo menor que ($<$), se trata de una prueba de una cola hacia la izquierda.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> $H_0: \\mu = 1,000\\text{ h}$ versus $H_1: \\mu < 1,000\\text{ h}$ (una cola a la izquierda).</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Colocar desigualdades en H0:</strong> Escribir $H_0: \\mu < 100$ en un problema por prisa. Recuerda que la hipótesis nula $H_0$ **siempre** lleva el signo de igualdad ($=$, $\\ge$, o $\\le$). Las desigualdades estrictas ($<$, $>$, o $\\ne$) pertenecen exclusivamente a $H_1$.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Formula la hipótesis alternativa H₁ si la hipótesis nula es H₀: μ = 80 y el investigador sospecha que el promedio real es diferente de 80. (Escribe la hipótesis sin espacios en formato H1:mu!=80 o similar):",
+                            "correctAnswer": "H1:mu!=80",
+                            "hint": "La palabra 'diferente' indica una desigualdad estricta de dos colas (!=). Usa 'mu' para representar la media.",
+                            "feedbackCorrect": "¡Excelente! H1: mu != 80.",
+                            "feedbackIncorrect": "Incorrecto. Se formula como H1:mu!=80.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Qué tipo de prueba de hipótesis (de una o dos colas) se plantea de forma lógica si la hipótesis alternativa es H₁: μ > 50?",
+                            "options": [
+                                "Prueba de una cola a la izquierda.",
+                                "Prueba de una cola a la derecha.",
+                                "Prueba de dos colas.",
+                                "Prueba de cola central."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "El signo mayor que (>) apunta hacia el extremo superior derecho de la recta numérica.",
+                            "feedbackCorrect": "¡Perfecto! Al ser mayor que, la zona de rechazo se ubica en la cola derecha.",
+                            "feedbackIncorrect": "Incorrecto. Al ser mayor que, corresponde a una prueba de una cola a la derecha.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Un tutor de CEDETU en Antigua afirma que su método intensivo aumenta la nota promedio de matemáticas por encima de 85 puntos. Formula la hipótesis alternativa H₁ correspondiente sin espacios (ej. H1:mu>85):",
+                            "correctAnswer": "H1:mu>85",
+                            "hint": "La frase 'por encima de' indica una desigualdad mayor que (>).",
+                            "feedbackCorrect": "¡Excelente! H1: mu > 85.",
+                            "feedbackIncorrect": "Incorrecto. Se formula como H1:mu>85.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Por qué asumimos científicamente que la hipótesis nula H₀ es verdadera al inicio de cualquier prueba de hipótesis?",
+                            "options": [
+                                "Porque los fabricantes nunca mienten.",
+                                "Por el principio de presunción de inocencia científica; se requiere evidencia estadística muy sólida para rechazar el estatus quo.",
+                                "Porque la hipótesis alternativa es siempre falsa.",
+                                "Porque simplifica las ecuaciones de varianza."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Al igual que en un juicio, no podemos declarar culpable a una afirmación sin pruebas contundentes.",
+                            "feedbackCorrect": "¡Excelente! Se asume verdadera para exigir rigor; solo la rechazamos si la evidencia es abrumadora.",
+                            "feedbackIncorrect": "Incorrecto. Se asume verdadera por presunción de inocencia del status quo.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Si planteas una prueba de dos colas con H₁: μ ≠ 100, ¿dónde se localiza geométricamente la zona de rechazo en la campana de Gauss?",
+                            "options": [
+                                "Únicamente en el extremo derecho.",
+                                "Únicamente en el extremo izquierdo.",
+                                "Dividida en partes iguales en ambos extremos (colas) de la distribución.",
+                                "Justo en el centro de la campana."
+                            ],
+                            "correctAnswer": 2,
+                            "hint": "El signo diferente (≠) indica diferencias tanto por exceso como por defecto.",
+                            "feedbackCorrect": "¡Perfecto! En una prueba de dos colas, la zona de rechazo se divide en los dos extremos.",
+                            "feedbackIncorrect": "Incorrecto. Se divide en partes iguales en ambos extremos o colas.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "Una prueba de hipótesis evalúa la hipótesis nula $H_0$ (no cambio, lleva $=$) frente a la hipótesis alternativa $H_1$ (sospecha del investigador, lleva $\\ne$, $<$ o $>$).",
+                    "videoPlaceholderText": "Video de Inferencia: Cómo redactar las hipótesis nula y alternativa sin equivocarse."
+                },
+                {
+                    "id": "error-tipoi-tipoii-significancia",
+                    "title": "Lección 3.2: Error Tipo I, Error Tipo II y Nivel de Significancia",
+                    "introduction": "Define y diferencia analíticamente los errores de decisión Tipo I y Tipo II en pruebas estadísticas.",
+                    "explanationHtml": "<p>Dado que tomamos decisiones basadas en muestras aleatorias y no en certezas absolutas, siempre existe el riesgo de cometer un error en nuestra conclusión estadistica. Clasificamos estos errores en dos tipos:</p><table class=\"min-w-full my-3 border border-slate-200 text-xs font-sans bg-white rounded-lg\"><thead><tr class=\"bg-slate-100\"><th class=\"p-2 border font-bold\">Decisión \\ Realidad</th><th class=\"p-2 border font-bold\">H0 es Verdadera</th><th class=\"p-2 border font-bold\">H0 es Falsa</th></tr></thead><tbody><tr><td class=\"p-2 border font-bold bg-slate-50\">No Rechazar H0</td><td class=\"p-2 border text-emerald-700 bg-emerald-50/30\">Decisión Correcta</td><td class=\"p-2 border text-amber-700 bg-amber-50/40 font-bold\">Error Tipo II (&beta;)</td></tr><tr><td class=\"p-2 border font-bold bg-slate-50\">Rechazar H0</td><td class=\"p-2 border text-red-700 bg-red-50/40 font-bold\">Error Tipo I (&alpha;)</td><td class=\"p-2 border text-emerald-700 bg-emerald-50/30 font-bold\">Decisión Correcta (Potencia)</td></tr></tbody></table><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Error Tipo I (Falso Positivo):</strong> Rechazar la hipótesis nula $H_0$ cuando en realidad es verdadera. La probabilidad máxima permitida se fija mediante el **nivel de significancia ($\\alpha$)** (generalmente $\\alpha = 0.05$).</li><li><strong>Error Tipo II (Falso Negativo):</strong> No rechazar la hipótesis nula $H_0$ cuando en realidad es falsa. Su probabilidad se denota como $\\beta$.</li><li><strong>Potencia de la Prueba ($1-\\beta$):</strong> Probabilidad de rechazar correctamente $H_0$ cuando es falsa.</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Probabilidad de Errores</p><p class=\"text-xs font-mono font-bold text-primary\">&alpha; = P(Error Tipo I) = P(Rechazar H_0 | H_0 es verdadera)</p><p class=\"text-xs font-mono font-bold text-primary\">&beta; = P(Error Tipo II) = P(No Rechazar H_0 | H_0 es falsa)</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"18\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">RIESGOS DE ERROR</text><rect x=\"40\" y=\"30\" width=\"105\" height=\"32\" fill=\"#fef2f2\" stroke=\"#fca5a5\" stroke-width=\"1\" rx=\"4\" /><text x=\"92.5\" y=\"42\" font-size=\"7.5\" font-weight=\"bold\" fill=\"#b91c1c\" text-anchor=\"middle\">Error Tipo I (&alpha;)</text><text x=\"92.5\" y=\"52\" font-size=\"6.5\" fill=\"#7f1d1d\" text-anchor=\"middle\">Rechazar H₀ siendo VERDADERA</text><rect x=\"155\" y=\"30\" width=\"105\" height=\"32\" fill=\"#fffbeb\" stroke=\"#fcd34d\" stroke-width=\"1\" rx=\"4\" /><text x=\"207.5\" y=\"42\" font-size=\"7.5\" font-weight=\"bold\" fill=\"#b45309\" text-anchor=\"middle\">Error Tipo II (&beta;)</text><text x=\"207.5\" y=\"52\" font-size=\"6.5\" fill=\"#78350f\" text-anchor=\"middle\">No rechazar H₀ siendo FALSA</text><rect x=\"97\" y=\"72\" width=\"105\" height=\"32\" fill=\"#f0fdf4\" stroke=\"#86efac\" stroke-width=\"1\" rx=\"4\" /><text x=\"149.5\" y=\"84\" font-size=\"7.5\" font-weight=\"bold\" fill=\"#047857\" text-anchor=\"middle\">Potencia (1 - &beta;)</text><text x=\"149.5\" y=\"94\" font-size=\"6.5\" fill=\"#064e3b\" text-anchor=\"middle\">Rechazar H₀ siendo FALSA</text></svg>",
+                    "svgDescription": "Esquema conceptual de los riesgos en pruebas de hipótesis. Ilustra el Error Tipo I (alfa), el Error Tipo II (beta) y la potencia de la prueba (1-beta) en celdas de colores estructurados.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Un acusado penal es juzgado en Guatemala. Plantea las hipótesis lógicas e interpreta detalladamente qué representarían los Errores Tipo I y II en la toma de decisión del juez.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1: Formular la hipótesis nula ($H_0$).</strong> Por presunción de inocencia, se asume: <br>$$H_0: \\text{El acusado es inocente}$$</li><li><strong>Paso 2: Interpretar el Error Tipo I ($\\alpha$):</strong> Ocurre si el juez decide rechazar $H_0$ (culpable) siendo $H_0$ verdadera (inocente). <br>**Significado:** Enviar a la cárcel a una persona totalmente inocente (Falso Positivo de culpabilidad).</li><li><strong>Paso 3: Interpretar el Error Tipo II ($\\beta$):</strong> Ocurre si el juez decide no rechazar $H_0$ (libre) siendo $H_0$ falsa (culpable). <br>**Significado:** Declarar libre e inocente a un criminal culpable de delitos (Falso Negativo).</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Conclusión:</strong> El Error Tipo I es encarcelar a un inocente; el Error Tipo II es dejar libre a un culpable.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Pensar que podemos reducir ambos a cero:</strong> Creer que podemos fijar $\\alpha = 0$ y $\\beta = 0$ a la vez. Al reducir el nivel de significancia $\\alpha$ (hacer más difícil rechazar $H_0$), aumenta automáticamente la probabilidad de cometer Error Tipo II ($\\beta$) para un tamaño de muestra fijo. La única forma de reducir ambos simultáneamente es aumentar el tamaño de muestra $n$.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "¿Cuál es el nivel de significancia (α) más comúnmente aceptado en la investigación científica y médica escolar? (Ingresa el número en decimal con punto):",
+                            "correctAnswer": "0.05",
+                            "hint": "Corresponde a permitir una probabilidad máxima del 5% de cometer un Error Tipo I.",
+                            "feedbackCorrect": "¡Excelente! El nivel de significancia más común es α = 0.05 o 5%.",
+                            "feedbackIncorrect": "Incorrecto. Se utiliza comúnmente α = 0.05.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si aumentamos considerablemente el tamaño de la muestra n en un experimento, ¿qué le ocurre a la probabilidad de cometer un Error Tipo II (β)?",
+                            "options": [
+                                "Aumenta notablemente.",
+                                "Disminuye, lo que aumenta la potencia y sensibilidad de la prueba.",
+                                "Se mantiene estrictamente igual.",
+                                "Se reduce a cero instantáneamente."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Una muestra mayor proporciona más información y potencia estadística para detectar diferencias reales.",
+                            "feedbackCorrect": "¡Perfecto! Al aumentar n, se incrementa la potencia de la prueba (1-β) y se reduce el Error Tipo II.",
+                            "feedbackIncorrect": "Incorrecto. Disminuye, lo que a su vez incrementa la potencia de la prueba.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "¿Cómo se define formalmente la potencia de una prueba de hipótesis estadística?",
+                            "options": [
+                                "La probabilidad de no cometer ningún tipo de error.",
+                                "La probabilidad de rechazar correctamente la hipótesis nula cuando en realidad es falsa (1 - β).",
+                                "La altura máxima de la campana de Gauss.",
+                                "El producto de la media por la desviación estándar."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Mide la capacidad de la prueba para detectar un efecto o diferencia real.",
+                            "feedbackCorrect": "¡Excelente! La potencia de la prueba se define como 1 - β.",
+                            "feedbackIncorrect": "Incorrecto. Representa la probabilidad de rechazar correctamente H0 cuando es falsa.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "En un control de calidad en Antigua, rechazas un lote excelente de aguacates creyendo erróneamente que está en mal estado por un error de muestreo. ¿Qué tipo de error cometiste?",
+                            "options": [
+                                "Error Tipo I (riesgo del productor).",
+                                "Error Tipo II (riesgo del consumidor).",
+                                "Error de interpolación.",
+                                "Varianza nula."
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Rechazaste la hipótesis nula (lote excelente) cuando en realidad era verdadera.",
+                            "feedbackCorrect": "¡Perfecto! Cometiste un Error Tipo I (Rechazar H0 siendo verdadera).",
+                            "feedbackIncorrect": "Incorrecto. Es un Error Tipo I, también llamado riesgo del productor.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Si el nivel de significancia de una prueba de hipótesis se fija en 1% (α = 0.01), ¿cuál es la probabilidad máxima permitida de cometer un Error Tipo I? (Ingresa solo el número sin el símbolo %):",
+                            "correctAnswer": "1",
+                            "hint": "El nivel de significancia α es, por definición, la probabilidad máxima permitida de cometer el Error Tipo I.",
+                            "feedbackCorrect": "¡Excelente! La probabilidad es exactamente del 1%.",
+                            "feedbackIncorrect": "Incorrecto. Equivale al 1% de forma directa.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        }
+                    ],
+                    "summaryHtml": "El Error Tipo I ($\\alpha$) ocurre al rechazar $H_0$ siendo verdadera; el Error Tipo II ($\\beta$) ocurre al no rechazar $H_0$ siendo falsa. Su control conjunto exige aumentar $n$.",
+                    "videoPlaceholderText": "Video de Inferencia: Comprendiendo el Error Tipo I y Error Tipo II con analogías divertidas."
+                },
+                {
+                    "id": "regla-decision-zona-rechazo-z",
+                    "title": "Lección 3.3: Regla de Decisión y Zona de Rechazo con Z",
+                    "introduction": "Resuelve pruebas de hipótesis completas para la media calculando el estadístico Z y decidiendo si se rechaza la hipótesis nula.",
+                    "explanationHtml": "<p>Para tomar la decisión final en una prueba de hipótesis formal sobre la media, seguimos una regla metodológica estructurada de 4 pasos:</p><ol class=\"list-decimal pl-5 space-y-2 my-3\"><li><strong>1. Establecer Regla y Valor Crítico:</strong> Elegimos el nivel de significancia $\\alpha$ (ej. $\\alpha = 0.05$) y ubicamos el valor **$Z$ crítico** de la tabla que delimita la zona de rechazo (ej. $Z_{\\text{crítico}} = 1.645$ para una cola derecha, o $Z_{\\text{crítico}} = \\pm 1.96$ para dos colas).</li><li><strong>2. Calcular el Estadístico de Prueba ($Z_{\\text{cal}}$):</strong> Calculamos el valor tipificado de nuestra muestra utilizando el promedio observado $\\bar{x}$, la media supuesta $\\mu_0$ y el error estándar de la media: <br>$$Z_{\\text{cal}} = \\frac{\\bar{x} - \\mu_0}{\\sigma / \\sqrt{n}}$$</li><li><strong>3. Comparar valores:</strong> Evaluamos si el $Z_{\\text{cal}}$ cae dentro de la zona de rechazo delimitada por el $Z_{\\text{crítico}}$.</li><li><strong>4. Conclusión contextualizada:</strong> Decidimos si **Rechazamos $H_0$** (hay evidencia de cambio) o **No Rechazamos $H_0$** (no hay evidencia suficiente).</li></ol>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Estadístico Z de Prueba</p><p class=\"text-xs font-mono font-bold text-primary\">Z_cal = (x̄ - &mu;_0) / (&sigma; / &radic;n)</p><p class=\"text-xs text-slate-550\">Regla del p-valor: Si el p-valor &le; &alpha;, se rechaza H_0. De lo contrario, no se rechaza.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"18\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">ZONA DE RECHAZO DE Z</text><line x1=\"20\" y1=\"95\" x2=\"280\" y2=\"95\" stroke=\"#94a3b8\" stroke-width=\"1.5\" /><path d=\"M 30 95 C 90 95, 100 35, 150 35 C 200 35, 210 95, 270 95\" fill=\"none\" stroke=\"#475569\" stroke-width=\"1.5\" /><path d=\"M 210 73.5 C 210 73.5, 220 95, 230 95 L 270 95 Z\" fill=\"#fee2e2\" stroke=\"none\" /><line x1=\"210\" y1=\"73.5\" x2=\"210\" y2=\"95\" stroke=\"#ef4444\" stroke-width=\"1.5\" /><text x=\"210\" y=\"105\" font-size=\"7.5\" font-weight=\"bold\" fill=\"#ef4444\" text-anchor=\"middle\">Z_crit = 1.645</text><circle cx=\"230\" cy=\"95\" r=\"4.5\" fill=\"#b91c1c\" /><text x=\"230\" y=\"114\" font-size=\"8\" font-weight=\"bold\" fill=\"#b91c1c\" text-anchor=\"middle\">Z_cal = 2.00</text><text x=\"250\" y=\"60\" font-size=\"7.5\" fill=\"#b91c1c\" font-weight=\"bold\" text-anchor=\"middle\">RECHAZO</text></svg>",
+                    "svgDescription": "Gráfico de zona de rechazo para una prueba de cola derecha. Z crítico es 1.645 (línea roja). El Z calculado de la muestra es 2.00, situándose en la zona roja de rechazo de la hipótesis nula.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Un fabricante de Sololá afirma que sus sacos de abono pesan $100\\text{ lb}$ en promedio, con una desviación poblacional de $\\sigma = 4\\text{ lb}$. Un inspector escéptico toma una muestra de $n = 64\\text{ sacos}$ y encuentra un promedio de $\\bar{x} = 99\\text{ lb}$. Realice una prueba de hipótesis con $\\alpha = 0.05$ para comprobar si los sacos vienen incompletos ($H_1: \\mu < 100\\text{ lb}$). (Dato crítico: $Z_{\\text{crítico}} = -1.645$ para cola izquierda).</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1: Formular hipótesis.</strong> <br>$$H_0: \\mu = 100\\text{ lb}$$ <br>$$H_1: \\mu < 100\\text{ lb}\\text{ (Prueba de una cola a la izquierda)}$$</li><li><strong>Paso 2: Calcular el Z estadístico de la muestra ($Z_{\\text{cal}}$):</strong> <br>$$Z_{\\text{cal}} = \\frac{\\bar{x} - \\mu_0}{\\sigma / \\sqrt{n}} = \\frac{99 - 100}{4 / \\sqrt{64}} = \\frac{-1}{4 / 8} = \\frac{-1}{0.50} = -2.00$$</li><li><strong>Paso 3: Comparar con el valor crítico.</strong> <br>El valor obtenido $Z_{\\text{cal}} = -2.00$ es menor (más extremo a la izquierda) que el límite crítico $Z_{\\text{crítico}} = -1.645$. Cae en la zona de rechazo.</li><li><strong>Paso 4: Conclusión.</strong> Se rechaza la hipótesis nula $H_0$. Concluimos con un 95% de seguridad que los sacos vienen incompletos y el promedio real es menor a 100 lb.</li></ol>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Ignorar el signo en colas izquierdas:</strong> Comparar el valor absoluto de Z sin considerar el signo, concluyendo que $Z = -2.00$ no rechaza porque es \"menor\" que $-1.645$. En el eje negativo, ser menor significa estar más a la izquierda, es decir, más adentro de la zona de rechazo. ¡Ten cuidado con el análisis de signos!</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Si Z calculado es 1.50 y el Z crítico para una cola a la derecha es 1.645, ¿cuál es tu decisión estadística?",
+                            "options": [
+                                "Se rechaza la hipótesis nula H₀.",
+                                "No se rechaza la hipótesis nula H₀. (1.50 < 1.645).",
+                                "Se acepta la hipótesis alternativa H₁.",
+                                "Se debe recalcular con una muestra mayor."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Compara si el valor calculado supera el umbral crítico de rechazo establecido.",
+                            "feedbackCorrect": "¡Excelente! Al ser Z_cal menor al crítico, no hay evidencia para rechazar la hipótesis nula.",
+                            "feedbackIncorrect": "Incorrecto. Como 1.50 < 1.645, no se rechaza la hipótesis nula H₀.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "¿Cuál es el valor crítico Z necesario para una prueba de hipótesis bilateral (de dos colas) con un nivel de significancia α = 0.05? (Ingresa el número con formato +/- X.XX con punto):",
+                            "correctAnswer": "+/-1.96",
+                            "hint": "Divide α/2 = 0.0250 en cada extremo. El valor Z que deja 0.025 a la derecha es...",
+                            "feedbackCorrect": "¡Perfecto! Los valores críticos son +/-1.96.",
+                            "feedbackIncorrect": "Incorrecto. Los valores críticos bilaterales son +/-1.96.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si calculas un Z de -3.20 en una prueba de dos colas con α = 0.05 (Z crítico = +/-1.96), ¿cuál es tu decisión estadística?",
+                            "options": [
+                                "No se rechaza H₀ porque el valor es muy pequeño.",
+                                "Se rechaza la hipótesis nula H₀, ya que -3.20 cae en la zona extrema izquierda de rechazo.",
+                                "Se debe cambiar a una prueba de una cola.",
+                                "Se acepta H₀."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Compara si el valor absoluto de -3.20 supera el valor límite de 1.96.",
+                            "feedbackCorrect": "¡Excelente! Al ser -3.20 extremadamente menor a -1.96, se rechaza H0 con alta significancia.",
+                            "feedbackIncorrect": "Incorrecto. Se rechaza H0 ya que -3.20 está muy metido en la zona de rechazo.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "¿Cómo se define formalmente el 'p-valor' en una prueba de significancia estadística?",
+                            "options": [
+                                "La probabilidad de cometer un Error Tipo I.",
+                                "La probabilidad de obtener un resultado muestral tan extremo o más extremo que el observado, asumiendo que H₀ es verdadera.",
+                                "El tamaño de la muestra dividido entre Z.",
+                                "La probabilidad de que H₁ sea verdadera."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Mide qué tan raro es tu dato muestral bajo la suposición de que no hay cambios (H0 verdadera).",
+                            "feedbackCorrect": "¡Perfecto! Es la probabilidad de observar datos tan extremos como los obtenidos si H0 fuera cierta.",
+                            "feedbackIncorrect": "Incorrecto. Es la probabilidad de obtener datos tan o más extremos si H0 es cierta.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Si el p-valor de tu muestra es de 0.02 y tu nivel de significancia es α = 0.05, ¿cuál es tu decisión estadística?",
+                            "options": [
+                                "No se rechaza H₀.",
+                                "Se rechaza la hipótesis nula H₀. Regra de Oro: Si p-valor <= α, se rechaza H₀.",
+                                "Se requiere repetir la recolección de datos.",
+                                "Se acepta la hipótesis nula."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Aplica la regla de decisión basada en p-valor: compáralo con el nivel α.",
+                            "feedbackCorrect": "¡Excelente! Como p-valor (0.02) <= α (0.05), se rechaza la hipótesis nula.",
+                            "feedbackIncorrect": "Incorrecto. Como 0.02 <= 0.05, se rechaza la hipótesis nula.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "Para resolver pruebas de hipótesis, comparamos el estadístico calculado $Z_{cal} = \\frac{\\bar{x} - \\mu_0}{\\sigma/\\sqrt{n}}$ con el $Z_{crit}$ de la tabla, o rechazamos $H_0$ si p-valor $\\le \\alpha$.",
+                    "videoPlaceholderText": "Video de Inferencia: Cómo resolver una prueba de hipótesis paso a paso de principio a fin."
+                }
+            ]
+        }
+    ]
+},
 
-### Lección 1.2: Función de Masa de Probabilidad
-* **Objetivo:** Diseñar y validar funciones de masa de probabilidad para variables discretas.
-* **Explicación:** La función de masa de probabilidad P(X = x) asigna una probabilidad a cada valor de una variable discreta. La suma de todas las probabilidades debe ser exactamente igual a 1, y cada una debe estar entre 0 y 1.
-* **Ejemplo Resuelto:** Valida si P(1) = 0.3, P(2) = 0.5, P(3) = 0.2 es una distribución de probabilidad válida.
-  - *Paso 1:* Verifica que cada probabilidad sea positiva y menor a 1. Sí (0.3, 0.5, 0.2 cumplen).
-  - *Paso 2:* Suma las probabilidades: 0.3 + 0.5 + 0.2 = 1.0. Cumple.
-  - *Resultado:* Es una distribución válida.
-* **Errores Comunes:** Permitir sumas mayores a 1 o probabilidades negativas en la distribución.
-* **Ejercicios de Práctica:**
-  1. Calcula la probabilidad faltante P(3) si P(1) = 0.45 y P(2) = 0.35. (R: 0.20).
-  2. ¿Es válida la distribución: P(1) = 0.6, P(2) = -0.1, P(3) = 0.5? (R: No. Hay una probabilidad negativa).
-  3. En un dado justo de 6 caras, ¿cuál es la probabilidad de que X sea menor que 3? (R: 1/3 o 33.3%).
-  4. ¿Qué es la función de distribución acumulada F(x)? (R: La función que acumula probabilidades: F(x) = P(X <= x)).
-  5. Si F(2) = 0.70 y P(3) = 0.30, ¿cuánto vale F(3)? (R: 1.00. Retroalimentación: F(3) = F(2) + P(3) = 0.70 + 0.30 = 1.00).
-* **¿Necesitas ayuda?** Construir distribuciones discretas es facilísimo si cuentas con la ayuda paso a paso de tu tutor. ¡Pruébalo hoy!
-
-### Lección 1.3: Valor Esperado y Varianza Discreta
-* **Objetivo:** Calcular la media poblacional y la varianza de una distribución discreta.
-* **Explicación:** El valor esperado (media, μ) es la suma de cada valor multiplicado por su probabilidad: E[X] = ∑ x·P(X=x). La varianza (σ²) mide la dispersión: Var[X] = ∑ x²·P(X=x) - μ².
-* **Ejemplo Resuelto:** Calcula el valor esperado de la V.A. X con P(1) = 0.40 y P(3) = 0.60.
-  - *Paso 1:* Multiplica valor por probabilidad: 1 * 0.40 = 0.4.  3 * 0.60 = 1.8.
-  - *Paso 2:* Suma los resultados: 0.4 + 1.8 = 2.2.
-  - *Resultado:* El valor esperado es 2.2.
-* **Errores Comunes:** Olvidar restar el cuadrado de la media (μ²) al calcular la varianza final.
-* **Ejercicios de Práctica:**
-  1. Si X toma los valores 0 y 10 con igual probabilidad, ¿cuál es su valor esperado? (R: 5).
-  2. Calcula el valor esperado para lanzar una moneda donde Cara vale 1 y Escudo vale 0. (R: 0.5).
-  3. Si la varianza es 4, ¿cuánto mide la desviación estándar? (R: 2).
-  4. Calcula E[X²] si X toma 2 con probabilidad 0.3 y 4 con probabilidad 0.7. (R: 12.4. Retroalimentación: 2²*0.3 + 4²*0.7 = 1.2 + 11.2 = 12.4).
-  5. ¿Qué significa un valor esperado de ganancia negativo en un casino? (R: Que el jugador perderá dinero en promedio si juega muchas veces).
-* **¿Necesitas ayuda?** El valor esperado es clave para calcular primas de seguros e inversiones. ¡Domínalo junto a tu tutor de CEDETU!
-
-## Evaluación Unidad 1
-* Se define la variable discreta X con P(0)=0.2, P(1)=0.5, P(2)=0.3. Calcula la media. (R: 1.1. Retroalimentación: μ = 0*0.2 + 1*0.5 + 2*0.3 = 1.1).
-* Con los datos anteriores, calcula la varianza. (R: 0.49. Retroalimentación: E[X²] = 0*0.2 + 1*0.5 + 4*0.3 = 1.7. Var = 1.7 - (1.1)² = 1.7 - 1.21 = 0.49).
-* ¿Cuál es la desviación estándar de la distribución anterior? (R: 0.70. Retroalimentación: √0.49 = 0.70).
-
----
-
-## Unidad 2: La Distribución Binomial
-### Lección 2.1: El Proceso de Bernoulli y la Distribución Binomial
-* **Objetivo:** Identificar si un problema real cumple con las condiciones para ser modelado mediante una distribución binomial.
-* **Explicación:** Un experimento binomial consta de n ensayos de Bernoulli independientes. Cada ensayo solo tiene dos resultados: Éxito (probabilidad p constante) o Fracaso (probabilidad q = 1 - p).
-* **Ejemplo Resuelto:** Evalúa si lanzar una moneda justa 10 veces anotando el número de caras es binomial.
-  - *Paso 1:* Hay n = 10 ensayos fijos. Sí.
-  - *Paso 2:* Solo hay dos resultados: Cara (éxito) o Escudo (fracaso). Sí.
-  - *Paso 3:* Probabilidad p = 0.50 es constante. Sí.
-  - *Paso 4:* Los lanzamientos son independientes. Sí.
-  - *Resultado:* Sí, es binomial.
-* **Errores Comunes:** Aplicar la binomial en muestreos sin reemplazo de poblaciones muy pequeñas, donde p cambia en cada extracción.
-* **Ejercicios de Práctica:**
-  1. ¿Cuál es el valor del parámetro q si p = 0.15? (R: 0.85).
-  2. ¿Cuántos resultados posibles tiene un ensayo de Bernoulli? (R: 2 resultados).
-  3. Lanzas un dado de 6 caras 8 veces. ¿Es binomial si éxito es obtener un número impar? (R: Sí, con n = 8 y p = 0.50).
-  4. ¿Qué parámetro de la binomial indica la cantidad total de repeticiones? (R: El parámetro n).
-  5. Si X ~ B(15, 0.40), ¿cuántos éxitos como máximo se pueden obtener? (R: 15 éxitos).
-* **¿Necesitas ayuda?** La distribución binomial modela desde el acierto de vacunas hasta el cierre de ventas. ¡Entiéndela junto a tu tutor!
-
-### Lección 2.2: La Fórmula Binomial
-* **Objetivo:** Calcular la probabilidad exacta de obtener k éxitos en n ensayos mediante la fórmula binomial.
-* **Explicación:** La fórmula es: P(X = k) = C(n, k) * p^k * q^(n-k), donde C(n, k) = n! / (k! * (n-k)!) es el coeficiente combinatorio.
-* **Ejemplo Resuelto:** Si la probabilidad de cerrar una venta es 80% (p = 0.80, q = 0.20), calcula la probabilidad de cerrar exactamente 2 ventas de 3 clientes independientes.
-  - *Paso 1 Coeficiente:* C(3, 2) = 3! / (2! * 1!) = 3.
-  - *Paso 2 Aplicar:* P(X = 2) = 3 * (0.80)² * (0.20)¹ = 3 * 0.64 * 0.20 = 0.384.
-  - *Resultado:* La probabilidad es 38.4%.
-* **Errores Comunes:** Calcular mal combinatorias o confundir las potencias de p y q.
-* **Ejercicios de Práctica:**
-  1. Calcula C(4, 2). (R: 6).
-  2. Lanzas 3 monedas. ¿Cuál es la probabilidad de obtener exactamente 3 caras? (R: 0.125 o 12.5%. Retroalimentación: C(3,3)*(0.5)³ = 0.125).
-  3. Si p = 0.30 y n = 3, calcula P(X = 0). (R: 0.343. Retroalimentación: 1 * (0.7)³ = 0.343).
-  4. Calcula C(5, 1). (R: 5).
-  5. Si X ~ B(3, 0.5), calcula P(X = 1). (R: 0.375).
-* **¿Necesitas ayuda?** Resolver factoriales grandes a mano es aburrido. ¡Aprende los atajos de tu calculadora con tu tutor de CEDETU!
-
-### Lección 2.3: Media y Desviación Estándar Binomial
-* **Objetivo:** Calcular la media y desviación estándar de una distribución binomial de forma directa.
-* **Explicación:** Para X ~ B(n, p):
-  - Media (Valor esperado): μ = n·p.
-  - Desviación Estándar: σ = √(n·p·q).
-* **Ejemplo Resuelto:** Si X ~ B(100, 0.20), calcula su media y desviación estándar.
-  - *Paso 1 Media:* μ = n·p = 100 * 0.20 = 20.
-  - *Paso 2 Desviación:* σ = √(100 * 0.20 * 0.80) = √16 = 4.
-  - *Resultado:* Media = 20, Desviación Estándar = 4.
-* **Errores Comunes:** Olvidar que q = 1 - p al calcular la varianza bajo el radical de la desviación estándar.
-* **Ejercicios de Práctica:**
-  1. Si X ~ B(50, 0.60), ¿cuál es su media? (R: 30).
-  2. Calcula la varianza de X ~ B(10, 0.50). (R: 2.5).
-  3. Si la media es 10 y p = 0.20, ¿cuánto vale n? (R: 50. Retroalimentación: n = μ / p = 10 / 0.20 = 50).
-  4. Calcula la desviación estándar de X ~ B(200, 0.50). (R: 7.07).
-  5. Si la varianza de una binomial es 9 y n = 100, ¿cuánto vale la desviación estándar? (R: 3. Retroalimentación: σ = √Var = √9 = 3).
-* **¿Necesitas ayuda?** La media binomial predice el resultado promedio de encuestas masivas. ¡Vuélvete un experto junto a tu tutor de CEDETU!
-
-## Evaluación Unidad 2
-* Un vendedor de Antigua contacta a 10 clientes potenciales al día. Si la tasa de éxito es 30% (p = 0.30), calcula el promedio esperado de ventas y la probabilidad de hacer exactamente 2 ventas. (R: Media μ = 3.0 ventas; Probabilidad P(X=2) ≈ 0.233. Retroalimentación: μ = 10 * 0.30 = 3.0. P(X=2) = C(10,2)*(0.30)²*(0.70)⁸ = 45 * 0.09 * 0.0576 ≈ 0.233).
-* Si X ~ B(40, 0.25), calcula la varianza. (R: 7.5. Retroalimentación: 40 * 0.25 * 0.75 = 7.5).
-* Si la media de una variable binomial es 15 y n = 30, ¿cuál es la probabilidad de éxito p? (R: 0.50).
-
----
-
-## Unidad 3: La Distribución Normal
-### Lección 3.1: Características de la Distribución Normal
-* **Objetivo:** Comprender las propiedades teóricas de la curva de distribución normal y la regla empírica.
-* **Explicación:** La distribución normal modela variables continuas simétricas. Su curva tiene forma de campana (Gauss). La media, mediana y moda coinciden en el centro. El área total es exactamente 1 (100%).
-  - **Regla Empírica:** ±1σ contiene 68.2%, ±2σ contiene 95.4%, ±3σ contiene 99.7% de los datos.
-* **Ejemplo Resuelto:** El peso medio de unos sacos en Xela es 80 kg con σ = 5 kg. ¿Entre qué pesos cae el 68.2% central de los sacos?
-  - *Paso 1:* El 68.2% corresponde a ±1 desviación estándar de la media (μ ± σ).
-  - *Paso 2:* Límite inferior = 80 - 5 = 75 kg. Límite superior = 80 + 5 = 85 kg.
-  - *Resultado:* Entre 75 kg y 85 kg.
-* **Errores Comunes:** Creer que la curva normal toca el eje X en algún punto, cuando es asintótica y se extiende infinitamente.
-* **Ejercicios de Práctica:**
-  1. ¿Qué porcentaje de datos cae por encima de la media en una distribución normal? (R: 50%).
-  2. ¿Qué medida define el centro de la campana de Gauss? (R: La media poblacional (μ)).
-  3. Si la media es 100 y σ = 15, ¿cuál es el rango para el 99.7% central de los datos? (R: [55, 145]).
-  4. ¿Cuál es el área total bajo la curva normal de densidad de probabilidad? (R: 1.00).
-  5. ¿Qué define el ancho o dispersión de la campana de Gauss? (R: La desviación estándar (σ)).
-* **¿Necesitas ayuda?** La distribución normal es el modelo de la naturaleza por excelencia. ¡Aprende a interpretarla con tu tutor!
-
-### Lección 3.2: Tipificación y Puntajes Z
-* **Objetivo:** Transformar una variable normal general X a la normal estándar Z.
-* **Explicación:** Para comparar e interpretar cualquier variable normal, restamos su media y dividimos entre su desviación estándar (tipificación): Z = (X - μ) / σ. Esto nos da un puntaje Z en la distribución estándar Z ~ N(0, 1).
-* **Ejemplo Resuelto:** Una nota de examen tiene μ = 60 y σ = 8. Si obtienes 76 puntos, calcula tu puntaje Z.
-  - *Paso 1:* Aplica la fórmula: Z = (X - μ) / σ.
-  - *Paso 2:* Z = (76 - 60) / 8 = 16 / 8 = 2.00.
-  - *Resultado:* Tu puntaje Z es 2.00 (estás a 2 desviaciones sobre la media).
-* **Errores Comunes:** Restar al revés (μ - X), lo que altera el signo del puntaje Z obtenido.
-* **Ejercicios de Práctica:**
-  1. Calcula Z si X = 45, μ = 50 y σ = 5. (R: -1.00).
-  2. Si Z = 0, ¿qué nos indica sobre el valor de X con respecto a la media? (R: Que X es exactamente igual a la media).
-  3. Calcula el valor original X si Z = 1.5, μ = 100 y σ = 10. (R: 115. Retroalimentación: X = 100 + 1.5*10 = 115).
-  4. ¿Cuál es la media de la distribución normal estándar Z? (R: 0).
-  5. Calcula el puntaje Z para X = 120 si μ = 100 y σ = 15. (R: 1.33).
-* **¿Necesitas ayuda?** La tipificación es fundamental para comparar exámenes y datos reales. ¡Domínala al instante con tu tutor de CEDETU!
-
-### Lección 3.3: Uso de Tablas Normales y Cálculo de Áreas
-* **Objetivo:** Calcular áreas bajo la curva normal estándar utilizando la tabla Z.
-* **Explicación:** La tabla Z entrega el área a la izquierda del puntaje: P(Z <= z). Para mayor que usamos complemento: 1 - P(Z <= z). Para el área entre dos puntos restamos áreas: P(Z <= b) - P(Z <= a).
-* **Ejemplo Resuelto:** Si la tabla Z indica que para z = 1.00 el área es 0.8413, calcula P(Z > 1.00).
-  - *Paso 1:* Aplica complemento para mayor que: P(Z > 1.00) = 1 - P(Z <= 1.00).
-  - *Paso 2:* 1 - 0.8413 = 0.1587.
-  - *Resultado:* La probabilidad es 0.1587 o 15.87%.
-* **Errores Comunes:** Confundir menor que con mayor que y olvidar restar el complemento de la tabla Z.
-* **Ejercicios de Práctica:**
-  1. Calcula P(Z <= 0.00) usando simetría. (R: 0.5000).
-  2. Si P(Z <= 1.96) = 0.9750 y P(Z <= -1.96) = 0.0250, calcula P(-1.96 <= Z <= 1.96). (R: 0.9500 o 95%).
-  3. Si la tabla Z indica P(Z <= 2.00) = 0.9772, calcula P(Z > 2.00). (R: 0.0228).
-  4. Calcula P(Z <= -1.00) usando simetría si P(Z <= 1.00) = 0.8413. (R: 0.1587. Retroalimentación: P(Z <= -1) = P(Z >= 1) = 1 - 0.8413 = 0.1587).
-  5. ¿A cuántas desviaciones estándar corresponde el área del 95% central aproximado? (R: ±1.96 desviaciones estándar).
-* **¿Necesitas ayuda?** Aprender a leer la tabla Z es indispensable en estadística y ciencias. ¡Consolídalo paso a paso junto a tu tutor de CEDETU!
-
-## Evaluación Unidad 3
-* Los tiempos de entrega de un restaurante de Antigua se distribuyen de forma normal con una media de 30 minutos y σ = 5 minutos. ¿Cuál es la probabilidad de que un pedido tarde menos de 20 minutos? (Dato de tabla: P(Z <= -2.00) = 0.0228). (R: 0.0228 o 2.28%. Retroalimentación: Z = (20-30)/5 = -2.00. P(Z <= -2) = 0.0228).
-* Con los datos anteriores, ¿cuál es la probabilidad de que tarde más de 35 minutos? (Dato: P(Z <= 1.00) = 0.8413). (R: 0.1587 o 15.87%. Retroalimentación: Z = (35-30)/5 = 1.00. P(Z > 1) = 1 - 0.8413 = 0.1587).
-* ¿Qué valor de Z corresponde a un área acumulada de exactamente 0.5000 a la izquierda? (R: Z = 0.00).
-`,
-
-    "inferencia-estadistica": `# Curso: Inferencia Estadística Básica
-* **Materia:** Matemáticas | **Nivel sugerido:** Universidad
-* **Público objetivo:** Estudiantes de nivel universitario que desean comprender cómo realizar afirmaciones, estimaciones e hipótesis válidas sobre poblaciones basándose en muestras.
-* **Objetivos de aprendizaje:** Comprender el Teorema del Límite Central y las distribuciones muestrales, calcular intervalos de confianza para la media con Z, y formular y resolver pruebas de hipótesis de una y dos colas.
-
-## Unidad 1: Distribuciones Muestrales y el Teorema del Límite Central
-### Lección 1.1: Muestras y Distribución de Medias
-* **Objetivo:** Definir el concepto de distribución muestral de medias y comprender la variabilidad de muestras repetidas de una población.
-* **Explicación:** En la realidad no mides a toda la población; tomas muestras. Si tomaras infinitas muestras del mismo tamaño $n$ y calcularas el promedio ($ar{x}$) de cada una, esos promedios formarían su propia distribución, llamada **distribución muestral de medias**.
-* **Ejemplo Resuelto:** Si la media de estatura de toda Guatemala es $mu = 1.65$ m, y tomamos 50 muestras de tamaño $n=40$ alumnos, ¿alrededor de qué valor se centrarán los promedios de estas muestras?
-  - *Paso 1:* Por definición, la media de la distribución muestral de medias ($mu_{ar{x}}$) es exactamente igual a la media poblacional ($mu$).
-  - *Resultado:* Se centrarán exactamente en $1.65$ metros.
-* **Errores Comunes:** Pensar que el promedio de una sola muestra pequeña debe ser exactamente igual al promedio de la población entera, olvidando el error de muestreo.
-* **Ejercicios de Práctica:**
-  1. ¿Cómo se le llama a la diferencia entre el estadístico de una muestra y el parámetro de la población? (R: Error de muestreo).
-  2. Si la media poblacional es 80, ¿cuál es el valor esperado de la media muestral? (R: 80).
-  3. ¿Qué ocurre con la variabilidad de las medias de muestras a medida que tomamos muestras de mayor tamaño? (R: Disminuye, las medias se concentran más cerca de la media real).
-  4. ¿Es la media muestral un estimador insesgado de la media poblacional? (R: Sí. Su valor esperado es igual al parámetro).
-  5. ¿Cómo se denota matemáticamente la media de la distribución muestral de medias? (R: μ_x̄).
-* **¿Necesitas ayuda?** Las distribuciones muestrales son el puente entre el dato que mides y la verdad poblacional. ¡Acláralo con tu tutor de CEDETU!
-
-### Lección 1.2: El Teorema del Límite Central (TLC)
-* **Objetivo:** Explicar el Teorema del Límite Central y calcular el error estándar de la media.
-* **Explicación:** El TLC establece que, para cualquier población con media $mu$ y desviación $sigma$, la distribución de medias de muestras grandes ($n ge 30$) será aproximadamente normal, con media $mu_{ar{x}} = mu$ y desviación estándar (error estándar de la media) igual a $sigma_{ar{x}} = sigma / sqrt{n}$.
-* **Ejemplo Resuelto:** Un comerciante de Antigua tiene paquetes de café con desviación estándar $sigma = 24$ gramos. Si se toma una muestra de 36 paquetes, calcula el error estándar de la media.
-  - *Paso 1:* Aplica la fórmula: $sigma_{ar{x}} = sigma / sqrt{n}$.
-  - *Paso 2:* $sigma_{ar{x}} = 24 / sqrt{36} = 24 / 6 = 4$ gramos.
-  - *Resultado:* El error estándar de la media es de 4 gramos.
-* **Errores Comunes:** Dividir entre la muestra $n$ directamente en lugar de dividir por su raíz cuadrada $sqrt{n}$ al aplicar la fórmula.
-* **Ejercicios de Práctica:**
-  1. ¿Cuál es el tamaño mínimo sugerido de muestra para aplicar el TLC si la población original no es normal? (R: n >= 30).
-  2. Si la desviación poblacional es 10 y n = 100, calcula el error estándar de la media. (R: 1. Retroalimentación: 10 / √100 = 10/10 = 1).
-  3. ¿Qué le ocurre al error estándar de la media si cuadruplicamos el tamaño de la muestra? (R: Se reduce a la mitad. Retroalimentación: √4 = 2 en el denominador).
-  4. Si la población es originalmente normal, ¿se requiere n >= 30 para que la distribución de medias sea normal? (R: No. Si la población es normal, la distribución muestral es perfectamente normal para cualquier tamaño de muestra n).
-  5. Calcula el error estándar si σ = 15 y n = 25. (R: 3. Retroalimentación: 15 / √25 = 15 / 5 = 3).
-* **¿Necesitas ayuda?** El TLC permite usar la campana de Gauss incluso en poblaciones sesgadas o no normales. ¡Entiende su magia junto a tu tutor!
-
-### Lección 1.3: Aplicaciones de la Distribución Muestral
-* **Objetivo:** Calcular la probabilidad de que una media muestral caiga dentro de un rango específico aplicando la tipificación de medias $Z = (ar{x} - mu) / (sigma/sqrt{n})$.
-* **Explicación:** Para calcular probabilidades sobre promedios de grupos (medias muestrales), usamos la fórmula de tipificación adaptada con el error estándar en el denominador:
-  $Z = rac{ar{x} - mu}{sigma / sqrt{n}}$
-* **Ejemplo Resuelto:** Una población tiene $mu = 100$ y $sigma = 15$. Si tomamos una muestra de $n = 25$ personas, calcula la probabilidad de que la media de la muestra sea mayor a 106. (Dato: P(Z <= 2.00) = 0.9772).
-  - *Paso 1 Error Estándar:* $sigma_{ar{x}} = 15 / sqrt{25} = 15 / 5 = 3$.
-  - *Paso 2 Tipificar:* $Z = (106 - 100) / 3 = 6 / 3 = 2.00$.
-  - *Paso 3 Probabilidad mayor que:* $P(ar{x} > 106) = P(Z > 2.00) = 1 - 0.9772 = 0.0228$.
-  - *Resultado:* La probabilidad es de 0.0228 o 2.28%.
-* **Errores Comunes:** Usar la desviación estándar simple $sigma$ en lugar del error estándar $sigma / sqrt{n}$ al tipificar la media.
-* **Ejercicios de Práctica:**
-  1. Si μ = 50, σ = 8 y n = 16, calcula el puntaje Z para una media muestral x̄ = 52. (R: 1.00. Retroalimentación: Error estándar = 8/√16 = 2. Z = (52-50)/2 = 1.00).
-  2. ¿Qué probabilidad hay de obtener un promedio muestral menor o igual a la media poblacional? (R: 0.5000 o 50% por simetría).
-  3. Si n = 36, σ = 12, calcula el puntaje Z para x̄ = 46 si la media poblacional es μ = 50. (R: -2.00).
-  4. ¿Por qué es mucho más difícil encontrar una muestra de 100 personas con un promedio extremo que encontrar a una sola persona con ese valor extremo? (R: Porque las variaciones individuales se promedian y cancelan entre sí en grupos grandes, reduciendo el error estándar).
-  5. Si Z calculado para una media muestral es 0, ¿cuánto vale dicha media muestral? (R: Exactamente igual al promedio poblacional μ).
-* **¿Necesitas ayuda?** La tipificación de medias es vital para el control estadístico de procesos industriales. ¡Asegura tu comprensión con tu tutor de CEDETU!
-
-## Evaluación Unidad 1
-* El peso medio de las naranjas en un huerto es de 200 gramos con una desviación estándar de 16 gramos. Si se selecciona una muestra aleatoria de 64 naranjas, calcula el error estándar de la media de esta muestra y la probabilidad de que su peso promedio sea menor a 196 gramos. (Dato: P(Z <= -2.00) = 0.0228). (R: Error estándar = 2 gramos; Probabilidad = 0.0228 o 2.28%. Retroalimentación: σ_x̄ = 16 / √64 = 2 g. Z = (196 - 200) / 2 = -4 / 2 = -2.00. P(Z <= -2) = 0.0228).
-* Si el tamaño de la muestra de naranjas del ejercicio anterior se reduce a 16, ¿cuál es el nuevo error estándar? (R: 4 gramos. Retroalimentación: 16 / √16 = 4).
-* ¿Qué nos indica el Teorema del Límite Central sobre la forma de la distribución muestral a medida que el tamaño de la muestra crece? (R: Que la forma de la distribución se aproxima cada vez más a una curva normal simétrica).
-
----
-
-## Unidad 2: Intervalos de Confianza
-### Lección 2.1: Estimación Puntual y Margen de Error
-* **Objetivo:** Comprender la definición de estimación puntual y calcular el margen de error para estimar parámetros.
-* **Explicación:** Una **estimación puntual** es un único número que estima un parámetro poblacional (ej. la media de la muestra $ar{x}$ estima a la media poblacional $mu$). Un **intervalo de confianza** añade un **margen de error (E)** a esa estimación para dar un rango de seguridad: $ar{x} pm E$. El margen de error depende del nivel de confianza (Z crítico) y de la desviación de los datos:
-  $E = Z_{alpha/2} left( rac{sigma}{sqrt{n}} ight)$.
-* **Ejemplo Resuelto:** Un analista político entrevista a 100 votantes en Xela. La media de edad de la muestra es de 35 años, y se calcula un margen de error de 2 años. Construye el intervalo de confianza.
-  - *Paso 1:* Identifica la estimación puntual: $ar{x} = 35$ años.
-  - *Paso 2:* Resta y suma el margen de error: Límite inferior = 35 - 2 = 33; Límite superior = 35 + 2 = 37.
-  - *Resultado:* El intervalo de confianza es [33, 37] años.
-* **Errores Comunes:** Confundir estimación puntual (un valor único) con estimación por intervalo (un rango).
-* **Ejercicios de Práctica:**
-  1. ¿Cuál es el estimador puntual más común de la media poblacional μ? (R: La media muestral (x̄)).
-  2. Si el intervalo de confianza es [45, 55], ¿cuál fue la estimación puntual media de la muestra? (R: 50. Retroalimentación: El punto medio del intervalo).
-  3. Con los datos anteriores, ¿cuánto vale el margen de error utilizado? (R: 5. Retroalimentación: La mitad del ancho del intervalo).
-  4. ¿Qué parámetro de confianza se asocia comúnmente con un margen de error menor y más estrecho manteniendo los datos fijos? (R: Un menor nivel de confianza, como 90% en lugar de 95%).
-  5. Si aumentamos la variabilidad de la población (σ mayor), ¿qué le ocurre al margen de error? (R: Aumenta, la estimación se vuelve menos precisa).
-* **¿Necesitas ayuda?** El margen de error es el dato clave que define el rigor de cualquier encuesta científica. ¡Domina su cálculo junto a tu tutor de CEDETU!
-
-### Lección 2.2: Construcción de Intervalos de Confianza para la Media
-* **Objetivo:** Construir intervalos de confianza para la media poblacional con desviación conocida para niveles del 95% y 99%.
-* **Explicación:** 
-  - Para el 95% de confianza, usamos $Z = 1.96$ (deja 2.5% libre en cada cola de la campana).
-  - Para el 99% de confianza, usamos $Z = 2.58$ (deja 0.5% en cada cola).
-  - La fórmula es: $	ext{I.C.} = ar{x} pm Z left( rac{sigma}{sqrt{n}} ight)$.
-* **Ejemplo Resuelto:** En Antigua, una muestra de $n = 64$ hogares consume en promedio $ar{x} = 12$ litros de leche a la semana. Si sabemos que la desviación poblacional es $sigma = 2$ litros, construye un intervalo de confianza del 95% para la media de consumo de toda la ciudad.
-  - *Paso 1 Margen de Error:* $E = 1.96 	imes (2 / sqrt{64}) = 1.96 	imes (2 / 8) = 1.96 	imes 0.25 = 0.49$.
-  - *Paso 2 Límites:* Límite inferior = 12 - 0.49 = 11.51; Límite superior = 12 + 0.49 = 12.49.
-  - *Resultado:* El I.C. del 95% es [11.51, 12.49] litros semanales.
-* **Errores Comunes:** Usar el valor crítico Z equivocado (ej. usar 1.96 para el 99% de confianza por prisa o distracción).
-* **Ejercicios de Práctica:**
-  1. Construye el I.C. del 99% si x̄ = 100, σ = 10, n = 100. (R: [97.42, 102.58]. Retroalimentación: E = 2.58 * 10 / 10 = 2.58).
-  2. ¿Cuál es el valor crítico Z para un intervalo de confianza del 90%? (R: 1.645).
-  3. Si construyes un intervalo del 95% [10.2, 14.8] y el cliente te pide un intervalo del 99% con los mismos datos, ¿será este más ancho o más estrecho? (R: Más ancho. Para tener mayor seguridad (99%), el rango estimado debe expandirse).
-  4. Calcula el margen de error para un I.C. del 95% si σ = 6 y n = 36. (R: 1.96. Retroalimentación: 1.96 * 6/6 = 1.96).
-  5. ¿Qué ocurre con el intervalo si mantenemos n = 100, σ = 10 pero reducimos la confianza al 0%? (R: Se reduce a un solo punto, que coincide exactamente con la media muestral x̄).
-* **¿Necesitas ayuda?** Construir intervalos de confianza a mano es una de las mayores exigencias de los exámenes universitarios de estadística. ¡Pide ayuda a tu tutor hoy!
-
-### Lección 2.3: Interpretación de los Intervalos de Confianza
-* **Objetivo:** Interpretar de forma analítica y precisa el significado de un intervalo de confianza en reportes científicos y encuestas sociales reales.
-* **Explicación:** Un intervalo de confianza no indica la probabilidad de que una observación individual esté dentro de él. Significa que si repitiéramos el muestreo muchas veces, el 95% (o 99%) de los intervalos construidos de esa forma contendrían el verdadero parámetro poblacional real $mu$.
-* **Ejemplo Resuelto:** Una encuesta electoral en Guatemala reporta un apoyo a una propuesta de ley con un I.C. del 95% de [48%, 52%]. ¿Significa que la propuesta tiene asegurada la mayoría de votos?
-  - *Paso 1:* El intervalo abarca valores tanto menores al 50% (como 48%) como mayores al 50% (como 52%).
-  - *Paso 2:* No podemos afirmar con 95% de seguridad que el apoyo real sea mayor al 50%.
-  - *Resultado:* No. Hay un "empate técnico" estadístico y el resultado no es concluyente con respecto a la mayoría absoluta.
-* **Errores Comunes:** Decir que "hay un 95% de probabilidad de que la media real esté entre A y B". Una vez calculado el intervalo con números fijos, el parámetro real está o no está dentro de él (la probabilidad es 0 o 1). Lo que tiene probabilidad de 95% es el *método de construcción* de intervalos aleatorios.
-* **Ejercicios de Práctica:**
-  1. ¿Qué parámetro poblacional estamos estimando al construir el intervalo x̄ ± E? (R: La media poblacional real (μ)).
-  2. Si reportas que la media de notas en Antigua está en [72, 78] con 95% de confianza, ¿dónde estimas que está el promedio real de toda la población de alumnos? (R: Entre 72 y 78 puntos).
-  3. Si un analista dice: "El 95% de todos los alumnos obtuvieron notas entre 72 y 78", ¿es correcta esta interpretación del intervalo de confianza de la media? (R: No. Eso describe la dispersión individual, no estima el promedio de la población).
-  4. ¿Qué significa un nivel de significancia de α = 0.05 en el contexto de intervalos de confianza? (R: Representa el 5% de riesgo restante de que nuestro intervalo sea uno de los pocos desafortunados que no contienen la media real poblacional).
-  5. ¿Es posible tener 100% de confianza en estadística sin abarcar todo el espacio muestral de valores posibles (-infinito a +infinito)? (R: No. Para tener el 100% de certeza absoluta, el rango de estimación tendría que abrirse infinitamente, lo cual anula su utilidad práctica).
-* **¿Necesitas ayuda?** La correcta interpretación de intervalos diferencia a un simple técnico de un verdadero analista científico. ¡Perfecciónala con tu tutor de CEDETU!
-
-## Evaluación Unidad 2
-* Se toma una muestra de 100 bolsas de abono en Sololá y se encuentra una media de 50 lb. Si la desviación poblacional es σ = 5 lb, construye un I.C. del 95% para estimar el peso real promedio de todo el lote de abono de la fábrica. (R: I.C. del 95% = [49.02, 50.98] libras. Retroalimentación: E = 1.96 * 5 / √100 = 1.96 * 0.5 = 0.98 lb. Límites = 50 ± 0.98 = [49.02, 50.98]).
-* Si el cliente te pide reducir el margen de error a la mitad (E = 0.49 lb) manteniendo el 95% de confianza y la desviación constante, ¿qué tamaño de muestra n necesitas? (R: n = 400. Retroalimentación: Para reducir el error a la mitad, la muestra debe cuadruplicarse: 100 * 4 = 400).
-* ¿Es el margen de error de un intervalo de confianza mayor para el 99% que para el 95% de confianza con los mismos datos? (R: Sí. Al subir el nivel de seguridad exigido, el valor crítico Z aumenta de 1.96 a 2.58, lo que incrementa el margen de error).
-
----
-
-## Unidad 3: Pruebas de Hipótesis Introductorias
-### Lección 3.1: Hipótesis Nula y Alternativa
-* **Objetivo:** Formular la hipótesis nula ($H_0$) y alternativa ($H_1$) para pruebas de una y dos colas a partir de enunciados lógicos reales.
-* **Explicación:** 
-  - **Hipótesis Nula ($H_0$):** Afirma que no hay cambios, diferencias o efectos. Contiene siempre el signo de igualdad ($=$, $le$, $ge$). Se asume verdadera hasta que los datos demuestren lo contrario.
-  - **Hipótesis Alternativa ($H_1$):** La afirmación que el investigador busca demostrar o probar. Contiene signos de desigualdad ($
-e$, $<$, $>$).
-* **Ejemplo Resuelto:** Un fabricante de focos en Escuintla afirma que sus focos duran en promedio $1,000$ horas ($H_0: mu = 1,000$ h). Un comprador corporativo sospecha que la duración real es menor a la anunciada. Plantea las hipótesis.
-  - *Paso 1 Hipótesis Nula:* Representa el estatus quo o afirmación oficial: $H_0: mu = 1,000$ horas.
-  - *Paso 2 Hipótesis Alternativa:* Refleja la sospecha del comprador (menor que): $H_1: mu < 1,000$ horas. (Prueba de una cola a la izquierda).
-  - *Resultado:* $H_0: mu = 1,000$ h, $H_1: mu < 1,000$ h.
-* **Errores Comunes:** Colocar la desigualdad ($<$, $>$, o $
-e$) en la hipótesis nula, lo que invalida el diseño probabilístico de la prueba de significancia.
-* **Ejercicios de Práctica:**
-  1. Formula H₁ si H₀ es μ = 80 y el investigador sospecha que el promedio real es diferente de 80. (R: H₁: μ ≠ 80).
-  2. ¿Qué tipo de prueba de hipótesis (de una o dos colas) se plantea si la hipótesis alternativa es H₁: μ > 50? (R: Prueba de una cola a la derecha).
-  3. Formula las hipótesis si un tutor en Antigua afirma que su método intensivo aumenta la nota promedio de matemáticas por encima de 85 puntos. (R: H₀: μ = 85, H₁: μ > 85).
-  4. ¿Por qué se asume que la hipótesis nula es verdadera al inicio de una prueba? (R: Por el principio de presunción de inocencia científica; se requiere evidencia sólida para poder descartar el estatus quo).
-  5. Si planteas una prueba de dos colas con H₁: μ ≠ 100, ¿en qué partes de la campana se localiza la zona de rechazo? (R: En ambos extremos o colas de la distribución, dividiendo el nivel de significancia α/2 en cada una).
-* **¿Necesitas ayuda?** Formular las hipótesis correctamente es el 50% del éxito en cualquier problema de inferencia. ¡Aprende a plantearlas con tu tutor de CEDETU!
-
-### Lección 3.2: Error Tipo I, Error Tipo II y Nivel de Significancia
-* **Objetivo:** Definir y diferenciar de forma analítica el Error Tipo I, Error Tipo II y el nivel de significancia $alpha$.
-* **Explicación:** 
-  - **Error Tipo I ($alpha$):** Rechazar la hipótesis nula $H_0$ cuando en realidad es verdadera (Falso Positivo). La probabilidad máxima permitida se fija mediante el **nivel de significancia ($alpha$)** (ej. $alpha = 0.05$).
-  - **Error Tipo II ($eta$):** No rechazar la hipótesis nula $H_0$ cuando en realidad es falsa y el cambio sí existe (Falso Negativo).
-  - La **Potencia de la prueba ($1-eta$)** es la probabilidad de rechazar $H_0$ correctamente cuando es falsa.
-* **Ejemplo Resuelto:** Un tribunal de justicia penal en Guatemala debe juzgar a un acusado. Formula la hipótesis nula e interpreta los Errores Tipo I y II.
-  - *Paso 1 Hipótesis Nula:* El acusado es inocente ($H_0$).
-  - *Paso 2 Error Tipo I:* Declarar culpable al acusado cuando en realidad es inocente (Falso Positivo, un inocente a la cárcel).
-  - *Paso 3 Error Tipo II:* Declarar libre e inocente al acusado cuando en realidad es culpable (Falso Negativo, un criminal libre).
-  - *Resultado:* El Error Tipo I es encarcelar a un inocente; el Error Tipo II es dejar libre a un culpable.
-* **Errores Comunes:** Pensar que podemos reducir a cero ambos errores al mismo tiempo; al reducir $alpha$ (riesgo de Error Tipo I), aumenta automáticamente $eta$ (riesgo de Error Tipo II) para una muestra fija.
-* **Ejercicios de Práctica:**
-  1. ¿Cuál es el nivel de significancia α más utilizado en la investigación científica y médica escolar? (R: α = 0.05 o 5%).
-  2. Si aumentamos el tamaño de la muestra n en un experimento, ¿qué le ocurre a la probabilidad de cometer Error Tipo II? (R: Disminuye, lo que aumenta la potencia y sensibilidad de la prueba).
-  3. ¿Cómo se define formalmente la potencia de una prueba de hipótesis? (R: La probabilidad de rechazar correctamente la hipótesis nula cuando es falsa (1 - β)).
-  4. En un control de calidad en Antigua, rechazas un lote excelente creyendo que está defectuoso por un error en la muestra. ¿Qué error cometiste? (R: Error Tipo I o riesgo del productor).
-  5. Si el nivel de significancia se fija en 1% (α = 0.01), ¿cuál es la probabilidad máxima permitida de cometer un Error Tipo I? (R: 1%).
-* **¿Necesitas ayuda?** La teoría de errores es crucial para tomar decisiones médicas e industriales libres de riesgos catastróficos. ¡Compréndela perfectamente con tu tutor de CEDETU!
-
-### Lección 3.3: Regla de Decisión y Zona de Rechazo con Z
-* **Objetivo:** Resolver pruebas de hipótesis para la media calculando el estadístico Z y comparándolo con el valor Z crítico para decidir si se rechaza $H_0$.
-* **Explicación:** Para resolver una prueba de hipótesis:
-  1. Planteamos $H_0$ y $H_1$. Elegimos el nivel de significancia $alpha$.
-  2. Identificamos el valor Z crítico que delimita la zona de rechazo (ej. para $alpha = 0.05$ de una cola a la derecha, $Z_{	ext{crítico}} = 1.645$).
-  3. Calculamos el **Z calculado ($Z_{	ext{cal}}$)** a partir de la muestra: $Z_{	ext{cal}} = rac{ar{x} - mu_0}{sigma/sqrt{n}}$.
-  4. Si $Z_{	ext{cal}}$ cae en la zona de rechazo (es decir, $Z_{	ext{cal}} ge 1.645$ para una cola derecha), **rechazamos $H_0$**. De lo contrario, no la rechazamos.
-* **Ejemplo Resuelto:** Un fabricante de Sololá afirma que sus sacos de abono pesan $100 	ext{ lb}$ ($sigma = 4 	ext{ lb}$). Un inspector mide una muestra de $n = 64$ sacos y encuentra un promedio de $ar{x} = 99 	ext{ lb}$. Realice la prueba con $alpha = 0.05$ para ver si los sacos vienen incompletos ($H_1: mu < 100$ lb). (Dato: $Z_{	ext{crítico}} = -1.645$ para cola izquierda).
-  - *Paso 1 Ecuaciones:* $H_0: mu = 100$ lb vs. $H_1: mu < 100$ lb.
-  - *Paso 2 Calcular Z estadístico:*
-    $Z_{	ext{cal}} = rac{99 - 100}{4 / sqrt{64}} = rac{-1}{4 / 8} = rac{-1}{0.5} = -2.00$.
-  - *Paso 3 Comparar con Crítico:* El valor $Z_{	ext{cal}} = -2.00$ es menor que el valor límite crítico $Z_{	ext{crítico}} = -1.645$ (cae en la zona de rechazo de la cola izquierda).
-  - *Resultado:* Se rechaza la hipótesis nula $H_0$. Concluimos con un 95% de seguridad que los sacos vienen incompletos y el fabricante miente.
-* **Errores Comunes:** Comparar el valor absoluto de Z sin considerar los signos negativos en las pruebas de una cola izquierda, cometiendo errores de conclusión.
-* **Ejercicios de Práctica:**
-  1. Si Z calculado es 1.50 y el Z crítico para una cola a la derecha es 1.645, ¿cuál es tu decisión estadística? (R: No se rechaza la hipótesis nula H₀. 1.50 < 1.645).
-  2. ¿Cuál es el Z crítico necesario para una prueba de dos colas con α = 0.05? (R: Z = ±1.96).
-  3. Si calculas un Z de -3.20 en una prueba de dos colas con α = 0.05 (Z crítico = ±1.96), ¿cuál es tu conclusión? (R: Se rechaza la hipótesis nula. -3.20 cae en la zona extrema de rechazo izquierda).
-  4. ¿Cómo se define formalmente el "p-valor" de una prueba de hipótesis? (R: La probabilidad de obtener un resultado muestral tan extremo o más extremo que el observado, asumiendo que la hipótesis nula es verdadera).
-  5. Si p-valor = 0.02 y tu nivel de significancia es α = 0.05, ¿cuál es la decisión? (R: Se rechaza la hipótesis nula. Regla: si p-valor <= α, se rechaza H₀).
-* **¿Necesitas ayuda?** Las pruebas de hipótesis con Z son la clave para aprobar tus cursos de estadística universitaria con excelencia. ¡Consigue tus mejores notas entrenando con tu tutor de CEDETU!
-
-## Evaluación Unidad 3
-* Un analista de calidad en Antigua quiere evaluar si una máquina llena botellas con un volumen promedio diferente de 500 ml. Si sabemos que la desviación es σ = 10 ml y se toma una muestra de n = 25 botellas que da un promedio de x̄ = 505 ml, realice la prueba con α = 0.05. (Z crítico = ±1.96). (R: Se rechaza H₀. Concluimos que el promedio es significativamente diferente de 500 ml. Retroalimentación: Error estándar = 10 / √25 = 2. Z_cal = (505 - 500) / 2 = 5 / 2 = 2.50. Como 2.50 > 1.96, se rechaza H₀).
-* Con el ejercicio anterior, si Z calculado hubiera dado 1.80, ¿cuál sería la decisión? (R: No se rechaza H₀. 1.80 está dentro del rango de aceptación [-1.96, 1.96]).
-* ¿Qué significa que un resultado sea "estadísticamente significativo" en una prueba? (R: Que la diferencia observada es demasiado grande como para atribuirse al simple azar, lo que obliga a rechazar la hipótesis de no cambio H₀).
-
----
-
-## Unidad 4: Regresión Lineal Simple
-### Lección 5.1: Diagramas de Dispersión y Coeficiente de Pearson
-* **Objetivo:** Graficar la relación entre dos variables en diagramas de dispersión y calcular e interpretar la fuerza del coeficiente de correlación r de Pearson.
-* **Explicación:** Un diagrama de dispersión representa gráficamente la relación entre una variable explicativa x y otra dependiente y.
-  - El **Coeficiente de Pearson ($r$)** mide el grado de asociación lineal. Su valor fluctúa estrictamente entre -1 y 1. Un valor cercano a 1 o -1 indica una relación lineal muy fuerte; cercano a 0 indica que no hay relación lineal.
-* **Ejemplo Resuelto:** Un profesor en Antigua recopila horas semanales de estudio (x) y notas de matemáticas (y) de 5 alumnos: (2, 60), (4, 70), (6, 80), (8, 90), (10, 100). Calcula r e interpreta.
-  - *Paso 1:* Grafica los puntos. Muestran una línea perfecta ascendente.
-  - *Paso 2:* Dado que los aumentos de y son perfectamente proporcionales al aumento de x, el coeficiente de correlación de Pearson es r = 1.00.
-  - *Resultado:* Correlación lineal positiva perfecta.
-* **Errores Comunes:** Concluir de forma precipitada que porque r es alto, una variable causa la otra (correlación no es causalidad).
-* **Ejercicios de Práctica:**
-  1. ¿Qué tipo de relación mide el coeficiente de Pearson r? (R: Únicamente la relación de tipo lineal).
-  2. Si r = -0.92, ¿cómo se describe la relación entre ambas variables? (R: Relación lineal negativa o inversa muy fuerte).
-  3. Lógicamente, ¿qué tipo de correlación esperas encontrar entre la velocidad de un carro y el tiempo de viaje? (R: Correlación negativa o inversa).
-  4. ¿Qué valor tiene el coeficiente de Pearson si no existe ninguna relación lineal entre las variables? (R: 0.00).
-  5. ¿Se puede aplicar la correlación de Pearson a variables cualitativas nominales (como color favorito)? (R: No. Exige estrictamente variables cuantitativas numéricas).
-* **¿Necesitas ayuda?** Los diagramas de dispersión permiten detectar patrones ocultos de consumo en los negocios. ¡Visualízalos con ayuda de tu tutor de CEDETU!
-
-### Lección 5.2: La Ecuación de la Recta de Mínimos Cuadrados
-* **Objetivo:** Calcular e interpretar la ecuación de la recta de regresión ŷ = mx + b por mínimos cuadrados.
-* **Explicación:** La regresión lineal simple calcula la recta que minimiza los errores de predicción.
-  - **Pendiente (m):** El cambio promedio esperado en y por cada unidad que aumenta x.
-  - **Ordenada al origen (b):** El valor promedio esperado de y cuando x es exactamente cero.
-* **Ejemplo Resuelto:** Una recta de regresión estima el rendimiento de maíz en Tecpán: ŷ = 0.05x + 1.2, donde x es el abono aplicado en kg. Interpreta m y b.
-  - *Paso 1 m = 0.05:* Por cada kg adicional de abono, el rendimiento aumenta en promedio 0.05 toneladas.
-  - *Paso 2 b = 1.2:* Si no aplicas abono (x = 0), el rendimiento natural esperado es de 1.2 toneladas.
-  - *Resultado:* Interpretación física y contextualizada completada con éxito.
-* **Errores Comunes:** Extrapolar predicciones a valores de x extremadamente lejanos al rango de los datos originales del experimento.
-* **Ejercicios de Práctica:**
-  1. Si la ecuación es y = 4x + 50, calcula el valor estimado de y para x = 10. (R: 90).
-  2. ¿Cuál es el método estándar para ajustar la mejor recta de regresión? (R: El método de Mínimos Cuadrados).
-  3. Si la pendiente es negativa (m = -1.5), ¿qué le ocurre a y a medida que x aumenta? (R: Disminuye).
-  4. En y = -0.5x + 80, calcula y para x = 100. (R: 30. Retroalimentación: -50 + 80 = 30).
-  5. ¿Qué nombre recibe la variable y en un análisis de regresión? (R: Variable dependiente, de respuesta o explicada).
-* **¿Necesitas ayuda?** La regresión es la herramienta preferida de los analistas de presupuestos. ¡Aprende a formularla al instante junto a tu tutor de CEDETU!
-
-### Lección 5.3: Coeficiente de Determinación y Residuos
-* **Objetivo:** Calcular y analizar el Coeficiente de Determinación R² y evaluar los residuos.
-* **Explicación:** 
-  - **Coeficiente de Determinación (R²):** Proporción de la variabilidad total de y explicada por x a través de la recta. Es el cuadrado del coeficiente de Pearson: R² = r².
-  - **Residuo (e):** El error de predicción de la recta: e = y - ŷ.
-* **Ejemplo Resuelto:** Si la correlación entre ventas (y) y comerciales (x) es r = 0.90, calcula R² e interpreta para la gerencia.
-  - *Paso 1 R²:* (0.90)² = 0.81 o 81%.
-  - *Resultado:* El 81% de la variación de las ventas se explica por los comerciales de TV a través de la recta; el 19% restante se debe a otros factores.
-* **Errores Comunes:** Confundir R² con r, atribuyéndoles exactamente el mismo valor porcentual por descuido.
-* **Ejercicios de Práctica:**
-  1. Si r = -0.80, ¿cuánto vale el coeficiente de determinación R²? (R: 0.64 o 64%).
-  2. Si la recta estima tardar 10 horas y en la realidad tarda 12 horas, ¿cuánto vale el residuo e? (R: 2 horas. Retroalimentación: e = y - ŷ = 12 - 10 = 2).
-  3. ¿Cuál es el promedio esperado de todos los residuos calculados por mínimos cuadrados en un modelo lineal? (R: Exactamente cero (0)).
-  4. Si R² es del 100%, ¿qué nos indica sobre los puntos en el diagrama de dispersión? (R: Que todos los puntos están situados exactamente sobre la recta de regresión).
-  5. Si el 49% de la variabilidad de las ventas se explica por la publicidad, ¿cuánto vale el coeficiente r de Pearson? (R: 0.70. Retroalimentación: √0.49 = 0.70).
-* **¿Necesitas ayuda?** Analizar los residuos te indicará si tu modelo lineal es correcto o si necesitas otro tipo de curvas. ¡Pregúntale a tu tutor de CEDETU!
-
-## Evaluación Unidad 4
-* Una recta de regresión para predecir el peso en kg (y) a partir de la estatura en metros (x) es: ŷ = 60x - 30. Si un estudiante de Antigua mide 1.80 metros y pesa 80 kg, calcula su peso estimado por la recta y su residuo. (R: Peso estimado ŷ = 78 kg; Residuo e = 2 kg. Retroalimentación: ŷ = 60*(1.80) - 30 = 108 - 30 = 78 kg. Residuo e = 80 - 78 = 2 kg).
-* Si r = 0.80, ¿qué porcentaje de la variación de la variable dependiente no se explica por la independiente? (R: 36%. Retroalimentación: R² = 0.64 o 64% explicada. No explicada = 100% - 64% = 36%).
-* ¿Qué signo tiene el residuo si la recta de regresión sobreestimó el valor real observado? (R: Signo negativo. Retroalimentación: e = y - ŷ; si ŷ > y, entonces e < 0).
-`,
-
-    "regresion-lineal": `# Curso: Regresión Lineal Simple
-* **Materia:** Matemáticas | **Nivel sugerido:** Universidad
-* **Público objetivo:** Alumnos universitarios que desean dominar el modelado estadístico, la optimización de mínimos cuadrados y el análisis predictivo bidimensional.
-* **Objetivos de aprendizaje:** Representar y analizar correlaciones cuantitativas, calcular la recta de mínimos cuadrados, evaluar la bondad de ajuste mediante R² e interpretar el análisis de residuos en casos prácticos empresariales.
-
-## Unidad 1: Correlación y Diagramas de Dispersión
-### Lección 1.1: Diagramas de Dispersión
-* **Objetivo:** Graficar y analizar visualmente diagramas de dispersión bidimensionales identificando patrones lineales y no lineales.
-* **Explicación:** Un diagrama de dispersión representa gráficamente la relación entre dos variables cuantitativas de un mismo conjunto de datos. La variable independiente se coloca en el eje X y la dependiente en el eje Y.
-* **Ejemplo Resuelto:** Grafica los puntos de estudio y nota de 3 alumnos en Xela: (1, 50), (3, 70), (5, 90). Describe la tendencia observada.
-  - *Paso 1:* Marca (1,50) en el plano cartesiano.
-  - *Paso 2:* Marca (3,70) y (5,90).
-  - *Paso 3:* Une los puntos mentalmente. Se observa una tendencia lineal ascendente constante.
-  - *Resultado:* Tendencia lineal positiva.
-* **Errores Comunes:** Intercambiar la posición de los ejes X e Y por descuido al graficar.
-* **Ejercicios de Práctica:**
-  1. ¿Qué variable se ubica tradicionalmente en el eje horizontal X de un diagrama de dispersión? (R: Variable independiente o explicativa).
-  2. ¿Qué tendencia describe una nube de puntos que forma un círculo disperso sin dirección? (R: Ausencia de relación o correlación nula).
-  3. Lógicamente, ¿cómo esperas que sea la tendencia en un diagrama de dispersión de "horas de videojuegos" versus "promedio académico"? (R: Tendencia lineal negativa o descendente).
-  4. ¿Se pueden graficar variables cuantitativas y cualitativas cruzadas en un diagrama de dispersión clásico? (R: No. Exige estrictamente que ambas variables sean numéricas continuas o discretas).
-  5. ¿Qué nos indica una tendencia no lineal en forma de U en el diagrama de dispersión? (R: Que existe una relación de tipo cuadrático o parabólico entre las variables, y no un modelo lineal).
-* **¿Necesitas ayuda?** La representación visual es el inicio indispensable de cualquier análisis de datos científico. ¡Aprende a graficar como un experto con tu tutor de CEDETU!
-
-### Lección 1.2: El Coeficiente de Correlación de Pearson
-* **Objetivo:** Calcular e interpretar el valor del coeficiente de correlación r de Pearson para cuantificar la fuerza de la asociación lineal.
-* **Explicación:** El coeficiente r de Pearson mide la fuerza y dirección de la relación lineal entre dos variables. Su rango es estricto de -1.0 a 1.0. Un valor cercano a 1 indica correlación positiva fuerte; cercano a -1 indica negativa fuerte; y cercano a 0 indica correlación nula.
-* **Ejemplo Resuelto:** Si la correlación entre ventas agrícolas en Tecpán y lluvias mensuales es r = 0.85, interpreta la fuerza y dirección.
-  - *Paso 1 Dirección:* El valor de r es positivo (+0.85), por lo tanto la relación es directa (a mayor lluvia, mayor venta en promedio).
-  - *Paso 2 Fuerza:* 0.85 está muy cerca de 1.00. Es una correlación lineal positiva muy fuerte.
-  - *Resultado:* Correlación lineal positiva muy fuerte.
-* **Errores Comunes:** Atribuirle a un r = -0.90 una relación débil solo por el signo menos, ignorando que el signo indica sentido y el valor absoluto indica la fuerza.
-* **Ejercicios de Práctica:**
-  1. ¿Cuál es el coeficiente r de Pearson para una relación lineal ascendente perfecta? (R: 1.00).
-  2. Si r = -0.15, ¿cómo describes la relación lineal entre las variables? (R: Relación lineal negativa extremadamente débil o prácticamente nula).
-  3. Si la correlación entre altura y peso de estudiantes en Antigua es r = 0.72, ¿cómo se clasifica? (R: Correlación lineal positiva moderada a fuerte).
-  4. ¿Qué ocurre con el valor de r si multiplicamos todas las unidades de x por 10 (ej. pasar de metros a decímetros)? (R: Se mantiene idéntico. r es adimensional e independiente de las escalas de medida elegidas).
-  5. ¿Cuál es el valor de r para dos variables que se comportan de forma perfectamente inversa? (R: -1.00).
-* **¿Necesitas ayuda?** El cálculo analítico del coeficiente r requiere una tabla sumatoria meticulosa. ¡Domínala al instante con el método simplificado de tu tutor de CEDETU!
-
-### Lección 1.3: Correlación versus Causalidad
-* **Objetivo:** Diferenciar de forma crítica entre correlación y causalidad diagnosticando variables ocultas en casos de estudio reales.
-* **Explicación:** Que dos variables estén altamente correlacionadas no significa que una sea la causa de la otra. Pueden estar influenciadas por una tercera variable externa oculta (variable de confusión), o ser una simple coincidencia. Para demostrar causalidad, se requiere un experimento diseñado controlado.
-* **Ejemplo Resuelto:** Un estudio en Xela encuentra una alta correlación positiva entre la cantidad de helados vendidos al día y la cantidad de quemaduras por el sol registradas. ¿Significa que comer helado provoca quemaduras por el sol?
-  - *Paso 1:* Analiza si hay una variable común a ambos efectos.
-  - *Paso 2:* La temperatura ambiental y los días soleados de verano influyen tanto en el deseo de comer helado como en el riesgo de quemarse la piel bajo el sol.
-  - *Resultado:* No hay causalidad. La correlación se debe a la variable oculta del clima soleado.
-* **Errores Comunes:** Publicar reportes comerciales afirmando que un producto causa un efecto positivo basándose en un simple análisis observacional de correlación sin grupo de control.
-* **Ejercicios de Práctica:**
-  1. ¿Qué es una "variable de confusión" en el análisis estadístico? (R: Una variable no medida que influye tanto en la predictora como en la de respuesta, sugiriendo una falsa causalidad).
-  2. Si encuentras una correlación alta entre el tamaño del pie de los niños y su nivel de lectura, ¿cuál es la variable explicativa real oculta? (R: La edad del niño).
-  3. ¿Se puede establecer causalidad inequívoca a partir de un diagrama de dispersión con r = 0.99? (R: No. Exige un experimento diseñado aleatorizado).
-  4. Da un ejemplo de correlación espuria o coincidencia absurda sin sentido en la vida cotidiana. (R: La correlación entre la venta de películas de un actor y la importación de cacao en el país).
-  5. ¿Cuál es la única forma metodológica válida de probar científicamente una relación de causa y efecto? (R: Realizar un experimento diseñado controlado con asignación aleatoria de tratamientos y grupo de control).
-* **¿Necesitas ayuda?** Desarrollar un pensamiento analítico y crítico ante las estadísticas te protegerá de decisiones comerciales equivocadas. ¡Asegura tus bases con tu tutor!
-
-## Unidad 2: El Modelo de Regresión por Mínimos Cuadrados
-### Lección 2.1: La Recta de Regresión ŷ = mx + b
-* **Objetivo:** Calcular la ecuación de la recta de regresión que mejor se ajuste a los datos mediante el criterio de Mínimos Cuadrados.
-* **Explicación:** La regresión lineal simple busca ajustar una línea recta de la forma ŷ = mx + b. Las fórmulas por mínimos cuadrados son:
-  - Pendiente: $m = rac{nsum xy - sum x sum y}{nsum x^2 - (sum x)^2}$.
-  - Ordenada al origen: $b = ar{y} - mar{x}$.
-  Esta recta minimiza la suma de las distancias verticales al cuadrado de los puntos a la recta.
-* **Ejemplo Resuelto:** A partir de los datos simplificados de 3 puntos: (1, 2), (2, 4), (3, 5). Calcula la recta de regresión.
-  - *Paso 1 Sumatorias:* ∑x = 6, ∑y = 11, ∑x² = 14, ∑xy = 25, n = 3.
-  - *Paso 2 Pendiente m:*
-    $m = rac{3(25) - (6)(11)}{3(14) - 6^2} = rac{75 - 66}{42 - 36} = rac{9}{6} = 1.5$.
-  - *Paso 3 Ordenada b:* Promedio x = 2, Promedio y = 3.67.
-    $b = 3.67 - 1.5(2) = 3.67 - 3.0 = 0.67$.
-  - *Resultado:* La ecuación de la recta de regresión es ŷ = 1.5x + 0.67.
-* **Errores Comunes:** Confundir la sumatoria de cuadrados (∑x²) con el cuadrado de la sumatoria ((∑x)²) en el denominador de la fórmula de la pendiente.
-* **Ejercicios de Práctica:**
-  1. ¿Qué propiedad geométrica tiene la ordenada al origen b en el plano cartesiano? (R: Es el punto donde la recta interseca exactamente al eje vertical Y).
-  2. Si la ecuación de la recta de regresión es y = 2x + 10, calcula el valor estimado de y para x = 5. (R: 20).
-  3. ¿Cuál es el promedio aritmético de todos los puntos de datos (x̄, ȳ) con respecto a la recta de regresión por mínimos cuadrados? (R: Es un punto de paso obligado; la recta de mínimos cuadrados siempre pasa exactamente por el punto de coordenadas (x̄, ȳ)).
-  4. Calcula la pendiente m si n = 5, ∑x = 10, ∑y = 20, ∑x² = 30, ∑xy = 50. (R: 1.00. Retroalimentación: m = (5*50 - 10*20) / (5*30 - 100) = (250-200)/(150-100) = 50/50 = 1).
-  5. ¿Qué representa la variable y con un circunflejo (ŷ) en la ecuación de regresión? (R: El valor estimado o predicho de la variable dependiente por el modelo de la recta).
-* **¿Necesitas ayuda?** El cálculo de mínimos cuadrados es largo y requiere absoluta concentración. ¡Vuélvete un maestro de la precisión matemática junto a tu tutor de CEDETU!
-
-### Lección 2.2: Interpretación de la Pendiente y la Ordenada
-* **Objetivo:** Interpretar físicamente la pendiente m y la ordenada al origen b en casos prácticos y reales de economía y agronegocios.
-* **Explicación:** 
-  - **m (Pendiente):** La tasa de cambio promedio de y por cada unidad adicional que aumenta x.
-  - **b (Ordenada al origen):** El valor inicial o de base promedio de y cuando la variable predictora x es exactamente cero.
-* **Ejemplo Resuelto:** Una recta de regresión estima el consumo de combustible de un generador en un aserradero de Tecpán en galones (y) a partir de las horas de operación (x): ŷ = 0.8x + 5.0. Interpreta los coeficientes.
-  - *Paso 1 Pendiente m = 0.8:* Por cada hora adicional que opera el generador, el consumo de combustible aumenta en promedio exactamente en 0.8 galones.
-  - *Paso 2 Ordenada b = 5.0:* Si el generador está encendido pero sin operar (cero horas de trabajo útil, x = 0), consume un promedio inicial de base de 5.0 galones (combustible de arranque y ralentí).
-  - *Resultado:* Coeficientes interpretados de forma física real y aplicada.
-* **Errores Comunes:** Interpretar la ordenada al origen de forma directa incluso cuando un valor x = 0 no tiene ningún sentido físico o práctico en la realidad del negocio (ej. predecir el peso de una persona de estatura cero, lo cual es imposible).
-* **Ejercicios de Práctica:**
-  1. Si la recta de ventas es y = 50x + 1000, donde x son anuncios, ¿cuál es la venta base promedio sin anuncios? (R: Q1,000.00).
-  2. Con la recta anterior, ¿cuánto aumentan las ventas promedio por cada anuncio adicional colocado? (R: Q50.00).
-  3. En y = -2.5x + 100, ¿qué significa que la pendiente sea -2.5? (R: Que por cada unidad que aumenta x, la variable dependiente y disminuye en promedio 2.5 unidades).
-  4. ¿Es útil interpretar la ordenada al origen si el soporte de datos de la muestra de x está muy alejado de cero (ej. x entre 100 y 500)? (R: No. En ese caso, la ordenada b es solo una constante de ajuste matemático sin interpretación física real confiable).
-  5. Si un modelo estima y = 1.2x + 0.5, ¿cuál es el incremento de y si x aumenta en 10 unidades? (R: 12 unidades. Retroalimentación: 1.2 * 10 = 12).
-* **¿Necesitas ayuda?** La correcta interpretación de coeficientes diferencia a un programador básico de un verdadero científico de datos aplicado a negocios. ¡Entrénala hoy junto a tu tutor de CEDETU!
-
-### Lección 2.3: Predicción e Interpolación
-* **Objetivo:** Realizar predicciones y estimaciones de la variable dependiente y utilizando la recta de regresión, diferenciando entre interpolación segura y extrapolación riesgosa.
-* **Explicación:** 
-  - **Predicción:** Sustituir un valor de x en la ecuación de la recta para calcular el valor promedio estimado ŷ.
-  - **Interpolación:** Predecir para un valor de x situado dentro del rango de los datos medidos en la muestra (seguro y altamente confiable).
-  - **Extrapolación:** Predecir para un valor de x situado muy fuera del rango de datos originales de la muestra (riesgoso, asume que la tendencia lineal se mantiene infinitamente, lo cual suele ser falso).
-* **Ejemplo Resuelto:** Un estudio de rendimiento de cultivos en Escuintla mide la producción de caña (y) para temperaturas (x) registradas entre 25°C y 35°C. Se obtiene la recta: ŷ = 4x + 10. Evalúe la validez de predecir la producción para: a) 30°C, b) 5°C.
-  - *Paso 1 Caso 30°C:* El valor 30°C se encuentra dentro del rango de medición de la muestra [25°C, 35°C]. Es una interpolación totalmente válida y altamente confiable: ŷ = 4(30) + 10 = 130 toneladas.
-  - *Paso 2 Caso 5°C:* El valor 5°C está sumamente alejado del rango de la muestra. Predecir daría 30 toneladas, pero en la realidad a 5°C la caña de azúcar se congela y muere (producción cero). Es una extrapolación inválida y peligrosa.
-  - *Resultado:* a) Interpolación válida (130 t), b) Extrapolación de alto riesgo e inválida en la práctica.
-* **Errores Comunes:** Confiar ciegamente en cualquier predicción de extrapolación lejana de la recta de regresión, cometiendo errores catastróficos en proyecciones de mediano y largo plazo en negocios.
-* **Ejercicios de Práctica:**
-  1. ¿Qué nombre recibe la predicción de un valor de y para una variable predictora x que se encuentra dentro del intervalo de los datos experimentales recolectados? (R: Interpolación).
-  2. Si tu rango de x es de 10 a 50 llamadas de ventas y utilizas la recta para estimar las ventas de 500 llamadas de ventas, ¿qué proceso realizas? (R: Extrapolación de alto riesgo).
-  3. En la recta y = 0.5x + 20, calcula el valor predicho para x = 80. (R: 60).
-  4. ¿Por qué la extrapolación extrema es de alto riesgo en física y economía? (R: Porque las tendencias lineales de la naturaleza o del comportamiento del mercado suelen saturarse, cambiar de curvatura o romperse fuera del rango observado).
-  5. Si interpolas para x = 30 si el rango medido es de 20 a 40, ¿es el resultado confiable? (R: Sí, es una interpolación estándar segura).
-* **¿Necesitas ayuda?** Aprende a colocar márgenes de error a tus predicciones de regresión para presentarlas de forma totalmente profesional ante directivos. ¡Consúltalo con tu tutor de CEDETU!
-
-## Unidad 3: Coeficiente de Determinación y Análisis de Residuos
-### Lección 3.1: Coeficiente de Determinación R²
-* **Objetivo:** Calcular y evaluar el Coeficiente de Determinación R² para medir qué porcentaje de la variación total de y es explicada por el modelo lineal de x.
-* **Explicación:** El Coeficiente de Determinación ($R^2$ o $r^2$) mide la bondad de ajuste del modelo de regresión lineal. Es igual al cuadrado del coeficiente de correlación de Pearson. Representa la proporción de la variabilidad total de la variable de respuesta explicada por la variable explicativa a través de la recta. Toma valores de 0 a 1 (0% a 100%).
-* **Ejemplo Resuelto:** Si el coeficiente de correlación entre el tiempo de preparación ($x$) y la velocidad de ensamble ($y$) es $r = 0.80$, calcula R² e interpreta para el control de calidad de la fábrica.
-  - *Paso 1:* Eleva al cuadrado: $R^2 = (0.80)^2 = 0.64$.
-  - *Paso 2 Expresar en porcentaje:* $64%$.
-  - *Resultado:* El R² es del 64%. Significa que el 64% de la variación total de la velocidad de ensamble se puede explicar por el tiempo de preparación mediante la recta de regresión; el 36% restante se debe a otros factores inexplicados o variables ocultas ajenas al modelo.
-* **Errores Comunes:** Pensar que un modelo con R² de 50% es inútil; en ciencias sociales y economía, modelos con R² de 30% a 50% son sumamente valiosos e informativos si las variables tienen un p-valor significativo.
-* **Ejercicios de Práctica:**
-  1. Si r = -0.90, ¿cuánto vale el coeficiente de determinación R²? (R: 0.81 o 81%).
-  2. ¿Cuál es el valor del R² si la recta de regresión lineal explica el 100% de los datos muestrales? (R: 1.00 o 100%).
-  3. Si R² = 0.49, calcula el valor absoluto del coeficiente de correlación de Pearson r. (R: 0.70. Retroalimentación: √0.49 = 0.70).
-  4. ¿Qué porcentaje de la variación queda inexplicado en un modelo lineal que tiene un R² de 0.75? (R: 25% de variación inexplicada).
-  5. Si el R² de un modelo es prácticamente 0, ¿cuál es tu conclusión sobre la utilidad de la recta de regresión lineal? (R: Que la recta no tiene ninguna capacidad de predicción lineal y el modelo no es útil).
-* **¿Necesitas ayuda?** La bondad de ajuste es el parámetro oficial para validar la solidez científica de cualquier modelo econométrico. ¡Asegura tu comprensión de R² con tu tutor de CEDETU!
-
-### Lección 3.2: Definición y Análisis de Residuos
-* **Objetivo:** Calcular los residuos de cada observación e interpretar su distribución gráfica básica para diagnosticar la homogeneidad del modelo.
-* **Explicación:** Un **residuo ($e_i$)** es el error de predicción individual, que representa la distancia vertical desde el punto de dato real observado $y_i$ hasta el valor estimado de la recta $hat{y}_i$:
-  - Fórmula: $e_i = y_i - hat{y}_i$.
-  - Los residuos actúan como un indicador de la calidad del ajuste. Gráficamente, para que el modelo lineal sea óptimo, los residuos dibujados en un gráfico versus x deben distribuirse de forma totalmente aleatoria y homogénea alrededor de la línea horizontal de cero (homocedasticidad).
-* **Ejemplo Resuelto:** Para un punto de dato real $A(2, 10)$, la recta de regresión estima una predicción $hat{y} = 3(2) + 2 = 8$. Calcula el residuo de esta observación.
-  - *Paso 1:* Identifica el valor real observed: $y = 10$.
-  - *Paso 2:* Identifica el valor estimado: $hat{y} = 8$.
-  - *Paso 3:* Aplica la fórmula del residuo: $e = y - hat{y} = 10 - 8 = 2$.
-  - *Resultado:* El residuo es de +2. (Significa que el dato real está 2 unidades por encima de lo estimado por la recta).
-* **Errores Comunes:** Calcular el residuo al revés $hat{y} - y$, lo que invierte erróneamente la dirección y el signo lógico del error de predicción.
-* **Ejercicios de Práctica:**
-  1. Si la recta estima 100 y el valor real observado es 95, ¿cuánto vale el residuo? (R: -5. Retroalimentación: 95 - 100 = -5).
-  2. ¿Qué nos indica un conjunto de residuos que forma una clara figura en U o de parábola al graficarlos versus X? (R: Que la relación entre las variables no es lineal, y el modelo óptimo es cuadrático o curvo).
-  3. ¿Cuál es el promedio matemático exacto de todos los residuos verticales obtenidos en una regresión por mínimos cuadrados? (R: Exactamente cero (0)).
-  4. Si el residuo de una predicción es exactamente cero, ¿qué significa con respecto al punto en el plano? (R: Que el punto real observado está situado exactamente sobre la recta de regresión).
-  5. ¿Cómo se define el concepto de homocedasticidad en residuos? (R: Que la varianza de los residuos es constante a lo largo de todos los valores de la variable predictora x).
-* **¿Necesitas ayuda?** El análisis de residuos es el paso de control de calidad obligatorio en cualquier reporte econométrico avanzado. ¡Aprende a interpretarlo de forma interactiva con tu tutor de CEDETU!
-
-### Lección 3.3: Casos Prácticos Aplicados a Agronegocios y Finanzas
-* **Objetivo:** Resolver un caso de estudio real de proyección de ventas agrícolas en Guatemala aplicando de forma integrada la correlación, regresión, R² y predicción.
-* **Explicación:** En agronegocios y finanzas, la regresión permite modelar cómo las inversiones influyen en los rendimientos o ingresos reales. Un análisis integrado permite proyectar escenarios financieros seguros fundamentados en la evidencia de los datos históricos de la empresa.
-* **Ejemplo Resuelto:** Una cooperativa en Sololá registra la cantidad de sacos de café producidos en quintales ($y$) a partir del presupuesto de riego invertido en miles de Quetzales ($x$) en 5 parcelas piloto, obteniendo la recta de regresión: $hat{y} = 12x + 40$, con un $R^2 = 0.85$ y un rango medido de inversión $x$ entre Q1,000 y Q5,000. Realice una proyección de quintales cosechados para una inversión de Q3,000 (x = 3).
-  - *Paso 1 Evaluar si es seguro:* La inversión solicitada x = 3 se encuentra dentro de la muestra medida [1, 5] (miles de Quetzales). Es una interpolación segura y confiable.
-  - *Paso 2 Calcular Predicción:* $hat{y} = 12(3) + 40 = 36 + 40 = 76$ quintales de café.
-  - *Paso 3 Interpretar R²:* El R² del 85% indica que el modelo es altamente sólido y que el 85% de la variación en la cosecha de café se explica por el presupuesto de riego, haciendo la proyección muy confiable para el presupuesto anual.
-  - *Resultado:* Cosecha proyectada de 76 quintales con alta confiabilidad.
-* **Errores Comunes:** Lanzarse a invertir presupuestos astronómicos basándose en extrapolaciones de rectas que no han tomado en cuenta que los terrenos tienen límites físicos de saturación y capacidad de producción.
-* **Ejercicios de Práctica:**
-  1. Con el modelo anterior, ¿cuántos quintales base se esperan cosechar si la inversión de riego es cero (x = 0)? (R: 40 quintales).
-  2. ¿Cuánto aumenta en promedio la cosecha de café por cada mil Quetzales adicionales invertidos en riego según el modelo? (R: 12 quintales).
-  3. Si la cooperativa quiere estimar la producción para una inversión de Q50,000 (x = 50) basándose en este modelo piloto de 5 parcelas, ¿es una predicción segura? (R: No. Es una extrapolación extrema de altísimo riesgo comercial).
-  4. Si en una parcela real con inversión x = 2 la cosecha fue de 60 quintales, calcula el residuo con respecto a la estimación del modelo. (R: -4 quintales. Retroalimentación: ŷ = 12*2 + 40 = 64. e = 60 - 64 = -4).
-  5. ¿Qué factor ajeno al riego (como la lluvia natural o calidad del suelo) representa el 15% de variación inexplicada del R² de este caso? (R: Variables de confusión y factores ambientales no incluidos en el modelo simple).
-* **¿Necesitas ayuda?** La estadística aplicada a los agronegocios reales de Latinoamérica genera un valor económico enorme e inmediato. ¡Aprende a formular tus propios casos prácticos y proyecciones de negocios al lado de tu tutor de CEDETU!
-
-## Evaluación Unidad 3
-* Un modelo de regresión lineal estima los ingresos mensuales de un local de artesanías en Antigua en miles de Quetzales (y) a partir de las visitas de turistas extranjeros en cientos (x): ŷ = 2.5x + 3.0. Si el local recibe 400 turistas extranjeros al mes (x = 4), calcula la proyección de ingresos y explica el significado de la ordenada b = 3.0. (R: Proyección de ingresos = Q13,000.00 al mes; b = 3.0 representa un ingreso base promedio de Q3,000.00 mensuales generados por clientes locales fijos sin visitas de turistas extranjeros. Retroalimentación: ŷ = 2.5*4 + 3 = 10 + 3 = 13 (en miles = Q13,000). b = 3.0 es el valor cuando x = 0).
-* Si r = -0.95 entre la temperatura ambiente de almacenamiento y la vida útil del café pergamino en días, ¿cuánto vale la bondad de ajuste R²? (R: 0.9025 o 90.25%).
-* ¿Qué nos indica un residuo positivo alto e = 8.5 en el caso práctico de ingresos de artesanías? (R: Que el local obtuvo Q8,500.00 de ingresos reales adicionales por encima de lo que el promedio de visitas del mes estimaba, indicando una venta excepcional o de gran valor).
-`,
+    "regresion-lineal": {
+    "isRichCourse": true,
+    "title": "Regresión Lineal Simple",
+    "units": [
+        {
+            "title": "Unidad 1: Correlación y Diagramas de Dispersión",
+            "lessons": [
+                {
+                    "id": "diagramas-dispersion",
+                    "title": "Lección 1.1: Diagramas de Dispersión",
+                    "introduction": "Aprende a graficar e interpretar nubes de puntos bidimensionales para identificar patrones de asociación visual.",
+                    "explanationHtml": "<p>En estadística bidimensional, cuando estudiamos de forma simultánea dos variables cuantitativas medidas en un mismo conjunto de elementos (ej. las horas de estudio $x$ y la calificación del examen $y$), la primera herramienta indispensable es el <strong>Diagrama de Dispersión (o Scatter Plot)</strong>.</p><p class=\"mt-2\">Consiste en representar cada par de observaciones $(x_i, y_i)$ como un único punto en el **plano cartesiano de dos dimensiones**:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Eje Horizontal ($X$):</strong> Aloja a la variable independiente, explicativa o predictora.</li><li><strong>Eje Vertical ($Y$):</strong> Aloja a la variable dependiente o de respuesta.</li></ul><p class=\"mt-2 text-slate-700\">Al observar la \"nube de puntos\" resultante, podemos identificar visualmente la forma de la relación: si tiene una tendencia lineal ascendente (positiva), descendente (negativa), o si los puntos están tan dispersos que no revelan ninguna relación (correlación nula).</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Glosario de Ejes Cartesianos</p><p class=\"text-xs font-mono font-bold text-primary\">Eje X: Predictora (Independiente) &nbsp;|&nbsp; Eje Y: Respuesta (Dependiente)</p><p class=\"text-xs text-slate-550\">La forma de la nube de puntos sugiere qué tipo de modelo (lineal, cuadrático, etc.) se ajusta mejor.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"18\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">PATRONES DE DISPERSIÓN</text><line x1=\"30\" y1=\"95\" x2=\"100\" y2=\"95\" stroke=\"#94a3b8\" stroke-width=\"1\" /><line x1=\"30\" y1=\"40\" x2=\"30\" y2=\"95\" stroke=\"#94a3b8\" stroke-width=\"1\" /><circle cx=\"45\" cy=\"85\" r=\"2.5\" fill=\"#3b82f6\" /><circle cx=\"55\" cy=\"75\" r=\"2.5\" fill=\"#3b82f6\" /><circle cx=\"65\" cy=\"65\" r=\"2.5\" fill=\"#3b82f6\" /><circle cx=\"75\" cy=\"55\" r=\"2.5\" fill=\"#3b82f6\" /><circle cx=\"85\" cy=\"45\" r=\"2.5\" fill=\"#3b82f6\" /><text x=\"65\" y=\"108\" font-size=\"7.5\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">Positiva (+)</text><line x1=\"120\" y1=\"95\" x2=\"190\" y2=\"95\" stroke=\"#94a3b8\" stroke-width=\"1\" /><line x1=\"120\" y1=\"40\" x2=\"120\" y2=\"95\" stroke=\"#94a3b8\" stroke-width=\"1\" /><circle cx=\"135\" cy=\"45\" r=\"2.5\" fill=\"#ef4444\" /><circle cx=\"145\" cy=\"55\" r=\"2.5\" fill=\"#ef4444\" /><circle cx=\"155\" cy=\"65\" r=\"2.5\" fill=\"#ef4444\" /><circle cx=\"165\" cy=\"75\" r=\"2.5\" fill=\"#ef4444\" /><circle cx=\"175\" cy=\"85\" r=\"2.5\" fill=\"#ef4444\" /><text x=\"155\" y=\"108\" font-size=\"7.5\" fill=\"#b91c1c\" font-weight=\"bold\" text-anchor=\"middle\">Negativa (-)</text><line x1=\"210\" y1=\"95\" x2=\"280\" y2=\"95\" stroke=\"#94a3b8\" stroke-width=\"1\" /><line x1=\"210\" y1=\"40\" x2=\"210\" y2=\"95\" stroke=\"#94a3b8\" stroke-width=\"1\" /><circle cx=\"225\" cy=\"55\" r=\"2.5\" fill=\"#64748b\" /><circle cx=\"235\" cy=\"85\" r=\"2.5\" fill=\"#64748b\" /><circle cx=\"245\" cy=\"45\" r=\"2.5\" fill=\"#64748b\" /><circle cx=\"255\" cy=\"75\" r=\"2.5\" fill=\"#64748b\" /><circle cx=\"265\" cy=\"60\" r=\"2.5\" fill=\"#64748b\" /><text x=\"245\" y=\"108\" font-size=\"7.5\" fill=\"#475569\" font-weight=\"bold\" text-anchor=\"middle\">Nula (0)</text></svg>",
+                    "svgDescription": "Tres diagramas de dispersión a escala mostrando correlación lineal positiva (azul, ascendente), correlación lineal negativa (roja, descendente) y correlación nula (gris, sin patrón).",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Un profesor en Antigua Guatemala recopila datos de las horas de estudio a la semana ($x$) y las calificaciones obtenidas en matemáticas ($y$) de 3 alumnos en Xela: $(1, 50)$, $(3, 70)$, y $(5, 90)$. Grafica mentalmente la nube de puntos y describe la tendencia lineal observada.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1: Identificar las coordenadas cartesianas:</strong> <br>Punto 1: $(1, 50)$ <br>Punto 2: $(3, 70)$ <br>Punto 3: $(5, 90)$</li><li><strong>Paso 2: Evaluar la tendencia de los valores:</strong> A medida que la variable explicativa $x$ aumenta ($1 \\to 3 \\to 5$), la variable dependiente de calificaciones $y$ también aumenta de forma constante ($50 \\to 70 \\to 90$).</li><li><strong>Paso 3: Conclusión visual.</strong> Al unir los puntos en el plano, forman una recta perfecta con pendiente ascendente.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Conclusión:</strong> El diagrama de dispersión muestra una <strong>tendencia lineal positiva perfecta</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Intercambiar los ejes cartesianos:</strong> Colocar la variable dependiente $Y$ en el eje horizontal y la independiente $X$ en el vertical por distracción. Recuerda que la predictora **siempre** define el avance en la recta X.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "¿Qué variable de estudio se ubica de forma tradicional en el eje horizontal X de un diagrama de dispersión?",
+                            "options": [
+                                "La variable dependiente o explicada.",
+                                "La variable independiente, predictora o explicativa.",
+                                "La desviación estándar muestral.",
+                                "La frecuencia absoluta acumulada."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Es la variable que 'causa' o explica los cambios de la otra variable.",
+                            "feedbackCorrect": "¡Excelente! La variable independiente o predictora se ubica siempre en el eje X.",
+                            "feedbackIncorrect": "Incorrecto. Se sitúa la variable independiente o explicativa.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "¿Cómo se describe la tendencia de una nube de puntos que forma un círculo disperso y sin ninguna dirección definida?",
+                            "options": [
+                                "Tendencia lineal positiva fuerte.",
+                                "Tendencia lineal negativa moderada.",
+                                "Ausencia de correlación o tendencia lineal nula.",
+                                "Tendencia cuadrática perfecta."
+                            ],
+                            "correctAnswer": 2,
+                            "hint": "Si no hay líneas o curvas discernibles, el azar domina la relación.",
+                            "feedbackCorrect": "¡Perfecto! Una nube de puntos circular e informal indica que no hay correlación.",
+                            "feedbackIncorrect": "Incorrecto. Indica ausencia de correlación o tendencia lineal nula.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Lógicamente, ¿cómo esperas que sea la tendencia en un diagrama de dispersión de 'horas semanales de videojuegos' versus 'calificación escolar promedio'? Escribe 'positiva' o 'negativa':",
+                            "correctAnswer": "negativa",
+                            "hint": "A mayor cantidad de horas jugando videojuegos sin control, menor tiempo de estudio y menores notas promedio.",
+                            "feedbackCorrect": "¡Excelente! Es una relación inversa, por lo tanto la tendencia es negativa.",
+                            "feedbackIncorrect": "Incorrecto. Al ser una relación inversa, la tendencia esperada es 'negativa'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Se pueden cruzar y graficar una variable cuantitativa (ej. peso) y una cualitativa nominal (ej. color favorito) en un diagrama de dispersión clásico? Escribe 'si' o 'no':",
+                            "correctAnswer": "no",
+                            "hint": "El plano cartesiano bidimensional exige de forma estricta que ambos ejes sean numéricos continuos o discretos.",
+                            "feedbackCorrect": "¡Perfecto! No se puede, ya que el diagrama de dispersión exige estrictamente variables cuantitativas en ambos ejes.",
+                            "feedbackIncorrect": "Incorrecto. No, requiere que ambas variables sean estrictamente de tipo numérico.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Qué nos indica visualmente encontrar una nube de puntos con forma clara de U o de parábola en el plano cartesiano?",
+                            "options": [
+                                "Que las variables no tienen ninguna relación entre sí.",
+                                "Que existe una relación de tipo no lineal (cuadrática o curva) entre las variables.",
+                                "Que la media aritmética es cero.",
+                                "Que hay un error de muestreo aleatorio."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "La forma de parábola indica relación matemática, pero no en línea recta.",
+                            "feedbackCorrect": "¡Perfecto! Revela una relación de tipo cuadrático o curvo, no una relación lineal clásica.",
+                            "feedbackIncorrect": "Incorrecto. Indica una relación no lineal o curva entre las variables.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "Los diagramas de dispersión representan pares de datos $(x, y)$ en el plano cartesiano. Permiten identificar visualmente correlaciones positivas, negativas o nulas.",
+                    "videoPlaceholderText": "Video de Regresión: Cómo dibujar e interpretar diagramas de dispersión en Excel y a mano."
+                },
+                {
+                    "id": "coeficiente-correlacion-pearson",
+                    "title": "Lección 1.2: El Coeficiente de Correlación de Pearson",
+                    "introduction": "Calcula e interpreta el coeficiente r de Pearson para cuantificar la fuerza y dirección de la asociación lineal.",
+                    "explanationHtml": "<p>Aunque el diagrama de dispersión nos da una estimación visual intuitiva de la relación, la ciencia exige rigurosidad matemática. Para **cuantificar** de forma exacta la fuerza y la dirección de la relación lineal entre dos variables, calculamos el <strong>Coeficiente de Correlación Lineal de Pearson ($r$)</strong>.</p><p class=\"mt-2\">El valor de $r$ fluctúa estrictamente en el intervalo cerrado de **$-1.00$ a $+1.00$**:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>r = +1.00:</strong> Correlación lineal positiva perfecta. Los puntos están alineados sobre una línea ascendente.</li><li><strong>Valores cercanos a +1.00:</strong> Correlación lineal positiva fuerte (ej. $r = 0.85$).</li><li><strong>r = 0.00:</strong> Correlación nula. No existe ninguna relación lineal entre las variables.</li><li><strong>Valores cercanos a -1.00:</strong> Correlación lineal negativa fuerte (ej. $r = -0.90$).</li><li><strong>r = -1.00:</strong> Correlación lineal negativa perfecta. Los puntos están alineados sobre una línea descendente.</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Ecuación de Pearson</p><p class=\"text-xs font-mono font-bold text-primary\">r = Cov(X,Y) / (&sigma;_x * &sigma;_y) &nbsp;|&nbsp; -1.00 &le; r &le; 1.00</p><p class=\"text-xs text-slate-550\">Herramienta: El signo de r indica la dirección; el valor absoluto mide la fuerza de la relación.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"18\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">RANGO COEFICIENTE DE PEARSON</text><line x1=\"30\" y1=\"65\" x2=\"270\" y2=\"65\" stroke=\"#94a3b8\" stroke-width=\"2\" /><circle cx=\"30\" cy=\"65\" r=\"5\" fill=\"#ef4444\" /><text x=\"30\" y=\"80\" font-size=\"8.5\" font-weight=\"bold\" fill=\"#b91c1c\" text-anchor=\"middle\">r = -1.0</text><circle cx=\"150\" cy=\"65\" r=\"5\" fill=\"#475569\" /><text x=\"150\" y=\"80\" font-size=\"8.5\" font-weight=\"bold\" fill=\"#475569\" text-anchor=\"middle\">r = 0.0</text><circle cx=\"270\" cy=\"65\" r=\"5\" fill=\"#10b981\" /><text x=\"270\" y=\"80\" font-size=\"8.5\" font-weight=\"bold\" fill=\"#047857\" text-anchor=\"middle\">r = 1.0</text><text x=\"90\" y=\"53\" font-size=\"8.5\" fill=\"#ef4444\" text-anchor=\"middle\">Asociación Inv.</text><text x=\"210\" y=\"53\" font-size=\"8.5\" fill=\"#10b981\" text-anchor=\"middle\">Asociación Dir.</text></svg>",
+                    "svgDescription": "Escala lineal del coeficiente r de Pearson. Muestra la transición desde correlación inversa perfecta -1.0 (rojo) a correlación directa perfecta +1.0 (verde), con el centro de correlación nula 0.0 (gris).",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Un estudio agrícola en Tecpán determina que el coeficiente de correlación lineal de Pearson entre el presupuesto invertido en riego ($x$) y la cosecha de café en quintales ($y$) es de $r = 0.85$. Interpreta detalladamente la fuerza y dirección de esta correlación.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1: Analizar la dirección por el signo.</strong> El valor de $r$ es positivo ($+0.85$). Esto indica una **relación lineal directa**: a mayor inversión en riego, se espera en promedio obtener una mayor cantidad de quintales cosechados.</li><li><strong>Paso 2: Analizar la fuerza por el valor absoluto.</strong> El valor absoluto $|r| = 0.85$ se encuentra muy cercano a $1.00$. Esto representa una **relación lineal positiva muy fuerte**.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Conclusión:</strong> Existe una correlación lineal directa y muy fuerte ($r = 0.85$) entre el presupuesto de riego y la producción de café.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Creer que los signos menos indican debilidad:</strong> Pensar que un coeficiente $r = -0.92$ representa una correlación débil en comparación con $r = 0.40$ debido al signo negativo. Recuerda que el signo indica únicamente la dirección; la fuerza la da el valor absoluto. Un $r = -0.92$ es una correlación extremadamente fuerte (inversa), mucho más sólida que una de $0.40$.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "¿Cuál es el valor del coeficiente r de Pearson para dos variables estadísticas que tienen una relación lineal positiva perfecta? (Ingresa el número decimal con punto):",
+                            "correctAnswer": "1",
+                            "hint": "Es el valor máximo positivo posible en la escala del coeficiente de Pearson.",
+                            "feedbackCorrect": "¡Excelente! r = 1.00 para una relación lineal positiva perfecta.",
+                            "feedbackIncorrect": "Incorrecto. El valor máximo es exactly 1.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si calculas r = -0.92 entre dos variables en Antigua, ¿cómo describes la relación lineal entre ambas variables?",
+                            "options": [
+                                "Relación lineal positiva fuerte.",
+                                "Relación lineal negativa o inversa muy fuerte.",
+                                "Ausencia total de relación lineal.",
+                                "Relación no lineal extremadamente débil."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "El signo menos indica que es inversa (negativa), y 0.92 está muy cerca de -1.",
+                            "feedbackCorrect": "¡Perfecto! r = -0.92 indica una relación lineal inversa (negativa) muy fuerte.",
+                            "feedbackIncorrect": "Incorrecto. Se describe como una relación lineal inversa o negativa muy fuerte.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Si la correlación entre la estatura y el peso de estudiantes en Xela es r = 0.72, ¿cómo se clasifica según su fuerza? (Escribe 'debil', 'moderada' o 'fuerte'):",
+                            "correctAnswer": "fuerte",
+                            "hint": "Los valores de 0.70 a 0.90 se consideran correlaciones de fuerza fuerte a moderadamente alta.",
+                            "feedbackCorrect": "¡Excelente! Un valor de 0.72 representa una correlación lineal fuerte.",
+                            "feedbackIncorrect": "Incorrecto. Se clasifica como una correlación 'fuerte'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Qué le ocurre al valor de r si multiplicamos todas las mediciones de X por 10 (por ejemplo, al pasar la escala de metros a decímetros)?",
+                            "options": [
+                                "Se multiplica por 10.",
+                                "Se reduce a la décima parte.",
+                                "Se mantiene estrictamente idéntico, ya que r es una medida adimensional e independiente de las escalas.",
+                                "Se eleva al cuadrado."
+                            ],
+                            "correctAnswer": 2,
+                            "hint": "El coeficiente de correlación de Pearson r está estandarizado y no tiene unidades físicas.",
+                            "feedbackCorrect": "¡Perfecto! r es adimensional, por lo que no cambia al alterar las escalas de medida.",
+                            "feedbackIncorrect": "Incorrecto. Se mantiene idéntico al ser una medida adimensional estandarizada.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "¿Cuál es el valor exacto del coeficiente r de Pearson para dos variables que se comportan de forma perfectamente inversa? (Ingresa el signo negativo):",
+                            "correctAnswer": "-1",
+                            "hint": "Es el valor mínimo posible en la escala del coeficiente de Pearson.",
+                            "feedbackCorrect": "¡Excelente! r = -1.00 representa una relación lineal negativa perfecta.",
+                            "feedbackIncorrect": "Incorrecto. Es exactly -1.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        }
+                    ],
+                    "summaryHtml": "El coeficiente $r$ de Pearson mide la fuerza y sentido lineal de dos variables. Su rango es $[-1.0, 1.0]$. El signo da el sentido (positivo/negativo) y el valor absoluto da la fuerza.",
+                    "videoPlaceholderText": "Video de Regresión: Cómo calcular paso a paso el coeficiente r de Pearson usando tablas de sumatorias."
+                },
+                {
+                    "id": "correlacion-versus-causalidad",
+                    "title": "Lección 1.3: Correlación versus Causalidad",
+                    "introduction": "Desarrolla el pensamiento crítico estadístico aprendiendo a diferenciar correlación de causa y efecto.",
+                    "explanationHtml": "<p>Este es el principio ético y analítico más importante de la ciencia de datos: <strong>Correlación no implica Causalidad</strong>.</p><p class=\"mt-2\">Que dos variables $X$ e $Y$ tengan un coeficiente de Pearson muy alto ($r \\approx 0.95$) o una tendencia lineal perfecta en el diagrama de dispersión, **no significa** que los cambios en la variable $X$ sean la causa directa de los cambios en $Y$. Esta asociación puede deberse a:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Variable de Confusión (Oculta):</strong> Existe una tercera variable externa $Z$ no medida que influye de forma directa y paralela sobre $X$ y sobre $Y$ (ej. la temperatura ambiental).</li><li><strong>Relación Bidireccional:</strong> $Y$ influye sobre $X$ al mismo tiempo que $X$ sobre $Y$.</li><li><strong>Correlación Espuria (Coincidencia):</strong> Dos variables sin relación alguna muestran correlación simplemente por azar o casualidad temporal.</li></ul><p class=\"mt-2 text-slate-705\">Para demostrar causalidad científica inequívoca, se requiere realizar un **experimento diseñado controlado** con asignación aleatoria, no un simple análisis observacional de datos.</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Postulado de Causalidad</p><p class=\"text-base font-mono font-extrabold text-primary\">Correlación &ne; Causalidad &nbsp;|&nbsp; Requiere Experimento Controlado</p><p class=\"text-xs text-slate-500\">Regla: No afirmes causa y efecto a partir de un simple coeficiente r observacional.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"18\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">VARIABLE DE CONFUSIÓN OCULTA</text><rect x=\"110\" y=\"30\" width=\"80\" height=\"20\" fill=\"#eff6ff\" stroke=\"#3b82f6\" rx=\"4\" /><text x=\"150\" y=\"42\" font-size=\"8\" font-weight=\"bold\" fill=\"#1e40af\" text-anchor=\"middle\">Clima Soleado (Z)</text><rect x=\"20\" y=\"78\" width=\"80\" height=\"20\" fill=\"#fef2f2\" stroke=\"#ef4444\" rx=\"4\" /><text x=\"60\" y=\"90\" font-size=\"7.5\" font-weight=\"bold\" fill=\"#b91c1c\" text-anchor=\"middle\">Venta Helados (X)</text><rect x=\"200\" y=\"78\" width=\"80\" height=\"20\" fill=\"#fef2f2\" stroke=\"#ef4444\" rx=\"4\" /><text x=\"240\" y=\"90\" font-size=\"7.5\" font-weight=\"bold\" fill=\"#b91c1c\" text-anchor=\"middle\">Quemaduras (Y)</text><path d=\"M 125 50 L 80 78\" stroke=\"#1d4ed8\" stroke-width=\"1.2\" marker-end=\"url(#arrow)\" /><path d=\"M 175 50 L 220 78\" stroke=\"#1d4ed8\" stroke-width=\"1.2\" marker-end=\"url(#arrow)\" /><path d=\"M 105 88 L 195 88\" stroke=\"#ef4444\" stroke-width=\"1.2\" stroke-dasharray=\"2,2\" /><text x=\"150\" y=\"102\" font-size=\"8.5\" font-weight=\"bold\" fill=\"#b91c1c\" text-anchor=\"middle\">Falsa Causalidad (r alto)</text></svg>",
+                    "svgDescription": "Ejemplo clásico de variable de confusión. El clima soleado de verano (Z) causa de forma real tanto el incremento en la venta de helados (X) como el aumento en las quemaduras solares (Y), creando una correlación espuria.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Un estudio observacional en Quetzaltenango encuentra una alta correlación positiva entre la cantidad de helados vendidos al día ($x$) y la cantidad de quemaduras por el sol registradas ($y$) en los centros de salud. ¿Significa analíticamente que comer helados provoca quemaduras solares?</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1: Evaluar la existencia de variables ocultas.</strong> Buscamos si existe un factor común que cause ambos efectos.</li><li><strong>Paso 2: Identificar la variable de confusión.</strong> El clima soleado y caluroso (Z) es el causante de que la gente compre helados para refrescarse y de que se exponga al sol en piscinas, quemándose la piel.</li><li><strong>Paso 3: Diagnosticar la relación.</strong> No hay causalidad directa entre helado y quemadura ($X \\to Y$ es falso). La correlación es espuria, generada por la variable oculta del clima (Z).</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Conclusión:</strong> No hay causa y efecto; la correlación se debe a la variable de confusión del clima.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Afirmar relaciones de causa y efecto en la prensa:</strong> Publicar o reportar que un aumento en el uso de una app de educación \"provoca\" mejores notas académicas basándose únicamente en un estudio observacional simple sin grupo de control controlado. ¡Mantén siempre el rigor crítico!</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "¿Cómo se denomina formalmente en estadística a una variable no medida que influye tanto en la predictora como en la de respuesta, sugiriendo una falsa causalidad?",
+                            "options": [
+                                "Variable de correlación.",
+                                "Variable de confusión o variable oculta.",
+                                "Estadístico de sesgo.",
+                                "Ordenada de control."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Es una variable ajena que confunde la relación lineal directa haciéndola parecer real.",
+                            "feedbackCorrect": "¡Excelente! Se llama variable de confusión o variable oculta.",
+                            "feedbackIncorrect": "Incorrecto. Se denomina variable de confusión o variable oculta.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Si encuentras una correlación muy alta entre el tamaño del zapato de los niños y su nivel de lectura en una escuela de Antigua, ¿cuál es la variable explicativa real oculta?",
+                            "options": [
+                                "El color de los zapatos.",
+                                "La edad del niño.",
+                                "La cantidad de libros leídos.",
+                                "El tamaño de la biblioteca escolar."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "A mayor edad, los niños calzan más grande y a la vez saben leer libros más complejos.",
+                            "feedbackCorrect": "¡Perfecto! La variable oculta real es la edad del niño.",
+                            "feedbackIncorrect": "Incorrecto. La variable real oculta es la edad del niño.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "¿Se puede establecer causalidad directa a partir de un diagrama de dispersión observacional que arroja un coeficiente de Pearson r = 0.99? Escribe 'si' o 'no':",
+                            "correctAnswer": "no",
+                            "hint": "Un coeficiente r alto indica asociación lineal fuerte, pero no prueba la dirección del flujo causal.",
+                            "feedbackCorrect": "¡Excelente! No se puede establecer causalidad basándose solo en r, se requiere un diseño experimental.",
+                            "feedbackIncorrect": "Incorrecto. No, r = 0.99 no demuestra causalidad por sí solo.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Da un ejemplo de correlación espuria o coincidencia absurda sin sentido en la vida cotidiana.",
+                            "options": [
+                                "A mayor lluvia, mayor venta de paraguas.",
+                                "La correlación temporal entre la cantidad de películas de un actor de Hollywood y el consumo de chocolate en el país.",
+                                "A mayor estudio, mejores notas en física.",
+                                "A mayor velocidad, menor tiempo de llegada."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Busca una relación de variables que coinciden numéricamente pero no tienen ninguna lógica ni conexión real.",
+                            "feedbackCorrect": "¡Excelente! Las películas del actor y el chocolate no tienen ninguna conexión física, es espuria.",
+                            "feedbackIncorrect": "Incorrecto. La coincidencia temporal del chocolate y las películas es una correlación espuria típica.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "¿Cuál es la única metodología de diseño científico válida para probar de forma inequívoca una relación de causa y efecto?",
+                            "options": [
+                                "Aumentar el tamaño de la muestra observacional n.",
+                                "Realizar un experimento diseñado controlado con asignación aleatoria de tratamientos y grupo de control.",
+                                "Calcular el coeficiente de determinación R².",
+                                "Dibujar una línea recta a mano sobre los puntos."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Requiere manipular activamente una variable aislando todos los demás factores de confusión.",
+                            "feedbackCorrect": "¡Excelente! Solo un experimento diseñado controlado demuestra causalidad científica.",
+                            "feedbackIncorrect": "Incorrecto. Exige un experimento diseñado controlado con grupo de control.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "Correlación no implica causalidad. Las variables pueden asociarse debido a variables de confusión ocultas, relaciones bidireccionales o simple coincidencia (correlación espuria).",
+                    "videoPlaceholderText": "Video de Regresión: Divertidos ejemplos de correlaciones espurias que demuestran que correlación no es causalidad."
+                }
+            ]
+        },
+        {
+            "title": "Unidad 2: El Modelo de Regresión por Mínimos Cuadrados",
+            "lessons": [
+                {
+                    "id": "recta-regresion-minimos-cuadrados",
+                    "title": "Lección 2.1: La Recta de Regresión ŷ = mx + b",
+                    "introduction": "Aprende a calcular la ecuación de la recta de mejor ajuste utilizando las fórmulas de Mínimos Cuadrados.",
+                    "explanationHtml": "<p>Cuando confirmamos la existencia de una relación lineal fuerte mediante el diagrama de dispersión y el coeficiente de Pearson, el siguiente paso es modelar dicha relación con una línea recta para predecir futuros valores. Ajustamos una recta de regresión de la forma:</p><p class=\"text-center font-mono font-extrabold text-primary text-base my-2\">$$\\hat{y} = m \\cdot x + b$$</p><p class=\"mt-2 text-slate-700\">Para hallar la pendiente ($m$) y la ordenada al origen ($b$) que garanticen el mejor ajuste, aplicamos el criterio de <strong>Mínimos Cuadrados</strong>, el cual minimiza la suma de las distancias verticales al cuadrado de los puntos a la recta. Las fórmulas son:</p><p class=\"text-center font-mono font-extrabold text-primary text-base my-2\">$$m = \\frac{n\\sum x_i y_i - \\sum x_i \\sum y_i}{n\\sum x_i^2 - (\\sum x_i)^2}$$</p><p class=\"text-center font-mono font-extrabold text-primary text-base my-2\">$$b = \\bar{y} - m \\cdot \\bar{x}$$</p><p class=\"mt-2 text-slate-700\">Donde $\\bar{x}$ e $\\bar{y}$ representan las medias aritméticas muestrales de ambas variables.</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Ecuación de Regresión Lineal</p><p class=\"text-xs font-mono font-bold text-primary\">ŷ = mx + b &nbsp;|&nbsp; m = Pendiente &nbsp;|&nbsp; b = Ordenada al Origen</p><p class=\"text-xs text-slate-550\">Herramienta: Ten cuidado de no confundir la sumatoria de cuadrados &sum;x^2 con (&sum;x)^2 en el denominador.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"18\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">RECTA DE MÍNIMOS CUADRADOS</text><line x1=\"40\" y1=\"100\" x2=\"260\" y2=\"100\" stroke=\"#cbd5e1\" stroke-width=\"1.5\" /><line x1=\"40\" y1=\"30\" x2=\"40\" y2=\"100\" stroke=\"#cbd5e1\" stroke-width=\"1.5\" /><line x1=\"50\" y1=\"90\" x2=\"250\" y2=\"40\" stroke=\"#3b82f6\" stroke-width=\"2\" /><circle cx=\"70\" cy=\"80\" r=\"3.5\" fill=\"#ef4444\" /><line x1=\"70\" y1=\"80\" x2=\"70\" y2=\"85\" stroke=\"#ef4444\" stroke-width=\"1\" stroke-dasharray=\"2,2\" /><circle cx=\"150\" cy=\"65.5\" r=\"4.5\" fill=\"#10b981\" /><text x=\"150\" y=\"78\" font-size=\"8.5\" font-weight=\"bold\" fill=\"#047857\" text-anchor=\"middle\">(x̄, ȳ)</text><circle cx=\"210\" cy=\"45\" r=\"3.5\" fill=\"#ef4444\" /><line x1=\"210\" y1=\"45\" x2=\"210\" y2=\"50\" stroke=\"#ef4444\" stroke-width=\"1\" stroke-dasharray=\"2,2\" /></svg>",
+                    "svgDescription": "Recta de regresión de mínimos cuadrados (línea azul) ajustada a una nube de puntos. El punto verde central (x̄, ȳ) es el centroide por donde la recta de mínimos cuadrados pasa de forma obligada.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> A partir de los datos simplificados de 3 parcelas de estudio en Guatemala: $(1, 2)$, $(2, 4)$ y $(3, 5)$. Calcula de forma detallada la recta de regresión de mínimos cuadrados.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1: Realizar las sumatorias de control:</strong> <br>$$n = 3, \\quad \\sum x = 6, \\quad \\sum y = 11$$ <br>$$\\sum x^2 = 1^2 + 2^2 + 3^2 = 1 + 4 + 9 = 14$$ <br>$$\\sum xy = (1 \\cdot 2) + (2 \\cdot 4) + (3 \\cdot 5) = 2 + 8 + 15 = 25$$</li><li><strong>Paso 2: Calcular la pendiente $m$:</strong> <br>$$m = \\frac{3(25) - (6)(11)}{3(14) - 6^2} = \\frac{75 - 66}{42 - 36} = \\frac{9}{6} = 1.50$$</li><li><strong>Paso 3: Calcular la ordenada al origen $b$:</strong> <br>Medias: $\\bar{x} = 6/3 = 2$, $\\bar{y} = 11/3 = 3.67$. <br>$$b = \\bar{y} - m \\cdot \\bar{x} = 3.67 - 1.50(2) = 3.67 - 3.00 = 0.67$$</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> La ecuación de la recta de regresión por mínimos cuadrados es <strong>$\\hat{y} = 1.50x + 0.67$</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Confundir sumatoria de cuadrados con cuadrado de sumatoria:</strong> Utilizar $(\\sum x)^2 = 6^2 = 36$ en lugar de $\\sum x^2 = 14$ en las sumatorias de la pendiente. Recuerde que el primer término es la suma de los valores al cuadrado y el segundo es la suma simple total elevada al cuadrado.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "¿Qué propiedad geométrica representa la ordenada al origen b de la recta de regresión ŷ = mx + b en el plano cartesiano?",
+                            "options": [
+                                "Es la inclinación o pendiente de la recta.",
+                                "Es el punto donde la recta interseca exactamente al eje vertical Y (cuando x = 0).",
+                                "Es el promedio geométrico de los datos de x.",
+                                "Es la varianza residual."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Si colocas x = 0 en la ecuación, ŷ = b. Geométricamente representa el corte con...",
+                            "feedbackCorrect": "¡Excelente! b representa el intercepto con el eje Y.",
+                            "feedbackIncorrect": "Incorrecto. Representa el punto donde la recta cruza el eje vertical Y.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Si la ecuación de una recta de regresión es ŷ = 2x + 10, ¿cuál es el valor numérico entero estimado de y si x es igual a 5? (Ingresa solo el número entero):",
+                            "correctAnswer": "20",
+                            "hint": "Sustituye x = 5 en la ecuación y resuelve: ŷ = 2*(5) + 10.",
+                            "feedbackCorrect": "¡Perfecto! ŷ = 2*5 + 10 = 20.",
+                            "feedbackIncorrect": "Incorrecto. ŷ = 2*(5) + 10 = 20.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Por qué punto de coordenadas medias obligadas (x̄, ȳ) pasa siempre de forma geométrica exacta la recta de regresión ajustada por mínimos cuadrados?",
+                            "options": [
+                                "Por el origen de coordenadas (0, 0).",
+                                "Por el centroide o punto de medias (x̄, ȳ).",
+                                "Por el valor máximo de la muestra.",
+                                "Por ningún punto fijo, varía caóticamente."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Es el punto que equilibra las distancias verticales promedio de todos los datos.",
+                            "feedbackCorrect": "¡Excelente! La recta de mínimos cuadrados siempre pasa por el centroide (x̄, ȳ).",
+                            "feedbackIncorrect": "Incorrecto. Pasa exactamente por el punto de coordenadas medias (x̄, ȳ).",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Calcula el valor decimal exacto de la pendiente m si sabemos que n = 5, ∑x = 10, ∑y = 20, ∑x² = 30 y ∑xy = 50. (Ingresa solo el número entero):",
+                            "correctAnswer": "1",
+                            "hint": "Aplica m = (n*∑xy - ∑x*∑y) / (n*∑x² - (∑x)²). Reemplaza: (5*50 - 10*20) / (5*30 - 10^2).",
+                            "feedbackCorrect": "¡Excelente! m = (250 - 200) / (150 - 100) = 50 / 50 = 1.",
+                            "feedbackIncorrect": "Incorrecto. m = (250-200) / (150-100) = 50/50 = 1.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Qué representa conceptualmente la variable y con un circunflejo (ŷ) en la ecuación de regresión lineal simple?",
+                            "options": [
+                                "El valor real observado en la muestra experimental.",
+                                "El valor promedio estimado o predicho por la recta de regresión.",
+                                "La desviación típica de los datos de y.",
+                                "La suma de los errores al cuadrado."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "El acento circunflejo o sombrero indica estimación a partir de un modelo.",
+                            "feedbackCorrect": "¡Perfecto! ŷ representa el valor predicho o estimado por el modelo de la recta.",
+                            "feedbackIncorrect": "Incorrecto. Representa el valor predicho o estimado de la variable dependiente.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "La recta de mínimos cuadrados $\\hat{y} = mx + b$ minimiza la suma de errores al cuadrado. Pasa obligatoriamente por el centroide $(\\bar{x}, \\bar{y})$.",
+                    "videoPlaceholderText": "Video de Regresión: Cómo calcular los coeficientes de mínimos cuadrados a mano de forma rápida."
+                },
+                {
+                    "id": "interpretacion-pendiente-ordenada",
+                    "title": "Lección 2.2: Interpretación de la Pendiente y la Ordenada",
+                    "introduction": "Aprende a interpretar físicamente la pendiente m y la ordenada al origen b en contextos de negocios y economía.",
+                    "explanationHtml": "<p>Calcular la recta es un proceso mecánico; la verdadera analítica de negocios consiste en saber qué significan la pendiente ($m$) y la ordenada al origen ($b$) para tomar decisiones ejecutivas informadas:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Pendiente ($m$):</strong> Representa el **cambio promedio esperado en la variable dependiente $Y$ por cada unidad adicional que aumenta la variable explicativa $X$**.<br>1) Si $m$ es positiva, indica que por cada incremento unitario en $X$, $Y$ aumenta en promedio $m$ unidades.<br>2) Si $m$ es negativa, por cada incremento unitario en $X$, $Y$ disminuye en promedio $m$ unidades.</li><li><strong>Ordenada al Origen ($b$):</strong> Representa el **valor promedio esperado de la variable dependiente $Y$ cuando la variable predictora $X$ es exactamente igual a cero** ($X = 0$). Solo tiene interpretación física si $X = 0$ tiene sentido contextual en el estudio.</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Significado Físico de Coeficientes</p><p class=\"text-xs font-mono font-bold text-primary\">m = Tasa de cambio promedio de Y por unidad X</p><p class=\"text-xs font-mono font-bold text-primary\">b = Valor base promedio de Y cuando X = 0</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"18\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">INTERPRETACIÓN DE COEFICIENTES</text><line x1=\"40\" y1=\"100\" x2=\"260\" y2=\"100\" stroke=\"#cbd5e1\" stroke-width=\"1.5\" /><line x1=\"40\" y1=\"30\" x2=\"40\" y2=\"100\" stroke=\"#cbd5e1\" stroke-width=\"1.5\" /><line x1=\"40\" y1=\"90\" x2=\"240\" y2=\"50\" stroke=\"#3b82f6\" stroke-width=\"2.5\" /><circle cx=\"40\" cy=\"90\" r=\"4.5\" fill=\"#f59e0b\" /><text x=\"48\" y=\"85\" font-size=\"8\" font-weight=\"bold\" fill=\"#b45309\">Corte b = 5.0</text><line x1=\"140\" y1=\"70\" x2=\"190\" y2=\"70\" stroke=\"#10b981\" stroke-width=\"1.5\" stroke-dasharray=\"2,2\" /><line x1=\"190\" y1=\"70\" x2=\"190\" y2=\"60\" stroke=\"#10b981\" stroke-width=\"1.5\" /><text x=\"165\" y=\"80\" font-size=\"7.5\" fill=\"#047857\" text-anchor=\"middle\">Aumenta X = 1</text><text x=\"212\" y=\"65\" font-size=\"7.5\" fill=\"#047857\" font-weight=\"bold\" text-anchor=\"middle\">m = 0.8</text></svg>",
+                    "svgDescription": "Interpretación visual de coeficientes. La ordenada b=5.0 es el corte en el eje vertical cuando X=0. La pendiente m=0.8 es la altura en verde que sube la recta (Y) al avanzar una unidad a la derecha (X).",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> En Tecpán, una recta de regresión estima el consumo de combustible de un generador en un aserradero en galones ($y$) a partir de las horas de operación ($x$): $\\hat{y} = 0.8x + 5.0$. Interpreta detalladamente qué significan los coeficientes $0.8$ y $5.0$ para el jefe de producción.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1: Interpretar la pendiente ($m = 0.8$):</strong> Mide el cambio de Y por cada unidad de X. <br>**Interpretación:** Por cada hora adicional que opera el generador, el consumo de combustible aumenta en promedio exactamente en $0.8\\text{ galones}$.</li><li><strong>Paso 2: Interpretar la ordenada al origen ($b = 5.0$):</strong> Mide el valor cuando $X = 0$. <br>**Interpretación:** Si el generador está encendido pero operando a cero horas de trabajo útil ($x = 0$, ralentí o arranque), consume un promedio inicial fijo de $5.0\\text{ galones}$ de combustible de base.</li></ol>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Interpretar la ordenada al origen sin sentido físico:</strong> Intentar explicar la ordenada al origen de una regresión de peso versus estatura ($ŷ = 60x - 30$) afirmando que una persona con estatura de cero metros pesa $-30\\text{ kg}$ de forma teórica. Esto no tiene sentido biológico. Si el valor cero no está en el rango de los datos de la muestra, la ordenada al origen es solo una constante de ajuste matemático y no debe interpretarse físicamente.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Si la recta de ventas de una tienda en Antigua es y = 50x + 1000, donde x representa la cantidad de anuncios colocados, ¿cuál es el valor numérico en Quetzales de las ventas base esperadas si no colocan ningún anuncio (x = 0)? (Ingresa solo el número entero):",
+                            "correctAnswer": "1000",
+                            "hint": "Sustituye x = 0 en la ecuación de ventas dada y resuelve.",
+                            "feedbackCorrect": "¡Excelente! Las ventas base cuando x = 0 son de Q1,000.00.",
+                            "feedbackIncorrect": "Incorrecto. Es el valor de la ordenada al origen: 1000.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Con la misma recta del ejercicio anterior (y = 50x + 1000), ¿en cuántos Quetzales aumentan las ventas promedio por cada anuncio adicional colocado? (Ingresa solo el número entero):",
+                            "correctAnswer": "50",
+                            "hint": "Mide el incremento promedio de y por unidad de x, el cual corresponde a la pendiente m.",
+                            "feedbackCorrect": "¡Perfecto! Aumentan Q50.00 en promedio por cada anuncio colocado.",
+                            "feedbackIncorrect": "Incorrecto. El incremento unitario lo da la pendiente, que es 50.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "En la ecuación de regresión y = -2.5x + 100, ¿qué significa físicamente que la pendiente sea negativa (m = -2.5)?",
+                            "options": [
+                                "Que por cada unidad que aumenta x, la variable dependiente y disminuye en promedio 2.5 unidades.",
+                                "Que el modelo de regresión lineal no sirve para predecir.",
+                                "Que hay una probabilidad negativa de error.",
+                                "Que la ordenada al origen es menor a 100."
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "El signo negativo indica una relación inversa: al aumentar una, la otra disminuye.",
+                            "feedbackCorrect": "¡Excelente! La pendiente negativa indica la tasa de disminución de y por unidad x.",
+                            "feedbackIncorrect": "Incorrecto. Significa que y disminuye en promedio 2.5 unidades por cada aumento unitario de x.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "¿Es útil y recomendado interpretar físicamente la ordenada al origen b si todo el soporte de datos medidos para x se encuentra muy alejado de cero (ej. x entre 100 y 500 llamadas)? Escribe 'si' o 'no':",
+                            "correctAnswer": "no",
+                            "hint": "Si x = 0 está muy fuera de tus datos reales medidos, extrapolar b carece de sentido práctico.",
+                            "feedbackCorrect": "¡Excelente! No es recomendado, ya que representa una extrapolación extrema sin validez física.",
+                            "feedbackIncorrect": "Incorrecto. No, en ese caso b es solo una constante matemática sin significado real.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si una ecuación de regresión de costo de envío estima y = 1.20x + 0.50 dólares, ¿cuál es el incremento de costo en dólares si enviamos un paquete que pesa 10 kg adicionales (x aumenta en 10)? (Ingresa el número con punto decimal):",
+                            "correctAnswer": "12",
+                            "hint": "Multiplica el incremento de peso (10) por la pendiente unitaria (1.20).",
+                            "feedbackCorrect": "¡Perfecto! Incremental = 10 * 1.20 = 12.00 dólares.",
+                            "feedbackIncorrect": "Incorrecto. El incremento es 1.20 * 10 = 12 dólares.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        }
+                    ],
+                    "summaryHtml": "La pendiente $m$ indica la tasa de cambio promedio de $Y$ por unidad de $X$. La ordenada $b$ es el promedio base de $Y$ cuando $X=0$.",
+                    "videoPlaceholderText": "Video de Regresión: Cómo interpretar la pendiente y el intercepto en reportes de negocios reales."
+                },
+                {
+                    "id": "prediccion-e-interpolacion",
+                    "title": "Lección 2.3: Predicción e Interpolación",
+                    "introduction": "Aprende a realizar predicciones de Y utilizando la recta, diferenciando interpolación segura de extrapolación riesgosa.",
+                    "explanationHtml": "<p>La mayor utilidad práctica de la regresión lineal es la **predicción**: utilizar la ecuación ajustada para estimar el valor promedio de la variable dependiente $\\hat{y}$ para un valor de interés de la variable explicativa $x$.</p><p class=\"mt-2\">Sin embargo, no todas las predicciones tienen la misma validez científica. Clasificamos las proyecciones en dos categorías según la ubicación de $x$:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>1. Interpolación:</strong> Consiste en predecir valores de $Y$ para una variable explicativa $x$ que se encuentra **dentro del rango original de los datos** medidos en la muestra. Es un procedimiento **seguro, confiable y estadísticamente válido**.</li><li><strong>2. Extrapolación:</strong> Consiste en predecir para valores de $x$ situados **muy fuera del rango original de los datos**. Es una práctica de **alto riesgo analítico**, ya que asume de forma ciega que la tendencia lineal se mantiene infinitamente, ignorando límites físicos y económicos.</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Regiones de Predicción</p><p class=\"text-xs font-mono font-bold text-primary\">Rango [x_min, x_max] = Interpolación Segura &nbsp;|&nbsp; Fuera del rango = Extrapolación</p><p class=\"text-xs text-slate-550\">Advertencia: En el mundo real, los modelos lineales suelen saturarse o doblarse fuera de su rango.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"18\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">INTERPOLACIÓN VS EXTRAPOLACIÓN</text><line x1=\"30\" y1=\"90\" x2=\"270\" y2=\"90\" stroke=\"#cbd5e1\" stroke-width=\"1.5\" /><rect x=\"60\" y=\"80\" width=\"120\" height=\"20\" fill=\"#d1fae5\" stroke=\"#10b981\" rx=\"3\" /><text x=\"120\" y=\"93\" font-size=\"8\" font-weight=\"bold\" fill=\"#065f46\" text-anchor=\"middle\">Soporte Muestra [10, 50]</text><circle cx=\"120\" cy=\"55\" r=\"4.5\" fill=\"#10b981\" /><text x=\"120\" y=\"45\" font-size=\"7.5\" font-weight=\"bold\" fill=\"#065f46\" text-anchor=\"middle\">x = 30 (Seguro)</text><circle cx=\"230\" cy=\"55\" r=\"4.5\" fill=\"#ef4444\" /><text x=\"230\" y=\"45\" font-size=\"7.5\" font-weight=\"bold\" fill=\"#b91c1c\" text-anchor=\"middle\">x = 80 (Riesgo)</text><line x1=\"120\" y1=\"50\" x2=\"120\" y2=\"80\" stroke=\"#475569\" stroke-width=\"0.8\" stroke-dasharray=\"2,2\" /><line x1=\"230\" y1=\"50\" x2=\"230\" y2=\"90\" stroke=\"#475569\" stroke-width=\"0.8\" stroke-dasharray=\"2,2\" /></svg>",
+                    "svgDescription": "Esquema de soporte de datos de regresión. Valores dentro del rango de muestra (verde) son interpolaciones seguras; valores lejanos (rojo) representan extrapolación de alto riesgo.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Un estudio de rendimiento agrícola en Escuintla mide la producción de caña de azúcar ($y$) en toneladas para temperaturas ($x$) registradas en la muestra entre 25°C y 35°C, obteniendo la recta $\\hat{y} = 4x + 10$. Evalúa de forma crítica la validez de proyectar para: a) 30°C, b) 5°C.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1: Analizar caso a (30°C):</strong> El valor 30°C está dentro del rango medido [25°C, 35°C]. Es una **interpolación segura y válida**: <br>$$\\hat{y} = 4(30) + 10 = 120 + 10 = 130\\text{ toneladas}$$</li><li><strong>Paso 2: Analizar caso b (5°C):</strong> El valor 5°C está muy alejado del rango. Aplicar la recta daría $\\hat{y} = 4(5) + 10 = 30\\text{ t}$. Sin embargo, biológicamente a 5°C la caña de azúcar se congela y la producción real es cero. Es una **extrapolación inválida de alto riesgo**.</li></ol>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Confiar ciegamente en extrapolaciones lejanas:</strong> Proyectar las ventas de un negocio para un presupuesto publicitario 10 veces mayor que el medido usando la recta de mínimos cuadrados. Las relaciones comerciales suelen saturarse debido a leyes de rendimientos decrecientes y no se mantienen lineales a gran escala.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "¿Cómo se denomina formalmente a la predicción de un valor de Y para una variable explicativa X que se encuentra dentro del rango de datos experimentales recopilados?",
+                            "options": [
+                                "Extrapolación.",
+                                "Interpolación de datos.",
+                                "Deducción de varianza.",
+                                "Axioma muestral."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "La palabra lleva el prefijo latino 'inter' que significa entre o dentro.",
+                            "feedbackCorrect": "¡Excelente! Se llama interpolación de datos y es muy confiable.",
+                            "feedbackIncorrect": "Incorrecto. Se denomina interpolación.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Si tu rango medido va de 10 a 50 llamadas diarias de ventas y utilizas la recta para estimar las ventas de 500 llamadas diarias, ¿qué proceso estadístico estás realizando?",
+                            "options": [
+                                "Interpolación segura.",
+                                "Extrapolación de alto riesgo.",
+                                "Masa de probabilidad discreta.",
+                                "Teorema del Límite Central."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Consiste en proyectar fuera del soporte medido original.",
+                            "feedbackCorrect": "¡Perfecto! Estás extrapolando de forma arriesgada muy fuera de la muestra.",
+                            "feedbackIncorrect": "Incorrecto. Estás realizando una extrapolación de alto riesgo.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "En la recta de regresión ŷ = 0.50x + 20, calcula el valor predicho o estimado para x = 80. (Ingresa solo el número entero):",
+                            "correctAnswer": "60",
+                            "hint": "Sustituye x = 80 en la ecuación: ŷ = 0.50*(80) + 20.",
+                            "feedbackCorrect": "¡Excelente! ŷ = 40 + 20 = 60.",
+                            "feedbackIncorrect": "Incorrecto. ŷ = 0.50*(80) + 20 = 60.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Por qué la extrapolación extrema representa un gran peligro financiero o físico en la toma de decisiones?",
+                            "options": [
+                                "Porque los cálculos de factoriales se vuelven infinitos.",
+                                "Porque las tendencias de la naturaleza y del mercado suelen saturarse, cambiar de curvatura o romperse fuera del rango de datos observados.",
+                                "Porque el error estándar se reduce a cero.",
+                                "Porque los residuos se vuelven positivos."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Piensa si un negocio puede crecer linealmente al infinito sin límites físicos.",
+                            "feedbackCorrect": "¡Excelente! Las tendencias de la naturaleza y economía suelen saturarse fuera del rango medido.",
+                            "feedbackIncorrect": "Incorrecto. Las tendencias se saturan o rompen fuera del soporte medido original.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Si realizas una predicción para x = 30 si tu muestra original mide valores de x entre 20 y 40, ¿es el resultado confiable? Escribe 'si' o 'no':",
+                            "correctAnswer": "si",
+                            "hint": "Al encontrarse 30 dentro del soporte medido [20, 40], se considera una interpolación confiable.",
+                            "feedbackCorrect": "¡Perfecto! Sí, es una interpolación segura dentro del rango de datos experimentales.",
+                            "feedbackIncorrect": "Incorrecto. Sí, es una interpolación estándar segura.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        }
+                    ],
+                    "summaryHtml": "La predicción estima $\\hat{y}$ para un valor de $x$. La interpolación (dentro del rango muestral) es segura; la extrapolación (fuera del rango) es riesgosa debido a cambios de tendencia.",
+                    "videoPlaceholderText": "Video de Regresión: Interpolación y extrapolación explicada con ejemplos de la vida real."
+                }
+            ]
+        },
+        {
+            "title": "Unidad 3: Coeficiente de Determinación y Análisis de Residuos",
+            "lessons": [
+                {
+                    "id": "coeficiente-determinacion-r2",
+                    "title": "Lección 3.1: Coeficiente de Determinación R²",
+                    "introduction": "Calcula y evalúa la bondad de ajuste del modelo lineal mediante el Coeficiente de Determinación R².",
+                    "explanationHtml": "<p>Ajustar una recta de regresión por mínimos cuadrados es fácil, pero ¿cómo sabemos si ese modelo lineal es realmente bueno y útil para predecir? Para medir la calidad y bondad de ajuste de nuestra recta, calculamos el <strong>Coeficiente de Determinación ($R^2$ o $r^2$)</strong>.</p><p class=\"mt-2\">El $R^2$ representa la <strong>proporción de la variabilidad total de la variable dependiente $Y$ que es explicada de forma satisfactoria por la variable independiente $X$ a través del modelo de la recta de regresión</strong>. En modelos de regresión lineal simple, se calcula de forma directa elevando al cuadrado el coeficiente de correlación de Pearson:</p><p class=\"text-center font-mono font-extrabold text-primary text-base my-2\">$$R^2 = r^2$$</p><p class=\"mt-2 text-slate-700\">El valor de $R^2$ fluctúa entre **0 y 1** (de **0% a 100%**):</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>R² = 1.00 (100%):</strong> Ajuste perfecto. La recta explica la totalidad de los datos y todos los puntos están situados exactamente sobre la recta.</li><li><strong>R² = 0.81 (81%):</strong> Excelente ajuste. El 81% de la variación de Y se explica por X, y el 19% se debe a factores inexplicados.</li><li><strong>R² = 0.00 (0%):</strong> El modelo lineal no explica absolutamente nada de la variación y no sirve para predecir.</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Bondad de Ajuste R²</p><p class=\"text-xs font-mono font-bold text-primary\">R^2 = r^2 &nbsp;|&nbsp; R^2 = Variación Explicada / Variación Total</p><p class=\"text-xs text-slate-550\">Herramienta: En ciencias sociales, un R² de 40% puede ser sumamente valioso e informativo.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"18\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">EXPLICACIÓN DE VARIANZA R²</text><circle cx=\"90\" cy=\"65\" r=\"30\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"1.5\" /><circle cx=\"110\" cy=\"65\" r=\"20\" fill=\"#d1fae5\" stroke=\"#10b981\" stroke-width=\"1.5\" /><text x=\"90\" y=\"68\" font-size=\"9.5\" font-weight=\"bold\" fill=\"#1e40af\">Y</text><text x=\"110\" y=\"68\" font-size=\"9.5\" font-weight=\"bold\" fill=\"#047857\">X</text><rect x=\"155\" y=\"40\" width=\"115\" height=\"55\" fill=\"#f0fdf4\" stroke=\"#86efac\" rx=\"6\" /><text x=\"212.5\" y=\"58\" font-size=\"8\" font-weight=\"extrabold\" fill=\"#047857\" text-anchor=\"middle\">R² = 81% (Explicado)</text><text x=\"212.5\" y=\"78\" font-size=\"7.5\" fill=\"#475569\" text-anchor=\"middle\">19% de variación</text><text x=\"212.5\" y=\"88\" font-size=\"7.5\" fill=\"#475569\" text-anchor=\"middle\">de Y no explicada por X</text></svg>",
+                    "svgDescription": "Esquema de varianza compartida. El coeficiente R²=81% indica la porción de área verde solapada (explicada por X), dejando un 19% de variación de Y debido a otros factores.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Un analista en Antigua Guatemala determina que el coeficiente de correlación lineal entre el presupuesto publicitario ($x$) y las ventas ($y$) de una empresa es de $r = 0.90$. Calcula el Coeficiente de Determinación $R^2$ e interpreta el resultado para la gerencia de finanzas.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1: Calcular $R^2$ elevando al cuadrado el coeficiente de correlación de Pearson:</strong> <br>$$R^2 = r^2 = (0.90)^2 = 0.81$$</li><li><strong>Paso 2: Expresar en porcentaje:</strong> <br>$$0.81 \\times 100\\% = 81\\%$$</li><li><strong>Paso 3: Interpretar en el contexto.</strong> <br>**Significado:** El **81% de la variación total observada en las ventas** de la empresa se puede explicar satisfactoriamente mediante el modelo de la recta de regresión a partir del presupuesto publicitario invertido. El **19% restante de la variación** se debe a otros factores inexplicados o variables ajenas al modelo simple (ej. competencia, calidad del producto).</li></ol>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Confundir R² con r:</strong> Atribuirle a un $R^2$ de $64\\%$ una correlación directa del $64\\%$. Recuerde que la correlación lineal es $r = \\pm \\sqrt{R^2} = \\pm \\sqrt{0.64} = \\pm 0.80$. R² y r representan conceptos analíticos diferentes; no los confunda.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Si el coeficiente de correlación lineal de Pearson es r = -0.80, ¿cuál es el valor decimal del coeficiente de determinación R²? (Ingresa el número con punto decimal):",
+                            "correctAnswer": "0.64",
+                            "hint": "Eleva al cuadrado el valor de r: (-0.80)^2. Recuerda que al elevar al cuadrado, el resultado es siempre positivo.",
+                            "feedbackCorrect": "¡Excelente! R² = (-0.80)^2 = 0.64 (o 64%).",
+                            "feedbackIncorrect": "Incorrecto. R² = (-0.80)^2 = 0.64.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cuál es el valor del coeficiente de determinación R² si la recta de regresión lineal explica el 100% de la variación de los datos muestrales? (Ingresa el número entero):",
+                            "correctAnswer": "1",
+                            "hint": "Representa el ajuste perfecto donde el modelo explica de forma total la variable.",
+                            "feedbackCorrect": "¡Perfecto! R² = 1.00 o 100%.",
+                            "feedbackIncorrect": "Incorrecto. Equivale exactamente a 1.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si el coeficiente de determinación de un modelo es R² = 0.49, calcula el valor absoluto del coeficiente de correlación r de Pearson. (Ingresa el número con punto decimal):",
+                            "correctAnswer": "0.7",
+                            "hint": "Calcula la raíz cuadrada de R²: √0.49.",
+                            "feedbackCorrect": "¡Excelente! |r| = √0.49 = 0.70.",
+                            "feedbackIncorrect": "Incorrecto. |r| = √0.49 = 0.70.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Qué porcentaje de la variación de la variable dependiente Y queda INEXPLICADO en un modelo lineal que tiene un R² de 0.75? (Ingresa solo el número entero sin el símbolo %):",
+                            "correctAnswer": "25",
+                            "hint": "Resta el porcentaje explicado al 100%: 100% - 75%.",
+                            "feedbackCorrect": "¡Perfecto! Queda inexplicado el 25% de la variación (100% - 75%).",
+                            "feedbackIncorrect": "Incorrecto. La variación inexplicada es 100% - 75% = 25%.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si el R² de un modelo lineal es prácticamente cero (0.01), ¿cuál es tu conclusión estadística sobre la utilidad de la recta de regresión?",
+                            "options": [
+                                "Que la recta tiene un ajuste perfecto.",
+                                "Que la recta de regresión no tiene ninguna capacidad de predicción lineal y el modelo no es útil.",
+                                "Que se debe usar una muestra más pequeña.",
+                                "Que la pendiente es infinita."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Un R² cercano a cero indica que la variable explicativa X no explica los cambios de Y.",
+                            "feedbackCorrect": "¡Excelente! Un R² muy cercano a cero indica que la recta no es útil para estimaciones lineales.",
+                            "feedbackIncorrect": "Incorrecto. Significa que el modelo lineal no tiene utilidad práctica de predicción.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "El Coeficiente de Determinación $R^2 = r^2$ mide el porcentaje de la variabilidad total de $Y$ explicada por $X$ mediante el modelo de regresión. Oscila entre $0$ y $1$ ($0\\%$ a $100\\%$).",
+                    "videoPlaceholderText": "Video de Regresión: Qué es el coeficiente de determinación R2 y cómo evaluar la bondad de ajuste."
+                },
+                {
+                    "id": "definicion-analisis-residuos",
+                    "title": "Lección 3.2: Definición y Análisis de Residuos",
+                    "introduction": "Aprende a calcular los residuos individuales e interpreta su distribución gráfica para validar la homocedasticidad.",
+                    "explanationHtml": "<p>Ningún modelo matemático es perfecto; siempre existen discrepancias entre lo estimado por la recta y lo que realmente ocurre en la realidad. Mapeamos estos errores individuales calculando los <strong>Residuos ($e_i$)</strong>.</p><p class=\"mt-2\">Un residuo representa la **distancia vertical** desde el punto de dato real observado $y_i$ hasta el valor promedio estimado por la recta de regresión $\\hat{y}_i$:</p><p class=\"text-center font-mono font-extrabold text-primary text-base my-2\">$$e_i = y_i - \\hat{y}_i$$</p><p class=\"mt-2 text-slate-700\">Propiedades y validaciones de los residuos:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Signo del Residuo:</strong> <br>1) Si $e_i > 0$ (positivo), el dato real está por encima de la recta (subestimación).<br>2) Si $e_i < 0$ (negativo), el dato real está por debajo de la recta (sobreestimación).</li><li><strong>Suma de Residuos:</strong> En la regresión de mínimos cuadrados, la suma (y el promedio) de todos los residuos es **exactamente cero** ($\\sum e_i = 0.00$).</li><li><strong>Homocedasticidad:</strong> Para que el modelo lineal sea óptimo, los residuos graficados versus X deben distribuirse de forma totalmente aleatoria, como una banda horizontal homogénea alrededor de la línea cero, sin mostrar patrones lógicos de curvas o de embudo.</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Ecuación del Residuo</p><p class=\"text-xs font-mono font-bold text-primary\">e = y - ŷ &nbsp;|&nbsp; &sum;e = 0.00</p><p class=\"text-xs text-slate-550\">Si los residuos forman una U, el modelo lineal es incorrecto y se requiere una curva cuadrática.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"18\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">GEOMETRÍA DEL RESIDUO</text><line x1=\"40\" y1=\"90\" x2=\"260\" y2=\"90\" stroke=\"#cbd5e1\" stroke-width=\"1.5\" /><line x1=\"40\" y1=\"90\" x2=\"260\" y2=\"40\" stroke=\"#3b82f6\" stroke-width=\"2\" /><circle cx=\"160\" cy=\"50\" r=\"3.5\" fill=\"#ef4444\" /><line x1=\"160\" y1=\"50\" x2=\"160\" y2=\"62.7\" stroke=\"#10b981\" stroke-width=\"1.5\" /><circle cx=\"160\" cy=\"62.7\" r=\"3\" fill=\"#10b981\" /><text x=\"160\" y=\"42\" font-size=\"7.5\" font-weight=\"bold\" fill=\"#b91c1c\" text-anchor=\"middle\">Real y = 10</text><text x=\"168\" y=\"58\" font-size=\"7.5\" font-weight=\"bold\" fill=\"#047857\">Residuo e = +2</text><text x=\"160\" y=\"74\" font-size=\"7.5\" fill=\"#1e40af\" text-anchor=\"middle\">Estimado ŷ = 8</text></svg>",
+                    "svgDescription": "Geometría del error residual. Muestra la distancia vertical e = y - ŷ desde el punto observado real y=10 (rojo) hasta el valor estimado de la recta ŷ=8 (verde), resultando en un residuo positivo de +2.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Para una observación real en Antigua Guatemala con coordenadas $A(2, 10)$, la recta de regresión estima una predicción $\\hat{y} = 3x + 2$. Calcula detalladamente el residuo de esta observación e interpreta el signo obtenido.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1: Identificar el valor real observado ($y$):</strong> <br>$$y = 10\\text{ unidades}$$</li><li><strong>Paso 2: Calcular el valor estimado ($\\hat{y}$):</strong> Sustituimos $x = 2$ en la ecuación: <br>$$\\hat{y} = 3(2) + 2 = 6 + 2 = 8\\text{ unidades}$$</li><li><strong>Paso 3: Aplicar la fórmula del residuo:</strong> <br>$$e = y - \\hat{y} = 10 - 8 = +2\\text{ unidades}$$</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Interpretación:</strong> El residuo es de <strong>+2</strong>. Dado que es positivo, indica que la recta subestimó el valor real, el cual se sitúa 2 unidades por encima de lo predicho por el modelo.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Calcular el residuo al revés:</strong> Restar el real del estimado $\\hat{y} - y$ por descuido. Esto dará un residuo de $-2$ incorrecto, invirtiendo la dirección lógica del error. Recuerda la regla alfabética nemotécnica: la **R** de **R**esiduo es **R**eal menos **E**stimado ($y - \\hat{y}$).</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Si la recta de regresión estima una predicción de 100 unidades y el valor real observado es 95, ¿cuál es el valor numérico entero del residuo? (Ingresa el signo negativo si corresponde):",
+                            "correctAnswer": "-5",
+                            "hint": "Aplica la fórmula: e = y - ŷ. Reemplaza y = 95 y ŷ = 100.",
+                            "feedbackCorrect": "¡Excelente! e = 95 - 100 = -5. Al ser negativo, la recta sobreestimó el valor real.",
+                            "feedbackIncorrect": "Incorrecto. e = y - ŷ = 95 - 100 = -5.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Qué nos indica encontrar una clara figura acampanada o en forma de U al graficar los residuos versus la variable explicativa X?",
+                            "options": [
+                                "Que el modelo de regresión lineal es perfectamente correcto.",
+                                "Que la relación entre las variables no es lineal, y el modelo óptimo es una curva cuadrática o curvo.",
+                                "Que la desviación estándar es infinita.",
+                                "Que la muestra es demasiado grande."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Cualquier patrón curvo en los residuos revela que la linealidad se ha roto.",
+                            "feedbackCorrect": "¡Perfecto! Un patrón en U indica que la relación no es lineal y se requiere un modelo curvo.",
+                            "feedbackIncorrect": "Incorrecto. Indica que la relación real de los datos es de tipo curvo o no lineal.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "¿Cuál es el valor numérico exacto de la suma (y el promedio) de todos los residuos verticales en una regresión ajustada por mínimos cuadrados? (Ingresa solo el número entero):",
+                            "correctAnswer": "0",
+                            "hint": "Por propiedad de mínimos cuadrados, los errores positivos y negativos se cancelan de forma matemática perfecta.",
+                            "feedbackCorrect": "¡Excelente! La sumatoria de todos los residuos de mínimos cuadrados siempre es exactamente cero.",
+                            "feedbackIncorrect": "Incorrecto. Por diseño matemático, la suma de residuos siempre da 0.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si el residuo de una predicción específica es exactamente cero, ¿qué nos indica geométricamente sobre esa observación en el plano cartesiano?",
+                            "options": [
+                                "Que el punto de dato real se encuentra ubicado de forma exacta sobre la recta de regresión.",
+                                "Que el punto está en el origen (0, 0).",
+                                "Que la varianza de la muestra es nula.",
+                                "Que hay una probabilidad del 100% de error."
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Si e = 0, entonces y = ŷ. El dato real coincide con el estimado de la recta.",
+                            "feedbackCorrect": "¡Perfecto! Indica que el punto real está exactamente sobre la línea de regresión.",
+                            "feedbackIncorrect": "Incorrecto. Significa que el punto observado está situado exactamente sobre la recta.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "¿Cómo se define de forma estándar el concepto de 'homocedasticidad' en el análisis de residuos?",
+                            "options": [
+                                "Que todos los residuos tienen signo positivo.",
+                                "Que la varianza de los residuos es constante a lo largo de todos los valores de la variable predictora x.",
+                                "Que el coeficiente R² es igual a la unidad.",
+                                "Que la media muestral de los residuos es cero."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "El prefijo griego 'homo' significa igual, y 'cedasticidad' se refiere a la dispersión de la varianza.",
+                            "feedbackCorrect": "¡Perfecto! Homocedasticidad significa que la varianza de los residuos es constante.",
+                            "feedbackIncorrect": "Incorrecto. Se refiere a que la variabilidad de los residuos se mantiene constante.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "El residuo es la distancia vertical $e = y - \\hat{y}$ entre el dato real y el estimado. La suma de todos los residuos de mínimos cuadrados es exactamente 0.00.",
+                    "videoPlaceholderText": "Video de Regresión: Cómo graficar y analizar los residuos para validar la linealidad de tus modelos."
+                },
+                {
+                    "id": "casos-practicos-regresion-estadistica",
+                    "title": "Lección 3.3: Casos Prácticos Aplicados a Agronegocios y Finanzas",
+                    "introduction": "Resuelve casos de estudio prácticos de proyección financiera en Guatemala integrando de forma completa regresión y R².",
+                    "explanationHtml": "<p>En la realidad de los agronegocios y las finanzas de Guatemala, la regresión lineal simple nos permite modelar cómo las inversiones influyen de forma directa en los ingresos o rendimientos de producción de una cooperativa o empresa.</p><p class=\"mt-2\">Un análisis financiero integral exige evaluar de forma secuencial:</p><ol class=\"list-decimal pl-5 space-y-1.5 my-3\"><li>1. Estimar la ecuación de mínimos cuadrados a partir de los datos históricos de parcelas piloto o sucursales comerciales.</li><li>2. Validar la bondad de ajuste del modelo mediante el coeficiente $R^2$ para saber si es confiable.</li><li>3. Verificar si el presupuesto de proyección se encuentra dentro del rango de soporte muestral (interpolación segura).</li><li>4. Proyectar los ingresos esperados y evaluar la viabilidad de los retornos de inversión.</li></ol>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Modelo Integrado Financiero</p><p class=\"text-xs font-mono font-bold text-primary\">ŷ = mx + b &rArr; Validar R^2 &rArr; Verificar rango X &rArr; Proyectar ingresos</p><p class=\"text-xs text-slate-550\">Herramienta: Úsalo para planificar presupuestos de riego, abono y campañas publicitarias.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"18\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">PROYECCIÓN DE AGRONEGOCIOS</text><line x1=\"40\" y1=\"100\" x2=\"260\" y2=\"100\" stroke=\"#cbd5e1\" stroke-width=\"1.5\" /><line x1=\"40\" y1=\"30\" x2=\"40\" y2=\"100\" stroke=\"#cbd5e1\" stroke-width=\"1.5\" /><line x1=\"40\" y1=\"90\" x2=\"220\" y2=\"40\" stroke=\"#3b82f6\" stroke-width=\"2.5\" /><circle cx=\"130\" cy=\"65\" r=\"4.5\" fill=\"#10b981\" /><text x=\"130\" y=\"55\" font-size=\"7.5\" font-weight=\"bold\" fill=\"#047857\" text-anchor=\"middle\">Proyección: 76 quintales</text><line x1=\"130\" y1=\"65\" x2=\"130\" y2=\"100\" stroke=\"#475569\" stroke-width=\"0.8\" stroke-dasharray=\"2,2\" /><text x=\"130\" y=\"110\" font-size=\"7\" fill=\"#475569\" font-weight=\"bold\" text-anchor=\"middle\">Riego X = Q3,000</text></svg>",
+                    "svgDescription": "Gráfico de proyección aplicada a agronegocios. Ilustra la estimación de una cosecha de 76 quintales de café para una inversión de riego de Q3,000 dentro del rango de soporte.",
+                    "workedExampleHtml": "<p><strong>Caso Práctico:</strong> Una cooperativa en Sololá recopila datos de sacos de café producidos en quintales ($y$) a partir del presupuesto de riego invertido en miles de Quetzales ($x$) en 5 parcelas de estudio, obteniendo la recta de regresión: $\\hat{y} = 12x + 40$, con un $R^2 = 0.85$ y un rango medido de inversión entre Q1,000 y Q5,000 ($x$ de 1 a 5). Realiza una proyección de quintales cosechados para una inversión de riego de Q3,000 ($x = 3$) e interpreta.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1: Evaluar la seguridad de la predicción.</strong> La inversión solicitada de Q3,000 ($x = 3$) se ubica dentro del rango muestral medido $[1, 5]$. Por lo tanto, es una **interpolación segura y estadísticamente válida**.</li><li><strong>Paso 2: Calcular la predicción:</strong> Sustituimos $x = 3$ en la recta: <br>$$\\hat{y} = 12(3) + 40 = 36 + 40 = 76\\text{ quintales}$$</li><li><strong>Paso 3: Evaluar con R².</strong> El $R^2 = 85\\%$ indica que el riego explica de forma excelente la variabilidad de la producción de café. La estimación es altamente sólida para planificar la facturación anual de la cooperativa.</li></ol>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Invertir sumas astronómicas basándose en extrapolaciones de rectas:</strong> Proyectar cosechas gigantescas para una inversión de Q100,000 usando la recta $\\hat{y} = 12(100) + 40$ por prisa. Los cultivos agrícolas tienen límites físicos de saturación y espacio; la relación lineal se romperá inevitablemente y la extrapolación conducirá a pérdidas de capital.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Con el modelo anterior (ŷ = 12x + 40), ¿cuántos quintales base se esperan cosechar en promedio si la inversión de riego es cero (x = 0)? (Ingresa solo el número entero):",
+                            "correctAnswer": "40",
+                            "hint": "Corresponde al valor de la ordenada al origen b cuando la variable predictora riego es nula.",
+                            "feedbackCorrect": "¡Excelente! Se cosechan 40 quintales de base por riego natural sin inversión extra.",
+                            "feedbackIncorrect": "Incorrecto. Es el intercepto b = 40 quintales.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cuántos quintales promedio de café aumenta la cosecha por cada mil Quetzales adicionales invertidos en riego según el modelo? (Ingresa solo el número entero):",
+                            "correctAnswer": "12",
+                            "hint": "Es la tasa de cambio unitaria de y por incremento de x, representada por la pendiente m.",
+                            "feedbackCorrect": "¡Perfecto! Aumenta 12 quintales por cada mil Quetzales invertidos.",
+                            "feedbackIncorrect": "Incorrecto. Lo determina la pendiente m = 12 quintales.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si la cooperativa quiere estimar la producción para una inversión de Q50,000 (x = 50) basándose en este modelo piloto de 5 parcelas, ¿es una predicción segura?",
+                            "options": [
+                                "Sí, porque el R² es del 85% y es muy alto.",
+                                "No, porque es una extrapolación extrema de altísimo riesgo comercial fuera del rango de datos [1, 5].",
+                                "Sí, porque las plantas necesitan riego constante.",
+                                "Sí, porque la pendiente es positiva."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Evalúa si 50 está dentro del soporte medido [1, 5] de parcelas piloto.",
+                            "feedbackCorrect": "¡Excelente! Es una extrapolación lejana y representa un gran riesgo comercial.",
+                            "feedbackIncorrect": "Incorrecto. No, representa una extrapolación extrema de alto riesgo.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Si en una parcela real con inversión de Q2,000 (x = 2) la cosecha real fue de 60 quintales, calcula el residuo con respecto a la predicción. (Ingresa el signo negativo si corresponde):",
+                            "correctAnswer": "-4",
+                            "hint": "Predicción ŷ = 12*(2) + 40 = 64. Aplica: e = y - ŷ = 60 - 64.",
+                            "feedbackCorrect": "¡Perfecto! Residuo e = 60 - 64 = -4 quintales. La recta sobreestimó la cosecha de esta parcela.",
+                            "feedbackIncorrect": "Incorrecto. e = 60 - (12*2 + 40) = 60 - 64 = -4.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Qué factor representa el 15% de variación inexplicada por el R² del riego en la producción de café de la cooperativa?",
+                            "options": [
+                                "Un error matemático en la sumatoria.",
+                                "Variables de confusión y factores ambientales no incluidos en el modelo simple (calidad del suelo, lluvia natural, plagas).",
+                                "La ordenada al origen b.",
+                                "El tamaño de la muestra n."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "El R² mide la varianza explicada; el resto se debe a variables e influencias externas no modeladas.",
+                            "feedbackCorrect": "¡Excelente! El 15% restante se debe a factores ambientales e influencias externas no modeladas.",
+                            "feedbackIncorrect": "Incorrecto. Representa a las variables y factores no incluidos en el modelo lineal simple.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "En finanzas y agronegocios, la regresión simple proyecta ingresos y producciones basadas en inversiones. R² valida su solidez y el soporte de X asegura predicciones viables.",
+                    "videoPlaceholderText": "Video de Regresión: Caso de estudio completo de proyección de ventas agrícolas en una cooperativa en Guatemala."
+                }
+            ]
+        }
+    ]
+},
 
     "algebra-lineal": {
         isRichCourse: true,
