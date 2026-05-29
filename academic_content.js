@@ -5,395 +5,1345 @@
 // Física y Estadística, estructurado según las directrices pedagógicas.
 
 window.ACADEMIC_CONTENT = {
-    "mate-primaria": `# Curso: Matemáticas Básicas
-* **Materia:** Matemáticas | **Nivel sugerido:** Primaria Alta
-* **Público objetivo:** Estudiantes que necesitan consolidar las bases del cálculo numérico y operaciones básicas.
-* **Objetivos de aprendizaje:** Comprender el valor posicional, dominar las cuatro operaciones fundamentales y resolver problemas de la vida cotidiana en Latinoamérica.
+    "mate-primaria": {
+    "isRichCourse": true,
+    "title": "Matemáticas de Primaria",
+    "units": [
+        {
+            "title": "Unidad 1: Números y Operaciones Fundamentales",
+            "lessons": [
+                {
+                    "id": "valor-posicional",
+                    "title": "Lección 1.1: El Valor Posicional y Números Grandes",
+                    "introduction": "El valor posicional es el principio por el cual cada dígito de un número tiene un valor diferente según la columna en la que se ubica.",
+                    "explanationHtml": "<p>En nuestro sistema decimal de numeración, utilizamos diez dígitos (del 0 al 9). El valor de cada uno de estos dígitos depende enteramente de su <strong>posición</strong>.</p><p class=\"mt-3\">A medida que nos movemos una columna hacia la izquierda, el valor posicional se multiplica por diez. Así es como agrupamos los números:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Unidades (U):</strong> Valen 1.</li><li><strong>Decenas (D):</strong> Valen 10.</li><li><strong>Centenas (C):</strong> Valen 100.</li><li><strong>Unidades de millar (UM):</strong> Valen 1,000.</li><li><strong>Decenas de millar (DM):</strong> Valen 10,000.</li><li><strong>Centenas de millar (CM):</strong> Valen 100,000.</li></ul><p class=\"mt-3\">Por ejemplo, en el número <strong>4,325</strong>, el \"4\" vale 4,000 unidades, el \"3\" vale 300 centenas, el \"2\" vale 20 decenas (20) y el \"5\" vale 5 unidades.</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Tabla de Valor Posicional para 4,325</p><p class=\"text-base font-mono font-extrabold text-primary\">4,325 = 4,000 + 300 + 20 + 5</p><p class=\"text-xs text-slate-500\">Donde: 4 UM (4,000) + 3 C (300) + 2 D (20) + 5 U (5).</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"25\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">VALOR POSICIONAL: 4,325</text><rect x=\"15\" y=\"45\" width=\"55\" height=\"40\" fill=\"#eff6ff\" stroke=\"#bfdbfe\" rx=\"6\" /><text x=\"42\" y=\"65\" font-size=\"16\" font-family=\"sans-serif\" font-weight=\"bold\" fill=\"#2563eb\" text-anchor=\"middle\">4</text><text x=\"42\" y=\"100\" font-size=\"8\" font-family=\"sans-serif\" fill=\"#64748b\" text-anchor=\"middle\">UM (4,000)</text><rect x=\"85\" y=\"45\" width=\"55\" height=\"40\" fill=\"#ecfdf5\" stroke=\"#a7f3d0\" rx=\"6\" /><text x=\"112\" y=\"65\" font-size=\"16\" font-family=\"sans-serif\" font-weight=\"bold\" fill=\"#059669\" text-anchor=\"middle\">3</text><text x=\"112\" y=\"100\" font-size=\"8\" font-family=\"sans-serif\" fill=\"#64748b\" text-anchor=\"middle\">C (300)</text><rect x=\"155\" y=\"45\" width=\"55\" height=\"40\" fill=\"#fffbeb\" stroke=\"#fde68a\" rx=\"6\" /><text x=\"182\" y=\"65\" font-size=\"16\" font-family=\"sans-serif\" font-weight=\"bold\" fill=\"#d97706\" text-anchor=\"middle\">2</text><text x=\"182\" y=\"100\" font-size=\"8\" font-family=\"sans-serif\" fill=\"#64748b\" text-anchor=\"middle\">D (20)</text><rect x=\"225\" y=\"45\" width=\"55\" height=\"40\" fill=\"#fef2f2\" stroke=\"#fca5a5\" rx=\"6\" /><text x=\"252\" y=\"65\" font-size=\"16\" font-family=\"sans-serif\" font-weight=\"bold\" fill=\"#dc2626\" text-anchor=\"middle\">5</text><text x=\"252\" y=\"100\" font-size=\"8\" font-family=\"sans-serif\" fill=\"#64748b\" text-anchor=\"middle\">U (5)</text></svg>",
+                    "svgDescription": "Desglose por columnas de valor posicional para el número 4,325. Cada bloque resalta el valor individual de cada dígito en su posición correspondiente.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Encuentra el valor posicional del dígito 7 en el número 874,210.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1: Identifica la posición del dígito.</strong> De derecha a izquierda, las posiciones son: Unidades (0), Decenas (1), Centenas (2), Unidades de millar (4), Decenas de millar (7).</li><li><strong>Paso 2: Asigna el valor de la columna.</strong> La posición de decenas de millar equivale a multiplicar por 10,000.</li><li><strong>Paso 3: Multiplica.</strong> 7 × 10,000 = 70,000.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> El valor posicional del dígito 7 es <strong>70,000</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Confundir la escala al revés:</strong> Leer las columnas de izquierda a derecha en lugar de derecha a izquierda (las unidades siempre van a la extrema derecha).</li><li><strong>Ignorar el cero como separador posicional:</strong> Pensar que 200,045 no tiene centenas de millar o decenas. Los ceros son fundamentales para mantener los valores en su lugar.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "¿Cuál es el valor del dígito 5 en el número 154,230?",
+                            "correctAnswer": "50000",
+                            "hint": "Determina en qué columna está el 5. Está en las decenas de millar (UM, DM).",
+                            "feedbackCorrect": "¡Excelente! El 5 está en las decenas de millar, por lo que su valor es 50,000.",
+                            "feedbackIncorrect": "Cuidado: el 5 está en la quinta columna (decenas de millar), su valor es 50,000.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Escribe en cifras sin espacios ni comas: 'Doscientos mil cuarenta y cinco'.",
+                            "correctAnswer": "200045",
+                            "hint": "Escribe 200 mil y luego agrega 45, colocando un cero en la columna de las centenas porque no hay centenas.",
+                            "feedbackCorrect": "¡Excelente! Colocaste el cero de las centenas correctamente: 200045.",
+                            "feedbackIncorrect": "Recuerda que si no hay centenas, debes colocar un cero: 200045.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "En una finca de Tecpán se cosecharon 45,670 manzanas. ¿Cuántas decenas de millar hay?",
+                            "correctAnswer": "4",
+                            "hint": "Identifica el dígito que está en la posición de las decenas de millar.",
+                            "feedbackCorrect": "¡Perfecto! El dígito 4 está en las decenas de millar, representando 40,000 manzanas.",
+                            "feedbackIncorrect": "El dígito en las decenas de millar es 4 (45,670).",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Qué número de seis cifras se forma con 3 centenas de millar, 5 decenas y 2 unidades?",
+                            "options": [
+                                "300,502",
+                                "300,052",
+                                "350,002",
+                                "305,020"
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Ordena las cifras: 3 en las centenas de millar, ceros en decenas y unidades de millar y centenas, 5 en decenas y 2 en unidades.",
+                            "feedbackCorrect": "¡Correcto! El número es 300,052.",
+                            "feedbackIncorrect": "Incorrecto. 3 CM (300,000) + 5 D (50) + 2 U (2) = 300,052.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Si sumas 1,000 al número 89,500, ¿qué número se obtiene?",
+                            "options": [
+                                "99,500",
+                                "89,600",
+                                "90,500",
+                                "90,000"
+                            ],
+                            "correctAnswer": 2,
+                            "hint": "Suma 1 en las unidades de millar. Al sumar 9 + 1 da 10, por lo que cambia también la decena de millar.",
+                            "feedbackCorrect": "¡Excelente! 89,500 + 1,000 = 90,500.",
+                            "feedbackIncorrect": "Incorrecto. 89,500 aumentado en 1,000 da 90,500.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "El valor posicional nos permite interpretar números grandes dividiéndolos en columnas (Unidades, Decenas, Centenas, Millares), donde cada columna vale 10 veces más que la anterior a su derecha.",
+                    "videoPlaceholderText": "Video de Primaria: Entendiendo el valor posicional con bloques multibase."
+                },
+                {
+                    "id": "suma-resta-llevadas",
+                    "title": "Lección 1.2: Suma y Resta con Llevadas y Préstamos",
+                    "introduction": "Aprende a sumar y restar verticalmente alineando las columnas correctamente y gestionando las llevadas y los préstamos.",
+                    "explanationHtml": "<p>Para sumar y restar números grandes, debemos alinearlos en columnas según su valor posicional: unidades bajo unidades, decenas bajo decenas, etc.</p><p class=\"mt-3\"><strong>La suma con llevadas:</strong> Si al sumar los dígitos de una columna obtienes un número de dos cifras (10 o más), dejas la cifra de la derecha abajo y \"llevas\" la cifra de la izquierda a la parte superior de la siguiente columna.</p><p class=\"mt-3\"><strong>La resta con préstamos:</strong> Si el número de arriba en una columna es más pequeño que el de abajo, debemos \"pedir prestado\" 1 a la columna de la izquierda. El número de la izquierda disminuye en 1, y el de la derecha recibe una decena completa (+10).</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Guía de Resta con Préstamo</p><p class=\"text-base font-mono font-extrabold text-primary\">8,110 - 4,523 = 3,587</p><p class=\"text-xs text-slate-500\">Recuerda: en las unidades, como 0 es menor que 3, pedimos prestado al 1 de las decenas, convirtiendo el 0 en 10.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"25\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">RESTA CON PRÉSTAMO</text><text x=\"80\" y=\"55\" font-size=\"18\" font-family=\"monospace\" fill=\"#334155\">  8  1  1  0</text><text x=\"80\" y=\"75\" font-size=\"18\" font-family=\"monospace\" fill=\"#334155\">- 4  5  2  3</text><line x1=\"80\" y1=\"83\" x2=\"220\" y2=\"83\" stroke=\"#94a3b8\" stroke-width=\"2\" /><text x=\"80\" y=\"105\" font-size=\"18\" font-family=\"monospace\" font-weight=\"bold\" fill=\"#2563eb\">  3  5  8  7</text><circle cx=\"168\" cy=\"40\" r=\"8\" fill=\"#fef2f2\" stroke=\"#dc2626\" stroke-width=\"1\" /><text x=\"168\" y=\"43\" font-size=\"9\" fill=\"#dc2626\" text-anchor=\"middle\" font-weight=\"bold\">10</text><path d=\"M 185 48 L 175 42\" stroke=\"#dc2626\" stroke-width=\"1.5\" stroke-dasharray=\"2,2\" /></svg>",
+                    "svgDescription": "Esquema de resta vertical con el flujo de préstamo. El dígito en las unidades recibe un 10 prestado de las decenas para poder restar 3.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Resta 4,523 de 8,110.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1:</strong> Alinea verticalmente: 8110 - 4523.</li><li><strong>Paso 2:</strong> Unidades: 0 - 3 no se puede. Pedimos prestado a las decenas. El 0 se vuelve 10, y el 1 de las decenas se vuelve 0. 10 - 3 = 7.</li><li><strong>Paso 3:</strong> Decenas: 0 - 2 no se puede. Pedimos prestado a las centenas. El 0 se vuelve 10, y el 1 de las centenas se vuelve 0. 10 - 2 = 8.</li><li><strong>Paso 4:</strong> Centenas: 0 - 5 no se puede. Pedimos prestado a los millares. El 0 se vuelve 10, y el 8 se vuelve 7. 10 - 5 = 5.</li><li><strong>Paso 5:</strong> Millares: 7 - 4 = 3.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> El resultado es exactamente <strong>3,587</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Olvidar disminuir el número prestador:</strong> Si pediste prestado a la columna de la izquierda, recuerda restar 1 a ese dígito antes de hacer la operación.</li><li><strong>Restar al revés:</strong> En una columna, si tienes 2 arriba y 5 abajo, hacer 5 - 2 = 3. ¡Error! Tienes que pedir prestado para hacer 12 - 5 = 7.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Resuelve la suma en tu cuaderno e ingresa el resultado sin espacios: 12850 + 19900",
+                            "correctAnswer": "32750",
+                            "hint": "Alinea las cifras y suma columna por columna: 0+0, 5+0, 8+9 (llevas 1), 2+9+1 (llevas 1), 1+1+1.",
+                            "feedbackCorrect": "¡Excelente! La suma es 32,750.",
+                            "feedbackIncorrect": "Revisa las sumas parciales y las llevadas. Debe dar 32,750.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Resuelve la resta vertical: 10000 - 4321",
+                            "correctAnswer": "5679",
+                            "hint": "Ten cuidado con los préstamos encadenados: el 10 se convierte en 9 sucesivamente hasta las unidades.",
+                            "feedbackCorrect": "¡Perfecto! 10,000 - 4,321 = 5,679.",
+                            "feedbackIncorrect": "Revisa las restas con ceros consecutivos. El resultado correcto es 5,679.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si un comerciante de La Terminal de Guatemala compra mercadería por valor de Q12,450 y paga con Q15,000, ¿cuánto recibe de vuelto?",
+                            "correctAnswer": "2550",
+                            "hint": "Resta 15000 - 12450 verticalmente aplicando los préstamos necesarios.",
+                            "feedbackCorrect": "¡Excelente! El vuelto es de Q2,550.",
+                            "feedbackIncorrect": "Revisa el cálculo: Q15,000 - Q12,450 = Q2,550.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Al resolver la resta 4,503 - 1,280, el dígito que queda en la posición de las decenas es:",
+                            "options": [
+                                "2",
+                                "8",
+                                "3",
+                                "0"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "En las unidades 3-0=3. En las decenas 0-8 no se puede, pides prestado: 10-8=2.",
+                            "feedbackCorrect": "¡Correcto! En las decenas queda 2, tras pedir prestado al 5 de las centenas.",
+                            "feedbackIncorrect": "Revisa: 10 - 8 = 2 decenas.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Resuelve la suma 8,745 + 13,567. ¿Cuál es el dígito en las unidades de millar?",
+                            "options": [
+                                "2",
+                                "1",
+                                "3",
+                                "5"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Suma total: 8,745 + 13,567 = 22,312. Identifica cuál es la cifra de las unidades de millar (la segunda de izquierda a derecha en 22,312).",
+                            "feedbackCorrect": "¡Perfecto! El número es 22,312, y el dígito en las unidades de millar es 2.",
+                            "feedbackIncorrect": "Incorrecto. La suma total es 22,312, por lo que el dígito en las unidades de millar es 2.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "La suma con llevadas y la resta con préstamos son algoritmos verticales que nos permiten operar números de cualquier tamaño, organizándolos en columnas posicionales.",
+                    "videoPlaceholderText": "Video de Primaria: Suma con llevadas y resta con préstamos explicadas paso a paso."
+                },
+                {
+                    "id": "multiplicacion-cifras",
+                    "title": "Lección 1.3: Multiplicación por Dos y Tres Cifras",
+                    "introduction": "Domina el método de multiplicación vertical de números grandes, comprendiendo el desplazamiento de columnas para cada producto parcial.",
+                    "explanationHtml": "<p>Multiplicar por números de dos o más cifras consiste en multiplicar el primer factor por cada uno de los dígitos del segundo factor, de derecha a izquierda, y luego sumar los productos parciales.</p><p class=\"mt-3\"><strong>Regla clave de desplazamiento:</strong></p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li>Al multiplicar por las <strong>unidades</strong>, escribimos el resultado alineado a la derecha.</li><li>Al multiplicar por las <strong>decenas</strong>, debemos dejar un espacio vacío (o poner un cero) a la extrema derecha en la línea de resultados.</li><li>Al multiplicar por las <strong>centenas</strong>, dejamos dos espacios vacíos a la derecha antes de escribir los productos.</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Ejemplo de Productos Parciales</p><p class=\"text-base font-mono font-extrabold text-primary\">245 × 13 = 735 + 245_ = 3,185</p><p class=\"text-xs text-slate-500\">Donde 735 es 245 × 3, y 245_ es 245 × 10 (con el espacio desplazado).</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 130\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"130\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">PRODUCTOS PARCIALES</text><text x=\"100\" y=\"45\" font-size=\"14\" font-family=\"monospace\" fill=\"#334155\">  2 4 5</text><text x=\"100\" y=\"60\" font-size=\"14\" font-family=\"monospace\" fill=\"#334155\">x   1 3</text><line x1=\"100\" y1=\"68\" x2=\"200\" y2=\"68\" stroke=\"#94a3b8\" stroke-width=\"1.5\" /><text x=\"100\" y=\"80\" font-size=\"14\" font-family=\"monospace\" fill=\"#059669\">  7 3 5</text><text x=\"100\" y=\"95\" font-size=\"14\" font-family=\"monospace\" fill=\"#2563eb\">2 4 5 _</text><line x1=\"100\" y1=\"103\" x2=\"200\" y2=\"103\" stroke=\"#94a3b8\" stroke-width=\"2\" /><text x=\"100\" y=\"118\" font-size=\"14\" font-family=\"monospace\" font-weight=\"bold\" fill=\"#d97706\">3 1 8 5</text></svg>",
+                    "svgDescription": "Procedimiento de multiplicación vertical de 245 × 13. Resalta el espacio libre (_) dejado al multiplicar por la decena.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Multiplica 245 × 13.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1:</strong> Multiplica el número superior por la unidad (3): 245 × 3 = 735. Escríbelo en la primera fila.</li><li><strong>Paso 2:</strong> Multiplica por la decena (1): 245 × 1 = 245. Escríbelo en la segunda fila dejando un espacio a la derecha (2450 o 245_).</li><li><strong>Paso 3:</strong> Suma ambos productos parciales verticalmente: 735 + 2450 = 3,185.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> 245 × 13 es exactamente <strong>3,185</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li>generic.no-offset-error<strong>No desplazar los productos parciales:</strong> Escribir el segundo producto (245) alineado a la derecha como si fueran unidades da como resultado 735 + 245 = 980. Esto es incorrecto.</li><li><strong>Errores de llevadas al multiplicar:</strong> Multiplicar 3 × 5 = 15, dejar el 5 y olvidar sumar el 1 al multiplicar 3 × 4 = 12 (+1 = 13).</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Multiplica en tu cuaderno y escribe el resultado sin espacios: 125 × 24",
+                            "correctAnswer": "3000",
+                            "hint": "Multiplica 125 × 4 = 500, luego 125 × 2 = 250 (desplazado: 2500). Suma 500 + 2500.",
+                            "feedbackCorrect": "¡Excelente! 125 × 24 = 3,000.",
+                            "feedbackIncorrect": "Revisa la multiplicación y las llevadas. Debe dar 3,000.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Multiplica: 805 × 45",
+                            "correctAnswer": "36225",
+                            "hint": "Multiplica 805 × 5 = 4025, luego 805 × 4 = 3220 (desplazado: 32200). Suma ambos productos.",
+                            "feedbackCorrect": "¡Perfecto! 805 × 45 = 36,225.",
+                            "feedbackIncorrect": "Recuerda operar el cero intermedio: 5 × 0 = 0 (+ llevada). El resultado correcto es 36,225.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si una caja de lápices cuesta Q15 y un colegio de Antigua Guatemala compra 120 cajas, ¿cuál es el costo total en Quetzales?",
+                            "correctAnswer": "1800",
+                            "hint": "Multiplica 120 × 15. Puedes multiplicar 12 × 15 = 180 y simplemente agregar el cero al final.",
+                            "feedbackCorrect": "¡Excelente! El costo total es Q1,800.",
+                            "feedbackIncorrect": "Cálculo incorrecto: 120 × Q15 = Q1,800.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Un camión transporta 75 sacos de café de 125 libras cada uno. ¿Cuántas libras lleva en total?",
+                            "options": [
+                                "9,375 lb",
+                                "8,375 lb",
+                                "9,500 lb",
+                                "7,500 lb"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Multiplica 125 × 75 de forma vertical en tu cuaderno.",
+                            "feedbackCorrect": "¡Correcto! Lleva en total 9,375 libras de café.",
+                            "feedbackIncorrect": "Incorrecto. 125 × 75 = 9,375.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Multiplica: 452 × 112. ¿Cuál es el resultado?",
+                            "options": [
+                                "50,624",
+                                "48,524",
+                                "51,624",
+                                "50,524"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Multiplica por 2, luego por 1 (desplazado 1 espacio) y luego por 1 (desplazado 2 espacios). Suma los tres productos parciales.",
+                            "feedbackCorrect": "¡Excelente! El resultado es 50,624.",
+                            "feedbackIncorrect": "Incorrecto. 452 × 112 = 50,624.",
+                            "difficulty": "avanzado",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "La multiplicación de varias cifras se realiza multiplicando dígito a dígito de derecha a izquierda y desplazando un espacio hacia la izquierda por cada columna del multiplicador, sumando finalmente todos los productos parciales.",
+                    "videoPlaceholderText": "Video de Primaria: Trucos para multiplicar rápido por dos y tres cifras."
+                }
+            ]
+        },
+        {
+            "title": "Unidad 2: Fracciones, Decimales y Porcentajes",
+            "lessons": [
+                {
+                    "id": "concepto-fraccion",
+                    "title": "Lección 2.1: Concepto de Fracción y Simplificación",
+                    "introduction": "Descubre qué representan las fracciones y cómo reducirlas a su forma más sencilla mediante la simplificación.",
+                    "explanationHtml": "<p>Una <strong>fracción</strong> representa una parte de un todo que ha sido dividido en partes iguales.</p><p class=\"mt-3\">Consta de dos números:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Numerador (arriba):</strong> Indica cuántas partes tomamos o tenemos del todo.</li><li><strong>Denominador (abajo):</strong> Indica en cuántas partes iguales dividimos el todo.</li></ul><p class=\"mt-3\"><strong>Simplificar una fracción:</strong> Significa dividir tanto el numerador como el denominador por el mismo número entero de forma que obtengamos una fracción equivalente más pequeña. La fracción está en su <strong>mínima expresión</strong> cuando ya no hay más divisores comunes posibles (excepto el 1).</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Equivalencia y Simplificación</p><p class=\"text-base font-mono font-extrabold text-primary\">18/24 = (18÷6) / (24÷6) = 3/4</p><p class=\"text-xs text-slate-500\">Al dividir numerador y denominador entre el mismo factor (6), obtenemos una fracción idéntica pero con términos más simples.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"22\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">FRACCIONES EQUIVALENTES</text><!-- Circulo 1: 18/24 (simplificado a 3/4) --><circle cx=\"80\" cy=\"70\" r=\"30\" fill=\"none\" stroke=\"#2563eb\" stroke-width=\"2\" /><path d=\"M 80 40 L 80 100 M 50 70 L 110 70\" stroke=\"#94a3b8\" stroke-width=\"1\" /><path d=\"M 80 70 L 80 40 A 30 30 0 1 1 50 70 Z\" fill=\"#2563eb\" fill-opacity=\"0.2\" /><text x=\"80\" y=\"115\" font-size=\"9\" font-family=\"sans-serif\" font-weight=\"bold\" fill=\"#2563eb\" text-anchor=\"middle\">3/4 de pizza</text><!-- Circulo 2: 18/24 representado como 6/8 para analogia simplificada --><circle cx=\"220\" cy=\"70\" r=\"30\" fill=\"none\" stroke=\"#059669\" stroke-width=\"2\" /><path d=\"M 220 40 L 220 100 M 190 70 L 250 70 M 198.8 48.8 L 241.2 91.2 M 198.8 91.2 L 241.2 48.8\" stroke=\"#94a3b8\" stroke-width=\"0.8\" /><path d=\"M 220 70 L 220 40 A 30 30 0 1 1 190 70 Z\" fill=\"#059669\" fill-opacity=\"0.2\" /><text x=\"220\" y=\"115\" font-size=\"9\" font-family=\"sans-serif\" font-weight=\"bold\" fill=\"#059669\" text-anchor=\"middle\">6/8 de pizza</text></svg>",
+                    "svgDescription": "Demostración visual de fracciones equivalentes. Dividir una pizza en 8 partes y tomar 6 (6/8) equivale exactamente a dividirla en 4 partes y tomar 3 (3/4).",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Simplifica la fracción 18/24 a su mínima expresión.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1: Busca un divisor común.</strong> Ambos números son pares, así que los dividimos entre 2: <br>18 ÷ 2 = 9 <br>24 ÷ 2 = 12. Obtenemos 9/12.</li><li><strong>Paso 2: Sigue simplificando.</strong> 9 y 12 se pueden dividir por 3: <br>9 ÷ 3 = 3 <br>12 ÷ 3 = 4. Obtenemos 3/4.</li><li><strong>Paso 3: Verifica la irreducibilidad.</strong> 3/4 ya no tiene divisores comunes aparte del 1.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> La fracción simplificada es <strong>3/4</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Dividir entre factores diferentes:</strong> Simplificar 18/24 dividiendo el 18 entre 9 (2) y el 24 entre 6 (4) dando 2/4. Esto altera la fracción original. ¡Ambos deben dividirse entre el mismo número!</li><li><strong>Olvidar simplificar al final:</strong> Dejar el resultado de un problema como 20/50 en vez de simplificarlo a 2/5.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Simplifica a su mínima expresión la fracción 20/50. Escríbela en formato a/b sin espacios (ej: 2/5).",
+                            "correctAnswer": "2/5",
+                            "hint": "Divide tanto el numerador como el denominador entre su máximo divisor común, que es 10.",
+                            "feedbackCorrect": "¡Excelente! La fracción simplificada es 2/5.",
+                            "feedbackIncorrect": "Incorrecto. 20 y 50 terminan en cero, divídelos entre 10 para obtener 2/5.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Simplifica la fracción 12/36 a su mínima expresión en formato a/b.",
+                            "correctAnswer": "1/3",
+                            "hint": "Puedes dividir ambos entre 12 de forma directa, o paso a paso entre 2, luego 2 y finalmente 3.",
+                            "feedbackCorrect": "¡Perfecto! 12/36 simplificado da exactamente 1/3.",
+                            "feedbackIncorrect": "Revisa los factores: 12 es la tercera parte de 36. La fracción simplificada es 1/3.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Convierte la fracción impropia 7/3 a número mixto. Escríbelo en formato 'entero espacio fraccion' (ej: 2 1/3).",
+                            "correctAnswer": "2 1/3",
+                            "hint": "Divide 7 entre 3. El cociente es el número entero (2) y el residuo (1) es el numerador sobre el denominador (3).",
+                            "feedbackCorrect": "¡Excelente! 7/3 equivale a 2 enteros y 1/3.",
+                            "feedbackIncorrect": "Incorrecto. 7 entre 3 da 2 con residuo 1. Se escribe 2 1/3.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Qué fracción de una pizza queda si se divide en 8 partes iguales y te comes 3 de ellas?",
+                            "options": [
+                                "3/8",
+                                "5/8",
+                                "1/2",
+                                "8/3"
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Si te comes 3 partes de 8, te quedan 8 - 3 = 5 partes de las 8 originales.",
+                            "feedbackCorrect": "¡Correcto! Te quedan 5/8 de la pizza.",
+                            "feedbackIncorrect": "Incorrecto. Quedan 5 partes de 8, es decir, 5/8.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "¿Son equivalentes las fracciones 2/3 y 8/12?",
+                            "options": [
+                                "Sí, porque si multiplicamos 2/3 por 4 arriba y abajo obtenemos 8/12",
+                                "No, porque tienen números diferentes",
+                                "Sí, porque sumando 6 arriba y 9 abajo obtenemos 8/12",
+                                "No, porque 2/3 es menor que 8/12"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Una fracción es equivalente a otra si al multiplicar o dividir sus términos por el mismo número da la otra fracción.",
+                            "feedbackCorrect": "¡Perfecto! 2/3 es equivalente a 8/12 ya que representan el mismo valor decimal (0.666...).",
+                            "feedbackIncorrect": "Incorrecto. Sí son equivalentes, porque multiplicando 2/3 por 4/4 obtenemos 8/12.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "Una fracción expresa la porción de un entero. Se puede simplificar dividiendo numerador y denominador por sus divisores comunes hasta obtener una fracción irreducible equivalente.",
+                    "videoPlaceholderText": "Video de Primaria: Qué son las fracciones y cómo simplificarlas jugando."
+                },
+                {
+                    "id": "operaciones-decimales",
+                    "title": "Lección 2.2: Operaciones con Decimales",
+                    "introduction": "Aprende a sumar, restar y multiplicar números decimales con precisión alineando de forma exacta el punto decimal.",
+                    "explanationHtml": "<p>Los números decimales representan cantidades intermedias entre enteros.</p><p class=\"mt-3\"><strong>Suma y resta de decimales:</strong> La regla fundamental es alinear los números verticalmente de forma que los <strong>puntos decimales coincidan en la misma columna</strong>. Si los números tienen diferente cantidad de decimales, agregamos ceros a la derecha para emparejarlos.</p><p class=\"mt-3\"><strong>Multiplicación de decimales:</strong> Multiplicamos de forma normal sin importar la posición del punto. En el resultado final, colocamos el punto contando desde la derecha tantas posiciones como decimales tengan en conjunto ambos factores originales.</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Alineación de Decimales</p><p class=\"text-base font-mono font-extrabold text-primary\">12.50 + 3.84 = 16.34</p><p class=\"text-xs text-slate-500\">Agregamos un cero a 12.5 para convertirlo en 12.50 y alinear perfectamente las columnas.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"25\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">ALINEACIÓN DECIMAL</text><text x=\"100\" y=\"55\" font-size=\"16\" font-family=\"monospace\" fill=\"#334155\">  1 2 . 5 0</text><text x=\"100\" y=\"75\" font-size=\"16\" font-family=\"monospace\" fill=\"#334155\">+  3 . 8 4</text><line x1=\"100\" y1=\"83\" x2=\"200\" y2=\"83\" stroke=\"#94a3b8\" stroke-width=\"2\" /><text x=\"100\" y=\"105\" font-size=\"16\" font-family=\"monospace\" font-weight=\"bold\" fill=\"#059669\">  1 6 . 3 4</text><line x1=\"145\" y1=\"40\" x2=\"145\" y2=\"110\" stroke=\"#f59e0b\" stroke-width=\"1\" stroke-dasharray=\"3,3\" /><text x=\"210\" y=\"75\" font-size=\"8\" font-family=\"sans-serif\" fill=\"#f59e0b\" font-weight=\"bold\">¡Punto Alineado!</text></svg>",
+                    "svgDescription": "Diagrama de suma de números decimales. Los puntos decimales se mantienen alineados estrictamente en la misma línea vertical discontinua.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Multiplica 4.5 × 1.2.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1: Multiplica como enteros.</strong> Ignora los puntos y multiplica: 45 × 12 = 540.</li><li><strong>Paso 2: Cuenta decimales.</strong> 4.5 tiene 1 cifra decimal, 1.2 tiene 1 cifra decimal. Total = 2 cifras decimales.</li><li><strong>Paso 3: Coloca el punto.</strong> Cuenta 2 espacios de derecha a izquierda en 540: 5.40 (que es igual a 5.4).</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> El producto es exactamente <strong>5.4</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Sumar sin alinear el punto:</strong> Operar 12.5 + 3.84 sumando el 5 con el 4 para dar 15.134. ¡Alinea siempre el punto decimal verticalmente!</li><li><strong>Dividir sin ajustar cifras decimales:</strong> Al dividir 4.5 entre 0.5, equivocarse pensando que da 0.9. La respuesta correcta es 9 enteros.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Resuelve la suma de decimales alineando el punto: 12.5 + 3.84. (Usa punto para decimales, ej: 16.34)",
+                            "correctAnswer": "16.34",
+                            "hint": "Escribe 12.50 + 3.84 alineando el punto decimal. Suma normalmente.",
+                            "feedbackCorrect": "¡Excelente! La suma es 16.34.",
+                            "feedbackIncorrect": "Revisa la suma: 12.50 + 3.84 = 16.34.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Resuelve la resta de decimales: 15.0 - 4.25",
+                            "correctAnswer": "10.75",
+                            "hint": "Alinea 15.00 - 4.25 y realiza la resta con préstamo en los decimales.",
+                            "feedbackCorrect": "¡Perfecto! 15.00 - 4.25 = 10.75.",
+                            "feedbackIncorrect": "Cuidado con el préstamo: 15.00 - 4.25 = 10.75.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Resuelve la multiplicación de decimales: 0.5 × 0.2",
+                            "correctAnswer": "0.1",
+                            "hint": "Multiplica 5 × 2 = 10, y coloca el punto recorriendo 2 espacios hacia la izquierda: 0.10, que se escribe 0.1.",
+                            "feedbackCorrect": "¡Excelente! 0.5 × 0.2 = 0.1.",
+                            "feedbackIncorrect": "Recuerda contar los dos espacios decimales: 0.5 × 0.2 = 0.10, es decir, 0.1.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si una libra de aguacates en el mercado cuesta Q6.50 y compras 3.5 libras, ¿cuánto pagas en total?",
+                            "options": [
+                                "Q22.75",
+                                "Q19.50",
+                                "Q21.00",
+                                "Q22.50"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Multiplica 6.5 × 3.5 en tu cuaderno y posiciona el punto con dos decimales.",
+                            "feedbackCorrect": "¡Excelente! El precio total es de Q22.75.",
+                            "feedbackIncorrect": "Incorrecto. 6.5 × 3.5 = Q22.75.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Divide: 4.5 ÷ 0.5. ¿Cuál es el resultado?",
+                            "options": [
+                                "0.9",
+                                "9",
+                                "90",
+                                "4.0"
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Para dividir decimales, puedes multiplicar ambos términos por 10 para quitar los decimales: 45 ÷ 5 = 9.",
+                            "feedbackCorrect": "¡Excelente! 4.5 entre 0.5 es exactamente 9.",
+                            "feedbackIncorrect": "Incorrecto. 4.5 ÷ 0.5 = 9 (porque 9 veces 0.5 es igual a 4.5).",
+                            "difficulty": "avanzado",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "Operar con decimales requiere alinear verticalmente el punto decimal para sumas y restas, y contar y acumular posiciones decimales en el producto de multiplicaciones.",
+                    "videoPlaceholderText": "Video de Primaria: Suma, resta y multiplicación con decimales sin confundirse."
+                },
+                {
+                    "id": "porcentajes-conversion",
+                    "title": "Lección 2.3: Porcentajes y su Conversión",
+                    "introduction": "Aprende qué significa un porcentaje y cómo calcularlo o convertirlo a fracción y decimal en tu vida diaria.",
+                    "explanationHtml": "<p>Un <strong>porcentaje (%)</strong> representa una fracción cuyo denominador es siempre 100. Significa \"tantas partes de cada 100\".</p><p class=\"mt-3\">Por ejemplo, el <strong>25%</strong> significa \"25 de cada 100\". Esto se puede expresar de tres formas equivalentes:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Fracción:</strong> 25/100, que simplificado es 1/4.</li><li><strong>Decimal:</strong> 0.25 (dividiendo 25 entre 100).</li><li><strong>Porcentaje:</strong> 25%.</li></ul><p class=\"mt-3\">Para calcular el porcentaje de un número, lo más sencillo es multiplicar el número por el decimal equivalente del porcentaje (ej. el 15% de 200 es 200 × 0.15 = 30).</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Fórmula de Cálculo de Porcentaje</p><p class=\"text-base font-mono font-extrabold text-primary\">Valor = Número × (Porcentaje ÷ 100)</p><p class=\"text-xs text-slate-500\">Ejemplo: 15% de Q200 &rarr; 200 × 0.15 = Q30.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">EL PORCENTAJE COMO FRACCIÓN</text><rect x=\"35\" y=\"35\" width=\"60\" height=\"60\" fill=\"none\" stroke=\"#2563eb\" stroke-width=\"2\" rx=\"4\" /><line x1=\"35\" y1=\"65\" x2=\"95\" y2=\"65\" stroke=\"#2563eb\" stroke-width=\"2\" /><text x=\"65\" y=\"55\" font-size=\"16\" font-family=\"sans-serif\" font-weight=\"bold\" fill=\"#2563eb\" text-anchor=\"middle\">25</text><text x=\"65\" y=\"85\" font-size=\"16\" font-family=\"sans-serif\" font-weight=\"bold\" fill=\"#2563eb\" text-anchor=\"middle\">100</text><text x=\"150\" y=\"70\" font-size=\"20\" font-family=\"monospace\" fill=\"#94a3b8\" text-anchor=\"middle\">=</text><rect x=\"205\" y=\"35\" width=\"60\" height=\"60\" fill=\"#eff6ff\" stroke=\"#2563eb\" stroke-width=\"2\" rx=\"4\" /><text x=\"235\" y=\"62\" font-size=\"18\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#1e40af\" text-anchor=\"middle\">25%</text><text x=\"235\" y=\"82\" font-size=\"9\" font-family=\"sans-serif\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">0.25</text></svg>",
+                    "svgDescription": "El porcentaje expresado como una fracción sobre 100. 25% equivale exactamente a 25/100 y a su decimal 0.25.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Calcula el 15% de Q200.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1: Convierte el porcentaje a decimal.</strong> Divide 15 entre 100: <br>15 ÷ 100 = 0.15.</li><li><strong>Paso 2: Multiplica el número por el decimal.</strong> <br>200 × 0.15 = 30.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> El 15% de Q200 es <strong>Q30</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Confundir 5% con 50%:</strong> Convertir el 5% como 0.5. ¡Eso es 50%! El 5% en decimal es 0.05.</li><li><strong>Multiplicar directamente por el porcentaje entero:</strong> Para el 15% de 200, multiplicar 200 × 15 = 3,000 sin dividir entre 100.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Calcula el 20% de 80. Escribe el número entero resultante:",
+                            "correctAnswer": "16",
+                            "hint": "Convierte 20% a decimal (0.20) y multiplícalo por 80: 80 × 0.2 = 16.",
+                            "feedbackCorrect": "¡Excelente! El 20% de 80 es 16.",
+                            "feedbackIncorrect": "Revisa la operación: 80 × 0.20 = 16.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Convierte el 75% a fracción simplificada en formato a/b.",
+                            "correctAnswer": "3/4",
+                            "hint": "75% es 75/100. Divide arriba y abajo entre 25 para simplificarla.",
+                            "feedbackCorrect": "¡Perfecto! 75% equivale a la fracción 3/4.",
+                            "feedbackIncorrect": "Recuerda: 75/100 simplificado da 3/4.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Qué número decimal equivale exactamente al 5%?",
+                            "correctAnswer": "0.05",
+                            "hint": "Divide 5 entre 100. Recuerda colocar los ceros correspondientes.",
+                            "feedbackCorrect": "¡Excelente! 5% en decimal es 0.05.",
+                            "feedbackIncorrect": "Cuidado: 5 ÷ 100 = 0.05. 0.5 equivale a 50%.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si una chumpa en un local de Quetzaltenango cuesta Q300 y tiene el 10% de descuento, ¿cuál es el precio final que pagas?",
+                            "options": [
+                                "Q270",
+                                "Q290",
+                                "Q280",
+                                "Q250"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Calcula el 10% de Q300 (Q30) y réstaselo al precio original: Q300 - Q30 = Q270.",
+                            "feedbackCorrect": "¡Excelente! El precio final con descuento es Q270.",
+                            "feedbackIncorrect": "Incorrecto. El descuento es del 10% (Q30), por lo que el precio final es Q270.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "En un salón de clases de 40 alumnos, el 60% son mujeres. ¿Cuántas mujeres hay en el salón?",
+                            "options": [
+                                "24",
+                                "20",
+                                "16",
+                                "26"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Multiplica 40 por el decimal del 60% (0.60): 40 × 0.6 = 24.",
+                            "feedbackCorrect": "¡Excelente! Hay 24 mujeres en el salón.",
+                            "feedbackIncorrect": "Incorrecto. 40 × 0.60 = 24 mujeres.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "Un porcentaje representa una porción de cada 100 unidades y puede expresarse en formato de porcentaje, fracción sobre 100 o número decimal equivalente.",
+                    "videoPlaceholderText": "Video de Primaria: Cómo calcular porcentajes mentalmente en el mercado."
+                }
+            ]
+        },
+        {
+            "title": "Unidad 3: Resolución de Problemas Cotidianos",
+            "lessons": [
+                {
+                    "id": "metodo-polya",
+                    "title": "Lección 3.1: Método de Resolución de 4 Pasos (Polya)",
+                    "introduction": "Conoce el método universal de George Polya para leer, plantear y resolver cualquier problema matemático verbal sin frustración.",
+                    "explanationHtml": "<p>A menudo, el mayor problema en las matemáticas no es el cálculo, sino comprender qué nos pide resolver el enunciado.</p><p class=\"mt-3\">El matemático George Polya diseñó un <strong>método de 4 pasos</strong> estructurado y universal:</p><ol class=\"list-decimal pl-5 space-y-2 my-3\"><li><strong>1. Entender el problema:</strong> Lee con atención. ¿Cuáles son los datos conocidos? ¿Qué pregunta el problema? ¿Cuál es la incógnita?</li><li><strong>2. Trazar un plan:</strong> Elige qué operaciones realizar (suma, resta, regla de tres, etc.) y cómo estructurar los datos.</li><li><strong>3. Ejecutar el plan:</strong> Realiza los cálculos con calma y limpieza.</li><li><strong>4. Examinar la solución (Mirar hacia atrás):</strong> Revisa el resultado. ¿Tiene sentido y lógica? ¿Responde exactamente a la pregunta inicial?</li></ol>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Los 4 Pasos de Polya</p><p class=\"text-base font-mono font-extrabold text-primary\">Entender &rarr; Planear &rarr; Resolver &rarr; Revisar</p><p class=\"text-xs text-slate-500\">Un método infalible aplicable a cualquier problema de la escuela o la vida cotidiana.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">MÉTODO DE POLYA</text><rect x=\"15\" y=\"45\" width=\"55\" height=\"30\" fill=\"#eff6ff\" stroke=\"#bfdbfe\" rx=\"6\" /><text x=\"42.5\" y=\"64\" font-size=\"8\" font-family=\"sans-serif\" font-weight=\"bold\" fill=\"#1e40af\" text-anchor=\"middle\">1. Entender</text><rect x=\"85\" y=\"45\" width=\"55\" height=\"30\" fill=\"#ecfdf5\" stroke=\"#a7f3d0\" rx=\"6\" /><text x=\"112.5\" y=\"64\" font-size=\"8\" font-family=\"sans-serif\" font-weight=\"bold\" fill=\"#065f46\" text-anchor=\"middle\">2. Planear</text><rect x=\"155\" y=\"45\" width=\"55\" height=\"30\" fill=\"#fffbeb\" stroke=\"#fde68a\" rx=\"6\" /><text x=\"182.5\" y=\"64\" font-size=\"8\" font-family=\"sans-serif\" font-weight=\"bold\" fill=\"#92400e\" text-anchor=\"middle\">3. Resolver</text><rect x=\"225\" y=\"45\" width=\"55\" height=\"30\" fill=\"#fef2f2\" stroke=\"#fca5a5\" rx=\"6\" /><text x=\"252.5\" y=\"64\" font-size=\"8\" font-family=\"sans-serif\" font-weight=\"bold\" fill=\"#991b1b\" text-anchor=\"middle\">4. Revisar</text><path d=\"M 70 60 L 80 60 M 140 60 L 150 60 M 210 60 L 220 60\" stroke=\"#94a3b8\" stroke-width=\"2\" marker-end=\"url(#arrow)\" /></svg>",
+                    "svgDescription": "Diagrama secuencial de flujo para el Método de Polya. Cada paso alimenta al siguiente de forma lógica y ordenada.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> María compró 3 cartones de huevos a Q35 cada uno y Q15 de pan. Si pagó con un billete de Q200, ¿cuánto recibió de vuelto?</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>1. Entender:</strong> Datos: 3 cartones a Q35 c/u, pan Q15. Pago con Q200. Incógnita: el vuelto.</li><li><strong>2. Plan:</strong> Calcular el costo de los huevos (3 × 35), sumarlo al costo del pan (total) y restarlo de Q200.</li><li><strong>3. Ejecutar:</strong> <br>Huevos: 3 × Q35 = Q105. <br>Total: Q105 + Q15 = Q120. <br>Vuelto: Q200 - Q120 = Q80.</li><li><strong>4. Examinar:</strong> Q80 es menor que Q200, gastó Q120 lo cual es consistente.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> María recibe de vuelto <strong>Q80</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Operar números a ciegas:</strong> Empezar a multiplicar o sumar los números que aparecen en el texto sin haber definido un plan de lógica.</li><li><strong>No revisar el resultado final:</strong> Dar un vuelto de Q280 tras pagar con Q200 (¡imposible!). Siempre contrasta tu respuesta con el sentido común.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Un camión lleva 15 cajas con 12 botellas de jugo cada una. Si vende 40 botellas, ¿cuántas botellas le quedan en total?",
+                            "correctAnswer": "140",
+                            "hint": "Aplica Polya. 1) Calcula el total de botellas (15 × 12), 2) Réstale las 40 botellas vendidas.",
+                            "feedbackCorrect": "¡Excelente! Le quedan 140 botellas. (180 - 40 = 140).",
+                            "feedbackIncorrect": "Revisa los cálculos: Total = 15 × 12 = 180. Restando las 40 vendidas: 140.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si para hacer una receta de pastel se necesitan 2.5 tazas de harina y quieres hacer 4 pasteles iguales, ¿cuántas tazas necesitas?",
+                            "correctAnswer": "10",
+                            "hint": "Multiplica las tazas de harina necesarias para un pastel (2.5) por la cantidad de pasteles (4).",
+                            "feedbackCorrect": "¡Excelente! Necesitas exactamente 10 tazas de harina.",
+                            "feedbackIncorrect": "Cálculo incorrecto: 2.5 × 4 = 10 tazas de harina.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Juan decide ahorrar Q5 diarios para comprar un juego. ¿En cuántos días habrá ahorrado Q350?",
+                            "correctAnswer": "70",
+                            "hint": "Divide el monto total deseado (350) entre el ahorro diario (5).",
+                            "feedbackCorrect": "¡Perfecto! Juan tardará 70 días en ahorrar Q350.",
+                            "feedbackIncorrect": "Incorrecto. 350 ÷ 5 = 70 días.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Un agricultor de Sololá cosechó 480 zanahorias y desea empacarlas en bolsas de 12 unidades cada una. ¿Cuántas bolsas llena en total?",
+                            "options": [
+                                "40 bolsas",
+                                "30 bolsas",
+                                "50 bolsas",
+                                "12 bolsas"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Divide el total de zanahorias (480) entre las zanahorias por bolsa (12).",
+                            "feedbackCorrect": "¡Correcto! Llena exactamente 40 bolsas de zanahorias.",
+                            "feedbackIncorrect": "Incorrecto. 480 ÷ 12 = 40 bolsas.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Una bomba de agua en una finca de Tecpán extrae 45 litros de agua por minuto. ¿Cuántos litros extraerá en una hora y media?",
+                            "options": [
+                                "4,050 litros",
+                                "2,700 litros",
+                                "4,500 litros",
+                                "3,600 litros"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Recuerda que una hora y media son 90 minutos. Multiplica los litros por minuto (45) por 90.",
+                            "feedbackCorrect": "¡Excelente! Extraerá 4,050 litros en 90 minutos.",
+                            "feedbackIncorrect": "Incorrecto. Hora y media = 90 minutos. 45 × 90 = 4,050 litros.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "El Método de Polya provee una estructura mental para entender, diseñar, calcular y validar la respuesta de cualquier problema matemático verbal.",
+                    "videoPlaceholderText": "Video de Primaria: Cómo resolver problemas de planteo verbal usando el método Polya."
+                },
+                {
+                    "id": "regla-tres-directa",
+                    "title": "Lección 3.2: La Regla de Tres Simple y Directa",
+                    "introduction": "Aprende a plantear y resolver problemas de proporcionalidad directa utilizando la regla de tres simple.",
+                    "explanationHtml": "<p>La <strong>proporcionalidad directa</strong> ocurre cuando dos magnitudes se relacionan de forma que si una aumenta, la otra también aumenta en la misma proporción (ej. a más libras de frijol, más Quetzales pagamos).</p><p class=\"mt-3\">Para resolver estos problemas utilizamos la <strong>Regla de Tres Simple Directa</strong>:</p><ol class=\"list-decimal pl-5 space-y-2 my-3\"><li>1. Planteamos la relación en dos filas ordenando las magnitudes en columnas iguales.</li><li>2. <strong>Multiplicamos de forma cruzada</strong> los dos términos conocidos de la diagonal.</li><li>3. <strong>Dividimos</strong> el resultado entre el tercer término restante.</li></ol>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Esquema Regla de Tres Directa</p><p class=\"text-base font-mono font-extrabold text-primary\">A &rarr; B | C &rarr; x  &rArr;  x = (C × B) ÷ A</p><p class=\"text-xs text-slate-500\">Multiplica en diagonal (C × B) y divide horizontalmente entre A.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"22\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">REGLA DE TRES DIRECTA</text><text x=\"70\" y=\"55\" font-size=\"12\" font-family=\"sans-serif\" font-weight=\"bold\" fill=\"#334155\">5 libras</text><text x=\"210\" y=\"55\" font-size=\"12\" font-family=\"sans-serif\" fill=\"#334155\">Q40.00</text><text x=\"70\" y=\"85\" font-size=\"12\" font-family=\"sans-serif\" font-weight=\"bold\" fill=\"#334155\">12 libras</text><text x=\"210\" y=\"85\" font-size=\"12\" font-family=\"monospace\" font-weight=\"extrabold\" fill=\"#2563eb\">Qx</text><line x1=\"120\" y1=\"52\" x2=\"190\" y2=\"52\" stroke=\"#94a3b8\" stroke-width=\"1\" /><line x1=\"120\" y1=\"82\" x2=\"190\" y2=\"82\" stroke=\"#94a3b8\" stroke-width=\"1\" /><path d=\"M 120 55 L 190 80\" stroke=\"#f59e0b\" stroke-width=\"1.5\" stroke-dasharray=\"3,3\" /><path d=\"M 120 80 L 190 55\" stroke=\"#f59e0b\" stroke-width=\"1.5\" stroke-dasharray=\"3,3\" /><text x=\"150\" y=\"110\" font-size=\"9\" font-family=\"sans-serif\" fill=\"#d97706\" font-weight=\"bold\" text-anchor=\"middle\">x = (12 × 40) ÷ 5 = Q96.00</text></svg>",
+                    "svgDescription": "Planteamiento cruzado de la regla de tres simple directa. Las magnitudes (libras y quetzales) se organizan en columnas y se multiplica en diagonal.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Si 5 libras de frijol cuestan Q40, ¿cuánto costarán 12 libras del mismo frijol?</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1: Plantea las columnas:</strong> <br>5 lb &rarr; Q40 <br>12 lb &rarr; Qx</li><li><strong>Paso 2: Multiplica en diagonal:</strong> Multiplicamos 12 × 40 = 480.</li><li><strong>Paso 3: Divide por el término libre:</strong> Dividimos 480 ÷ 5 = 96.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> Las 12 libras de frijol cuestan <strong>Q96.00</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Desordenar las columnas:</strong> Colocar libras en la columna de quetzales (ej. poner el 12 bajo el 40). Esto arruina por completo la multiplicación en diagonal.</li><li><strong>Operar de forma directa casos inversos:</strong> Si te dicen \"12 trabajadores cosechan un campo en 4 días, ¿cuánto tardarán 6 trabajadores?\", pensar que tardarán 2 días (¡menos trabajadores tardarían más días!). Este caso es de regla de tres inversa.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Si 3 lapiceros idénticos cuestan Q10.50, ¿cuánto cuestan 8 de ellos? Escribe el resultado con punto decimal (ej: 28.00):",
+                            "correctAnswer": "28.00",
+                            "hint": "Plantea: 3 &rarr; 10.50 | 8 &rarr; x. Multiplica 8 × 10.5 = 84. Divide 84 ÷ 3 = 28.",
+                            "feedbackCorrect": "¡Excelente! Los 8 lapiceros cuestan Q28.00.",
+                            "feedbackIncorrect": "Revisa la operación: (8 × 10.50) ÷ 3 = Q28.00.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Un automóvil recorre 180 km con 3 galones de gasolina. ¿Cuántos km recorrerá con 8 galones a la misma velocidad?",
+                            "correctAnswer": "480",
+                            "hint": "Regla de tres directa: 3 gal &rarr; 180 km | 8 gal &rarr; x. Multiplica 8 × 180 y divídelo entre 3.",
+                            "feedbackCorrect": "¡Perfecto! Recorrerá 480 km con 8 galones.",
+                            "feedbackIncorrect": "Incorrecto. 8 × 180 ÷ 3 = 480 km.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Para pintar una pared de 20 metros cuadrados se necesitan 4 galones de pintura. ¿Cuántos galones se necesitan para 50 metros cuadrados?",
+                            "correctAnswer": "10",
+                            "hint": "Plantea: 20 &rarr; 4 | 50 &rarr; x. Multiplica 50 × 4 = 200. Divide 200 ÷ 20.",
+                            "feedbackCorrect": "¡Excelente! Se necesitan 10 galones de pintura.",
+                            "feedbackIncorrect": "Incorrecto. (50 × 4) ÷ 20 = 10 galones.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si 12 trabajadores cosechan un campo de café en 4 días, ¿cuánto tardarán 6 trabajadores en cosechar el mismo campo al mismo ritmo?",
+                            "options": [
+                                "2 días",
+                                "8 días",
+                                "6 días",
+                                "10 días"
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "¡Atención! A MENOS trabajadores, tardarán MÁS días. Es proporcionalidad INVERSA. Multiplica en horizontal: 12 × 4 = 48. Divide entre 6.",
+                            "feedbackCorrect": "¡Perfecto! Detectaste que es proporcionalidad inversa. Tardarán 8 días.",
+                            "feedbackIncorrect": "¡Error! Si pones 2 días estás diciendo que menos trabajadores tardan menos tiempo, lo cual es ilógico. Es inversa: 12 × 4 ÷ 6 = 8 días.",
+                            "difficulty": "avanzado",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Si un dólar estadounidense equivale a Q7.80 en un banco de Guatemala, ¿cuántos Quetzales equivalen a $150 dólares?",
+                            "options": [
+                                "Q1,170.00",
+                                "Q1,150.00",
+                                "Q1,200.00",
+                                "Q1,080.00"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Plantea: $1 &rarr; Q7.80 | $150 &rarr; Qx. Multiplica 150 × 7.80.",
+                            "feedbackCorrect": "¡Excelente! $150 dólares equivalen a Q1,170.00.",
+                            "feedbackIncorrect": "Incorrecto. 150 × 7.80 = Q1,170.00.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "La regla de tres simple directa nos permite resolver problemas de proporcionalidad directa multiplicando en diagonal los datos conocidos y dividiendo por el tercer término.",
+                    "videoPlaceholderText": "Video de Primaria: Cómo plantear la regla de tres en segundos."
+                },
+                {
+                    "id": "unidades-locales",
+                    "title": "Lección 3.3: Unidades de Medida Locales y Conversiones",
+                    "introduction": "Aprende a realizar conversiones de longitud y peso entre el Sistema Internacional y las medidas tradicionales guatemaltecas.",
+                    "explanationHtml": "<p>En los mercados y fincas de Guatemala, se utilizan de forma muy común unidades tradicionales de medida que conviven con el Sistema Internacional.</p><p class=\"mt-3\">Las equivalencias clave que debes dominar son:</p><p class=\"mt-3 font-semibold\">Unidades de Peso (Masa):</p><ul class=\"list-disc pl-5 space-y-1.5 my-2\"><li><strong>1 Quintal (qq):</strong> Equivale a 100 Libras (lb).</li><li><strong>1 Arroba (@):</strong> Equivale a 25 Libras (lb). Un quintal tiene exactamente 4 arrobas.</li><li><strong>1 Libra (lb):</strong> Es aproximadamente 16 onzas.</li><li><strong>1 Kilogramo (kg):</strong> Equivale a aproximadamente 2.2 Libras (lb).</li></ul><p class=\"mt-3 font-semibold\">Unidades de Longitud:</p><ul class=\"list-disc pl-5 space-y-1.5 my-2\"><li><strong>1 Vara (var):</strong> Equivale a aproximadamente 84 centímetros (0.84 metros).</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Glosario de Conversiones</p><p class=\"text-base font-mono font-extrabold text-primary\">1 qq = 4 @ = 100 lb</p><p class=\"text-xs text-slate-500\">1 vara &asymp; 0.84 metros | 1 kilogramo &asymp; 2.2 libras</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"22\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">EQUIVALENCIAS DE PESO</text><!-- Balanza con 1 qq a la izquierda y 100 lb a la derecha --><line x1=\"80\" y1=\"85\" x2=\"220\" y2=\"85\" stroke=\"#475569\" stroke-width=\"3\" /><circle cx=\"150\" cy=\"85\" r=\"5\" fill=\"#f59e0b\" /><line x1=\"150\" y1=\"85\" x2=\"150\" y2=\"110\" stroke=\"#f59e0b\" stroke-width=\"3\" /><!-- Platillo Izq (1 qq) --><line x1=\"80\" y1=\"85\" x2=\"80\" y2=\"60\" stroke=\"#475569\" stroke-width=\"1\" /><rect x=\"60\" y=\"45\" width=\"40\" height=\"15\" fill=\"#eff6ff\" stroke=\"#2563eb\" rx=\"4\" /><text x=\"80\" y=\"56\" font-size=\"9\" fill=\"#1e40af\" font-weight=\"extrabold\" text-anchor=\"middle\">1 qq</text><!-- Platillo Der (100 lb) --><line x1=\"220\" y1=\"85\" x2=\"220\" y2=\"60\" stroke=\"#475569\" stroke-width=\"1\" /><rect x=\"200\" y=\"45\" width=\"40\" height=\"15\" fill=\"#ecfdf5\" stroke=\"#059669\" rx=\"4\" /><text x=\"220\" y=\"56\" font-size=\"9\" fill=\"#065f46\" font-weight=\"extrabold\" text-anchor=\"middle\">100 lb</text></svg>",
+                    "svgDescription": "Balanza en perfecto equilibrio que demuestra de forma clara la equivalencia física de 1 Quintal (qq) con 100 Libras (lb).",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Un agricultor tiene 3.5 quintales de café pergamino en su parcela de Sololá. ¿A cuántas libras equivale esta cosecha?</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1: Identifica la equivalencia.</strong> Sabemos que 1 quintal (qq) es igual a 100 libras (lb).</li><li><strong>Paso 2: Determina la operación.</strong> Al pasar de una unidad más grande (quintales) a una más pequeña (libras), multiplicamos.</li><li><strong>Paso 3: Multiplica.</strong> 3.5 × 100 = 350.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> La cosecha equivale a <strong>350 libras</strong> de café.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Confundir quintal con arroba:</strong> Pensar que un quintal vale 25 libras. ¡Esa es la arroba! El quintal vale 100 libras.</li><li><strong>Equivocar la dirección de conversión:</strong> Dividir en lugar de multiplicar. Por ejemplo, decir que 2 quintales equivalen a 2 ÷ 100 = 0.02 libras.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Si un saco de maíz cosechado en Almolonga pesa exactamente 2 arrobas, ¿cuántas libras pesa en total?",
+                            "correctAnswer": "50",
+                            "hint": "Recuerda que 1 arroba (@) equivale a 25 libras. Multiplica 2 × 25.",
+                            "feedbackCorrect": "¡Excelente! Pesa 50 libras en total.",
+                            "feedbackIncorrect": "Revisa la equivalencia: 1 arroba = 25 lb. 2 arrobas = 50 lb.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Convierte 450 libras de azúcar a quintales. (Usa punto decimal si es necesario, ej: 4.5):",
+                            "correctAnswer": "4.5",
+                            "hint": "Para pasar de libras a quintales dividimos entre 100: 450 ÷ 100 = 4.5 quintales.",
+                            "feedbackCorrect": "¡Excelente! Equivale a 4.5 quintales.",
+                            "feedbackIncorrect": "Incorrecto. 450 lb divididas entre 100 lb/qq da 4.5 quintales.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cuántas arrobas hay en un lote de 200 libras de frijol?",
+                            "correctAnswer": "8",
+                            "hint": "Una arroba equivale a 25 libras. Divide 200 entre 25.",
+                            "feedbackCorrect": "¡Perfecto! En un lote de 200 libras hay 8 arrobas.",
+                            "feedbackIncorrect": "Revisa: 200 ÷ 25 = 8 arrobas.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Un terreno agrícola mide 30 varas de ancho. Si cada vara equivale a 0.84 metros, ¿cuántos metros de ancho mide el terreno?",
+                            "options": [
+                                "25.2 metros",
+                                "30.0 metros",
+                                "24.0 metros",
+                                "27.5 metros"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Multiplica la cantidad de varas (30) por su longitud en metros (0.84): 30 × 0.84 = 25.2.",
+                            "feedbackCorrect": "¡Correcto! El terreno mide 25.2 metros de ancho.",
+                            "feedbackIncorrect": "Incorrecto. 30 × 0.84 = 25.2 metros.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Compras 3 libras de carne y el carnicero pesa la carne en una balanza digital graduada en kilogramos (kg). Si la balanza marca 1.36 kg, ¿es correcto el peso?",
+                            "options": [
+                                "Sí, porque 1 kg equivale a unas 2.2 lb. 1.36 × 2.2 da aproximadamente 3 lb.",
+                                "No, 1.36 kg es mucho menos que 3 lb.",
+                                "No, 1.36 kg es casi el doble de 3 lb.",
+                                "Sí, porque 1 kg equivale a exactamente 1 lb."
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Calcula cuántas libras hay en 1.36 kg multiplicando 1.36 × 2.2. Da aproximadamente 2.99 libras.",
+                            "feedbackCorrect": "¡Perfecto! 1.36 kg equivale a 3 libras, por lo que el peso es correcto.",
+                            "feedbackIncorrect": "Incorrecto. 1 kg equivale a 2.2 lb. 1.36 × 2.2 = 3 libras aprox.",
+                            "difficulty": "avanzado",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "Las unidades de medida locales como quintales, arrobas y varas son de uso diario en Guatemala y dominarlas junto con el Sistema Internacional nos previene de errores en el comercio.",
+                    "videoPlaceholderText": "Video de Primaria: Conversiones y unidades de medida locales guatemaltecas."
+                }
+            ]
+        }
+    ]
+},
 
-## Unidad 1: Números y Operaciones Fundamentales
-### Lección 1.1: El Valor Posicional y Números Grandes
-* **Objetivo:** Comprender cómo el valor de un dígito cambia según su posición en números hasta de seis cifras.
-* **Explicación:** En nuestro sistema decimal, cada posición a la izquierda vale diez veces más. Por ejemplo, en el número 4,325, el '3' representa 300 unidades (centenas), mientras que en el número 3,425 representa 3,000 unidades (millares).
-* **Ejemplo Resuelto:** Escribe el valor posicional del dígito 7 en el número 874,210.
-  - *Paso 1:* Identifica la posición del 7. Está en la quinta posición de derecha a izquierda (decenas de millar).
-  - *Paso 2:* Multiplica el dígito por su valor posicional: 7 × 10,000 = 70,000.
-  - *Resultado:* El valor posicional de 7 es 70,000.
-* **Errores Comunes:** Confundir decenas de millar con centenas de millar o ignorar los ceros intermedios.
-* **Ejercicios de Práctica:**
-  1. ¿Cuál es el valor del dígito 5 en el número 154,230? (R: 50,000. Retroalimentación: El 5 está en la posición de unidades de millar).
-  2. Escribe en cifras: Doscientos mil cuarenta y cinco. (R: 200,045. Retroalimentación: No olvides colocar ceros en las posiciones vacías).
-  3. En una finca de Tecpán se cosecharon 45,670 manzanas. ¿Cuántas decenas de millar hay? (R: 4 decenas. Retroalimentación: El dígito en la posición de decenas de millar es 4).
-  4. ¿Qué número se forma con 3 centenas de millar, 5 decenas y 2 unidades? (R: 300,052).
-  5. Si sumas 1,000 al número 89,500, ¿qué dígito cambia en las decenas de millar? (R: El 8 cambia a 9, formando 90,500).
-* **¿Necesitas ayuda?** Si tienes dudas sobre el valor posicional, ¡solicita una tutoría personalizada para practicar con bloques multibase interactivos!
-
-### Lección 1.2: Suma y Resta con Llevadas y Préstamos
-* **Objetivo:** Realizar sumas y restas complejas alineando correctamente los dígitos por su valor posicional.
-* **Explicación:** Al sumar, si el resultado de una columna es 10 o más, "llevamos" la decena a la siguiente columna a la izquierda. Al restar, si el número de arriba es menor que el de abajo, debemos "pedir prestada" una decena a la columna de la izquierda.
-* **Ejemplo Resuelto:** Resta 4,523 de 8,110.
-  - *Paso 1:* Alinea verticalmente: 8110 - 4523.
-  - *Paso 2:* En las unidades, 0 - 3 no se puede. Pedimos prestado a las decenas. El 0 se vuelve 10, y el 1 de las decenas se vuelve 0. 10 - 3 = 7.
-  - *Paso 3:* En las decenas, 0 - 2 no se puede. Pedimos prestado a las centenas. El 0 se vuelve 10, y el 1 de las centenas se vuelve 0. 10 - 2 = 8.
-  - *Paso 4:* En las centenas, 0 - 5 no se puede. Pedimos prestado a los millares. El 0 se vuelve 10, y el 8 se vuelve 7. 10 - 5 = 5.
-  - *Paso 5:* En los millares, 7 - 4 = 3.
-  - *Resultado:* 3,587.
-* **Errores Comunes:** Olvidar restar el "préstamo" que se le hizo a la columna anterior.
-* **Ejercicios de Práctica:**
-  1. Resuelve: 45,600 - 12,850. (R: 32,750).
-  2. Resuelve: 8,745 + 13,567. (R: 22,312).
-  3. Si un comerciante de La Terminal compra mercadería por Q12,450 y paga con Q15,000, ¿cuánto recibe de vuelto? (R: Q2,550).
-  4. Completa la cifra que falta: 4,5_3 + 1,280 = 5,843. (R: 6. Retroalimentación: 4,563 + 1,280 = 5,843).
-  5. Resuelve: 10,000 - 4,321. (R: 5,679).
-* **¿Necesitas ayuda?** Resolver restas con varios ceros seguidos puede ser confuso. ¡Un tutor de CEDETU te enseñará el truco definitivo para dominarlas!
-
-### Lección 1.3: Multiplicación por Dos y Tres Cifras
-* **Objetivo:** Multiplicar números grandes dejando el espacio correspondiente al cambiar de valor posicional en los productos parciales.
-* **Explicación:** Al multiplicar por un número de varias cifras, multiplicamos primero por las unidades, luego por las decenas (dejando un espacio vacío o un cero a la derecha en la segunda línea) y luego por las centenas (dejando dos espacios vacíos), sumando finalmente todos los productos parciales.
-* **Ejemplo Resuelto:** Multiplica 245 × 13.
-  - *Paso 1:* Multiplica 245 × 3 = 735.
-  - *Paso 2:* Multiplica 245 × 10 = 2450 (escribimos 245 dejando un espacio: 245_).
-  - *Paso 3:* Suma ambos resultados: 735 + 2450 = 3,185.
-  - *Resultado:* 3,185.
-* **Errores Comunes:** No alinear los productos parciales o colocarlos todos desde la primera columna de la derecha.
-* **Ejercicios de Práctica:**
-  1. Multiplica: 125 × 24. (R: 3,000).
-  2. Si una caja de lápices cuesta Q15 y un colegio compra 120 cajas, ¿cuál es el costo total? (R: Q1,800).
-  3. Multiplica: 452 × 112. (R: 50,624).
-  4. Un camión transporta 75 sacos de café de 125 libras cada uno. ¿Cuántas libras lleva en total? (R: 9,375 libras).
-  5. Multiplica: 805 × 45. (R: 36,225).
-* **¿Necesitas ayuda?** ¿Te cuesta recordar las tablas de multiplicar o te pierdes al sumar las llevadas? ¡Agenda una clase de apoyo rápido para repasar las tablas con juegos prácticos!
-
-## Evaluación Unidad 1
-* Resuelve: 150,000 - (12,450 × 8). (R: 50,400. Retroalimentación: Primero multiplica 12,450 × 8 = 99,600. Luego resta 150,000 - 99,600 = 50,400).
-* ¿Qué número representa 4 centenas de millar, 8 unidades de millar y 3 decenas? (R: 408,030).
-* Un bus de transporte extraurbano recorre 125 kilómetros diarios. ¿Cuántos kilómetros recorre en 30 días? (R: 3,750 km).
-
----
-
-## Unidad 2: Fracciones, Decimales y Porcentajes
-### Lección 2.1: Concepto de Fracción y Simplificación
-* **Objetivo:** Representar fracciones de forma visual e identificar fracciones equivalentes mediante la simplificación.
-* **Explicación:** Una fracción representa partes de un todo. El numerador indica cuántas partes tomamos y el denominador en cuántas partes iguales se dividió el todo. Simplificar consiste en dividir el numerador y el denominador por el mismo número para obtener la fracción más sencilla equivalente.
-* **Ejemplo Resuelto:** Simplifica la fracción 18/24 a su mínima expresión.
-  - *Paso 1:* Busca un divisor común para 18 y 24. Ambos se pueden dividir por 2: 18÷2 / 24÷2 = 9/12.
-  - *Paso 2:* Busca un divisor común para 9 y 12. Ambos se pueden dividir por 3: 9÷3 / 12÷3 = 3/4.
-  - *Paso 3:* Dado que 3/4 no tiene más divisores comunes aparte del 1, la fracción está simplificada.
-  - *Resultado:* 3/4.
-* **Errores Comunes:** Dividir el numerador por un número y el denominador por otro diferente.
-* **Ejercicios de Práctica:**
-  1. Simplifica 20/50. (R: 2/5. Retroalimentación: Divide ambos entre 10).
-  2. ¿Qué fracción de una pizza queda si se divide en 8 partes y te comes 3? (R: 5/8).
-  3. Simplifica 12/36. (R: 1/3).
-  4. Convierte la fracción impropia 7/3 en número mixto. (R: 2 1/3. Retroalimentación: 7 dividido entre 3 da 2 con residuo 1).
-  5. ¿Son equivalentes las fracciones 2/3 y 8/12? (R: Sí. Retroalimentación: Si multiplicas 2/3 por 4 arriba y abajo obtienes 8/12).
-* **¿Necesitas ayuda?** Las fracciones equivalentes son la base para sumar fracciones heterogéneas. ¡Pide una tutoría para verlas de forma visual con esquemas circulares interactivos!
-
-### Lección 2.2: Operaciones con Decimales
-* **Objetivo:** Sumar, restar y multiplicar números decimales alineando correctamente el punto decimal.
-* **Explicación:** Para sumar o restar decimales, debemos alinear los números verticalmente de forma que los puntos decimales coincidan en la misma columna. En la multiplicación, multiplicamos de forma normal y luego colocamos el punto decimal en el resultado final contando la suma de las posiciones decimales de ambos factores.
-* **Ejemplo Resuelto:** Multiplica 4.5 × 1.2.
-  - *Paso 1:* Multiplica de forma normal como si fueran enteros: 45 × 12 = 540.
-  - *Paso 2:* Cuenta las posiciones decimales. 4.5 tiene una y 1.2 tiene otra (dos en total).
-  - *Paso 3:* Coloca el punto decimal en 540 contando dos espacios de derecha a izquierda: 5.40.
-  - *Resultado:* 5.4.
-* **Errores Comunes:** No alinear los puntos decimales al sumar o restar, o copiar el punto en la misma columna al multiplicar.
-* **Ejercicios de Práctica:**
-  1. Suma: 12.5 + 3.84. (R: 16.34).
-  2. Resta: 15.0 - 4.25. (R: 10.75).
-  3. Si una libra de aguacates cuesta Q6.50 y compras 3.5 libras, ¿cuánto gastas? (R: Q22.75).
-  4. Resuelve: 0.5 × 0.2. (R: 0.1. Retroalimentación: 5 × 2 = 10; colocamos el punto contando dos posiciones hacia la izquierda: 0.10, que es igual a 0.1).
-  5. Divide: 4.5 ÷ 0.5. (R: 9. Retroalimentación: Equivale a dividir 45 entre 5).
-* **¿Necesitas ayuda?** La multiplicación de decimales pequeños suele causar confusión respecto a la posición del cero. ¡Haz un diagnóstico rápido con un tutor de CEDETU!
-
-### Lección 2.3: Porcentajes y su Conversión
-* **Objetivo:** Calcular el porcentaje de un número y convertir porcentajes a decimales y fracciones fácilmente.
-* **Explicación:** Un porcentaje (%) representa una fracción sobre 100. Por ejemplo, 25% significa "25 de cada 100" o 25/100, que simplificado es 1/4 o en decimal 0.25. Para calcular el porcentaje de un número, multiplicamos el número por el decimal equivalente del porcentaje.
-* **Ejemplo Resuelto:** Calcula el 15% de Q200.
-  - *Paso 1:* Convierte 15% a decimal dividiendo entre 100: 15 ÷ 100 = 0.15.
-  - *Paso 2:* Multiplica el número por el decimal: 200 × 0.15 = 30.
-  - *Resultado:* Q30.
-* **Errores Comunes:** Multiplicar directamente por el entero del porcentaje (ej. multiplicar por 15 en lugar de 0.15).
-* **Ejercicios de Práctica:**
-  1. Calcula el 20% de 80. (R: 16. Retroalimentación: 80 × 0.20 = 16).
-  2. Convierte 75% a fracción simplificada. (R: 3/4).
-  3. Si una chumpa cuesta Q300 y tiene el 10% de descuento, ¿cuál es el precio final? (R: Q270. Retroalimentación: El descuento es Q30, por lo que pagas Q300 - Q30 = Q270).
-  4. ¿Qué decimal representa el 5%? (R: 0.05. Retroalimentación: Cuidado, 0.5 representa el 50%).
-  5. En un salón de 40 alumnos, el 60% son mujeres. ¿Cuántas mujeres hay? (R: 24).
-* **¿Necesitas ayuda?** Los porcentajes son cruciales para entender ofertas, intereses y estadísticas en la vida real. ¡Asegura tu comprensión con un tutor dedicado!
-
-## Evaluación Unidad 2
-* Si gastas Q45.50 en el mercado y pagas con un billete de Q100, ¿cuánto te queda? (R: Q54.50).
-* Simplifica a su mínima expresión: 36/48. (R: 3/4).
-* Si una tablet cuesta Q1,200 y tiene un impuesto del 12% de IVA, ¿cuánto pagas en total? (R: Q1,344. Retroalimentación: El IVA es Q144. Q1,200 + Q144 = Q1,344).
-
----
-
-## Unidad 3: Resolución de Problemas Cotidianos
-### Lección 3.1: Método de Resolución de 4 Pasos (Polya)
-* **Objetivo:** Aplicar los cuatro pasos sistemáticos para resolver cualquier problema matemático verbal con éxito.
-* **Explicación:** George Polya diseñó un método universal: 1) Entender el problema (¿cuáles son los datos y la pregunta?), 2) Trazar un plan (¿qué operación debo hacer?), 3) Ejecutar el plan (hacer el cálculo matemático de forma limpia) y 4) Examinar la solución (¿tiene sentido el resultado obtenido?).
-* **Ejemplo Resuelto:** María compró 3 cartones de huevos a Q35 cada uno y Q15 de pan. Si pagó con un billete de Q200, ¿cuánto recibió de vuelto?
-  - *Paso 1: Entender:* Datos: 3 cartones a Q35 c/u, pan por Q15, pago con Q200. Pregunta: Vuelto.
-  - *Paso 2: Plan:* Calcular el gasto de los huevos (3 × 35), sumar el pan (+ 15) y restar el total del billete (200 - total).
-  - *Paso 3: Ejecutar:* 3 × Q35 = Q105. Q105 + Q15 = Q120. Q200 - Q120 = Q80.
-  - *Paso 4: Examinar:* El vuelto es Q80, lo cual es lógico ya que gastó más de la mitad del billete.
-  - *Resultado:* Q80.
-* **Errores Comunes:** Empezar a operar números sin haber comprendido qué pregunta realmente el problema.
-* **Ejercicios de Práctica:**
-  1. Un camión lleva 15 cajas con 12 botellas de jugo cada una. Si vende 40 botellas, ¿cuántas quedan? (R: 140 botellas. Retroalimentación: Total = 15 × 12 = 180. Quedan = 180 - 40 = 140).
-  2. Si para hacer una receta de pastel se necesitan 2.5 tazas de harina y quieres hacer 4 pasteles, ¿cuánta harina necesitas? (R: 10 tazas).
-  3. Juan ahorra Q5 diarios. ¿En cuántos días habrá ahorrado Q350? (R: 70 días).
-  4. Un agricultor de Sololá cosecha 480 zanahorias y las empaca en bolsas de 12 unidades. ¿Cuántas bolsas llena en total? (R: 40 bolsas).
-  5. Una bomba de agua extrae 45 litros por minuto. ¿Cuántos litros extraerá en hora y media? (R: 4,050 litros. Retroalimentación: Hora y media son 90 minutos. 45 × 90 = 4,050).
-* **¿Necesitas ayuda?** Los problemas de planteo verbal suelen ser la mayor dificultad en las escuelas. ¡Aprende a traducir el lenguaje ordinario al matemático con tu tutor!
-
-### Lección 3.2: La Regla de Tres Simple y Directa
-* **Objetivo:** Plantear y resolver problemas de proporcionalidad directa utilizando la regla de tres.
-* **Explicación:** Cuando dos magnitudes son directamente proporcionales (si una aumenta, la otra también en la misma proporción), podemos usar la regla de tres. Multiplicamos de forma cruzada los datos conocidos y dividimos el resultado entre el tercer dato para hallar la incógnita.
-* **Ejemplo Resuelto:** Si 5 libras de frijol cuestan Q40, ¿cuánto costarán 12 libras del mismo frijol?
-  - *Paso 1:* Plantea la proporción:
-    5 libras ---> Q40
-    12 libras ---> Qx
-  - *Paso 2:* Multiplica cruzado: 12 × 40 = 480.
-  - *Paso 3:* Divide por el tercer término: 480 ÷ 5 = 96.
-  - *Resultado:* Q96.
-* **Errores Comunes:** Multiplicar en línea recta en lugar de cruzado en proporciones directas.
-* **Ejercicios de Práctica:**
-  1. Si 3 lapiceros cuestan Q10.50, ¿cuánto cuestan 8 lapiceros? (R: Q28.00).
-  2. Un automóvil recorre 180 km con 3 galones de gasolina. ¿Cuántos km recorrerá con 8 galones? (R: 480 km).
-  3. Si 12 trabajadores cosechan un campo de café en 4 días, ¿cuánto tardarán 6 trabajadores? (R: 8 días. Retroalimentación: ¡Ojo! Este es un caso de proporcionalidad inversa: a menos trabajadores, más tiempo. Se opera 12 × 4 / 6 = 8).
-  4. Para pintar una pared de 20 metros cuadrados se necesitan 4 galones de pintura. ¿Cuántos galones se necesitan para 50 metros cuadrados? (R: 10 galones).
-  5. Si un dólar equivale a Q7.80, ¿cuántos quetzales son $150? (R: Q1,170).
-* **¿Necesitas ayuda?** Saber distinguir entre proporcionalidad directa e inversa es vital para no equivocarse en física y finanzas. ¡Un tutor de CEDETU te lo explicará con ejemplos muy divertidos!
-
-### Lección 3.3: Unidades de Medida Locales y Conversiones
-* **Objetivo:** Convertir unidades del Sistema Internacional a unidades de medida tradicionales de uso común en Guatemala (libras, quintales, varas).
-* **Explicación:** En nuestro país conviven unidades de peso como el quintal (100 libras) o la arroba (25 libras) y de longitud como la vara (aprox. 84 cm). Conocer las equivalencias exactas nos permite resolver problemas de compra, venta y terrenos agrícolas de forma real.
-* **Ejemplo Resuelto:** Un agricultor tiene 3.5 quintales de café pergamino. ¿A cuántas libras equivale esta cosecha?
-  - *Paso 1:* Establece la equivalencia: 1 quintal (qq) = 100 libras (lb).
-  - *Paso 2:* Multiplica la cantidad de quintales por 100: 3.5 × 100 = 350.
-  - *Resultado:* 350 libras.
-* **Errores Comunes:** Multiplicar por 25 al pasar de quintales a libras (confundiéndolo con arrobas).
-* **Ejercicios de Práctica:**
-  1. Si un saco de maíz pesa 2 arrobas, ¿cuántas libras pesa en total? (R: 50 lb. Retroalimentación: 1 arroba = 25 libras. 2 × 25 = 50).
-  2. Un terreno mide 30 varas de ancho. Si cada vara mide 0.84 metros, ¿cuántos metros de ancho mide el terreno? (R: 25.2 metros).
-  3. Convierte 450 libras a quintales. (R: 4.5 quintales. Retroalimentación: 450 ÷ 100 = 4.5).
-  4. Si compras 3 libras de carne y cada libra cuesta Q32.00, pero la balanza marca en kilogramos y te da 1.36 kg, ¿está correcto? (R: Sí. Retroalimentación: 1 kg es aprox. 2.2 lb. 1.36 kg × 2.2 = 3 lb).
-  5. ¿Cuántas arrobas hay en un lote de 200 libras de azúcar? (R: 8 arrobas. Retroalimentación: 200 ÷ 25 = 8).
-* **¿Necesitas ayuda?** Las conversiones de unidades locales suelen ser muy confusas en las tareas escolares de primaria y básico. ¡Pide ayuda a tu tutor para hacer tu propio recetario de conversión!
-
-## Evaluación Unidad 3
-* Si 8 sacos de abono orgánico cuestan Q640, ¿cuánto cuestan 15 sacos del mismo abono? (R: Q1,200).
-* Un comerciante de Chichicastenango compra artesanías por un valor de Q1,800. Si las vende todas obteniendo una ganancia del 25% sobre el precio de compra, ¿cuál fue el monto total obtenido en las ventas? (R: Q2,250. Retroalimentación: Ganancia = 1,800 × 0.25 = Q450. Venta = 1,800 + 450 = Q2,250).
-* ¿Cuántas libras de frijol hay en 6.5 quintales? (R: 650 libras).
-`,
-
-    "aritmetica-esencial": `# Curso: Aritmética Esencial
-* **Materia:** Matemáticas | **Nivel sugerido:** Primaria / Secundaria
-* **Público objetivo:** Alumnos que inician secundaria o bachillerato y desean pulir sus destrezas numéricas avanzadas.
-* **Objetivos de aprendizaje:** Operar con números enteros positivos y negativos, dominar la divisibilidad y resolver razones y proporciones matemáticas.
-
-## Unidad 1: Propiedades de las Operaciones y Enteros
-### Lección 1.1: Ley de Signos en Suma y Resta
-* **Objetivo:** Operar números positivos y negativos aplicando la regla de adición y sustracción de números enteros.
-* **Explicación:** Al operar signos en suma y resta: números con signos iguales se suman y se conserva el mismo signo. Números con signos diferentes se restan (el mayor menos el menor) y se coloca el signo del número con mayor valor absoluto.
-* **Ejemplo Resuelto:** Resuelve: -15 + 8 - 3 + 20.
-  - *Paso 1:* Agrupa los negativos: -15 y -3 = -18.
-  - *Paso 2:* Agrupa los positivos: +8 y +20 = +28.
-  - *Paso 3:* Opera ambos resultados: -18 + 28. Como tienen signos diferentes, restamos: 28 - 18 = 10. El 28 es mayor y positivo.
-  - *Resultado:* 10.
-* **Errores Comunes:** Aplicar la ley de signos de la multiplicación ("menos por menos da más") a las operaciones de suma y resta.
-* **Ejercicios de Práctica:**
-  1. Resuelve: -7 - 12. (R: -19. Retroalimentación: Signos iguales se suman y mantienen el signo).
-  2. Resuelve: -25 + 40. (R: 15).
-  3. Resuelve: 8 - (-5). (R: 13. Retroalimentación: Restar un negativo equivale a sumar: 8 + 5 = 13).
-  4. Si la temperatura en Quetzaltenango baja a -2°C y luego sube 10°C por la tarde, ¿cuál es la temperatura final? (R: 8°C).
-  5. Resuelve: -10 + 4 - 8 + 12. (R: -2).
-* **¿Necesitas ayuda?** La recta numérica es la mejor forma de entender los enteros. ¡Toma una tutoría virtual y domina los números negativos de forma visual!
-
-### Lección 1.2: Ley de Signos en Multiplicación y División
-* **Objetivo:** Multiplicar y dividir números enteros aplicando de forma estricta las tablas de signos de Meta.
-* **Explicación:** La ley de signos para multiplicación y división establece:
-  * (+) × (+) = (+)  |  (-) × (-) = (+)  (Signos iguales dan positivo)
-  * (+) × (-) = (-)  |  (-) × (+) = (-)  (Signos diferentes dan negativo)
-* **Ejemplo Resuelto:** Resuelve: (-24) ÷ (-3) × (-2).
-  - *Paso 1:* Divide (-24) entre (-3). Menos entre menos da más: 24 ÷ 3 = +8.
-  - *Paso 2:* Multiplica (+8) por (-2). Más por menos da menos: 8 × 2 = -16.
-  - *Resultado:* -16.
-* **Errores Comunes:** Confundir estas reglas con las de la suma y restar en lugar de multiplicar.
-* **Ejercicios de Práctica:**
-  1. Resuelve: (-5) × (-8). (R: 40).
-  2. Resuelve: (-36) ÷ 4. (R: -9).
-  3. Resuelve: (-2) × 3 × (-4). (R: 24. Retroalimentación: (-2) × 3 = -6; (-6) × (-4) = 24).
-  4. Resuelve: 100 ÷ (-10) ÷ (-1). (R: 10).
-  5. Si una cuenta bancaria pierde Q150 mensuales por un seguro automatizado, ¿cuál es el saldo acumulado perdido tras 6 meses? (R: -900).
-* **¿Necesitas ayuda?** No dejes que un simple signo arruine toda tu tarea de álgebra. ¡Un tutor de CEDETU te dará consejos mnemotécnicos muy fáciles de recordar!
-
-### Lección 1.3: Jerarquía de Operaciones (PEMDAS)
-* **Objetivo:** Resolver operaciones combinadas aplicando el orden estricto de precedencia matemática.
-* **Explicación:** Para resolver operaciones complejas, debemos seguir el orden **PEMDAS**:
-  1. **P**aréntesis y corchetes de adentro hacia afuera.
-  2. **E**xponentes y raíces.
-  3. **M**ultiplicaciones y **D**ivisiones (de izquierda a derecha).
-  4. **A**diciones y **S**ustracciones (de izquierda a derecha).
-* **Ejemplo Resuelto:** Resuelve: 8 + 2 × (3² - 5) ÷ 2.
-  - *Paso 1:* Opera dentro del paréntesis (exponente primero): 3² = 9. El paréntesis queda: (9 - 5) = 4.
-  - *Paso 2:* Reemplaza: 8 + 2 × 4 ÷ 2.
-  - *Paso 3:* Multiplicación y división de izquierda a derecha: 2 × 4 = 8. Luego, 8 ÷ 2 = 4.
-  - *Paso 4:* Suma final: 8 + 4 = 12.
-  - *Resultado:* 12.
-* **Errores Comunes:** Sumar primero 8 + 2 al inicio, violando la regla de que la multiplicación va antes de la suma.
-* **Ejercicios de Práctica:**
-  1. Resuelve: 15 - 3 × 4 + 2. (R: 5. Retroalimentación: 3 × 4 = 12; 15 - 12 + 2 = 5).
-  2. Resuelve: (5 + 3)² ÷ 4 - 6. (R: 10. Retroalimentación: 8² ÷ 4 - 6 = 64 ÷ 4 - 6 = 16 - 6 = 10).
-  3. Resuelve: 4 + 12 ÷ 3 × 2. (R: 12. Retroalimentación: 12 ÷ 3 = 4; 4 × 2 = 8; 4 + 8 = 12).
-  4. Resuelve: 2 × [3 + (8 - 2 × 3)]. (R: 10).
-  5. Resuelve: 10² - 3 × 5² + (4 × 5). (R: 45).
-* **¿Necesitas ayuda?** La jerarquía de operaciones es el tema donde más se cometen errores en los exámenes. ¡Practica paso a paso con un tutor calificado de CEDETU!
-
-## Evaluación Unidad 1
-* Resuelve: -12 + (-45) ÷ (-9) × 3. (R: 3. Retroalimentación: (-45)÷(-9) = 5; 5 × 3 = 15; -12 + 15 = 3).
-* Resuelve: [3 × (2 + 4)²] ÷ 12. (R: 9. Retroalimentación: 3 × 6² = 3 × 36 = 108. 108 ÷ 12 = 9).
-* Un buzo desciende a 15 metros bajo el nivel del mar (-15 m). Sube 8 metros y luego desciende otros 5 metros. ¿A qué profundidad se encuentra? (R: -12 metros).
-
----
-
-## Unidad 2: Múltiplos, Divisores y Factorización
-### Lección 2.1: Criterios de Divisibilidad y Números Primos
-* **Objetivo:** Identificar si un número es divisible entre 2, 3, 5 o 10 rápidamente y conocer los números primos básicos.
-* **Explicación:** Un número es divisible:
-  * Entre 2: si termina en cifra par (0, 2, 4, 6, 8).
-  * Entre 3: si la suma de sus dígitos es un múltiplo de 3.
-  * Entre 5: si termina en 0 o 5.
-  * Entre 10: si termina en 0.
-  Un número primo solo tiene dos divisores: el 1 y él mismo (ej. 2, 3, 5, 7, 11, 13, 17, 19).
-* **Ejemplo Resuelto:** ¿Es el número 285 divisible entre 3 y entre 5?
-  - *Paso 1 Divisibilidad por 3:* Suma los dígitos: 2 + 8 + 5 = 15. Como 15 es múltiplo de 3, sí es divisible entre 3.
-  - *Paso 2 Divisibilidad por 5:* Termina en 5, por lo tanto, sí es divisible entre 5.
-  - *Resultado:* Sí, es divisible por ambos.
-* **Errores Comunes:** Pensar que todos los números impares son números primos (ejemplo: 9 o 15 no son primos porque se pueden dividir entre 3).
-* **Ejercicios de Práctica:**
-  1. ¿Cuáles de los siguientes números son primos: 9, 11, 15, 17, 21? (R: 11 y 17).
-  2. ¿Es el número 432 divisible entre 3? (R: Sí. Retroalimentación: 4 + 3 + 2 = 9, el cual es divisible entre 3).
-  3. ¿Es el número 900 divisible entre 2, 3, 5 y 10 al mismo tiempo? (R: Sí).
-  4. ¿Cuál es el número primo más cercano a 30? (R: 31. Retroalimentación: 29 también es primo y es el más cercano por debajo).
-  5. ¿Es el número 1,023 divisible por 3? (R: Sí. Retroalimentación: 1 + 0 + 2 + 3 = 6).
-* **¿Necesitas ayuda?** Aprender divisibilidad es clave para simplificar fracciones complejas. ¡Pregunta a un tutor para resolver tus dudas de forma rápida!
-
-### Lección 2.2: Factorización en Factores Primos
-* **Objetivo:** Descomponer cualquier número compuesto en una multiplicación de factores primos utilizando el árbol de factores o divisiones sucesivas.
-* **Explicación:** Todo número compuesto puede escribirse como un producto único de números primos. Para descomponerlo, lo dividimos sistemáticamente entre los números primos menores (2, 3, 5, 7...) hasta llegar al número 1.
-* **Ejemplo Resuelto:** Descompón en factores primos el número 120.
-  - *Paso 1:* Dividimos entre 2: 120 ÷ 2 = 60.
-  - *Paso 2:* Dividimos entre 2: 60 ÷ 2 = 30.
-  - *Paso 3:* Dividimos entre 2: 30 ÷ 2 = 15.
-  - *Paso 4:* Como 15 no se puede entre 2, dividimos entre 3: 15 ÷ 3 = 5.
-  - *Paso 5:* Dividimos entre 5: 5 ÷ 5 = 1. Hemos terminado.
-  - *Resultado:* 120 = 2 × 2 × 2 × 3 × 5 = 2³ × 3 × 5.
-* **Errores Comunes:** Colocar factores que no son números primos en el resultado (ejemplo: 120 = 10 × 12).
-* **Ejercicios de Práctica:**
-  1. Descompón el número 60. (R: 2² × 3 × 5).
-  2. Descompón el número 45. (R: 3² × 5).
-  3. Descompón el número 98. (R: 2 × 7²).
-  4. ¿Cuál es la descomposición del número 100? (R: 2² × 5²).
-  5. Descompón el número 101. (R: 101. Retroalimentación: 101 ya es un número primo).
-* **¿Necesitas ayuda?** La factorización prima es el "ADN" de los números. ¡Toma una tutoría interactiva de CEDETU para dominar este concepto!
-
-### Lección 2.3: Mínimo Común Múltiplo (mcm) y Máximo Común Divisor (MCD)
-* **Objetivo:** Calcular el mcm y el MCD de dos o más números para resolver problemas de periodicidad y distribución.
-* **Explicación:** 
-  * **mcm (Mínimo Común Múltiplo):** El múltiplo común más pequeño. Se descompone hasta llegar a 1 en todos los números y se multiplican todos los factores.
-  * **MCD (Máximo Común Divisor):** El mayor divisor común. Solo dividimos por factores que puedan dividir a **todos** los números simultáneamente.
-* **Ejemplo Resuelto:** Encuentra el mcm y el MCD de 12 y 18.
-  - *Descomposición Conjunta:*
-    - Mitad (entre 2): 12 ÷ 2 = 6, 18 ÷ 2 = 9 (El 2 divide a ambos, sirve para MCD).
-    - Mitad (entre 2): 6 ÷ 2 = 3, 9 no se puede (queda 9). (Solo sirve para mcm).
-    - Tercera (entre 3): 3 ÷ 3 = 1, 9 ÷ 3 = 3 (El 3 divide a ambos, sirve para MCD).
-    - Tercera (entre 3): 1, 3 ÷ 3 = 1.
-  - *Cálculo de mcm:* Multiplica todos los factores: 2 × 2 × 3 × 3 = 36.
-  - *Cálculo de MCD:* Multiplica los factores que dividieron a ambos al mismo tiempo: 2 × 3 = 6.
-  - *Resultado:* mcm = 36, MCD = 6.
-* **Errores Comunes:** Confundir los conceptos y calcular el mcm cuando el problema exige aplicar MCD o viceversa.
-* **Ejercicios de Práctica:**
-  1. Encuentra el mcm de 8 y 12. (R: 24).
-  2. Encuentra el MCD de 24 y 36. (R: 12).
-  3. Un médico receta una pastilla a Luis cada 6 horas y otra cada 8 horas. Si se las toma juntas a las 8:00 AM, ¿en cuántas horas volverá a tomárselas juntas? (R: 24 horas. Retroalimentación: mcm(6,8) = 24).
-  4. Una costurera tiene dos listones de 40 cm y 60 cm. Quiere cortarlos en pedazos iguales lo más largos posible sin desperdiciar. ¿Cuánto debe medir cada pedazo? (R: 20 cm. Retroalimentación: MCD(40,60) = 20).
-  5. Calcula el mcm de 5, 10 y 15. (R: 30).
-* **¿Necesitas ayuda?** Los problemas de mcm y MCD vienen en casi todas las evaluaciones de admisión. ¡Asegura tus puntos aprendiendo los trucos con tu tutor!
-
-## Evaluación Unidad 2
-* Factoriza completamente en números primos el número 250. (R: 2 × 5³).
-* Si una alarma de seguridad suena cada 15 minutos y otra suena cada 20 minutos, ¿cada cuántos minutos sonarán simultáneamente? (R: 60 minutos. Retroalimentación: mcm(15,20) = 60).
-* Encuentra el MCD de 45, 75 y 90. (R: 15. Retroalimentación: Los tres números se pueden dividir entre 3 y luego entre 5 simultáneamente. 3 × 5 = 15).
-
----
-
-## Unidad 3: Razones, Proporciones y Regla de Tres
-### Lección 3.1: Razones y Proporciones Fundamentales
-* **Objetivo:** Comprender qué es una razón (comparación entre dos números) y resolver proporciones aplicando la propiedad fundamental.
-* **Explicación:** Una razón es el cociente de dos cantidades \`a/b\`. Una proporción es la igualdad de dos razones: \`a/b = c/d\`. La propiedad fundamental de las proporciones dice que los productos cruzados son iguales: \`a × d = b × c\` (los extremos por los medios).
-* **Ejemplo Resuelto:** Encuentra el valor de $x$ en la proporción: $4/5 = 12/x$.
-  - *Paso 1:* Multiplica cruzado: 4 × x = 5 × 12.
-  - *Paso 2:* Opera: 4x = 60.
-  - *Paso 3:* Despeja x: x = 60 ÷ 4 = 15.
-  - *Resultado:* x = 15.
-* **Errores Comunes:** Multiplicar en línea recta en lugar de cruzado.
-* **Ejercicios de Práctica:**
-  1. Resuelve para x: 3/x = 9/15. (R: 5).
-  2. En una receta, la razón de agua a arroz es de 2 a 1. Si cocinas 3 tazas de arroz, ¿cuánta agua necesitas? (R: 6 tazas).
-  3. En un colegio de Guatemala, la razón de aprobados a reprobados es de 7 a 2. Si hay 14 reprobados, ¿cuántos aprobaron? (R: 49. Retroalimentación: 7/2 = x/14; x = 7 × 14 ÷ 2 = 49).
-  4. Resuelve para y: y/8 = 10/16. (R: 5).
-  5. ¿Son proporcionales las razones 3/4 y 9/12? (R: Sí. Retroalimentación: 3 × 12 = 36 y 4 × 9 = 36).
-* **¿Necesitas ayuda?** Las proporciones son la base de los mapas a escala y planos de arquitectura. ¡Aprende a resolverlas de forma fácil con un tutor especializado!
-
-### Lección 3.2: Regla de Tres Inversa
-* **Objetivo:** Resolver problemas de proporcionalidad inversa donde el aumento de una magnitud produce la disminución de la otra en la misma proporción.
-* **Explicación:** Si las magnitudes son inversamente proporcionales, multiplicamos los datos conocidos en línea recta (en horizontal) y dividimos el resultado entre el tercer dato para hallar la incógnita.
-* **Ejemplo Resuelto:** Si 4 albañiles construyen una barda en 6 días, ¿cuántos días tardarán 8 albañiles si trabajan al mismo ritmo?
-  - *Paso 1:* Plantea el problema:
-    4 albañiles ---> 6 días
-    8 albañiles ---> x días
-    *(A más albañiles, tardarán menos días. Es inversa).*
-  - *Paso 2:* Multiplica en línea recta: 4 × 6 = 24.
-  - *Paso 3:* Divide por el tercer término: 24 ÷ 8 = 3.
-  - *Resultado:* 3 días.
-* **Errores Comunes:** Operar de forma cruzada por costumbre, lo cual daría 12 días, lo cual no es lógico ya que más personas trabajando deberían tardar menos tiempo.
-* **Ejercicios de Práctica:**
-  1. Si un auto tarda 3 horas en llegar a Quetzaltenango yendo a 80 km/h, ¿cuánto tardará a una velocidad de 120 km/h? (R: 2 horas. Retroalimentación: 3 × 80 ÷ 120 = 2).
-  2. Un agricultor tiene comida para alimentar a 20 gallinas durante 15 días. Si vende 5 gallinas, ¿para cuántos días le alcanzará el alimento? (R: 20 días. Retroalimentación: Quedan 15 gallinas. 20 × 15 ÷ 15 = 20 días).
-  3. 3 llaves de agua llenan un estanque en 8 horas. ¿Cuánto tardarán 6 llaves iguales? (R: 4 horas).
-  4. Si para limpiar una calle en Antigua Guatemala se necesitan 10 voluntarios trabajando durante 6 horas, ¿cuántos voluntarios se necesitan para hacerlo en 3 horas? (R: 20 voluntarios).
-  5. Un saco de maíz sirve para alimentar 8 cerdos durante 9 días. ¿Cuánto dura el saco si se tienen 12 cerdos? (R: 6 días).
-* **¿Necesitas ayuda?** La regla de tres inversa confunde a 9 de cada 10 estudiantes. ¡Toma una clase personalizada con CEDETU y garantízate una excelente nota en tu examen!
-
-### Lección 3.3: Regla de Tres Compuesta
-* **Objetivo:** Resolver problemas que involucren tres o más magnitudes directa o inversamente proporcionales utilizando métodos analíticos estructurados.
-* **Explicación:** En la regla de tres compuesta intervienen más de dos magnitudes. Planteamos la relación de todas ellas con la incógnita de forma ordenada y determinamos si son relaciones directas o inversas para multiplicar o dividir los factores correspondientes.
-* **Ejemplo Resuelto:** Si 5 grifos iguales consumen 100 litros de agua en 4 horas, ¿cuántos litros consumirán 8 grifos en 6 horas?
-  - *Paso 1:* Plantea las columnas:
-    Grifos --- Horas --- Litros
-    5 ------ 4 ------ 100
-    8 ------ 6 ------ x
-  - *Paso 2:* Analiza respecto a la incógnita (Litros):
-    - Grifos a Litros: A más grifos, más litros (Directa: multiplicamos por 8/5).
-    - Horas a Litros: A más horas, más litros (Directa: multiplicamos por 6/4).
-  - *Paso 3:* Opera: x = 100 × (8/5) × (6/4) = 100 × 48 / 20 = 4,800 ÷ 20 = 240.
-  - *Resultado:* 240 litros.
-* **Errores Comunes:** Multiplicar todas las relaciones en el mismo sentido sin verificar si alguna es inversa.
-* **Ejercicios de Práctica:**
-  1. Si 6 tejedores de Santiago Atitlán elaboran 30 bufandas en 10 días, ¿cuántas bufandas elaborarán 8 tejedores en 15 días? (R: 60 bufandas. Retroalimentación: 30 × (8/6) × (15/10) = 60).
-  2. Si 3 impresoras imprimen 1,500 volantes en 2 horas, ¿cuántas horas tardarán 4 impresoras en imprimir 4,000 volantes? (R: 4 horas. Retroalimentación: 2 × (3/4) × (4,000/1,500) = 4 horas).
-  3. Si 10 obreros abren una zanja de 100 metros en 8 días, ¿cuántos días tardarán 15 obreros en abrir una zanja de 150 metros? (R: 8 días).
-  4. Una fábrica necesita 5 máquinas para producir 2,500 latas en 6 horas. ¿Cuántas latas producirán 3 máquinas en 8 horas? (R: 2,000 latas).
-  5. 8 grifos tardan 12 horas en llenar 4 depósitos de agua. ¿Cuánto tardarán 6 grifos en llenar 3 depósitos iguales? (R: 12 horas).
-* **¿Necesitas ayuda?** La regla de tres compuesta requiere una guía clara y paso a paso. ¡Aprende el método infalible del 'Quien-Tiempo-Acción' con tu tutor de CEDETU!
-
-## Evaluación Unidad 3
-* Si 12 vacas consumen 60 kg de pasto en un día, ¿cuántos kg consumirán 18 vacas en el mismo lapso? (R: 90 kg).
-* Si 6 pintores tardan 8 días en pintar un colegio, ¿cuántos pintores se necesitan para terminar la pintura en 3 días? (R: 16 pintores. Retroalimentación: Regla de tres inversa. 6 × 8 ÷ 3 = 16).
-* Si 4 obreros de construcción pavimentan 80 metros de carretera en 5 días, ¿cuántos metros pavimentarán 6 obreros en 10 días? (R: 240 metros. Retroalimentación: 80 × (6/4) × (10/5) = 240).
-`,
+    "aritmetica-esencial": {
+    "isRichCourse": true,
+    "title": "Aritmética Esencial",
+    "units": [
+        {
+            "title": "Unidad 1: Propiedades de las Operaciones y Enteros",
+            "lessons": [
+                {
+                    "id": "ley-signos-suma-resta",
+                    "title": "Lección 1.1: Ley de Signos en Suma y Resta",
+                    "introduction": "Comprende y domina la suma y resta de números enteros con signos positivos y negativos utilizando la recta numérica.",
+                    "explanationHtml": "<p>Operar con números enteros positivos y negativos puede ser confuso si aplicamos reglas cruzadas. La regla básica para la <strong>suma y resta</strong> es:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Signos Iguales:</strong> Los números se <strong>suman</strong> y el resultado conserva el mismo signo. (ej: $-5 - 3 = -8$, $+7 + 2 = +9$).</li><li><strong>Signos Diferentes:</strong> Los números se <strong>restan</strong> (el de mayor valor absoluto menos el menor) y el resultado conserva el signo del número más grande en valor absoluto. (ej: $-15 + 8 = -7$, porque $15 - 8 = 7$ y el $15$ es negativo).</li></ul><p class=\"mt-3\"><strong>Restar un número negativo:</strong> Dos signos menos consecutivos equivalen a una suma: $-a - (-b) = -a + b$.</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Reglas Mnemotécnicas</p><p class=\"text-base font-mono font-extrabold text-primary\">Signos Iguales: SUMA y mantiene signo</p><p class=\"text-base font-mono font-extrabold text-primary\">Signos Diferentes: RESTA y pone signo del mayor</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">RECTA NUMÉRICA: -3 + 5 = 2</text><line x1=\"20\" y1=\"70\" x2=\"280\" y2=\"70\" stroke=\"#94a3b8\" stroke-width=\"2\" /><polygon points=\"280,70 273,66 273,74\" fill=\"#94a3b8\" /><polygon points=\"20,70 27,66 27,74\" fill=\"#94a3b8\" /><circle cx=\"150\" cy=\"70\" r=\"3\" fill=\"#334155\" /><text x=\"150\" y=\"85\" font-size=\"9\" font-family=\"monospace\" text-anchor=\"middle\">0</text><circle cx=\"90\" cy=\"70\" r=\"4\" fill=\"#dc2626\" /><text x=\"90\" y=\"85\" font-size=\"9\" font-family=\"monospace\" text-anchor=\"middle\">-3</text><circle cx=\"190\" cy=\"70\" r=\"4\" fill=\"#059669\" /><text x=\"190\" y=\"85\" font-size=\"9\" font-family=\"monospace\" text-anchor=\"middle\">2</text><path d=\"M 90 60 Q 140 30 190 60\" fill=\"none\" stroke=\"#2563eb\" stroke-width=\"2\" marker-end=\"url(#arrow)\" /><text x=\"140\" y=\"38\" font-size=\"10\" font-family=\"sans-serif\" fill=\"#2563eb\" font-weight=\"bold\" text-anchor=\"middle\">+5</text><defs><marker id=\"arrow\" viewBox=\"0 0 10 10\" refX=\"5\" refY=\"5\" markerWidth=\"6\" markerHeight=\"6\" orient=\"auto-start-reverse\"><path d=\"M 0 2 L 10 5 L 0 8 z\" fill=\"#2563eb\" /></marker></defs></svg>",
+                    "svgDescription": "Representación del cálculo -3 + 5 = 2 en la recta numérica. Empezamos en -3 y nos desplazamos 5 unidades a la derecha (positivo), llegando a +2.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Resuelve la siguiente cadena de operaciones: <span class=\"font-mono\">-15 + 8 - 3 + 20</span>.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1: Agrupa los números negativos.</strong> <br><span class=\"font-mono\">-15 - 3 = -18</span> (Signos iguales se suman y mantienen signo).</li><li><strong>Paso 2: Agrupa los números positivos.</strong> <br><span class=\"font-mono\">+8 + 20 = +28</span>.</li><li><strong>Paso 3: Opera ambos resultados agrupados.</strong> <br><span class=\"font-mono\">-18 + 28</span>. Como tienen signos diferentes, restamos los valores absolutos: $28 - 18 = 10$. Dado que el positivo 28 es mayor, el signo es positivo.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> El resultado final es <strong>10</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Aplicar ley de multiplicación a sumas:</strong> Hacer $-7 - 12 = +19$ porque \"menos por menos da más\". ¡Grave error! Esa regla solo aplica en multiplicación y división. En suma y resta, $-7 - 12 = -19$.</li><li><strong>Confundir el signo en restas de negativos:</strong> Escribir $8 - (-5) = 8 - 5 = 3$. La resta de un negativo se vuelve suma: $8 - (-5) = 8 + 5 = 13$.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Resuelve la operación en tu cuaderno e ingresa el resultado sin espacios: -7 - 12",
+                            "correctAnswer": "-19",
+                            "hint": "Ambos números tienen signos iguales (negativo). Súmalos y conserva el signo negativo.",
+                            "feedbackCorrect": "¡Excelente! -7 - 12 = -19.",
+                            "feedbackIncorrect": "Revisa la ley de signos de suma: signos iguales se suman, no multipliques. Da -19.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Resuelve la operación: -25 + 40",
+                            "correctAnswer": "15",
+                            "hint": "Tienen signos diferentes. Resta 40 - 25 y pon el signo del número con mayor valor absoluto (positivo).",
+                            "feedbackCorrect": "¡Perfecto! -25 + 40 = 15.",
+                            "feedbackIncorrect": "Incorrecto. Signos diferentes se restan, el mayor es positivo. Da 15.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Resuelve la operación: 8 - (-5)",
+                            "correctAnswer": "13",
+                            "hint": "Restar un número negativo equivale a sumar: 8 + 5.",
+                            "feedbackCorrect": "¡Excelente! 8 - (-5) = 13.",
+                            "feedbackIncorrect": "Recuerda que menos por menos es más: 8 - (-5) = 8 + 5 = 13.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si la temperatura en Quetzaltenango está en -2°C por la madrugada y sube 10°C por la tarde, ¿cuál es la temperatura final?",
+                            "options": [
+                                "-12°C",
+                                "8°C",
+                                "12°C",
+                                "-8°C"
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Plantea la operación matemática: -2 + 10. Resta los números por tener signos diferentes.",
+                            "feedbackCorrect": "¡Correcto! La temperatura final es de 8°C.",
+                            "feedbackIncorrect": "Incorrecto. -2 + 10 = 8°C.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Resuelve el polinomio aritmético: -10 + 4 - 8 + 12. ¿Cuál es el resultado?",
+                            "options": [
+                                "-2",
+                                "2",
+                                "-6",
+                                "6"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Agrupa negativos (-10 - 8 = -18) y positivos (4 + 12 = 16), luego opera: -18 + 16.",
+                            "feedbackCorrect": "¡Excelente! El resultado es -2.",
+                            "feedbackIncorrect": "Incorrecto. -18 + 16 = -2.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "Operar enteros en suma y resta requiere identificar si los signos son iguales (se suman) o diferentes (se restan), aplicando siempre la ley del signo del número de mayor valor absoluto.",
+                    "videoPlaceholderText": "Video de Aritmética: Suma y resta de enteros sin fallar en el signo."
+                },
+                {
+                    "id": "ley-signos-mult-div",
+                    "title": "Lección 1.2: Ley de Signos en Multiplicación y División",
+                    "introduction": "Domina las tablas de multiplicación y división con números negativos aplicando de forma estricta la ley de signos.",
+                    "explanationHtml": "<p>A diferencia de la suma y la resta, en la <strong>multiplicación y división</strong> existe una ley de signos estricta que depende de si los signos que se operan son iguales o diferentes:</p><p class=\"mt-3 font-semibold text-center text-primary text-base\">Signos iguales dan positivo | Signos diferentes dan negativo</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>(+) × (+) = (+)</strong></li><li><strong>(-) × (-) = (+)</strong> (menos por menos da más)</li><li><strong>(+) × (-) = (-)</strong></li><li><strong>(-) × (+) = (-)</strong></li></ul><p class=\"mt-3\">Esta misma regla aplica con exactitud para la <strong>división</strong> (ej. $-15 div -3 = 5$, y $-15 div 3 = -5$).</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Tabla de Signos Rápida</p><p class=\"text-sm font-mono font-extrabold text-primary\">&bull; Igual signo: + &nbsp;&bull; Diferente signo: -</p><p class=\"text-xs text-slate-500\">Ejemplo: (-24) &divide; (-3) = 8 | (-24) &divide; 3 = -8</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"22\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">MATRIZ LEY DE SIGNOS</text><rect x=\"35\" y=\"40\" width=\"100\" height=\"25\" fill=\"#ecfdf5\" stroke=\"#a7f3d0\" rx=\"6\" /><text x=\"85\" y=\"56\" font-size=\"9\" fill=\"#065f46\" font-weight=\"bold\" text-anchor=\"middle\">(-) &times; (-) = (+)</text><rect x=\"165\" y=\"40\" width=\"100\" height=\"25\" fill=\"#ecfdf5\" stroke=\"#a7f3d0\" rx=\"6\" /><text x=\"215\" y=\"56\" font-size=\"9\" fill=\"#065f46\" font-weight=\"bold\" text-anchor=\"middle\">(+) &times; (+) = (+)</text><rect x=\"35\" y=\"75\" width=\"100\" height=\"25\" fill=\"#fef2f2\" stroke=\"#fca5a5\" rx=\"6\" /><text x=\"85\" y=\"91\" font-size=\"9\" fill=\"#991b1b\" font-weight=\"bold\" text-anchor=\"middle\">(-) &times; (+) = (-)</text><rect x=\"165\" y=\"75\" width=\"100\" height=\"25\" fill=\"#fef2f2\" stroke=\"#fca5a5\" rx=\"6\" /><text x=\"215\" y=\"91\" font-size=\"9\" fill=\"#991b1b\" font-weight=\"bold\" text-anchor=\"middle\">(+) &times; (-) = (-)</text></svg>",
+                    "svgDescription": "Matriz visual de la ley de signos para multiplicación y división. Los bloques verdes son positivos (signos iguales) y los bloques rojos son negativos.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Resuelve la siguiente operación encadenada: <span class=\"font-mono\">(-24) ÷ (-3) × (-2)</span>.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1: Opera de izquierda a derecha.</strong> Divide $(-24) div (-3)$. Menos entre menos da más. $24 div 3 = 8$. Obtenemos $+8$.</li><li><strong>Paso 2: Multiplica el resultado por el siguiente factor.</strong> Multiplica $8 \times (-2)$. Más por menos da menos. $8 \times 2 = 16$.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> El resultado final es <strong>-16</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Arrastrar el signo en divisiones:</strong> Dividir $-100 div -10$ y colocar $-10$. Recuerda: menos entre menos da MÁS, el resultado es $+10$.</li><li><strong>Operar sin orden:</strong> Hacer las multiplicaciones al azar cuando hay varias encadenadas. Sigue estrictamente el orden de izquierda a derecha.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Resuelve la operación e ingresa el resultado sin espacios: (-5) * (-8)",
+                            "correctAnswer": "40",
+                            "hint": "Multiplica los valores absolutos: 5 × 8 = 40. Aplica la ley de signos: menos por menos da más.",
+                            "feedbackCorrect": "¡Excelente! (-5) × (-8) = 40.",
+                            "feedbackIncorrect": "Revisa la ley de signos: menos por menos es más. Da 40.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Resuelve la división: -36 / 9",
+                            "correctAnswer": "-4",
+                            "hint": "Divide los números: 36 ÷ 9 = 4. Menos entre más da menos, por lo que el resultado es negativo.",
+                            "feedbackCorrect": "¡Perfecto! -36 ÷ 9 = -4.",
+                            "feedbackIncorrect": "Incorrecto. Menos entre más es menos: -4.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Resuelve la operación encadenada: 100 / (-10) / (-1)",
+                            "correctAnswer": "10",
+                            "hint": "Opera de izquierda a derecha: 100 ÷ (-10) = -10. Luego, -10 ÷ (-1).",
+                            "feedbackCorrect": "¡Excelente! El resultado es 10.",
+                            "feedbackIncorrect": "Revisa el paso a paso: 100 / -10 = -10; -10 / -1 = 10.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Resuelve la operación (-2) * 3 * (-4). ¿Cuál es el resultado?",
+                            "options": [
+                                "-24",
+                                "24",
+                                "-12",
+                                "12"
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Multiplica de izquierda a derecha: (-2) × 3 = -6. Luego, (-6) × (-4).",
+                            "feedbackCorrect": "¡Correcto! Menos por menos da más: 24.",
+                            "feedbackIncorrect": "Incorrecto. (-2) × 3 = -6; (-6) × (-4) = 24.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Una cuenta bancaria registra un cargo automático de Q150 mensuales por un seguro. ¿Cuál es el saldo total perdido tras 6 meses?",
+                            "options": [
+                                "-Q900",
+                                "Q900",
+                                "-Q750",
+                                "-Q150"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Representa el cargo mensual como -150 y multiplícalo por 6.",
+                            "feedbackCorrect": "¡Excelente! La pérdida se representa como -Q900.",
+                            "feedbackIncorrect": "Incorrecto. (-150) × 6 = -Q900.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "La multiplicación y división de enteros requiere operar las magnitudes numéricas y asignar el signo siguiendo la ley: signos iguales dan positivo y signos diferentes dan negativo.",
+                    "videoPlaceholderText": "Video de Aritmética: Ley de signos en multiplicación y división explicada con ejemplos."
+                },
+                {
+                    "id": "jerarquia-operaciones",
+                    "title": "Lección 1.3: Jerarquía de Operaciones (PEMDAS)",
+                    "introduction": "Aprende el orden estricto de precedencia matemática para resolver operaciones combinadas sin equivocarte.",
+                    "explanationHtml": "<p>Cuando nos encontramos frente a un polinomio aritmético con múltiples operadores combinados, no podemos resolverlos al azar o simplemente de izquierda a derecha. Debemos seguir el orden estricto de la jerarquía <strong>PEMDAS</strong>:</p><ol class=\"list-decimal pl-5 space-y-2 my-3\"><li><strong>1. P - Paréntesis:</strong> Corchetes y llaves de adentro hacia afuera.</li><li><strong>2. E - Exponentes:</strong> Potencias y raíces.</li><li><strong>3. MD - Multiplicación y División:</strong> Tienen el mismo rango. Se resuelven estrictamente <strong>de izquierda a derecha</strong>.</li><li><strong>4. AS - Adición y Sustracción:</strong> Tienen el mismo rango. Se resuelven <strong>de izquierda a derecha</strong>.</li></ol>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Jerarquía PEMDAS</p><p class=\"text-base font-mono font-extrabold text-primary\">Paréntesis &rarr; Exponentes &rarr; Mult/Div &rarr; Suma/Resta</p><p class=\"text-xs text-slate-500\">Recuerda: la multiplicación y división se resuelven según aparezcan de izquierda a derecha.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">PIRÁMIDE DE JERARQUÍA</text><polygon points=\"150,35 70,110 230,110\" fill=\"none\" stroke=\"#2563eb\" stroke-width=\"2\" /><line x1=\"90\" y1=\"90\" x2=\"210\" y2=\"90\" stroke=\"#cbd5e1\" stroke-width=\"1\" /><line x1=\"110\" y1=\"70\" x2=\"190\" y2=\"70\" stroke=\"#cbd5e1\" stroke-width=\"1\" /><line x1=\"130\" y1=\"50\" x2=\"170\" y2=\"50\" stroke=\"#cbd5e1\" stroke-width=\"1\" /><text x=\"150\" y=\"47\" font-size=\"8\" font-family=\"sans-serif\" font-weight=\"bold\" fill=\"#1e40af\" text-anchor=\"middle\">1. Paréntesis ()</text><text x=\"150\" y=\"65\" font-size=\"8\" font-family=\"sans-serif\" font-weight=\"bold\" fill=\"#047857\" text-anchor=\"middle\">2. Exponentes x²</text><text x=\"150\" y=\"85\" font-size=\"8\" font-family=\"sans-serif\" font-weight=\"bold\" fill=\"#b45309\" text-anchor=\"middle\">3. Mult y Div &times; &divide;</text><text x=\"150\" y=\"103\" font-size=\"8\" font-family=\"sans-serif\" font-weight=\"bold\" fill=\"#b91c1c\" text-anchor=\"middle\">4. Suma y Resta + -</text></svg>",
+                    "svgDescription": "Pirámide jerárquica de operaciones. Los operadores ubicados en la cima se resuelven con prioridad absoluta sobre los de la base.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Resuelve: <span class=\"font-mono\">8 + 2 × (3² - 5) ÷ 2</span>.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1: Paréntesis y Exponente.</strong> Dentro del paréntesis, calculamos la potencia primero: $3^2 = 9$. El paréntesis queda: $(9 - 5) = 4$.</li><li><strong>Paso 2: Reemplaza.</strong> La expresión queda: $8 + 2 \times 4 div 2$.</li><li><strong>Paso 3: Multiplicación y División.</strong> Operamos de izquierda a derecha: <br>$2 \times 4 = 8$ <br>Luego, $8 div 2 = 4$.</li><li><strong>Paso 4: Suma final.</strong> $8 + 4 = 12$.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> El resultado es exactamente <strong>12</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Sumar antes de multiplicar:</strong> En la expresión $8 + 2 \times 4$, hacer primero la suma $8 + 2 = 10$ y luego multiplicar $10 \times 4 = 40$ (¡violación de la jerarquía!). El orden correcto es $2 \times 4 = 8$, y luego $8 + 8 = 12$.</li><li><strong>No respetar la izquierda a derecha en división y multiplicación:</strong> En $12 div 3 \times 2$, multiplicar primero $3 \times 2 = 6$ y hacer $12 div 6 = 2$. ¡Error! Se opera de izquierda a derecha: $12 div 3 = 4$, luego $4 \times 2 = 8$.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Resuelve la operación en tu cuaderno e ingresa el resultado sin espacios: 15 - 3 * 4 + 2",
+                            "correctAnswer": "5",
+                            "hint": "Multiplica primero: 3 × 4 = 12. Luego opera sumas y restas de izquierda a derecha: 15 - 12 + 2.",
+                            "feedbackCorrect": "¡Excelente! El resultado es 5.",
+                            "feedbackIncorrect": "Revisa la jerarquía: primero multiplica (3 × 4 = 12) y luego opera de izquierda a derecha. Da 5.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Resuelve la operación: (5 + 3)² / 4 - 6",
+                            "correctAnswer": "10",
+                            "hint": "Primero opera dentro del paréntesis: 5+3=8. Eleva al cuadrado: 8²=64. Divide: 64/4=16. Resta: 16-6.",
+                            "feedbackCorrect": "¡Perfecto! El resultado es 10.",
+                            "feedbackIncorrect": "Incorrecto. (8)² / 4 - 6 = 64 / 4 - 6 = 16 - 6 = 10.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Resuelve la operación respetando la regla de izquierda a derecha: 4 + 12 / 3 * 2",
+                            "correctAnswer": "12",
+                            "hint": "Divide primero (12 ÷ 3 = 4), luego multiplica el resultado por 2 (4 × 2 = 8), y finalmente suma (4 + 8).",
+                            "feedbackCorrect": "¡Excelente! El resultado es 12.",
+                            "feedbackIncorrect": "Cuidado: opera división y multiplicación de izquierda a derecha: 12÷3=4, 4×2=8, 4+8=12.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Resuelve: 2 * [3 + (8 - 2 * 3)]. ¿Cuál es el resultado?",
+                            "options": [
+                                "10",
+                                "14",
+                                "8",
+                                "12"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Resuelve el paréntesis interno primero (multiplicación antes): 8 - 6 = 2. Luego los corchetes: 3 + 2 = 5. Finalmente multiplica.",
+                            "feedbackCorrect": "¡Correcto! 2 × [3 + 2] = 2 × 5 = 10.",
+                            "feedbackIncorrect": "Incorrecto. 2 × [3 + (8 - 6)] = 2 × [3 + 2] = 10.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Resuelve la operación: 10 + 20 / 2 * 3 - 5",
+                            "options": [
+                                "35",
+                                "13",
+                                "40",
+                                "10"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Divide primero: 20 ÷ 2 = 10. Multiplica: 10 × 3 = 30. Suma y resta de izquierda a derecha: 10 + 30 - 5.",
+                            "feedbackCorrect": "¡Excelente! El resultado es 35.",
+                            "feedbackIncorrect": "Incorrecto. 10 + (10 × 3) - 5 = 10 + 30 - 5 = 35.",
+                            "difficulty": "avanzado",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "La jerarquía de operaciones establece el orden estricto de precedencia (PEMDAS) para simplificar polinomios numéricos de manera unívoca y correcta.",
+                    "videoPlaceholderText": "Video de Aritmética: Jerarquía de operaciones PEMDAS con corchetes anidados."
+                }
+            ]
+        },
+        {
+            "title": "Unidad 2: Teoría de Números y Divisibilidad",
+            "lessons": [
+                {
+                    "id": "numeros-primos",
+                    "title": "Lección 2.1: Números Primos y Compuestos (Criba)",
+                    "introduction": "Comprende la diferencia entre números primos y compuestos utilizando el método histórico de la Criba de Eratóstenes.",
+                    "explanationHtml": "<p>En la aritmética, los números enteros positivos se clasifican según su cantidad de divisores:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Números Primos:</strong> Son aquellos números enteros mayores que 1 que **únicamente tienen dos divisores**: el 1 y ellos mismos (ej. 2, 3, 5, 7, 11, 13).</li><li><strong>Números Compuestos:</strong> Son aquellos que tienen **más de dos divisores** (ej. 4 tiene como divisores a 1, 2 y 4).</li></ul><p class=\"mt-3\">El número <strong>1</strong> no se clasifica como primo ni como compuesto, ya que solo tiene un único divisor (el propio 1).</p><p class=\"mt-3\"><strong>La Criba de Eratóstenes:</strong> Es un método antiguo para hallar números primos tachando sistemáticamente los múltiplos de cada número primo partiendo desde el 2.</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Primeros 10 Números Primos</p><p class=\"text-base font-mono font-extrabold text-primary\">2, 3, 5, 7, 11, 13, 17, 19, 23, 29</p><p class=\"text-xs text-slate-500\">Nota: el 2 es el único número primo que es par.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"22\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">PRIMOS VS COMPUESTOS</text><rect x=\"30\" y=\"35\" width=\"110\" height=\"60\" fill=\"#eff6ff\" stroke=\"#bfdbfe\" rx=\"8\" /><text x=\"85\" y=\"55\" font-size=\"9\" fill=\"#1e40af\" font-weight=\"extrabold\" text-anchor=\"middle\">PRIMOS (2 divisores)</text><text x=\"85\" y=\"78\" font-size=\"12\" font-family=\"monospace\" fill=\"#2563eb\" font-weight=\"extrabold\" text-anchor=\"middle\">2, 3, 5, 7, 11</text><rect x=\"160\" y=\"35\" width=\"110\" height=\"60\" fill=\"#fef2f2\" stroke=\"#fca5a5\" rx=\"8\" /><text x=\"215\" y=\"55\" font-size=\"9\" fill=\"#991b1b\" font-weight=\"extrabold\" text-anchor=\"middle\">COMPUESTOS (+2 div)</text><text x=\"215\" y=\"78\" font-size=\"12\" font-family=\"monospace\" fill=\"#dc2626\" font-weight=\"extrabold\" text-anchor=\"middle\">4, 6, 8, 9, 10</text></svg>",
+                    "svgDescription": "Clasificación de números enteros. Los números primos tienen exactamente dos divisores y los compuestos tienen más de dos divisores.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Determina si el número 17 es primo o compuesto.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1: Busca divisores de 17.</strong> Intentamos dividir entre 2, 3, 4, 5... hasta llegar a 17 de forma exacta (sin decimales).</li><li><strong>Paso 2: Comprueba.</strong> Vemos que 17 no es divisible entre ningún número entero menor a él, a excepción del 1 y del propio 17.</li><li><strong>Paso 3: Concluye.</strong> Al tener exactamente dos divisores, 17 se clasifica como primo.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> El número 17 es un <strong>número primo</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li>generic.one-as-prime<strong>Pensar que el 1 es primo:</strong> El número 1 solo tiene un divisor. Por definición, los primos deben tener exactamente dos divisores.</li><li><strong>Asociar primos con impares:</strong> Pensar que todos los números impares son primos. Por ejemplo, el 9 o el 15 son impares pero son compuestos ($9 = 3 \times 3$, $15 = 3 \times 5$). El 2 es par pero es primo.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "¿Cuál es el único número entero que es par y a la vez es un número primo?",
+                            "correctAnswer": "2",
+                            "hint": "Es el número primo más pequeño de todos y el único par.",
+                            "feedbackCorrect": "¡Excelente! El 2 es el único número primo par.",
+                            "feedbackIncorrect": "Cuidado: el único primo par es el 2.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cuál es el primer número compuesto impar?",
+                            "correctAnswer": "9",
+                            "hint": "Lista los compuestos: 4 (par), 6 (par), 8 (par), 9 (impar, divisible por 1, 3 y 9).",
+                            "feedbackCorrect": "¡Excelente! El 9 es el primer número compuesto impar.",
+                            "feedbackIncorrect": "Incorrecto. Los primeros impares son 1, 3, 5, 7 (primos). El 9 es compuesto.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cuántos divisores tiene un número primo?",
+                            "correctAnswer": "2",
+                            "hint": "Un número primo por definición solo es divisible por el 1 y por sí mismo.",
+                            "feedbackCorrect": "¡Perfecto! Un número primo tiene exactamente 2 divisores.",
+                            "feedbackIncorrect": "Revisa la definición: un número primo tiene únicamente 2 divisores.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cuál de los siguientes grupos contiene ÚNICAMENTE números primos?",
+                            "options": [
+                                "2, 3, 5, 9, 11",
+                                "2, 3, 5, 7, 11",
+                                "3, 5, 7, 15, 17",
+                                "1, 2, 3, 5, 7"
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Descarta opciones con números compuestos como el 9 (divisible por 3), el 15 (divisible por 3 y 5) o el 1 (no es primo).",
+                            "feedbackCorrect": "¡Perfecto! El grupo '2, 3, 5, 7, 11' contiene solo números primos.",
+                            "feedbackIncorrect": "Incorrecto. Recuerda descartar el 9 y el 15 porque son compuestos, y el 1 porque no es primo.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Si analizamos el número 21, ¿cómo se clasifica y por qué?",
+                            "options": [
+                                "Como compuesto, porque sus divisores son 1, 3, 7 y 21.",
+                                "Como primo, porque es un número impar.",
+                                "Como primo, porque sus divisores son 1 y 21.",
+                                "No es primo ni compuesto."
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Intenta dividir 21 entre números pequeños. 21 ÷ 3 = 7. Esto significa que tiene más de dos divisores.",
+                            "feedbackCorrect": "¡Excelente! 21 es compuesto porque tiene cuatro divisores.",
+                            "feedbackIncorrect": "Incorrecto. 21 es compuesto ya que se puede dividir de forma exacta entre 3 y 7 además de 1 y 21.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "Los números enteros mayores que 1 se dividen en primos (dos divisores) y compuestos (más de dos divisores). Esta clasificación es fundamental para la criptografía y la descomposición matemática.",
+                    "videoPlaceholderText": "Video de Aritmética: Cómo identificar números primos usando la Criba."
+                },
+                {
+                    "id": "mcm-mcd",
+                    "title": "Lección 2.2: Mínimo Común Múltiplo (mcm) y Máximo Común Divisor (MCD)",
+                    "introduction": "Aprende a calcular el mcm y el MCD resolviendo problemas prácticos de coincidencia y reparto.",
+                    "explanationHtml": "<p><strong>Mínimo Común Múltiplo (mcm):</strong> Es el múltiplo común más pequeño (distinto de cero) de dos o más números. Lo utilizamos para resolver problemas de **coincidencia temporal** (ej. dos alarmas que suenan a diferente ritmo y coinciden).</p><p class=\"mt-3\"><strong>Máximo Común Divisor (MCD):</strong> Es el divisor común más grande de dos o más números. Lo utilizamos para resolver problemas de **reparto equitativo máximo** (ej. cortar dos listones en trozos iguales lo más largos posible sin desperdicio).</p><p class=\"mt-3\">Para calcular ambos de forma simultánea, utilizamos la descomposición en factores primos en columnas.</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">mcm vs MCD Rápido</p><p class=\"text-sm font-mono font-extrabold text-primary\">mcm(12, 18) = 36 &nbsp;&bull;&nbsp; MCD(12, 18) = 6</p><p class=\"text-xs text-slate-500\">mcm divide a los múltiplos | MCD es el divisor común más grande.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"22\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">DIAGRAMA DE FACTORES (12 Y 18)</text><!-- Conjunto 12 (factores: 2, 2, 3) --><circle cx=\"110\" cy=\"65\" r=\"30\" fill=\"none\" stroke=\"#2563eb\" stroke-width=\"2\" /><text x=\"95\" y=\"68\" font-size=\"11\" font-family=\"monospace\" fill=\"#2563eb\" font-weight=\"bold\">2</text><!-- Conjunto 18 (factores: 2, 3, 3) --><circle cx=\"190\" cy=\"65\" r=\"30\" fill=\"none\" stroke=\"#059669\" stroke-width=\"2\" /><text x=\"200\" y=\"68\" font-size=\"11\" font-family=\"monospace\" fill=\"#059669\" font-weight=\"bold\">3</text><!-- Interseccion (MCD: 2 y 3) --><text x=\"145\" y=\"58\" font-size=\"11\" font-family=\"monospace\" fill=\"#d97706\" font-weight=\"bold\">2</text><text x=\"145\" y=\"78\" font-size=\"11\" font-family=\"monospace\" fill=\"#d97706\" font-weight=\"bold\">3</text><text x=\"110\" y=\"110\" font-size=\"8\" font-family=\"sans-serif\" fill=\"#2563eb\" text-anchor=\"middle\" font-weight=\"bold\">MCD = 2 &times; 3 = 6</text><text x=\"190\" y=\"110\" font-size=\"8\" font-family=\"sans-serif\" fill=\"#059669\" text-anchor=\"middle\" font-weight=\"bold\">mcm = 2&sup2; &times; 3&sup2; = 36</text></svg>",
+                    "svgDescription": "Diagrama de Venn de descomposición factorial. La intersección de factores comunes multiplicados da el MCD (6). Todos los factores multiplicados dan el mcm (36).",
+                    "workedExampleHtml": "<p><strong>Problema MCD:</strong> Una costurera en Antigua Guatemala tiene dos listones de 40 cm y 60 cm. Quiere cortarlos en pedazos iguales lo más largos posible sin desperdiciar nada. ¿Cuánto debe medir cada pedazo?</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1: Identifica el operador.</strong> La palabra \"cortar lo más largo posible\" nos indica que debemos calcular el Máximo Común Divisor (MCD) de 40 y 60.</li><li><strong>Paso 2: Descompón simultáneamente (solo factores comunes):</strong> <br>Ambos se dividen entre 2: (20, 30) | factor 2. <br>Ambos entre 2: (10, 15) | factor 2. <br>Ambos entre 5: (2, 3) | factor 5. <br>Como 2 y 3 no tienen más factores comunes, nos detenemos.</li><li><strong>Paso 3: Multiplica factores comunes.</strong> $MCD = 2 \times 2 \times 5 = 20$.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> Cada pedazo debe medir exactamente <strong>20 cm</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Confundir mcm con MCD en problemas de aplicación:</strong> Usar mcm en un problema de cortes y obtener trozos de 120 cm (¡más largos que los listones originales!). Analiza siempre la lógica del resultado.</li><li><strong>Llevar la descomposición del MCD a unos:</strong> Seguir descomponiendo hasta llegar a 1 en las columnas para el MCD. Para el MCD solo se operan factores comunes que dividan a TODOS los números a la vez.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Resuelve en tu libreta e ingresa el valor: mcm(6, 8)",
+                            "correctAnswer": "24",
+                            "hint": "Escribe los múltiplos de 6 (6, 12, 18, 24...) y de 8 (8, 16, 24...). Encuentra el primero común.",
+                            "feedbackCorrect": "¡Excelente! El mcm de 6 y 8 es 24.",
+                            "feedbackIncorrect": "Revisa la descomposición: 6 y 8 comparten el 24 como múltiplo común más pequeño.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Calcula el Máximo Común Divisor de 45, 75 y 90. Ingresa el resultado:",
+                            "correctAnswer": "15",
+                            "hint": "Busca factores que dividan a los tres números a la vez. Intenta con 3, luego con 5. Multiplícalos.",
+                            "feedbackCorrect": "¡Perfecto! El MCD de 45, 75 y 90 es 15.",
+                            "feedbackIncorrect": "Incorrecto. Los tres números se dividen entre 3 (dando 15, 25, 30) y luego entre 5 (dando 3, 5, 6). 3 × 5 = 15.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Calcula el mcm de 5, 10 y 15.",
+                            "correctAnswer": "30",
+                            "hint": "Descompón los tres números en factores primos hasta llegar a 1 en todos, luego multiplica todos los factores.",
+                            "feedbackCorrect": "¡Excelente! El mcm es 30.",
+                            "feedbackIncorrect": "Revisa la descomposición: el menor múltiplo común de 5, 10 y 15 es 30.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Un médico receta una pastilla a Luis cada 6 horas y otra cada 8 horas. Si se las toma juntas a las 8:00 AM, ¿en cuántas horas volverá a tomárselas juntas?",
+                            "options": [
+                                "14 horas",
+                                "24 horas",
+                                "12 horas",
+                                "48 horas"
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Este es un problema de coincidencia en el tiempo, por lo que debes calcular el mcm(6, 8).",
+                            "feedbackCorrect": "¡Correcto! Volverá a tomarlas juntas en 24 horas (al día siguiente).",
+                            "feedbackIncorrect": "Incorrecto. Para problemas de coincidencia calculamos el mcm(6, 8) = 24 horas.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Si una alarma de seguridad suena cada 15 minutos y otra suena cada 20 minutos, ¿cada cuántos minutos sonarán simultáneamente?",
+                            "options": [
+                                "60 minutos",
+                                "40 minutos",
+                                "30 minutos",
+                                "120 minutos"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Calcula el Mínimo Común Múltiplo (mcm) de 15 y 20.",
+                            "feedbackCorrect": "¡Excelente! Coinciden cada 60 minutos (cada hora).",
+                            "feedbackIncorrect": "Incorrecto. mcm(15, 20) = 60 minutos.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "El mcm es el menor múltiplo común (coincidencia) y el MCD es el mayor divisor común (reparto). Ambos se calculan mediante factores primos.",
+                    "videoPlaceholderText": "Video de Aritmética: Mínimo Común Múltiplo y Máximo Común Divisor en problemas reales."
+                },
+                {
+                    "id": "factores-primos",
+                    "title": "Lección 2.3: Descomposición en Factores Primos",
+                    "introduction": "Aprende el Teorema Fundamental de la Aritmética descomponiendo cualquier número compuesto en sus factores primos base.",
+                    "explanationHtml": "<p>El <strong>Teorema Fundamental de la Aritmética</strong> establece que todo número entero compuesto mayor que 1 se puede expresar de forma **única** como un producto de números primos.</p><p class=\"mt-3\">Para realizar la descomposición:</p><ol class=\"list-decimal pl-5 space-y-2 my-3\"><li>1. Escribimos el número y trazamos una línea vertical a su derecha.</li><li>2. Intentamos dividir el número por el primo más pequeño (2). Si es divisible de forma exacta, escribimos el 2 a la derecha y el cociente abajo del número original.</li><li>3. Repetimos el proceso con el nuevo cociente, usando los primos 2, 3, 5, 7, etc., de forma sucesiva hasta llegar a 1 en la columna izquierda.</li></ol>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Descomposición Exponencial</p><p class=\"text-base font-mono font-extrabold text-primary\">250 = 2 &times; 5 &times; 5 &times; 5 = 2 &times; 5&sup3;</p><p class=\"text-xs text-slate-500\">Donde 2 y 5 son los factores primos constitutivos de 250.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"22\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">ÁRBOL DE FACTORES (250)</text><!-- Nodos del Arbol --><text x=\"150\" y=\"45\" font-size=\"12\" font-family=\"monospace\" fill=\"#334155\" font-weight=\"extrabold\" text-anchor=\"middle\">250</text><path d=\"M 140 50 L 110 70 M 160 50 L 190 70\" stroke=\"#94a3b8\" stroke-width=\"1.5\" /><text x=\"100\" y=\"85\" font-size=\"12\" font-family=\"monospace\" fill=\"#dc2626\" font-weight=\"extrabold\" text-anchor=\"middle\">2</text><text x=\"200\" y=\"85\" font-size=\"12\" font-family=\"monospace\" fill=\"#334155\" font-weight=\"extrabold\" text-anchor=\"middle\">125</text><path d=\"M 190 90 L 170 105 M 210 90 L 230 105\" stroke=\"#94a3b8\" stroke-width=\"1\" /><text x=\"160\" y=\"115\" font-size=\"12\" font-family=\"monospace\" fill=\"#dc2626\" font-weight=\"extrabold\" text-anchor=\"middle\">5</text><text x=\"240\" y=\"115\" font-size=\"12\" font-family=\"monospace\" fill=\"#334155\" font-weight=\"bold\" text-anchor=\"middle\">25 (5&times;5)</text></svg>",
+                    "svgDescription": "Árbol de descomposición para el número 250. Demuestra cómo se ramifica el número original hasta obtener únicamente hojas con factores primos (2, 5, 5, 5).",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Descompón completamente en números primos el número 250.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1: Divide entre el primer primo (2).</strong> 250 termina en cero (par), por lo que es divisible por 2: <br>$250 div 2 = 125$ | factor 2.</li><li><strong>Paso 2: Divide entre 3 o 5.</strong> 125 no es par y la suma de sus dígitos (1+2+5=8) no es múltiplo de 3. Termina en 5, por lo que es divisible por 5: <br>$125 div 5 = 25$ | factor 5.</li><li><strong>Paso 3: Divide entre 5.</strong> $25 div 5 = 5$ | factor 5.</li><li><strong>Paso 4: Sigue con 5.</strong> $5 div 5 = 1$ | factor 5.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> La descomposición en factores primos de 250 es <strong>2 × 5³</strong> (o 2 × 5 × 5 × 5).</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Usar números compuestos como factores:</strong> Dividir 250 entre 10 para dar 25 y colocar el 10 en la columna derecha. El 10 no es primo, solo deben colocarse divisores primos (2, 3, 5, 7, etc.).</li><li><strong>Omitir potencias en la notación final:</strong> Escribir 250 = 2 × 5 en lugar de colocar el exponente correcto 2 × 5³ (ya que el 5 aparece tres veces).</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Descompón el número 60 y escribe su resultado en formato sin espacios usando asteriscos y potencias (ej: 2^2*3*5):",
+                            "correctAnswer": "2^2*3*5",
+                            "hint": "60 = 2 × 30 = 2 × 2 × 15 = 2² × 3 × 5. Escríbelo como 2^2*3*5.",
+                            "feedbackCorrect": "¡Excelente! La descomposición es 2^2*3*5.",
+                            "feedbackIncorrect": "Revisa la descomposición de 60: 60 = 4 × 15 = 2² × 3 × 5. Escríbelo como 2^2*3*5.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Descompón el número 45. Escríbelo en formato de potencias sin espacios (ej: 3^2*5):",
+                            "correctAnswer": "3^2*5",
+                            "hint": "45 = 3 × 15 = 3 × 3 × 5 = 3² × 5.",
+                            "feedbackCorrect": "¡Perfecto! 45 = 3² × 5.",
+                            "feedbackIncorrect": "Incorrecto. 45 = 3 × 3 × 5, lo que se escribe 3^2*5.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Descompón el número 250 y escribe el resultado sin espacios utilizando productos tradicionales (ej: 2*5*5*5):",
+                            "correctAnswer": "2*5*5*5",
+                            "hint": "Divide sucesivamente 250 entre 2, luego 125 entre 5, 25 entre 5 y 5 entre 5.",
+                            "feedbackCorrect": "¡Excelente! La descomposición es 2*5*5*5.",
+                            "feedbackIncorrect": "Revisa: 250 = 2 × 125 = 2 × 5 × 5 × 5.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cuál es la descomposición en factores primos del número 100?",
+                            "options": [
+                                "2² × 5²",
+                                "2 × 5²",
+                                "4 × 25",
+                                "2² × 25"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "100 = 2 × 50 = 2 × 2 × 25 = 2² × 5². Recuerda que 4 y 25 no son números primos.",
+                            "feedbackCorrect": "¡Excelente! 100 equivale a 2² × 5².",
+                            "feedbackIncorrect": "Incorrecto. Recuerda usar solo números primos base: 2² × 5².",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "El número 24 se descompone en factores primos de la siguiente manera:",
+                            "options": [
+                                "2³ × 3",
+                                "2² × 6",
+                                "8 × 3",
+                                "2 × 3²"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "24 = 2 × 12 = 2 × 2 × 6 = 2 × 2 × 2 × 3 = 2³ × 3.",
+                            "feedbackCorrect": "¡Excelente! La respuesta es 2³ × 3.",
+                            "feedbackIncorrect": "Incorrecto. 8 × 3 tiene al 8 que es compuesto. La forma correcta con primos es 2³ × 3.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "Todo número compuesto puede descomponerse de forma única en un producto de factores primos constitutivos, lo que simplifica cálculos de fracciones y raíces.",
+                    "videoPlaceholderText": "Video de Aritmética: Descomposición factorial y Teorema Fundamental."
+                }
+            ]
+        },
+        {
+            "title": "Unidad 3: Razones, Proporciones y Regla de Tres",
+            "lessons": [
+                {
+                    "id": "razones-proporciones",
+                    "title": "Lección 3.1: Razones y Proporciones Fundamentales",
+                    "introduction": "Comprende qué es una razón y cómo verificar la igualdad de dos razones mediante la propiedad fundamental de las proporciones.",
+                    "explanationHtml": "<p>En matemáticas, a menudo necesitamos comparar dos cantidades de forma relativa:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Razón:</strong> Es la comparación por cociente de dos cantidades. Se escribe como la fracción <span class=\"font-mono\">a/b</span> (o de la forma $a:b$ que se lee \"a es a b\").</li><li><strong>Proporción:</strong> Es la declaración de igualdad entre dos razones: <span class=\"font-mono\">a/b = c/d</span> (se lee \"a es a b como c es a d\").</li></ul><p class=\"mt-3\"><strong>Propiedad Fundamental de las Proporciones:</strong> En toda proporción, el producto de los extremos es igual al producto de los medios. Es decir, los productos cruzados son estrictamente iguales:</p><p class=\"text-center font-mono font-extrabold text-primary my-3\">a &times; d = b &times; c</p><p>Esta propiedad nos permite despejar una variable desconocida con facilidad.</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Propiedad Fundamental</p><p class=\"text-base font-mono font-extrabold text-primary\">a/b = c/d &rArr; a &times; d = b &times; c</p><p class=\"text-xs text-slate-500\">Ejemplo: si 3/x = 9/15 &rarr; 3 &times; 15 = 9x &rarr; 45 = 9x &rarr; x = 5.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"22\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">PROPORCIONALIDAD: 2 A 1</text><!-- 6 bloques azules y 3 bloques verdes --><rect x=\"35\" y=\"40\" width=\"20\" height=\"20\" fill=\"#eff6ff\" stroke=\"#2563eb\" rx=\"4\" /><rect x=\"60\" y=\"40\" width=\"20\" height=\"20\" fill=\"#eff6ff\" stroke=\"#2563eb\" rx=\"4\" /><rect x=\"85\" y=\"40\" width=\"20\" height=\"20\" fill=\"#eff6ff\" stroke=\"#2563eb\" rx=\"4\" /><rect x=\"35\" y=\"65\" width=\"20\" height=\"20\" fill=\"#eff6ff\" stroke=\"#2563eb\" rx=\"4\" /><rect x=\"60\" y=\"65\" width=\"20\" height=\"20\" fill=\"#eff6ff\" stroke=\"#2563eb\" rx=\"4\" /><rect x=\"85\" y=\"65\" width=\"20\" height=\"20\" fill=\"#eff6ff\" stroke=\"#2563eb\" rx=\"4\" /><rect x=\"175\" y=\"40\" width=\"20\" height=\"20\" fill=\"#ecfdf5\" stroke=\"#059669\" rx=\"4\" /><rect x=\"200\" y=\"40\" width=\"20\" height=\"20\" fill=\"#ecfdf5\" stroke=\"#059669\" rx=\"4\" /><rect x=\"175\" y=\"65\" width=\"20\" height=\"20\" fill=\"#ecfdf5\" stroke=\"#059669\" rx=\"4\" /><text x=\"65\" y=\"105\" font-size=\"9\" font-family=\"sans-serif\" fill=\"#2563eb\" font-weight=\"bold\" text-anchor=\"middle\">6 porciones de Agua</text><text x=\"195\" y=\"105\" font-size=\"9\" font-family=\"sans-serif\" fill=\"#059669\" font-weight=\"bold\" text-anchor=\"middle\">3 porciones de Arroz</text></svg>",
+                    "svgDescription": "Representación de una razón de 6 a 3 (agua a arroz). Al simplificar el cociente 6/3, obtenemos una razón fundamental de 2 a 1 (2 tazas de agua por cada 1 de arroz).",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Encuentra el valor de $x$ en la proporción: $4/5 = 12/x$.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1: Multiplica de forma cruzada.</strong> <br>$4 \times x = 5 \times 12$</li><li><strong>Paso 2: Realiza el producto numérico.</strong> <br>$4x = 60$.</li><li><strong>Paso 3: Despeja la variable.</strong> Dividimos entre 4: <br>$x = 60 div 4 = 15$.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> El valor de x es <strong>15</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li>generic.cross-vs-lineal<strong>Multiplicar en horizontal:</strong> Resolver $4/5 = 12/x$ multiplicando $4 \times 12$ y $5 \times x$. Recuerda que la propiedad fundamental exige productos cruzados (diagonal).</li><li><strong>Confundir razones con restas:</strong> Creer que una razón compara sumando o restando (ej. decir que 10 y 12 tienen la misma relación que 20 y 22). Las razones comparan por división (cociente).</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Resuelve para x en la proporción: 3/x = 9/15. Escribe el número entero resultante:",
+                            "correctAnswer": "5",
+                            "hint": "Aplica productos cruzados: 3 × 15 = 9x &rarr; 45 = 9x. Despeja x dividiendo 45 entre 9.",
+                            "feedbackCorrect": "¡Excelente! El valor de x es 5.",
+                            "feedbackIncorrect": "Revisa los cálculos: (3 × 15) ÷ 9 = 5.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "En una receta, la razón de agua a arroz es de 2 a 1. Si cocinas 3 tazas de arroz, ¿cuántas tazas de agua necesitas?",
+                            "correctAnswer": "6",
+                            "hint": "La proporción es 2/1 = x/3. Multiplica en diagonal: 2 × 3 = 6.",
+                            "feedbackCorrect": "¡Perfecto! Necesitas 6 tazas de agua.",
+                            "feedbackIncorrect": "Incorrecto. La razón es 2:1, por lo que necesitas el doble de agua que de arroz: 6 tazas.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "En un colegio de Guatemala, la razón de aprobados a reprobados es de 7 a 2. Si hay 14 alumnos reprobados, ¿cuántos aprobaron?",
+                            "correctAnswer": "49",
+                            "hint": "Plantea: 7/2 = x/14. Multiplica cruzado: 7 × 14 = 98. Divide entre 2: 98 ÷ 2 = 49.",
+                            "feedbackCorrect": "¡Excelente! Aprobaron 49 alumnos.",
+                            "feedbackIncorrect": "Incorrecto. 7/2 = x/14 &rarr; x = (7 × 14) ÷ 2 = 49.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si dos magnitudes A y B están en una razón de 3 a 5, ¿cuál es la expresión matemática correcta?",
+                            "options": [
+                                "A/B = 3/5",
+                                "A - B = 3/5",
+                                "A + B = 8",
+                                "A × B = 15"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Una razón compara dos cantidades por cociente, es decir, mediante una división o fracción.",
+                            "feedbackCorrect": "¡Excelente! La razón de A a B es A/B = 3/5.",
+                            "feedbackIncorrect": "Incorrecto. La razón se expresa como una fracción: A/B = 3/5.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "En un local de artesanías de Chichicastenango, la razón entre el precio de costo y de venta de un jarrón es de 4 a 5. Si el costo del jarrón es de Q80, ¿cuál es su precio de venta?",
+                            "options": [
+                                "Q100",
+                                "Q90",
+                                "Q95",
+                                "Q120"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Plantea la proporción: 4/5 = 80/x. Multiplica cruzado: 5 × 80 = 400. Divide entre 4.",
+                            "feedbackCorrect": "¡Excelente! El precio de venta es de Q100.",
+                            "feedbackIncorrect": "Incorrecto. 4/5 = 80/x &rarr; x = (5 × 80) ÷ 4 = Q100.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "Una razón compara dos cantidades por división y una proporción establece la igualdad de dos razones, resolviéndose con la regla del producto cruzado.",
+                    "videoPlaceholderText": "Video de Aritmética: Razones, proporciones y su aplicación en la cocina y negocios."
+                },
+                {
+                    "id": "regla-tres-inversa",
+                    "title": "Lección 3.2: Regla de Tres Inversa",
+                    "introduction": "Aprende a plantear y resolver problemas de proporcionalidad inversa utilizando el método de multiplicación horizontal.",
+                    "explanationHtml": "<p>La <strong>proporcionalidad inversa</strong> ocurre cuando al aumentar una de las magnitudes, la otra disminuye en la misma proporción (ej. a más albañiles trabajando, tardarán menos días en construir la barda).</p><p class=\"mt-3\">Para resolver estos problemas utilizamos la <strong>Regla de Tres Simple Inversa</strong>:</p><ol class=\"list-decimal pl-5 space-y-2 my-3\"><li>1. Organizamos los datos en columnas de igual magnitud.</li><li>2. <strong>Multiplicamos en línea recta (horizontal)</strong> los dos términos conocidos de la primera fila.</li><li>3. <strong>Dividimos</strong> el resultado entre el tercer término restante de la segunda fila.</li></ol>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Esquema Regla de Tres Inversa</p><p class=\"text-base font-mono font-extrabold text-primary\">A &rarr; B | C &rarr; x  &rArr;  x = (A × B) ÷ C</p><p class=\"text-xs text-slate-500\">Multiplica en horizontal (A × B) y divide verticalmente entre C.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"22\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">REGLA DE TRES INVERSA</text><text x=\"70\" y=\"55\" font-size=\"12\" font-family=\"sans-serif\" font-weight=\"bold\" fill=\"#334155\">4 albañiles</text><text x=\"210\" y=\"55\" font-size=\"12\" font-family=\"sans-serif\" fill=\"#334155\">6 días</text><text x=\"70\" y=\"85\" font-size=\"12\" font-family=\"sans-serif\" font-weight=\"bold\" fill=\"#334155\">8 albañiles</text><text x=\"210\" y=\"85\" font-size=\"12\" font-family=\"monospace\" font-weight=\"extrabold\" fill=\"#2563eb\">x días</text><path d=\"M 130 52 L 190 52\" stroke=\"#f59e0b\" stroke-width=\"2\" marker-end=\"url(#arrow)\" /><text x=\"160\" y=\"47\" font-size=\"8\" fill=\"#d97706\" font-weight=\"bold\" text-anchor=\"middle\">Multiplica</text><line x1=\"210\" y1=\"60\" x2=\"210\" y2=\"72\" stroke=\"#94a3b8\" stroke-width=\"1.5\" stroke-dasharray=\"3,3\" /><text x=\"150\" y=\"110\" font-size=\"9\" font-family=\"sans-serif\" fill=\"#d97706\" font-weight=\"bold\" text-anchor=\"middle\">x = (4 × 6) ÷ 8 = 3 días</text></svg>",
+                    "svgDescription": "Procedimiento de regla de tres simple inversa. Al duplicar los trabajadores (de 4 a 8), el tiempo se reduce a la mitad (de 6 a 3 días). Multiplicamos horizontalmente.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Si 4 albañiles construyen una barda en 6 días, ¿cuántos días tardarán 8 albañiles si trabajan al mismo ritmo?</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1: Plantea la relación.</strong> <br>4 albañiles &rarr; 6 días <br>8 albañiles &rarr; x días. <br>*(Analiza: a más albañiles, menos días. Es inversa).*</li><li><strong>Paso 2: Multiplica en horizontal (primera fila):</strong> Multiplicamos $4 \times 6 = 24$.</li><li><strong>Paso 3: Divide por el término libre (8):</strong> Dividimos $24 div 8 = 3$.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> Los 8 albañiles tardarán exactamente <strong>3 días</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Operar de forma cruzada por costumbre:</strong> Hacer $8 \times 6 div 4 = 12$ días. Esto indicaría que el doble de albañiles tardan el doble de tiempo en hacer el mismo trabajo. ¡Un grave error de lógica!</li><li><strong>No verificar el sentido de las variables:</strong> Resolver mecánicamente sin detenerse a pensar si la relación es directa o inversa.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Si un auto tarda 3 horas en llegar a Quetzaltenango yendo a 80 km/h, ¿cuántas horas tardará si aumenta su velocidad a 120 km/h? (Ingresa el número entero):",
+                            "correctAnswer": "2",
+                            "hint": "A más velocidad, menos tiempo (inversa). Multiplica en horizontal: 3 × 80 = 240. Divide entre 120.",
+                            "feedbackCorrect": "¡Excelente! Tardará 2 horas.",
+                            "feedbackIncorrect": "Incorrecto. Regla de tres inversa: (3 × 80) ÷ 120 = 2 horas.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Un agricultor de Sololá tiene comida para alimentar a 20 gallinas durante 15 días. Si vende 5 gallinas, ¿para cuántos días le alcanzará el mismo alimento? (Quedan 15 gallinas):",
+                            "correctAnswer": "20",
+                            "hint": "A menos gallinas, el alimento dura más días (inversa). Multiplica 20 × 15 = 300. Divide entre 15.",
+                            "feedbackCorrect": "¡Perfecto! El alimento alcanzará para 20 días.",
+                            "feedbackIncorrect": "Revisa: quedan 15 gallinas. Operamos inversa: 20 × 15 ÷ 15 = 20 días.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "3 llaves de agua idénticas llenan un estanque en 8 horas. ¿Cuántas horas tardarán 6 llaves iguales en llenar el mismo estanque?",
+                            "correctAnswer": "4",
+                            "hint": "A más llaves, menos tiempo (inversa). Multiplica 3 × 8 = 24. Divide entre 6.",
+                            "feedbackCorrect": "¡Excelente! Tardarán 4 horas.",
+                            "feedbackIncorrect": "Incorrecto. Al duplicar las llaves (de 3 a 6), el tiempo se reduce a la mitad: 4 horas.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si para limpiar una calle en Antigua Guatemala se necesitan 10 voluntarios trabajando durante 6 horas, ¿cuántos voluntarios se necesitan para terminar de limpiarla en solo 3 horas?",
+                            "options": [
+                                "20 voluntarios",
+                                "5 voluntarios",
+                                "15 voluntarios",
+                                "30 voluntarios"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "A menos tiempo requerido, se necesitan más voluntarios (inversa). Multiplica 10 × 6 = 60. Divide entre 3.",
+                            "feedbackCorrect": "¡Excelente! Se necesitan 20 voluntarios.",
+                            "feedbackIncorrect": "Incorrecto. 10 × 6 ÷ 3 = 20 voluntarios.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Un saco de maíz sirve para alimentar a 8 cerdos durante 9 días. ¿Cuántos días durará el mismo saco si se tienen 12 cerdos?",
+                            "options": [
+                                "6 días",
+                                "12 días",
+                                "8 días",
+                                "4 días"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "A más cerdos, la comida dura menos días (inversa). Multiplica 8 × 9 = 72. Divide entre 12.",
+                            "feedbackCorrect": "¡Excelente! El saco durará 6 días.",
+                            "feedbackIncorrect": "Incorrecto. (8 × 9) ÷ 12 = 6 días.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "La regla de tres inversa resuelve relaciones donde un aumento de una variable causa la disminución de la otra, multiplicando en horizontal y dividiendo verticalmente.",
+                    "videoPlaceholderText": "Video de Aritmética: Regla de tres simple inversa y problemas de trabajo."
+                },
+                {
+                    "id": "regla-tres-compuesta",
+                    "title": "Lección 3.3: Regla de Tres Compuesta",
+                    "introduction": "Aprende a resolver problemas complejos de proporcionalidad que involucran tres o más magnitudes simultáneamente.",
+                    "explanationHtml": "<p>En la vida real, a menudo intervienen más de dos magnitudes en un problema. Para resolverlo, recurrimos a la <strong>Regla de Tres Compuesta</strong>.</p><p class=\"mt-3\">El método más ordenado consiste en clasificar las magnitudes bajo tres columnas fundamentales del método \"Quién - Tiempo - Acción\":</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Quién (Sujeto/Causa):</strong> Quién realiza el trabajo o consume (grifos, obreros, máquinas).</li><li><strong>Tiempo:</strong> El lapso transcurrido (horas, días).</li><li><strong>Acción (Efecto/Objeto):</strong> El resultado final, consumo o trabajo realizado (litros consumidos, metros de zanja, depósitos).</li></ul><p class=\"mt-3\">El análisis se realiza multiplicando los valores de Quién y Tiempo, y dividiendo por la Acción. Para dos escenarios, la relación es:</p><p class=\"text-center font-mono font-extrabold text-primary my-3\">(Quién_1 &times; Tiempo_1) / Acción_1 = (Quién_2 &times; Tiempo_2) / Acción_2</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Método de Proporción Compuesta</p><p class=\"text-base font-mono font-extrabold text-primary\">(Q1 &times; T1) / A1 = (Q2 &times; T2) / A2</p><p class=\"text-xs text-slate-500\">Permite despejar cualquier incógnita agrupando las magnitudes de forma lógica.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"22\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">MÉTODO: QUIÉN - TIEMPO - ACCIÓN</text><rect x=\"20\" y=\"40\" width=\"70\" height=\"40\" fill=\"#eff6ff\" stroke=\"#bfdbfe\" rx=\"6\" /><text x=\"55\" y=\"58\" font-size=\"8\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">QUIÉN</text><text x=\"55\" y=\"73\" font-size=\"9\" font-family=\"monospace\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">Grifos (5 vs 8)</text><rect x=\"110\" y=\"40\" width=\"80\" height=\"40\" fill=\"#ecfdf5\" stroke=\"#a7f3d0\" rx=\"6\" /><text x=\"150\" y=\"58\" font-size=\"8\" fill=\"#065f46\" font-weight=\"bold\" text-anchor=\"middle\">TIEMPO</text><text x=\"150\" y=\"73\" font-size=\"9\" font-family=\"monospace\" fill=\"#065f46\" font-weight=\"bold\" text-anchor=\"middle\">Horas (4 vs 6)</text><rect x=\"210\" y=\"40\" width=\"70\" height=\"40\" fill=\"#fffbeb\" stroke=\"#fde68a\" rx=\"6\" /><text x=\"245\" y=\"58\" font-size=\"8\" fill=\"#92400e\" font-weight=\"bold\" text-anchor=\"middle\">ACCIÓN</text><text x=\"245\" y=\"73\" font-size=\"9\" font-family=\"monospace\" fill=\"#92400e\" font-weight=\"bold\" text-anchor=\"middle\">Litros (100 vs x)</text></svg>",
+                    "svgDescription": "Clasificación de magnitudes de la regla de tres compuesta en columnas de Causa (Quién), Tiempo y Efecto (Acción) para simplificar la fórmula.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Si 5 grifos iguales consumen 100 litros de agua en 4 horas, ¿cuántos litros consumirán 8 grifos en 6 horas?</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1: Identifica las magnitudes.</strong> <br>Quién = Grifos (5 y 8) <br>Tiempo = Horas (4 y 6) <br>Acción = Litros (100 y x).</li><li><strong>Paso 2: Plantea la igualdad del método.</strong> <br>$(5 \times 4) / 100 = (8 \times 6) / x$ <br>$20 / 100 = 48 / x$</li><li><strong>Paso 3: Simplifica y despeja x.</strong> <br>$0.2 = 48 / x \rightarrow x = 48 div 0.2 = 240$.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> Los 8 grifos consumirán <strong>240 litros</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Multiplicar todo en el mismo sentido:</strong> Operar sin verificar si las magnitudes se relacionan de forma directa o inversa, lo cual da resultados desproporcionados.</li><li><strong>Confundir la Acción (efecto) con el Quién:</strong> Colocar el consumo de litros como Quién y los grifos como Acción, invirtiendo la fracción. ¡La Acción es siempre el resultado o el objeto final!</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Si 6 tejedores de Santiago Atitlán elaboran 30 hermosas bufandas en 10 días, ¿cuántas bufandas elaborarán 8 tejedores en 15 días? (Ingresa el número entero):",
+                            "correctAnswer": "60",
+                            "hint": "Aplica: (Q1 × T1) / A1 = (Q2 × T2) / A2 &rarr; (6 × 10) / 30 = (8 × 15) / x &rarr; 60/30 = 120/x &rarr; 2 = 120/x.",
+                            "feedbackCorrect": "¡Excelente! Elaborarán 60 bufandas.",
+                            "feedbackIncorrect": "Revisa la proporción compuesta: (6 × 10) / 30 = (8 × 15) / x &rarr; 2 = 120/x &rarr; x = 60.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si 3 impresoras imprimen 1,500 volantes en 2 horas, ¿cuántas horas tardarán 4 impresoras iguales en imprimir 4,000 volantes?",
+                            "correctAnswer": "4",
+                            "hint": "Plantea: (3 × 2) / 1500 = (4 × x) / 4000 &rarr; 6 / 1500 = 4x / 4000. Opera y despeja x.",
+                            "feedbackCorrect": "¡Perfecto! Tardarán exactamente 4 horas.",
+                            "feedbackIncorrect": "Incorrecto. 6 / 1500 = 0.004. 4x / 4000 = 0.004 &rarr; 4x = 16 &rarr; x = 4 horas.",
+                            "difficulty": "avanzado",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si 10 obreros abren una zanja de 100 metros en 8 días, ¿cuántos días tardarán 15 obreros en abrir una zanja de 150 metros?",
+                            "correctAnswer": "8",
+                            "hint": "Plantea: (10 × 8) / 100 = (15 × x) / 150 &rarr; 80/100 = 15x/150 &rarr; 0.8 = 0.1x &rarr; x = 8.",
+                            "feedbackCorrect": "¡Excelente! Tardarán exactamente los mismos 8 días.",
+                            "feedbackIncorrect": "Incorrecto. Planteando la relación compuesta da exactamente 8 días.",
+                            "difficulty": "avanzado",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Una fábrica necesita 5 máquinas trabajando para producir 2,500 latas de conserva en 6 horas. ¿Cuántas latas de conserva producirán 3 máquinas en 8 horas?",
+                            "options": [
+                                "2,000 latas",
+                                "1,800 latas",
+                                "2,400 latas",
+                                "1,500 latas"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Plantea: (5 × 6) / 2500 = (3 × 8) / x &rarr; 30 / 2500 = 24 / x. Despeja x.",
+                            "feedbackCorrect": "¡Excelente! Producirán 2,000 latas.",
+                            "feedbackIncorrect": "Incorrecto. 30 / 2500 = 0.012 &rarr; 24 / x = 0.012 &rarr; x = 2000.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "8 grifos tardan 12 horas en llenar 4 depósitos de agua. ¿Cuántas horas tardarán 6 grifos iguales en llenar 3 depósitos del mismo tamaño?",
+                            "options": [
+                                "12 horas",
+                                "16 horas",
+                                "10 horas",
+                                "14 horas"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Plantea: (8 × 12) / 4 = (6 × x) / 3 &rarr; 96 / 4 = 6x / 3 &rarr; 24 = 2x &rarr; x = 12.",
+                            "feedbackCorrect": "¡Excelente! Tardarán exactamente 12 horas.",
+                            "feedbackIncorrect": "Incorrecto. 24 = 2x &rarr; x = 12 horas.",
+                            "difficulty": "avanzado",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "La regla de tres compuesta opera con múltiples variables a la vez y estructurarla bajo el método 'Quién - Tiempo - Acción' simplifica radicalmente su resolución matemática.",
+                    "videoPlaceholderText": "Video de Aritmética: Regla de tres compuesta paso a paso."
+                }
+            ]
+        }
+    ]
+},
 
     "algebra-basica": `# Curso: Álgebra Básica
 * **Materia:** Matemáticas | **Nivel sugerido:** Secundaria / Diversificado
