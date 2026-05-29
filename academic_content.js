@@ -1345,1185 +1345,2619 @@ window.ACADEMIC_CONTENT = {
     ]
 },
 
-    "algebra-basica": `# Curso: Álgebra Básica
-* **Materia:** Matemáticas | **Nivel sugerido:** Secundaria / Diversificado
-* **Público objetivo:** Estudiantes de bachillerato o ciclo básico que se inician en el razonamiento algebraico de variables y funciones.
-* **Objetivos de aprendizaje:** Traducir expresiones a lenguaje algebraico, simplificar polinomios, factorizar binomios y trinomios, y resolver ecuaciones lineales de primer grado.
-
-## Unidad 1: Lenguaje Algebraico y Operaciones con Polinomios
-### Lección 1.1: Traducción a Lenguaje Algebraico
-* **Objetivo:** Expresar situaciones y enunciados en lenguaje ordinario utilizando variables, coeficientes y operadores matemáticos.
-* **Explicación:** El álgebra utiliza letras (variables) como $x, y, a, b$ para representar números desconocidos. Traducir al lenguaje algebraico consiste en identificar las palabras clave del enunciado:
-  * "El doble de un número": $2x$
-  * "La mitad de un número": $x/2$ o $(1/2)x$
-  * "La suma de dos números consecutivos": $x + (x + 1)$
-  * "Un número aumentado en 5": $x + 5$
-* **Ejemplo Resuelto:** Traduce algebraicamente: "El triple de un número disminuido en el cuadrado de otro número".
-  - *Paso 1:* Representa "un número" con una variable, por ejemplo, $x$. Su triple es $3x$.
-  - *Paso 2:* Representa "otro número" con una segunda variable diferente, por ejemplo, $y$. Su cuadrado es $y^2$.
-  - *Paso 3:* Une ambos términos con el operador correspondiente a "disminuido" (resta): $3x - y^2$.
-  - *Resultado:* $3x - y^2$.
-* **Errores Comunes:** Utilizar la misma variable para representar dos números que no se ha aclarado si son iguales.
-* **Ejercicios de Práctica:**
-  1. Traduce: "La suma de dos números diferentes". (R: x + y).
-  2. Traduce: "El área de un rectángulo cuyo largo es el doble de su ancho". (R: A = 2x², donde x es el ancho).
-  3. Traduce: "La edad de Juan dentro de 8 años". (R: x + 8. Retroalimentación: Si su edad actual es x, en el futuro se suma 8).
-  4. Traduce: "El cociente de la suma de dos números entre su diferencia". (R: (a + b) / (a - b)).
-  5. Traduce: "Tres números enteros consecutivos". (R: x, x + 1, x + 2).
-* **¿Necesitas ayuda?** La transición al álgebra es el principal reto escolar. ¡Agenda una tutoría hoy y aprende a "pensar en variables" de forma amigable!
-
-### Lección 1.2: Reducción de Términos Semejantes
-* **Objetivo:** Agrupar y simplificar monomios sumando o restando sus coeficientes únicamente si tienen la misma parte literal y exponentes.
-* **Explicación:** Dos términos son semejantes si tienen exactamente las mismas variables elevadas a los mismos exponentes. Para reducirlos, solo sumamos algebraicamente sus coeficientes numéricos y mantenemos idéntica la parte literal.
-* **Ejemplo Resuelto:** Simplifica la expresión: $5x^2y - 3xy^2 + 8x^2y + 10xy^2$.
-  - *Paso 1:* Identifica los semejantes a $x^2y$: $5x^2y$ y $8x^2y$. Suma coeficientes: $(5+8)x^2y = 13x^2y$.
-  - *Paso 2:* Identifica los semejantes a $xy^2$: $-3xy^2$ y $10xy^2$. Suma coeficientes: $(-3+10)xy^2 = 7xy^2$.
-  - *Paso 3:* Agrupa ambos resultados: $13x^2y + 7xy^2$.
-  - *Resultado:* $13x^2y + 7xy^2$.
-* **Errores Comunes:** Sumar exponentes o juntar términos con variables diferentes (ejemplo: sumar $2x + 3y = 5xy$, lo cual es incorrecto).
-* **Ejercicios de Práctica:**
-  1. Simplifica: 7x - 3y + 2x - 5y. (R: 9x - 8y).
-  2. Simplifica: 3a²b - 5a²b + 8a²b. (R: 6a²b).
-  3. Resuelve la suma: (2x² - 3x + 5) + (x² + 5x - 8). (R: 3x² + 2x - 3).
-  4. Resta: (8y - 3) - (5y + 2). (R: 3y - 5. Retroalimentación: Cuidado con cambiar los signos del segundo binomio).
-  5. Simplifica: ab + 2bc - 3ab + bc. (R: -2ab + 3bc).
-* **¿Necesitas ayuda?** Reducir términos semejantes es como clasificar frutas. ¡Un tutor de CEDETU te enseñará divertidas analogías que te ayudarán a no equivocarte nunca!
-
-### Lección 1.3: Multiplicación de Polinomios y Productos Notables
-* **Objetivo:** Multiplicar monomios y polinomios aplicando la propiedad distributiva y conocer las fórmulas de productos notables básicos.
-* **Explicación:** Al multiplicar monomios, multiplicamos coeficientes y **sumamos** los exponentes de las mismas variables. Para polinomios, usamos la propiedad distributiva término a término.
-  * **Binomio al cuadrado:** $(a + b)^2 = a^2 + 2ab + b^2$
-  * **Binomios conjugados:** $(a + b)(a - b) = a^2 - b^2$
-* **Ejemplo Resuelto:** Multiplica $(x + 3)(x - 3)$ y $(2x + 3)^2$.
-  - *Caso 1: Conjugados:* $(x + 3)(x - 3) = x^2 - 3^2 = x^2 - 9$.
-  - *Caso 2: Binomio al cuadrado:* $(2x + 3)^2 = (2x)^2 + 2(2x)(3) + 3^2 = 4x^2 + 12x + 9$.
-  - *Resultados:* $x^2 - 9$ y $4x^2 + 12x + 9$.
-* **Errores Comunes:** Elevar un binomio al cuadrado como si solo fuera el cuadrado de sus términos: $(a+b)^2 = a^2 + b^2$, olvidando el término del medio $2ab$.
-* **Ejercicios de Práctica:**
-  1. Multiplica: 2x × (3x² - 5). (R: 6x³ - 10x).
-  2. Desarrolla: (x + 5)². (R: x² + 10x + 25).
-  3. Desarrolla: (2y - 4)(2y + 4). (R: 4y² - 16).
-  4. Desarrolla: (a - 3)². (R: a² - 6a + 9).
-  5. Multiplica: (x + 2)(x + 3). (R: x² + 5x + 6).
-* **¿Necesitas ayuda?** Los productos notables ahorran muchísimo tiempo en álgebra. ¡Aprende a memorizarlos visualmente con tu tutor de forma lúdica!
-
-## Evaluación Unidad 1
-* Reduce completamente: 12x²y - 3xy² - 8x²y + 10xy² - 4x²y. (R: 7xy². Retroalimentación: 12x²y - 8x²y - 4x²y = 0x²y; -3xy² + 10xy² = 7xy²).
-* Desarrolla usando productos notables: (3x - 4)². (R: 9x² - 24x + 16).
-* Traduce a lenguaje algebraico: "El cociente del triple de un número entre la suma de otros dos números diferentes". (R: 3x / (y + z)).
-
----
-
-## Unidad 2: Métodos de Factorización
-### Lección 2.1: Factor Común y Factor Común por Agrupación
-* **Objetivo:** Factorizar expresiones identificando el máximo común divisor numérico y las variables repetidas con su menor exponente.
-* **Explicación:** Factorizar es el proceso inverso a multiplicar; consiste en escribir una suma como una multiplicación. Si todos los términos tienen algo en común (número o letra), lo extraemos dividiendo cada término original por ese factor común.
-* **Ejemplo Resuelto:** Factoriza la expresión: $6x^3 + 12x^2 - 18x$.
-  - *Paso 1:* Encuentra el MCD de los coeficientes 6, 12 y 18, el cual es 6.
-  - *Paso 2:* Identifica la variable que se repite en todos los términos con su menor exponente: en este caso, $x^1$ (o $x$).
-  - *Paso 3:* El factor común es $6x$. Divide cada término: $6x^3 ÷ 6x = x^2$, $12x^2 ÷ 6x = 2x$, $-18x ÷ 6x = -3$.
-  - *Paso 4:* Expresa como multiplicación: $6x(x^2 + 2x - 3)$.
-  - *Resultado:* $6x(x^2 + 2x - 3)$.
-* **Errores Comunes:** No extraer el MCD más alto posible o ignorar exponentes al dividir.
-* **Ejercicios de Práctica:**
-  1. Factoriza: 5x² - 15x. (R: 5x(x - 3)).
-  2. Factoriza: a²b + ab². (R: ab(a + b)).
-  3. Factoriza: 8x³y² - 12x²y³. (R: 4x²y²(2x - 3y)).
-  4. Factoriza por agrupación: ax + ay + bx + by. (R: (a + b)(x + y). Retroalimentación: Agrupa a(x+y) + b(x+y) = (a+b)(x+y)).
-  5. Factoriza: 7m - 14n. (R: 7(m - 2n)).
-* **¿Necesitas ayuda?** El factor común es el método básico para simplificar cualquier ecuación compleja. ¡Asegura este pilar con tutorías dinámicas!
-
-### Lección 2.2: Factorización de Trinomios
-* **Objetivo:** Factorizar trinomios de la forma $x^2 + bx + c$ y trinomios cuadrados perfectos de forma rápida y analítica.
-* **Explicación:** 
-  * Para $x^2 + bx + c$: buscamos dos números que **multiplicados** den el término independiente $c$, y que **sumados o restados** den el coeficiente central $b$.
-  * **Trinomio Cuadrado Perfecto (TCP):** Si el primer y tercer término tienen raíces cuadradas exactas ($a$ y $b$), y el término central es el doble producto de estas raíces ($2ab$), se factoriza como un binomio al cuadrado: $(a \pm b)^2$.
-* **Ejemplo Resuelto:** Factoriza los trinomios: $x^2 + 5x + 6$ y $x^2 - 6x + 9$.
-  - *Caso 1:* Buscamos dos números que multiplicados den 6 y sumados den 5. Estos números son 3 y 2. Queda: $(x + 3)(x + 2)$.
-  - *Caso 2:* La raíz de $x^2$ es $x$, la de 9 es 3. El doble producto es $2(x)(3) = 6x$ (coincide con el centro). Como el signo central es negativo, queda: $(x - 3)^2$.
-  - *Resultados:* $(x + 3)(x + 2)$ y $(x - 3)^2$.
-* **Errores Comunes:** Confundir los signos al buscar los dos números en trinomios del tipo $x^2 + bx + c$.
-* **Ejercicios de Práctica:**
-  1. Factoriza: x² - 5x + 6. (R: (x - 3)(x - 2). Retroalimentación: Dos números que multiplicados den 6 y sumados den -5 son -3 y -2).
-  2. Factoriza el TCP: x² + 10x + 25. (R: (x + 5)²).
-  3. Factoriza: x² + 2x - 8. (R: (x + 4)(x - 2). Retroalimentación: Multiplicados den -8 y sumados den 2: 4 y -2).
-  4. Factoriza el TCP: 4y² - 12y + 9. (R: (2y - 3)²).
-  5. Factoriza: x² - x - 12. (R: (x - 4)(x + 3)).
-* **¿Necesitas ayuda?** Factorizar trinomios requiere muchísima práctica y entender las reglas de signos. ¡Tu tutor de CEDETU te dará una guía de práctica para volverte un experto!
-
-### Lección 2.3: Diferencia de Cuadrados
-* **Objetivo:** Identificar y factorizar binomios formados por la resta de dos cuadrados perfectos utilizando binomios conjugados.
-* **Explicación:** Una diferencia de cuadrados de la forma $a^2 - b^2$ se descompone siempre en el producto de dos binomios conjugados: $(a + b)(a - b)$. Extraemos la raíz cuadrada de cada término y los escribimos sumándose y restándose.
-* **Ejemplo Resuelto:** Factoriza la expresión: $16x^2 - 49$.
-  - *Paso 1:* Obtén la raíz cuadrada del primer término: $\sqrt{16x^2} = 4x$.
-  - *Paso 2:* Obtén la raíz del segundo término: $\sqrt{49} = 7$.
-  - *Paso 3:* Escribe los binomios conjugados: $(4x + 7)(4x - 7)$.
-  - *Resultado:* $(4x + 7)(4x - 7)$.
-* **Errores Comunes:** Intentar factorizar una suma de cuadrados ($a^2 + b^2$) de la misma manera (esto no tiene solución en los números reales).
-* **Ejercicios de Práctica:**
-  1. Factoriza: x² - 25. (R: (x + 5)(x - 5)).
-  2. Factoriza: 4a² - 9b². (R: (2a + 3b)(2a - 3b)).
-  3. Factoriza: m² - 1. (R: (m + 1)(m - 1)).
-  4. Factoriza: 100 - y². (R: (10 + y)(10 - y)).
-  5. ¿Se puede factorizar x² + 16 usando diferencia de cuadrados? (R: No. Retroalimentación: Al ser una suma no se puede factorizar con este método en números reales).
-* **¿Necesitas ayuda?** La diferencia de cuadrados es el método más rápido y satisfactorio de factorizar en álgebra. ¡Aprende a reconocerlo al instante con ayuda de tu tutor!
-
-## Evaluación Unidad 2
-* Factoriza completamente: 5x³ - 20x. (R: 5x(x + 2)(x - 2). Retroalimentación: Primero saca factor común 5x(x² - 4). Luego factoriza la diferencia de cuadrados (x+2)(x-2)).
-* Factoriza el trinomio: x² - 7x + 10. (R: (x - 5)(x - 2)).
-* Factoriza: 9x² - 64. (R: (3x + 8)(3x - 8)).
-
----
-
-## Unidad 3: Ecuaciones Lineales y Sistemas
-### Lección 3.1: Ecuaciones de Primer Grado de una Variable
-* **Objetivo:** Resolver ecuaciones lineales agrupando términos semejantes y aplicando correctamente las reglas del despeje algebraico.
-* **Explicación:** Una ecuación es una balanza en equilibrio. Para hallar el valor de la incógnita $x$ debemos "despejarla" pasándola a un lado de la igualdad y los números al otro, siguiendo esta regla al mover términos:
-  * Si suma, pasa a restar (y viceversa).
-  * Si multiplica, pasa a dividir (y viceversa) con el mismo signo.
-* **Ejemplo Resuelto:** Resuelve la ecuación: $5x - 7 = 2x + 8$.
-  - *Paso 1:* Agrupa los términos con $x$ en el lado izquierdo: Pasa $2x$ restando: $5x - 2x - 7 = 8 \Rightarrow 3x - 7 = 8$.
-  - *Paso 2:* Agrupa los números a la derecha: Pasa -7 sumando: $3x = 8 + 7 \Rightarrow 3x = 15$.
-  - *Paso 3:* Despeja $x$: Pasa el 3 dividiendo: $x = 15 ÷ 3 \Rightarrow x = 5$.
-  - *Resultado:* x = 5.
-* **Errores Comunes:** Cambiar el signo al pasar un número a dividir o multiplicar.
-* **Ejercicios de Práctica:**
-  1. Resuelve: 3x + 5 = 20. (R: x = 5).
-  2. Resuelve: 8x - 4 = 4x + 12. (R: x = 4).
-  3. Resuelve: 2(x - 3) = 10. (R: x = 8. Retroalimentación: Aplica propiedad distributiva primero: 2x - 6 = 10).
-  4. Resuelve: 5 - x = 2x - 7. (R: x = 4).
-  5. Resuelve: x/3 + 4 = 7. (R: x = 9. Retroalimentación: Pasa restando el 4: x/3 = 3; luego pasa multiplicando el 3: x = 9).
-* **¿Necesitas ayuda?** Despejar ecuaciones es la habilidad definitiva de la matemática escolar y universitaria. ¡Domina las ecuaciones con tu tutor de forma práctica!
-
-### Lección 3.2: Planteo de Problemas con Ecuaciones
-* **Objetivo:** Resolver problemas prácticos traduciendo el enunciado a una ecuación lineal de primer grado.
-* **Explicación:** Para resolver problemas con ecuaciones, definimos la incógnita $x$, planteamos la relación matemática descrita por el problema en forma de igualdad y despejamos $x$.
-* **Ejemplo Resuelto:** La suma de tres números enteros consecutivos es 72. ¿Cuáles son los números?
-  - *Paso 1:* Plantea los números en lenguaje algebraico: $x$ (el primero), $x+1$ (el segundo) y $x+2$ (el tercero).
-  - *Paso 2:* Escribe la ecuación de la suma: $x + (x + 1) + (x + 2) = 72$.
-  - *Paso 3:* Simplifica: $3x + 3 = 72$.
-  - *Paso 4:* Despeja $x$: $3x = 72 - 3 \Rightarrow 3x = 69 \Rightarrow x = 69 ÷ 3 = 23$.
-  - *Paso 5:* Encuentra los números consecutivos: 23, 24 y 25.
-  - *Resultado:* Los números son 23, 24 y 25.
-* **Errores Comunes:** Olvidar plantear todos los términos respecto a la misma variable de referencia.
-* **Ejercicios de Práctica:**
-  1. El doble de la edad de Pedro más 10 años es igual a 40. ¿Cuál es su edad? (R: 15 años. Retroalimentación: 2x + 10 = 40; 2x = 30; x = 15).
-  2. Si al triple de un número le restas 8 obtienes 22. ¿Cuál es el número? (R: 10).
-  3. En una tienda de Antigua, un pantalón cuesta el doble que una playera. Si compras ambos por Q150, ¿cuánto cuesta la playera? (R: Q50. Retroalimentación: x (playera) + 2x (pantalón) = 150; 3x = 150; x = 50).
-  4. La suma de un número con su mitad es 15. ¿Cuál es el número? (R: 10. Retroalimentación: x + x/2 = 15; 1.5x = 15; x = 10).
-  5. Un terreno rectangular tiene un largo que mide 5 metros más que su ancho. Si el perímetro mide 70 metros, ¿cuál es el ancho? (R: 15 metros. Retroalimentación: Perímetro = 2(ancho) + 2(largo) = 2x + 2(x + 5) = 70; 4x + 10 = 70; 4x = 60; x = 15).
-* **¿Necesitas ayuda?** Traducir problemas de aplicación real suele ser un dolor de cabeza. ¡Un tutor especializado de CEDETU te enseñará a estructurarlos con esquemas simples!
-
-### Lección 3.3: Sistemas de Ecuaciones Lineales 2x2 (Reducción)
-* **Objetivo:** Resolver sistemas de dos ecuaciones lineales con dos incógnitas utilizando el método de reducción (eliminación).
-* **Explicación:** Un sistema 2x2 representa dos condiciones que deben cumplirse para dos variables. El método de reducción consiste en multiplicar una o ambas ecuaciones por números adecuados de modo que al sumarlas verticalmente, una de las incógnitas se elimine, permitiendo despejar la otra.
-* **Ejemplo Resuelto:** Resuelve el sistema:
-  1) $2x + y = 8$
-  2) $x - y = 1$
-  - *Paso 1:* Suma verticalmente ambas ecuaciones de forma directa ya que los términos con $y$ tienen coeficientes opuestos ($+y$ y $-y$):
-    $(2x + x) + (y - y) = 8 + 1 \Rightarrow 3x = 9$.
-  - *Paso 2:* Despeja $x$: $x = 9 ÷ 3 = 3$.
-  - *Paso 3:* Sustituye $x=3$ en la ecuación 2 para hallar $y$:
-    $3 - y = 1 \Rightarrow -y = 1 - 3 \Rightarrow -y = -2 \Rightarrow y = 2$.
-  - *Resultado:* x = 3, y = 2.
-* **Errores Comunes:** Olvidar sumar o multiplicar los términos independientes a la derecha del signo igual al transformar las ecuaciones.
-* **Ejercicios de Práctica:**
-  1. Resuelve el sistema: x + y = 10 y x - y = 4. (R: x = 7, y = 3).
-  2. Resuelve el sistema: 2x + 3y = 12 y 2x - y = 4. (R: x = 3, y = 2).
-  3. En una granja hay gallinas (g) y vacas (v). Si contamos 20 cabezas y 50 patas, ¿cuántas vacas hay? (R: 5 vacas y 15 gallinas. Retroalimentación: g + v = 20; 2g + 4v = 50; operando por reducción obtenemos v = 5).
-  4. Resuelve el sistema: 3x - y = 7 y 2x + y = 8. (R: x = 3, y = 2).
-  5. Resuelve: 5x + 2y = 16 y 3x - 2y = 0. (R: x = 2, y = 3).
-* **¿Necesitas ayuda?** Los sistemas de ecuaciones se aplican muchísimo en administración, economía y física. ¡Agenda una tutoría en CEDETU para dominarlos con ejercicios prácticos resueltos en vivo!
-
-## Evaluación Unidad 3
-* Resuelve la ecuación: 7x - (2x + 3) = 3(x + 5). (R: x = 9. Retroalimentación: 7x - 2x - 3 = 3x + 15; 5x - 3 = 3x + 15; 2x = 18; x = 9).
-* Resuelve el sistema: 4x + 2y = 14 y 3x - 2y = 0. (R: x = 2, y = 3).
-* Si dos pantalones y tres camisas cuestan Q410, y un pantalón y tres camisas cuestan Q290, ¿cuál es el precio de un pantalón? (R: Q120. Retroalimentación: Planteando 2p + 3c = 410 y p + 3c = 290; restando ambas ecuaciones eliminamos camisas: p = 120).
-\`,
-
-    // -----------------------------------------------------------------
-    // B. FÍSICA
-    // -----------------------------------------------------------------
-    
-    "fisica-movimiento": \`# Curso: Cinemática
-* **Materia:** Ciencias | **Nivel sugerido:** Diversificado / Universidad
-* **Público objetivo:** Alumnos que inician física clásica y necesitan dominar el movimiento y sus ecuaciones matemáticas.
-* **Objetivos de aprendizaje:** Diferenciar entre distancia y desplazamiento, calcular velocidad media e interpretar el Movimiento Rectilíneo Uniforme (MRU) y Uniformemente Acelerado (MRUA).
-
-## Unidad 1: Movimiento y Posición en Una Dimensión
-### Lección 1.1: Distancia versus Desplazamiento
-* **Objetivo:** Diferenciar de forma teórica y práctica entre una magnitud escalar (distancia) y una vectorial (desplazamiento).
-* **Explicación:** La **distancia** es la longitud total de la trayectoria recorrida por un objeto sin importar el sentido (es un número siempre positivo, magnitud escalar). El **desplazamiento** es el cambio neto de posición de un objeto, medido en línea recta desde el punto de partida hasta el de llegada, e indica dirección (magnitud vectorial).
-* **Ejemplo Resuelto:** Un repartidor de Antigua camina 50 metros al este y luego regresa 30 metros al oeste. ¿Cuál fue su distancia recorrida y su desplazamiento?
-  - *Paso 1 Distancia:* Suma todas las longitudes: 50 m + 30 m = 80 m.
-  - *Paso 2 Desplazamiento:* Toma en cuenta los sentidos. El este es positivo (+50 m) y el oeste es negativo (-30 m). Desplazamiento = +50 m - 30 m = +20 m (hacia el este).
-  - *Resultado:* Distancia = 80 m, Desplazamiento = 20 m al este.
-* **Errores Comunes:** Pensar que la distancia y el desplazamiento siempre valen lo mismo, lo cual solo ocurre en movimientos en línea recta sin cambios de sentido.
-* **Ejercicios de Práctica:**
-  1. Si corres alrededor de una pista circular de 400 metros y regresas exactamente al punto de partida, ¿cuál es tu distancia y tu desplazamiento? (R: Distancia = 400 m, Desplazamiento = 0 m).
-  2. Un automóvil viaja 80 km hacia el norte y luego 60 km hacia el sur. ¿Cuál es su desplazamiento? (R: 20 km al norte).
-  3. Un peatón camina 3 metros al norte y luego 4 metros al este. ¿Cuál es la distancia recorrida y cuál es el desplazamiento total en línea recta (módulo)? (R: Distancia = 7 m, Desplazamiento = 5 m. Retroalimentación: Usa el teorema de Pitágoras para el desplazamiento: √(3² + 4²) = 5).
-  4. Si caminas 10 pasos hacia adelante y 10 pasos hacia atrás, ¿cuál es tu desplazamiento? (R: 0 pasos).
-  5. Una hormiga recorre 1.5 metros por el borde de una regla. Si se arrepiente y regresa al inicio, ¿qué distancia recorrió? (R: 3.0 metros).
-* **¿Necesitas ayuda?** La física vectorial requiere entender la diferencia entre "el camino largo" y "el atajo". ¡Un tutor de CEDETU te lo enseñará con sencillas animaciones interactivas!
-
-### Lección 1.2: Velocidad y Rapidez
-* **Objetivo:** Calcular la rapidez media (escalar) y la velocidad media (vectorial) a partir de la distancia, desplazamiento y tiempo empleado.
-* **Explicación:** La **rapidez media** es la distancia dividida entre el tiempo total. La **velocidad media** es el desplazamiento dividido entre el tiempo empleado. En física, la velocidad lleva dirección, mientras que la rapidez no.
-  * Rapidez media: $v = d / t$
-  * Velocidad media: $\vec{v} = \Delta \vec{x} / t$
-* **Ejemplo Resuelto:** Un bus extraurbano recorre 150 km en 2.5 horas. ¿Cuál fue su rapidez media en km/h y en m/s?
-  - *Paso 1 km/h:* Divide la distancia por el tiempo: 150 km ÷ 2.5 h = 60 km/h.
-  - *Paso 2 m/s:* Para convertir de km/h a m/s dividimos por 3.6: 60 ÷ 3.6 = 16.67 m/s.
-  - *Resultado:* 60 km/h o 16.67 m/s.
-* **Errores Comunes:** Olvidar convertir el tiempo a horas o a segundos según las unidades del Sistema Internacional requeridas.
-* **Ejercicios de Práctica:**
-  1. Si nadas 100 metros en 50 segundos, ¿cuál es tu rapidez media en m/s? (R: 2 m/s).
-  2. Un ciclista viaja a una rapidez de 8 m/s. ¿Qué distancia recorrerá en un minuto? (R: 480 metros. Retroalimentación: 1 minuto = 60 segundos. Distancia = 8 × 60 = 480).
-  3. Convierte 36 km/h a m/s. (R: 10 m/s. Retroalimentación: 36 ÷ 3.6 = 10).
-  4. Un atleta corre 200 metros con rapidez constante de 5 m/s. ¿Cuánto tiempo tarda en recorrerlos? (R: 40 segundos. Retroalimentación: t = d/v = 200/5 = 40).
-  5. Un rayo cae a 3,400 metros de distancia de ti. Si la velocidad del sonido es de 340 m/s, ¿cuántos segundos tardarás en escuchar el trueno? (R: 10 segundos).
-* **¿Necesitas ayuda?** La conversión de unidades de velocidad (km/h a m/s) suele causar fallos en los parciales de física. ¡Asegura tus notas repasándolo con tu tutor!
-
-### Lección 1.3: Movimiento Rectilíneo Uniforme (MRU)
-* **Objetivo:** Resolver problemas de movimiento donde el objeto viaja en línea recta y a velocidad constante (sin aceleración).
-* **Explicación:** En el MRU la velocidad no cambia; el objeto recorre distancias iguales en tiempos iguales. La ecuación clave es:
-  * Distancia = Velocidad × Tiempo ($d = v \times t$)
-* **Ejemplo Resuelto:** Dos automóviles de carga salen de Ciudad de Guatemala hacia Quetzaltenango (distancia de 200 km). El auto A viaja a 50 km/h constantes y el auto B a 80 km/h constantes. ¿Con cuánto tiempo de diferencia llegará el auto B respecto al A?
-  - *Paso 1 Auto A:* Tiempo_A = d ÷ v_A = 200 km ÷ 50 km/h = 4 horas.
-  - *Paso 2 Auto B:* Tiempo_B = d ÷ v_B = 200 km ÷ 80 km/h = 2.5 horas.
-  - *Paso 3 Diferencia:* Tiempo_A - Tiempo_B = 4 h - 2.5 h = 1.5 horas.
-  - *Resultado:* El auto B llegará 1.5 horas antes (1 hora y 30 minutos).
-* **Errores Comunes:** Utilizar esta ecuación simple cuando el movimiento involucra aceleraciones o frenadas.
-* **Ejercicios de Práctica:**
-  1. ¿Qué distancia recorre un tren que viaja a 90 km/h constantes durante 4 horas? (R: 360 km).
-  2. Si una onda de radio viaja a la velocidad de la luz (300,000 km/s), ¿cuántos segundos tarda en llegar a la Luna si la distancia es de 384,000 km? (R: 1.28 segundos).
-  3. Si caminas a una velocidad constante de 1.5 m/s, ¿cuánto tardas en recorrer 150 metros? (R: 100 segundos).
-  4. Un motociclista de la capital viaja a 20 m/s constantes. ¿Qué distancia en kilómetros recorre en media hora? (R: 36 km. Retroalimentación: Media hora = 1,800 segundos. Distancia = 20 × 1,800 = 36,000 m = 36 km).
-  5. Dos corredores corren en sentidos opuestos alejándose con velocidades de 3 m/s y 5 m/s. ¿Qué distancia los separa tras 10 segundos? (R: 80 metros. Retroalimentación: Se alejan a una velocidad relativa de 3 + 5 = 8 m/s. d = 8 × 10 = 80).
-* **¿Necesitas ayuda?** Los problemas de encuentro y persecución en MRU son desafíos clásicos de física de diversificado. ¡Domina los planteos de sistemas físicos con tu tutor de CEDETU!
-
-## Evaluación Unidad 1
-* Un auto viaja a 72 km/h constantes. ¿Cuántos metros recorre en un lapso de 15 segundos? (R: 300 metros. Retroalimentación: Convierte 72 km/h a m/s: 72 ÷ 3.6 = 20 m/s. Distancia = 20 × 15 = 300 m).
-* Diferencia conceptual: Si das una vuelta a una cuadra de 100 metros por lado y vuelves al inicio, ¿cuál fue tu desplazamiento y la distancia? (R: Distancia = 400 m, Desplazamiento = 0 m).
-* Si una señal de sonido tarda 4 segundos en rebotar del fondo del mar y la velocidad del sonido en el agua es 1,500 m/s, ¿cuál es la profundidad? (R: 3,000 metros. Retroalimentación: El sonido viaja de ida y vuelta, por lo que tarda 2 segundos de ida. Profundidad = 1,500 × 2 = 3,000 m).
-
----
-
-## Unidad 2: Aceleración y MRUA
-### Lección 2.1: El Concepto de Aceleración
-* **Objetivo:** Calcular la aceleración media de un móvil a partir del cambio en su velocidad y el intervalo de tiempo.
-* **Explicación:** La aceleración representa qué tan rápido cambia la velocidad de un objeto. Si un objeto aumenta su velocidad, la aceleración es positiva; si frena o disminuye su velocidad (desaceleración), la aceleración es negativa. La unidad de medida en el SI es metros por segundo al cuadrado ($m/s^2$).
-  * Aceleración: $a = (v_f - v_i) / t$
-* **Ejemplo Resuelto:** Un auto deportivo en la autopista de Escuintla parte del reposo y alcanza una velocidad de 30 m/s en un tiempo de 6 segundos. ¿Cuál fue su aceleración media?
-  - *Paso 1:* Identifica los datos: velocidad inicial ($v_i = 0$ ya que parte del reposo), velocidad final ($v_f = 30$ m/s), tiempo ($t = 6$ s).
-  - *Paso 2:* Aplica la fórmula: $a = (30 - 0) ÷ 6 = 30 ÷ 6 = 5$.
-  - *Resultado:* Aceleración = $5 m/s^2$.
-* **Errores Comunes:** Olvidar restar la velocidad inicial o confundir las unidades de aceleración con las de velocidad.
-* **Ejercicios de Práctica:**
-  1. Un vehículo frena pasando de 25 m/s a 5 m/s en 4 segundos. ¿Cuál fue su aceleración? (R: -5 m/s². Retroalimentación: Al frenar, la aceleración es negativa: (5 - 25)/4 = -5).
-  2. Si una moto arranca con aceleración constante de 3 m/s², ¿cuál será su velocidad tras 8 segundos? (R: 24 m/s).
-  3. Un objeto cae desde un edificio partiendo del reposo. Si la aceleración de la gravedad es de 9.8 m/s², ¿qué velocidad tendrá tras 3 segundos? (R: 29.4 m/s).
-  4. ¿Cuánto tiempo tarda un corredor en pasar de 2 m/s a 8 m/s si acelera a razón de 1.5 m/s²? (R: 4 segundos. Retroalimentación: t = (8 - 2)/1.5 = 4).
-  5. Un tren viaja a 40 m/s y frena a razón de -2 m/s². ¿Cuánto tiempo tarda en detenerse por completo? (R: 20 segundos).
-* **¿Necesitas ayuda?** La aceleración mide el "cambio", no el movimiento mismo. ¡Toma una tutoría rápida en CEDETU y despeja todas tus dudas conceptuales!
-
-### Lección 2.2: Ecuaciones del MRUA
-* **Objetivo:** Resolver problemas de movimiento acelerado eligiendo y aplicando la ecuación correcta según los datos provistos.
-* **Explicación:** En el MRUA la aceleración es constante. Existen 4 ecuaciones fundamentales para relacionar distancia ($d$), velocidad inicial ($v_i$), velocidad final ($v_f$), aceleración ($a$) y tiempo ($t$):
-  1. $v_f = v_i + a \cdot t$
-  2. $d = v_i \cdot t + (1/2) \cdot a \cdot t^2$
-  3. $v_f^2 = v_i^2 + 2 \cdot a \cdot d$
-  4. $d = ((v_i + v_f) / 2) \cdot t$
-* **Ejemplo Resuelto:** Un auto acelera de 10 m/s a 20 m/s a lo largo de una distancia de 75 metros en línea recta. ¿Cuánto vale su aceleración?
-  - *Paso 1:* Identifica datos: $v_i = 10$ m/s, $v_f = 20$ m/s, $d = 75$ m. Queremos $a$. El tiempo $t$ no está en los datos.
-  - *Paso 2:* Elegimos la ecuación que no requiere tiempo (Ecuación 3): $v_f^2 = v_i^2 + 2ad$.
-  - *Paso 3:* Reemplaza: $20^2 = 10^2 + 2 \cdot a \cdot 75 \Rightarrow 400 = 100 + 150a$.
-  - *Paso 4:* Despeja $a$: $400 - 100 = 150a \Rightarrow 300 = 150a \Rightarrow a = 300 ÷ 150 = 2$.
-  - *Resultado:* Aceleración = $2 m/s^2$.
-* **Errores Comunes:** Escoger una ecuación que contenga dos variables desconocidas, haciendo imposible el despeje.
-* **Ejercicios de Práctica:**
-  1. Un auto parte del reposo y acelera a 4 m/s² durante 5 segundos. ¿Qué distancia recorre? (R: 50 metros. Retroalimentación: d = 0 × 5 + 0.5 × 4 × 5² = 50).
-  2. Si un móvil viaja a 15 m/s y frena hasta detenerse en 30 metros, ¿cuál fue su desaceleración? (R: -3.75 m/s². Retroalimentación: 0 = 15² + 2 × a × 30; a = -225/60 = -3.75).
-  3. Con los datos del ejercicio anterior, ¿cuánto tiempo tardó en detenerse? (R: 4 segundos. Retroalimentación: d = ((15 + 0)/2) × t; 30 = 7.5t; t = 4).
-  4. Un avión necesita alcanzar 60 m/s para despegar. Si acelera a 3 m/s² desde el reposo, ¿qué longitud mínima de pista necesita? (R: 600 metros).
-  5. Una motocicleta acelera a 2 m/s² partiendo del reposo. ¿Cuál será su velocidad final al cabo de recorrer 100 metros? (R: 20 m/s. Retroalimentación: v_f² = 0 + 2 × 2 × 100 = 400; v_f = 20).
-* **¿Necesitas ayuda?** Aprender a elegir "cuál de las 4 fórmulas usar" es el truco dorado del MRUA. ¡Tu tutor de CEDETU te enseñará una tabla de selección infalible!
-
-### Lección 2.3: Caída Libre y Tiro Vertical
-* **Objetivo:** Resolver problemas de movimiento vertical bajo la influencia exclusiva de la gravedad terrestre.
-* **Explicación:** La caída libre es un caso especial de MRUA en el eje vertical (Y), donde la aceleración siempre es igual a la gravedad de la Tierra ($g = 9.8 m/s^2$ o $10 m/s^2$ para simplificar cálculos). Al lanzar un objeto hacia arriba, su velocidad disminuye hasta llegar a cero en su punto más alto (altura máxima) y luego cae acelerando.
-* **Ejemplo Resuelto:** Se deja caer una piedra desde un puente de 45 metros de altura. ¿Cuánto tiempo tardará en impactar contra el agua? (Usa $g = 10 m/s^2$).
-  - *Paso 1:* Identifica datos: $v_i = 0$ (se deja caer), altura/distancia $d = 45$ m, gravedad $a = 10 m/s^2$.
-  - *Paso 2:* Elegimos la fórmula de distancia vertical: $d = v_i \cdot t + (1/2) \cdot g \cdot t^2 \Rightarrow 45 = 0 \cdot t + (1/2) \cdot 10 \cdot t^2$.
-  - *Paso 3:* Simplifica: $45 = 5 \cdot t^2$.
-  - *Paso 4:* Despeja $t$: $t^2 = 45 ÷ 5 = 9 \Rightarrow t = \sqrt{9} = 3$.
-  - *Resultado:* Tardará 3 segundos.
-* **Errores Comunes:** Olvidar que la gravedad siempre jala hacia abajo, por lo que si definimos que hacia arriba es positivo, la gravedad debe ingresarse como negativa ($-9.8 m/s^2$).
-* **Ejercicios de Práctica:**
-  1. Si lanzas una pelota verticalmente hacia arriba a 20 m/s, ¿cuánto tiempo tarda en alcanzar su punto más alto? (Usa g = 10 m/s²). (R: 2 segundos. Retroalimentación: En la altura máxima v_f = 0. 0 = 20 - 10t; t = 2).
-  2. Con los datos del ejercicio anterior, ¿cuál es la altura máxima alcanzada por la pelota? (R: 20 metros. Retroalimentación: d = ((20 + 0)/2) × 2 = 20 m).
-  3. Se deja caer un objeto desde lo alto de una torre y tarda 4 segundos en tocar el suelo. ¿De qué altura cayó? (Usa g = 9.8 m/s²). (R: 78.4 metros. Retroalimentación: d = 0.5 × 9.8 × 4² = 78.4 m).
-  4. ¿Con qué velocidad inicial se debe lanzar un objeto verticalmente hacia arriba para que alcance una altura de 80 metros? (Usa g = 10 m/s²). (R: 40 m/s).
-  5. Una manzana cae de un árbol y toca el suelo en 0.8 segundos. ¿Con qué rapidez impacta el suelo? (Usa g = 10 m/s²). (R: 8 m/s).
-* **¿Necesitas ayuda?** La física del movimiento vertical tiene reglas estrictas de signos según el marco de referencia que elijas. ¡Toma una clase con un tutor y olvídate de fallar por culpa de un signo!
-
-## Evaluación Unidad 2
-* Un auto de carreras parte del reposo con aceleración constante de 6 m/s². ¿Qué velocidad tendrá tras recorrer una distancia de 75 metros? (R: 30 m/s. Retroalimentación: v_f² = 0 + 2 × 6 × 75 = 900; v_f = 30).
-* Se lanza un objeto verticalmente hacia arriba con una velocidad de 30 m/s. ¿Cuánto tiempo permanece en el aire en total antes de regresar al suelo? (Usa g = 10 m/s²). (R: 6 segundos. Retroalimentación: Tarda 3 segundos en subir y otros 3 segundos en bajar).
-* Un conductor que viaja a 20 m/s ve un obstáculo y frena con desaceleración constante de -4 m/s². ¿Qué distancia recorre el auto antes de detenerse? (R: 50 metros).
-
----
-
-## Unidad 3: Movimiento en Dos Dimensiones
-### Lección 3.1: Composición de Movimientos (Tiro Parabólico)
-* **Objetivo:** Resolver problemas de proyectiles analizando de forma independiente el eje horizontal (MRU) y el eje vertical (MRUA).
-* **Explicación:** El tiro parabólico es el movimiento de un proyectil lanzado con cierto ángulo. Se descompone en dos movimientos simultáneos y perpendiculares:
-  * **Eje X (horizontal):** Sin fuerzas que actúen, viaja con velocidad constante (MRU).
-  * **Eje Y (vertical):** Afectado por la gravedad, experimenta aceleración constante (MRUA / Caída Libre).
-* **Ejemplo Resuelto:** Una pelota es lanzada horizontalmente desde lo alto de una mesa de 1.25 metros de altura con una velocidad de 4 m/s. ¿A qué distancia de la base de la mesa caerá la pelota? (Usa $g = 10 m/s^2$).
-  - *Paso 1 Tiempo de Caída (Eje Y):* $h = (1/2) \cdot g \cdot t^2 \Rightarrow 1.25 = 5t^2 \Rightarrow t^2 = 1.25 ÷ 5 = 0.25 \Rightarrow t = \sqrt{0.25} = 0.5$ segundos.
-  - *Paso 2 Alcance Horizontal (Eje X):* $d = v_x \cdot t \Rightarrow d = 4 \text{ m/s} \times 0.5 \text{ s} = 2$ metros.
-  - *Resultado:* Caerá a 2 metros de la base.
-* **Errores Comunes:** Intentar mezclar la velocidad del eje X con las fórmulas de gravedad del eje Y.
-* **Ejercicios de Práctica:**
-  1. Si un proyectil es lanzado con velocidad horizontal de 15 m/s desde una altura de 20 metros, ¿cuánto tiempo tarda en caer? (Usa g = 10 m/s²). (R: 2 segundos).
-  2. Con los datos del ejercicio anterior, ¿cuál es el alcance horizontal total del proyectil? (R: 30 metros. Retroalimentación: d = v_x × t = 15 × 2 = 30 m).
-  3. Un deportista patea un balón con un ángulo tal que su velocidad inicial en el eje X es de 12 m/s y en el eje Y es de 20 m/s. ¿Cuál es el tiempo de vuelo del balón? (Usa g = 10 m/s²). (R: 4 segundos. Retroalimentación: Tarda 2 segundos en subir y 2 en bajar).
-  4. Con los datos del ejercicio anterior, ¿cuál fue la distancia horizontal total (alcance) del balón? (R: 48 metros. Retroalimentación: d = v_x × t_vuelo = 12 × 4 = 48 m).
-  5. ¿Qué velocidad vertical tiene un proyectil en su punto más alto de trayectoria parabólica? (R: 0 m/s. Retroalimentación: Toda la velocidad en ese punto es únicamente horizontal).
-* **¿Necesitas ayuda?** El movimiento parabólico es el tema estrella en los exámenes finales de física de bachillerato. ¡Asegura tu comprensión practicando los componentes vectoriales con un tutor experto de CEDETU!
-
-### Lección 3.2: Movimiento Circular Uniforme (MCU)
-* **Objetivo:** Calcular el período, frecuencia, velocidad angular y aceleración centrípeta de un objeto con trayectoria circular constante.
-* **Explicación:** En el MCU el objeto gira en círculos con rapidez constante. Aunque la rapidez no cambia, la **dirección** de la velocidad sí cambia continuamente. Este cambio de dirección genera una aceleración que apunta siempre hacia el centro del círculo, llamada **aceleración centrípeta** ($a_c$).
-  * Velocidad angular: $\omega = 2\pi / T$
-  * Aceleración centrípeta: $a_c = v^2 / r$
-* **Ejemplo Resuelto:** Un objeto gira en una pista circular de 2 metros de radio con una velocidad tangencial constante de 6 m/s. ¿Cuál es su aceleración centrípeta?
-  - *Paso 1:* Identifica datos: radio $r = 2$ m, velocidad $v = 6$ m/s.
-  - *Paso 2:* Aplica la fórmula: $a_c = v^2 ÷ r = 6^2 ÷ 2 = 36 ÷ 2 = 18$.
-  - *Resultado:* $18 m/s^2$.
-* **Errores Comunes:** Pensar que la aceleración en el movimiento circular es cero porque el velocímetro marca una rapidez constante.
-* **Ejercicios de Práctica:**
-  1. Si un disco da 30 vueltas completas en un minuto, ¿cuál es su período en segundos? (R: 2 segundos. Retroalimentación: Período = tiempo / vueltas = 60 / 30 = 2).
-  2. Con los datos del ejercicio anterior, ¿cuál es su frecuencia en Hertz (Hz)? (R: 0.5 Hz. Retroalimentación: Frecuencia = 1 / Período = 0.5).
-  3. Un carro de juguete gira en un círculo de 0.5 metros de radio con rapidez constante. Si su aceleración centrípeta es de 8 m/s², ¿cuál es su rapidez lineal? (R: 2 m/s. Retroalimentación: v² = a_c × r = 8 × 0.5 = 4; v = √4 = 2).
-  4. Calcula la velocidad angular (rad/s) de un ventilador que da una vuelta completa cada 0.2 segundos. (R: 31.4 rad/s. Retroalimentación: ω = 2π / T = 2 × 3.14 / 0.2 = 31.4).
-  5. ¿Hacia dónde apunta la fuerza centrípeta que mantiene a un satélite girando alrededor de la Tierra? (R: Hacia el centro de la Tierra, provocada por la gravedad).
-* **¿Necesitas ayuda?** Entender el movimiento circular es fundamental para entender poleas, engranajes y astronomía. ¡Toma una tutoría virtual en CEDETU y aclara tus conceptos!
-
-### Lección 3.3: Aplicaciones Didácticas y del Entorno
-* **Objetivo:** Resolver problemas de movimiento contextualizados a la infraestructura y geografía de Guatemala y Centroamérica.
-* **Explicación:** Aplicar los conceptos de movimiento a situaciones locales (como las curvas de la autopista Palín-Escuintla, el recorrido de buses de transporte extraurbano, o los tiempos de caída en los barrancos de la capital) ayuda a que los conceptos físicos tengan verdadero sentido práctico.
-* **Ejemplo Resuelto:** Un bus extraurbano recorre la carretera Interamericana de Ciudad de Guatemala a Tecpán (88 km). Si sale a las 7:00 AM y su rapidez promedio es de 44 km/h debido al tráfico de San Lucas, ¿a qué hora llegará a su destino?
-  - *Paso 1:* Calcula el tiempo de viaje: $t = d ÷ v = 88 \text{ km} ÷ 44 \text{ km/h} = 2$ horas.
-  - *Paso 2:* Suma el tiempo de viaje a la hora de salida: 7:00 AM + 2 horas = 9:00 AM.
-  - *Resultado:* Llegará a las 9:00 AM.
-* **Errores Comunes:** Trabajar con unidades de distancia en metros y de tiempo en horas sin hacer la homogeneización previa de las variables.
-* **Ejercicios de Práctica:**
-  1. Si un puente peatonal de la Calzada Roosevel tiene 6 metros de altura, ¿cuánto tardaría una moneda en golpear el asfalto si se deja caer libremente? (Usa g = 10 m/s²). (R: 1.1 segundos. Retroalimentación: t = √(2h/g) = √(12/10) = √1.2 = 1.1s).
-  2. Un camión de carga de caña de azúcar viaja por la costa sur a 54 km/h. ¿A cuántos metros por segundo equivale esta velocidad? (R: 15 m/s. Retroalimentación: 54 / 3.6 = 15).
-  3. Si vas en una curva de la bajada de las Cañas a Antigua a 10 m/s y el radio de curvatura es de 25 metros, ¿qué aceleración centrípeta experimentas? (R: 4 m/s²).
-  4. Para evitar colisiones en la autopista, se requiere que la distancia de frenado de un auto a 80 km/h sea de 40 metros. ¿Qué desaceleración constante de frenos debe garantizar el auto? (R: -6.17 m/s²).
-  5. Un niño suelta un barrilete gigante en Sumpango desde lo alto de una colina de 80 metros de altura. ¿Cuánto tardaría en llegar al suelo si cayera verticalmente como un cuerpo libre? (Usa g = 10 m/s²). (R: 4 segundos).
-* **¿Necesitas ayuda?** La física se vive todos los días a nuestro alrededor. ¡Tu tutor de CEDETU te enseñará a ver el mundo con ojos de científico para que disfrutes y ganes tus materias!
-
-## Evaluación Unidad 3
-* Un objeto es lanzado desde un puente con una velocidad horizontal de 20 m/s y tarda 3 segundos en tocar el lecho del río. ¿Cuál es la altura del puente y a qué distancia horizontal de la vertical de lanzamiento cayó? (Usa g = 10 m/s²). (R: Altura = 45 m, Distancia horizontal = 60 m. Retroalimentación: h = 0.5 × 10 × 3² = 45 m. d = 20 × 3 = 60 m).
-* Un auto de juguete recorre una pista circular de 4 metros de diámetro dando una vuelta completa cada 2 segundos. ¿Cuál es su velocidad lineal y su aceleración centrípeta? (R: Velocidad = 6.28 m/s, Aceleración centrípeta = 19.74 m/s². Retroalimentación: Radio r = 2m. v = 2πr / T = 12.56/2 = 6.28 m/s. a_c = v²/r = 39.48/2 = 19.74 m/s²).
-* Si lanzas un balón de básquetbol con un ángulo de elevación de forma que su velocidad vertical inicial es de 8 m/s, ¿cuál es la altura máxima que alcanzará antes de empezar a caer? (Usa g = 10 m/s²). (R: 3.2 metros. Retroalimentación: h = v_iy² / 2g = 64 / 20 = 3.2 m).
-\`,
-
-    // -----------------------------------------------------------------
-    // C. ESTADÍSTICA
-    // -----------------------------------------------------------------
-    
-    "curso-estadistica-aplicada": \`# Curso: Estadística Descriptiva
-* **Materia:** Matemáticas | **Nivel sugerido:** Diversificado / Universidad
-* **Público objetivo:** Estudiantes de bachillerato, administración o ingeniería que se inician en el análisis exploratorio de datos.
-* **Objetivos de aprendizaje:** Organizar datos en tablas de frecuencia, graficar distribuciones de datos, calcular las medidas de tendencia central y medir la variabilidad de una muestra.
-
-## Unidad 1: Organización y Presentación de Datos
-### Lección 1.1: Tablas de Frecuencia para Datos No Agrupados
-* **Objetivo:** Organizar un conjunto de datos brutos en una tabla estructurada que muestre la frecuencia absoluta, acumulada, relativa y porcentual.
-* **Explicación:** 
-  * **Frecuencia Absoluta ($f$):** Número de veces que aparece un valor.
-  * **Frecuencia Acumulada ($F$):** Suma sucesiva de las frecuencias absolutas.
-  * **Frecuencia Relativa ($fr$):** Frecuencia absoluta dividida entre el total de datos ($n$).
-  * **Frecuencia Porcentual ($f\%$):** Frecuencia relativa multiplicada por 100.
-* **Ejemplo Resuelto:** Durante una semana se encuestó a 10 familias de un condominio sobre la cantidad de hijos que tienen. Los datos fueron: 2, 1, 0, 2, 3, 2, 1, 0, 1, 2. Organiza el dato '2 hijos' en la tabla.
-  - *Paso 1 Frecuencia Absoluta:* Cuenta cuántas familias tienen exactamente 2 hijos. Los datos son: [2, 2, 2, 2]. Hay 4 familias. Frecuencia absoluta ($f = 4$).
-  - *Paso 2 Frecuencia Relativa:* Divide el valor entre el total de encuestados ($n = 10$): $fr = 4 ÷ 10 = 0.40$.
-  - *Paso 3 Frecuencia Porcentual:* Multiplica por 100: $f\% = 0.40 \times 100 = 40\%$.
-  - *Resultado:* El valor 2 tiene una frecuencia de 4 familias, que representa el 40% del total.
-* **Errores Comunes:** Sumar incorrectamente las frecuencias relativas; la suma de todas las frecuencias relativas debe dar exactamente 1 (o 100% en porcentuales).
-* **Ejercicios de Práctica:**
-  1. En una muestra de 20 estudiantes, 5 tienen notas excelentes. ¿Cuál es la frecuencia relativa de alumnos excelentes? (R: 0.25).
-  2. Con los datos anteriores, ¿a qué porcentaje equivale? (R: 25%).
-  3. Si la frecuencia acumulada del tercer intervalo en una tabla es 15 y la frecuencia absoluta del cuarto intervalo es 6, ¿cuál es la frecuencia acumulada del cuarto intervalo? (R: 21. Retroalimentación: F_4 = F_3 + f_4 = 15 + 6 = 21).
-  4. ¿Qué tipo de gráfico es el más adecuado para representar la frecuencia de una variable cualitativa nominal (como el color favorito)? (R: Gráfico de barras o circular).
-  5. En una encuesta de satisfacción, 8 personas respondieron "Muy Bueno" de un total de 40. ¿Cuál es el porcentaje de esta respuesta? (R: 20%).
-* **¿Necesitas ayuda?** Construir tablas de frecuencias largas puede ser monótono y dar lugar a errores de conteo sencillos. ¡Aprende a estructurarlas con ayuda de tu tutor de forma divertida!
-
-### Lección 1.2: Histogramas y Polígonos de Frecuencia
-* **Objetivo:** Diseñar e interpretar gráficos de distribución de datos agrupados para variables cuantitativas continuas.
-* **Explicación:** Un **histograma** es un gráfico de barras verticales pegadas entre sí, donde el ancho de la barra representa el intervalo de la clase (límites reales) y la altura representa la frecuencia. El **polígono de frecuencia** se forma uniendo con líneas rectas los puntos medios (marcas de clase) de las partes superiores de las barras del histograma.
-* **Ejemplo Resuelto:** Un grupo de estudio midió la estatura en metros de 30 estudiantes y agrupó los datos en intervalos. El intervalo [1.50 - 1.60) tiene una frecuencia de 12 alumnos. ¿Cómo se dibuja esta barra en el histograma?
-  - *Paso 1:* En el eje horizontal (X), marca el inicio en 1.50 y el final en 1.60.
-  - *Paso 2:* En el eje vertical (Y), rotula las frecuencias de 1 en 1 o de 2 en 2 hasta llegar al menos a 12.
-  - *Paso 3:* Dibuja una barra que inicie exactamente en 1.50, termine en 1.60 y tenga una altura de 12 unidades.
-  - *Resultado:* Una barra rectangular de ancho 0.10 y altura 12.
-* **Errores Comunes:** Dibujar el histograma con las barras separadas (esto es un gráfico de barras para datos categóricos, no un histograma de variables continuas).
-* **Ejercicios de Práctica:**
-  1. ¿Qué representa la "marca de clase" en una tabla de datos agrupados? (R: El punto medio del intervalo. Se calcula sumando el límite inferior más el superior y dividiendo entre 2).
-  2. Si el intervalo es [20, 30), ¿cuál es su marca de clase? (R: 25).
-  3. Si la base de una barra en un histograma va de 10.5 a 15.5, ¿cuál es la amplitud del intervalo? (R: 5).
-  4. ¿Para qué tipo de datos es ideal el uso de una gráfica de sectores o pastel? (R: Para variables categóricas que representan porcentajes de un todo).
-  5. Si el polígono de frecuencias toca el eje X al inicio y al final, ¿en qué valores lo hace? (R: En las marcas de clase ficticias anterior a la primera y posterior a la última con frecuencia cero).
-* **¿Necesitas ayuda?** Interpretar gráficos estadísticos es una de las preguntas fijas del examen de matemáticas de admisión a la universidad. ¡Toma una tutoría en CEDETU y asegúrate esos puntos!
-
-### Lección 1.3: Diagramas de Caja y Bigotes (Boxplot)
-* **Objetivo:** Representar y analizar de forma visual la dispersión y asimetría de un conjunto de datos a partir de sus cinco medidas clave (mínimo, Q1, mediana, Q3 y máximo).
-* **Explicación:** Un boxplot resume gráficamente la distribución de los datos. La "caja" contiene el 50% central de los datos, delimitada por el Primer Cuartil (Q1) a la izquierda y el Tercer Cuartil (Q3) a la derecha. Una línea interna marca la Mediana (Q2). Los "bigotes" se extienden hasta el valor mínimo y máximo no atípicos.
-* **Ejemplo Resuelto:** Dados los cuartiles de un examen sobre 100 puntos: Mínimo = 40, Q1 = 55, Mediana = 70, Q3 = 85, Máximo = 95. ¿Qué porcentaje de alumnos obtuvieron una nota superior a 85 puntos?
-  - *Paso 1:* Identifica que 85 puntos corresponde al Tercer Cuartil (Q3).
-  - *Paso 2:* Por definición de cuartiles, el Q3 divide los datos dejando el 75% por debajo y el 25% por encima de su valor.
-  - *Resultado:* El 25% de los alumnos obtuvo una nota superior a 85 puntos.
-* **Errores Comunes:** Pensar que las cuatro secciones del boxplot (mínimo-Q1, Q1-mediana, mediana-Q3, Q3-máximo) tienen diferente cantidad de datos porque tienen diferente tamaño visual. Cada sección contiene exactamente el 25% de los datos.
-* **Ejercicios de Práctica:**
-  1. ¿Qué porcentaje de los datos se encuentra dentro de la "caja" de un boxplot? (R: El 50% de los datos).
-  2. ¿Cómo se calcula el Rango Intercuartílico (RIC)? (R: Restando Q3 - Q1).
-  3. Si Q1 = 12 y Q3 = 20, ¿cuánto vale el Rango Intercuartílico? (R: 8).
-  4. En un boxplot, ¿cómo se representan los datos atípicos o muy extremos? (R: Con puntos o asteriscos fuera de los límites de los bigotes).
-  5. Si la línea de la mediana está muy cerca del lado izquierdo de la caja (Q1), ¿qué nos indica sobre la asimetría de los datos? (R: Que los datos tienen una asimetría positiva o hacia la derecha).
-* **¿Necesitas ayuda?** Los cuartiles y los diagramas de caja son abstractos y difíciles de graficar a mano. ¡Un tutor de CEDETU te enseñará a dominarlos de manera interactiva y muy sencilla!
-
-## Unidad 2: Medidas de Tendencia Central
-### Lección 2.1: Media Aritmética (Promedio)
-* **Objetivo:** Calcular la media aritmética para conjuntos de datos agrupados y no agrupados, y comprender su sensibilidad ante valores extremos.
-* **Explicación:** La media (promedio) es la suma de todos los valores de la muestra dividida entre el tamaño total de la muestra ($n$).
-  * Media: $\bar{x} = \sum x_i / n$
-* **Ejemplo Resuelto:** Las notas de 5 tareas de matemáticas de un alumno son: 80, 95, 90, 40 y 95. Calcula su promedio.
-  - *Paso 1:* Suma todos los valores: 80 + 95 + 90 + 40 + 95 = 400.
-  - *Paso 2:* Divide el total de la suma entre la cantidad de tareas ($n = 5$): 400 ÷ 5 = 80.
-  - *Resultado:* La nota promedio es 80 puntos. (Nota cómo la tarea de 40 puntos jaló el promedio hacia abajo notablemente).
-* **Errores Comunes:** No dividir por el total de elementos reales, o ignorar los valores que valen cero al hacer el promedio.
-* **Ejercicios de Práctica:**
-  1. Calcula la media de los siguientes datos: 12, 15, 18, 20, 25. (R: 18. Retroalimentación: Suma = 90; n = 5; 90 / 5 = 18).
-  2. Un comerciante vende Q200 el lunes, Q350 el martes y Q650 el miércoles. ¿Cuál fue su venta promedio diaria en esos 3 días? (R: Q400).
-  3. Si el promedio de 4 exámenes es 85, ¿cuánto deben sumar las notas de los 4 exámenes en total? (R: 340 puntos. Retroalimentación: Suma = Promedio × n = 85 × 4 = 340).
-  4. Si agregas un dato extremo gigante (como 1,000) a una muestra de números entre 10 y 20, ¿qué le ocurre a la media? (R: Aumenta drásticamente. La media es muy sensible a datos atípicos).
-  5. En una oficina de 6 empleados, las edades son: 25, 28, 30, 25, 40, 26. ¿Cuál es el promedio de edad? (R: 29 años).
-* **¿Necesitas ayuda?** La media ponderada es otro concepto clave (usada para promedios de colegios y universidades). ¡Aprende a calcular tu zona académica con la guía de tu tutor de CEDETU!
-
-### Lección 2.2: Mediana (El Valor Central)
-* **Objetivo:** Determinar la mediana de un conjunto de datos ordenándolos previamente y diferenciando si el tamaño de la muestra es par o impar.
-* **Explicación:** La mediana es el valor central que divide la muestra en dos partes exactamente iguales: el 50% de los datos queda por debajo y el 50% por encima.
-  * *Paso Obligatorio:* Ordenar los datos de menor a mayor.
-  * Si $n$ es **impar**: La mediana es el dato de la posición central: $(n + 1)/2$.
-  * Si $n$ es **par**: La mediana es el promedio de los dos datos centrales del medio.
-* **Ejemplo Resuelto:** Encuentra la mediana de las siguientes velocidades: 12 m/s, 5 m/s, 20 m/s, 8 m/s, 15 m/s, 10 m/s.
-  - *Paso 1 Ordenar:* 5, 8, 10, 12, 15, 20.
-  - *Paso 2 Identificar n:* Hay 6 datos ($n$ es par).
-  - *Paso 3 Promediar los centrales:* Los dos datos del medio son 10 y 12. Mediana = (10 + 12) ÷ 2 = 11 m/s.
-  - *Resultado:* Mediana = 11 m/s.
-* **Errores Comunes:** Calcular la mediana directamente de la lista desordenada sin ordenarla previamente.
-* **Ejercicios de Práctica:**
-  1. Encuentra la mediana de: 7, 3, 9, 12, 5. (R: 7. Retroalimentación: Ordenados son 3, 5, 7, 9, 12. El del centro es 7).
-  2. Encuentra la mediana de: 150, 200, 180, 160. (R: 170. Retroalimentación: Ordenados son 150, 160, 180, 200. Promedio de 160 y 180 es 170).
-  3. Si la mediana de los salarios de una empresa es de Q4,500, ¿qué significa con respecto a los trabajadores? (R: Que el 50% de los trabajadores gana Q4,500 o menos, y el otro 50% gana Q4,500 o más).
-  4. Encuentra la mediana de: 0, 0, 1, 2, 5, 8, 10. (R: 2).
-  5. ¿Se ve afectada la mediana si cambiamos el dato más grande de una muestra por uno diez veces mayor? (R: No. La mediana es robusta y no le afectan los valores extremos atípicos).
-* **¿Necesitas ayuda?** La robustez de la mediana es un concepto hermoso de la estadística. ¡Entiéndelo perfectamente con tu tutor de CEDETU y sácate un 100!
-
-### Lección 2.3: Moda (El Valor Más Frecuente)
-* **Objetivo:** Identificar el valor o valores con mayor frecuencia absoluta y comprender cuándo una muestra es bimodal, multimodal o no tiene moda.
-* **Explicación:** La moda es simplemente el valor que ocurre con mayor frecuencia en una distribución de datos. Una muestra puede tener una única moda (unimodal), dos modas (bimodal), varias modas (multimodal) o ninguna moda si todos los datos se repiten la misma cantidad de veces (amodal).
-* **Ejemplo Resuelto:** Determina la moda de los siguientes datos de colores de camisas vendidos en un almacén de Xela: Azul, Rojo, Azul, Verde, Rojo, Azul, Negro.
-  - *Paso 1 Contar frecuencias:* Negro: 1, Verde: 1, Rojo: 2, Azul: 3.
-  - *Paso 2 Identificar el mayor:* El color con mayor frecuencia es el Azul, con 3 repeticiones.
-  - *Resultado:* Moda = Azul.
-* **Errores Comunes:** Pensar que la moda siempre es un número único, o decir que la moda es cero en lugar de "no tiene moda" cuando todos los datos se repiten igual.
-* **Ejercicios de Práctica:**
-  1. ¿Cuál es la moda de: 4, 5, 5, 6, 7, 7, 8? (R: 5 y 7. Retroalimentación: Esta muestra es bimodal).
-  2. ¿Cuál es la moda de: 10, 12, 14, 16? (R: No tiene moda. Retroalimentación: Todos los datos se repiten exactamente una vez).
-  3. En un salón de clases, las estaturas son: 1.60m, 1.65m, 1.60m, 1.70m, 1.60m, 1.65m. ¿Cuál es la moda? (R: 1.60m).
-  4. ¿Para qué tipo de variables (cualitativas o cuantitativas) es la moda la única medida de tendencia central que se puede aplicar? (R: Para variables cualitativas nominales).
-  5. Si los datos son: 3, 3, 3, 5, 5, 5, 8, 8, 8. ¿Cuál es la moda? (R: No tiene moda. Retroalimentación: Aunque se repiten 3 veces, todos tienen la misma frecuencia máxima, por lo que no hay un valor único dominante).
-* **¿Necesitas ayuda?** La moda es el dato de mayor popularidad. ¡Aprende a analizarla y graficarla en curvas de distribución con tu tutor!
-
-## Evaluación Unidad 2
-* Las edades de 7 amigos son: 12, 15, 12, 14, 13, 12, 16. Calcula la media, mediana y moda de sus edades. (R: Media = 13.0 años, Mediana = 12.0 años, Moda = 12.0 años. Retroalimentación: Suma = 91; 91/7 = 13. Ordenados: 12, 12, 12, 13, 14, 15, 16. El central es 13. El que más se repite es 12).
-* Si las notas promedio de un estudiante en 3 materias son 70, 80 y 90, pero cada materia vale diferente porcentaje (Materia 1 vale 20%, Materia 2 vale 30% y Materia 3 vale 50%), ¿cuál es su promedio ponderado real? (R: 82 puntos. Retroalimentación: Promedio = 70×0.20 + 80×0.30 + 90×0.50 = 14 + 24 + 45 = 83).
-* En un conjunto de datos ordenados de menor a mayor, el dato central es la mediana. ¿A qué percentil equivale esta medida? (R: Percentil 50. Retroalimentación: La mediana divide los datos exactamente al 50%).
-
----
-
-## Unidad 3: Medidas de Dispersión
-### Lección 3.1: Rango y Desviación Media
-* **Objetivo:** Calcular el rango total y la desviación media de una muestra para cuantificar la dispersión de los datos respecto a la media.
-* **Explicación:** 
-  * **Rango:** La diferencia entre el valor máximo y el valor mínimo: $R = \text{Máx} - \text{Mín}$.
-  * **Desviación Media (DM):** El promedio de las diferencias absolutas de cada dato respecto a la media aritmética de la muestra:
-    $\text{DM} = \sum |x_i - \bar{x}| / n$
-* **Ejemplo Resuelto:** Calcula el rango y la desviación media de los datos: 2, 4, 6 (la media de estos datos es $\bar{x} = 4$).
-  - *Paso 1 Rango:* Máximo (6) - Mínimo (2) = 4.
-  - *Paso 2 Desviaciones:*
-    * Para 2: $|2 - 4| = 2$
-    * Para 4: $|4 - 4| = 0$
-    * Para 6: $|6 - 4| = 2$
-  - *Paso 3 Desviación Media:* Promedia los valores absolutos: $(2 + 0 + 2) ÷ 3 = 4 ÷ 3 = 1.33$.
-  - *Resultado:* Rango = 4, Desviación Media = 1.33.
-* **Errores Comunes:** Olvidar aplicar el valor absoluto en la desviación media, lo que causaría que las desviaciones positivas y negativas se anularan sumando cero.
-* **Ejercicios de Práctica:**
-  1. Calcula el rango de los datos: 15, 30, 20, 85, 40. (R: 70. Retroalimentación: 85 - 15 = 70).
-  2. ¿Qué significa un rango muy pequeño en una muestra de notas de exámenes? (R: Que el grupo es muy homogéneo y casi todos obtuvieron notas similares).
-  3. Calcula la desviación media de los datos: 10 y 20 (la media es 15). (R: 5. Retroalimentación: |10-15| = 5; |20-15| = 5. Promedio = (5+5)/2 = 5).
-  4. Si todos los datos de una muestra son idénticos (ej. 5, 5, 5, 5), ¿cuánto vale su desviación media? (R: 0).
-  5. En una carrera de atletismo, el tiempo promedio es 12 segundos y la desviación media es 0.5 segundos. ¿En qué rango aproximado están la mayoría de los tiempos? (R: Entre 11.5 y 12.5 segundos).
-* **¿Necesitas ayuda?** La dispersión mide qué tan "confiables" son los promedios. ¡Comprende este concepto crucial con ayuda de tu tutor de CEDETU!
-
-### Lección 3.2: Varianza y Desviación Estándar Muestral
-* **Objetivo:** Calcular la varianza y la desviación estándar de una muestra analizando el grado de dispersión promedio de los datos elevados al cuadrado.
-* **Explicación:** La **varianza ($s^2$)** mide la dispersión promediando los cuadrados de las diferencias de cada dato respecto a la media. Para una muestra dividimos entre $n - 1$ (corrección de Bessel). La **desviación estándar ($s$)** es la raíz cuadrada de la varianza, lo que regresa la medida a las unidades originales de los datos.
-  * Varianza muestral: $s^2 = \sum (x_i - \bar{x})^2 / (n - 1)$
-  * Desviación estándar: $s = \sqrt{s^2}$
-* **Ejemplo Resuelto:** Calcula la varianza y la desviación estándar de los datos: 3, 5, 7 (la media es $\bar{x} = 5$, tamaño $n = 3$).
-  - *Paso 1 Diferencias al cuadrado:*
-    * $(3 - 5)^2 = (-2)^2 = 4$
-    * $(5 - 5)^2 = 0^2 = 0$
-    * $(7 - 5)^2 = 2^2 = 4$
-  - *Paso 2 Suma de cuadrados:* $4 + 0 + 4 = 8$.
-  - *Paso 3 Varianza (dividir entre n - 1):* $s^2 = 8 ÷ (3 - 1) = 8 ÷ 2 = 4$.
-  - *Paso 4 Desviación Estándar:* $s = \sqrt{4} = 2$.
-  - *Resultado:* Varianza = 4, Desviación Estándar = 2.
-* **Errores Comunes:** Dividir entre $n$ en lugar de $n - 1$ cuando se trata de una muestra y no de la población completa.
-* **Ejercicios de Práctica:**
-  1. Si la varianza de un conjunto de datos es 16, ¿cuál es su desviación estándar? (R: 4. Retroalimentación: √16 = 4).
-  2. Si la desviación estándar del peso de unos sacos de café es de 3 libras, ¿cuánto vale su varianza? (R: 9. Retroalimentación: 3² = 9).
-  3. Calcula la varianza muestral de los datos: 10 y 20 (la media es 15, n = 2). (R: 50. Retroalimentación: (10-15)² + (20-15)² = 25 + 25 = 50. Dividimos entre n - 1 = 1: 50/1 = 50).
-  4. Con los datos anteriores, ¿cuál es su desviación estándar? (R: 7.07. Retroalimentación: √50 = 7.07).
-  5. ¿Puede una varianza dar alguna vez un resultado negativo? (R: No. Al estar las diferencias elevadas al cuadrado, el resultado siempre es positivo o cero).
-* **¿Necesitas ayuda?** La desviación estándar es la medida de dispersión más utilizada en ciencias y finanzas. ¡Asegura tu comprensión de esta fórmula con tu tutor de CEDETU!
-
-### Lección 3.3: Coeficiente de Variación (CV)
-* **Objetivo:** Calcular el coeficiente de variación para comparar la variabilidad relativa de dos muestras que tienen diferentes unidades de medida o medias muy distintas.
-* **Explicación:** El coeficiente de variación ($CV$) expresa la desviación estándar como un porcentaje de la media aritmética. Al ser una unidad adimensional, nos permite saber con precisión cuál de dos conjuntos de datos es más homogéneo o tiene menor dispersión relativa.
-  * Coeficiente de Variación: $CV = (s / \bar{x}) \times 100\%$
-* **Ejemplo Resuelto:** Un salón de clases tiene una estatura media de 1.60 m con desviación estándar de 0.08 m. Otro salón tiene un peso medio de 50 kg con desviación estándar de 5 kg. ¿Cuál salón tiene datos más dispersos relativamente?
-  - *Paso 1 CV Estaturas:* $(0.08 ÷ 1.60) \times 100\% = 0.05 \times 100\% = 5\%$.
-  - *Paso 2 CV Pesos:* $(5 ÷ 50) \times 100\% = 0.10 \times 100\% = 10\%$.
-  - *Paso 3 Comparación:* El CV de los pesos (10%) es mayor que el de las estaturas (5%).
-  - *Resultado:* El peso de los alumnos tiene una variabilidad relativa mayor que su estatura.
-* **Errores Comunes:** Expresar el coeficiente de variación sin el símbolo de porcentaje o dividir la media entre la desviación en lugar del revés.
-* **Ejercicios de Práctica:**
-  1. Si la media es 40 y la desviación estándar es 8, ¿cuál es el coeficiente de variación? (R: 20%. Retroalimentación: (8 / 40) × 100% = 20%).
-  2. Si una muestra de salarios tiene un CV del 45% y otra del 15%, ¿cuál muestra es más homogénea? (R: La muestra con CV del 15%).
-  3. Calcula el CV si la media es 10 y la desviación estándar es 1.5. (R: 15%).
-  4. ¿Para qué sirve el coeficiente de variación en comparación con la desviación estándar común? (R: Para comparar la dispersión entre variables con diferentes unidades de medida o medias muy diferentes).
-  5. Si el CV de las ventas semanales de un negocio es de 8%, ¿indica esto una gran estabilidad en las ventas? (R: Sí. Un CV menor al 10% se considera de muy baja variabilidad o alta estabilidad).
-* **¿Necesitas ayuda?** Aprender a interpretar el coeficiente de variación te dará una ventaja analítica enorme en tus cursos de estadística. ¡Consúltalo con tu tutor de CEDETU!
-
-## Evaluación Unidad 3
-* Calcula el Rango, Varianza Muestral y Desviación Estándar de las siguientes temperaturas: 18°C, 20°C, 22°C (la media es 20°C). (R: Rango = 4°C, Varianza = 4, Desviación Estándar = 2°C. Retroalimentación: Suma de diferencias al cuadrado = (18-20)² + (20-20)² + (22-20)² = 4 + 0 + 4 = 8. Varianza = 8 / (3-1) = 4. Desviación = √4 = 2).
-* Si dos proyectos de inversión tienen el mismo rendimiento promedio del 15% anual, pero el Proyecto A tiene una desviación estándar del 2% y el Proyecto B del 8%, ¿cuál proyecto es más riesgoso y por qué? (R: El Proyecto B. Tiene mayor desviación estándar, lo que representa una mayor variabilidad y por ende mayor riesgo).
-* Si un conjunto de datos tiene una media de 50 y una desviación estándar de 5, ¿cuál es su coeficiente de variación? (R: 10%).
-`,
-
-    "geometria-plana": `# Curso: Geometría Plana
-* **Materia:** Matemáticas | **Nivel sugerido:** Secundaria / Diversificado
-* **Público objetivo:** Estudiantes de nivel básico y diversificado que desean dominar el cálculo de áreas, perímetros y razonamiento geométrico.
-* **Objetivos de aprendizaje:** Comprender las propiedades de ángulos, triángulos y círculos, aplicar el Teorema de Pitágoras y calcular áreas de figuras compuestas en terrenos y construcciones reales.
-
-## Unidad 1: Fundamentos de Geometría y Ángulos
-### Lección 1.1: Puntos, Líneas, Planos y Segmentos
-* **Objetivo:** Identificar y representar los elementos fundamentales de la geometría y operar con segmentos de recta.
-* **Explicación:** La geometría se construye sobre el punto (posición sin dimensiones), la línea (sucesión infinita de puntos) y el plano (superficie bidimensional). Un segmento es la porción de recta delimitada por dos puntos.
-* **Ejemplo Resuelto:** En una calle recta de Antigua Guatemala, hay tres faroles alineados A, B y C. Si la distancia de A a C es de 15 varas y de B a C es de 6 varas, calcula la distancia de A a B.
-  - *Paso 1:* Grafica el segmento: A-------B----C.
-  - *Paso 2:* Usa la propiedad de adición de segmentos: AB + BC = AC.
-  - *Paso 3:* Sustituye valores: AB + 6 = 15. Despeja: AB = 15 - 6 = 9 varas.
-  - *Resultado:* La distancia AB es 9 varas.
-* **Errores Comunes:** Restar mal las posiciones de los segmentos o confundir rectas (infinitas) con segmentos (finitos).
-* **Ejercicios de Práctica:**
-  1. Si M es el punto medio del segmento PQ y PQ = 24 cm, ¿cuánto mide PM? (R: 12 cm. Retroalimentación: El punto medio divide al segmento en dos partes iguales).
-  2. Si AB = 8 cm, BC = 5 cm y CD = 12 cm, y los puntos están alineados, calcula AD. (R: 25 cm).
-  3. En un segmento RT de 18 m, un punto S está situado tal que RS = 2ST. Calcula ST. (R: 6 m. Retroalimentación: 3ST = 18; ST = 6).
-  4. ¿Cuántos puntos de intersección como máximo pueden tener 3 rectas en un mismo plano? (R: 3 puntos).
-  5. ¿Cómo se define un rayo o semirrecta? (R: Línea que tiene un punto de partida pero se extiende infinitamente en una dirección).
-* **¿Necesitas ayuda?** Dibujar y visualizar segmentos es el inicio del arte geométrico. ¡Pide ayuda a tu tutor para hacer tus propias construcciones!
-
-### Lección 1.2: Clasificación y Medición de Ángulos
-* **Objetivo:** Clasificar los ángulos por su medida y resolver ecuaciones sencillas con ángulos complementarios y suplementarios.
-* **Explicación:** Un ángulo es la abertura formada por dos rayos con un origen común llamado vértice. Se clasifican en: Agudo (<90°), Recto (90°), Obtuso (>90° y <180°) y Llano (180°).
-  - **Ángulos Complementarios:** Suman 90°.
-  - **Ángulos Suplementarios:** Suman 180°.
-* **Ejemplo Resuelto:** Si el ángulo A mide 35°, calcula su ángulo complementario y suplementario.
-  - *Paso 1 Complementario:* 90° - 35° = 55°.
-  - *Paso 2 Suplementario:* 180° - 35° = 145°.
-  - *Resultado:* Complementario = 55°, Suplementario = 145°.
-* **Errores Comunes:** Confundir suplementarios (180°) con complementarios (90°).
-* **Ejercicios de Práctica:**
-  1. Encuentra el ángulo que es igual a su propio complemento. (R: 45°).
-  2. Si dos ángulos suplementarios están en relación 2:3, ¿cuánto mide el menor? (R: 72°. Retroalimentación: 2x + 3x = 180; 5x = 180; x = 36. Menor = 2*36 = 72°).
-  3. Un ángulo mide 110°. ¿De qué tipo es? (R: Obtuso).
-  4. Calcula el valor de x si dos ángulos suplementarios miden (3x + 10) y (2x - 15). (R: x = 37. Retroalimentación: 5x - 5 = 180; 5x = 185; x = 37).
-  5. ¿Cuánto mide el ángulo cóncavo que completa una vuelta entera a partir de un ángulo de 60°? (R: 300°).
-* **¿Necesitas ayuda?** Los ángulos están en todas partes, desde las esquinas de tu cuarto hasta las pendientes de los volcanes de Guatemala. ¡Repásalos con tu tutor!
-
-### Lección 1.3: Rectas Paralelas Cortadas por una Transversal
-* **Objetivo:** Identificar y calcular las medidas de los ángulos correspondientes, alternos internos, alternos externos y opuestos por el vértice formados por paralelas y una secante.
-* **Explicación:** Cuando una línea transversal corta a dos rectas paralelas, se forman 8 ángulos. Los opuestos por el vértice, correspondientes, alternos internos y alternos externos son congruentes (miden lo mismo).
-* **Ejemplo Resuelto:** Si en un cruce de paralelas, un ángulo alterno interno mide 75°, ¿cuánto mide su colindante suplementario sobre la misma recta?
-  - *Paso 1:* Los ángulos colindantes sobre una línea recta suman 180° (suplementarios).
-  - *Paso 2:* Resta 180° - 75° = 105°.
-  - *Resultado:* El ángulo suplementario mide 105°.
-* **Errores Comunes:** Creer que todos los ángulos formados miden lo mismo, en vez de comprender que solo hay dos medidas posibles en todo el sistema (que suman 180°).
-* **Ejercicios de Práctica:**
-  1. Si un ángulo de un cruce mide 120°, ¿cuánto mide su ángulo opuesto por el vértice? (R: 120°).
-  2. ¿Cómo se llaman los ángulos que están del mismo lado de la transversal y en la misma posición relativa? (R: Correspondientes).
-  3. Si un ángulo interno es 60°, ¿cuánto mide el alterno externo correspondiente a la otra paralela? (R: 60° o 120° dependiendo de la posición; alterno interno y externo complementarios suman 180°).
-  4. Si dos ángulos colaterales internos miden 2x y 3x, calcula x. (R: 36. Retroalimentación: Los colaterales internos suman 180°. 5x = 180; x = 36).
-  5. ¿Qué propiedad cumplen los ángulos correspondientes? (R: Son iguales).
-* **¿Necesitas ayuda?** Este tema es la clave para entender planos urbanos e ingeniería de carreteras. ¡Aprende el truco de la "Z" y la "F" con tu tutor de CEDETU!
-
-## Evaluación Unidad 1
-* Dos ángulos opuestos por el vértice miden 4x - 20 y 2x + 10. Calcula x y la medida de los ángulos. (R: x = 15, Ángulo = 40°. Retroalimentación: 4x - 20 = 2x + 10; 2x = 30; x = 15).
-* Si el suplemento de un ángulo es el triple de su complemento, ¿cuánto mide el ángulo? (R: 45°. Retroalimentación: 180 - x = 3(90 - x); 180 - x = 270 - 3x; 2x = 90; x = 45).
-* En un cruce de paralelas por una secante, si un ángulo conjugado interno mide 130°, ¿cuánto mide el otro? (R: 50°).
-
----
-
-## Unidad 2: Triángulos y el Teorema de Pitágoras
-### Lección 2.1: Clasificación de Triángulos y Ángulos Internos
-* **Objetivo:** Clasificar triángulos por sus lados y ángulos, y aplicar el teorema de que la suma de los ángulos internos de todo triángulo es siempre 180°.
-* **Explicación:** Triángulos por lados: Equilátero (3 lados iguales), Isósceles (2 iguales) y Escaleno (ninguno igual). Por ángulos: Acutángulo (agudos), Rectángulo (un ángulo recto de 90°) y Obtusángulo (un ángulo obtuso). La suma de los tres ángulos internos siempre es exactamente 180°.
-* **Ejemplo Resuelto:** En un triángulo de un techo de una casa en Tecpán, dos de sus ángulos internos miden 50° y 70°. Calcula el tercer ángulo.
-  - *Paso 1:* Plantea la ecuación: A + B + C = 180°.
-  - *Paso 2:* Sustituye los conocidos: 50° + 70° + C = 180° => 120° + C = 180°.
-  - *Paso 3:* Despeja C: C = 180° - 120° = 60°.
-  - *Resultado:* El tercer ángulo mide 60°.
-* **Errores Comunes:** Olvidar que un triángulo equilátero tiene siempre sus tres ángulos internos iguales a 60°.
-* **Ejercicios de Práctica:**
-  1. ¿Cuánto mide cada uno de los ángulos de un triángulo equilátero? (R: 60°).
-  2. Si un triángulo isósceles tiene un ángulo de 100° en el vértice desigual, ¿cuánto mide cada uno de los otros dos ángulos de la base? (R: 40° cada uno. Retroalimentación: (180 - 100) / 2 = 40°).
-  3. En un triángulo rectángulo, ¿cuánto suman los dos ángulos agudos? (R: 90°).
-  4. Los ángulos de un triángulo son proporcionales a 1, 2 y 3. ¿Cuánto mide el mayor? (R: 90°. Retroalimentación: x + 2x + 3x = 180; 6x = 180; x = 30. El mayor mide 3*30 = 90°).
-  5. ¿Es posible construir un triángulo cuyos lados midan 3 cm, 4 cm y 8 cm? (R: No. Retroalimentación: Por desigualdad triangular, la suma de los dos lados menores debe ser mayor que el tercero: 3 + 4 = 7, que es menor que 8).
-* **¿Necesitas ayuda?** Las propiedades de los triángulos son las bases de las estructuras de puentes y techados estables. ¡Domínalos hoy mismo con tu tutor!
-
-### Lección 2.2: El Teorema de Pitágoras y sus Aplicaciones
-* **Objetivo:** Calcular la hipotenusa o un cateto de un triángulo rectángulo aplicando la fórmula fundamental $a^2 + b^2 = c^2$.
-* **Explicación:** En todo triángulo rectángulo, el cuadrado de la longitud de la hipotenusa (el lado más largo opuesto al ángulo recto) es igual a la suma de los cuadrados de los catetos: $c = sqrt{a^2 + b^2}$.
-* **Ejemplo Resuelto:** Para pintar una pared alta de una casa en Xela, se apoya una escalera de 5 metros contra la pared. Si la base de la escalera está a 3 metros de la pared, ¿a qué altura llega la escalera?
-  - *Paso 1:* Identifica los datos. Hipotenusa (c) = 5 m. Cateto (a) = 3 m. Debemos hallar el cateto b (altura).
-  - *Paso 2:* Despeja b del teorema: $b = sqrt{c^2 - a^2}$.
-  - *Paso 3:* Sustituye y opera: $b = sqrt{5^2 - 3^2} = sqrt{25 - 9} = sqrt{16} = 4$ metros.
-  - *Resultado:* La escalera alcanza una altura de 4 metros.
-* **Errores Comunes:** Sumar siempre los cuadrados, incluso cuando lo que se está buscando es un cateto y no la hipotenusa.
-* **Ejercicios de Práctica:**
-  1. Calcula la hipotenusa si los catetos miden 6 cm y 8 cm. (R: 10 cm).
-  2. Si un televisor mide 12 pulgadas de ancho y 9 pulgadas de alto, ¿de cuántas pulgadas es su diagonal? (R: 15 pulgadas).
-  3. Calcula el cateto faltante si la hipotenusa es 13 cm y un cateto mide 5 cm. (R: 12 cm).
-  4. Un poste de luz de 8 metros está sujeto por un cable tensor de 10 metros anclado al suelo. ¿A qué distancia del poste se ancla el cable? (R: 6 metros).
-  5. Si un cuadrado tiene lados de 2 cm, ¿cuánto mide su diagonal? (R: 2.83 cm. Retroalimentación: d = √2² + 2² = √8 ≈ 2.83).
-* **¿Necesitas ayuda?** El Teorema de Pitágoras es la herramienta matemática más útil del mundo real. ¡Conéctate con tu tutor de CEDETU para repasar ejercicios prácticos paso a paso!
-
-### Lección 2.3: Congruencia y Semejanza de Triángulos
-* **Objetivo:** Resolver problemas de medición indirecta utilizando los criterios de congruencia y semejanza de triángulos.
-* **Explicación:** Dos triángulos son **congruentes** (idénticos) si tienen igual tamaño y forma. Son **semejantes** si tienen la misma forma pero diferente tamaño; sus lados correspondientes son proporcionales y sus ángulos iguales.
-* **Ejemplo Resuelto:** Un árbol en el parque de Antigua Guatemala proyecta una sombra de 15 metros a la misma hora en que una persona de 1.80 metros de estatura proyecta una sombra de 3 metros. Calcula la altura del árbol.
-  - *Paso 1:* Los triángulos formados por la luz del sol son semejantes.
-  - *Paso 2:* Plantea la proporción: Altura Árbol / Altura Persona = Sombra Árbol / Sombra Persona.
-  - *Paso 3:* Reemplaza: H / 1.80 = 15 / 3 => H / 1.80 = 5.
-  - *Paso 4:* Despeja H: H = 5 × 1.80 = 9 metros.
-  - *Resultado:* El árbol mide 9 metros de altura.
-* **Errores Comunes:** Mezclar la posición de los lados correspondientes al armar la fracción proporcional.
-* **Ejercicios de Práctica:**
-  1. Si dos triángulos son semejantes en razón 1:3 y el perímetro del menor es 15 cm, ¿cuál es el perímetro del mayor? (R: 45 cm).
-  2. ¿Qué criterio de semejanza se cumple si dos triángulos tienen sus tres ángulos correspondientes iguales? (R: Ángulo-Ángulo-Ángulo (AAA)).
-  3. Los lados de un triángulo miden 4, 6 y 8 cm. Si un triángulo semejante tiene un lado menor de 12 cm, ¿cuánto mide su lado mayor? (R: 24 cm. Retroalimentación: La razón de semejanza es 12/4 = 3. Mayor = 8 * 3 = 24).
-  4. ¿Cuál es el significado de congruencia en geometría? (R: Que las figuras tienen la misma forma y el mismo tamaño exacto).
-  5. Un bastón de 1 metro plantado verticalmente proyecta una sombra de 1.5 metros. ¿Qué sombra proyectará un poste de 6 metros a la misma hora? (R: 9 metros).
-* **¿Necesitas ayuda?** La semejanza de triángulos te permite medir montañas y edificios sin moverte del suelo. ¡Aprende sus aplicaciones con tu tutor!
-
-## Evaluación Unidad 2
-* Los lados de un terreno rectangular miden 15 metros y 20 metros. ¿Cuánto mide el sendero que cruza diagonalmente de una esquina a otra? (R: 25 metros. Retroalimentación: d = √15² + 20² = √225 + 400 = √625 = 25).
-* Si un triángulo isósceles tiene lados congruentes de 13 cm y una base de 10 cm, calcula su altura con respecto a la base. (R: 12 cm. Retroalimentación: La altura divide la base en dos de 5 cm. h = √13² - 5² = 12).
-* Si dos triángulos semejantes tienen áreas en razón 1:4, ¿en qué razón están sus lados? (R: 1:2. Retroalimentación: Las áreas de figuras semejantes varían con el cuadrado de la razón de sus lados).
-
----
-
-## Unidad 3: Áreas, Perímetros y Polígonos
-### Lección 3.1: Perímetro y Área de Cuadriláteros
-* **Objetivo:** Calcular el perímetro y área de rectángulos, cuadrados, rombos y trapecios utilizando las fórmulas correspondientes.
-* **Explicación:** 
-  - **Cuadrado:** Perímetro $P = 4L$, Área $A = L^2$.
-  - **Rectángulo:** $P = 2b + 2h$, $A = b 	imes h$.
-  - **Trapecio:** $A = rac{(B + b) 	imes h}{2}$ donde B es base mayor y b base menor.
-* **Ejemplo Resuelto:** Un terreno rectangular en Escuintla mide 40 metros de largo por 25 metros de ancho. Si se quiere circular con tres vueltas de alambre de púas, ¿cuántos metros de alambre se necesitan?
-  - *Paso 1 Perímetro:* $P = 2(40) + 2(25) = 80 + 50 = 130$ metros.
-  - *Paso 2 Tres Vueltas:* $130 	imes 3 = 390$ metros.
-  - *Resultado:* Se necesitan 390 metros de alambre.
-* **Errores Comunes:** Confundir la suma de lados (perímetro) con la multiplicación de lados (área).
-* **Ejercicios de Práctica:**
-  1. Calcula el área de un cuadrado cuyo perímetro mide 36 cm. (R: 81 cm². Retroalimentación: Lado = 36/4 = 9 cm; Área = 9² = 81).
-  2. Un trapecio tiene bases de 12 cm y 8 cm, y una altura de 5 cm. ¿Cuál es su área? (R: 50 cm²).
-  3. Calcula el área de un rombo cuyas diagonales miden 10 cm y 16 cm. (R: 80 cm². Retroalimentación: A = (D * d) / 2 = 160 / 2 = 80).
-  4. Si un rectángulo tiene un área de 48 m² y su base mide 8 m, ¿cuánto mide su perímetro? (R: 28 metros. Retroalimentación: Altura = 48/8 = 6 m. Perímetro = 2(8+6) = 28).
-  5. ¿Cuánto vale el perímetro de un rombo cuyos lados miden 7 cm cada uno? (R: 28 cm).
-* **¿Necesitas ayuda?** Saber calcular áreas de terrenos es vital para cualquier negocio o proyecto constructivo. ¡Entrena estas habilidades con tu tutor!
-
-### Lección 3.2: Perímetro y Área del Círculo
-* **Objetivo:** Calcular la circunferencia y el área de un círculo utilizando el número Pi ($pi approx 3.1416$) dada su longitud de radio o diámetro.
-* **Explicación:** Un círculo es la región delimitada por una circunferencia.
-  - **Circunferencia (Perímetro):** $C = 2pi r$ o $C = pi d$.
-  - **Área:** $A = pi r^2$.
-* **Ejemplo Resuelto:** Una plaza circular en Quetzaltenango tiene un diámetro de 20 metros. Calcula su área y la longitud del borde de la plaza.
-  - *Paso 1 Radio:* El radio es la mitad del diámetro: $r = 10$ metros.
-  - *Paso 2 Área:* $A = pi 	imes 10^2 = 100 	imes 3.1416 = 314.16$ metros cuadrados.
-  - *Paso 3 Borde:* $C = 2pi 	imes 10 = 20 	imes 3.1416 = 62.83$ metros.
-  - *Resultado:* Área = 314.16 m², Borde = 62.83 m.
-* **Errores Comunes:** Elevar el diámetro al cuadrado en la fórmula de área en lugar de usar el radio.
-* **Ejercicios de Práctica:**
-  1. Calcula la circunferencia de un círculo con radio de 7 cm. (R: 43.98 cm).
-  2. Si la circunferencia de un neumático mide 188.4 cm, ¿cuánto mide su diámetro aproximado? (R: 60 cm. Retroalimentación: d = C/π = 188.4 / 3.14 = 60).
-  3. Calcula el área de un círculo cuyo radio mide 5 cm. (R: 78.54 cm²).
-  4. Si duplicamos el radio de un círculo, ¿cuántas veces aumenta su área? (R: 4 veces. Retroalimentación: El área es proporcional al cuadrado del radio).
-  5. ¿Cuál es el área de un semicírculo cuyo radio mide 4 cm? (R: 25.13 cm². Retroalimentación: Área del círculo = 50.26 cm²; mitad = 25.13).
-* **¿Necesitas ayuda?** Pi es el número más misterioso y fascinante de las matemáticas. ¡Explora todas sus propiedades y aplicaciones junto a tu tutor!
-
-### Lección 3.3: Área de Figuras Compuestas
-* **Objetivo:** Calcular el área de regiones complejas dividiéndolas en figuras elementales conocidas (rectángulos, triángulos y círculos).
-* **Explicación:** En la vida cotidiana, los terrenos o piezas arquitectónicas no son perfectos rectángulos o círculos. Para calcular su área total, los descomponemos en partes más sencillas y sumamos (o restamos si hay vacíos) las áreas correspondientes.
-* **Ejemplo Resuelto:** Una ventana tiene forma rectangular de 2 metros de alto por 1.2 metros de ancho, coronada por un semicírculo en la parte superior. Calcula el área total de la ventana.
-  - *Paso 1 Rectángulo:* $A_1 = b 	imes h = 1.2 	imes 2 = 2.4$ metros cuadrados.
-  - *Paso 2 Semicírculo:* El diámetro es el ancho de la ventana ($1.2$ m), por lo que el radio es $r = 0.6$ m.
-    $A_2 = rac{pi r^2}{2} = rac{3.1416 	imes 0.36}{2} = 0.565$ metros cuadrados.
-  - *Paso 3 Suma:* $A_{	ext{total}} = 2.4 + 0.565 = 2.965$ metros cuadrados.
-  - *Resultado:* El área total de la ventana es 2.97 m².
-* **Errores Comunes:** Olvidar dividir entre dos las áreas correspondientes a semicírculos o triángulos parciales.
-* **Ejercicios de Práctica:**
-  1. Un terreno rectangular mide 10 m x 6 m, y tiene una piscina circular de 2 m de radio en el centro. ¿Cuál es el área transitable del jardín? (R: 47.43 m². Retroalimentación: Área Jardín = 60 - π(2²) ≈ 60 - 12.57 = 47.43).
-  2. Calcula el área de una figura formada por un cuadrado de 4 cm de lado con un triángulo equilátero acoplado a uno de sus lados. (R: 22.93 cm². Retroalimentación: Área Cuadrado = 16; Área Triángulo = (√3/4)*4² ≈ 6.93. Total = 22.93).
-  3. Se tiene un marco rectangular exterior de 8 cm x 10 cm e interior de 6 cm x 8 cm. ¿Cuál es el área del marco de madera? (R: 32 cm²).
-  4. Una loseta tiene la forma de un rectángulo de 10 cm x 15 cm al que se le han recortado cuatro esquinas cuadradas de 2 cm de lado cada una. ¿Cuál es el área final? (R: 134 cm². Retroalimentación: 150 - 4(4) = 134).
-  5. ¿Cómo se calcula el área de una corona circular? (R: Restando el área del círculo menor del área del círculo mayor).
-* **¿Necesitas ayuda?** La geometría de figuras compuestas requiere una excelente visión espacial. ¡Desarróllala hoy con herramientas interactivas al lado de tu tutor de CEDETU!
-
-## Evaluación Unidad 3
-* Un agricultor compra un terreno que consiste en un trapecio con bases de 80 m y 120 m, y una altura de 50 m. Si la hectárea de tierra cuesta Q20,000, ¿cuánto pagó en total? (Nota: 1 hectárea = 10,000 m²). (R: Q10,000. Retroalimentación: Área Trapecio = (120+80)*50/2 = 5,000 m² = 0.5 hectáreas. Costo = 0.5 * 20,000 = Q10,000).
-* Calcula el área sombreada de un círculo de radio 6 cm inscrito en un cuadrado. (R: 7.73 cm². Retroalimentación: Área Cuadrado (lado 12) = 144 cm²; Área Círculo = π(6²) = 113.1 cm²; Área esquinas = 144 - 113.1 = 30.9 cm²; el área de una sola esquina es 30.9 / 4 ≈ 7.73).
-* ¿Cuál es el perímetro de un triángulo equilátero que tiene la misma área que un rectángulo de base 9 cm y altura 4 cm? (R: No se puede calcular directamente sin conocer la altura del triángulo, pero se puede resolver aplicando h = (√3/2)*L. L ≈ 9.12 cm. Perímetro ≈ 27.35 cm).
-`,
-
-    "trigonometria-fundamental": `# Curso: Trigonometría Fundamental
-* **Materia:** Matemáticas | **Nivel sugerido:** Diversificado
-* **Público objetivo:** Estudiantes de último año de secundaria y bachillerato que se preparan para ingresar a carreras científicas o técnicas.
-* **Objetivos de aprendizaje:** Dominar las razones trigonométricas, resolver cualquier tipo de triángulo rectángulo u oblicuángulo usando leyes de senos y cosenos, y verificar identidades fundamentales.
-
-## Unidad 1: Razones Trigonométricas en el Triángulo Rectángulo
-### Lección 1.1: Seno, Coseno y Tangente (SOH-CAH-TOA)
-* **Objetivo:** Definir y calcular las razones seno, coseno y tangente a partir de los lados de un triángulo rectángulo.
-* **Explicación:** En un triángulo rectángulo, respecto a un ángulo agudo $	heta$:
-  - **Seno (sen):** Cateto Opuesto / Hipotenusa (SOH)
-  - **Coseno (cos):** Cateto Adyacente / Hipotenusa (CAH)
-  - **Tangente (tan):** Cateto Opuesto / Cateto Adyacente (TOA)
-* **Ejemplo Resuelto:** En un triángulo rectángulo con catetos de 3 cm y 4 cm, calcula el seno y coseno del ángulo menor (opuesto al lado de 3 cm).
-  - *Paso 1:* Calcula la hipotenusa: $h = sqrt{3^2 + 4^2} = 5$ cm.
-  - *Paso 2:* Cateto opuesto al ángulo es 3 cm. Cateto adyacente es 4 cm.
-  - *Paso 3:* $operatorname{sen}(	heta) = 3/5 = 0.60$. $cos(	heta) = 4/5 = 0.80$.
-  - *Resultado:* $operatorname{sen}(	heta) = 0.6$, $cos(	heta) = 0.8$.
-* **Errores Comunes:** Confundir el cateto opuesto con el adyacente debido a un mal posicionamiento visual del ángulo de referencia.
-* **Ejercicios de Práctica:**
-  1. Si en un triángulo rectángulo la hipotenusa es 13 y el cateto opuesto a un ángulo A es 5, ¿cuál es el valor de cos(A)? (R: 12/13. Retroalimentación: Cateto adyacente = √13² - 5² = 12).
-  2. ¿Cuál es el valor de la tangente si el seno es 0.6 y el coseno es 0.8? (R: 0.75. Retroalimentación: tan = sen/cos = 0.6/0.8 = 0.75).
-  3. Si la tangente de un ángulo es 1, ¿qué nos dice sobre los catetos del triángulo? (R: Que el cateto opuesto y el adyacente miden exactamente lo mismo).
-  4. Calcula sen(B) si los catetos de un triángulo miden 5 y 12 cm, y B es el ángulo opuesto al lado de 12 cm. (R: 12/13).
-  5. En un triángulo rectángulo, ¿cuál es el valor máximo posible para el seno o coseno de cualquier ángulo agudo? (R: Menor a 1. Retroalimentación: La hipotenusa siempre es mayor que los catetos).
-* **¿Necesitas ayuda?** La regla SOH-CAH-TOA es la llave que abre toda la trigonometría. ¡Practica su memorización con la guía interactiva de tu tutor!
-
-### Lección 1.2: Razones Recíprocas (Cosecante, Secante, Cotangente)
-* **Objetivo:** Definir e identificar las razones cosecante, secante y cotangente como los recíprocos de las funciones trigonométricas básicas.
-* **Explicación:** Las razones recíprocas se definen como la división inversa de los lados correspondientes:
-  - **Cosecante ($csc$):** Hipotenusa / Cateto Opuesto = $1/operatorname{sen}(	heta)$
-  - **Secante ($sec$):** Hipotenusa / Cateto Adyacente = $1/cos(	heta)$
-  - **Cotangente ($operatorname{cot}$):** Cateto Adyacente / Cateto Opuesto = $1/	an(	heta)$
-* **Ejemplo Resuelto:** Si el $cos(	heta) = 5/13$, calcula la $sec(	heta)$ y la $csc(	heta)$ (sabiendo que el cateto opuesto es 12).
-  - *Paso 1 Secante:* Es el recíproco del coseno: $sec(	heta) = 1 / (5/13) = 13/5$.
-  - *Paso 2 Cosecante:* Necesitamos el seno primero. $operatorname{sen}(	heta) = 	ext{Opuesto}/	ext{Hipotenusa} = 12/13$.
-  - *Paso 3:* El recíproco es $csc(	heta) = 13/12$.
-  - *Resultado:* $sec(	heta) = 13/5$, $csc(	heta) = 13/12$.
-* **Errores Comunes:** Emparejar incorrectamente la secante con el seno y la cosecante con el coseno por similitud del nombre inicial.
-* **Ejercicios de Práctica:**
-  1. Si tan(A) = 3/4, ¿cuál es el valor de la cotangente de A? (R: 4/3).
-  2. Si sen(x) = 1/2, ¿cuánto vale la cosecante de x? (R: 2).
-  3. Calcula la sec(y) si el cateto adyacente es 8 cm y la hipotenusa es 10 cm. (R: 5/4. Retroalimentación: sec = Hipotenusa / Adyacente = 10/8 = 5/4).
-  4. ¿Cuál es el producto de sen(A) por csc(A)? (R: 1. Retroalimentación: Al ser recíprocas, su multiplicación siempre es exactamente 1).
-  5. Si cos(θ) = 0.8, calcula sec(θ). (R: 1.25. Retroalimentación: 1 / 0.8 = 5/4 = 1.25).
-* **¿Necesitas ayuda?** Las razones recíprocas suelen olvidarse con facilidad si no se practican regularmente. ¡Asegura tus conocimientos programando una tutoría en CEDETU!
-
-### Lección 1.3: Ángulos Notables (30°, 45°, 60°) sin Calculadora
-* **Objetivo:** Deducir y memorizar las razones trigonométricas para los ángulos de 30°, 45° y 60° a partir de triángulos geométricos básicos.
-* **Explicación:** 
-  - **Triángulo 45°-45°:** Catetos = 1, Hipotenusa = $sqrt{2}$. $operatorname{sen}(45^{circ}) = cos(45^{circ}) = rac{sqrt{2}}{2}$, $	an(45^{circ}) = 1$.
-  - **Triángulo 30°-60°:** Cateto menor = 1, hipotenusa = 2, cateto mayor = $sqrt{3}$.
-    - $operatorname{sen}(30^{circ}) = 1/2$, $cos(30^{circ}) = rac{sqrt{3}}{2}$.
-    - $operatorname{sen}(60^{circ}) = rac{sqrt{3}}{2}$, $cos(60^{circ}) = 1/2$.
-* **Ejemplo Resuelto:** Calcula el valor exacto de la expresión: $operatorname{sen}(30^{circ}) + cos(60^{circ}) 	imes 	an(45^{circ})$.
-  - *Paso 1:* Reemplaza las constantes trigonométricas: $operatorname{sen}(30^{circ}) = 1/2$, $cos(60^{circ}) = 1/2$, $	an(45^{circ}) = 1$.
-  - *Paso 2:* Realiza la operación siguiendo la jerarquía: $1/2 + (1/2 	imes 1) = 1/2 + 1/2 = 1$.
-  - *Resultado:* El valor exacto es 1.
-* **Errores Comunes:** Depender totalmente de la calculadora y no saber trabajar con valores exactos en términos de fracciones y raíces cuadradas en los exámenes universitarios.
-* **Ejercicios de Práctica:**
-  1. ¿Cuál es el valor exacto de tan(60°)? (R: √3).
-  2. Resuelve: cos(45°) * sen(45°). (R: 1/2. Retroalimentación: (√2/2) * (√2/2) = 2/4 = 1/2).
-  3. Calcula el valor exacto de csc(30°). (R: 2).
-  4. ¿Para qué ángulo notable agudo el seno y el coseno valen exactamente lo mismo? (R: 45°).
-  5. Resuelve: tan(30°) * cot(30°). (R: 1).
-* **¿Necesitas ayuda?** Aprende la "regla de la mano" para calcular senos y cosenos notables mentalmente y en menos de 5 segundos. ¡Pregúntale a tu tutor!
-
-## Evaluación Unidad 1
-* En un triángulo rectángulo, un ángulo mide 30° y la hipotenusa mide 10 metros. Calcula la longitud de ambos catetos de forma exacta. (R: Cateto Opuesto = 5 m, Cateto Adyacente = 5√3 m ≈ 8.66 m. Retroalimentación: Opuesto = 10 * sen(30°) = 5; Adyacente = 10 * cos(30°) = 5√3).
-* Si sen(x) = 3/5, calcula el valor de cos²(x) - sen²(x). (R: 7/25. Retroalimentación: Si sen(x) = 3/5, cos(x) = 4/5. La expresión queda: (16/25) - (9/25) = 7/25).
-* Resuelve sin usar calculadora: [tan(45°) + sen(30°)] / cos(0°). (R: 1.5. Retroalimentación: [1 + 0.5] / 1 = 1.5).
-
----
-
-## Unidad 2: El Círculo Unitario y Funciones Trigonométricas
-### Lección 2.1: Radianes y Conversión de Ángulos
-* **Objetivo:** Definir el radián como la unidad natural del ángulo y realizar conversiones fluidas entre grados y radianes utilizando el factor $pi = 180^{circ}$.
-* **Explicación:** Un radián es el ángulo subtendido por un arco de circunferencia cuya longitud es igual al radio. Una vuelta entera a la circunferencia equivale a $360^{circ}$ o $2pi$ radianes. El factor de conversión es: $180^{circ} = pi 	ext{ rad}$.
-* **Ejemplo Resuelto:** Convierte $120^{circ}$ a radianes de forma simplificada en términos de $pi$.
-  - *Paso 1:* Multiplica los grados por el factor $rac{pi 	ext{ rad}}{180^{circ}}$: $120 	imes rac{pi}{180}$.
-  - *Paso 2:* Simplifica la fracción dividiendo entre 60 arriba y abajo: $rac{120}{180} = rac{2}{3}$.
-  - *Resultado:* $120^{circ}$ equivale a $rac{2pi}{3}$ radianes.
-* **Errores Comunes:** Colocar el 180 arriba y el Pi abajo en el factor de conversión por error, multiplicando en vez de dividir.
-* **Ejercicios de Práctica:**
-  1. Convierte 45° a radianes. (R: π/4 rad).
-  2. Convierte 3π/2 radianes a grados sexagesimales. (R: 270°).
-  3. ¿A cuántos grados equivale exactamente 1 radián? (R: Aproximadamente 57.3°).
-  4. Convierte 150° a radianes en su forma más simple. (R: 5π/6 rad).
-  5. Expresa en radianes el ángulo de un giro completo. (R: 2π rad).
-* **¿Necesitas ayuda?** Los radianes son obligatorios en cálculo avanzado e ingeniería. ¡Aprende a dominarlos de manera intuitiva y visual con tu tutor!
-
-### Lección 2.2: Definición en el Círculo Unitario
-* **Objetivo:** Definir las razones trigonométricas para cualquier ángulo en el plano cartesiano utilizando el círculo de radio $r = 1$.
-* **Explicación:** El círculo unitario es un círculo centrado en el origen (0,0) con radio igual a 1. Para cualquier ángulo $	heta$ en posición normal, las coordenadas del punto de intersección $(x, y)$ con el círculo son:
-  - $x = cos(	heta)$
-  - $y = operatorname{sen}(	heta)$
-  Esto extiende la trigonometría a ángulos mayores de 90° y negativos.
-* **Ejemplo Resuelto:** Determina los valores exactos del seno y coseno para $	heta = 180^{circ}$ utilizando el círculo unitario.
-  - *Paso 1:* Dibuja el círculo de radio 1.
-  - *Paso 2:* Ubica el ángulo de 180° (media vuelta hacia la izquierda). Las coordenadas del punto en el círculo son $(-1, 0)$.
-  - *Paso 3:* Dado que $x = cos(	heta)$ y $y = operatorname{sen}(	heta)$, extraemos: $cos(180^{circ}) = -1$ y $operatorname{sen}(180^{circ}) = 0$.
-  - *Resultado:* $cos(180^{circ}) = -1$, $operatorname{sen}(180^{circ}) = 0$.
-* **Errores Comunes:** Equivocarse con los signos positivo/negativo de las funciones trigonométricas en los cuadrantes II, III y IV.
-* **Ejercicios de Práctica:**
-  1. ¿En qué cuadrantes el seno de un ángulo es positivo? (R: Cuadrantes I y II).
-  2. ¿Cuál es el valor del coseno de 90°? (R: 0. Retroalimentación: Las coordenadas a 90° son (0,1)).
-  3. Calcula el valor de tan(270°). (R: No está definido. Retroalimentación: tan = sen/cos = -1/0, lo cual es una división por cero).
-  4. ¿Qué signo tiene la tangente de un ángulo situado en el tercer cuadrante (III)? (R: Positivo. Retroalimentación: Tanto seno como coseno son negativos, por lo que su cociente es positivo).
-  5. Halla el valor exacto de sen(300°). (R: -√3/2. Retroalimentación: Está en el IV cuadrante con un ángulo de referencia de 60°).
-* **¿Necesitas ayuda?** El círculo unitario te permite resumir toda la trigonometría en un solo esquema mental. ¡Dibújalo paso a paso junto a tu tutor!
-
-### Lección 2.3: Gráficas de Seno y Coseno
-* **Objetivo:** Graficar las funciones trigonométricas analizando su amplitud, periodo y desfases.
-* **Explicación:** Las funciones seno y coseno son periódicas y tienen una forma de onda (sinusoidal).
-  - **Amplitud (A):** Altura máxima desde la línea central.
-  - **Periodo (T):** Intervalo necesario para completar un ciclo completo ($2pi$ para las funciones básicas).
-  - La ecuación general es: $y = A operatorname{sen}(B(x - C)) + D$.
-* **Ejemplo Resuelto:** Determina la amplitud y el periodo de la función periódica: $y = 3 operatorname{sen}(2x)$.
-  - *Paso 1 Amplitud:* El coeficiente que acompaña a la función es 3, por lo tanto, la amplitud $A = 3$.
-  - *Paso 2 Periodo:* Usamos la fórmula: $T = 2pi / B$. Aquí $B = 2$.
-  - *Paso 3:* $T = 2pi / 2 = pi$.
-  - *Resultado:* Amplitud = 3, Periodo = $pi$.
-* **Errores Comunes:** Confundir el coeficiente $B$ directamente con el periodo, en lugar de realizar la división respectiva.
-* **Ejercicios de Práctica:**
-  1. ¿Cuál es el periodo de la función básica y = cos(x)? (R: 2π).
-  2. Determina la amplitud de y = -5 cos(x). (R: 5. Retroalimentación: La amplitud siempre es un valor absoluto positivo).
-  3. ¿Cuál es el periodo de la función y = sen(x/2)? (R: 4π. Retroalimentación: T = 2π / (1/2) = 4π).
-  4. ¿En qué punto interseca al eje Y la gráfica de la función básica y = sen(x)? (R: En el origen (0,0)).
-  5. ¿En qué punto interseca al eje Y la gráfica de la función y = cos(x)? (R: En el punto (0,1)).
-* **¿Necesitas ayuda?** Las gráficas de ondas modelan desde el sonido musical hasta las señales de telecomunicaciones y electricidad. ¡Aprende a graficarlas con tu tutor de CEDETU!
-
-## Evaluación Unidad 2
-* Convierte a grados sexagesimales el ángulo de 5π/4 radianes. (R: 225°. Retroalimentación: 5 * 180 / 4 = 225°).
-* Si un péndulo describe un arco de 10 cm con un brazo de 20 cm, ¿cuál es el ángulo de oscilación en radianes? (R: 0.5 radianes. Retroalimentación: Ángulo θ = Arco / Radio = 10 / 20 = 0.5 rad).
-* Halla la amplitud y el periodo de la función: y = 2 cos(3x - π). (R: Amplitud = 2, Periodo = 2π/3).
-
----
-
-## Unidad 3: Leyes de Senos, Cosenos e Identidades
-### Lección 3.1: Ley de Senos
-* **Objetivo:** Resolver triángulos oblicuángulos utilizando la Ley de Senos cuando se conocen dos ángulos y un lado o dos lados y el ángulo opuesto.
-* **Explicación:** En cualquier triángulo de lados $a, b, c$ y ángulos opuestos $A, B, C$, se cumple la relación de proporcionalidad:
-  $rac{a}{operatorname{sen}(A)} = rac{b}{operatorname{sen}(B)} = rac{c}{operatorname{sen}(C)}$
-* **Ejemplo Resuelto:** Dos guardabosques en el Parque Nacional Tikal detectan una columna de humo en un punto C. Si el guardabosques A y B están separados por 10 km, y los ángulos medidos son $A = 40^{circ}$ y $B = 60^{circ}$, calcula la distancia desde el guardabosques A al incendio (lado b).
-  - *Paso 1 Tercer Ángulo:* $C = 180^{circ} - (40^{circ} + 60^{circ}) = 80^{circ}$.
-  - *Paso 2 Plantea Ley:* $rac{b}{operatorname{sen}(60^{circ})} = rac{10}{operatorname{sen}(80^{circ})}$.
-  - *Paso 3 Despeja b:* $b = rac{10 	imes operatorname{sen}(60^{circ})}{operatorname{sen}(80^{circ})} = rac{10 	imes 0.866}{0.984} approx 8.8 	ext{ km}$.
-  - *Resultado:* La distancia es de 8.8 km.
-* **Errores Comunes:** Intentar aplicar la ley de senos cuando no se conoce ninguna pareja completa de lado y su correspondiente ángulo opuesto.
-* **Ejercicios de Práctica:**
-  1. En un triángulo, a = 12 cm, A = 30° y B = 45°. Calcula b. (R: 12√2 cm ≈ 16.97 cm).
-  2. ¿Cuándo es ideal utilizar la Ley de Senos en lugar de la Ley de Cosenos? (R: Cuando se conocen dos ángulos y cualquier lado, o dos lados y el ángulo opuesto a uno de ellos).
-  3. Si sen(A) = 0.5, sen(B) = 0.8 y el lado a mide 10 cm, ¿cuánto mide el lado b? (R: 16 cm).
-  4. En un triángulo, b = 5 cm, B = 60° y C = 30°. Calcula el lado c. (R: 2.89 cm. Retroalimentación: c = 5 * sen(30°) / sen(60°) = 2.5 / 0.866 ≈ 2.89).
-  5. ¿Qué ley se debe usar si se conocen los tres lados de un triángulo? (R: La Ley de Cosenos).
-* **¿Necesitas ayuda?** La resolución de triángulos es una habilidad clave en la topografía y cartografía escolar. ¡Pide ayuda a tu tutor y domínala por completo!
-
-### Lección 3.2: Ley de Cosenos
-* **Objetivo:** Resolver triángulos oblicuángulos utilizando la Ley de Cosenos cuando se conocen dos lados y el ángulo comprendido entre ellos, o los tres lados del triángulo.
-* **Explicación:** La Ley de Cosenos es una generalización del Teorema de Pitágoras para cualquier triángulo:
-  $c^2 = a^2 + b^2 - 2ab cos(C)$
-  Sirve para hallar el tercer lado o despejar cualquier ángulo.
-* **Ejemplo Resuelto:** Un agricultor tiene un terreno triangular con dos linderos que miden $a = 80$ metros y $b = 100$ metros, los cuales forman un ángulo de $60^{circ}$ entre sí. Calcula la longitud del tercer lindero (c).
-  - *Paso 1 Plantea Ley:* $c^2 = 80^2 + 100^2 - 2(80)(100) cos(60^{circ})$.
-  - *Paso 2 Opera:* $c^2 = 6,400 + 10,000 - 16,000 	imes (0.5) = 16,400 - 8,000 = 8,400$.
-  - *Paso 3:* $c = sqrt{8,400} approx 91.65$ metros.
-  - *Resultado:* El tercer lindero mide 91.65 metros.
-* **Errores Comunes:** Olvidar el término restado $2ab cos(C)$ o equivocarse en el orden de las operaciones, sumando primero todo antes de multiplicar por el coseno.
-* **Ejercicios de Práctica:**
-  1. Si a = 3 cm, b = 4 cm y el ángulo comprendido es C = 90°, ¿qué valor da la Ley de Cosenos para c? (R: 5 cm. Retroalimentación: cos(90°) = 0, reduciéndose al Teorema de Pitágoras).
-  2. Calcula el valor de cos(C) si los tres lados de un triángulo miden a = 5, b = 6 y c = 7. (R: 0.20. Retroalimentación: 49 = 25 + 36 - 60cos(C); 60cos(C) = 12; cos(C) = 0.2).
-  3. En un triángulo, x = 10, y = 15 y Z = 120°. Calcula z. (R: 21.79. Retroalimentación: z² = 100 + 225 - 300(-0.5) = 325 + 150 = 475).
-  4. ¿Se puede usar la Ley de Cosenos en un triángulo rectángulo? (R: Sí, da exactamente el mismo resultado que Pitágoras).
-  5. Si los tres lados de un triángulo son iguales, ¿cuál es el coseno de cualquiera de sus ángulos? (R: 0.5. Retroalimentación: Todos sus ángulos miden 60° y cos(60°) = 0.5).
-* **¿Necesitas ayuda?** La Ley de Cosenos es imprescindible en vectores de física y navegación aérea. ¡Aprende a despejarla perfectamente con CEDETU!
-
-### Lección 3.3: Identidades Trigonométricas Fundamentales
-* **Objetivo:** Demostrar y simplificar expresiones complejas utilizando las identidades pitagóricas y por cociente.
-* **Explicación:** Las identidades son igualdades trigonométricas válidas para cualquier ángulo. Las básicas son:
-  - **Pitagórica:** $operatorname{sen}^2(	heta) + cos^2(	heta) = 1$
-  - **Por cociente:** $	an(	heta) = rac{operatorname{sen}(	heta)}{cos(	heta)}$, $operatorname{cot}(	heta) = rac{cos(	heta)}{operatorname{sen}(	heta)}$
-  - **Recíprocas:** $1 + 	an^2(	heta) = sec^2(	heta)$, $1 + operatorname{cot}^2(	heta) = csc^2(	heta)$
-* **Ejemplo Resuelto:** Simplifica la expresión: $cos(x) 	imes 	an(x) 	imes csc(x)$.
-  - *Paso 1:* Convierte todo a términos de seno y coseno:
-    $	an(x) = rac{operatorname{sen}(x)}{cos(x)}$  y  $csc(x) = rac{1}{operatorname{sen}(x)}$.
-  - *Paso 2:* Multiplica todos los términos:
-    $cos(x) 	imes rac{operatorname{sen}(x)}{cos(x)} 	imes rac{1}{operatorname{sen}(x)}$.
-  - *Paso 3:* Cancela términos repetidos arriba y abajo: queda exactamente 1.
-  - *Resultado:* La expresión simplificada es igual a 1.
-* **Errores Comunes:** Tratar a los términos trigonométricos como variables simples separadas del ángulo (por ejemplo, escribir "sen" en vez de "sen(x)").
-* **Ejercicios de Práctica:**
-  1. Simplifica: sen(x) * cot(x). (R: cos(x)).
-  2. ¿A qué es equivalente la expresión 1 - sen²(x)? (R: cos²(x). Retroalimentación: Proviene de la identidad pitagórica principal).
-  3. Demuestra a qué es igual cos²(θ) * (1 + tan²(θ)). (R: 1. Retroalimentación: 1 + tan²(θ) = sec²(θ); cos²(θ) * sec²(θ) = 1).
-  4. Simplifica: [sec²(x) - 1] / tan²(x). (R: 1).
-  5. ¿A qué equivale csc(x) / sec(x)? (R: cot(x). Retroalimentación: (1/sen) / (1/cos) = cos/sen = cot).
-* **¿Necesitas ayuda?** Demostrar identidades trigonométricas requiere paciencia, lógica y trucos de álgebra. ¡Vuélvete un maestro de la simplificación junto a tu tutor!
-
-## Evaluación Unidad 3
-* Demuestra que la expresión (sen(x) + cos(x))² - 2sen(x)cos(x) es idéntica a 1. (R: Queda demostrado aplicando el binomio al cuadrado: sen²(x) + 2sen(x)cos(x) + cos²(x) - 2sen(x)cos(x) = sen²(x) + cos²(x) = 1).
-* En un triángulo oblicuángulo, a = 8 cm, b = 10 cm y el ángulo C mide 45°. Calcula el lado c de forma aproximada. (R: 7.07 cm. Retroalimentación: c² = 64 + 100 - 160*cos(45°) ≈ 164 - 113.14 = 50.86 => c ≈ 7.13 cm).
-* Si un faro de 30 metros de altura observa un barco en el lago de Amatitlán con un ángulo de depresión de 15°, ¿a qué distancia se encuentra el barco de la base del faro? (R: 111.96 metros. Retroalimentación: d = 30 / tan(15°) = 30 / 0.2679 ≈ 111.96 m).
-
----
-`,
-
-    "calculo-universitario": `# Curso: Cálculo Diferencial e Integral
-* **Materia:** Matemáticas | **Nivel sugerido:** Universidad
-* **Público objetivo:** Estudiantes universitarios y de diversificado que inician sus cursos de análisis matemático y cálculo.
-* **Objetivos de aprendizaje:** Comprender límites, derivadas, optimización e integración para resolver problemas reales en ingeniería y ciencias.
-
-## Unidad 1: Límites y Continuidad
-### Lección 1.1: Concepto Intuitivo de Límite y Límites Laterales
-* **Objetivo:** Comprender la definición informal de límite como la aproximación a un valor y resolver límites laterales gráficamente.
-* **Explicación:** El límite de una función $f(x)$ cuando $x$ tiende a un valor $a$ es el valor al que se aproxima la función. Escribimos $lim_{x 	o a} f(x) = L$. Para que el límite exista, los límites laterales por la izquierda ($x 	o a^{-}$) y por la derecha ($x 	o a^{+}$) deben ser exactamente iguales.
-* **Ejemplo Resuelto:** Considera la función $f(x) = 2x + 3$. Evalúa el límite cuando $x$ tiende a 4.
-  - *Paso 1:* Como la función es continua (una línea recta), podemos evaluar directamente el valor de x en la función.
-  - *Paso 2:* Reemplaza $x = 4$ en $2x + 3$: $2(4) + 3 = 8 + 3 = 11$.
-  - *Resultado:* El límite cuando $x 	o 4$ es 11.
-* **Errores Comunes:** Confundir el valor del límite con el valor de la función en ese punto; a veces la función no está definida en un punto, pero su límite en ese punto sí existe.
-* **Ejercicios de Práctica:**
-  1. Evalúa el límite de f(x) = x² - 5 cuando x tiende a 3. (R: 4).
-  2. Si el límite de una función por la izquierda es 5 y por la derecha es -5, ¿existe el límite en ese punto? (R: No. Retroalimentación: Los límites laterales deben ser iguales).
-  3. Evalúa lim_{x -> 2} (3x - 1). (R: 5).
-  4. ¿Qué representa formalmente un límite lateral por la izquierda? (R: La aproximación al valor de x utilizando valores ligeramente menores a él).
-  5. Evalúa el límite cuando x tiende a 0 de f(x) = 1/x. (R: No existe. Retroalimentación: Por la izquierda tiende a -infinito y por la derecha a +infinito).
-* **¿Necesitas ayuda?** Los límites son la base de todo el cálculo universitario. ¡Consolida este concepto abstracto con las explicaciones visuales de tu tutor!
-
-### Lección 1.2: Límites Indeterminados por Factorización
-* **Objetivo:** Resolver límites racionales que presentan la indeterminación del tipo $0/0$ utilizando álgebra y factorización.
-* **Explicación:** Si al evaluar directamente obtenemos la forma indeterminada $0/0$, significa que hay un factor común arriba y abajo que está causando el cero. Debemos factorizar numerador y denominador, cancelar el factor común y volver a evaluar.
-* **Ejemplo Resuelto:** Evalúa el límite: $lim_{x 	o 3} rac{x^2 - 9}{x - 3}$.
-  - *Paso 1 Evaluar:* $rac{3^2 - 9}{3 - 3} = rac{0}{0}$. (Indeterminado).
-  - *Paso 2 Factorizar:* El numerador es una diferencia de cuadrados: $x^2 - 9 = (x + 3)(x - 3)$.
-  - *Paso 3 Cancelar:* La expresión queda: $lim_{x 	o 3} rac{(x + 3)(x - 3)}{x - 3} = lim_{x 	o 3} (x + 3)$.
-  - *Paso 4 Reevaluar:* Sustituye $x = 3$: $3 + 3 = 6$.
-  - *Resultado:* El límite es 6.
-* **Errores Comunes:** Dejar la respuesta como $0/0$ o pensar que el límite es cero o infinito en lugar de realizar el proceso algebraico correspondiente.
-* **Ejercicios de Práctica:**
-  1. Evalúa lim_{x -> 2} [(x² - 4) / (x - 2)]. (R: 4).
-  2. Resuelve el límite lim_{x -> 5} [(x² - 5x) / (x - 5)]. (R: 5. Retroalimentación: Factor común x(x-5) / (x-5) = x).
-  3. Resuelve lim_{x -> 1} [(x² - 2x + 1) / (x - 1)]. (R: 0. Retroalimentación: TCP (x-1)² / (x-1) = x-1; evalúa en 1: 1-1 = 0).
-  4. Resuelve lim_{x -> -3} [(x² + 5x + 6) / (x + 3)]. (R: -1. Retroalimentación: (x+3)(x+2) / (x+3) = x+2; evalúa en -3: -3+2 = -1).
-  5. ¿Qué significa algebraicamente obtener la forma 0/0 al evaluar un límite? (R: Que la función tiene una discontinuidad evitable en ese punto).
-* **¿Necesitas ayuda?** La factorización es el salvavidas del cálculo. ¡Repasa trinomios y diferencias de cuadrados al instante con tu tutor de CEDETU!
-
-### Lección 1.3: Límites al Infinito y Asíntotas
-* **Objetivo:** Calcular límites cuando la variable independiente tiende a infinito y determinar la existencia de asíntotas horizontales.
-* **Explicación:** Para calcular límites cuando $x 	o infty$ en funciones racionales, dividimos cada término de la expresión entre la variable elevada a la mayor potencia que aparezca en el denominador. Aplicamos la regla fundamental: $lim_{x 	o infty} rac{k}{x^n} = 0$.
-* **Ejemplo Resuelto:** Calcula el límite: $lim_{x 	o infty} rac{3x^2 + 5x}{2x^2 - 1}$.
-  - *Paso 1 Identificar Mayor Potencia:* La mayor potencia en el denominador es $x^2$.
-  - *Paso 2 Dividir todo:* $rac{3x^2/x^2 + 5x/x^2}{2x^2/x^2 - 1/x^2} = rac{3 + 5/x}{2 - 1/x^2}$.
-  - *Paso 3 Aplicar Límite:* Los términos $5/x$ y $1/x^2$ tienden a cero cuando $x 	o infty$.
-  - *Paso 4:* Queda $rac{3 + 0}{2 - 0} = 3/2$.
-  - *Resultado:* El límite es 3/2 (Esto indica que la función tiene una asíntota horizontal en $y = 1.5$).
-* **Errores Comunes:** Confundir los grados del numerador y denominador al aplicar el análisis directo de potencias.
-* **Ejercicios de Práctica:**
-  1. Resuelve: lim_{x -> ∞} (5 / x³). (R: 0).
-  2. Resuelve: lim_{x -> ∞} [(2x + 8) / (4x - 3)]. (R: 1/2).
-  3. Resuelve: lim_{x -> ∞} [(x² + 5) / (2x³ - 10)]. (R: 0. Retroalimentación: El grado del denominador es mayor).
-  4. ¿Qué tipo de asíntota se localiza en los puntos donde el denominador de una función racional simplificada se anula? (R: Asíntota vertical).
-  5. Calcula el límite cuando x tiende a infinito de f(x) = (3x² - 1) / (x + 2). (R: Infinito. Retroalimentación: El grado del numerador es mayor).
-* **¿Necesitas ayuda?** Entender el infinito de forma analítica es una de las mayores bellezas de la matemática superior. ¡Asegura tu comprensión con tu tutor de CEDETU!
-
-## Evaluación Unidad 1
-* Evalúa: lim_{x -> 4} [(x² - 16) / (x² - 5x + 4)]. (R: 8/3. Retroalimentación: Factoriza (x-4)(x+4) / (x-4)(x-1) = (x+4)/(x-1). Evalúa en 4: (4+4)/(4-1) = 8/3).
-* Encuentra las asíntotas verticales de la función f(x) = (2x + 1) / (x² - 9). (R: x = 3 y x = -3. Retroalimentación: Los valores que hacen cero el denominador son las raíces de x²-9 = 0).
-* Evalúa: lim_{x -> ∞} [(4x² - 5x + 2) / (3 - 5x²)]. (R: -4/5. Retroalimentación: Dividiendo entre x², queda 4 / -5 = -4/5).
-
----
-
-## Unidad 2: La Derivada y sus Reglas
-### Lección 2.1: Definición de la Derivada
-* **Objetivo:** Comprender conceptualmente la derivada como la razón de cambio instantánea y la pendiente de la recta tangente.
-* **Explicación:** La derivada mide el cambio de una variable con respecto a otra. Geométricamente, representa la pendiente de la recta tangente a la curva en un punto específico. Formalmente se define mediante el límite:
-  $f'(x) = lim_{h 	o 0} rac{f(x+h) - f(x)}{h}$
-* **Ejemplo Resuelto:** Encuentra la derivada de la función $f(x) = x^2$ usando la definición de límite.
-  - *Paso 1 Plantea Límite:* $lim_{h 	o 0} rac{(x+h)^2 - x^2}{h}$.
-  - *Paso 2 Desarrolla:* $lim_{h 	o 0} rac{x^2 + 2xh + h^2 - x^2}{h} = lim_{h 	o 0} rac{2xh + h^2}{h}$.
-  - *Paso 3 Factoriza y Simplifica:* $lim_{h 	o 0} rac{h(2x + h)}{h} = lim_{h 	o 0} (2x + h)$.
-  - *Paso 4 Evalúa h = 0:* $2x + 0 = 2x$.
-  - *Resultado:* La derivada de $x^2$ es $2x$.
-* **Errores Comunes:** Cancelar la variable $h$ del denominador antes de haber factorizado y simplificado el numerador, cometiendo división por cero.
-* **Ejercicios de Práctica:**
-  1. ¿Cuál es el significado geométrico de la derivada en un punto dado de una curva? (R: La pendiente de la recta tangente en ese punto).
-  2. Si f(x) = 5x + 2, ¿cuánto vale su derivada en cualquier punto? (R: 5. Retroalimentación: Es una línea recta de pendiente constante igual a 5).
-  3. Calcula la derivada de f(x) = 3x usando la definición de límite. (R: 3).
-  4. Si una función es constante f(x) = 10, ¿cuál es su derivada? (R: 0. Retroalimentación: Las constantes no cambian, su razón de cambio es cero).
-  5. ¿En qué punto la pendiente de la recta tangente a la curva y = x² es igual a cero? (R: En el vértice (0,0). Retroalimentación: y' = 2x = 0 => x = 0).
-* **¿Necesitas ayuda?** La derivada es la base del movimiento y el cambio físico. ¡Domina su concepto junto a un tutor experto de CEDETU!
-
-### Lección 2.2: Reglas Básicas de Derivación
-* **Objetivo:** Derivar funciones algebraicas aplicando de forma directa las reglas de la potencia, constante, suma, producto y cociente de funciones.
-* **Explicación:** Reglas fundamentales:
-  - **Potencia:** $rac{d}{dx}[x^n] = n x^{n-1}$.
-  - **Suma/Resta:** $[f(x) pm g(x)]' = f'(x) pm g'(x)$.
-  - **Producto:** $[f cdot g]' = f' cdot g + f cdot g'$.
-  - **Cociente:** $[rac{f}{g}]' = rac{f' cdot g - f cdot g'}{g^2}$.
-* **Ejemplo Resuelto:** Deriva la función: $f(x) = 4x^3 - 5x^2 + 2$.
-  - *Paso 1 Aplica Potencia:* Para $4x^3$ queda $4 	imes 3x^2 = 12x^2$.
-  - *Paso 2 Aplica Potencia:* Para $-5x^2$ queda $-5 	imes 2x = -10x$.
-  - *Paso 3 Constante:* La derivada de 2 es 0.
-  - *Paso 4 Suma todo:* $12x^2 - 10x$.
-  - *Resultado:* $f'(x) = 12x^2 - 10x$.
-* **Errores Comunes:** Restar mal las potencias al derivar (por ejemplo, derivar $1/x = x^{-1}$ y decir que es $-1x^0$ en lugar de $-1x^{-2} = -1/x^2$).
-* **Ejercicios de Práctica:**
-  1. Deriva: f(x) = 7x⁴. (R: 28x³).
-  2. Deriva: f(x) = x⁵ - 3x² + 8. (R: 5x⁴ - 6x).
-  3. Deriva usando la regla del producto: f(x) = x² * (3x + 1). (R: 9x² + 2x. Retroalimentación: f' = 2x(3x+1) + x²(3) = 6x² + 2x + 3x² = 9x² + 2x).
-  4. Deriva: f(x) = √x. (R: 1 / (2√x). Retroalimentación: x^{1/2} derivado es (1/2)x^{-1/2}).
-  5. ¿Cuál es la derivada de f(x) = 3/x²? (R: -6/x³. Retroalimentación: 3x^{-2} derivado es -6x^{-3}).
-* **¿Necesitas ayuda?** Las reglas de derivación son sistemáticas y muy lógicas. ¡Vuélvete veloz aplicándolas en tus tareas escolares con CEDETU!
-
-### Lección 2.3: La Regla de la Cadena
-* **Objetivo:** Calcular la derivada de funciones compuestas de la forma $f(g(x))$ aplicando la Regla de la Cadena.
-* **Explicación:** Si una función es compuesta, derivamos la función exterior dejando el interior igual, y multiplicamos el resultado por la derivada de la función interior:
-  $rac{d}{dx}[f(g(x))] = f'(g(x)) 	imes g'(x)$
-* **Ejemplo Resuelto:** Deriva la función: $f(x) = (3x^2 + 5)^4$.
-  - *Paso 1 Exterior:* Deriva la potencia exterior (potencia 4): $4(3x^2 + 5)^3$.
-  - *Paso 2 Interior:* Deriva la función interior $(3x^2 + 5)' = 6x$.
-  - *Paso 3 Multiplica todo:* $4(3x^2 + 5)^3 	imes 6x = 24x(3x^2 + 5)^3$.
-  - *Resultado:* $f'(x) = 24x(3x^2 + 5)^3$.
-* **Errores Comunes:** Olvidar multiplicar por la derivada del término interior al aplicar la regla de la potencia.
-* **Ejercicios de Práctica:**
-  1. Deriva: f(x) = (2x - 1)⁵. (R: 10(2x - 1)⁴).
-  2. Deriva: f(x) = sen(3x). (R: 3 cos(3x). Retroalimentación: Derivada de sen(u) es cos(u) * u').
-  3. Deriva: f(x) = e^{x²}. (R: 2x e^{x²}. Retroalimentación: Derivada de e^u es e^u * u').
-  4. Deriva: f(x) = ln(4x). (R: 1/x. Retroalimentación: (4) / (4x) = 1/x).
-  5. Deriva: f(x) = (x³ + 2x)³. (R: 3(x³ + 2x)² * (3x² + 2)).
-* **¿Necesitas ayuda?** La regla de la cadena es la clave para derivar cualquier función científica compleja. ¡Domínala al lado de tu tutor con ejercicios guiados!
-
-## Evaluación Unidad 2
-* Deriva la función racional: f(x) = (2x - 3) / (x + 1). (R: 5 / (x + 1)². Retroalimentación: f' = [2(x+1) - (2x-3)(1)] / (x+1)² = [2x + 2 - 2x + 3] / (x+1)² = 5/(x+1)²).
-* Si la posición de una partícula está dada por s(t) = t³ - 6t² + 9t metros, ¿cuál es su velocidad en t = 2 segundos? (Nota: La velocidad es la derivada de la posición). (R: -3 m/s. Retroalimentación: v(t) = s'(t) = 3t² - 12t + 9. Evaluada en 2: 3(4) - 24 + 9 = -3).
-* Deriva la función: y = cos²(4x). (R: -8 cos(4x) sen(4x). Retroalimentación: Aplica potencia exterior, luego coseno, luego el término 4x).
-
----
-
-## Unidad 3: Optimización e Integración
-### Lección 3.1: Optimización
-* **Objetivo:** Resolver problemas de la vida real que impliquen encontrar máximos o mínimos locales aplicando el criterio de la primera derivada.
-* **Explicación:** Para maximizar o minimizar una función:
-  1. Planteamos la ecuación matemática de la función a optimizar en términos de una sola variable.
-  2. Derivamos la función.
-  3. Igualamos la derivada a cero para encontrar los puntos críticos ($f'(x) = 0$).
-  4. Evaluamos si es un máximo o mínimo.
-* **Ejemplo Resuelto:** Un fabricante en Escuintla quiere diseñar una caja rectangular de cartón abierta de volumen máximo a partir de una pieza de cartón de 12 cm por 12 cm cortando cuadrados iguales en las esquinas. Determina el tamaño de la esquina (x) para el volumen máximo.
-  - *Paso 1 Ecuación Volumen:* $V(x) = x(12 - 2x)(12 - 2x) = x(144 - 48x + 4x^2) = 4x^3 - 48x^2 + 144x$.
-  - *Paso 2 Derivar:* $V'(x) = 12x^2 - 96x + 144$.
-  - *Paso 3 Puntos Críticos (igualar a 0 y simplificar):* $x^2 - 8x + 12 = 0 Rightarrow (x - 6)(x - 2) = 0$. Los puntos críticos son $x = 6$ y $x = 2$.
-  - *Paso 4 Evaluar:* Un corte de 6 cm vacía la caja (volumen 0). Por lo tanto, el máximo volumen ocurre con $x = 2$ cm.
-  - *Resultado:* El cuadrado de la esquina debe medir 2 cm de lado.
-* **Errores Comunes:** Encontrar el punto crítico pero no verificar mediante la primera o segunda derivada si este representa el máximo o el mínimo buscado.
-* **Ejercicios de Práctica:**
-  1. Encuentra el número positivo que sumado con su recíproco dé la menor suma posible. (R: 1. Retroalimentación: S(x) = x + 1/x; S'(x) = 1 - 1/x² = 0 => x² = 1).
-  2. Un granjero tiene 200 metros de cerca para delimitar un terreno rectangular. ¿Cuál es el área máxima que puede encerrar? (R: 2,500 m². Retroalimentación: El rectángulo de mayor área con perímetro fijo siempre es un cuadrado de lado P/4 = 50 m. Área = 2500).
-  3. ¿Qué mide el criterio de la segunda derivada en un punto crítico? (R: La concavidad. Si f''(x) > 0 es un mínimo local, si f''(x) < 0 es un máximo local).
-  4. Encuentra dos números cuya suma sea 20 y su producto sea el máximo posible. (R: 10 y 10).
-  5. ¿En qué punto la función y = x³ - 3x tiene un máximo local? (R: x = -1. Retroalimentación: y' = 3x²-3 = 0 => x = ±1. y'' = 6x; y''(-1) < 0 => Máximo).
-* **¿Necesitas ayuda?** La optimización es el campo más potente del cálculo aplicado a finanzas y diseño. ¡Aprende a resolver estos problemas con tu tutor de CEDETU!
-
-### Lección 3.2: La Antiderivada e Integración Indefinida
-* **Objetivo:** Calcular la antiderivada de funciones básicas aplicando de forma inversa las reglas de derivación y sumando la constante de integración C.
-* **Explicación:** La integración es el proceso inverso a la derivación. La integral indefinida de una función representa el conjunto de todas las antiderivadas:
-  $int x^n , dx = rac{x^{n+1}}{n+1} + C quad (	ext{para } n 
-eq -1)$
-  $int rac{1}{x} , dx = ln|x| + C$
-* **Ejemplo Resuelto:** Calcula la integral indefinida: $int (3x^2 - 4x + 5) , dx$.
-  - *Paso 1 Integra término a término:*
-    * $int 3x^2 , dx = 3 	imes rac{x^3}{3} = x^3$.
-    * $int -4x , dx = -4 	imes rac{x^2}{2} = -2x^2$.
-    * $int 5 , dx = 5x$.
-  - *Paso 2 Agrega Constante:* Junta los resultados y suma C: $x^3 - 2x^2 + 5x + C$.
-  - *Resultado:* $x^3 - 2x^2 + 5x + C$.
-* **Errores Comunes:** Olvidar sumar la constante de integración $C$ al finalizar una integral indefinida.
-* **Ejercicios de Práctica:**
-  1. Resuelve: ∫ x⁴ dx. (R: x⁵/5 + C).
-  2. Resuelve: ∫ 8 dx. (R: 8x + C).
-  3. Resuelve: ∫ e^x dx. (R: e^x + C).
-  4. Calcula la integral de f(x) = cos(x). (R: sen(x) + C).
-  5. Resuelve: ∫ 1/x² dx. (R: -1/x + C. Retroalimentación: ∫ x^{-2} dx = x^{-1}/-1 = -1/x).
-* **¿Necesitas ayuda?** Integrar requiere imaginación y muchísima práctica algebraica. ¡Consolida tus bases con tu tutor y sácate un 100!
-
-### Lección 3.3: La Integral Definida
-* **Objetivo:** Calcular el área bajo la curva de una función continua en un intervalo cerrado aplicando el Teorema Fundamental del Cálculo.
-* **Explicación:** La integral definida representa el área acumulada bajo la curva de una función $f(x)$ entre dos límites de integración $a$ y $b$. El Teorema Fundamental del Cálculo establece:
-  $int_{a}^{b} f(x) , dx = F(b) - F(a)$
-  donde $F(x)$ es cualquier antiderivada de $f(x)$.
-* **Ejemplo Resuelto:** Calcula el área bajo la curva de la función $f(x) = x^2$ entre $x = 0$ y $x = 3$.
-  - *Paso 1 Integra:* $F(x) = int x^2 , dx = rac{x^3}{3}$.
-  - *Paso 2 Evalúa Límite Superior:* $F(3) = rac{3^3}{3} = rac{27}{3} = 9$.
-  - *Paso 3 Evalúa Límite Inferior:* $F(0) = rac{0^3}{3} = 0$.
-  - *Paso 4 Resta:* $F(3) - F(0) = 9 - 0 = 9$.
-  - *Resultado:* El área bajo la curva es 9 unidades cuadradas.
-* **Errores Comunes:** Restar al revés $F(a) - F(b)$ o cometer errores aritméticos al evaluar fracciones en los límites de integración.
-* **Ejercicios de Práctica:**
-  1. Evalúa la integral definida: ∫_{1}^{3} 2x dx. (R: 8. Retroalimentación: F(x) = x²; F(3) - F(1) = 9 - 1 = 8).
-  2. ¿Qué significado geométrico tiene la integral definida ∫_{a}^{b} f(x) dx si f(x) >= 0? (R: El área de la región delimitada por la función, el eje X y las rectas verticales x = a y x = b).
-  3. Evalúa la integral: ∫_{0}^{π} sen(x) dx. (R: 2. Retroalimentación: F(x) = -cos(x). -cos(π) - (-cos(0)) = -(-1) + 1 = 2).
-  4. Resuelve: ∫_{1}^{2} 3x² dx. (R: 7. Retroalimentación: F(x) = x³; F(2) - F(1) = 8 - 1 = 7).
-  5. ¿Cuánto vale la integral definida de cualquier función impar f(x) integrada en un intervalo simétrico [-a, a]? (R: 0. Retroalimentación: Las áreas de signo contrario a la izquierda y derecha se anulan mutuamente).
-* **¿Necesitas ayuda?** Las integrales definidas son la cumbre del cálculo de bachillerato y primer año de universidad. ¡Asegura tu comprensión de este tema crucial con tu tutor de CEDETU!
-
-## Evaluación Unidad 3
-* Resuelve la integral indefinida por sustitución: ∫ 2x (x² + 1)³ dx. (R: (x² + 1)⁴ / 4 + C. Retroalimentación: u = x²+1, du = 2xdx. ∫ u³ du = u⁴/4 + C).
-* Calcula el área exacta entre la curva y = 4 - x² y el eje X. (Nota: Los límites son las raíces de la ecuación: x = -2 y x = 2). (R: 32/3 ≈ 10.67 unidades cuadradas. Retroalimentación: ∫_{-2}^{2} (4-x²) dx = [4x - x³/3]_{-2}^{2} = (8 - 8/3) - (-8 + 8/3) = 16 - 16/3 = 32/3).
-* Si el costo marginal de producción en una fábrica está dado por C'(x) = 5x + 10, y el costo fijo es C(0) = Q100, encuentra la función de costo total C(x). (R: C(x) = 2.5x² + 10x + 100).
-`,
+    "algebra-basica": {
+    "isRichCourse": true,
+    "title": "Álgebra Básica",
+    "units": [
+        {
+            "title": "Unidad 1: Lenguaje Algebraico y Polinomios",
+            "lessons": [
+                {
+                    "id": "traduccion-lenguaje-algebraico",
+                    "title": "Lección 1.1: Traducción a Lenguaje Algebraico",
+                    "introduction": "El álgebra es el idioma general de las matemáticas. Aprende a traducir enunciados reales a expresiones con variables y números.",
+                    "explanationHtml": "<p>El <strong>álgebra</strong> sustituye los números específicos por letras llamadas <strong>variables</strong> ($x, y, a, b$) para modelar relaciones generales. Traducir al lenguaje algebraico consiste en identificar las palabras de operación clave del enunciado:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Suma (\"aumentado\", \"más\", \"adición\"):</strong> $x + y$</li><li><strong>Resta (\"disminuido\", \"diferencia\", \"menos\"):</strong> $x - y$</li><li><strong>Multiplicación (\"el doble\", \"el triple\", \"producto\"):</strong> $2x$, $3y$</li><li><strong>División (\"la mitad\", \"el cociente\", \"razón\"):</strong> $x/2$, $a/b$</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Glosario de Traducción Algebraica</p><p class=\"text-xs font-mono font-bold text-primary\">\"El doble de un número aumentado en 5\" &rArr; 2x + 5</p><p class=\"text-xs font-mono font-bold text-primary\">\"La suma de dos números consecutivos\" &rArr; x + (x + 1)</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"22\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">TRADUCCIÓN A VARIABLE</text><rect x=\"25\" y=\"40\" width=\"110\" height=\"55\" fill=\"#eff6ff\" stroke=\"#bfdbfe\" rx=\"8\" /><text x=\"80\" y=\"58\" font-size=\"8\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">Lenguaje Cotidiano</text><text x=\"80\" y=\"78\" font-size=\"8\" fill=\"#1e40af\" text-anchor=\"middle\">\"El triple de un número</text><text x=\"80\" y=\"88\" font-size=\"8\" fill=\"#1e40af\" text-anchor=\"middle\">menos cuatro\"</text><path d=\"M 145 67 L 165 67\" stroke=\"#94a3b8\" stroke-width=\"1.5\" stroke-dasharray=\"2,2\" /><rect x=\"175\" y=\"40\" width=\"100\" height=\"55\" fill=\"#ecfdf5\" stroke=\"#a7f3d0\" rx=\"8\" /><text x=\"225\" y=\"58\" font-size=\"8\" fill=\"#065f46\" font-weight=\"bold\" text-anchor=\"middle\">Lenguaje Algebraico</text><text x=\"225\" y=\"78\" font-size=\"16\" font-family=\"monospace\" fill=\"#065f46\" font-weight=\"bold\" text-anchor=\"middle\">3x - 4</text></svg>",
+                    "svgDescription": "Esquema de traducción al álgebra. Muestra la conversión del enunciado verbal ('el triple de un número menos cuatro') en su equivalente algebraico 3x - 4.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Traduce algebraicamente: \"El doble del cuadrado de un número aumentado en el triple de otro número\".</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1:</strong> Identifica el primer número como $x$. Su cuadrado es $x^2$. El doble es $2x^2$.</li><li><strong>Paso 2:</strong> Identifica el segundo número diferente como $y$. Su triple es $3y$.</li><li><strong>Paso 3:</strong> Une ambos términos con el operador de suma correspondiente a \"aumentado\": $2x^2 + 3y$.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> Expresión traducida: $2x^2 + 3y$.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Confundir orden en restas:</strong> Traducir \"5 disminuido en un número\" como $x - 5$. ¡Eso es incorrecto! La traducción exacta es $5 - x$.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Traduce algebraicamente en minúsculas sin espacios: 'El triple de un número disminuido en ocho'.",
+                            "correctAnswer": "3x-8",
+                            "hint": "Identifica 'el triple de un número' como 3x y réstale 8.",
+                            "feedbackCorrect": "¡Excelente! La traducción exacta es 3x-8.",
+                            "feedbackIncorrect": "Incorrecto. Se representa como '3x-8'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Traduce algebraicamente en minúsculas sin espacios: 'La mitad del cuadrado de un número'.",
+                            "correctAnswer": "(x^2)/2",
+                            "hint": "Representa el cuadrado del número como x^2 y divídelo entre 2. Agrégalo con paréntesis en el numerador, ej: (x^2)/2.",
+                            "feedbackCorrect": "¡Perfecto! La expresión correcta es (x^2)/2 o 0.5*x^2.",
+                            "feedbackIncorrect": "Incorrecto. Se escribe '(x^2)/2'.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Escribe la expresión algebraica para 'la suma de dos números consecutivos'. Escribe en minúsculas sin espacios (ej: x+(x+1)):",
+                            "correctAnswer": "x+(x+1)",
+                            "hint": "Si el primer número es x, el consecutivo siguiente es x+1.",
+                            "feedbackCorrect": "¡Excelente! La suma es x+(x+1).",
+                            "feedbackIncorrect": "Incorrecto. Consecutivos son x y x+1, por lo que su suma es 'x+(x+1)'.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cuál de las siguientes expresiones algebraicas traduce correctamente: 'El cuadrado de la suma de dos números'?",
+                            "options": [
+                                "(x + y)²",
+                                "x² + y²",
+                                "2(x + y)",
+                                "x + y²"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Primero debes sumar los dos números (x + y) y luego elevar toda esa suma agrupada al cuadrado.",
+                            "feedbackCorrect": "¡Excelente! Al elevar la suma completa, debe ir entre paréntesis: (x + y)².",
+                            "feedbackIncorrect": "Incorrecto. 'x² + y²' es la suma de los cuadrados; el cuadrado de la suma es (x + y)².",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Traduce: 'La diferencia entre el triple de un número y el doble de otro número'.",
+                            "options": [
+                                "3x - 2y",
+                                "3(x - 2y)",
+                                "3x + 2y",
+                                "(3x)(2y)"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Identifica el triple de un número (3x), el doble de otro (2y), y únelos mediante una resta (diferencia).",
+                            "feedbackCorrect": "¡Perfecto! La diferencia es 3x - 2y.",
+                            "feedbackIncorrect": "Incorrecto. La diferencia entre 3x y 2y es 3x - 2y.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "El lenguaje algebraico permite formalizar enunciados reales mediante variables y números, siendo la clave interpretar los conectores de operación.",
+                    "videoPlaceholderText": "Video de Álgebra: Cómo traducir del lenguaje común al lenguaje algebraico."
+                },
+                {
+                    "id": "terminos-semejantes",
+                    "title": "Lección 1.2: Suma y Resta de Términos Semejantes",
+                    "introduction": "Simplifica expresiones algebraicas extensas reduciendo y sumando términos de idéntica parte literal.",
+                    "explanationHtml": "<p>Un <strong>término algebraico</strong> consta de signo, coeficiente numérico y parte literal (variables con sus exponentes). Dos o más términos son <strong>semejantes</strong> únicamente si comparten exactamente la misma parte literal (mismas variables elevadas a los mismos exponentes).</p><p class=\"mt-3\">Para sumarlos o restarlos, operamos los coeficientes numéricos y conservamos intacta la parte literal común:</p><p class=\"text-center font-mono font-extrabold text-primary my-2\">5x² + 3x² = (5 + 3)x² = 8x²</p><p class=\"mt-3\">Si los términos no son semejantes, no se pueden reducir y se dejan expresados por separado (ej. $5x + 3y$ no se puede simplificar).</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Regla de Reducción de Términos</p><p class=\"text-xs font-mono font-bold text-primary\">3ab + 4ab = 7ab &nbsp;&bull;&nbsp; 5x - 2y (No Reducible)</p><p class=\"text-xs text-slate-505\">Los exponentes de las variables deben coincidir exactamente para poder sumarse.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">TÉRMINOS SEMEJANTES (REDUCCIÓN)</text><rect x=\"25\" y=\"38\" width=\"115\" height=\"42\" fill=\"#eff6ff\" stroke=\"#bfdbfe\" rx=\"6\" /><text x=\"82.5\" y=\"53\" font-size=\"9\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">Semejantes (Se Reducen)</text><text x=\"82.5\" y=\"70\" font-size=\"10\" font-family=\"monospace\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">3x²y + 5x²y = 8x²y</text><rect x=\"160\" y=\"38\" width=\"115\" height=\"42\" fill=\"#fef2f2\" stroke=\"#fca5a5\" rx=\"6\" /><text x=\"217.5\" y=\"53\" font-size=\"9\" fill=\"#991b1b\" font-weight=\"bold\" text-anchor=\"middle\">No Semejantes</text><text x=\"217.5\" y=\"70\" font-size=\"10\" font-family=\"monospace\" fill=\"#991b1b\" font-weight=\"bold\" text-anchor=\"middle\">3x²y + 5xy² (No)</text></svg>",
+                    "svgDescription": "Esquema de términos semejantes. Compara cómo dos términos con idénticos exponentes se reducen a un solo término, mientras que términos con exponentes intercambiados permanecen separados.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Simplifica la expresión: $7x - 3y + 4x + 9y - 5x$.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1: Agrupa los términos en x.</strong> <br>$7x + 4x - 5x = (7 + 4 - 5)x = 6x$.</li><li><strong>Paso 2: Agrupa los términos en y.</strong> <br>$-3y + 9y = (-3 + 9)y = 6y$.</li><li><strong>Paso 3: Une las partes reducidas.</strong> <br>$6x + 6y$.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> Expresión simplificada: $6x + 6y$.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Sumar exponentes en la suma:</strong> Operar $3x + 2x = 5x^2$. ¡Error grave! Al sumar términos semejantes, los exponentes no cambian; solo se alteran los coeficientes numéricos. La respuesta correcta es $5x$.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Simplifica la expresión en minúsculas sin espacios: 8x + 3x - 5x.",
+                            "correctAnswer": "6x",
+                            "hint": "Opera linealmente los coeficientes de x: 8 + 3 - 5.",
+                            "feedbackCorrect": "¡Excelente! 8 + 3 - 5 = 6x.",
+                            "feedbackIncorrect": "Incorrecto. 8 + 3 - 5 = 6x.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Simplifica la expresión: 4a - 5b + 3a + 2b. Escribe la respuesta simplificada en minúsculas sin espacios:",
+                            "correctAnswer": "7a-3b",
+                            "hint": "Suma los términos con 'a' (4a + 3a) y los términos con 'b' (-5b + 2b) por separado.",
+                            "feedbackCorrect": "¡Perfecto! Queda 7a-3b.",
+                            "feedbackIncorrect": "Incorrecto. Al agrupar por separado obtenemos '7a-3b'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Simplifica la expresión: 5x^2 - 3x + 2x^2 + 8x. Escribe la respuesta en minúsculas sin espacios (usa ^2 para exponente):",
+                            "correctAnswer": "7x^2+5x",
+                            "hint": "Suma los términos cuadráticos (5x^2 + 2x^2) y los términos lineales (-3x + 8x) por separado.",
+                            "feedbackCorrect": "¡Excelente! La respuesta es 7x^2+5x.",
+                            "feedbackIncorrect": "Incorrecto. Queda como '7x^2+5x'.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "El término algebraico '-5x²y³' es semejante con:",
+                            "options": [
+                                "12x²y³",
+                                "-5xy²",
+                                "5x³y²",
+                                "-5x²"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Para ser semejante, debe tener exactamente las mismas letras elevadas a las mismas potencias (x² e y³), sin importar el coeficiente.",
+                            "feedbackCorrect": "¡Excelente! 12x²y³ comparte de forma exacta la parte literal x²y³.",
+                            "feedbackIncorrect": "Incorrecto. Solamente '12x²y³' posee la misma parte literal x²y³.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Simplifica la expresión: 10ab - 4cd + 2ab - cd.",
+                            "options": [
+                                "12ab - 5cd",
+                                "12ab - 3cd",
+                                "8ab - 5cd",
+                                "8ab - 3cd"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Agrupa ab (10ab + 2ab) y cd (-4cd - 1cd). Recuerda que -cd tiene un coeficiente de -1.",
+                            "feedbackCorrect": "¡Perfecto! El resultado es 12ab - 5cd.",
+                            "feedbackIncorrect": "Incorrecto. Queda como 12ab - 5cd.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "La reducción de términos semejantes consiste en agrupar coeficientes numéricos de variables con idénticos exponentes, simplificando expresiones extensas.",
+                    "videoPlaceholderText": "Video de Álgebra: Cómo sumar y restar términos semejantes paso a paso."
+                },
+                {
+                    "id": "multiplicacion-polinomios",
+                    "title": "Lección 1.3: Multiplicación de Polinomios",
+                    "introduction": "Aprende a multiplicar binomios y polinomios aplicando la propiedad distributiva y la ley de exponentes de forma sistemática.",
+                    "explanationHtml": "<p>Para multiplicar polinomios, multiplicamos cada término del primer polinomio por todos los términos del segundo polinomio (propiedad distributiva) y reducimos los términos semejantes al final.</p><p class=\"mt-3\"><strong>Leyes fundamentales a aplicar:</strong></p><ul class=\"list-disc pl-5 space-y-1.5 my-2\"><li><strong>Ley de Signos:</strong> $(+) \\cdot (+) = (+)$, $(-) \\cdot (-) = (+)$, y $(+) \\cdot (-) = (-)$.</li><li><strong>Ley de Exponentes para el Producto:</strong> Al multiplicar variables idénticas, se conserva la base y se <strong>suman los exponentes</strong>: $x^a \\cdot x^b = x^{a+b}$.</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Ley del Producto de Potencias</p><p class=\"text-base font-mono font-extrabold text-primary\">x^a &bull; x^b = x^(a+b)</p><p class=\"text-xs text-slate-500\">Ejemplo: (2x²)(3x³) = (2&bull;3)x^(2+3) = 6x⁵.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">MULTIPLICACIÓN DE BINOMIOS (FOIL)</text><rect x=\"40\" y=\"38\" width=\"220\" height=\"60\" fill=\"#eff6ff\" stroke=\"#bfdbfe\" rx=\"8\" /><text x=\"150\" y=\"58\" font-size=\"11\" font-family=\"monospace\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">(x + 2) &times; (x + 3)</text><text x=\"150\" y=\"80\" font-size=\"10\" font-family=\"monospace\" fill=\"#2563eb\" font-weight=\"extrabold\" text-anchor=\"middle\">= x² + 3x + 2x + 6 = x² + 5x + 6</text></svg>",
+                    "svgDescription": "Propiedad distributiva. Ilustra el desarrollo ordenado de multiplicar término a término dos binomios para llegar al trinomio cuadrático final.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Multiplica: $(x + 3)(x - 5)$.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1: Multiplica el primer término del primer binomio.</strong> <br>$x \\cdot x = x^2$ y $x \\cdot (-5) = -5x$.</li><li><strong>Paso 2: Multiplica el segundo término.</strong> <br>$3 \\cdot x = 3x$ y $3 \\cdot (-5) = -15$.</li><li><strong>Paso 3: Reduce términos semejantes.</strong> <br>$x^2 - 5x + 3x - 15 = x^2 - 2x - 15$.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> El producto es **$x^2 - 2x - 15$**.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Multiplicar exponentes en vez de sumarlos:</strong> Operar $(x^2) \\cdot (x^3) = x^6$. ¡Error! Se deben sumar las potencias, por lo que el resultado correcto es $x^5$.</li><li><strong>Olvidar multiplicar el signo:</strong> Operar $+3 \\cdot -5 = +15$, olvidando que positivo por negativo resulta en negativo.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Multiplica los monomios en minúsculas sin espacios: (3x^2)(2x^3).",
+                            "correctAnswer": "6x^5",
+                            "hint": "Multiplica los coeficientes (3 × 2) y suma los exponentes de x (2 + 3).",
+                            "feedbackCorrect": "¡Excelente! (3 × 2)x^(2+3) = 6x^5.",
+                            "feedbackIncorrect": "Incorrecto. Se multiplican coeficientes y se suman exponentes: '6x^5'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Multiplica los binomios: (x+2)(x+4). Escribe la respuesta simplificada en minúsculas sin espacios (usa ^2):",
+                            "correctAnswer": "x^2+6x+8",
+                            "hint": "Distribuye: x·x + x·4 + 2·x + 2·4, y suma los términos en x.",
+                            "feedbackCorrect": "¡Perfecto! El trinomio resultante es x^2+6x+8.",
+                            "feedbackIncorrect": "Incorrecto. Al simplificar los productos parciales se obtiene 'x^2+6x+8'.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Multiplica: (x-3)(x+3). Escribe la respuesta simplificada en minúsculas sin espacios (usa ^2):",
+                            "correctAnswer": "x^2-9",
+                            "hint": "Distribuye: x·x + x·3 - 3·x - 3·3. Los términos en x se cancelan mutuamente.",
+                            "feedbackCorrect": "¡Excelente! Los términos lineales se cancelan, quedando la diferencia de cuadrados x^2-9.",
+                            "feedbackIncorrect": "Incorrecto. Da como resultado 'x^2-9'.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Al multiplicar (2x - 3)(x + 5), ¿cuál es el término lineal (el término con x) de la expresión final simplificada?",
+                            "options": [
+                                "7x",
+                                "10x",
+                                "-3x",
+                                "13x"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Multiplica los términos externos (2x · 5 = 10x) y los internos (-3 · x = -3x), luego sumálos: 10x - 3x.",
+                            "feedbackCorrect": "¡Excelente! 10x - 3x da como resultado 7x.",
+                            "feedbackIncorrect": "Incorrecto. Los productos intermedios son 10x y -3x, lo que da 7x.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Si multiplicas el monomio -3x por el trinomio (x² - 2x + 4), el resultado es:",
+                            "options": [
+                                "-3x³ + 6x² - 12x",
+                                "-3x³ - 6x² + 12x",
+                                "3x³ - 6x² - 12x",
+                                "-3x³ + 6x² + 12"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Aplica propiedad distributiva multiplicando -3x por cada término. Cuidado con las leyes de signos: (-3)·(-2) = +6.",
+                            "feedbackCorrect": "¡Perfecto! El resultado es -3x³ + 6x² - 12x.",
+                            "feedbackIncorrect": "Incorrecto. Revisa los signos al distribuir: -3x³ + 6x² - 12x.",
+                            "difficulty": "avanzado",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "La multiplicación de polinomios aplica la propiedad distributiva sumando los exponentes de bases idénticas y reduciendo términos semejantes residuales.",
+                    "videoPlaceholderText": "Video de Álgebra: Cómo multiplicar binomios de forma fácil."
+                }
+            ]
+        },
+        {
+            "title": "Unidad 2: Ecuaciones de Primer Grado",
+            "lessons": [
+                {
+                    "id": "concepto-ecuacion-lineal",
+                    "title": "Lección 2.1: Concepto de Ecuación Lineal y Despeje",
+                    "introduction": "Descubre el concepto de ecuación como una balanza en equilibrio y aprende a despejar variables mediante operaciones inversas.",
+                    "explanationHtml": "<p>Una <strong>ecuación lineal</strong> (o de primer grado) es una igualdad matemática entre dos expresiones algebraicas donde la variable está elevada a la potencia 1. Resolverla consiste en hallar el valor de la incógnita ($x$) que hace verdadera la igualdad.</p><p class=\"mt-3\">Para despejar $x$, tratamos la ecuación como una <strong>balanza en equilibrio</strong>. Cualquier operación matemática realizada en un miembro de la ecuación debe aplicarse exactamente igual en el otro miembro para conservar la igualdad:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li>Si un número está <strong>sumando</strong>, pasa al otro miembro a <strong>restar</strong>.</li><li>Si está <strong>restando</strong>, pasa a <strong>sumar</strong>.</li><li>Si está <strong>multiplicando</strong>, pasa a <strong>dividir</strong> a todo el miembro.</li><li>Si está <strong>dividiendo</strong>, pasa a <strong>multiplicar</strong> a todo el miembro.</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Balanza de Despeje MRU</p><p class=\"text-base font-mono font-extrabold text-primary\">x + 5 = 12 &rArr; x = 12 - 5 = 7</p><p class=\"text-xs text-slate-500\">Pasar términos al otro lado del signo igual invierte la operación matemática correspondiente.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">BALANZA DE ECUACIÓN LINEAL</text><!-- Balanza Base --><line x1=\"60\" y1=\"90\" x2=\"240\" y2=\"90\" stroke=\"#475569\" stroke-width=\"3\" /><polygon points=\"150,90 142,108 158,108\" fill=\"#475569\" /><!-- Platillo Izquierdo x + 3 --><line x1=\"80\" y1=\"70\" x2=\"80\" y2=\"90\" stroke=\"#94a3b8\" /><circle cx=\"80\" cy=\"65\" r=\"14\" fill=\"#eff6ff\" stroke=\"#2563eb\" stroke-width=\"1.5\" /><text x=\"80\" y=\"69\" font-size=\"10\" font-family=\"monospace\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">x + 3</text><!-- Platillo Derecho 10 --><line x1=\"220\" y1=\"70\" x2=\"220\" y2=\"90\" stroke=\"#94a3b8\" /><circle cx=\"220\" cy=\"65\" r=\"14\" fill=\"#ecfdf5\" stroke=\"#059669\" stroke-width=\"1.5\" /><text x=\"220\" y=\"69\" font-size=\"10\" font-family=\"monospace\" fill=\"#065f46\" font-weight=\"bold\" text-anchor=\"middle\">10</text><text x=\"150\" y=\"68\" font-size=\"16\" font-family=\"sans-serif\" fill=\"#94a3b8\" font-weight=\"bold\" text-anchor=\"middle\">=</text></svg>",
+                    "svgDescription": "Modelo de la balanza en equilibrio. Ilustra visualmente que resolver x + 3 = 10 requiere restar 3 en ambos lados para hallar x = 7.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Resuelve la ecuación lineal: $3x - 7 = 14$.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1: Transpone el término independiente.</strong> El -7 que está restando pasa al miembro derecho a sumar: <br>$3x = 14 + 7 \\rArr 3x = 21$.</li><li><strong>Paso 2: Transpone el coeficiente.</strong> El 3 que multiplica a x pasa a dividir a todo el miembro derecho: <br>$x = 21 / 3$.</li><li><strong>Paso 3: Opera y verifica.</strong> <br>$x = 7$. Si verificamos: $3(7) - 7 = 21 - 7 = 14$. Es correcto.</li></ol>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li>generic.sign-error<strong>Olvidar cambiar el signo al transponer:</strong> Pasar un número sumando al otro lado de la igualdad conservando el signo más (ej: decir que $x + 5 = 12 \\rArr x = 12 + 5 = 17$). Recuerda siempre invertir el operador.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Resuelve la ecuación lineal e ingresa el valor entero de x: x + 8 = 15.",
+                            "correctAnswer": "7",
+                            "hint": "Resta 8 de ambos lados: x = 15 - 8.",
+                            "feedbackCorrect": "¡Excelente! x = 7.",
+                            "feedbackIncorrect": "Incorrecto. x = 15 - 8 = 7.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Resuelve la ecuación lineal: 4x - 5 = 11. Ingresa el valor entero de x:",
+                            "correctAnswer": "4",
+                            "hint": "Suma 5 en ambos lados (4x = 11 + 5 = 16) y luego divide entre 4.",
+                            "feedbackCorrect": "¡Perfecto! x = 4.",
+                            "feedbackIncorrect": "Incorrecto. 4x = 16, por lo que x = 4.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Resuelve la ecuación: 2x + 9 = 5. Ingresa el valor entero (puede ser negativo):",
+                            "correctAnswer": "-2",
+                            "hint": "Resta 9 en ambos lados: 2x = 5 - 9 = -4. Divide entre 2.",
+                            "feedbackCorrect": "¡Excelente! x = -2.",
+                            "feedbackIncorrect": "Incorrecto. 2x = -4, por lo que x = -2.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cuál es el valor correcto de x en la ecuación: 5x + 3 = 3x + 11?",
+                            "options": [
+                                "4",
+                                "2",
+                                "7",
+                                "-4"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Mueve las variables a la izquierda (5x - 3x) y los números a la derecha (11 - 3), luego despeja.",
+                            "feedbackCorrect": "¡Excelente! 2x = 8, por lo que x = 4.",
+                            "feedbackIncorrect": "Incorrecto. 2x = 8, despejado da x = 4.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Si resolvemos -2x + 12 = 4, ¿cuál es el valor resultante de x?",
+                            "options": [
+                                "4",
+                                "-4",
+                                "8",
+                                "-8"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Resta 12: -2x = 4 - 12 = -8. Al dividir entre -2, recuerda aplicar leyes de signos: (-8)/(-2) = +4.",
+                            "feedbackCorrect": "¡Perfecto! Menos entre menos da más: x = 4.",
+                            "feedbackIncorrect": "Incorrecto. -2x = -8, por lo que x = 4.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "Resolver una ecuación lineal consiste en aislar la variable operando de manera idéntica en ambos miembros de la balanza de igualdad.",
+                    "videoPlaceholderText": "Video de Álgebra: Cómo despejar la x en ecuaciones sencillas."
+                },
+                {
+                    "id": "ecuaciones-parentesis-fracciones",
+                    "title": "Lección 2.2: Ecuaciones con Paréntesis y Fracciones",
+                    "introduction": "Domina la resolución de ecuaciones complejas destruyendo paréntesis distributivamente y eliminando fracciones con el MCM.",
+                    "explanationHtml": "<p>Cuando una ecuación lineal posee paréntesis o denominadores fraccionarios, aplicamos pasos de simplificación previos:</p><p class=\"mt-3\"><strong>1. Eliminar Paréntesis:</strong> Aplica la propiedad distributiva multiplicando el coeficiente externo por cada término interno (ej. $3(x - 2) = 3x - 6$).</p><p class=\"mt-3\"><strong>2. Eliminar Denominadores (Fracciones):</strong> Halla el Mínimo Común Múltiplo (MCM) de todos los denominadores y multiplica **toda la ecuación** (ambos miembros completos) por ese MCM. Las fracciones se cancelarán de inmediato convirtiendo la ecuación a una lineal de enteros.</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Eliminación de Denominador</p><p class=\"text-base font-mono font-extrabold text-primary\">x/3 + 2 = 5 &rArr; MCM=3 &rArr; x + 6 = 15 &rArr; x = 9</p><p class=\"text-xs text-slate-500\">Multiplicar cada término por el MCM anula los divisores al instante.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">ELIMINAR PARÉNTESIS Y FRACCIONES</text><rect x=\"30\" y=\"38\" width=\"240\" height=\"65\" fill=\"#eff6ff\" stroke=\"#bfdbfe\" rx=\"8\" /><text x=\"150\" y=\"58\" font-size=\"10\" font-family=\"monospace\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">Ecuación: 2(x - 3) = 8</text><text x=\"150\" y=\"78\" font-size=\"10\" font-family=\"monospace\" fill=\"#2563eb\" font-weight=\"extrabold\" text-anchor=\"middle\">Distribuido: 2x - 6 = 8 &rArr; 2x = 14</text><text x=\"150\" y=\"92\" font-size=\"9\" fill=\"#64748b\" text-anchor=\"middle\">Resultado: x = 7</text></svg>",
+                    "svgDescription": "Propiedad distributiva en ecuaciones. Detalla cómo se elimina el paréntesis distribuyendo la multiplicación del coeficiente 2 sobre x y -3.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Resuelve la ecuación: $\\frac{x}{2} + \\frac{1}{3} = 2$.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1: Determina el MCM.</strong> Los denominadores son 2 y 3. El MCM de 2 y 3 es 6.</li><li><strong>Paso 2: Multiplica toda la ecuación por 6.</strong> <br>$6\\cdot(\\frac{x}{2}) + 6\\cdot(\\frac{1}{3}) = 6\\cdot(2) \\rArr 3x + 2 = 12$.</li><li><strong>Paso 3: Despeja la ecuación de enteros.</strong> <br>$3x = 12 - 2 \\rArr 3x = 10 \\rArr x = 10/3$.</li></ol>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>No multiplicar el término independiente por el MCM:</strong> Multiplicar solo los términos fraccionarios por el MCM y dejar el número entero sin modificar (ej: decir que $x/2 + 1 = 5 \\rArr x + 2 = 5$). ¡Debes multiplicar absolutamente todos los términos de la balanza! La correcta es $x + 2 = 10$.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Resuelve la ecuación con paréntesis e ingresa el valor entero de x: 3(x - 2) = 12.",
+                            "correctAnswer": "6",
+                            "hint": "Distribuye: 3x - 6 = 12. Suma 6 en ambos lados (3x = 18) y divide entre 3.",
+                            "feedbackCorrect": "¡Excelente! x = 6.",
+                            "feedbackIncorrect": "Incorrecto. 3x - 6 = 12, por lo que x = 6.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Resuelve la ecuación fraccionaria: x/4 + 3 = 5. Ingresa el entero de x:",
+                            "correctAnswer": "8",
+                            "hint": "Resta 3 (x/4 = 2) y luego multiplica por 4.",
+                            "feedbackCorrect": "¡Perfecto! x = 8.",
+                            "feedbackIncorrect": "Incorrecto. x/4 = 2, por lo que x = 8.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Resuelve la ecuación: 2(x + 4) = x + 10. Ingresa el entero de x:",
+                            "correctAnswer": "2",
+                            "hint": "Distribuye: 2x + 8 = x + 10. Resta x (x + 8 = 10) y luego resta 8.",
+                            "feedbackCorrect": "¡Excelente! x = 2.",
+                            "feedbackIncorrect": "Incorrecto. 2x + 8 = x + 10, despejado da x = 2.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Al resolver la ecuación x/2 + x/3 = 10, el Mínimo Común Múltiplo (MCM) por el cual multiplicamos toda la ecuación es:",
+                            "options": [
+                                "6",
+                                "5",
+                                "12",
+                                "10"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Es el múltiplo común más pequeño de los denominadores 2 y 3.",
+                            "feedbackCorrect": "¡Excelente! El MCM es 6, multiplicando por él nos da 3x + 2x = 60.",
+                            "feedbackIncorrect": "Incorrecto. El MCM de 2 y 3 es 6.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Resuelve la ecuación: 4(x - 1) = 2(x + 3). ¿Cuál es el valor final de x?",
+                            "options": [
+                                "5",
+                                "2",
+                                "7",
+                                "-5"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Distribuye ambos lados: 4x - 4 = 2x + 6. Mueve las x a la izquierda (2x) y los números a la derecha (10).",
+                            "feedbackCorrect": "¡Perfecto! 2x = 10, por lo que x = 5.",
+                            "feedbackIncorrect": "Incorrecto. 4x - 4 = 2x + 6 &rArr; 2x = 10 &rArr; x = 5.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "Para solucionar ecuaciones complejas eliminamos los paréntesis aplicando la propiedad distributiva y despejamos las fracciones multiplicando todos los términos por el MCM.",
+                    "videoPlaceholderText": "Video de Álgebra: Resolver ecuaciones con paréntesis y fracciones de forma rápida."
+                },
+                {
+                    "id": "problemas-reales-algebraicos",
+                    "title": "Lección 2.3: Planteamiento y Resolución de Problemas Reales",
+                    "introduction": "Aprende a modelar y solucionar problemas del mundo cotidiano traduciéndolos a ecuaciones de primer grado.",
+                    "explanationHtml": "<p>El mayor valor del álgebra radica en su capacidad de resolver problemas cotidianos reales. Para ello, seguimos un proceso sistemático:</p><ol class=\"list-decimal pl-5 space-y-2 my-3\"><li><strong>Definir la Incógnita:</strong> Elegir una letra (típicamente $x$) para representar la cantidad desconocida que pregunta el problema.</li><li><strong>Traducir al Lenguaje Algebraico:</strong> Modelar las relaciones descritas en el enunciado como una ecuación lineal matemática.</li><li><strong>Resolver la Ecuación:</strong> Aislar la variable aplicando despejes limpios.</li><li><strong>Interpretar y Verificar:</strong> Corroborar si la respuesta obtenida responde coherentemente a la pregunta real formulada.</li></ol>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Esquema de Planteamiento</p><p class=\"text-xs font-mono font-bold text-primary\">Incógnita: Edad Juan = x || Ecuación: x + (x + 5) = 25</p><p class=\"text-xs text-slate-505\">Verificar que el resultado cumpla con la restricción del enunciado garantiza una solución exitosa.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">FLUJO DE PLANTEAMIENTO</text><rect x=\"15\" y=\"38\" width=\"75\" height=\"40\" fill=\"#eff6ff\" stroke=\"#bfdbfe\" rx=\"4\" /><text x=\"52.5\" y=\"55\" font-size=\"7\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">1. DEFINE</text><text x=\"52.5\" y=\"68\" font-size=\"8\" fill=\"#1e40af\" text-anchor=\"middle\">Incógnita (x)</text><rect x=\"110\" y=\"38\" width=\"75\" height=\"40\" fill=\"#eff6ff\" stroke=\"#bfdbfe\" rx=\"4\" /><text x=\"147.5\" y=\"55\" font-size=\"7\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">2. MODELA</text><text x=\"147.5\" y=\"68\" font-size=\"8\" fill=\"#1e40af\" text-anchor=\"middle\">Ecuación</text><rect x=\"205\" y=\"38\" width=\"80\" height=\"40\" fill=\"#ecfdf5\" stroke=\"#a7f3d0\" rx=\"4\" /><text x=\"245\" y=\"55\" font-size=\"7\" fill=\"#065f46\" font-weight=\"bold\" text-anchor=\"middle\">3. INTERPRETA</text><text x=\"245\" y=\"68\" font-size=\"8\" fill=\"#065f46\" text-anchor=\"middle\">Solución Lógica</text></svg>",
+                    "svgDescription": "Flujograma de modelado. Describe la transición lógica e intelectual desde leer el enunciado verbal hasta verificar el sentido de la respuesta obtenida.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Un padre de familia en Quetzaltenango es 25 años mayor que su hijo. Si la suma de sus edades es de 55 años, ¿cuál es la edad del hijo?</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1: Define incógnitas.</strong> <br>Edad del hijo = $x$. <br>Edad del padre = $x + 25$.</li><li><strong>Paso 2: Plantea la ecuación de suma.</strong> <br>$x + (x + 25) = 55 \\rArr 2x + 25 = 55$.</li><li><strong>Paso 3: Resuelve.</strong> <br>$2x = 55 - 25 \\rArr 2x = 30 \\rArr x = 15$.</li><li><strong>Paso 4: Interpreta.</strong> El hijo tiene 15 años. El padre tiene $15 + 25 = 40$. La suma es $15 + 40 = 55$. Coincide perfectamente.</li></ol>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li>generic.variable-conf-error<strong>Asignar la misma variable a dos valores diferentes:</strong> Intentar modelar el problema anterior como $x + x = 55$, asumiendo erróneamente que ambos tienen la misma edad, ignorando la diferencia de 25 años.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "La suma de tres números enteros consecutivos es 45. ¿Cuál es el número menor de ellos?",
+                            "correctAnswer": "14",
+                            "hint": "Ecuación: x + (x+1) + (x+2) = 45 => 3x + 3 = 45 => 3x = 42. Despeja x.",
+                            "feedbackCorrect": "¡Excelente! El menor es 14. Los números son 14, 15 y 16.",
+                            "feedbackIncorrect": "Incorrecto. 3x + 3 = 45, por lo que x = 14.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Un comerciante de Antigua compra el doble de pantalones que de camisas. Si compra un total de 90 prendas de vestir, ¿cuántas camisas compró?",
+                            "correctAnswer": "30",
+                            "hint": "Camisas = x. Pantalones = 2x. Ecuación: x + 2x = 90 => 3x = 90. Despeja x.",
+                            "feedbackCorrect": "¡Perfecto! Compró 30 camisas (y 60 pantalones).",
+                            "feedbackIncorrect": "Incorrecto. 3x = 90, por lo que x = 30.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si sumamos Q150 a mi dinero actual tendré exactamente el triple de lo que tengo ahora. ¿Cuántos Quetzales tengo en este momento?",
+                            "correctAnswer": "75",
+                            "hint": "Ecuación: x + 150 = 3x => 150 = 2x. Despeja x.",
+                            "feedbackCorrect": "¡Excelente! Tienes Q75. Al sumarle Q150 tendrás Q225, el triple de Q75.",
+                            "feedbackIncorrect": "Incorrecto. 2x = 150, por lo que x = Q75.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Un rectángulo en Xela tiene un perímetro de 60 cm. Si el largo mide el doble del ancho, ¿cuáles son las dimensiones del ancho y largo de este rectángulo?",
+                            "options": [
+                                "Ancho = 10 cm, Largo = 20 cm",
+                                "Ancho = 5 cm, Largo = 10 cm",
+                                "Ancho = 15 cm, Largo = 30 cm",
+                                "Ancho = 20 cm, Largo = 40 cm"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Ancho = x. Largo = 2x. Perímetro = 2(ancho + largo) = 2(x + 2x) = 2(3x) = 6x = 60. Despeja x.",
+                            "feedbackCorrect": "¡Excelente! Ancho = 10 y Largo = 20 (Perímetro = 10+20+10+20 = 60).",
+                            "feedbackIncorrect": "Incorrecto. 6x = 60 => x = 10. Las dimensiones son 10 cm y 20 cm.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Una alcancía escolar contiene 40 monedas de Q1 y de Q0.50. Si el valor total ahorrado es de Q30, ¿cuántas monedas de Q1 contiene?",
+                            "options": [
+                                "20 monedas de Q1",
+                                "10 monedas de Q1",
+                                "30 monedas de Q1",
+                                "15 monedas de Q1"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Monedas de Q1 = x. Monedas de Q0.50 = 40 - x. Ecuación de valor: 1(x) + 0.5(40 - x) = 30 => x + 20 - 0.5x = 30 => 0.5x = 10. Despeja x.",
+                            "feedbackCorrect": "¡Perfecto! Contiene 20 monedas de Q1 y 20 monedas de Q0.50.",
+                            "feedbackIncorrect": "Incorrecto. 0.5x = 10 => x = 20 monedas.",
+                            "difficulty": "avanzado",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "Modelar problemas verbales como ecuaciones de primer grado requiere asignar una incógnita lógica e interpretar matemáticamente sus condiciones operativas.",
+                    "videoPlaceholderText": "Video de Álgebra: Cómo plantear ecuaciones paso a paso desde enunciados."
+                }
+            ]
+        },
+        {
+            "title": "Unidad 3: Factorización de Expresiones",
+            "lessons": [
+                {
+                    "id": "factor-comun-agrupacion",
+                    "title": "Lección 3.1: Factor Común por Agrupación",
+                    "introduction": "Aprende a revertir la propiedad distributiva extrayendo términos comunes presentes en expresiones algebraicas.",
+                    "explanationHtml": "<p>La <strong>factorización</strong> consiste en escribir una expresión algebraica como el producto de sus factores multiplicadores.</p><p class=\"mt-3\"><strong>1. Factor Común Monomio:</strong> Se busca el Máximo Común Divisor (MCD) de los coeficientes numéricos y las variables repetidas con su <strong>menor exponente</strong>. Luego se divide toda la expresión entre este término común:</p><p class=\"text-center font-mono font-extrabold text-primary my-2\">6x³ + 4x² = 2x²(3x + 2)</p><p class=\"mt-3\"><strong>2. Factor Común por Agrupación de Términos:</strong> Cuando no hay un factor común para todos los términos, agrupamos la expresión en parejas asociadas y extraemos el factor común de cada binomio resultante para generar un binomio común.</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Fórmula de Factorización Común</p><p class=\"text-base font-mono font-extrabold text-primary\">ab + ac = a(b + c)</p><p class=\"text-xs text-slate-500\">Es la operación inversa exacta de la propiedad distributiva de la multiplicación.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">FACTOR COMÚN MONOMIO</text><rect x=\"30\" y=\"38\" width=\"240\" height=\"65\" fill=\"#eff6ff\" stroke=\"#bfdbfe\" rx=\"8\" /><text x=\"150\" y=\"58\" font-size=\"12\" font-family=\"monospace\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">Expresión: 3x² + 6x</text><text x=\"150\" y=\"82\" font-size=\"13\" font-family=\"monospace\" fill=\"#2563eb\" font-weight=\"extrabold\" text-anchor=\"middle\">Factorizado: 3x(x + 2)</text></svg>",
+                    "svgDescription": "Extracción de factor común. Muestra cómo 3x se extrae de ambos términos, dejando un binomio residual multiplicando al factor común.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Factoriza por completo la expresión: $ax + ay + bx + by$.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1: Agrupa en parejas.</strong> <br>$(ax + ay) + (bx + by)$.</li><li><strong>Paso 2: Extrae el factor común de cada pareja.</strong> <br>$a(x + y) + b(x + y)$.</li><li><strong>Paso 3: Extrae el binomio común (x + y).</strong> <br>$(x + y)(a + b)$.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> Expresión factorizada: $(x + y)(a + b)$.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Olvidar colocar la unidad cuando se extrae un término completo:</strong> Factorizar $3x^2 + 3x$ como $3x(x)$. ¡Error! Si divides $3x \\div 3x$ queda 1. La respuesta correcta es $3x(x + 1)$.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Factoriza el binomio en minúsculas sin espacios: 5x^2 + 5x.",
+                            "correctAnswer": "5x(x+1)",
+                            "hint": "Extrae el término común 5x. Divide cada término: 5x² ÷ 5x = x, y 5x ÷ 5x = 1.",
+                            "feedbackCorrect": "¡Excelente! Queda 5x(x+1).",
+                            "feedbackIncorrect": "Incorrecto. Recuerda agregar el +1 al final: '5x(x+1)'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Factoriza la expresión: 8xy - 4x. Escribe en minúsculas sin espacios:",
+                            "correctAnswer": "4x(2y-1)",
+                            "hint": "El MCD numérico es 4 y la variable común es x. Extrae 4x.",
+                            "feedbackCorrect": "¡Perfecto! Queda 4x(2y-1).",
+                            "feedbackIncorrect": "Incorrecto. Se factoriza como '4x(2y-1)'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Factoriza: ax - bx + ay - by. Escribe en minúsculas sin espacios de la forma (x+y)(a-b):",
+                            "correctAnswer": "(x+y)(a-b)",
+                            "hint": "Agrupa por variable común: x(a-b) + y(a-b). Extrae el término común (a-b).",
+                            "feedbackCorrect": "¡Excelente! La factorización es (x+y)(a-b) o (a-b)(x+y).",
+                            "feedbackIncorrect": "Incorrecto. Agrupado da '(x+y)(a-b)'.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Al factorizar por factor común monomio la expresión '12x³ - 18x²', el término común que se extrae es:",
+                            "options": [
+                                "6x²",
+                                "6x",
+                                "3x²",
+                                "2x²"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Busca el MCD de 12 y 18 (que es 6) y la potencia de x más pequeña de la expresión (x²).",
+                            "feedbackCorrect": "¡Excelente! El factor común es 6x², dejando la expresión como 6x²(2x - 3).",
+                            "feedbackIncorrect": "Incorrecto. El MCD de coeficientes es 6 y la potencia mínima es x², dando 6x².",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Factoriza la expresión: 5x³ - 10x² + 5x.",
+                            "options": [
+                                "5x(x - 1)²",
+                                "5x(x² - 2x)",
+                                "5x²(x - 2)",
+                                "5(x³ - 2x² + x)"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Extrae primero el factor común 5x, resultando en 5x(x² - 2x + 1). Observa que el trinomio entre paréntesis es un trinomio cuadrado perfecto (x - 1)².",
+                            "feedbackCorrect": "¡Perfecto! Simplificado queda 5x(x - 1)².",
+                            "feedbackIncorrect": "Incorrecto. El trinomio cuadrático resultante se reduce a (x - 1)², dando 5x(x - 1)².",
+                            "difficulty": "avanzado",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "Factorizar por factor común consiste en extraer el MCD de los términos para expresar polinomios complejos como una multiplicación simplificada.",
+                    "videoPlaceholderText": "Video de Álgebra: Cómo factorizar por factor común monomio y por agrupación."
+                },
+                {
+                    "id": "diferencia-cuadrados-perfectos",
+                    "title": "Lección 3.2: Diferencia de Cuadrados Perfectos",
+                    "introduction": "Identifica y factoriza diferencias de cuadrados perfectos traduciéndolas a binomios conjugados de forma instantánea.",
+                    "explanationHtml": "<p>Una **Diferencia de Cuadrados Perfectos** es un binomio formado por dos términos restándose, donde ambos términos admiten raíces cuadradas exactas ($a^2$ y $b^2$).</p><p class=\"mt-3\">Su regla de factorización es una de las identidades más útiles del álgebra, resultando siempre en el producto de **binomios conjugados** (la suma multiplicada por la resta de sus raíces):</p><p class=\"text-center font-mono font-extrabold text-primary my-2\">a² - b² = (a + b)(a - b)</p><p class=\"mt-3\">Para aplicarla, simplemente extraemos la raíz cuadrada de cada término y los escribimos en parejas conjugadas.</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Identidad del Binomio Conjugado</p><p class=\"text-xl font-mono font-extrabold text-primary\">a² - b² = (a + b)(a - b)</p><p class=\"text-xs text-slate-505\">Ejemplo: x² - 9 &rArr; raíz(x²)=x, raíz(9)=3 &rArr; (x + 3)(x - 3).</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">DIFERENCIA DE CUADRADOS</text><rect x=\"30\" y=\"38\" width=\"240\" height=\"65\" fill=\"#eff6ff\" stroke=\"#bfdbfe\" rx=\"8\" /><text x=\"150\" y=\"58\" font-size=\"12\" font-family=\"monospace\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">Expresión: x² - 16</text><text x=\"150\" y=\"82\" font-size=\"13\" font-family=\"monospace\" fill=\"#2563eb\" font-weight=\"extrabold\" text-anchor=\"middle\">Conjugados: (x + 4)(x - 4)</text></svg>",
+                    "svgDescription": "Diagrama de factorización por conjugados. Muestra la descomposición directa del binomio x² - 16 extrayendo sus respectivas raíces x y 4.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Factoriza la expresión: $9x^2 - 25$.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1: Extrae la raíz del primer término.</strong> <br>$\\sqrt{9x^2} = 3x$.</li><li><strong>Paso 2: Extrae la raíz del segundo término.</strong> <br>$\\sqrt{25} = 5$.</li><li><strong>Paso 3: Escribe el producto conjugado.</strong> <br>$(3x + 5)(3x - 5)$.</li></ol>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Intentar factorizar una suma de cuadrados:</strong> Querer aplicar la regla a $x^2 + 9$ como $(x+3)(x-3)$. ¡Error! La suma de cuadrados perfectos no se puede factorizar en el campo de los números reales; es un binomio primo irreducible. Exige obligatoriamente signo de resta.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Factoriza el binomio en minúsculas sin espacios: x^2 - 16.",
+                            "correctAnswer": "(x+4)(x-4)",
+                            "hint": "Extrae raíces de x^2 (x) y de 16 (4) y escribe la pareja conjugada: (x+4)(x-4).",
+                            "feedbackCorrect": "¡Excelente! Queda (x+4)(x-4).",
+                            "feedbackIncorrect": "Incorrecto. Las raíces de x^2 y 16 son x y 4: '(x+4)(x-4)'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Factoriza la expresión: 4x^2 - 9. Escribe en minúsculas sin espacios:",
+                            "correctAnswer": "(2x+3)(2x-3)",
+                            "hint": "Las raíces son 2x y 3. Escribe los binomios conjugados sumando y restando.",
+                            "feedbackCorrect": "¡Perfecto! La factorización es (2x+3)(2x-3).",
+                            "feedbackIncorrect": "Incorrecto. Se factoriza como '(2x+3)(2x-3)'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Factoriza: 1 - 25y^2. Escribe en minúsculas sin espacios:",
+                            "correctAnswer": "(1+5y)(1-5y)",
+                            "hint": "La raíz de 1 es 1 y la de 25y^2 es 5y. Escríbelo de la forma (1+5y)(1-5y).",
+                            "feedbackCorrect": "¡Excelente! Queda (1+5y)(1-5y).",
+                            "feedbackIncorrect": "Incorrecto. La solución correcta es '(1+5y)(1-5y)'.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cuál de las siguientes sumas algebraicas en los reales es considerada un binomio primo irreducible que NO se puede factorizar?",
+                            "options": [
+                                "x² + 4",
+                                "x² - 4",
+                                "4x² - 1",
+                                "y² - 25"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Busca aquella expresión cuadrática que tenga operador de suma; la suma de cuadrados es irreducible.",
+                            "feedbackCorrect": "¡Excelente! x² + 4 es una suma de cuadrados, la cual es irreducible.",
+                            "feedbackIncorrect": "Incorrecto. 'x² + 4' es irreducible porque es una suma; las demás son diferencias de cuadrados reducibles.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Factoriza por completo la expresión: 16x⁴ - 81.",
+                            "options": [
+                                "(2x + 3)(2x - 3)(4x² + 9)",
+                                "(4x² + 9)(4x² - 9)",
+                                "(2x + 3)⁴ - 81",
+                                "(4x² + 9)²"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Aplica diferencia de cuadrados una vez, resultando en (4x² + 9)(4x² - 9). Observa que el segundo binomio (4x² - 9) es otra diferencia de cuadrados factible de factorizar en (2x+3)(2x-3).",
+                            "feedbackCorrect": "¡Perfecto! Factorizado de forma recursiva completa da (2x + 3)(2x - 3)(4x² + 9).",
+                            "feedbackIncorrect": "Incorrecto. Debes aplicar la diferencia de cuadrados sucesivamente hasta la irreducibilidad.",
+                            "difficulty": "avanzado",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "La diferencia de cuadrados perfectos se factoriza en binomios conjugados de forma directa extrayendo las raíces cuadradas de ambos términos.",
+                    "videoPlaceholderText": "Video de Álgebra: Cómo factorizar diferencias de cuadrados rápidamente."
+                },
+                {
+                    "id": "factorizacion-trinomios-basicos",
+                    "title": "Lección 3.3: Factorización de Trinomios x² + bx + c",
+                    "introduction": "Aprende a factorizar trinomios de segundo grado buscando parejas de números que sumados den b y multiplicados den c.",
+                    "explanationHtml": "<p>Un trinomio cuadrático de la forma $x^2 + bx + c$ se puede factorizar en el producto de dos binomios con término común $x$:</p><p class=\"text-center font-mono font-extrabold text-primary my-2\">x² + bx + c = (x + p)(x + q)</p><p class=\"mt-3\">Donde los números enteros $p$ y $q$ deben cumplir estrictamente dos condiciones simultáneas:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Multiplicados dan el término independiente:</strong> $p \\cdot q = c$</li><li><strong>Sumados algebraicamente dan el coeficiente lineal:</strong> $p + q = b$</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Regla de Búsqueda de Números</p><p class=\"text-base font-mono font-extrabold text-primary\">Buscar: p &bull; q = c &nbsp;&amp;&nbsp; p + q = b</p><p class=\"text-xs text-slate-500\">Ejemplo: x² + 5x + 6 &rArr; Mult = 6, Sumados = 5 &rArr; Números: 3 y 2 &rArr; (x + 3)(x + 2).</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">FACTORIZAR TRINOMIOS (MÉTODO CRUZ)</text><rect x=\"30\" y=\"38\" width=\"240\" height=\"65\" fill=\"#eff6ff\" stroke=\"#bfdbfe\" rx=\"8\" /><text x=\"150\" y=\"58\" font-size=\"12\" font-family=\"monospace\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">Trinomio: x² + 5x + 6</text><text x=\"150\" y=\"82\" font-size=\"13\" font-family=\"monospace\" fill=\"#2563eb\" font-weight=\"extrabold\" text-anchor=\"middle\">Factores: (x + 3)(x + 2)</text></svg>",
+                    "svgDescription": "Factorización de trinomios cuadráticos. Ejemplifica la búsqueda de parejas de factores que sumen el término intermedio y multipliquen el extremo.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Factoriza el trinomio cuadrático: $x^2 - x - 6$.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1: Identifica los coeficientes.</strong> $b = -1$ y $c = -6$.</li><li><strong>Paso 2: Busca números.</strong> Buscamos dos números que multiplicados den -6 y sumados den -1. <br>Las opciones de multiplicar -6 son: $(-6, 1)$, $(6, -1)$, $(-3, 2)$ y $(3, -2)$.</li><li><strong>Paso 3: Evalúa sumas.</strong> <br>$-3 + 2 = -1$. ¡Son los correctos!</li><li><strong>Paso 4: Escribe la factorización.</strong> <br>$(x - 3)(x + 2)$.</li></ol>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Equivocarse en los signos de la pareja:</strong> Elegir la pareja $(x + 3)(x - 2)$ para el problema anterior. Al multiplicar da $x^2 + x - 6$, lo cual cambia el signo del término del medio. Ten total rigor con las leyes de signos al operar.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Factoriza el trinomio en minúsculas sin espacios: x^2 + 5x + 6.",
+                            "correctAnswer": "(x+3)(x+2)",
+                            "hint": "Busca dos números que multiplicados den 6 y sumados den 5 (3 y 2).",
+                            "feedbackCorrect": "¡Excelente! La factorización es (x+3)(x+2) o (x+2)(x+3).",
+                            "feedbackIncorrect": "Incorrecto. Se factoriza como '(x+3)(x+2)'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Factoriza el trinomio: x^2 + x - 12. Escribe en minúsculas sin espacios:",
+                            "correctAnswer": "(x+4)(x-3)",
+                            "hint": "Busca dos números que multiplicados den -12 y sumados den +1 (4 y -3).",
+                            "feedbackCorrect": "¡Perfecto! Queda (x+4)(x-3).",
+                            "feedbackIncorrect": "Incorrecto. Se factoriza como '(x+4)(x-3)'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Factoriza: x^2 - 7x + 10. Escribe en minúsculas sin espacios:",
+                            "correctAnswer": "(x-5)(x-2)",
+                            "hint": "Busca dos números que multiplicados den +10 y sumados den -7. Ambos deben ser negativos (-5 y -2).",
+                            "feedbackCorrect": "¡Excelente! Queda (x-5)(x-2).",
+                            "feedbackIncorrect": "Incorrecto. Los números son -5 y -2: '(x-5)(x-2)'.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si factorizamos el trinomio x² - 2x - 15, la pareja correcta de números p y q que cumplen las condiciones es:",
+                            "options": [
+                                "-5 y 3",
+                                "5 y -3",
+                                "-5 y -3",
+                                "5 y 3"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Multiplicados deben dar -15 y sumados deben dar -2.",
+                            "feedbackCorrect": "¡Excelente! -5 * 3 = -15, y -5 + 3 = -2.",
+                            "feedbackIncorrect": "Incorrecto. La pareja es -5 y 3 (el producto es -15 y su suma es -2).",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Factoriza por completo la expresión tridimensional: x³ - 3x² - 10x.",
+                            "options": [
+                                "x(x - 5)(x + 2)",
+                                "x(x + 5)(x - 2)",
+                                "x²(x - 3) - 10x",
+                                "(x² - 5x)(x + 2)"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Primero extrae el factor común monomio x, resultando en x(x² - 3x - 10). Luego, factoriza el trinomio cuadrático interno.",
+                            "feedbackCorrect": "¡Perfecto! Extraer x y factorizar da x(x - 5)(x + 2).",
+                            "feedbackIncorrect": "Incorrecto. Debes aplicar factor común primero y luego factorizar el trinomio: x(x - 5)(x + 2).",
+                            "difficulty": "avanzado",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "Factorizar trinomios de segundo grado consiste en descomponerlos en binomios determinando parejas de factores de c que sumen algebraicamente b.",
+                    "videoPlaceholderText": "Video de Álgebra: El truco para factorizar cualquier trinomio cuadrático en segundos."
+                }
+            ]
+        }
+    ]
+},
+
+    "geometria-plana": {
+    "isRichCourse": true,
+    "title": "Geometría Plana",
+    "units": [
+        {
+            "title": "Unidad 1: Fundamentos de Geometría y Ángulos",
+            "lessons": [
+                {
+                    "id": "puntos-lineas-planos-segmentos",
+                    "title": "Lección 1.1: Puntos, Líneas, Planos y Segmentos",
+                    "introduction": "La geometría plana estudia las figuras en superficies bidimensionales a partir de conceptos básicos: el punto, la línea y el plano.",
+                    "explanationHtml": "<p>Los fundamentos de la geometría parten de tres elementos ideales no definidos:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Punto:</strong> Representa una posición exacta en el espacio, no tiene largo, ancho ni espesor. Se nombra con letras mayúsculas ($A, B, C$).</li><li><strong>Línea (Recta):</strong> Sucesión infinita de puntos que se extiende en una sola dimensión. No tiene principio ni fin.</li><li><strong>Plano:</strong> Superficie bidimensional ilimitada que tiene longitud y anchura, pero no espesor.</li><li><strong>Segmento:</strong> Parte de una recta limitada por dos puntos llamados extremos. Se puede medir su longitud.</li></ul><p class=\"mt-2\">La <strong>adición de segmentos</strong> establece que si tres puntos $A, B$ y $C$ son colineales (están en la misma línea recta) y $B$ está entre $A$ y $C$, entonces las longitudes de los segmentos cumplen con la relación aditiva: $AB + BC = AC$.</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Propiedad de Adición de Segmentos</p><p class=\"text-xs font-mono font-bold text-primary\">AB + BC = AC &rArr; AB = AC - BC</p><p class=\"text-xs text-slate-500\">Un punto medio M divide a un segmento AB en dos partes congruentes: AM = MB = AB/2.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"22\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">ADICIÓN DE SEGMENTOS</text><line x1=\"30\" y1=\"65\" x2=\"270\" y2=\"65\" stroke=\"#94a3b8\" stroke-width=\"2\" stroke-linecap=\"round\" /><circle cx=\"40\" cy=\"65\" r=\"5\" fill=\"#3b82f6\" /><text x=\"40\" y=\"52\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"bold\" fill=\"#1e40af\" text-anchor=\"middle\">A</text><circle cx=\"180\" cy=\"65\" r=\"5\" fill=\"#f59e0b\" /><text x=\"180\" y=\"52\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"bold\" fill=\"#b45309\" text-anchor=\"middle\">B</text><circle cx=\"260\" cy=\"65\" r=\"5\" fill=\"#10b981\" /><text x=\"260\" y=\"52\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"bold\" fill=\"#047857\" text-anchor=\"middle\">C</text><path d=\"M 40 80 L 40 86 M 180 80 L 180 86 M 40 83 L 180 83\" stroke=\"#2563eb\" stroke-width=\"1.5\" /><text x=\"110\" y=\"96\" font-size=\"9\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">AB = 9</text><path d=\"M 180 80 L 180 86 M 260 80 L 260 86 M 180 83 L 260 83\" stroke=\"#d97706\" stroke-width=\"1.5\" /><text x=\"220\" y=\"96\" font-size=\"9\" fill=\"#b45309\" font-weight=\"bold\" text-anchor=\"middle\">BC = 6</text><path d=\"M 40 100 L 40 106 M 260 100 L 260 106 M 40 103 L 260 103\" stroke=\"#059669\" stroke-width=\"1\" stroke-dasharray=\"2,2\" /><text x=\"150\" y=\"114\" font-size=\"9\" fill=\"#047857\" font-weight=\"bold\" text-anchor=\"middle\">AC = 15</text></svg>",
+                    "svgDescription": "Segmento de recta que muestra los puntos A, B y C alineados. Muestra visualmente que la distancia total AC (15) es la suma de los subsegmentos AB (9) y BC (6).",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> En una calle recta de Antigua Guatemala, hay tres faroles alineados A, B y C. Si la distancia de A a C es de 15 varas y de B a C es de 6 varas, calcula la distancia de A a B.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1:</strong> Dibuja o visualiza el segmento total con los puntos en orden: $A - B - C$.</li><li><strong>Paso 2:</strong> Plantea la ecuación de adición de segmentos: $AB + BC = AC$.</li><li><strong>Paso 3:</strong> Sustituye los valores conocidos en la ecuación: $AB + 6 = 15$.</li><li><strong>Paso 4:</strong> Despeja $AB$ restando $6$ a ambos lados: $AB = 15 - 6 = 9$.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> La distancia de A a B es de <strong>9 varas</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Confundir la posición de los puntos:</strong> Asumir que la longitud de un subsegmento es la suma de los otros dos sin verificar cuál es el punto intermedio. Grafica siempre los puntos antes de operar.</li><li><strong>Ignorar las unidades:</strong> Escribir solo el número sin añadir la magnitud correspondiente (metros, centímetros, varas).</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Si M es el punto medio del segmento PQ y PQ = 24 cm, ¿cuánto mide PM en cm? (Ingresa solo el número):",
+                            "correctAnswer": "12",
+                            "hint": "El punto medio divide al segmento exactamente en dos partes iguales. Divide la longitud total entre 2.",
+                            "feedbackCorrect": "¡Excelente! Como M es punto medio, PM = PQ / 2 = 24 / 2 = 12 cm.",
+                            "feedbackIncorrect": "Incorrecto. Recuerda que el punto medio divide a la mitad: 24 / 2 = 12.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si los puntos alineados A, B, C y D están en orden lineal y AB = 8 cm, BC = 5 cm y CD = 12 cm. Calcula la longitud total AD en cm:",
+                            "correctAnswer": "25",
+                            "hint": "Como los puntos están ordenados de forma sucesiva, suma todos los subsegmentos: AB + BC + CD.",
+                            "feedbackCorrect": "¡Perfecto! AD = 8 + 5 + 12 = 25 cm.",
+                            "feedbackIncorrect": "Incorrecto. Suma las tres longitudes consecutivas: 8 + 5 + 12 = 25.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "En un segmento RT de 18 m, un punto S está situado de tal forma que RS = 2ST. Calcula la medida de ST en metros:",
+                            "correctAnswer": "6",
+                            "hint": "Plantea RS + ST = RT. Como RS = 2ST, entonces 2ST + ST = 18. Resuelve para ST.",
+                            "feedbackCorrect": "¡Excelente! 3ST = 18, por lo tanto ST = 6 metros.",
+                            "feedbackIncorrect": "Incorrecto. 3ST = 18 implica que ST = 6.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cuál es el número máximo de puntos de intersección que pueden tener 3 rectas en un mismo plano?",
+                            "options": [
+                                "1",
+                                "2",
+                                "3",
+                                "Infinitos"
+                            ],
+                            "correctAnswer": 2,
+                            "hint": "Dibuja tres rectas cruzándose entre sí de modo que cada una corte a las otras dos en puntos diferentes (formando un triángulo).",
+                            "feedbackCorrect": "¡Excelente! El máximo de intersecciones ocurre cuando las 3 rectas se cortan de 2 en 2, sumando 3 puntos de intersección.",
+                            "feedbackIncorrect": "Incorrecto. Imagina tres rectas formando un triángulo en el plano; se intersectan en exactamente 3 puntos.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "¿Cómo se define un rayo o semirrecta en geometría?",
+                            "options": [
+                                "Una porción de línea delimitada por dos puntos extremos fijos.",
+                                "Una línea que tiene un punto de partida pero se extiende infinitamente en una dirección.",
+                                "Una línea curva que nunca se cierra sobre sí misma.",
+                                "La intersección exacta entre dos planos bidimensionales."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Piensa en el rayo de luz de una linterna: parte de un origen y viaja sin fin en una dirección.",
+                            "feedbackCorrect": "¡Perfecto! Un rayo tiene un origen (punto de inicio) pero no tiene fin.",
+                            "feedbackIncorrect": "Incorrecto. El rayo tiene origen pero no final. La porción con dos extremos es un segmento.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "Los conceptos fundamentales de punto, recta y plano estructuran el estudio geométrico. Los segmentos representan tramos medibles de recta que cumplen propiedades aditivas y de punto medio.",
+                    "videoPlaceholderText": "Video de Geometría: Elementos fundamentales y adición de segmentos explicada paso a paso."
+                },
+                {
+                    "id": "clasificacion-medicion-angulos",
+                    "title": "Lección 1.2: Clasificación y Medición de Ángulos",
+                    "introduction": "Aprende a medir y clasificar ángulos y a plantear ecuaciones algebraicas con ángulos complementarios y suplementarios.",
+                    "explanationHtml": "<p>Un <strong>ángulo</strong> es la abertura formada por dos rayos que comparten un mismo origen llamado <strong>vértice</strong>. Se miden principalmente en grados sexagesimales (de $0^\\circ$ a $360^\\circ$).</p><p class=\"mt-2 font-bold text-slate-800\">Clasificación por su medida:</p><ul class=\"list-disc pl-5 space-y-1 my-2\"><li><strong>Agudo:</strong> Mide más de $0^\\circ$ y menos de $90^\\circ$.</li><li><strong>Recto:</strong> Mide exactamente $90^\\circ$. Forma una esquina perfecta.</li><li><strong>Obtuso:</strong> Mide más de $90^\\circ$ y menos de $180^\\circ$.</li><li><strong>Llano:</strong> Mide exactamente $180^\\circ$. Equivale a una línea recta.</li><li><strong>Perigonal (o completo):</strong> Mide exactamente $360^\\circ$. Una vuelta entera.</li></ul><p class=\"mt-3\">Dos ángulos son <strong>complementarios</strong> si la suma de sus medidas es exactamente $90^\\circ$. Son <strong>suplementarios</strong> si su suma es exactamente $180^\\circ$.</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Ángulos Especiales</p><p class=\"text-xs font-mono font-bold text-primary\">Complemento de x = 90&deg; - x</p><p class=\"text-xs font-mono font-bold text-primary\">Suplemento de x = 180&deg; - x</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"22\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">ÁNGULOS ESPECIALES</text><path d=\"M 30 90 L 100 90 M 30 90 L 30 20\" stroke=\"#94a3b8\" stroke-width=\"2\" /><path d=\"M 30 90 L 80 40\" stroke=\"#3b82f6\" stroke-width=\"2\" /><rect x=\"30\" y=\"80\" width=\"10\" height=\"10\" fill=\"none\" stroke=\"#64748b\" stroke-width=\"1\" /><path d=\"M 45 90 A 15 15 0 0 0 40 80\" fill=\"none\" stroke=\"#2563eb\" stroke-width=\"1.5\" /><text x=\"48\" y=\"85\" font-size=\"8\" fill=\"#2563eb\" font-weight=\"bold\">35°</text><path d=\"M 40 80 A 15 15 0 0 0 30 75\" fill=\"none\" stroke=\"#059669\" stroke-width=\"1.5\" /><text x=\"32\" y=\"70\" font-size=\"8\" fill=\"#059669\" font-weight=\"bold\">55°</text><text x=\"75\" y=\"105\" font-size=\"8\" fill=\"#64748b\" text-anchor=\"middle\">COMPLEMENTARIOS (90°)</text><path d=\"M 180 90 L 270 90 M 180 90 L 140 90\" stroke=\"#94a3b8\" stroke-width=\"2\" /><path d=\"M 180 90 L 230 40\" stroke=\"#f59e0b\" stroke-width=\"2\" /><path d=\"M 195 90 A 15 15 0 0 0 190 80\" fill=\"none\" stroke=\"#d97706\" stroke-width=\"1.5\" /><text x=\"202\" y=\"85\" font-size=\"8\" fill=\"#d97706\" font-weight=\"bold\">45°</text><path d=\"M 190 80 A 15 15 0 0 0 165 90\" fill=\"none\" stroke=\"#475569\" stroke-width=\"1.5\" /><text x=\"160\" y=\"75\" font-size=\"8\" fill=\"#475569\" font-weight=\"bold\">135°</text><text x=\"205\" y=\"105\" font-size=\"8\" fill=\"#64748b\" text-anchor=\"middle\">SUPLEMENTARIOS (180°)</text></svg>",
+                    "svgDescription": "Gráficos de ángulos. A la izquierda se muestran ángulos complementarios (35° y 55°) formando un ángulo recto. A la derecha se muestran ángulos suplementarios (45° y 135°) formando un ángulo llano sobre una línea recta.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Si el ángulo $A$ mide $35^\\circ$, calcula su ángulo complementario y su ángulo suplementario.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1 (Complementario):</strong> Los ángulos complementarios suman $90^\\circ$. Por lo tanto, restamos el ángulo conocido de $90^\\circ$: <br>Complementario $= 90^\\circ - 35^\\circ = 55^\\circ$.</li><li><strong>Paso 2 (Suplementario):</strong> Los ángulos suplementarios suman $180^\\circ$. Por lo tanto, restamos el ángulo conocido de $180^\\circ$: <br>Suplementario $= 180^\\circ - 35^\\circ = 145^\\circ$.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> Su ángulo complementario es <strong>55°</strong> y su ángulo suplementario es <strong>145°</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Confundir complementario con suplementario:</strong> Recordar que \"C\" viene antes que \"S\" en el abecedario, al igual que $90^\\circ$ antes que $180^\\circ$. Complementario = 90°, Suplementario = 180°.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Encuentra el ángulo que es exactamente igual a su propio complemento en grados (Ingresa solo el número):",
+                            "correctAnswer": "45",
+                            "hint": "Si el ángulo mide x, su complemento también mide x. Resuelve x + x = 90.",
+                            "feedbackCorrect": "¡Excelente! 45 + 45 = 90. Es el único ángulo igual a su complemento.",
+                            "feedbackIncorrect": "Incorrecto. Plantea x + x = 90; 2x = 90; x = 45.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si dos ángulos suplementarios están en relación 2:3, ¿cuánto mide el menor de ellos en grados? (Ingresa solo el número):",
+                            "correctAnswer": "72",
+                            "hint": "Plantea 2x + 3x = 180. Resuelve para x y luego calcula la medida del menor, que es 2x.",
+                            "feedbackCorrect": "¡Perfecto! 5x = 180, entonces x = 36. El menor es 2 * 36 = 72 grados.",
+                            "feedbackIncorrect": "Incorrecto. 2x + 3x = 180; 5x = 180; x = 36. El menor mide 2*36 = 72.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Un ángulo mide exactamente 110°. ¿A qué clasificación pertenece según su abertura?",
+                            "options": [
+                                "Agudo",
+                                "Recto",
+                                "Obtuso",
+                                "Llano"
+                            ],
+                            "correctAnswer": 2,
+                            "hint": "Compara el valor (110°) con los límites de cada clasificación. Es mayor que 90° pero menor que 180°.",
+                            "feedbackCorrect": "¡Excelente! Los ángulos entre 90° y 180° se clasifican como obtusos.",
+                            "feedbackIncorrect": "Incorrecto. Al medir más de 90° y menos de 180°, pertenece a los ángulos obtusos.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Calcula el valor de x si dos ángulos suplementarios miden (3x + 10) y (2x - 15). (Ingresa solo el número):",
+                            "correctAnswer": "37",
+                            "hint": "Dado que son suplementarios, la suma de ambos binomios debe ser igual a 180. Plantea (3x + 10) + (2x - 15) = 180.",
+                            "feedbackCorrect": "¡Excelente! 5x - 5 = 180; 5x = 185; x = 37.",
+                            "feedbackIncorrect": "Incorrecto. Al sumar e igualar a 180 obtienes 5x - 5 = 180; 5x = 185; x = 37.",
+                            "difficulty": "avanzado",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cuánto mide el ángulo conjugado que completa una vuelta entera a partir de un ángulo de 60°?",
+                            "options": [
+                                "90°",
+                                "120°",
+                                "180°",
+                                "300°"
+                            ],
+                            "correctAnswer": 3,
+                            "hint": "Una vuelta completa equivale a un ángulo perigonal de 360°. Resta 60° de 360°.",
+                            "feedbackCorrect": "¡Perfecto! 360° - 60° = 300°.",
+                            "feedbackIncorrect": "Incorrecto. Para completar una vuelta entera (360°), se necesitan 360° - 60° = 300°.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "Los ángulos cuantifican aberturas rotacionales. Su clasificación en agudo, recto, obtuso y llano, así como sus relaciones de complemento (90°) y suplemento (180°), facilitan el planteamiento de modelos algebraicos.",
+                    "videoPlaceholderText": "Video de Geometría: Clasificación de ángulos y trucos de complementarios y suplementarios."
+                },
+                {
+                    "id": "rectas-paralelas-transversal",
+                    "title": "Lección 1.3: Rectas Paralelas Cortadas por una Transversal",
+                    "introduction": "Descubre las ricas propiedades y simetrías angulares formadas cuando una recta secante corta dos rectas paralelas.",
+                    "explanationHtml": "<p>Cuando una recta secante o transversal corta a dos rectas paralelas en un plano, se generan exactamente 8 ángulos divididos en dos grupos congruentes. Las relaciones angulares clave son:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Opuestos por el vértice:</strong> Ángulos enfrentados por el vértice. Son congruentes (ej. $1$ y $4$).</li><li><strong>Alternos internos:</strong> Ángulos interiores a las paralelas situados a lados opuestos de la secante. Son congruentes (ej. $3$ y $6$).</li><li><strong>Alternos externos:</strong> Ángulos exteriores situados en lados opuestos de la secante. Son congruentes (ej. $2$ y $7$).</li><li><strong>Correspondientes:</strong> Ángulos en la misma posición relativa en cada cruce de paralelas. Son congruentes (ej. $1$ y $5$).</li><li><strong>Conjugados internos:</strong> Ángulos internos del mismo lado de la secante. Son suplementarios, suman $180^\\circ$ (ej. $4$ y $6$).</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Regla Práctica del Cruce</p><p class=\"text-xs text-slate-500\">En todo el sistema solo hay 2 medidas angulares diferentes: ángulos agudos (iguales entre sí) y obtusos (iguales entre sí). Cualquier agudo + cualquier obtuso = 180°.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">PARALELAS Y SECANTE</text><line x1=\"30\" y1=\"45\" x2=\"270\" y2=\"45\" stroke=\"#059669\" stroke-width=\"2.5\" /><line x1=\"30\" y1=\"85\" x2=\"270\" y2=\"85\" stroke=\"#059669\" stroke-width=\"2.5\" /><text x=\"25\" y=\"48\" font-size=\"8\" fill=\"#047857\" font-weight=\"bold\">L1</text><text x=\"25\" y=\"88\" font-size=\"8\" fill=\"#047857\" font-weight=\"bold\">L2</text><line x1=\"80\" y1=\"110\" x2=\"220\" y2=\"20\" stroke=\"#ef4444\" stroke-width=\"2\" /><path d=\"M 175 45 A 15 15 0 0 0 185 38\" fill=\"none\" stroke=\"#2563eb\" stroke-width=\"1.5\" /><text x=\"195\" y=\"41\" font-size=\"8\" fill=\"#2563eb\" font-weight=\"bold\">75°</text><path d=\"M 115 85 A 15 15 0 0 0 125 78\" fill=\"none\" stroke=\"#2563eb\" stroke-width=\"1.5\" /><text x=\"135\" y=\"81\" font-size=\"8\" fill=\"#2563eb\" font-weight=\"bold\">75°</text><path d=\"M 125 78 A 15 15 0 0 0 110 85\" fill=\"none\" stroke=\"#d97706\" stroke-width=\"1.5\" /><text x=\"95\" y=\"78\" font-size=\"8\" fill=\"#d97706\" font-weight=\"bold\">105°</text></svg>",
+                    "svgDescription": "Dos rectas paralelas L1 y L2 horizontales cortadas de forma diagonal por una secante roja. Se ilustran y marcan dos ángulos alternos internos de 75° idénticos, y un colindante suplementario de 105°.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Si en un cruce de rectas paralelas por una secante, un ángulo alterno interno mide $75^\\circ$, ¿cuánto mide su colindante suplementario sobre la misma recta?</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1:</strong> Identifica que dos ángulos colindantes que yacen sobre una misma línea recta son suplementarios.</li><li><strong>Paso 2:</strong> Plantea la propiedad: $x + 75^\\circ = 180^\\circ$.</li><li><strong>Paso 3:</strong> Despeja $x$ restando: $x = 180^\\circ - 75^\\circ = 105^\\circ$.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> El ángulo colindante suplementario mide <strong>105°</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Creer que todos los ángulos formados son congruentes:</strong> Solamente son iguales los que corresponden al mismo tipo (agudos con agudos, obtusos con obtusos). Si combinas un agudo con un obtuso, su suma es 180°.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Si en un cruce de paralelas y secante, un ángulo mide 120°, ¿cuánto mide su ángulo opuesto por el vértice en grados? (Ingresa solo el número):",
+                            "correctAnswer": "120",
+                            "hint": "Los ángulos opuestos por el vértice comparten el mismo vértice y sus lados son rayos opuestos. Son congruentes.",
+                            "feedbackCorrect": "¡Excelente! Los opuestos por el vértice siempre miden lo mismo: 120°.",
+                            "feedbackIncorrect": "Incorrecto. Los ángulos opuestos por el vértice son congruentes, miden exactamente lo mismo: 120°.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cómo se denominan los ángulos formados del mismo lado de la transversal, uno interno y otro externo, que ocupan la misma posición relativa?",
+                            "options": [
+                                "Alternos internos",
+                                "Conjugados externos",
+                                "Correspondientes",
+                                "Opuestos por el vértice"
+                            ],
+                            "correctAnswer": 2,
+                            "hint": "Su posición es análoga en cada cruce de paralela (ejemplo: arriba a la derecha en ambos cruces).",
+                            "feedbackCorrect": "¡Perfecto! Se denominan ángulos correspondientes y son de idéntica medida.",
+                            "feedbackIncorrect": "Incorrecto. Se llaman correspondientes debido a que están ubicados en la misma posición relativa.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Si dos ángulos conjugados internos miden 2x y 3x, calcula el valor de x. (Ingresa solo el número):",
+                            "correctAnswer": "36",
+                            "hint": "Los ángulos conjugados internos son suplementarios. Plantea la ecuación 2x + 3x = 180.",
+                            "feedbackCorrect": "¡Perfecto! 5x = 180, por lo que x = 36.",
+                            "feedbackIncorrect": "Incorrecto. Al ser suplementarios: 2x + 3x = 180; 5x = 180; x = 36.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si un ángulo alterno interno mide 65°, ¿cuánto mide el conjugado interno situado al mismo lado de la transversal en grados? (Ingresa solo el número):",
+                            "correctAnswer": "115",
+                            "hint": "Los ángulos colaterales o conjugados internos son suplementarios. Resta 65° a 180°.",
+                            "feedbackCorrect": "¡Excelente! 180° - 65° = 115°.",
+                            "feedbackIncorrect": "Incorrecto. Suman 180°, por lo tanto el conjugado mide 180 - 65 = 115°.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Qué propiedad geométrica fundamental cumplen las rectas paralelas?",
+                            "options": [
+                                "Se intersectan en un único punto formando un ángulo de 90°.",
+                                "Yacen en el mismo plano y nunca se intersectan, manteniendo una distancia constante entre sí.",
+                                "Tienen pendientes opuestas y recíprocas en coordenadas cartesianas.",
+                                "Se cruzan en el espacio tridimensional pero no en el plano bidimensional."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Piensa en los rieles de una vía de tren; siempre viajan al lado sin tocarse.",
+                            "feedbackCorrect": "¡Perfecto! Las paralelas en el plano nunca se intersectan y mantienen siempre la misma distancia.",
+                            "feedbackIncorrect": "Incorrecto. Las paralelas coplanares jamás se tocan.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "La intersección de una secante con rectas paralelas produce relaciones de congruencia y suplemento simétricas y predecibles, cruciales para resolver diseños de ingeniería y topografía.",
+                    "videoPlaceholderText": "Video de Geometría: Relaciones angulares entre rectas paralelas cortadas por una secante."
+                }
+            ]
+        },
+        {
+            "title": "Unidad 2: Triángulos y Teorema de Pitágoras",
+            "lessons": [
+                {
+                    "id": "clasificacion-triangulos-angulos-internos",
+                    "title": "Lección 2.1: Clasificación de Triángulos y Ángulos Internos",
+                    "introduction": "Aprende a catalogar los triángulos según sus lados o ángulos y aplica el teorema fundamental de la suma de sus ángulos internos.",
+                    "explanationHtml": "<p>Un <strong>triángulo</strong> es un polígono de tres lados. Se pueden clasificar bajo dos criterios independientes:</p><p class=\"mt-2 font-bold text-slate-800\">Según la longitud de sus lados:</p><ul class=\"list-disc pl-5 space-y-1 my-1\"><li><strong>Equilátero:</strong> Sus 3 lados miden lo mismo (por tanto, sus 3 ángulos internos miden $60^\\circ$).</li><li><strong>Isósceles:</strong> Tiene 2 lados congruentes y 1 desigual. Los ángulos opuestos a los lados iguales también son iguales.</li><li><strong>Escaleno:</strong> Sus 3 lados y ángulos son completamente distintos.</li></ul><p class=\"mt-2 font-bold text-slate-800\">Según sus ángulos internos:</p><ul class=\"list-disc pl-5 space-y-1 my-1\"><li><strong>Acutángulo:</strong> Sus 3 ángulos son agudos (menores a $90^\\circ$).</li><li><strong>Rectángulo:</strong> Posee un ángulo recto ($90^\\circ$). Los lados que lo forman son catetos; el opuesto es la hipotenusa.</li><li><strong>Obtusángulo:</strong> Posee un ángulo obtuso (mayor a $90^\\circ$).</li></ul><p class=\"mt-3 font-bold text-slate-900 bg-slate-50 p-3 rounded-lg border border-slate-200 text-center\">Teorema Fundamental: La suma de los tres ángulos internos de cualquier triángulo en el plano es siempre exactamente 180°: $$A + B + C = 180^\\circ$$</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Teorema de Ángulos de Triángulos</p><p class=\"text-xs font-mono font-bold text-primary\">A + B + C = 180&deg;</p><p class=\"text-xs text-slate-550\">Desigualdad Triangular: Para que un triángulo exista, la suma de las longitudes de dos de sus lados cualesquiera debe ser mayor que el tercer lado.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">ÁNGULOS INTERNOS DE UN TRIÁNGULO</text><polygon points=\"60,95 240,95 150,35\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"2\" /><path d=\"M 75 95 A 15 15 0 0 0 68 85\" fill=\"none\" stroke=\"#2563eb\" stroke-width=\"1.5\" /><text x=\"78\" y=\"90\" font-size=\"8\" fill=\"#1e40af\" font-weight=\"bold\">50°</text><path d=\"M 225 95 A 15 15 0 0 0 232 85\" fill=\"none\" stroke=\"#059669\" stroke-width=\"1.5\" /><text x=\"210\" y=\"90\" font-size=\"8\" fill=\"#047857\" font-weight=\"bold\">70°</text><path d=\"M 143 45 A 15 15 0 0 0 157 45\" fill=\"none\" stroke=\"#d97706\" stroke-width=\"1.5\" /><text x=\"150\" y=\"55\" font-size=\"8\" fill=\"#b45309\" font-weight=\"bold\">60°</text><text x=\"150\" y=\"112\" font-size=\"9\" fill=\"#334155\" text-anchor=\"middle\" font-weight=\"bold\">Suma: 50° + 70° + 60° = 180°</text></svg>",
+                    "svgDescription": "Un triángulo oblicuo con vértices A, B y C que muestra sus ángulos internos de 50°, 70° y 60° respectivamente, demostrando gráficamente que su suma da 180°.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> En un triángulo que forma la estructura de un techo en Tecpán, dos de sus ángulos internos miden $50^\\circ$ y $70^\\circ$. Calcula la medida del tercer ángulo.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1:</strong> Plantea la ecuación fundamental del triángulo: $A + B + C = 180^\\circ$.</li><li><strong>Paso 2:</strong> Reemplaza con los valores conocidos: $50^\\circ + 70^\\circ + C = 180^\\circ$.</li><li><strong>Paso 3:</strong> Suma los valores: $120^\\circ + C = 180^\\circ$.</li><li><strong>Paso 4:</strong> Despeja el tercer ángulo $C$ restando: $C = 180^\\circ - 120^\\circ = 60^\\circ$.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> El tercer ángulo mide exactamente <strong>60°</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Olvidar las propiedades del triángulo equilátero:</strong> No notar que si se menciona un triángulo equilátero, sus tres ángulos son automáticamente $60^\\circ$ cada uno, lo que ahorra cálculos.</li><li><strong>Descartar la desigualdad triangular:</strong> Intentar resolver problemas con longitudes imposibles (como 3 cm, 4 cm y 8 cm, donde los lados cortos no logran cerrarse).</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "¿Cuánto mide exactamente cada uno de los tres ángulos internos de un triángulo equilátero en grados? (Ingresa solo el número):",
+                            "correctAnswer": "60",
+                            "hint": "Al tener sus 3 lados congruentes, también tiene sus 3 ángulos congruentes. Divide 180 entre 3.",
+                            "feedbackCorrect": "¡Excelente! Cada ángulo de un triángulo equilátero siempre mide 60°.",
+                            "feedbackIncorrect": "Incorrecto. Como tiene tres lados iguales, sus ángulos deben ser iguales: 180 / 3 = 60.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si un triángulo isósceles tiene un ángulo de 100° en su vértice desigual, ¿cuánto mide cada uno de los otros dos ángulos de la base en grados? (Ingresa solo el número):",
+                            "correctAnswer": "40",
+                            "hint": "Los ángulos de la base de un triángulo isósceles son iguales entre sí. Plantea 100 + x + x = 180.",
+                            "feedbackCorrect": "¡Perfecto! (180 - 100) / 2 = 80 / 2 = 40 grados.",
+                            "feedbackIncorrect": "Incorrecto. 100 + 2x = 180; 2x = 80; x = 40.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "En un triángulo rectángulo, ¿cuánto deben sumar los dos ángulos agudos en grados? (Ingresa solo el número):",
+                            "correctAnswer": "90",
+                            "hint": "La suma total es 180°. Si uno ya mide 90° (el ángulo recto), resta 180 - 90.",
+                            "feedbackCorrect": "¡Perfecto! Los dos ángulos agudos de un triángulo rectángulo siempre son complementarios, sumando 90°.",
+                            "feedbackIncorrect": "Incorrecto. Si restas el ángulo recto (90°) del total (180°), queda 180 - 90 = 90°.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Los ángulos de un triángulo son proporcionales a los números 1, 2 y 3. ¿Cuánto mide el mayor de sus ángulos en grados?",
+                            "options": [
+                                "30°",
+                                "60°",
+                                "90°",
+                                "120°"
+                            ],
+                            "correctAnswer": 2,
+                            "hint": "Plantea x + 2x + 3x = 180. Resuelve x y multiplica el valor por 3.",
+                            "feedbackCorrect": "¡Excelente! 6x = 180; x = 30. El ángulo mayor es 3 * 30 = 90° (un triángulo rectángulo).",
+                            "feedbackIncorrect": "Incorrecto. x + 2x + 3x = 180; 6x = 180; x = 30. El mayor mide 3*30 = 90°.",
+                            "difficulty": "avanzado",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "¿Es geométricamente posible construir un triángulo cuyos lados midan 3 cm, 4 cm y 8 cm?",
+                            "options": [
+                                "Sí, porque cumple con las tres condiciones de congruencia.",
+                                "Sí, se trata de un triángulo obtusángulo escaleno.",
+                                "No, porque la suma de los dos lados menores (3 + 4 = 7) es menor que el tercer lado (8).",
+                                "No, porque los lados no son números consecutivos pares."
+                            ],
+                            "correctAnswer": 2,
+                            "hint": "Aplica la propiedad de desigualdad triangular: la suma de las dos longitudes menores debe ser mayor que el lado más largo.",
+                            "feedbackCorrect": "¡Excelente! Por desigualdad triangular, este triángulo no puede existir porque los lados menores no alcanzan a conectarse.",
+                            "feedbackIncorrect": "Incorrecto. No se puede construir, la desigualdad triangular exige que 3 + 4 > 8, lo cual no es verdadero.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "Los triángulos se clasifican de forma independiente por sus lados y sus ángulos. La invariabilidad de la suma de sus ángulos internos (180°) permite modelar e inferir ángulos faltantes de forma exacta.",
+                    "videoPlaceholderText": "Video de Geometría: Suma de ángulos internos y clasificación de triángulos."
+                },
+                {
+                    "id": "teorema-pitagoras-aplicaciones",
+                    "title": "Lección 2.2: El Teorema de Pitágoras y sus Aplicaciones",
+                    "introduction": "Descubre la herramienta matemática más célebre y aplicada en la construcción y topografía del mundo real.",
+                    "explanationHtml": "<p>El <strong>Teorema de Pitágoras</strong> aplica exclusivamente a <strong>triángulos rectángulos</strong> (triángulos con un ángulo de $90^\\circ$). Establece que la suma de los cuadrados de las longitudes de los catetos ($a$ y $b$) es exactamente igual al cuadrado de la longitud de la hipotenusa ($c$, el lado opuesto al ángulo recto):</p><p class=\"text-center font-mono font-extrabold text-primary text-lg my-2\">a² + b² = c²</p><p class=\"mt-3\">A partir de esta relación fundamental, podemos despejar cualquier lado desconocido:</p><ul class=\"list-disc pl-5 space-y-1.5 my-2\"><li><strong>Hipotenusa:</strong> $c = \\sqrt{a^2 + b^2}$</li><li><strong>Cateto faltante:</strong> $a = \\sqrt{c^2 - b^2}$ &nbsp;o&nbsp; $b = \\sqrt{c^2 - a^2}$</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Teorema de Pitágoras</p><p class=\"text-base font-mono font-extrabold text-primary\">a² + b² = c²</p><p class=\"text-xs text-slate-500\">Terna Pitagórica famosa: 3, 4 y 5 (ya que 3² + 4² = 5² &rArr; 9 + 16 = 25).</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">TEOREMA DE PITÁGORAS (3-4-5)</text><polygon points=\"90,95 170,95 170,35\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"2\" /><rect x=\"160\" y=\"85\" width=\"10\" height=\"10\" fill=\"none\" stroke=\"#64748b\" stroke-width=\"1\" /><text x=\"130\" y=\"107\" font-size=\"9\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">Cateto a = 4</text><text x=\"195\" y=\"65\" font-size=\"9\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">Cateto b = 3</text><text x=\"110\" y=\"55\" font-size=\"9\" fill=\"#d97706\" font-weight=\"bold\" text-anchor=\"middle\">Hipotenusa c = 5</text><text x=\"210\" y=\"112\" font-size=\"8\" fill=\"#64748b\" text-anchor=\"middle\">4² + 3² = 16 + 9 = 25 (5²)</text></svg>",
+                    "svgDescription": "Un triángulo rectángulo con catetos de 4 y 3 unidades y la hipotenusa de 5 unidades. Resalta de forma clara la relación 4² + 3² = 5².",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Para pintar una pared alta de una casa en Xela, se apoya una escalera de 5 metros contra la pared. Si la base de la escalera se sitúa a 3 metros de la distancia horizontal de la pared, ¿a qué altura en vertical llega la escalera?</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1:</strong> Identifica las partes geométricas. La escalera representa la hipotenusa ($c = 5$ m). El alejamiento horizontal representa un cateto ($a = 3$ m). Deseamos hallar el cateto de altura ($b$).</li><li><strong>Paso 2:</strong> Usa el Teorema despejando el cateto $b$: $b = \\sqrt{c^2 - a^2}$.</li><li><strong>Paso 3:</strong> Sustituye las longitudes: $b = \\sqrt{5^2 - 3^2} = \\sqrt{25 - 9} = \\sqrt{16}$.</li><li><strong>Paso 4:</strong> Extrae la raíz cuadrada: $b = 4$ metros.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> La escalera alcanza una altura vertical de <strong>4 metros</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Sumar siempre los cuadrados:</strong> Recordar que la suma ($a^2 + b^2$) se realiza exclusivamente al buscar la hipotenusa. Si buscas un cateto, debes realizar una resta ($c^2 - a^2$).</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Calcula la longitud de la hipotenusa en cm si los dos catetos miden exactamente 6 cm y 8 cm: (Ingresa solo el número):",
+                            "correctAnswer": "10",
+                            "hint": "Aplica c = sqrt(6^2 + 8^2). Eleva al cuadrado ambos números, súmalos y extrae la raíz.",
+                            "feedbackCorrect": "¡Excelente! c = sqrt(36 + 64) = sqrt(100) = 10 cm.",
+                            "feedbackIncorrect": "Incorrecto. Saca la raíz de la suma: 6² + 8² = 36 + 64 = 100. La raíz es 10.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si la diagonal de una pantalla mide 15 pulgadas y su altura es de 9 pulgadas, ¿cuál es el ancho de la pantalla en pulgadas? (Ingresa solo el número):",
+                            "correctAnswer": "12",
+                            "hint": "La diagonal es la hipotenusa. Debes calcular el cateto de base mediante la fórmula de resta: b = sqrt(15^2 - 9^2).",
+                            "feedbackCorrect": "¡Perfecto! b = sqrt(225 - 81) = sqrt(144) = 12 pulgadas.",
+                            "feedbackIncorrect": "Incorrecto. Se calcula restando los cuadrados: sqrt(15² - 9²) = sqrt(225 - 81) = sqrt(144) = 12.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Calcula el cateto faltante de un triángulo rectángulo si su hipotenusa mide 13 cm y el otro cateto mide 5 cm. (Ingresa solo el número):",
+                            "correctAnswer": "12",
+                            "hint": "Aplica la fórmula del cateto: a = sqrt(13^2 - 5^2).",
+                            "feedbackCorrect": "¡Excelente! a = sqrt(169 - 25) = sqrt(144) = 12 cm.",
+                            "feedbackIncorrect": "Incorrecto. a = sqrt(13² - 5²) = sqrt(169 - 25) = sqrt(144) = 12.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Un poste de luz de 8 metros está sujeto por un cable tensor recto de 10 metros anclado al suelo. ¿A qué distancia en metros de la base del poste está anclado el cable? (Ingresa solo el número):",
+                            "correctAnswer": "6",
+                            "hint": "La altura del poste es un cateto (8) y el cable es la hipotenusa (10). Halla el cateto restante.",
+                            "feedbackCorrect": "¡Perfecto! Distancia = sqrt(10^2 - 8^2) = sqrt(100 - 64) = sqrt(36) = 6 metros.",
+                            "feedbackIncorrect": "Incorrecto. Distancia = sqrt(10² - 8²) = sqrt(36) = 6 metros.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si un cuadrado perfecto de cartulina tiene un lado de exactamente 2 cm, ¿cuál es la medida aproximada de su diagonal en cm?",
+                            "options": [
+                                "2.00 cm",
+                                "2.83 cm",
+                                "4.00 cm",
+                                "8.00 cm"
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "La diagonal forma un triángulo rectángulo con dos lados iguales de 2 cm. Calcula d = sqrt(2^2 + 2^2) = sqrt(8).",
+                            "feedbackCorrect": "¡Excelente! d = sqrt(8) ≈ 2.83 cm.",
+                            "feedbackIncorrect": "Incorrecto. La diagonal es sqrt(2² + 2²) = sqrt(8) ≈ 2.83 cm.",
+                            "difficulty": "avanzado",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "El Teorema de Pitágoras ($a^2 + b^2 = c^2$) proporciona una ley matemática rigurosa para encontrar dimensiones inaccesibles de forma directa mediante la descomposición triangular.",
+                    "videoPlaceholderText": "Video de Geometría: Demostración visual e intuitiva del Teorema de Pitágoras."
+                },
+                {
+                    "id": "congruencia-semejanza-triangulos",
+                    "title": "Lección 2.3: Congruencia y Semejanza de Triángulos",
+                    "introduction": "Comprende la diferencia entre figuras idénticas y proporcionales, y aprende a realizar mediciones de objetos gigantes de forma indirecta.",
+                    "explanationHtml": "<p>En geometría, existen dos relaciones fundamentales de comparación:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Congruencia (&cong;):</strong> Dos triángulos son congruentes si tienen exactamente la <strong>misma forma y tamaño</strong>. Sus lados y ángulos correspondientes miden igual. Los criterios básicos son Lado-Ángulo-Lado (LAL), Ángulo-Lado-Ángulo (ALA) y Lado-Lado-Lado (LLL).</li><li><strong>Semejanza (~):</strong> Dos triángulos son semejantes si tienen la <strong>misma forma</strong> pero **diferente tamaño**. Sus ángulos correspondientes son iguales y sus lados homólogos son <strong>proporcionales</strong>. El criterio más común es Ángulo-Ángulo (AA).</li></ul><p class=\"mt-2 font-bold text-slate-800\">Cálculo Proporcional en Semejanza:</p><p class=\"text-center font-mono font-bold text-primary my-2\">Altura Objeto 1 / Altura Objeto 2 = Sombra Objeto 1 / Sombra Objeto 2</p><p class=\"mt-2 text-slate-700\">Esta proporción permite determinar alturas imposibles de medir físicamente (como árboles o pirámides) mediante la longitud de sus sombras proyectadas.</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Razón de Proporción</p><p class=\"text-xs font-mono font-bold text-primary\">a/a' = b/b' = c/c' = k</p><p class=\"text-xs text-slate-500\">Donde k es la constante de semejanza. Los perímetros varían en razón k y las áreas en razón k².</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">SEMEJANZA Y MEDICIÓN INDIRECTA</text><path d=\"M 80 95 L 80 35 L 200 95 Z\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"1.5\" /><path d=\"M 160 95 L 160 75 L 200 95 Z\" fill=\"#ecfdf5\" stroke=\"#10b981\" stroke-width=\"1.5\" /><circle cx=\"200\" cy=\"95\" r=\"3\" fill=\"#64748b\" /><text x=\"80\" y=\"110\" font-size=\"8\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">Sombra Árbol = 15m</text><text x=\"160\" y=\"110\" font-size=\"8\" fill=\"#047857\" font-weight=\"bold\" text-anchor=\"middle\">Sombra = 3m</text><text x=\"65\" y=\"65\" font-size=\"9\" fill=\"#1e40af\" font-weight=\"bold\">H = 9m</text><text x=\"145\" y=\"85\" font-size=\"9\" fill=\"#047857\" font-weight=\"bold\">h = 1.8m</text></svg>",
+                    "svgDescription": "Diagrama que muestra la medición indirecta de la altura de un árbol usando semejanza de triángulos. Un triángulo grande azul (árbol y su sombra de 15m) contiene a un triángulo pequeño verde (bastón/persona y su sombra de 3m).",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Un árbol en el parque de Antigua Guatemala proyecta una sombra de 15 metros a la misma hora en que una persona de 1.80 metros de estatura proyecta una sombra de 3 metros. Calcula la altura del árbol.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1:</strong> Establece la semejanza matemática de los dos triángulos rectángulos formados por la incidencia de los rayos del sol.</li><li><strong>Paso 2:</strong> Plantea la ecuación de proporcionalidad homóloga: <br>$$\\frac{\\text{Altura del Árbol (H)}}{\\text{Altura de la Persona (h)}} = \\frac{\\text{Sombra del Árbol (S)}}{\\text{Sombra de la Persona (s)}}$$</li><li><strong>Paso 3:</strong> Sustituye las medidas correspondientes: $\\frac{H}{1.80} = \\frac{15}{3}$.</li><li><strong>Paso 4:</strong> Simplifica la fracción del lado derecho: $\\frac{H}{1.80} = 5$.</li><li><strong>Paso 5:</strong> Despeja $H$ multiplicando por $1.80$: $H = 5 \\times 1.80 = 9$ metros.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> La altura del árbol es de <strong>9 metros</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Invertir los términos de la proporción:</strong> Emparejar incorrectamente la altura de uno con la sombra de otro. Conserva el orden estricto: $\\frac{\\text{objeto 1}}{\\text{objeto 2}}$ en ambos lados.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Si dos triángulos son semejantes en razón 1:3 y el perímetro del triángulo menor es 15 cm, ¿cuál es el perímetro del mayor en cm? (Ingresa solo el número):",
+                            "correctAnswer": "45",
+                            "hint": "En triángulos semejantes, el perímetro se escala exactamente en la misma razón que sus lados directos (linealmente). Multiplica 15 por 3.",
+                            "feedbackCorrect": "¡Excelente! Razón 1:3 implica que el perímetro aumenta por 3: 15 * 3 = 45 cm.",
+                            "feedbackIncorrect": "Incorrecto. Los perímetros escalan de forma lineal: 15 * 3 = 45.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Qué criterio de semejanza se cumple si dos triángulos tienen sus tres ángulos correspondientes idénticos?",
+                            "options": [
+                                "Lado-Lado-Lado (LLL)",
+                                "Lado-Ángulo-Lado (LAL)",
+                                "Ángulo-Ángulo-Ángulo (AAA)",
+                                "Hipotenusa-Cateto (HC)"
+                            ],
+                            "correctAnswer": 2,
+                            "hint": "La semejanza requiere ángulos correspondientes iguales; el criterio se nombra según este postulado.",
+                            "feedbackCorrect": "¡Perfecto! Tres ángulos iguales confirman la semejanza de forma inequívoca mediante el criterio AAA.",
+                            "feedbackIncorrect": "Incorrecto. Se denomina criterio Ángulo-Ángulo-Ángulo (AAA).",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Los lados de un triángulo miden 4, 6 y 8 cm. Si un triángulo semejante tiene un lado menor de 12 cm, ¿cuánto mide su lado mayor en cm? (Ingresa solo el número):",
+                            "correctAnswer": "24",
+                            "hint": "Determina la razón de semejanza dividiendo el lado menor correspondiente: 12 / 4 = 3. Luego multiplica el lado mayor (8) por esa razón.",
+                            "feedbackCorrect": "¡Excelente! La escala es 3. El lado mayor mide 8 * 3 = 24 cm.",
+                            "feedbackIncorrect": "Incorrecto. La razón es 12/4 = 3. El lado mayor es 8 * 3 = 24.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cuál es el significado riguroso de congruencia en geometría plana?",
+                            "options": [
+                                "Las figuras tienen áreas semejantes pero perímetros diferentes.",
+                                "Las figuras tienen exactamente la misma forma y el mismo tamaño (lados y ángulos idénticos).",
+                                "Las figuras comparten el mismo eje de simetría horizontal.",
+                                "Las figuras tienen el mismo número de lados sin importar las medidas angulares."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Congruencia significa que si recortaras una figura, calzaría de manera milimétrica sobre la otra.",
+                            "feedbackCorrect": "¡Perfecto! Congruentes significa idénticos en forma y magnitud dimensional.",
+                            "feedbackIncorrect": "Incorrecto. Congruencia significa idéntica forma e idéntico tamaño.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Un bastón de 1 metro plantado verticalmente proyecta una sombra de 1.5 metros. ¿Qué longitud de sombra en metros proyectará un poste de 6 metros a la misma hora? (Ingresa solo el número):",
+                            "correctAnswer": "9",
+                            "hint": "Plantea la proporción: Altura Bastón / Altura Poste = Sombra Bastón / Sombra Poste. Esto es: 1 / 6 = 1.5 / S.",
+                            "feedbackCorrect": "¡Perfecto! Sombra = 6 * 1.5 = 9 metros.",
+                            "feedbackIncorrect": "Incorrecto. Plantea la relación 1/6 = 1.5/S; S = 6 * 1.5 = 9 metros.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        }
+                    ],
+                    "summaryHtml": "La congruencia define igualdad exacta en geometría, mientras que la semejanza define proporcionalidad regular. La proporcionalidad geométrica de semejanza permite modelar indirectamente alturas y distancias.",
+                    "videoPlaceholderText": "Video de Geometría: Cómo medir distancias imposibles con semejanza de triángulos."
+                }
+            ]
+        },
+        {
+            "title": "Unidad 3: Cuadriláteros, Círculos y Polígonos",
+            "lessons": [
+                {
+                    "id": "perimetro-area-cuadrilateros",
+                    "title": "Lección 3.1: Perímetro y Área de Cuadriláteros",
+                    "introduction": "Domina el cálculo del contorno y la superficie de paralelogramos, trapecios e implementa soluciones de distribución espacial.",
+                    "explanationHtml": "<p>Los <strong>cuadriláteros</strong> son polígonos de cuatro lados. Las fórmulas de perímetro ($P$, contorno) y área ($A$, espacio interior plano) varían por figura:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Cuadrado:</strong> Lados iguales. <br>$P = 4L$ &nbsp;&bull;&nbsp; $A = L^2$</li><li><strong>Rectángulo:</strong> Lados opuestos iguales. <br>$P = 2b + 2h$ &nbsp;&bull;&nbsp; $A = b \\times h$</li><li><strong>Rombo:</strong> Lados iguales, diagonales desiguales. <br>$P = 4L$ &nbsp;&bull;&nbsp; $A = \\frac{D \\times d}{2}$ (donde $D$ y $d$ son las diagonales)</li><li><strong>Trapecio:</strong> Dos lados paralelos llamados bases (mayor $B$ y menor $b$). <br>$P = \\text{suma de todos sus lados}$ &nbsp;&bull;&nbsp; $A = \\frac{(B + b) \\times h}{2}$</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Fórmulas de Cuadriláteros</p><p class=\"text-xs font-mono font-bold text-primary\">Rectángulo: A = b &bull; h &nbsp;|&nbsp; Trapecio: A = (B+b)&bull;h / 2</p><p class=\"text-xs text-slate-500\">Recuerda: El área siempre se expresa en unidades cuadradas (cm², m²), mientras que el perímetro es lineal (cm, m).</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">ÁREA Y PERÍMETRO: RECTÁNGULO</text><rect x=\"60\" y=\"35\" width=\"180\" height=\"60\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"2\" rx=\"4\" /><text x=\"150\" y=\"68\" font-size=\"10\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">Base b = 40 m</text><text x=\"48\" y=\"68\" font-size=\"10\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">h = 25 m</text><text x=\"150\" y=\"112\" font-size=\"9\" fill=\"#334155\" text-anchor=\"middle\" font-weight=\"bold\">Perímetro = 2(40) + 2(25) = 130 m | Área = 40 × 25 = 1000 m²</text></svg>",
+                    "svgDescription": "Un rectángulo azul de 40m de base por 25m de altura. Muestra de forma clara la diferencia en las operaciones y resultados de su área (1000m²) y su perímetro (130m).",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Un terreno rectangular en Escuintla mide $40$ metros de largo por $25$ metros de ancho. Si se quiere circular con tres vueltas de alambre de púas en su perímetro, ¿cuántos metros de alambre se necesitan?</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1:</strong> Calcula el perímetro del rectángulo (contorno de una vuelta): <br>$P = 2b + 2h = 2(40\\text{ m}) + 2(25\\text{ m}) = 80\\text{ m} + 50\\text{ m} = 130\\text{ m}$.</li><li><strong>Paso 2:</strong> Como el terreno debe cercarse con 3 vueltas completas, multiplicamos el perímetro lineal por 3: <br>Alambre total $= 130\\text{ m} \\times 3 = 390\\text{ m}$.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> Se necesitan <strong>390 metros</strong> de alambre.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Confundir área y perímetro:</strong> Multiplicar los lados al pedir cercado (perímetro), o sumar lados al pedir alfombrado o siembra (área).</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Calcula el área en cm² de un cuadrado perfecto cuyo perímetro mide 36 cm: (Ingresa solo el número):",
+                            "correctAnswer": "81",
+                            "hint": "Primero calcula cuánto mide cada uno de los 4 lados del cuadrado dividiendo 36 entre 4. Luego eleva ese lado al cuadrado.",
+                            "feedbackCorrect": "¡Excelente! Lado = 36 / 4 = 9 cm. Área = 9² = 81 cm².",
+                            "feedbackIncorrect": "Incorrecto. Lado = 36/4 = 9. Área = 9² = 81.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Un trapecio tiene una base mayor de 12 cm, una base menor de 8 cm y una altura de 5 cm. ¿Cuál es su área en cm²? (Ingresa solo el número):",
+                            "correctAnswer": "50",
+                            "hint": "Aplica la fórmula A = ((B + b) * h) / 2. Suma las bases, multiplica por la altura y divide entre dos.",
+                            "feedbackCorrect": "¡Perfecto! Área = ((12 + 8) * 5) / 2 = (20 * 5) / 2 = 100 / 2 = 50 cm².",
+                            "feedbackIncorrect": "Incorrecto. A = (12 + 8) * 5 / 2 = 50 cm².",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Calcula el área en cm² de un rombo cuyas diagonales miden exactamente 10 cm y 16 cm. (Ingresa solo el número):",
+                            "correctAnswer": "80",
+                            "hint": "Aplica la fórmula A = (D * d) / 2, donde D es 16 y d es 10.",
+                            "feedbackCorrect": "¡Excelente! Área = (16 * 10) / 2 = 160 / 2 = 80 cm².",
+                            "feedbackIncorrect": "Incorrecto. A = D * d / 2 = 16 * 10 / 2 = 80.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si un rectángulo tiene un área de 48 m² y su base mide exactamente 8 m, ¿cuánto mide su perímetro en metros? (Ingresa solo el número):",
+                            "correctAnswer": "28",
+                            "hint": "Halla la altura dividiendo el área entre la base: 48 / 8 = 6 m. Luego calcula el perímetro con 2(base + altura).",
+                            "feedbackCorrect": "¡Perfecto! Altura = 6 m. Perímetro = 2 * (8 + 6) = 28 metros.",
+                            "feedbackIncorrect": "Incorrecto. Altura = 48/8 = 6 m. Perímetro = 2(8 + 6) = 28.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cuál es el perímetro en cm de un rombo regular cuyos lados miden exactamente 7 cm cada uno? (Ingresa solo el número):",
+                            "correctAnswer": "28",
+                            "hint": "Un rombo tiene sus 4 lados iguales. Multiplica la medida del lado por 4.",
+                            "feedbackCorrect": "¡Excelente! El perímetro del rombo es 4 * 7 = 28 cm.",
+                            "feedbackIncorrect": "Incorrecto. Al igual que el cuadrado, el rombo tiene 4 lados iguales: 4 * 7 = 28.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        }
+                    ],
+                    "summaryHtml": "Los cuadriláteros forman el núcleo geométrico de planos de loteo y arquitectura básica. Sus perímetros se determinan de forma aditiva lineal y sus áreas mediante fórmulas de proporcionalidad bidimensional.",
+                    "videoPlaceholderText": "Video de Geometría: Perímetro y área de cuadriláteros comunes explicada."
+                },
+                {
+                    "id": "perimetro-area-circulo",
+                    "title": "Lección 3.2: Perímetro y Área del Círculo",
+                    "introduction": "Descubre las propiedades de la figura plana perfecta e implementa cálculos rigurosos con el número irracional Pi.",
+                    "explanationHtml": "<p>El <strong>círculo</strong> es la región del plano delimitada por una curva cerrada donde todos sus puntos equidistan del centro (la circunferencia). Sus elementos clave son:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Radio ($r$):</strong> Segmento que une el centro con cualquier punto de la circunferencia.</li><li><strong>Diámetro ($d$):</strong> Cuerda que pasa por el centro del círculo. Equivale a dos veces el radio ($d = 2r$).</li><li><strong>Número Pi ($\\pi$):</strong> Relación constante entre la circunferencia y el diámetro. Su valor aproximado es $3.141592...$ (solemos usar $\\pi \\approx 3.1416$).</li></ul><p class=\"mt-2 font-bold text-slate-800\">Fórmulas fundamentales:</p><ul class=\"list-disc pl-5 space-y-1 my-2\"><li><strong>Circunferencia (Perímetro de borde):</strong> $C = 2\\pi r$ &nbsp;o&nbsp; $C = \\pi d$</li><li><strong>Área del Círculo (Superficie plana):</strong> $A = \\pi r^2$</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Fórmulas del Círculo</p><p class=\"text-xs font-mono font-bold text-primary\">C = 2&pi;r &nbsp;|&nbsp; A = &pi;r²</p><p class=\"text-xs text-slate-500\">Ten cuidado: para el área se requiere usar el RADIO, no el diámetro.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">EL CÍRCULO PERFECTO</text><circle cx=\"100\" cy=\"70\" r=\"38\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"2\" /><circle cx=\"100\" cy=\"70\" r=\"3\" fill=\"#1e40af\" /><line x1=\"100\" y1=\"70\" x2=\"138\" y2=\"70\" stroke=\"#ef4444\" stroke-width=\"1.5\" /><text x=\"119\" y=\"64\" font-size=\"8\" fill=\"#ef4444\" font-weight=\"bold\" text-anchor=\"middle\">r = 10m</text><line x1=\"62\" y1=\"70\" x2=\"100\" y2=\"70\" stroke=\"#64748b\" stroke-width=\"1\" stroke-dasharray=\"2,2\" /><text x=\"210\" y=\"55\" font-size=\"9\" fill=\"#1e40af\" font-weight=\"bold\">Área: A = &pi; &bull; r²</text><text x=\"210\" y=\"67\" font-size=\"8\" fill=\"#334155\">A = 3.1416 &bull; 10² = 314.16 m²</text><text x=\"210\" y=\"85\" font-size=\"9\" fill=\"#d97706\" font-weight=\"bold\">Perímetro: C = 2&pi;r</text><text x=\"210\" y=\"97\" font-size=\"8\" fill=\"#334155\">C = 2 &bull; &pi; &bull; 10 = 62.83 m</text></svg>",
+                    "svgDescription": "Un círculo azul con un radio marcado en rojo de 10m. A la derecha, muestra el desglose del cálculo matemático para obtener su área (314.16m²) y su circunferencia (62.83m) usando Pi.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Una plaza circular en Quetzaltenango tiene un diámetro de $20$ metros. Calcula su área y la longitud lineal de su borde exterior.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1:</strong> Extrae el radio. El radio es la mitad exacta de la medida del diámetro: <br>$r = \\frac{20\\text{ m}}{2} = 10\\text{ m}$.</li><li><strong>Paso 2:</strong> Calcula el área usando $A = \\pi r^2$: <br>$A = 3.1416 \\times (10\\text{ m})^2 = 3.1416 \\times 100\\text{ m}^2 = 314.16\\text{ m}^2$.</li><li><strong>Paso 3:</strong> Calcula la longitud de la circunferencia (borde) usando $C = 2\\pi r$: <br>$C = 2 \\times 3.1416 \\times 10\\text{ m} = 62.83\\text{ m}$.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> El área es de <strong>314.16 m²</strong> y la longitud del borde es de <strong>62.83 m</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Elevar el diámetro en la fórmula de área:</strong> Olvidar dividir el diámetro entre 2. Usar $d^2$ da un resultado cuatro veces mayor que el área verdadera.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Calcula la longitud aproximada en cm de la circunferencia de un círculo si su radio mide exactamente 7 cm. Usa Pi = 3.1416. (Ingresa solo el número decimal con punto):",
+                            "correctAnswer": "43.98",
+                            "hint": "Aplica C = 2 * Pi * r. Multiplica 2 * 3.1416 * 7.",
+                            "feedbackCorrect": "¡Excelente! C = 2 * 3.1416 * 7 = 43.98 cm.",
+                            "feedbackIncorrect": "Incorrecto. C = 2 * 3.1416 * 7 = 43.98.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si la circunferencia exterior de un neumático de automóvil mide 188.4 cm, ¿cuánto mide aproximadamente su diámetro en cm? Usa Pi = 3.14. (Ingresa solo el número):",
+                            "correctAnswer": "60",
+                            "hint": "Como C = Pi * d, puedes despejar el diámetro d dividiendo la circunferencia entre Pi: d = C / Pi.",
+                            "feedbackCorrect": "¡Perfecto! d = 188.4 / 3.14 = 60 cm.",
+                            "feedbackIncorrect": "Incorrecto. d = C / Pi = 188.4 / 3.14 = 60.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Calcula el área aproximada en cm² de un círculo si su radio mide exactamente 5 cm. Usa Pi = 3.1416. (Ingresa solo el número decimal con punto):",
+                            "correctAnswer": "78.54",
+                            "hint": "Aplica A = Pi * r^2. Multiplica 3.1416 * 5^2 (3.1416 * 25).",
+                            "feedbackCorrect": "¡Excelente! Área = 3.1416 * 25 = 78.54 cm².",
+                            "feedbackIncorrect": "Incorrecto. A = Pi * 5² = 3.1416 * 25 = 78.54.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si duplicamos exactamente la longitud del radio de un círculo cualquiera, ¿cuántas veces aumentará el área final del círculo?",
+                            "options": [
+                                "2 veces",
+                                "4 veces",
+                                "8 veces",
+                                "Permanece idéntica"
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Recuerda que el área varía con el cuadrado del radio. Si el radio es 2r, su cuadrado es (2r)^2 = 4r^2.",
+                            "feedbackCorrect": "¡Excelente! Al elevar al cuadrado el factor de escala (2), el área se multiplica por 4.",
+                            "feedbackIncorrect": "Incorrecto. Dado que la fórmula tiene r², duplicar r multiplica el área por 2² = 4.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Calcula el área aproximada en cm² de un semicírculo cuyo radio mide exactamente 4 cm. Usa Pi = 3.1416. (Ingresa solo el número decimal con punto):",
+                            "correctAnswer": "25.13",
+                            "hint": "El semicírculo es la mitad exacta de un círculo completo. Calcula el área total (Pi * 4^2) y divídela entre 2.",
+                            "feedbackCorrect": "¡Perfecto! Área total = 3.1416 * 16 = 50.265. Dividido entre 2 = 25.13 cm².",
+                            "feedbackIncorrect": "Incorrecto. (Pi * 4²) / 2 = 50.26 / 2 = 25.13.",
+                            "difficulty": "avanzado",
+                            "type": "short"
+                        }
+                    ],
+                    "summaryHtml": "El círculo está determinado por su radio o diámetro. El número Pi ($pi$) relaciona linealmente la circunferencia con su diámetro, y de forma cuadrática su radio con el área.",
+                    "videoPlaceholderText": "Video de Geometría: Entendiendo Pi y el área del círculo de forma intuitiva."
+                },
+                {
+                    "id": "area-figuras-compuestas",
+                    "title": "Lección 3.3: Área de Figuras Compuestas",
+                    "introduction": "Aprende a descomponer superficies complejas e irregulares en figuras geométricas simples para calcular el área total.",
+                    "explanationHtml": "<p>En la realidad, la mayoría de planos, parcelas de tierra y piezas mecánicas no son polígonos simples directos. Son <strong>figuras compuestas</strong>.</p><p class=\"mt-2\">Para calcular su área por completo, aplicamos dos estrategias básicas:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Método Aditivo (Suma de áreas):</strong> Consiste en segmentar o cortar la figura compleja en partes conocidas (triángulos, rectángulos, semicírculos) y sumar las áreas individuales: <br>$$A_{\\text{total}} = A_1 + A_2 + A_3$$</li><li><strong>Método Sustractivo (Resta de áreas):</strong> Consiste en tomar un área externa envolvente conocida y restarle las áreas de huecos, recortes o vacíos (por ejemplo, restarle a un patio rectangular el área circular de una piscina central).</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Descomposición Geométrica</p><p class=\"text-xs font-mono font-bold text-primary\">A_total = &Sigma; A_individuales</p><p class=\"text-xs text-slate-500\">Divide con líneas auxiliares punteadas y anota las dimensiones correspondientes de cada subfigura.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">ÁREA DE FIGURAS COMPUESTAS</text><rect x=\"50\" y=\"45\" width=\"80\" height=\"50\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"2\" /><text x=\"90\" y=\"75\" font-size=\"8\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">A1 (Rectángulo)</text><path d=\"M 130 95 A 25 25 0 0 0 130 45 Z\" fill=\"#ecfdf5\" stroke=\"#10b981\" stroke-width=\"2\" /><text x=\"145\" y=\"75\" font-size=\"8\" fill=\"#047857\" font-weight=\"bold\" text-anchor=\"middle\">A2 (Semicírculo)</text><line x1=\"130\" y1=\"45\" x2=\"130\" y2=\"95\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"3,3\" /><text x=\"90\" y=\"112\" font-size=\"9\" fill=\"#334155\" text-anchor=\"middle\" font-weight=\"bold\">Área Total = A1 + A2</text></svg>",
+                    "svgDescription": "Una figura compuesta de un rectángulo de 10x6m acoplado a un semicírculo de radio 3m. Una línea punteada muestra la división limpia de las dos superficies básicas.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Una ventana tiene forma rectangular de $2$ metros de alto por $1.2$ metros de ancho, coronada por un semicírculo en la parte superior. Calcula el área total de la ventana.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1:</strong> Divide la ventana en dos figuras conocidas: un rectángulo abajo y un semicírculo arriba.</li><li><strong>Paso 2:</strong> Calcula el área del rectángulo ($A_1$): <br>$A_1 = b \\times h = 1.2\\text{ m} \\times 2\\text{ m} = 2.4\\text{ m}^2$.</li><li><strong>Paso 3:</strong> Obtén el radio del semicírculo. El diámetro equivale al ancho de la ventana ($1.2$ m), por ende, el radio es la mitad: $r = 0.6$ m.</li><li><strong>Paso 4:</strong> Calcula el área del semicírculo ($A_2$): <br>$A_2 = \\frac{\\pi r^2}{2} = \\frac{3.1416 \\times (0.6\\text{ m})^2}{2} = \\frac{3.1416 \\times 0.36}{2} = 0.565\\text{ m}^2$.</li><li><strong>Paso 5:</strong> Suma ambas áreas parciales: <br>$A_{\\text{total}} = 2.4\\text{ m}^2 + 0.565\\text{ m}^2 = 2.965\\text{ m}^2$.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> El área total de la ventana es de aproximadamente <strong>2.97 m²</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Olvidar dividir entre 2 los semicírculos o triángulos:</strong> Tratarlos como si fueran círculos completos o rectángulos respectivamente en la adición de áreas.</li><li><strong>Perder de vista las cotas:</strong> No deducir los lados ocultos a partir de las sumas y restas de las cotas exteriores dadas.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Un jardín rectangular mide 10 m de largo por 6 m de ancho, y tiene una piscina circular de radio r = 2 m en el centro. ¿Cuál es el área transitable del jardín en m²? Usa Pi = 3.1416. (Ingresa solo el número decimal con punto):",
+                            "correctAnswer": "47.43",
+                            "hint": "Usa el método sustractivo: resta el área de la piscina circular (Pi * r^2 = 3.1416 * 4) al área total del rectángulo (10 * 6 = 60).",
+                            "feedbackCorrect": "¡Excelente! Área total = 60. Área piscina ≈ 12.57. Jardín transitable = 60 - 12.57 = 47.43 m².",
+                            "feedbackIncorrect": "Incorrecto. Área total = 60 m². Resta la piscina circular (Pi*2² ≈ 12.57): 60 - 12.57 = 47.43 m².",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Calcula el área en cm² de una figura formada por un cuadrado de 4 cm de lado con un triángulo equilátero acoplado a uno de sus lados externos. Área del triángulo ≈ 6.93 cm². (Ingresa solo el número decimal con punto):",
+                            "correctAnswer": "22.93",
+                            "hint": "Calcula el área del cuadrado (4 * 4 = 16) y súmale directamente la del triángulo equilátero dada (6.93).",
+                            "feedbackCorrect": "¡Excelente! Área total = 16 + 6.93 = 22.93 cm².",
+                            "feedbackIncorrect": "Incorrecto. Suma ambas áreas directas: 16 + 6.93 = 22.93.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Se tiene un portaretrato con un marco de madera rectangular exterior de 8 cm x 10 cm e interior (donde va la foto) de 6 cm x 8 cm. ¿Cuál es el área de la madera en cm²? (Ingresa solo el número):",
+                            "correctAnswer": "32",
+                            "hint": "Usa el método sustractivo: resta el área del rectángulo interno menor al área del rectángulo externo mayor.",
+                            "feedbackCorrect": "¡Excelente! Madera = (8 * 10) - (6 * 8) = 80 - 48 = 32 cm².",
+                            "feedbackIncorrect": "Incorrecto. Área exterior = 80 cm², área interior = 48 cm². El área del marco es 80 - 48 = 32.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Una baldosa rectangular de arcilla mide 10 cm x 15 cm. En un taller se le recortan cuatro esquinas cuadradas de 2 cm de lado cada una. ¿Cuál es el área final en cm² de la baldosa? (Ingresa solo el número):",
+                            "correctAnswer": "134",
+                            "hint": "Cada una de las 4 esquinas recortadas tiene un área de 2 * 2 = 4 cm². Resta 4 * 4 = 16 cm² al área original del rectángulo (150).",
+                            "feedbackCorrect": "¡Perfecto! Área original = 150. Recortes = 4 * 4 = 16. Área final = 150 - 16 = 134 cm².",
+                            "feedbackIncorrect": "Incorrecto. Rectángulo = 150 cm². Esquinas = 4 * 4 = 16 cm². Baldosa final = 150 - 16 = 134 cm².",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cómo se define de forma matemática la superficie denominada corona circular?",
+                            "options": [
+                                "El área resultante de un sector circular al que se le corta un triángulo interior.",
+                                "La región circular limitada por dos circunferencias concéntricas (mismo centro pero radios diferentes).",
+                                "La mitad de un óvalo simétrico en revolución cartesiana.",
+                                "El espacio interior común entre un cuadrado y su círculo inscrito."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Visualiza una rosquilla o una arandela de metal. Comparte el mismo centro.",
+                            "feedbackCorrect": "¡Perfecto! La corona circular es la franja plana comprendida entre dos círculos concéntricos.",
+                            "feedbackIncorrect": "Incorrecto. La corona circular es la región delimitada por dos círculos concéntricos.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "El cálculo de figuras compuestas utiliza las leyes de suma y resta de áreas simples auxiliares para determinar dimensiones reales de parcelas, moldes industriales y cubiertas de obra.",
+                    "videoPlaceholderText": "Video de Geometría: Cómo calcular áreas de figuras complejas y terrenos irregulares."
+                }
+            ]
+        }
+    ]
+},
+
+    "trigonometria-fundamental": {
+    "isRichCourse": true,
+    "title": "Trigonometría Fundamental",
+    "units": [
+        {
+            "title": "Unidad 1: Razones Trigonométricas en el Triángulo Rectángulo",
+            "lessons": [
+                {
+                    "id": "razones-basicas-soh-cah-toa",
+                    "title": "Lección 1.1: Seno, Coseno y Tangente (SOH-CAH-TOA)",
+                    "introduction": "La trigonometría conecta los ángulos de un triángulo con las proporciones de sus lados. Domina las tres funciones básicas.",
+                    "explanationHtml": "<p>En un triángulo rectángulo, respecto a uno de sus ángulos agudos $\\theta$, definimos las tres razones trigonométricas fundamentales a partir de la longitud de sus lados:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Seno (sen o sin):</strong> Razón entre el cateto opuesto y la hipotenusa. <br>$$\\operatorname{sen}(\\theta) = \\frac{\\text{Cateto Opuesto}}{\\text{Hipotenusa}} \\quad \\text{(SOH)}$$</li><li><strong>Coseno (cos):</strong> Razón entre el cateto adyacente y la hipotenusa. <br>$$\\cos(\\theta) = \\frac{\\text{Cateto Adyacente}}{\\text{Hipotenusa}} \\quad \\text{(CAH)}$$</li><li><strong>Tangente (tan):</strong> Razón entre el cateto opuesto y el adyacente. <br>$$\\tan(\\theta) = \\frac{\\text{Cateto Opuesto}}{\\text{Cateto Adyacente}} \\quad \\text{(TOA)}$$</li></ul><p class=\"mt-2\">Estas razones son constantes para un mismo ángulo, independientemente del tamaño del triángulo rectángulo.</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Regla Mnemotécnica SOH-CAH-TOA</p><p class=\"text-xs font-mono font-bold text-primary\">SOH: sen = O/H &nbsp;&bull;&nbsp; CAH: cos = A/H &nbsp;&bull;&nbsp; TOA: tan = O/A</p><p class=\"text-xs text-slate-500\">Recuerda: La hipotenusa siempre es el lado mayor, opuesto al ángulo recto de 90&deg;.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">RAZONES TRIGONOMÉTRICAS</text><polygon points=\"60,95 200,95 200,35\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"2\" /><rect x=\"190\" y=\"85\" width=\"10\" height=\"10\" fill=\"none\" stroke=\"#64748b\" stroke-width=\"1\" /><path d=\"M 80 95 A 20 20 0 0 0 78 86\" fill=\"none\" stroke=\"#ef4444\" stroke-width=\"2\" /><text x=\"85\" y=\"90\" font-size=\"9\" fill=\"#ef4444\" font-weight=\"bold\">&theta;</text><text x=\"130\" y=\"106\" font-size=\"8\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">Cateto Adyacente = 4</text><text x=\"235\" y=\"65\" font-size=\"8\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">Cateto Opuesto = 3</text><text x=\"110\" y=\"55\" font-size=\"8\" fill=\"#d97706\" font-weight=\"bold\" text-anchor=\"middle\">Hipotenusa = 5</text></svg>",
+                    "svgDescription": "Un triángulo rectángulo con lados de longitud 3 (opuesto), 4 (adyacente) y 5 (hipotenusa) respecto a un ángulo marcado como teta, que sirve de base para los cálculos de SOH-CAH-TOA.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> En un triángulo rectángulo con catetos de 3 cm y 4 cm, calcula el seno y coseno del ángulo menor $\\theta$ (el opuesto al lado de 3 cm).</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1:</strong> Determina la hipotenusa ($h$) usando el Teorema de Pitágoras: <br>$h = \\sqrt{3^2 + 4^2} = \\sqrt{9 + 16} = \\sqrt{25} = 5$ cm.</li><li><strong>Paso 2:</strong> Para el ángulo menor $\\theta$, el cateto opuesto ($O$) mide 3 cm y el cateto adyacente ($A$) mide 4 cm.</li><li><strong>Paso 3:</strong> Calcula el seno: $\\operatorname{sen}(\\theta) = \\frac{O}{H} = \\frac{3}{5} = 0.60$.</li><li><strong>Paso 4:</strong> Calcula el coseno: $\\cos(\\theta) = \\frac{A}{H} = \\frac{4}{5} = 0.80$.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> $\\operatorname{sen}(\\theta) = 0.6$ y $\\cos(\\theta) = 0.8$.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Confundir opuesto con adyacente:</strong> Identifica primero el ángulo de referencia $\\theta$. El cateto adyacente es el que toca al ángulo; el opuesto está justo al frente.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Si en un triángulo rectángulo la hipotenusa mide 13 y el cateto opuesto a un ángulo A es 5, calcula cos(A). Ingresa la respuesta como fracción decimal (ej: 0.92 o 12/13):",
+                            "correctAnswer": "12/13",
+                            "hint": "Primero calcula el cateto adyacente usando Pitágoras: sqrt(13^2 - 5^2) = 12. Luego divide adyacente/hipotenusa.",
+                            "feedbackCorrect": "¡Excelente! Cateto adyacente = 12, entonces cos(A) = 12/13.",
+                            "feedbackIncorrect": "Incorrecto. Cateto adyacente es 12, por lo tanto cos(A) = 12/13.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cuál es el valor de la tangente de un ángulo si sabemos que su seno es 0.6 y su coseno es 0.8? (Ingresa solo el número decimal con punto):",
+                            "correctAnswer": "0.75",
+                            "hint": "Usa la identidad de división tan(x) = sen(x) / cos(x). Divide 0.6 entre 0.8.",
+                            "feedbackCorrect": "¡Perfecto! tan = 0.6 / 0.8 = 0.75.",
+                            "feedbackIncorrect": "Incorrecto. tan = sen/cos = 0.6/0.8 = 0.75.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si la tangente de un ángulo es exactamente 1, ¿qué relación geométrica tienen sus catetos?",
+                            "options": [
+                                "El cateto opuesto mide el doble que el adyacente.",
+                                "El cateto opuesto y el adyacente miden exactamente lo mismo.",
+                                "El cateto adyacente es igual a la hipotenusa.",
+                                "La hipotenusa mide exactamente 1 cm."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Dado que tan = opuesto / adyacente, para que el resultado sea 1, el numerador y el denominador deben ser iguales.",
+                            "feedbackCorrect": "¡Excelente! Al ser la tangente igual a 1, ambos catetos son idénticos, lo que corresponde a un ángulo de 45°.",
+                            "feedbackIncorrect": "Incorrecto. tan = O/A = 1 implica que O = A (ambos catetos miden lo mismo).",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Calcula sen(B) en forma de fracción si los dos catetos de un triángulo rectángulo miden 5 cm y 12 cm, y B es el ángulo opuesto al lado de 12 cm:",
+                            "correctAnswer": "12/13",
+                            "hint": "Calcula la hipotenusa con Pitágoras: sqrt(5^2 + 12^2) = 13. Luego divide opuesto/hipotenusa.",
+                            "feedbackCorrect": "¡Perfecto! La hipotenusa es 13, por ende sen(B) = 12/13.",
+                            "feedbackIncorrect": "Incorrecto. Hipotenusa = 13. Opuesto a B es 12, por lo que sen(B) = 12/13.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cuál es el valor máximo posible que puede tomar el seno o el coseno de cualquier ángulo agudo en un triángulo rectángulo?",
+                            "options": [
+                                "Puede tomar cualquier valor hasta el infinito.",
+                                "Siempre es estrictamente menor a 1.",
+                                "Es exactamente 1 en todos los casos.",
+                                "Siempre es mayor a 2."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Recuerda que la hipotenusa es siempre el lado más largo del triángulo rectángulo. ¿Qué pasa al dividir un número menor entre uno mayor?",
+                            "feedbackCorrect": "¡Perfecto! Al ser la hipotenusa mayor que los catetos, las fracciones de sen y cos siempre son menores a 1.",
+                            "feedbackIncorrect": "Incorrecto. Al dividir un cateto entre la hipotenusa (que es mayor), el resultado siempre es menor a 1.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "Las razones trigonométricas fundamentales vinculan proporciones dimensionales a valores angulares fijos en triángulos rectángulos.",
+                    "videoPlaceholderText": "Video de Trigonometría: SOH-CAH-TOA y razones trigonométricas básicas."
+                },
+                {
+                    "id": "razones-reciprocas-csc-sec-cot",
+                    "title": "Lección 1.2: Razones Recíprocas (Cosecante, Secante, Cotangente)",
+                    "introduction": "Aprende a definir las funciones cosecante, secante y cotangente como el inverso multiplicativo de las tres básicas.",
+                    "explanationHtml": "<p>Cada una de las razones trigonométricas fundamentales posee un <strong>recíproco multiplicativo</strong>. Se definen intercambiando el numerador y denominador de las fórmulas clásicas:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Cosecante (csc o cosec):</strong> Recíproco del seno. <br>$$\\csc(\\theta) = \\frac{1}{\\operatorname{sen}(\\theta)} = \\frac{\\text{Hipotenusa}}{\\text{Cateto Opuesto}}$$</li><li><strong>Secante (sec):</strong> Recíproco del coseno. <br>$$\\sec(\\theta) = \\frac{1}{\\cos(\\theta)} = \\frac{\\text{Hipotenusa}}{\\text{Cateto Adyacente}}$$</li><li><strong>Cotangente (cot o ctg):</strong> Recíproco de la tangente. <br>$$\\cot(\\theta) = \\frac{1}{\\tan(\\theta)} = \\frac{\\text{Cateto Adyacente}}{\\text{Cateto Opuesto}}$$</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Relaciones de Reciprocidad</p><p class=\"text-xs font-mono font-bold text-primary\">sen &bull; csc = 1 &nbsp;|&nbsp; cos &bull; sec = 1 &nbsp;|&nbsp; tan &bull; cot = 1</p><p class=\"text-xs text-slate-500\">Ejemplo: Si sen = 3/5 &rArr; csc = 5/3.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">RAZONES RECÍPROCAS</text><polygon points=\"50,95 180,95 180,45\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"2\" /><path d=\"M 70 95 A 20 20 0 0 0 68 87\" fill=\"none\" stroke=\"#059669\" stroke-width=\"2\" /><text x=\"74\" y=\"91\" font-size=\"9\" fill=\"#059669\" font-weight=\"bold\">&theta;</text><text x=\"205\" y=\"55\" font-size=\"8\" fill=\"#3b82f6\" font-weight=\"bold\">sen = O/H</text><text x=\"205\" y=\"65\" font-size=\"8\" fill=\"#10b981\" font-weight=\"bold\">csc = H/O</text><text x=\"205\" y=\"80\" font-size=\"8\" fill=\"#3b82f6\" font-weight=\"bold\">cos = A/H</text><text x=\"205\" y=\"90\" font-size=\"8\" fill=\"#10b981\" font-weight=\"bold\">sec = H/A</text></svg>",
+                    "svgDescription": "Triángulo rectángulo con flechas ilustrativas que muestran el emparejamiento inverso entre las funciones seno-cosecante y coseno-secante.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Si el $\\cos(\\theta) = 5/13$, calcula la $\\sec(\\theta)$ y la $\\csc(\\theta)$ sabiendo que el cateto opuesto mide 12.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1 (Secante):</strong> La secante es el inverso del coseno: $\\sec(\\theta) = \\frac{1}{\\cos(\\theta)} = \\frac{13}{5}$.</li><li><strong>Paso 2:</strong> Identifica el seno. Con opuesto = 12 e hipotenusa = 13, tenemos $\\operatorname{sen}(\\theta) = \\frac{12}{13}$.</li><li><strong>Paso 3 (Cosecante):</strong> La cosecante es el inverso del seno: $\\csc(\\theta) = \\frac{1}{\\operatorname{sen}(\\theta)} = \\frac{13}{12}$.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> $\\sec(\\theta) = 13/5$ y $\\csc(\\theta) = 13/12$.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Emparejar secante con seno y cosecante con coseno:</strong> Se tiende a agruparlas mal por similitud del nombre. Recuerda que la letra inicial cambia: el recíproco de <strong>S</strong>eno es <strong>C</strong>osecante y el de <strong>C</strong>oseno es <strong>S</strong>ecante.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Si tan(A) = 3/4, ¿cuál es el valor de la cotangente de A? (Ingresa la fracción, ej: 4/3):",
+                            "correctAnswer": "4/3",
+                            "hint": "La cotangente es el recíproco directo de la tangente. Simplemente invierte la fracción.",
+                            "feedbackCorrect": "¡Excelente! cot(A) = 1 / tan(A) = 4/3.",
+                            "feedbackIncorrect": "Incorrecto. Al ser recíproco de tan(A) = 3/4, cot(A) es 4/3.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si sen(x) = 1/2, ¿cuánto vale la cosecante de x? (Ingresa solo el número entero):",
+                            "correctAnswer": "2",
+                            "hint": "La cosecante es el recíproco del seno. Invierte la fracción 1/2.",
+                            "feedbackCorrect": "¡Perfecto! csc(x) = 1 / (1/2) = 2.",
+                            "feedbackIncorrect": "Incorrecto. csc(x) = 1 / sen(x) = 1 / (1/2) = 2.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Calcula sec(y) en forma de fracción si el cateto adyacente es 8 cm y la hipotenusa es 10 cm:",
+                            "correctAnswer": "5/4",
+                            "hint": "La secante es Hipotenusa / Cateto Adyacente. Divide 10 entre 8 y simplifica la fracción.",
+                            "feedbackCorrect": "¡Excelente! sec(y) = 10 / 8 = 5/4.",
+                            "feedbackIncorrect": "Incorrecto. sec = H / A = 10 / 8 = 5/4.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cuál es el valor resultante del producto de sen(A) por csc(A)? (Ingresa solo el número entero):",
+                            "correctAnswer": "1",
+                            "hint": "Recuerda que sen(A) = O/H y csc(A) = H/O. Multiplica ambas expresiones.",
+                            "feedbackCorrect": "¡Perfecto! Al ser razones recíprocas directas, su multiplicación siempre da 1.",
+                            "feedbackIncorrect": "Incorrecto. Cualquier número multiplicado por su recíproco es 1: sen(A) * csc(A) = 1.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si cos(B) = 0.8, ¿cuál es el valor exacto de sec(B)? (Ingresa el número decimal con punto):",
+                            "correctAnswer": "1.25",
+                            "hint": "La secante es 1/cos. Divide 1 entre 0.8.",
+                            "feedbackCorrect": "¡Excelente! sec(B) = 1 / 0.8 = 1.25.",
+                            "feedbackIncorrect": "Incorrecto. sec(B) = 1/cos = 1 / 0.8 = 1.25.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        }
+                    ],
+                    "summaryHtml": "Las razones trigonométricas recíprocas (csc, sec, cot) completan las proporciones del triángulo rectángulo y se definen como la inversión aritmética de las razones primarias.",
+                    "videoPlaceholderText": "Video de Trigonometría: Entendiendo cosecante, secante y cotangente sin memorizar."
+                },
+                {
+                    "id": "angulos-elevacion-depresion",
+                    "title": "Lección 1.3: Ángulos de Elevación y Depresión",
+                    "introduction": "Aprende a plantear y resolver modelos trigonométricos para calcular alturas y distancias inaccesibles mediante ángulos visuales.",
+                    "explanationHtml": "<p>Los ángulos visuales se forman a partir de una línea de referencia llamada <strong>línea visual horizontal</strong> (el nivel del ojo del observador):</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Ángulo de Elevación:</strong> Ángulo formado hacia arriba entre la horizontal y la línea visual del observador al apuntar a un objeto elevado.</li><li><strong>Ángulo de Depresión:</strong> Ángulo formado hacia abajo entre la horizontal y la línea visual al apuntar a un objeto situado por debajo.</li></ul><p class=\"mt-2 text-slate-700\">Por la propiedad de rectas paralelas cortadas por una transversal, el ángulo de depresión de un observador hacia un objeto es exactamente congruente con el ángulo de elevación del objeto hacia el observador.</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Fórmula Clave de Altura</p><p class=\"text-xs font-mono font-bold text-primary\">tan(&theta;) = Altura / Distancia</p><p class=\"text-xs text-slate-550\">Despeje: Altura = Distancia &bull; tan(&theta;).</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">ÁNGULOS VISUALES</text><line x1=\"40\" y1=\"95\" x2=\"220\" y2=\"95\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"3,3\" /><text x=\"35\" y=\"98\" font-size=\"8\" fill=\"#64748b\" text-anchor=\"end\">Horizontal</text><line x1=\"40\" y1=\"95\" x2=\"220\" y2=\"35\" stroke=\"#ef4444\" stroke-width=\"1.5\" /><line x1=\"220\" y1=\"95\" x2=\"220\" y2=\"35\" stroke=\"#3b82f6\" stroke-width=\"2\" /><path d=\"M 65 95 A 25 25 0 0 0 62 87\" fill=\"none\" stroke=\"#ef4444\" stroke-width=\"2\" /><text x=\"72\" y=\"90\" font-size=\"8\" fill=\"#ef4444\" font-weight=\"bold\">&theta; = 30°</text><text x=\"130\" y=\"108\" font-size=\"8\" fill=\"#334155\" text-anchor=\"middle\">Distancia = 50m</text><text x=\"230\" y=\"65\" font-size=\"8\" fill=\"#1e40af\" font-weight=\"bold\">H</text></svg>",
+                    "svgDescription": "Esquema visual de un ángulo de elevación de 30° desde un punto en el suelo hacia la cima de una torre. Se marca la distancia horizontal de 50m y la altura H como cateto opuesto.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Un topógrafo en el pie del Volcán de Agua mide un ángulo de elevación de $30^\\circ$ hacia la cima de una antena de telecomunicaciones. Si el topógrafo se encuentra a una distancia horizontal de $50$ metros de la base de la antena, ¿cuál es la altura de la antena?</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1:</strong> Dibuja la situación. Se forma un triángulo rectángulo donde el cateto adyacente es $50$ m, la altura es el cateto opuesto ($H$) y el ángulo es $30^\\circ$.</li><li><strong>Paso 2:</strong> Usa la tangente, que conecta opuesto y adyacente: $\\tan(30^\\circ) = \\frac{H}{50}$.</li><li><strong>Paso 3:</strong> Despeja $H$: $H = 50 \\times \\tan(30^\\circ)$.</li><li><strong>Paso 4:</strong> Con $\\tan(30^\\circ) \\approx 0.577$: $H = 50 \\times 0.577 = 28.85$ metros.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> La altura de la antena es de <strong>28.85 metros</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Medir el ángulo de depresión respecto a la vertical:</strong> El ángulo de depresión se mide siempre hacia abajo a partir de la horizontal imaginaria, nunca pegado a la pared vertical.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Si el ángulo de elevación de un cometa es 45° y la longitud del hilo estirado es de 20 metros, calcula la altura aproximada del cometa en metros. (Pista: el hilo es la hipotenusa, sen(45°) ≈ 0.707. Ingresa decimal con punto, ej: 14.14):",
+                            "correctAnswer": "14.14",
+                            "hint": "Usa la función seno: sen(45°) = Altura / Hilo. Altura = 20 * sen(45°).",
+                            "feedbackCorrect": "¡Excelente! Altura = 20 * 0.7071 = 14.14 metros.",
+                            "feedbackIncorrect": "Incorrecto. Altura = 20 * sen(45°) = 20 * 0.707 = 14.14 metros.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Desde un faro a 60 metros sobre el nivel del mar, el ángulo de depresión a un barco es de 30°. ¿Cuál es la distancia horizontal al barco en metros? (tan(30°) ≈ 0.577. Ingresa decimal con punto, ej: 103.97):",
+                            "correctAnswer": "103.97",
+                            "hint": "El ángulo de depresión de 30° es igual al de elevación desde el barco. Plantea tan(30°) = 60 / Distancia. Distancia = 60 / tan(30°).",
+                            "feedbackCorrect": "¡Excelente! Distancia = 60 / 0.5773 = 103.97 metros.",
+                            "feedbackIncorrect": "Incorrecto. Distancia = 60 / tan(30°) = 60 / 0.5773 = 103.97 metros.",
+                            "difficulty": "avanzado",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si estás a 10 metros de un árbol y el ángulo de elevación a su copa es de exactamente 45°, ¿cuánto mide la altura del árbol en metros? (Ingresa solo el número entero):",
+                            "correctAnswer": "10",
+                            "hint": "Recuerda que tan(45°) = 1. Plantea tan(45°) = Altura / 10.",
+                            "feedbackCorrect": "¡Excelente! Como el ángulo es de 45°, el triángulo es isósceles. La altura es igual a la distancia: 10 metros.",
+                            "feedbackIncorrect": "Incorrecto. tan(45°) = 1, por ende Altura = 10 * 1 = 10 metros.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Un observador en un globo aerostático mira un punto en el suelo con un ángulo de depresión de 20°. ¿Qué ángulo de elevación tendrá el punto en el suelo hacia el globo?",
+                            "options": [
+                                "20°",
+                                "70°",
+                                "90°",
+                                "160°"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Aplica la propiedad de ángulos alternos internos entre paralelas formadas por la horizontal del globo y la del suelo.",
+                            "feedbackCorrect": "¡Perfecto! Por paralelismo, el ángulo de depresión es idéntico al ángulo de elevación: 20°.",
+                            "feedbackIncorrect": "Incorrecto. Ambos ángulos son de igual magnitud debido a la propiedad de alternos internos: 20°.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Una rampa de carga mide 10 metros de largo y se eleva a una altura vertical de 5 metros. ¿Cuál es el ángulo de inclinación de la rampa en grados?",
+                            "options": [
+                                "30°",
+                                "45°",
+                                "60°",
+                                "90°"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "La altura es el cateto opuesto (5) y el largo de la rampa es la hipotenusa (10). Calcula sen(x) = 5/10 = 0.5.",
+                            "feedbackCorrect": "¡Excelente! sen(x) = 0.5, el cual corresponde a un ángulo notable de 30°.",
+                            "feedbackIncorrect": "Incorrecto. sen(x) = 5/10 = 0.5. El ángulo cuyo seno vale 0.5 es 30°.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "Los ángulos de elevación y depresión formalizan visualizaciones direccionales que se resuelven de forma directa mediante proporciones trigonométricas de triángulos rectángulos.",
+                    "videoPlaceholderText": "Video de Trigonometría: Ejercicios típicos de ángulos de elevación y depresión."
+                }
+            ]
+        },
+        {
+            "title": "Unidad 2: Círculo Unitario y Funciones Trigonométricas",
+            "lessons": [
+                {
+                    "id": "circulo-unitario-radianes",
+                    "title": "Lección 2.1: El Círculo Unitario y Radianes",
+                    "introduction": "Descubre el círculo de radio 1 que permite expandir las funciones trigonométricas a cualquier ángulo de la recta real.",
+                    "explanationHtml": "<p>El <strong>círculo unitario</strong> es un círculo con radio $r = 1$ centrado en el origen del plano cartesiano $(0,0)$. Todo punto $P(x,y)$ sobre su circunferencia cumple con la ecuación del círculo $x^2 + y^2 = 1$.</p><p class=\"mt-2\">Si trazamos un rayo desde el origen que forme un ángulo $\\theta$ con el eje $x$ positivo, las coordenadas cartesianas del punto $P$ se definen exactamente como:</p><p class=\"text-center font-mono font-bold text-primary my-2\">x = cos(&theta;) &nbsp;|&nbsp; y = sen(&theta;)</p><p class=\"mt-3\"><strong>Los Radianes:</strong> Unidad de medida angular basada en la longitud del arco del círculo unitario. Una vuelta completa a la circunferencia ($360^\\circ$) equivale a $2\\pi$ radianes. Para convertir grados a radianes, multiplicamos por $\\frac{\\pi}{180^\\circ}$.</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Fórmulas de Conversión Angular</p><p class=\"text-xs font-mono font-bold text-primary\">Radianes = Grados &bull; &pi; / 180</p><p class=\"text-xs font-mono font-bold text-primary\">Grados = Radianes &bull; 180 / &pi;</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">CÍRCULO UNITARIO (r = 1)</text><circle cx=\"100\" cy=\"70\" r=\"38\" fill=\"none\" stroke=\"#3b82f6\" stroke-width=\"1.5\" /><line x1=\"55\" y1=\"70\" x2=\"145\" y2=\"70\" stroke=\"#64748b\" stroke-width=\"1\" /><line x1=\"100\" y1=\"25\" x2=\"100\" y2=\"115\" stroke=\"#64748b\" stroke-width=\"1\" /><line x1=\"100\" y1=\"70\" x2=\"127\" y2=\"43\" stroke=\"#ef4444\" stroke-width=\"1.5\" /><circle cx=\"127\" cy=\"43\" r=\"2.5\" fill=\"#ef4444\" /><text x=\"135\" y=\"40\" font-size=\"8\" fill=\"#ef4444\" font-weight=\"bold\">P(cos &theta;, sen &theta;)</text><text x=\"210\" y=\"55\" font-size=\"9\" fill=\"#1e40af\" font-weight=\"bold\">Ecuación Círculo:</text><text x=\"210\" y=\"67\" font-size=\"9\" fill=\"#334155\" font-weight=\"bold\">x² + y² = 1</text><text x=\"210\" y=\"85\" font-size=\"9\" fill=\"#059669\" font-weight=\"bold\">180° = &pi; Radianes</text></svg>",
+                    "svgDescription": "El círculo unitario de radio 1 graficado en el plano cartesiano. Muestra un radio que define un punto P con coordenadas (cos teta, sen teta) en el primer cuadrante.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Convierte un ángulo notable de $60^\\circ$ a radianes exactos en términos de $\\pi$.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1:</strong> Usa la fórmula de conversión de grados a radianes: $\\text{Radianes} = \\text{Grados} \\times \\frac{\\pi}{180^\\circ}$.</li><li><strong>Paso 2:</strong> Reemplaza los grados: $\\text{Radianes} = 60^\\circ \\times \\frac{\\pi}{180^\\circ}$.</li><li><strong>Paso 3:</strong> Simplifica la fracción dividiendo numerador y denominador entre 60: <br>$$\\frac{60}{180} = \\frac{1}{3}$$</li><li><strong>Paso 4:</strong> Expresa el resultado final: $\\frac{\\pi}{3}$ radianes.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> $60^\\circ$ equivale exactamente a <strong>&pi;/3 radianes</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Confundir la equivalencia básica:</strong> Pensar que $360^\\circ = \\pi$ en lugar de $2\\pi$. Recuerda: $\\pi$ radianes equivale exactamente a media vuelta ($180^\\circ$).</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Convierte un ángulo de 90° a radianes. Escribe la respuesta exacta en minúsculas sin espacios (ej: pi/2 o pi/3):",
+                            "correctAnswer": "pi/2",
+                            "hint": "Divide 90 entre 180 y simplifica la fracción. Acompáñala de pi en el numerador.",
+                            "feedbackCorrect": "¡Excelente! 90° / 180° * pi = pi/2 radianes.",
+                            "feedbackIncorrect": "Incorrecto. 90/180 simplifica a 1/2, por ende queda 'pi/2'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Convierte pi/4 radianes a grados sexagesimales. (Ingresa solo el número entero):",
+                            "correctAnswer": "45",
+                            "hint": "Sustituye pi por 180° en la fracción y divide 180 entre 4.",
+                            "feedbackCorrect": "¡Perfecto! 180° / 4 = 45°.",
+                            "feedbackIncorrect": "Incorrecto. pi radianes = 180°. 180 / 4 = 45 grados.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cuál de los siguientes puntos en el plano cartesiano pertenece de forma exacta a la circunferencia del círculo unitario?",
+                            "options": [
+                                "(1, 1)",
+                                "(0.5, 0.5)",
+                                "(0, -1)",
+                                "(2, 0)"
+                            ],
+                            "correctAnswer": 2,
+                            "hint": "El punto debe cumplir rigurosamente la ecuación x^2 + y^2 = 1. Eleva al cuadrado las coordenadas y evalúa.",
+                            "feedbackCorrect": "¡Excelente! 0² + (-1)² = 0 + 1 = 1. Pertenece al círculo unitario (en el eje y negativo).",
+                            "feedbackIncorrect": "Incorrecto. Solamente (0, -1) cumple x² + y² = 1.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "¿En qué cuadrante del plano cartesiano la coordenada x (coseno) es negativa y la coordenada y (seno) es positiva?",
+                            "options": [
+                                "Primer Cuadrante",
+                                "Segundo Cuadrante",
+                                "Tercer Cuadrante",
+                                "Cuarto Cuadrante"
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Coseno es negativo a la izquierda del eje y. Seno es positivo arriba del eje x. Ubica la intersección.",
+                            "feedbackCorrect": "¡Perfecto! En el segundo cuadrante, x es negativa y y es positiva.",
+                            "feedbackIncorrect": "Incorrecto. En el segundo cuadrante el coseno es negativo y el seno es positivo.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Calcula el valor exacto de sen(270°) utilizando las propiedades del círculo unitario. (Ingresa solo el número entero, incluyendo signo si aplica):",
+                            "correctAnswer": "-1",
+                            "hint": "El ángulo de 270° apunta directo hacia abajo en el eje y negativo. Recuerda que sen(teta) es la coordenada y.",
+                            "feedbackCorrect": "¡Perfecto! El punto es (0, -1) en el círculo unitario, por lo que la coordenada y es -1.",
+                            "feedbackIncorrect": "Incorrecto. A 270°, el punto es (0, -1); por lo tanto, el seno es -1.",
+                            "difficulty": "avanzado",
+                            "type": "short"
+                        }
+                    ],
+                    "summaryHtml": "El círculo unitario modela las funciones trigonométricas convirtiéndolas en coordenadas del plano real, permitiendo su definición matemática para ángulos de cualquier magnitud y signo.",
+                    "videoPlaceholderText": "Video de Trigonometría: El círculo unitario explicado paso a paso y de forma fácil."
+                },
+                {
+                    "id": "identidades-trigonometricas-pitagoricas",
+                    "title": "Lección 2.2: Identidades Trigonométricas Pitagóricas",
+                    "introduction": "Aprende las identidades que simplifican demostraciones y ecuaciones trigonométricas complejas.",
+                    "explanationHtml": "<p>Las <strong>identidades trigonométricas</strong> son igualdades matemáticas que se cumplen para cualquier ángulo. Las <strong>identidades pitagóricas</strong> provienen directamente del Teorema de Pitágoras aplicado en el círculo unitario ($x^2 + y^2 = 1$):</p><p class=\"mt-2 font-mono font-bold text-slate-800\">1. Identidad Pitagórica Fundamental:</p><p class=\"text-center font-mono font-extrabold text-primary text-base my-2\">sen²(&theta;) + cos²(&theta;) = 1</p><p class=\"mt-3\">A partir de esta, dividiendo toda la ecuación entre $\\cos^2(\\theta)$ o $\\operatorname{sen}^2(\\theta)$, deducimos otras dos identidades secundarias:</p><p class=\"text-center font-mono font-extrabold text-primary my-2\">2. &nbsp; 1 + tan²(&theta;) = sec²(&theta;)</p><p class=\"text-center font-mono font-extrabold text-primary my-2\">3. &nbsp; 1 + cot²(&theta;) = csc²(&theta;)</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Identidades Pitagóricas Derivadas</p><p class=\"text-xs font-mono font-bold text-primary\">sen&sup2; = 1 - cos&sup2; &nbsp;|&nbsp; cos&sup2; = 1 - sen&sup2;</p><p class=\"text-xs text-slate-500\">Útiles para transformar funciones de seno a coseno y viceversa en ecuaciones de física.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">IDENTIDADES PITAGÓRICAS</text><rect x=\"25\" y=\"38\" width=\"250\" height=\"65\" fill=\"#eff6ff\" stroke=\"#bfdbfe\" rx=\"8\" /><text x=\"150\" y=\"58\" font-size=\"14\" font-family=\"monospace\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">sen²&theta; + cos²&theta; = 1</text><text x=\"150\" y=\"80\" font-size=\"9\" font-family=\"sans-serif\" fill=\"#2563eb\" text-anchor=\"middle\">1 + tan²&theta; = sec²&theta; &nbsp;|&nbsp; 1 + cot²&theta; = csc²&theta;</text></svg>",
+                    "svgDescription": "Esquema tipográfico que destaca en grande la identidad pitagórica fundamental sen²teta + cos²teta = 1 y sus dos fórmulas derivadas de secante y cosecante.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Si sabemos que el $\\cos(\\theta) = \\frac{4}{5}$ en el primer cuadrante, calcula de forma exacta el valor de $\\operatorname{sen}(\\theta)$ utilizando la identidad pitagórica fundamental.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1:</strong> Plantea la identidad pitagórica: $\\operatorname{sen}^2(\\theta) + \\cos^2(\\theta) = 1$.</li><li><strong>Paso 2:</strong> Despeja el término de seno cuadrado: $\\operatorname{sen}^2(\\theta) = 1 - \\cos^2(\\theta)$.</li><li><strong>Paso 3:</strong> Sustituye el valor del coseno: $\\operatorname{sen}^2(\\theta) = 1 - \\left(\\frac{4}{5}\\right)^2 = 1 - \\frac{16}{25}$.</li><li><strong>Paso 4:</strong> Resta las fracciones: $\\operatorname{sen}^2(\\theta) = \\frac{25}{25} - \\frac{16}{25} = \\frac{9}{25}$.</li><li><strong>Paso 5:</strong> Extrae raíz cuadrada en ambos lados (positiva por ser primer cuadrante): $\\operatorname{sen}(\\theta) = \\sqrt{\\frac{9}{25}} = \\frac{3}{5}$.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> El valor de $\\operatorname{sen}(\\theta)$ es de exactamente <strong>3/5 (o 0.6)</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Olvidar elevar las funciones al cuadrado:</strong> Sumar $\\operatorname{sen}(\\theta) + \\cos(\\theta) = 1$. ¡Totalmente falso! La identidad solo se cumple con los cuadrados de las funciones.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Si sen(x) = 0.6 en el primer cuadrante, calcula cos(x) usando la identidad fundamental: (Ingresa solo el número decimal con punto):",
+                            "correctAnswer": "0.8",
+                            "hint": "Despeja cos^2(x) = 1 - sen^2(x) = 1 - 0.36 = 0.64. Luego saca la raíz de 0.64.",
+                            "feedbackCorrect": "¡Excelente! cos(x) = sqrt(0.64) = 0.8.",
+                            "feedbackIncorrect": "Incorrecto. cos²(x) = 1 - 0.6² = 0.64, por lo que cos(x) = 0.8.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Simplifica algebraicamente la expresión trigonométrica: (1 - sen²(A)) / cos²(A). (Ingresa solo el número entero):",
+                            "correctAnswer": "1",
+                            "hint": "Sustituye el numerador (1 - sen^2(A)) por su equivalente según la identidad pitagórica, que es cos^2(A).",
+                            "feedbackCorrect": "¡Perfecto! cos²(A) / cos²(A) = 1.",
+                            "feedbackIncorrect": "Incorrecto. Por identidad fundamental 1 - sen²(A) = cos²(A). Dividido entre cos²(A) da 1.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cuál de las siguientes igualdades es la simplificación correcta para la expresión: sec²(&theta;) - tan²(&theta;)?",
+                            "options": [
+                                "0",
+                                "1",
+                                "sen²(&theta;)",
+                                "cos²(&theta;)"
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Parte de la identidad pitagórica secundaria: 1 + tan²(x) = sec²(x). Despeja restando tan²(x) en ambos lados.",
+                            "feedbackCorrect": "¡Excelente! sec²(x) - tan²(x) = 1. Es otra forma de la identidad secundaria.",
+                            "feedbackIncorrect": "Incorrecto. Dado que 1 + tan²(x) = sec²(x), al restar tan²(x) obtenemos 1.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Si sabemos que cot²(y) = 3, calcula el valor exacto de la cosecante cuadrada csc²(y) usando identidades. (Ingresa solo el número entero):",
+                            "correctAnswer": "4",
+                            "hint": "Usa la identidad pitagórica 1 + cot²(y) = csc²(y). Suma 1 a 3.",
+                            "feedbackCorrect": "¡Perfecto! csc²(y) = 1 + 3 = 4.",
+                            "feedbackIncorrect": "Incorrecto. csc²(y) = 1 + cot²(y) = 1 + 3 = 4.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Demuestra a qué equivale la expresión: cos(&theta;) &bull; tan(&theta;).",
+                            "options": [
+                                "1",
+                                "sen(&theta;)",
+                                "sec(&theta;)",
+                                "cot(&theta;)"
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Sustituye la tangente por su identidad de cociente: tan(x) = sen(x) / cos(x). Luego simplifica.",
+                            "feedbackCorrect": "¡Excelente! cos(x) * (sen(x) / cos(x)) cancela los cosenos, dando sen(x).",
+                            "feedbackIncorrect": "Incorrecto. tan = sen/cos. Multiplicada por cos se cancela el coseno, dejando únicamente el seno.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "Las identidades pitagóricas simplifican formulaciones de variables complejas al convertirlas en igualdades de constantes en trigonometría.",
+                    "videoPlaceholderText": "Video de Trigonometría: Demostración y memorización rápida de identidades pitagóricas."
+                },
+                {
+                    "id": "graficas-funciones-trigonometricas",
+                    "title": "Lección 2.3: Gráficas de las Funciones Seno, Coseno y Tangente",
+                    "introduction": "Aprende a reconocer y analizar las ondas periódicas de las tres principales funciones trigonométricas.",
+                    "explanationHtml": "<p>Al graficar las funciones trigonométricas con el ángulo en el eje horizontal ($x$, expresado en radianes) y la razón en el eje vertical ($y$), se obtienen patrones repetitivos llamados <strong>gráficas periódicas</strong>:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Función Seno ($y = \\operatorname{sen} x$):</strong> Una onda suave continua (sinusoide). Pasa por el origen $(0,0)$. Su período es $2\\pi$ y su amplitud oscila estrictamente entre $-1$ y $1$.</li><li><strong>Función Coseno ($y = \\cos x$):</strong> Onda idéntica a la del seno pero desplazada hacia la izquierda en $\\pi/2$ radianes (desfase). Parte del punto máximo $(0,1)$ en el eje $y$.</li><li><strong>Función Tangente ($y = \\tan x$):</strong> Gráfica discontinua que tiene líneas verticales llamadas **asíntotas** cada $\\pi$ radianes (donde el coseno vale cero y la división se indefine). Su período es $\\pi$ y su rango abarca desde $-\\infty$ hasta $+\\infty$.</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Propiedades de las Ondas</p><p class=\"text-xs font-mono font-bold text-primary\">Periodo de sen/cos = 2&pi; &nbsp;|&nbsp; Periodo de tan = &pi;</p><p class=\"text-xs text-slate-500\">Amplitud de sen/cos = 1. Rango de tan = (-&infin;, +&infin;).</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">ONDAS SENO Y COSENO (0 a 2&pi;)</text><line x1=\"30\" y1=\"70\" x2=\"270\" y2=\"70\" stroke=\"#64748b\" stroke-width=\"1\" /><line x1=\"40\" y1=\"20\" x2=\"40\" y2=\"110\" stroke=\"#64748b\" stroke-width=\"1\" /><path d=\"M 40 70 Q 95 20 150 70 T 260 70\" fill=\"none\" stroke=\"#10b981\" stroke-width=\"2\" /><text x=\"210\" y=\"38\" font-size=\"8\" fill=\"#047857\" font-weight=\"bold\">y = sen(x)</text><path d=\"M 40 30 Q 95 120 150 70 T 260 30\" fill=\"none\" stroke=\"#f59e0b\" stroke-width=\"1.5\" stroke-dasharray=\"2,2\" /><text x=\"210\" y=\"52\" font-size=\"8\" fill=\"#d97706\" font-weight=\"bold\">y = cos(x)</text><text x=\"40\" y=\"70\" font-size=\"7\" fill=\"#64748b\" text-anchor=\"end\">0</text><text x=\"150\" y=\"82\" font-size=\"7\" fill=\"#64748b\" text-anchor=\"middle\">&pi;</text><text x=\"260\" y=\"82\" font-size=\"7\" fill=\"#64748b\" text-anchor=\"middle\">2&pi;</text></svg>",
+                    "svgDescription": "Gráfica superpuesta de las ondas de seno (verde continua) y coseno (naranja punteada) desde 0 hasta 2pi radianes, ilustrando el desfase relativo entre ambas.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Identifica el valor del período y los puntos de cruce con el eje horizontal de la función $y = \\operatorname{sen} x$ en el intervalo $[0, 2\\pi]$.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1:</strong> La onda del seno completa un ciclo completo de subida y bajada entre $0$ y $2\\pi$. Por lo tanto, su período es $2\\pi$ radianes.</li><li><strong>Paso 2:</strong> Analiza dónde corta la curva el eje horizontal (donde $y = 0$).</li><li><strong>Paso 3:</strong> La función vale cero en tres puntos específicos de este ciclo: $x = 0$, $x = \\pi$ (medio ciclo) y $x = 2\\pi$ (final de ciclo).</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> Período $= 2\\pi$. Cruces en $x = 0, \\pi, 2\\pi$.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Creer que la tangente llega a 1 como máximo:</strong> La tangente no está limitada como el seno y el coseno. Sube y baja infinitamente sin tocar las asíntotas.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "¿Cuál es la amplitud máxima de la función básica y = cos(x)? (Ingresa solo el número entero):",
+                            "correctAnswer": "1",
+                            "hint": "La amplitud es el desplazamiento máximo desde la línea central (cero) hasta su pico. Coseno oscila entre -1 y +1.",
+                            "feedbackCorrect": "¡Excelente! La amplitud de la función coseno pura es exactamente 1.",
+                            "feedbackIncorrect": "Incorrecto. Coseno tiene una amplitud de 1 (oscila de -1 a 1).",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cuál es el período completo en radianes de la función y = tan(x)?",
+                            "options": [
+                                "pi/2",
+                                "pi",
+                                "2pi",
+                                "Infinito"
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "La tangente se repite mucho más rápido que el seno y el coseno. Corta el eje horizontal en cada pi.",
+                            "feedbackCorrect": "¡Excelente! El período de la función tangente es exactamente pi radianes.",
+                            "feedbackIncorrect": "Incorrecto. El período de la tangente es pi; el del seno y coseno es 2pi.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Si evaluamos la función y = sen(x) en el valor exacto x = pi/2 radianes (90°), ¿qué resultado vertical se obtiene? (Ingresa solo el número entero):",
+                            "correctAnswer": "1",
+                            "hint": "A 90° la coordenada vertical y en el círculo unitario alcanza su punto máximo positivo.",
+                            "feedbackCorrect": "¡Perfecto! sen(pi/2) = 1.",
+                            "feedbackIncorrect": "Incorrecto. El seno alcanza su valor máximo de 1 a pi/2 radianes (90°).",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cómo se denominan las líneas verticales imaginarias en la gráfica de la tangente donde la función no está definida y la curva se dispara al infinito?",
+                            "options": [
+                                "Vértices",
+                                "Asíntotas",
+                                "Intersecciones",
+                                "Parábolas"
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Son líneas que la curva se aproxima infinitamente sin llegar a tocarlas jamás.",
+                            "feedbackCorrect": "¡Perfecto! Se denominan asíntotas verticales y ocurren donde cos(x) = 0.",
+                            "feedbackIncorrect": "Incorrecto. Se llaman asíntotas verticales.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Si evaluamos y = cos(0), ¿qué valor se obtiene en el eje y? (Ingresa solo el número entero):",
+                            "correctAnswer": "1",
+                            "hint": "Coseno de cero representa el punto de inicio de la onda sobre el eje y. Piensa en la coordenada x a 0°.",
+                            "feedbackCorrect": "¡Excelente! cos(0) = 1. La onda del coseno parte de su altura máxima.",
+                            "feedbackIncorrect": "Incorrecto. cos(0) = 1. (sen(0) es 0).",
+                            "difficulty": "básico",
+                            "type": "short"
+                        }
+                    ],
+                    "summaryHtml": "Las gráficas trigonométricas modelan ondas oscilatorias periódicas continuas y discontinuas que describen fenómenos físicos como el sonido, la luz y las corrientes eléctricas.",
+                    "videoPlaceholderText": "Video de Trigonometría: Graficando seno, coseno y tangente de forma interactiva."
+                }
+            ]
+        },
+        {
+            "title": "Unidad 3: Resolución de Triángulos Oblicuángulos y Leyes Fundamentales",
+            "lessons": [
+                {
+                    "id": "ley-de-senos",
+                    "title": "Lección 3.1: Ley de Senos",
+                    "introduction": "Aprende a resolver triángulos que no tienen un ángulo recto (oblicuángulos) utilizando proporcionalidades angulares.",
+                    "explanationHtml": "<p>Un triángulo <strong>oblicuángulo</strong> es aquel que no posee ningún ángulo recto (de $90^\\circ$). Para resolverlos (encontrar lados o ángulos desconocidos) no podemos usar Pitágoras ni razones directas; requerimos leyes especiales.</p><p>La <strong>Ley de Senos</strong> establece que en cualquier triángulo, las longitudes de los lados son proporcionales a los senos de sus respectivos ángulos opuestos:</p><p class=\"text-center font-mono font-extrabold text-primary text-base my-2\">$$\\frac{a}{\\operatorname{sen} A} = \\frac{b}{\\operatorname{sen} B} = \\frac{c}{\\operatorname{sen} C}$$</p><p class=\"mt-2 font-bold text-slate-800\">¿Cuándo se debe aplicar?</p><ul class=\"list-disc pl-5 space-y-1.5 my-2\"><li>Cuando se conocen <strong>dos ángulos y cualquier lado</strong> (caso ALA o AAL).</li><li>Cuando se conocen <strong>dos lados y el ángulo opuesto a uno de ellos</strong> (caso LLA).</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Ley de Senos</p><p class=\"text-xs font-mono font-bold text-primary\">a / sen(A) = b / sen(B) = c / sen(C)</p><p class=\"text-xs text-slate-550\">Recuerda: Los lados en minúsculas (a, b, c) se oponen directamente a los ángulos en mayúsculas (A, B, C).</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">LEY DE SENOS (OBLICUÁNGULO)</text><polygon points=\"50,95 240,95 180,35\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"2\" /><text x=\"40\" y=\"98\" font-size=\"9\" fill=\"#1e40af\" font-weight=\"bold\">A</text><text x=\"250\" y=\"98\" font-size=\"9\" fill=\"#1e40af\" font-weight=\"bold\">B</text><text x=\"180\" y=\"28\" font-size=\"9\" fill=\"#1e40af\" font-weight=\"bold\">C</text><text x=\"145\" y=\"105\" font-size=\"8\" fill=\"#64748b\" text-anchor=\"middle\">Lado c</text><text x=\"218\" y=\"65\" font-size=\"8\" fill=\"#64748b\" text-anchor=\"middle\">Lado a</text><text x=\"105\" y=\"65\" font-size=\"8\" fill=\"#64748b\" text-anchor=\"middle\">Lado b</text></svg>",
+                    "svgDescription": "Un triángulo oblicuángulo con los tres vértices marcados en mayúsculas (A, B, C) y sus lados correspondientes opuestos marcados en minúsculas (a, b, c).",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> En un triángulo oblicuángulo, el ángulo $A$ mide $30^\\circ$, el ángulo $B$ mide $45^\\circ$ y el lado $a$ mide $10$ cm. Calcula la longitud del lado $b$.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1:</strong> Identifica los datos. $A = 30^\\circ$, $B = 45^\\circ$, $a = 10$. Queremos hallar $b$. Es aplicable la Ley de Senos.</li><li><strong>Paso 2:</strong> Escribe la proporción correspondiente: <br>$$\\frac{a}{\\operatorname{sen} A} = \\frac{b}{\\operatorname{sen} B}$$</li><li><strong>Paso 3:</strong> Sustituye las medidas conocidas: <br>$$\\frac{10}{\\operatorname{sen}(30^\\circ)} = \\frac{b}{\\operatorname{sen}(45^\\circ)}$$</li><li><strong>Paso 4:</strong> Con $\\operatorname{sen}(30^\\circ) = 0.5$ y $\\operatorname{sen}(45^\\circ) \\approx 0.707$: <br>$$\\frac{10}{0.5} = \\frac{b}{0.707} \\Rightarrow 20 = \\frac{b}{0.707}$$</li><li><strong>Paso 5:</strong> Despeja $b$ multiplicando: $b = 20 \\times 0.707 = 14.14$ cm.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> El lado b mide aproximadamente <strong>14.14 cm</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Emparejar mal lados y ángulos:</strong> Colocar en la proporción un lado dividido entre el seno de un ángulo no opuesto. $a$ siempre se opone a $A$; $b$ a $B$; $c$ a $C$.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "En un triángulo, A = 30°, B = 45°, y a = 10. Calcula el lado b aproximado. (Ingresa decimal con punto, ej: 14.14):",
+                            "correctAnswer": "14.14",
+                            "hint": "Plantea a/sen(A) = b/sen(B). b = (10 * sen(45°)) / sen(30°). sen(45°) ≈ 0.707, sen(30°) = 0.5.",
+                            "feedbackCorrect": "¡Excelente! b = (10 * 0.7071) / 0.5 = 14.14 cm.",
+                            "feedbackIncorrect": "Incorrecto. Queda (10 * 0.707) / 0.5 = 14.14.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si en un triángulo, el lado a = 8 cm y sen(A) = 0.4. Si el lado b = 10 cm, ¿cuánto vale sen(B)? (Ingresa el número decimal con punto):",
+                            "correctAnswer": "0.5",
+                            "hint": "Usa la ley de senos: 8 / 0.4 = 10 / sen(B). Despeja sen(B) = (10 * 0.4) / 8.",
+                            "feedbackCorrect": "¡Excelente! sen(B) = 4 / 8 = 0.5.",
+                            "feedbackIncorrect": "Incorrecto. sen(B) = (10 * 0.4) / 8 = 4 / 8 = 0.5.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Bajo cuál de las siguientes condiciones es estrictamente imposible aplicar de forma directa la Ley de Senos?",
+                            "options": [
+                                "Conocemos dos ángulos y un lado.",
+                                "Conocemos dos lados y el ángulo opuesto a uno de ellos.",
+                                "Conocemos los tres lados del triángulo pero ningún ángulo interno.",
+                                "Conocemos dos ángulos y el lado comprendido entre ellos."
+                            ],
+                            "correctAnswer": 2,
+                            "hint": "Para aplicar la ley de senos necesitas al menos un par completo de lado y su ángulo opuesto. Si no tienes ningún ángulo, no tienes ningún seno.",
+                            "feedbackCorrect": "¡Excelente! Al conocer únicamente los tres lados (LLL), se indefine la ley de senos y es obligatorio utilizar la Ley de Cosenos.",
+                            "feedbackIncorrect": "Incorrecto. Si conoces solo los tres lados, no puedes usar ley de senos; debes usar ley de cosenos.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "En un triángulo, el lado c mide 6 m y el ángulo C mide 90°. ¿Cuál es la razón de proporcionalidad c/sen(C)? (Ingresa solo el número entero):",
+                            "correctAnswer": "6",
+                            "hint": "Calcula sen(90°). Recuerda que sen(90°) = 1. Divide c entre 1.",
+                            "feedbackCorrect": "¡Perfecto! c / sen(90°) = 6 / 1 = 6.",
+                            "feedbackIncorrect": "Incorrecto. sen(90°) = 1, por lo que la proporción es 6 / 1 = 6.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si la suma de dos ángulos de un triángulo es 120°, ¿cuánto vale el seno del tercer ángulo?",
+                            "options": [
+                                "0.5",
+                                "0.866",
+                                "1.0",
+                                "0.707"
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "El tercer ángulo debe completar los 180°. Resta 180 - 120 = 60°. Luego calcula sen(60°).",
+                            "feedbackCorrect": "¡Excelente! El ángulo restante mide 60°. El sen(60°) es aproximado a 0.866.",
+                            "feedbackIncorrect": "Incorrecto. Tercer ángulo = 60°. sen(60°) ≈ 0.866.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "La Ley de Senos permite resolver triángulos oblicuángulos estableciendo proporciones racionales de congruencia entre lados y sus ángulos opuestos.",
+                    "videoPlaceholderText": "Video de Trigonometría: Cuándo y cómo aplicar la Ley de Senos con ejercicios."
+                },
+                {
+                    "id": "ley-de-cosenos",
+                    "title": "Lección 3.2: Ley de Cosenos",
+                    "introduction": "Descubre la ley que generaliza el Teorema de Pitágoras para cualquier tipo de triángulo oblicuángulo.",
+                    "explanationHtml": "<p>La <strong>Ley de Cosenos</strong> es una herramienta potente que generaliza el Teorema de Pitágoras para abarcar cualquier tipo de triángulo (incluyendo oblicuángulos). Establece que el cuadrado de un lado es igual a la suma de los cuadrados de los otros dos lados, menos el doble producto de estos lados por el coseno del ángulo comprendido entre ellos:</p><p class=\"text-center font-mono font-extrabold text-primary text-base my-2\">c² = a² + b² - 2ab cos(C)</p><p class=\"mt-3\">También podemos plantearla para los otros lados:</p><ul class=\"list-disc pl-5 space-y-1 my-2\"><li>$a^2 = b^2 + c^2 - 2bc \\cos(A)$</li><li>$b^2 = a^2 + c^2 - 2ac \\cos(B)$</li></ul><p class=\"mt-2 font-bold text-slate-800\">¿Cuándo se debe aplicar?</p><ul class=\"list-disc pl-5 space-y-1.5 my-2\"><li>Cuando se conocen <strong>dos lados y el ángulo comprendido</strong> entre ellos (caso LAL).</li><li>Cuando se conocen <strong>los tres lados</strong> y ningún ángulo (caso LLL).</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Ley de Cosenos</p><p class=\"text-xs font-mono font-bold text-primary\">c&sup2; = a&sup2; + b&sup2; - 2ab cos(C)</p><p class=\"text-xs text-slate-500\">Si C = 90&deg;, cos(90&deg;) = 0 &rArr; c&sup2; = a&sup2; + b&sup2; (se convierte en Pitágoras).</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">LEY DE COSENOS (CASO L-A-L)</text><polygon points=\"60,95 240,95 180,35\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"2\" /><path d=\"M 75 95 A 15 15 0 0 0 70 85\" fill=\"none\" stroke=\"#ef4444\" stroke-width=\"1.5\" /><text x=\"80\" y=\"90\" font-size=\"8\" fill=\"#ef4444\" font-weight=\"bold\">C = 60°</text><text x=\"105\" y=\"60\" font-size=\"8\" fill=\"#1e40af\" font-weight=\"bold\">a = 10 cm</text><text x=\"210\" y=\"60\" font-size=\"8\" fill=\"#d97706\" font-weight=\"bold\">b = 12 cm</text><text x=\"150\" y=\"105\" font-size=\"8\" fill=\"#047857\" font-weight=\"bold\" text-anchor=\"middle\">Lado c descon.</text></svg>",
+                    "svgDescription": "Un triángulo oblicuángulo que resalta un ángulo de 60° y sus dos lados adyacentes de 10 y 12 cm, mostrando que el lado opuesto c se calcula con la Ley de Cosenos.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> En un triángulo, los lados $a$ y $b$ miden $10$ cm y $12$ cm respectivamente, y el ángulo $C$ comprendido entre ellos mide $60^\\circ$. Calcula el lado $c$.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1:</strong> Identifica que tienes el caso Lado-Ángulo-Lado (LAL). Aplica la Ley de Cosenos: <br>$c^2 = a^2 + b^2 - 2ab \\cos(C)$.</li><li><strong>Paso 2:</strong> Reemplaza con los valores conocidos: <br>$c^2 = 10^2 + 12^2 - 2(10)(12)\\cos(60^\\circ)$.</li><li><strong>Paso 3:</strong> Opera los cuadrados y la multiplicación: <br>$c^2 = 100 + 144 - 240 \\cos(60^\\circ) = 244 - 240 \\cos(60^\\circ)$.</li><li><strong>Paso 4:</strong> Con $\\cos(60^\\circ) = 0.5$: <br>$c^2 = 244 - 240(0.5) = 244 - 120 = 124$.</li><li><strong>Paso 5:</strong> Extrae la raíz cuadrada de $124$: <br>$c = \\sqrt{124} \\approx 11.14$ cm.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> La longitud del lado c es de aproximadamente <strong>11.14 cm</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Olvidar restar el último término:</strong> Resolver la ecuación como $a^2 + b^2 + 2ab \\cos(C)$. Recuerda que la fórmula exige una resta: $-2ab \\cos(C)$.</li><li><strong>Hacer mal el orden de operaciones:</strong> Operar $(a^2 + b^2 - 2ab) \\times \\cos(C)$. ¡Error fatal! La multiplicación de $2ab \\cos(C)$ debe resolverse antes de restarla de la suma de los cuadrados.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Calcula c² si a = 3, b = 4, y el ángulo comprendido C mide 60°. (cos(60°) = 0.5. Ingresa solo el número entero):",
+                            "correctAnswer": "13",
+                            "hint": "Aplica c² = 3² + 4² - 2(3)(4)cos(60°). Desarrolla los términos uno a uno respetando la prioridad de la multiplicación.",
+                            "feedbackCorrect": "¡Excelente! c² = 9 + 16 - 24(0.5) = 25 - 12 = 13.",
+                            "feedbackIncorrect": "Incorrecto. c² = 9 + 16 - 24(0.5) = 25 - 12 = 13.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si los tres lados de un triángulo miden a = 5, b = 5, y c = 5 (triángulo equilátero), calcula cos(C) usando la ley de cosenos. (Ingresa decimal con punto, ej: 0.5):",
+                            "correctAnswer": "0.5",
+                            "hint": "Usa c² = a² + b² - 2ab cos(C). Plantea 25 = 25 + 25 - 50 cos(C). Despeja cos(C).",
+                            "feedbackCorrect": "¡Excelente! 25 = 50 - 50 cos(C) => 50 cos(C) = 25 => cos(C) = 0.5.",
+                            "feedbackIncorrect": "Incorrecto. cos(C) = (5² + 5² - 5²) / (2*5*5) = 25 / 50 = 0.5.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Bajo qué caso de resolución de triángulos es mandatorio aplicar la Ley de Cosenos por no poderse usar la Ley de Senos?",
+                            "options": [
+                                "Conocemos dos lados y el ángulo opuesto a uno de ellos.",
+                                "Conocemos dos ángulos y un lado.",
+                                "Conocemos dos lados y el ángulo comprendido entre ellos (LAL).",
+                                "Conocemos un ángulo y su cateto opuesto."
+                            ],
+                            "correctAnswer": 2,
+                            "hint": "Busca aquella combinación donde no se tenga una pareja completa de lado y ángulo opuesto para poder dividir en proporciones.",
+                            "feedbackCorrect": "¡Excelente! El caso Lado-Ángulo-Lado (LAL) requiere iniciar de forma obligatoria con la Ley de Cosenos.",
+                            "feedbackIncorrect": "Incorrecto. El caso Lado-Ángulo-Lado (LAL) exige ley de cosenos.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Si en la fórmula c² = a² + b² - 2ab cos(C), evaluamos un ángulo recto C = 90°, ¿en qué teorema fundamental se convierte la ley?",
+                            "options": [
+                                "Teorema de Tales",
+                                "Teorema de Pitágoras",
+                                "Teorema de Euclides",
+                                "Identidad de Euler"
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Recuerda que cos(90°) = 0. Multiplica ese cero por el término -2ab y mira lo que queda.",
+                            "feedbackCorrect": "¡Perfecto! Al valer cos(90°) = 0, el término se anula y queda a² + b² = c² (Teorema de Pitágoras).",
+                            "feedbackIncorrect": "Incorrecto. Se reduce exactamente al Teorema de Pitágoras ya que cos(90°) = 0.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Calcula c² si a = 5, b = 8 y el ángulo C = 90°. (Ingresa solo el número entero):",
+                            "correctAnswer": "89",
+                            "hint": "Al ser C = 90°, cos(C) = 0. Aplica el Teorema de Pitágoras directo: c² = a² + b².",
+                            "feedbackCorrect": "¡Perfecto! c² = 25 + 64 = 89.",
+                            "feedbackIncorrect": "Incorrecto. Como es un ángulo recto se convierte en Pitágoras: 5² + 8² = 25 + 64 = 89.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        }
+                    ],
+                    "summaryHtml": "La Ley de Cosenos permite resolver cualquier triángulo al unificar dinámicamente las longitudes de sus tres lados con el coseno del ángulo opuesto.",
+                    "videoPlaceholderText": "Video de Trigonometría: Ley de Cosenos explicada de forma sencilla con ejemplos reales."
+                },
+                {
+                    "id": "area-triangulos-heron-trigonometrica",
+                    "title": "Lección 3.3: Área de Triángulos: Fórmula de Herón y Fórmula Trigonométrica",
+                    "introduction": "Aprende a calcular el área de cualquier triángulo cuando no conoces la altura vertical directa.",
+                    "explanationHtml": "<p>Calcular el área de un triángulo con la fórmula tradicional $\\text{Área} = \\frac{b \\times h}{2}$ requiere conocer la altura perpendicular ($h$). Si no la conocemos, tenemos dos fórmulas excelentes según los datos disponibles:</p><p class=\"mt-2 font-bold text-slate-800\">1. Fórmula Trigonométrica del Área:</p><p class=\"text-slate-700\">Se aplica cuando conocemos <strong>dos lados y el ángulo comprendido</strong> ($A, B, C$):</p><p class=\"text-center font-mono font-extrabold text-primary my-2\">$$\\text{Área} = \\frac{1}{2} a b \\operatorname{sen}(C)$$</p><p class=\"mt-3 font-bold text-slate-800\">2. Fórmula de Herón:</p><p class=\"text-slate-700\">Se aplica cuando conocemos únicamente <strong>las longitudes de los tres lados</strong> ($a, b, c$). Primero calculamos el **semiperímetro** ($s$):</p><p class=\"text-center font-mono font-bold text-slate-800\">$$s = \\frac{a + b + c}{2}$$</p><p class=\"text-slate-700\">Luego aplicamos la fórmula de Herón:</p><p class=\"text-center font-mono font-extrabold text-primary my-2\">$$\\text{Área} = \\sqrt{s(s - a)(s - b)(s - c)}$$</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Fórmulas Avanzadas de Área</p><p class=\"text-xs font-mono font-bold text-primary\">Trigonométrica: A = 0.5 &bull; a &bull; b &bull; sen(C)</p><p class=\"text-xs font-mono font-bold text-primary\">Herón: A = &radic;[s(s-a)(s-b)(s-c)]</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">ÁREA SIN ALTURA CONOCIDA</text><polygon points=\"60,95 240,95 180,35\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"2\" /><text x=\"145\" y=\"105\" font-size=\"8\" fill=\"#1e40af\" font-weight=\"bold\">Lado c = 8 cm</text><text x=\"220\" y=\"65\" font-size=\"8\" fill=\"#1e40af\" font-weight=\"bold\">Lado a = 6 cm</text><text x=\"95\" y=\"65\" font-size=\"8\" fill=\"#d97706\" font-weight=\"bold\">Lado b = 5 cm</text><text x=\"150\" y=\"114\" font-size=\"7\" fill=\"#64748b\" text-anchor=\"middle\">Usa Herón con s = (6+5+8)/2 = 9.5</text></svg>",
+                    "svgDescription": "Un triángulo oblicuángulo con lados marcados de 5, 6 y 8 cm. Explica que al no tener altura se calcula con el semiperímetro de Herón.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Calcula el área de un triángulo cuyos lados miden $a = 5$ cm, $b = 6$ cm y $c = 7$ cm usando la fórmula de Herón.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1:</strong> Calcula el semiperímetro ($s$): <br>$$s = \\frac{a+b+c}{2} = \\frac{5+6+7}{2} = \\frac{18}{2} = 9\\text{ cm}$$</li><li><strong>Paso 2:</strong> Escribe la fórmula de Herón: <br>$$\\text{Área} = \\sqrt{s(s - a)(s - b)(s - c)}$$</li><li><strong>Paso 3:</strong> Reemplaza las variables: <br>$$\\text{Área} = \\sqrt{9(9 - 5)(9 - 6)(9 - 7)} = \\sqrt{9(4)(3)(2)}$$</li><li><strong>Paso 4:</strong> Opera la multiplicación interior: <br>$$\\text{Área} = \\sqrt{9 \\times 4 \\times 3 \\times 2} = \\sqrt{216}$$</li><li><strong>Paso 5:</strong> Calcula la raíz cuadrada de $216$: <br>$$\\text{Área} \\approx 14.70\\text{ cm}^2$$</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> El área del triángulo es de aproximadamente <strong>14.70 cm²</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Confundir semiperímetro con perímetro:</strong> Olvidar dividir la suma de los tres lados entre 2 antes de aplicar la fórmula de Herón, lo que arroja errores exponenciales en la raíz.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Calcula el semiperímetro (s) de un triángulo cuyos lados miden 6 cm, 8 cm y 10 cm: (Ingresa solo el número entero):",
+                            "correctAnswer": "12",
+                            "hint": "El semiperímetro es la mitad de la suma de los tres lados: s = (a + b + c) / 2.",
+                            "feedbackCorrect": "¡Excelente! s = (6 + 8 + 10) / 2 = 24 / 2 = 12 cm.",
+                            "feedbackIncorrect": "Incorrecto. Suma los lados y divide entre 2: (6 + 8 + 10) / 2 = 12.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Calcula el área aproximada en cm² de un triángulo si a = 10 cm, b = 8 cm, y el ángulo C = 30°. (sen(30°) = 0.5. Ingresa solo el número entero):",
+                            "correctAnswer": "20",
+                            "hint": "Aplica la fórmula trigonométrica: Área = 0.5 * a * b * sen(C). Multiplica 0.5 * 10 * 8 * 0.5.",
+                            "feedbackCorrect": "¡Excelente! Área = 0.5 * 10 * 8 * 0.5 = 20 cm².",
+                            "feedbackIncorrect": "Incorrecto. Área = 0.5 * 10 * 8 * sen(30°) = 40 * 0.5 = 20.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Aplica la fórmula de Herón para hallar el área exacta en cm² de un triángulo cuyos lados miden 3 cm, 4 cm y 5 cm. (Pista: s = 6. Ingresa solo el número entero):",
+                            "correctAnswer": "6",
+                            "hint": "Con s = 6, Área = sqrt(6 * (6-3) * (6-4) * (6-5)) = sqrt(6 * 3 * 2 * 1).",
+                            "feedbackCorrect": "¡Perfecto! Área = sqrt(36) = 6 cm².",
+                            "feedbackIncorrect": "Incorrecto. Área = sqrt(6 * 3 * 2 * 1) = sqrt(36) = 6.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si en la fórmula trigonométrica del área, el ángulo C comprendido es de 90°, ¿a qué fórmula clásica se reduce la expresión?",
+                            "options": [
+                                "Área = L²",
+                                "Área = (Base * Altura) / 2",
+                                "Fórmula de Herón",
+                                "Teorema de Pitágoras"
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Recuerda que sen(90°) = 1. Sustituye este valor en la fórmula Área = 0.5 * a * b * sen(C).",
+                            "feedbackCorrect": "¡Excelente! Al ser sen(90°) = 1, la expresión se convierte exactamente en (a * b) / 2, la fórmula clásica.",
+                            "feedbackIncorrect": "Incorrecto. Se reduce a la fórmula clásica de Base * Altura / 2.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "En un triángulo con lados a = 5 cm y b = 12 cm, ¿cuál es el área máxima que podría tener modificando su ángulo comprendido?",
+                            "options": [
+                                "30 cm²",
+                                "60 cm²",
+                                "120 cm²",
+                                "No tiene límite máximo"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "El área es máxima cuando sen(C) es máximo. El valor máximo del seno es 1, lo cual ocurre a los 90°.",
+                            "feedbackCorrect": "¡Perfecto! El área máxima se logra a 90°: 0.5 * 5 * 12 * 1 = 30 cm².",
+                            "feedbackIncorrect": "Incorrecto. El máximo es a 90° (sen = 1): 0.5 * 5 * 12 = 30 cm².",
+                            "difficulty": "avanzado",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "La Fórmula Trigonométrica y la Fórmula de Herón independizan el cálculo del área de la necesidad de conocer la altura perpendicular, abriendo ricas aplicaciones prácticas.",
+                    "videoPlaceholderText": "Video de Trigonometría: Fórmula de Herón y trigonométrica de área explicadas con ejemplos."
+                }
+            ]
+        }
+    ]
+},
+
+    "calculo-universitario": {
+    "isRichCourse": true,
+    "title": "Cálculo Diferencial e Integral",
+    "units": [
+        {
+            "title": "Unidad 1: Límites y Continuidad",
+            "lessons": [
+                {
+                    "id": "concepto-intuitivo-limite",
+                    "title": "Lección 1.1: Concepto Intuitivo de Límite y Límites Laterales",
+                    "introduction": "El límite es la base teórica de todo el cálculo. Descubre cómo una función se aproxima a un valor aunque nunca llegue a tocarlo.",
+                    "explanationHtml": "<p>El <strong>límite</strong> de una función $f(x)$ cuando $x$ se aproxima a un valor $a$ es el valor $L$ al que se acercan los valores de la función. Se denota como:</p><p class=\"text-center font-mono font-extrabold text-primary text-base my-2\">$$\\lim_{x \\to a} f(x) = L$$</p><p class=\"mt-2\">Para que este límite exista de forma rigurosa en $a$, los <strong>límites laterales</strong> (aproximaciones por la izquierda y la derecha) deben existir y ser exactamente iguales:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Límite por la izquierda ($x \\to a^{-}$):</strong> Aproximarse usando valores ligeramente menores que $a$.</li><li><strong>Límite por la derecha ($x \\to a^{+}$):</strong> Aproximarse usando valores ligeramente mayores que $a$.</li></ul><p class=\"text-center font-bold text-slate-800 bg-slate-50 p-2 rounded border\">Existencia: $\\lim_{x \\to a} f(x) = L \\iff \\lim_{x \\to a^{-}} f(x) = \\lim_{x \\to a^{+}} f(x) = L$</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Condición de Existencia de un Límite</p><p class=\"text-xs font-mono font-bold text-primary\">lim(x&rarr;a&macr;) = lim(x&rarr;a&ordm;) = L</p><p class=\"text-xs text-slate-500\">Si los límites laterales dan valores diferentes, el límite general NO existe en ese punto.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">LÍMITES LATERALES</text><line x1=\"40\" y1=\"90\" x2=\"260\" y2=\"90\" stroke=\"#64748b\" stroke-width=\"1\" /><line x1=\"60\" y1=\"20\" x2=\"60\" y2=\"105\" stroke=\"#64748b\" stroke-width=\"1\" /><path d=\"M 60 75 L 145 45\" stroke=\"#3b82f6\" stroke-width=\"2\" /><circle cx=\"150\" cy=\"43\" r=\"4\" fill=\"none\" stroke=\"#ef4444\" stroke-width=\"1.5\" /><path d=\"M 155 41 L 240 15\" stroke=\"#3b82f6\" stroke-width=\"2\" /><line x1=\"150\" y1=\"90\" x2=\"150\" y2=\"47\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"2,2\" /><text x=\"150\" y=\"103\" font-size=\"8\" fill=\"#475569\" font-weight=\"bold\" text-anchor=\"middle\">a = 4</text><line x1=\"60\" y1=\"43\" x2=\"146\" y2=\"43\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"2,2\" /><text x=\"53\" y=\"46\" font-size=\"8\" fill=\"#475569\" font-weight=\"bold\" text-anchor=\"end\">L = 11</text><path d=\"M 110 50 L 130 46\" fill=\"none\" stroke=\"#059669\" stroke-width=\"1.5\" marker-end=\"url(#arrow)\" /><path d=\"M 190 25 L 170 31\" fill=\"none\" stroke=\"#059669\" stroke-width=\"1.5\" /></svg>",
+                    "svgDescription": "Una gráfica de función lineal continua que tiene un punto vacío (agujero) a x = 4, con flechas laterales que se aproximan a la misma altura y = 11, mostrando que el límite existe.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Considera la función continua $f(x) = 2x + 3$. Evalúa el límite cuando $x$ tiende a $4$.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1:</strong> Al tratarse de una función polinómica lineal, no presenta discontinuidades ni divisiones entre cero en su dominio.</li><li><strong>Paso 2:</strong> Podemos evaluar el valor de $x = 4$ directamente por sustitución directa: <br>$$\\lim_{x \\to 4} (2x + 3) = 2(4) + 3$$</li><li><strong>Paso 3:</strong> Resuelve aritméticamente: $2(4) + 3 = 8 + 3 = 11$.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> El límite cuando x tiende a 4 es de exactamente <strong>11</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Confundir evaluar el límite con evaluar la función:</strong> En funciones con huecos (discontinuidades evitables), $f(a)$ puede no existir o valer otra cosa, pero el límite $\\lim_{x \\to a} f(x)$ sí existe perfectamente porque solo mide la aproximación a los lados del punto.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Evalúa el límite directo de la función f(x) = x² - 5 cuando x tiende a 3. (Ingresa solo el número entero):",
+                            "correctAnswer": "4",
+                            "hint": "Al ser una función continua cuadrática, realiza sustitución directa evaluando x = 3.",
+                            "feedbackCorrect": "¡Excelente! 3² - 5 = 9 - 5 = 4.",
+                            "feedbackIncorrect": "Incorrecto. Sustituye x=3: 3² - 5 = 9 - 5 = 4.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si el límite lateral por la izquierda de una función tiende a +5 y por la derecha tiende a -5 en x = a, ¿cuánto vale el límite general en x = a?",
+                            "options": [
+                                "0",
+                                "5",
+                                "-5",
+                                "No existe"
+                            ],
+                            "correctAnswer": 3,
+                            "hint": "Recuerda que para la existencia del límite general, ambos límites laterales deben aproximarse exactamente al mismo valor real.",
+                            "feedbackCorrect": "¡Perfecto! Como los límites laterales son desiguales (5 ≠ -5), el límite general no existe.",
+                            "feedbackIncorrect": "Incorrecto. Al ser los límites laterales desiguales (+5 y -5), el límite general no existe.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Evalúa el límite directo: lim_{x -> 2} (3x - 1). (Ingresa solo el número entero):",
+                            "correctAnswer": "5",
+                            "hint": "Sustituye x = 2 en la ecuación lineal directa.",
+                            "feedbackCorrect": "¡Excelente! 3 * 2 - 1 = 6 - 1 = 5.",
+                            "feedbackIncorrect": "Incorrecto. Reemplaza x=2: 3(2) - 1 = 5.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Qué representa rigurosamente un límite lateral por la izquierda?",
+                            "options": [
+                                "El valor de la función evaluando números muy grandes y positivos.",
+                                "La aproximación al valor de x utilizando valores ligeramente menores a él (por su izquierda).",
+                                "La pendiente de la recta tangente inclinada hacia el cuadrante negativo.",
+                                "El punto de intersección de la curva con el eje vertical y."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Izquierda en la recta real representa números menores (e.g. 3.99, 3.999 approaching 4).",
+                            "feedbackCorrect": "¡Perfecto! El límite por la izquierda evalúa valores menores que se acercan a la cota por su lado izquierdo.",
+                            "feedbackIncorrect": "Incorrecto. Se trata de aproximarse por valores ligeramente menores.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Evalúa el comportamiento de la función f(x) = 1/x cuando x tiende a 0. ¿Qué se concluye sobre su límite?",
+                            "options": [
+                                "El límite es exactamente 0.",
+                                "El límite es exactamente 1.",
+                                "El límite no existe porque los laterales tienden a infinitos opuestos (-inf y +inf).",
+                                "El límite es infinito positivo constante."
+                            ],
+                            "correctAnswer": 2,
+                            "hint": "Si te acercas a 0 por la izquierda con negativos pequeños (e.g., -0.01) da -100. Por la derecha (e.g., 0.01) da +100.",
+                            "feedbackCorrect": "¡Excelente! Al divergir los laterales hacia -infinito y +infinito, el límite general no existe.",
+                            "feedbackIncorrect": "Incorrecto. Divergen a signos contrarios en el infinito, por ende no existe.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "Los límites determinan el valor esperado de aproximación de una función en un punto analítico. La convergencia y congruencia de los límites laterales fundamentan la continuidad de funciones.",
+                    "videoPlaceholderText": "Video de Cálculo: Concepto intuitivo de límites y laterales explicados con animaciones."
+                },
+                {
+                    "id": "limites-indeterminados-factorizacion",
+                    "title": "Lección 1.2: Límites Indeterminados por Factorización",
+                    "introduction": "Aprende a romper la indeterminación 0/0 mediante simplificación algebraica y factorización rigurosa.",
+                    "explanationHtml": "<p>Al evaluar límites racionales (fracciones) mediante sustitución directa, suele ocurrir que obtenemos la forma <strong>indeterminada</strong> $0/0$:</p><p class=\"text-center font-mono font-bold text-red-500 my-1\">$$\\lim_{x \\to a} \\frac{P(x)}{Q(x)} = \\frac{0}{0}$$</p><p class=\"mt-2\">Esto **no significa** que el límite no exista o sea infinito. Significa que hay un factor común algebraico $(x - a)$ en el numerador y en el denominador que causa los ceros y que debe cancelarse. El procedimiento algebraico es:</p><ol class=\"list-decimal pl-5 space-y-1.5 my-3\"><li><strong>Factorizar:</strong> Descomponer el numerador y/o denominador en factores.</li><li><strong>Simplificar:</strong> Cancelar el término común $(x - a)$ que genera la indeterminación.</li><li><strong>Reevaluar:</strong> Sustituir el valor de $a$ en la expresión simplificada restante.</li></ol>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Método de Factorización para 0/0</p><p class=\"text-xs font-mono font-bold text-primary\">lim (x&sup2; - a&sup2;) / (x - a) &rArr; lim (x-a)(x+a) / (x-a) = lim (x+a) = 2a</p><p class=\"text-xs text-slate-500\">Las factorizaciones más comunes son diferencia de cuadrados y trinomios.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">EVITAR INDETERMINACIÓN 0/0</text><rect x=\"25\" y=\"38\" width=\"110\" height=\"50\" fill=\"#fef2f2\" stroke=\"#fca5a5\" rx=\"6\" /><text x=\"80\" y=\"53\" font-size=\"8\" fill=\"#991b1b\" font-weight=\"bold\" text-anchor=\"middle\">Sustitución Directa</text><text x=\"80\" y=\"72\" font-size=\"12\" font-family=\"monospace\" fill=\"#991b1b\" font-weight=\"bold\" text-anchor=\"middle\">0 / 0</text><path d=\"M 140 63 L 160 63\" stroke=\"#94a3b8\" stroke-width=\"1.5\" stroke-dasharray=\"2,2\" /><rect x=\"165\" y=\"38\" width=\"110\" height=\"50\" fill=\"#eff6ff\" stroke=\"#bfdbfe\" rx=\"6\" /><text x=\"220\" y=\"53\" font-size=\"8\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">Factorizar &amp; Cancelar</text><text x=\"220\" y=\"75\" font-size=\"14\" font-family=\"monospace\" fill=\"#2563eb\" font-weight=\"extrabold\" text-anchor=\"middle\">L = 6</text></svg>",
+                    "svgDescription": "Esquema que ilustra el proceso para resolver un límite indeterminado. Muestra cómo la sustitución inicial arroja un error 0/0 que se elude factorizando y cancelando factores comunes para dar 6.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Evalúa el límite indeterminado: $$\\lim_{x \\to 3} \\frac{x^2 - 9}{x - 3}$$</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1 (Evaluar):</strong> Reemplazamos $x = 3$ directo: <br>$$\\frac{3^2 - 9}{3 - 3} = \\frac{9 - 9}{0} = \\frac{0}{0}$$ (Indeterminado).</li><li><strong>Paso 2 (Factorizar):</strong> El numerador $x^2 - 9$ es una diferencia de cuadrados perfectos: $(x + 3)(x - 3)$.</li><li><strong>Paso 3 (Simplificar):</strong> Cancelamos el factor común $(x - 3)$ en el numerador y denominador: <br>$$\\lim_{x \\to 3} \\frac{(x + 3)(x - 3)}{x - 3} = \\lim_{x \\to 3} (x + 3)$$</li><li><strong>Paso 4 (Reevaluar):</strong> Evaluamos $x = 3$ en la expresión restante: $3 + 3 = 6$.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> El valor del límite es exactamente <strong>6</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Responder que el límite es cero o que no existe:</strong> Dejar la respuesta como $0/0$. Esta forma es una indeterminación, lo que exige obligatoriamente un proceso algebraico para hallar la verdadera tendencia de aproximación.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Evalúa el límite: lim_{x -> 2} [(x² - 4) / (x - 2)]. (Ingresa solo el número entero):",
+                            "correctAnswer": "4",
+                            "hint": "Factoriza la diferencia de cuadrados en el numerador como (x-2)(x+2), cancela (x-2) y evalúa en 2.",
+                            "feedbackCorrect": "¡Excelente! (x+2) evaluado en 2 es 2 + 2 = 4.",
+                            "feedbackIncorrect": "Incorrecto. Factoriza y cancela: (x-2)(x+2) / (x-2) = x+2. Evaluado en 2 es 4.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Resuelve el límite: lim_{x -> 5} [(x² - 5x) / (x - 5)]. (Ingresa solo el número entero):",
+                            "correctAnswer": "5",
+                            "hint": "Factoriza el numerador por término común x, quedando x(x - 5). Cancela y evalúa.",
+                            "feedbackCorrect": "¡Perfecto! x(x-5)/(x-5) = x. Evaluado en 5 es 5.",
+                            "feedbackIncorrect": "Incorrecto. Factoriza por término común: x(x-5)/(x-5) = x. El límite es 5.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Resuelve el límite indeterminado: lim_{x -> 1} [(x² - 2x + 1) / (x - 1)]. (Ingresa solo el número entero):",
+                            "correctAnswer": "0",
+                            "hint": "El numerador es un Trinomio Cuadrado Perfecto que se factoriza como (x - 1)². Cancela uno y evalúa.",
+                            "feedbackCorrect": "¡Excelente! (x-1)²/(x-1) = x - 1. Evaluado en 1 es 1 - 1 = 0.",
+                            "feedbackIncorrect": "Incorrecto. (x-1)² / (x-1) = x-1. Evaluado en 1 da 0.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Resuelve el límite indeterminado: lim_{x -> -3} [(x² + 5x + 6) / (x + 3)]. (Ingresa solo el número entero, incluyendo signo si aplica):",
+                            "correctAnswer": "-1",
+                            "hint": "Factoriza el trinomio cuadrático cuadrando dos números que multiplicados den 6 y sumados 5 (3 y 2).",
+                            "feedbackCorrect": "¡Excelente! (x+3)(x+2)/(x+3) = x + 2. Evaluado en -3 da -3 + 2 = -1.",
+                            "feedbackIncorrect": "Incorrecto. (x+3)(x+2)/(x+3) = x+2. Evaluado en -3 es -1.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Qué significado geométrico tiene obtener la indeterminación 0/0 en una función racional?",
+                            "options": [
+                                "La curva tiene una asíntota vertical infinita.",
+                                "La función tiene una discontinuidad evitable (un hueco puntual) en ese valor de x.",
+                                "La gráfica corta al eje x en un ángulo recto de 90°.",
+                                "La función es constante y paralela al eje horizontal."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Significa que podemos eludir la discontinuidad simplificando la fracción. Queda un hueco pero no un salto al infinito.",
+                            "feedbackCorrect": "¡Excelente! Representa un hueco o discontinuidad evitable, lo que significa que el límite existe aunque la función no esté definida ahí.",
+                            "feedbackIncorrect": "Incorrecto. Representa una discontinuidad evitable o removible (hueco).",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "La indeterminación del tipo $0/0$ en límites racionales representa discontinuidades evitables puntuales que se resuelven mediante el uso de factorización y simplificación analítica.",
+                    "videoPlaceholderText": "Video de Cálculo: Cómo resolver cualquier límite indeterminado 0/0 en minutos."
+                },
+                {
+                    "id": "limites-infinito-asintotas",
+                    "title": "Lección 1.3: Límites al Infinito y Asíntotas",
+                    "introduction": "Explora las tendencias en los extremos infinitos de las funciones y aprende a deducir asíntotas horizontales.",
+                    "explanationHtml": "<p>Los <strong>límites al infinito</strong> evalúan el comportamiento de una función $f(x)$ cuando la variable $x$ crece sin límites hacia el infinito positivo ($x \\to \\infty$) o negativo ($x \\to -\\infty$).</p><p>Para funciones racionales $\\frac{P(x)}{Q(x)}$ al infinito, dividimos de forma analítica todos los términos del numerador y denominador entre la **mayor potencia de x que aparezca en el denominador**. Aplicamos el teorema límite:</p><p class=\"text-center font-mono font-extrabold text-primary text-base my-2\">$$\\lim_{x \\to \\infty} \\frac{k}{x^n} = 0 \\quad (\\text{para } n > 0)$$</p><p class=\"mt-2\"><strong>Asíntota Horizontal:</strong> Si $\\lim_{x \\to \\infty} f(x) = L$ (un número real real), la recta horizontal $y = L$ es una asíntota a la que la función se aproxima en sus extremos.</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Regla de Grados en el Infinito</p><p class=\"text-xs font-mono font-bold text-primary\">Grado Num = Grado Den &rArr; L&iacute;mite = Coef. Principal Num / Coef. Principal Den</p><p class=\"text-xs text-slate-550\">Grado Num &lt; Grado Den &rArr; L&iacute;mite = 0 &nbsp;|&nbsp; Grado Num &gt; Grado Den &rArr; L&iacute;mite = &infin;</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">ASÍNTOTA HORIZONTAL</text><line x1=\"40\" y1=\"90\" x2=\"260\" y2=\"90\" stroke=\"#64748b\" stroke-width=\"1\" /><line x1=\"60\" y1=\"20\" x2=\"60\" y2=\"110\" stroke=\"#64748b\" stroke-width=\"1\" /><line x1=\"40\" y1=\"55\" x2=\"260\" y2=\"55\" stroke=\"#ef4444\" stroke-width=\"1.5\" stroke-dasharray=\"3,3\" /><text x=\"255\" y=\"48\" font-size=\"8\" fill=\"#ef4444\" font-weight=\"bold\" text-anchor=\"end\">y = 1.5</text><path d=\"M 65 110 C 80 70 120 57 260 56\" fill=\"none\" stroke=\"#3b82f6\" stroke-width=\"2\" /></svg>",
+                    "svgDescription": "Gráfica que muestra una curva azul aproximándose sin llegar a tocar a una línea horizontal punteada roja de altura y = 1.5, representando visualmente una asíntota horizontal.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Calcula el límite al infinito: $$\\lim_{x \\to \\infty} \\frac{3x^2 + 5x}{2x^2 - 1}$$</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1:</strong> Identifica la potencia más alta en el denominador, la cual es $x^2$.</li><li><strong>Paso 2:</strong> Divide analíticamente cada uno de los términos entre $x^2$: <br>$$\\lim_{x \\to \\infty} \\frac{\\frac{3x^2}{x^2} + \\frac{5x}{x^2}}{\\frac{2x^2}{x^2} - \\frac{1}{x^2}} = \\lim_{x \\to \\infty} \\frac{3 + \\frac{5}{x}}{2 - \\frac{1}{x^2}}$$</li><li><strong>Paso 3:</strong> Aplica el límite sabiendo que los términos $\\frac{5}{x}$ y $\\frac{1}{x^2}$ tienden a cero cuando $x \\to \\infty$: <br>$$\\frac{3 + 0}{2 - 0} = \\frac{3}{2} = 1.5$$</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> El límite es <strong>3/2 (o 1.5)</strong>. Esto indica una asíntota horizontal en $y = 1.5$.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Creer que dividir entre cero al infinito se indefine:</strong> Confundir $\\frac{k}{0}$ (indefinido) con $\\frac{k}{\\infty}$ (cero). Repetir siempre: dividir una constante por un número infinitamente grande da cero.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Resuelve el límite al infinito: lim_{x -> ∞} (5 / x³). (Ingresa solo el número entero):",
+                            "correctAnswer": "0",
+                            "hint": "Aplica el teorema directo. Al crecer el denominador infinitamente con constante fija, la fracción colapsa.",
+                            "feedbackCorrect": "¡Excelente! 5 dividido entre un número infinitamente grande tiende a 0.",
+                            "feedbackIncorrect": "Incorrecto. lim (k / x^n) al infinito siempre es 0.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Resuelve el límite racional al infinito: lim_{x -> ∞} [(2x + 8) / (4x - 3)]. (Ingresa la fracción simplificada, ej: 1/2 o 2/4):",
+                            "correctAnswer": "1/2",
+                            "hint": "Dado que el grado del numerador y del denominador son iguales (1), el límite es la razón de sus coeficientes principales: 2/4.",
+                            "feedbackCorrect": "¡Perfecto! 2/4 simplifica a 1/2.",
+                            "feedbackIncorrect": "Incorrecto. Razón de coeficientes es 2/4 = 1/2.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Resuelve el límite: lim_{x -> ∞} [(x² + 5) / (2x³ - 10)]. (Ingresa solo el número entero):",
+                            "correctAnswer": "0",
+                            "hint": "Observa los grados de los polinomios. El denominador tiene grado 3, mayor que el numerador que tiene grado 2.",
+                            "feedbackCorrect": "¡Excelente! Como el grado del denominador es mayor, el límite al infinito es automáticamente 0.",
+                            "feedbackIncorrect": "Incorrecto. Si el denominador crece más rápido (mayor grado), el límite es 0.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Qué tipo de asíntota geométrica se ubica en los valores de x donde el denominador de una función racional simplificada se anula (hace cero)?",
+                            "options": [
+                                "Asíntota Horizontal",
+                                "Asíntota Vertical",
+                                "Asíntota Oblicua",
+                                "Asíntota Coplanares"
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Cuando el denominador tiende a cero, la función explota y se va verticalmente hacia el infinito positivo o negativo.",
+                            "feedbackCorrect": "¡Perfecto! Se trata de una asíntota vertical (recta x = a).",
+                            "feedbackIncorrect": "Incorrecto. Se denomina asíntota vertical.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Calcula el límite al infinito de f(x) = (3x² - 1) / (x + 2). ¿A qué valor tiende?",
+                            "options": [
+                                "3",
+                                "0",
+                                "No existe (tiende al infinito ya que el grado del numerador es mayor)",
+                                "-0.5"
+                            ],
+                            "correctAnswer": 2,
+                            "hint": "El grado del numerador es 2 y el del denominador es 1. El numerador crece muchísimo más rápido.",
+                            "feedbackCorrect": "¡Excelente! Al ser el grado del numerador mayor, la función tiende al infinito y por tanto el límite no converge.",
+                            "feedbackIncorrect": "Incorrecto. Tiende al infinito porque el numerador tiene mayor grado.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "Los límites al infinito determinan el comportamiento extremo asintótico de funciones racionales y trascendentes, permitiendo dibujar e identificar límites de control y asíntotas horizontales.",
+                    "videoPlaceholderText": "Video de Cálculo: Cómo calcular límites al infinito mediante atajos de grados de polinomios."
+                }
+            ]
+        },
+        {
+            "title": "Unidad 2: La Derivada y sus Reglas",
+            "lessons": [
+                {
+                    "id": "definicion-derivada-pendiente",
+                    "title": "Lección 2.1: Definición de la Derivada",
+                    "introduction": "Comprende de forma intuitiva y matemática la derivada como la razón de cambio instantánea y la pendiente de una recta tangente.",
+                    "explanationHtml": "<p>La <strong>derivada</strong> mide el cambio de una variable con respecto a otra en un instante exacto. Geométricamente, representa la **pendiente de la recta tangente** a una curva $f(x)$ en un punto específico.</p><p>Formalmente, se define a través de un límite que describe la aproximación de una recta secante hacia una recta tangente al acercar dos puntos a una distancia $h$ que tiende a cero:</p><p class=\"text-center font-mono font-extrabold text-primary text-base my-2\">$$f'(x) = \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h}$$</p><p class=\"mt-2\">Si este límite existe, decimos que la función es **derivable** en ese punto.</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Definición Formal por Límite</p><p class=\"text-xs font-mono font-bold text-primary\">f'(x) = lim(h&rarr;0) [f(x+h) - f(x)] / h</p><p class=\"text-xs text-slate-500\">Esta es la fórmula de la pendiente de Newton-Leibniz, el núcleo de la física moderna.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">LA RECTA TANGENTE (DERIVADA)</text><path d=\"M 40 100 Q 140 100 240 30\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"1\" /><line x1=\"80\" y1=\"110\" x2=\"230\" y2=\"20\" stroke=\"#ef4444\" stroke-width=\"2\" /><circle cx=\"150\" cy=\"74\" r=\"4\" fill=\"#ef4444\" /><text x=\"160\" y=\"79\" font-size=\"9\" fill=\"#ef4444\" font-weight=\"bold\">P(x, f(x))</text><text x=\"150\" y=\"105\" font-size=\"8\" fill=\"#334155\" text-anchor=\"middle\">Pendiente m = f'(x)</text></svg>",
+                    "svgDescription": "Una curva suave gris sobre la cual se traza una línea recta roja que toca de forma perfecta y única en el punto P, representando geométricamente la recta tangente y su pendiente derivada.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Encuentra la derivada de la función cuadrática $f(x) = x^2$ aplicando la definición formal de límite.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1:</strong> Plantea la fórmula de la definición: $$\\lim_{h \\to 0} \\frac{(x+h)^2 - x^2}{h}$$</li><li><strong>Paso 2:</strong> Desarrolla el binomio al cuadrado: <br>$$\\lim_{h \\to 0} \\frac{x^2 + 2xh + h^2 - x^2}{h}$$</li><li><strong>Paso 3:</strong> Cancela los términos $x^2$ y $-x^2$: <br>$$\\lim_{h \\to 0} \\frac{2xh + h^2}{h}$$</li><li><strong>Paso 4:</strong> Factoriza $h$ en el numerador y simplifica con el denominador para evitar división por cero: <br>$$\\lim_{h \\to 0} \\frac{h(2x + h)}{h} = \\lim_{h \\to 0} (2x + h)$$</li><li><strong>Paso 5:</strong> Evalúa el límite haciendo $h = 0$: $2x + 0 = 2x$.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> La derivada de $x^2$ es exactamente <strong>2x</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Dividir entre h al inicio:</strong> Hacer $h=0$ en el primer paso. Esto arroja de forma errónea una división por cero. Primero debes desarrollar algebraicamente y cancelar la $h$ antes de evaluar.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "¿Cuál es la interpretación geométrica exacta de la derivada de una función en un punto específico?",
+                            "options": [
+                                "El área bajo la curva en un tramo horizontal.",
+                                "La pendiente de la recta tangente a la curva en ese punto.",
+                                "La longitud de arco de la curva entre dos cotas de X.",
+                                "La intersección con el eje Y vertical."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": " Newton definió la derivada para hallar la inclinación de la recta que roza la curva en un solo punto.",
+                            "feedbackCorrect": "¡Perfecto! Geométricamente, la derivada representa exactamente la pendiente de la recta tangente.",
+                            "feedbackIncorrect": "Incorrecto. Representa la pendiente de la recta tangente.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Si f(x) = 5x + 2, ¿cuánto vale su derivada f'(x) en cualquier punto? (Ingresa solo el número entero):",
+                            "correctAnswer": "5",
+                            "hint": "f(x) es una función lineal (línea recta). La pendiente de una recta es siempre constante e igual a su coeficiente lineal.",
+                            "feedbackCorrect": "¡Excelente! La derivada mide la pendiente de la recta, la cual es siempre 5.",
+                            "feedbackIncorrect": "Incorrecto. Al ser lineal, su derivada es constante e igual a su pendiente: 5.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Calcula la derivada de f(x) = 3x usando la definición de límite. (Ingresa solo el número entero):",
+                            "correctAnswer": "3",
+                            "hint": "Plantea lim [3(x+h) - 3x] / h. Desarrolla el numerador, cancela 3x y divide entre h.",
+                            "feedbackCorrect": "¡Perfecto! lim (3h / h) = 3.",
+                            "feedbackIncorrect": "Incorrecto. lim [3(x+h) - 3x]/h = lim 3h/h = 3.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si una función es constante f(x) = 10, ¿cuál es su derivada f'(x)? (Ingresa solo el número entero):",
+                            "correctAnswer": "0",
+                            "hint": "Una constante no cambia (su tasa de cambio o pendiente es nula). Aplica la definición con f(x+h)=10.",
+                            "feedbackCorrect": "¡Excelente! Las constantes tienen derivada cero porque su tasa de cambio es nula.",
+                            "feedbackIncorrect": "Incorrecto. La derivada de toda función constante siempre es 0.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿En qué valor de x la pendiente de la recta tangente a la parábola y = x² es igual a cero? (Ingresa solo el número entero):",
+                            "correctAnswer": "0",
+                            "hint": "La derivada es y' = 2x. Iguala la derivada a cero y despeja x.",
+                            "feedbackCorrect": "¡Perfecto! 2x = 0 implica x = 0. Es el vértice inferior de la parábola.",
+                            "feedbackIncorrect": "Incorrecto. La derivada es 2x. Se hace cero en x = 0.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        }
+                    ],
+                    "summaryHtml": "La derivada representa el cambio instantáneo modelado de forma infinitesimal. Su interpretación como la pendiente de la recta tangente abre las puertas a la física y al análisis de curvas.",
+                    "videoPlaceholderText": "Video de Cálculo: Entendiendo la derivada y la recta tangente en 5 minutos."
+                },
+                {
+                    "id": "reglas-basicas-derivacion",
+                    "title": "Lección 2.2: Reglas Básicas de Derivación",
+                    "introduction": "Descubre las reglas y teoremas sistemáticos para derivar funciones polinómicas y racionales sin límites extensos.",
+                    "explanationHtml": "<p>Calcular la derivada por la definición formal de límite es laborioso. Por ello, empleamos reglas deducidas sistemáticamente:</p><ul class=\"list-disc pl-5 space-y-2 my-3\"><li><strong>Regla de la Constante:</strong> La derivada de una constante es cero. <br>$$\\frac{d}{dx}[c] = 0$$</li><li><strong>Regla de la Potencia:</strong> Baja el exponente multiplicando y réstale 1 al exponente original: <br>$$\\frac{d}{dx}[x^n] = n x^{n-1}$$</li><li><strong>Regla de la Suma/Resta:</strong> Se derivan los términos de forma independiente: <br>$$[f(x) \\pm g(x)]' = f'(x) \\pm g'(x)$$</li><li><strong>Regla del Producto:</strong> La derivada del primero por el segundo sin derivar, más el primero sin derivar por la derivada del segundo: <br>$$[f \\cdot g]' = f' \\cdot g + f \\cdot g'$$</li><li><strong>Regla del Cociente:</strong> Derivada de arriba por abajo sin derivar, menos arriba sin derivar por derivada de abajo, todo entre abajo al cuadrado: <br>$$\\left[\\frac{f}{g}\\right]' = \\frac{f' \\cdot g - f \\cdot g'}{g^2}$$</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Tabla de Reglas de Derivación</p><p class=\"text-xs font-mono font-bold text-primary\">d/dx[x&bull;] = n&bull;x&bull;&macr;&sup1; &nbsp;|&nbsp; d/dx[k&bull;u] = k&bull;u'</p><p class=\"text-xs text-slate-500\">Ejemplo: Derivada de 5x³ es 5 &bull; 3x² = 15x².</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">REGLAS DE DERIVACIÓN</text><rect x=\"25\" y=\"38\" width=\"115\" height=\"65\" fill=\"#eff6ff\" stroke=\"#bfdbfe\" rx=\"6\" /><text x=\"82.5\" y=\"53\" font-size=\"8\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">Regla de la Potencia</text><text x=\"82.5\" y=\"70\" font-size=\"10\" font-family=\"monospace\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">d/dx[xⁿ] = n·xⁿ⁻¹</text><text x=\"82.5\" y=\"88\" font-size=\"8\" font-family=\"monospace\" fill=\"#1e40af\" text-anchor=\"middle\">d/dx[x³] = 3x²</text><rect x=\"160\" y=\"38\" width=\"115\" height=\"65\" fill=\"#ecfdf5\" stroke=\"#a7f3d0\" rx=\"6\" /><text x=\"217.5\" y=\"53\" font-size=\"8\" fill=\"#065f46\" font-weight=\"bold\" text-anchor=\"middle\">Regla de Suma</text><text x=\"217.5\" y=\"70\" font-size=\"9\" font-family=\"monospace\" fill=\"#065f46\" font-weight=\"bold\" text-anchor=\"middle\">[f &plusmn; g]' = f' &plusmn; g'</text><text x=\"217.5\" y=\"88\" font-size=\"8\" font-family=\"monospace\" fill=\"#065f46\" text-anchor=\"middle\">[x³ + x]' = 3x² + 1</text></svg>",
+                    "svgDescription": "Esquema comparativo que muestra la Regla de la Potencia a la izquierda con su fórmula y ejemplo (x³ derivado da 3x²), y la Regla de la Suma a la derecha.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Deriva la función polinómica compleja: $f(x) = 4x^3 - 5x^2 + 2$ aplicando las reglas básicas.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1:</strong> Identifica que la función es una suma/resta de términos individuales. Derivamos cada uno por separado.</li><li><strong>Paso 2 (Término 1):</strong> Para $4x^3$, aplica la regla de la potencia ($x^3 \\to 3x^2$) multiplicando por la constante: <br>$4 \\times 3x^2 = 12x^2$.</li><li><strong>Paso 3 (Término 2):</strong> Para $-5x^2$, de la misma forma ($x^2 \\to 2x$): <br>$-5 \\times 2x = -10x$.</li><li><strong>Paso 4 (Término 3):</strong> Para la constante $+2$, su derivada es $0$.</li><li><strong>Paso 5:</strong> Une los términos derivados: $f'(x) = 12x^2 - 10x$.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> La derivada es $f'(x) = 12x^2 - 10x$.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Derivar de forma incorrecta cocientes o productos:</strong> Pensar que la derivada de una fracción es la derivada del de arriba entre la del de abajo. ¡Completamente incorrecto! Es obligatorio aplicar la fórmula extendida del cociente.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Deriva aplicando la regla de la potencia: f(x) = 7x⁴. Escribe la respuesta en minúsculas sin espacios (usa ^ para potencias, ej: 28x^3):",
+                            "correctAnswer": "28x^3",
+                            "hint": "Baja el 4 multiplicando al 7 (7 * 4 = 28) y réstale 1 al exponente 4 (4 - 1 = 3).",
+                            "feedbackCorrect": "¡Excelente! La derivada de 7x⁴ es 28x³.",
+                            "feedbackIncorrect": "Incorrecto. 7 * 4 * x^(4-1) = 28x³.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Deriva: f(x) = x⁵ - 3x² + 8. Escribe en minúsculas sin espacios (ej: 5x^4-6x):",
+                            "correctAnswer": "5x^4-6x",
+                            "hint": "Deriva cada término de forma independiente. La derivada de una constante (8) es cero.",
+                            "feedbackCorrect": "¡Perfecto! Queda 5x⁴ - 6x.",
+                            "feedbackIncorrect": "Incorrecto. La solución correcta es '5x^4-6x'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Deriva usando la regla del producto: f(x) = x² * (3x + 1). Simplifica por completo y escribe en minúsculas sin espacios (ej: 9x^2+2x):",
+                            "correctAnswer": "9x^2+2x",
+                            "hint": "Aplica [f * g]' = f'g + fg'. Aquí f = x² y g = 3x + 1. f' = 2x, g' = 3. Opera y suma.",
+                            "feedbackCorrect": "¡Excelente! f' = 2x(3x + 1) + 3x² = 6x² + 2x + 3x² = 9x² + 2x.",
+                            "feedbackIncorrect": "Incorrecto. Al aplicar la regla del producto y simplificar obtienes '9x^2+2x'.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Calcula la derivada analítica de la función f(x) = √x.",
+                            "options": [
+                                "1 / (2&radic;x)",
+                                "&radic;x / 2",
+                                "x&macr;&sup1;",
+                                "1"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Escribe la raíz como exponente fraccionario: x^(1/2). Aplica potencia: (1/2)x^(-1/2). Baja el exponente negativo.",
+                            "feedbackCorrect": "¡Excelente! La derivada es 1 / (2√x) o (1/2)x^(-1/2).",
+                            "feedbackIncorrect": "Incorrecto. x^(1/2) derivado es (1/2)x^(-1/2) = 1 / (2√x).",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Calcula la derivada de f(x) = 3/x². Escribe la expresión en minúsculas sin espacios:",
+                            "correctAnswer": "-6/x^3",
+                            "hint": "Escribe la función como 3x^(-2) y aplica la regla de la potencia multiplicando -2 * 3 y restando 1 al exponente.",
+                            "feedbackCorrect": "¡Perfecto! -2 * 3x^(-3) = -6/x³.",
+                            "feedbackIncorrect": "Incorrecto. Reescribe como 3x⁻²; derivado da -6x⁻³ o '-6/x^3'.",
+                            "difficulty": "avanzado",
+                            "type": "short"
+                        }
+                    ],
+                    "summaryHtml": "Las reglas operativas de derivación sistematizan el cálculo del cambio instantáneo de polinomios, fracciones y multiplicaciones, eludiendo la necesidad de límites.",
+                    "videoPlaceholderText": "Video de Cálculo: Memoriza las reglas básicas de derivación de forma divertida."
+                },
+                {
+                    "id": "regla-de-la-cadena",
+                    "title": "Lección 2.3: La Regla de la Cadena",
+                    "introduction": "Domina la derivación de funciones compuestas o anidadas aplicando la célebre Regla de la Cadena.",
+                    "explanationHtml": "<p>Una función es <strong>compuesta</strong> si contiene otra función en su interior ($f(g(x))$, una función dentro de otra). Para derivarlas, debemos aplicar la **Regla de la Cadena**.</p><p>Esta regla establece que derivamos primero la función exterior dejando el interior completamente intacto, y multiplicamos el resultado por la derivada de la función interior (la derivada de adentro):</p><p class=\"text-center font-mono font-extrabold text-primary text-base my-2\">$$\\frac{d}{dx}[f(g(x))] = f'(g(x)) \\cdot g'(x)$$</p><p class=\"mt-2\">Es muy útil para derivar binomios elevados a potencias grandes, funciones trigonométricas y exponenciales complejas.</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Regla de la Cadena</p><p class=\"text-xs font-mono font-bold text-primary\">[uⁿ]' = n &bull; u&bull;&macr;&sup1; &bull; u' &nbsp;|&nbsp; [sen(u)]' = cos(u) &bull; u'</p><p class=\"text-xs text-slate-500\">Recuerda multiplicar siempre por la derivada interna u'.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">REGLA DE LA CADENA (COMPUESTA)</text><rect x=\"25\" y=\"38\" width=\"250\" height=\"65\" fill=\"#eff6ff\" stroke=\"#bfdbfe\" rx=\"8\" /><text x=\"150\" y=\"55\" font-size=\"11\" font-family=\"monospace\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">y = f( g(x) )</text><text x=\"150\" y=\"78\" font-size=\"12\" font-family=\"monospace\" fill=\"#2563eb\" font-weight=\"extrabold\" text-anchor=\"middle\">y' = f'(g(x)) &bull; g'(x)</text><text x=\"150\" y=\"93\" font-size=\"7\" fill=\"#64748b\" text-anchor=\"middle\">Derivada Ext. (Int. Igual) &bull; Derivada Int.</text></svg>",
+                    "svgDescription": "Diagrama esquemático que divide de forma didáctica la Regla de la Cadena en sus dos componentes de multiplicación: la derivada de la estructura exterior con interior intacto por la derivada interna.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Deriva la función compuesta: $f(x) = (3x^2 + 5)^4$ aplicando la regla de la cadena.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1:</strong> Identifica el interior ($g(x) = 3x^2 + 5$) y la estructura exterior (potencia $u^4$).</li><li><strong>Paso 2 (Derivada Exterior):</strong> Deriva la potencia 4 dejando el interior sin cambiar: <br>$4(3x^2 + 5)^3$.</li><li><strong>Paso 3 (Derivada Interior):</strong> Deriva el binomio interno: $(3x^2 + 5)' = 6x$.</li><li><strong>Paso 4 (Multiplicar):</strong> Multiplica ambos resultados: <br>$f'(x) = 4(3x^2 + 5)^3 \\times 6x$.</li><li><strong>Paso 5:</strong> Simplifica los términos numéricos: $f'(x) = 24x(3x^2 + 5)^3$.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> $f'(x) = 24x(3x^2 + 5)^3$.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Olvidar multiplicar por la derivada interna:</strong> Derivar $(x^2+1)^3$ como $3(x^2+1)^2$. ¡Error grave! Se debe multiplicar por $(x^2+1)'=2x$, dando la respuesta correcta $6x(x^2+1)^2$.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Deriva aplicando la regla de la cadena: f(x) = (2x - 1)⁵. Escribe la respuesta en minúsculas sin espacios (ej: 10(2x-1)^4):",
+                            "correctAnswer": "10(2x-1)^4",
+                            "hint": "Deriva el exterior (5 * u^4) y multiplica por la derivada interna de (2x - 1), la cual es 2.",
+                            "feedbackCorrect": "¡Excelente! 5(2x-1)⁴ * 2 = 10(2x-1)⁴.",
+                            "feedbackIncorrect": "Incorrecto. Exterior es 5(2x-1)⁴; multiplicado por la interna (2) da 10(2x-1)⁴.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Deriva: f(x) = sen(3x). Escribe en minúsculas sin espacios (ej: 3cos(3x)):",
+                            "correctAnswer": "3cos(3x)",
+                            "hint": "La derivada de sen(u) es cos(u) * u'. Aquí u = 3x, por lo que u' = 3.",
+                            "feedbackCorrect": "¡Perfecto! La derivada es 3cos(3x).",
+                            "feedbackIncorrect": "Incorrecto. sen(3x) derivado es cos(3x) * 3 = '3cos(3x)'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Deriva la función exponencial: f(x) = e^(x²). Escribe en minúsculas sin espacios (ej: 2xe^(x^2)):",
+                            "correctAnswer": "2xe^(x^2)",
+                            "hint": "La derivada de e^u es e^u * u'. En este caso u = x², por lo que u' = 2x.",
+                            "feedbackCorrect": "¡Excelente! La derivada es 2xe^(x²).",
+                            "feedbackIncorrect": "Incorrecto. e^(x²) * (x²)' = 2xe^(x²).",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Calcula la derivada analítica de la función logarítmica f(x) = ln(4x).",
+                            "options": [
+                                "4 / x",
+                                "1 / x",
+                                "1 / (4x)",
+                                "4x"
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "La derivada de ln(u) es u' / u. Aquí u = 4x, su derivada es 4. Divide 4 / 4x y simplifica.",
+                            "feedbackCorrect": "¡Excelente! 4 / 4x simplifica a 1/x.",
+                            "feedbackIncorrect": "Incorrecto. u'/u = 4 / 4x = 1/x.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Deriva la función compuesta de dos potencias: f(x) = (x³ + 2x)³. Escribe la respuesta simplificada multiplicando el coeficiente 3 por la derivada interna al final (ej: 3(x^3+2x)^2*(3x^2+2)):",
+                            "correctAnswer": "3(x^3+2x)^2*(3x^2+2)",
+                            "hint": "Aplica potencia exterior: 3(x³+2x)². Multiplica por la derivada de adentro: (3x² + 2).",
+                            "feedbackCorrect": "¡Perfecto! Queda 3(x³ + 2x)² * (3x² + 2).",
+                            "feedbackIncorrect": "Incorrecto. La solución correcta es '3(x^3+2x)^2*(3x^2+2)'.",
+                            "difficulty": "avanzado",
+                            "type": "short"
+                        }
+                    ],
+                    "summaryHtml": "La Regla de la Cadena permite el análisis de sistemas compuestos o anidados multiplicando sistemáticamente razones de cambio escalonadas.",
+                    "videoPlaceholderText": "Video de Cálculo: Ejercicios resueltos paso a paso con la Regla de la Cadena."
+                }
+            ]
+        },
+        {
+            "title": "Unidad 3: Optimización e Integración",
+            "lessons": [
+                {
+                    "id": "optimizacion-aplicada",
+                    "title": "Lección 3.1: Optimización",
+                    "introduction": "Utiliza la derivada para encontrar los puntos de máxima eficiencia o mínimo costo en problemas reales de ingeniería y negocios.",
+                    "explanationHtml": "<p>La <strong>optimización</strong> es una de las aplicaciones más potentes del cálculo. Consiste en encontrar los valores máximos (máxima ganancia, volumen, eficiencia) o mínimos (mínimo costo, material, tiempo) de una función.</p><p>El procedimiento matemático fundamental se basa en el **criterio de la primera derivada**:</p><ol class=\"list-decimal pl-5 space-y-1.5 my-3\"><li><strong>Planteamiento:</strong> Escribir la fórmula de la función a optimizar en términos de una sola variable.</li><li><strong>Derivar:</strong> Calcular la primera derivada de la función.</li><li><strong>Puntos Críticos:</strong> Igualar la derivada a cero ($f'(x) = 0$) y resolver para $x$.</li><li><strong>Verificación:</strong> Utilizar el criterio de la segunda derivada ($f''(x) > 0 \\to \\text{mínimo}$, $f''(x) < 0 \\to \\text{máximo}$) para corroborar el punto crítico.</li></ol>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Algoritmo de Optimización</p><p class=\"text-xs font-mono font-bold text-primary\">1. f'(x) = 0 &rArr; hallar x_cr&iacute;tico &nbsp;|&nbsp; 2. f''(x_cr&iacute;tico) &rArr; evaluar signo</p><p class=\"text-xs text-slate-500\">Si la segunda derivada en el punto da negativa, se trata de un máximo local.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">MÁXIMOS Y MÍNIMOS (OPTIMIZACIÓN)</text><path d=\"M 40 100 Q 140 10 240 100\" fill=\"none\" stroke=\"#3b82f6\" stroke-width=\"2\" /><line x1=\"90\" y1=\"32.5\" x2=\"190\" y2=\"32.5\" stroke=\"#ef4444\" stroke-width=\"1.5\" /><circle cx=\"140\" cy=\"32.5\" r=\"4\" fill=\"#ef4444\" /><text x=\"140\" y=\"25\" font-size=\"8\" fill=\"#ef4444\" font-weight=\"bold\" text-anchor=\"middle\">Máximo: f'(x) = 0</text></svg>",
+                    "svgDescription": "Una parábola cóncava hacia abajo que ilustra un punto máximo en la cúspide con una línea recta tangente completamente horizontal, demostrando que f'(x) = 0.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Un fabricante en Escuintla quiere diseñar una caja rectangular de cartón abierta de volumen máximo a partir de una pieza de cartón de 12 cm por 12 cm cortando cuadrados iguales de lado $x$ en las cuatro esquinas. Determina la medida de $x$ para lograr el volumen máximo.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1:</strong> Escribe la fórmula del volumen de la caja: <br>$V(x) = x(12 - 2x)(12 - 2x) = 4x^3 - 48x^2 + 144x$.</li><li><strong>Paso 2:</strong> Calcula la primera derivada del volumen: <br>$V'(x) = 12x^2 - 96x + 144$.</li><li><strong>Paso 3:</strong> Iguala a cero para hallar puntos críticos: <br>$12x^2 - 96x + 144 = 0 \\Rightarrow x^2 - 8x + 12 = 0$.</li><li><strong>Paso 4:</strong> Factoriza la ecuación cuadrática: $(x - 6)(x - 2) = 0$. Los puntos críticos son $x = 6$ y $x = 2$.</li><li><strong>Paso 5:</strong> Evalúa los puntos. Si cortas $6$ cm, barres toda la hoja (volumen 0). Por lo tanto, el volumen máximo se da en $x = 2$ cm.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> El corte en la esquina debe medir <strong>2 cm</strong> para lograr el volumen máximo.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>No validar el punto crítico:</strong> Encontrar $x$ pero no evaluar si corresponde al máximo o al mínimo. En ocasiones el problema exige minimizar costos y se termina maximizándolos por no usar la segunda derivada.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Encuentra el número positivo x tal que sumado con su recíproco (1/x) dé la menor suma posible. (Ingresa solo el número entero):",
+                            "correctAnswer": "1",
+                            "hint": "Plantea S(x) = x + 1/x. Deriva S'(x) = 1 - 1/x². Iguala a cero y despeja x.",
+                            "feedbackCorrect": "¡Excelente! 1 - 1/x² = 0 => x² = 1. El número es 1.",
+                            "feedbackIncorrect": "Incorrecto. S'(x) = 1 - 1/x² = 0, lo que da x = 1.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Un granjero tiene 200 metros de cerca para delimitar un terreno rectangular. ¿Cuál es el área máxima en m² que puede encerrar? (Ingresa solo el número entero):",
+                            "correctAnswer": "2500",
+                            "hint": "Para un perímetro fijo, el rectángulo de área máxima siempre es un cuadrado perfecto. Divide el perímetro entre 4 para obtener el lado y elévalo al cuadrado.",
+                            "feedbackCorrect": "¡Perfecto! Lado = 50 m. Área máxima = 50 * 50 = 2500 m².",
+                            "feedbackIncorrect": "Incorrecto. El área máxima se da con un cuadrado de 50m de lado: 50² = 2500 m².",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Qué propiedad geométrica mide el criterio de la segunda derivada f''(x) evaluada en un punto crítico?",
+                            "options": [
+                                "La pendiente de la recta secante.",
+                                "La concavidad de la curva (si es positiva es mínimo, si es negativa es máximo).",
+                                "La intersección exacta con el origen del plano.",
+                                "El área de aproximación al eje horizontal."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "La segunda derivada evalúa la tasa de cambio de la pendiente, es decir, cómo se curva la función.",
+                            "feedbackCorrect": "¡Excelente! Mide la concavidad, siendo la herramienta fundamental para clasificar máximos y mínimos.",
+                            "feedbackIncorrect": "Incorrecto. Mide la concavidad de la función.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Encuentra dos números reales positivos cuya suma sea exactamente 20 y su producto sea el máximo posible. (Ingresa el número como producto de ambos, ej: 10 y 10):",
+                            "correctAnswer": "10 y 10",
+                            "hint": "Para que el producto de dos números sumados sea máximo, ambos números deben ser iguales (20 / 2 = 10).",
+                            "feedbackCorrect": "¡Perfecto! Los números son 10 y 10, arrojando un producto máximo de 100.",
+                            "feedbackIncorrect": "Incorrecto. El producto es máximo cuando los números son iguales: 10 y 10.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿En qué valor de x la función y = x³ - 3x tiene un máximo local?",
+                            "options": [
+                                "x = 1",
+                                "x = -1",
+                                "x = 0",
+                                "x = 3"
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Deriva y' = 3x² - 3 = 0 => x = ±1. Aplica segunda derivada y'' = 6x y busca cuál da un resultado negativo.",
+                            "feedbackCorrect": "¡Excelente! y''(-1) = -6 (negativo, máximo local).",
+                            "feedbackIncorrect": "Incorrecto. y' = 3x²-3 = 0 en x=±1. y'' = 6x; en x=-1 la concavidad es negativa, por tanto es máximo.",
+                            "difficulty": "avanzado",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "La optimización matemática aplica la anulación de la primera derivada para identificar y verificar puntos críticos de máxima productividad y mínimo desperdicio.",
+                    "videoPlaceholderText": "Video de Cálculo: Cómo resolver problemas de optimización de forma sistemática."
+                },
+                {
+                    "id": "antiderivada-integracion-indefinida",
+                    "title": "Lección 3.2: La Antiderivada e Integración Indefinida",
+                    "introduction": "Aprende el proceso inverso de la derivación y descubre la constante de integración C.",
+                    "explanationHtml": "<p>La <strong>integración</strong> es el proceso inverso de la derivación. Dada una función $f(x)$, buscamos otra función $F(x)$ llamada **antiderivada** tal que $F'(x) = f(x)$.</p><p>La <strong>integral indefinida</strong> representa el conjunto de todas las antiderivadas de una función. Debido a que la derivada de cualquier constante es cero, al integrar debemos sumar siempre una **constante de integración C**:</p><p class=\"text-center font-mono font-extrabold text-primary text-base my-2\">$$\\int f(x) \\, dx = F(x) + C$$</p><p class=\"mt-2 font-bold text-slate-800\">Reglas fundamentales de integración:</p><ul class=\"list-disc pl-5 space-y-1.5 my-2\"><li><strong>Regla de la Potencia:</strong> Suma 1 al exponente y divide entre ese mismo valor obtenido: <br>$$\\int x^n \\, dx = \\frac{x^{n+1}}{n+1} + C \\quad (\\text{para } n \\neq -1)$$</li><li><strong>Regla del Logaritmo:</strong> <br>$$\\int \\frac{1}{x} \\, dx = \\ln|x| + C$$</li><li><strong>Regla Exponencial:</strong> <br>$$\\int e^x \\, dx = e^x + C$$</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Regla Fundamental de la Potencia</p><p class=\"text-xs font-mono font-bold text-primary\">&int; xⁿ dx = xⁿ&bull;&sup1; / (n+1) + C</p><p class=\"text-xs text-slate-500\">Recuerda siempre añadir \"+ C\" al finalizar de integrar de forma indefinida.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">FAMILIA DE ANTIDERIVADAS (+ C)</text><line x1=\"40\" y1=\"90\" x2=\"260\" y2=\"90\" stroke=\"#64748b\" stroke-width=\"1\" /><line x1=\"60\" y1=\"20\" x2=\"60\" y2=\"110\" stroke=\"#64748b\" stroke-width=\"1\" /><path d=\"M 60 70 Q 140 10 240 70\" fill=\"none\" stroke=\"#3b82f6\" stroke-width=\"2\" /><text x=\"210\" y=\"45\" font-size=\"8\" fill=\"#1e40af\" font-weight=\"bold\">y = x² + 2</text><path d=\"M 60 85 Q 140 25 240 85\" fill=\"none\" stroke=\"#10b981\" stroke-width=\"1.5\" stroke-dasharray=\"2,2\" /><text x=\"210\" y=\"65\" font-size=\"8\" fill=\"#047857\" font-weight=\"bold\">y = x² + 0</text><path d=\"M 60 100 Q 140 40 240 100\" fill=\"none\" stroke=\"#f59e0b\" stroke-width=\"1.5\" stroke-dasharray=\"2,2\" /><text x=\"210\" y=\"85\" font-size=\"8\" fill=\"#b45309\" font-weight=\"bold\">y = x² - 2</text></svg>",
+                    "svgDescription": "Un plano cartesiano que muestra tres parábolas idénticas apiladas verticalmente. Ilustra de forma visual que la constante C desplaza la curva verticalmente pero conserva intactas sus derivadas (pendientes).",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Calcula la integral indefinida polinómica: $$\\int (3x^2 - 4x + 5) \\, dx$$</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1:</strong> Integra de forma lineal término a término aplicando la regla de la potencia.</li><li><strong>Paso 2 (Término 1):</strong> Para $3x^2$, suma 1 a la potencia ($2+1=3$) y divide: <br>$$3 \\times \\frac{x^3}{3} = x^3$$</li><li><strong>Paso 3 (Término 2):</strong> Para $-4x$, de la misma forma ($1+1=2$): <br>$$-4 \\times \\frac{x^2}{2} = -2x^2$$</li><li><strong>Paso 4 (Término 3):</strong> Para la constante $5$, la integral es simplemente $5x$.</li><li><strong>Paso 5:</strong> Une todos los resultados y **agrega la constante C**: $x^3 - 2x^2 + 5x + C$.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> La integral es $x^3 - 2x^2 + 5x + C$.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Olvidar colocar la constante C:</strong> En exámenes de cálculo universitario, omitir la constante \"+ C\" en integrales indefinidas suele penalizarse gravemente.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Resuelve la integral indefinida: ∫ x⁴ dx. Escribe la respuesta en minúsculas sin espacios (usa ^, ej: (x^5)/5+C):",
+                            "correctAnswer": "(x^5)/5+C",
+                            "hint": "Suma 1 al exponente (4 + 1 = 5) y divide toda la expresión entre ese mismo número 5. Suma la constante +C.",
+                            "feedbackCorrect": "¡Excelente! La integral es (x^5)/5+C.",
+                            "feedbackIncorrect": "Incorrecto. La regla de la potencia da '(x^5)/5+C'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Resuelve la integral de una constante: ∫ 8 dx. Escribe en minúsculas sin espacios (ej: 8x+C):",
+                            "correctAnswer": "8x+C",
+                            "hint": "La integral de una constante k es simplemente kx. Suma +C.",
+                            "feedbackCorrect": "¡Perfecto! Queda 8x + C.",
+                            "feedbackIncorrect": "Incorrecto. La solución correcta es '8x+C'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Resuelve la integral: ∫ e^x dx. Escribe en minúsculas sin espacios (ej: e^x+C):",
+                            "correctAnswer": "e^x+C",
+                            "hint": "La función exponencial e^x es la única función que es su propia derivada y su propia integral.",
+                            "feedbackCorrect": "¡Excelente! La respuesta es e^x + C.",
+                            "feedbackIncorrect": "Incorrecto. Al ser idéntica a sí misma, da 'e^x+C'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Calcula la integral trigonométrica: ∫ cos(x) dx.",
+                            "options": [
+                                "sen(x) + C",
+                                "-sen(x) + C",
+                                "cos(x) + C",
+                                "-cos(x) + C"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Piensa al revés: ¿cuál es la función cuya derivada da exactamente cos(x)?",
+                            "feedbackCorrect": "¡Excelente! La derivada de sen(x) es cos(x), por ende la integral de cos(x) es sen(x) + C.",
+                            "feedbackIncorrect": "Incorrecto. Es sen(x) + C (la integral de seno es -coseno, pero la de coseno es +seno).",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Resuelve la integral con exponente negativo: ∫ 1/x² dx. Escribe en minúsculas sin espacios (ej: -1/x+C):",
+                            "correctAnswer": "-1/x+C",
+                            "hint": "Reescribe 1/x² como x^(-2). Suma 1 al exponente: -2 + 1 = -1. Divide entre -1 y reordena.",
+                            "feedbackCorrect": "¡Perfecto! x^(-1) / -1 = -1/x + C.",
+                            "feedbackIncorrect": "Incorrecto. ∫ x⁻² dx = x⁻¹/-1 = -1/x + C, escrito '-1/x+C'.",
+                            "difficulty": "avanzado",
+                            "type": "short"
+                        }
+                    ],
+                    "summaryHtml": "La integración indefinida reconstruye la función original a partir de su tasa de cambio. La inclusión de la constante $C$ modela el rango de desfase vertical infinito de la familia de antiderivadas.",
+                    "videoPlaceholderText": "Video de Cálculo: Entendiendo la antiderivada y por qué sumamos la constante C."
+                },
+                {
+                    "id": "integral-definida-area",
+                    "title": "Lección 3.3: La Integral Definida",
+                    "introduction": "Calcula de forma exacta el área delimitada bajo curvas complejas aplicando el Teorema Fundamental del Cálculo.",
+                    "explanationHtml": "<p>La <strong>integral definida</strong> representa de forma rigurosa el área neta acumulada bajo la curva de una función $f(x)$ y por encima del eje horizontal $x$, acotada entre los límites verticales $x = a$ y $x = b$.</p><p>El **Teorema Fundamental del Cálculo** conecta de manera brillante la antiderivada con el área, dictando que solo requerimos evaluar los límites en la antiderivada $F(x)$:</p><p class=\"text-center font-mono font-extrabold text-primary text-base my-2\">$$\\int_{a}^{b} f(x) \\, dx = F(b) - F(a)$$</p><p class=\"mt-2\">Donde $F(x)$ es cualquier antiderivada de $f(x)$ sin necesidad de sumar la constante $C$ (ya que se cancela en la resta: $(F(b) + C) - (F(a) + C) = F(b) - F(a)$).</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Teorema Fundamental del Cálculo</p><p class=\"text-xs font-mono font-bold text-primary\">&int;[a&rarr;b] f(x) dx = F(b) - F(a)</p><p class=\"text-xs text-slate-500\">Evalúa siempre el límite SUPERIOR primero (b) y réstale el inferior (a).</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">ÁREA BAJO LA CURVA (INTEGRAL)</text><path d=\"M 80 90 L 80 50 Q 140 30 200 68 L 200 90 Z\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"1.5\" /><path d=\"M 50 90 L 250 90\" stroke=\"#64748b\" stroke-width=\"1\" /><path d=\"M 80 90 L 80 40 M 200 90 L 200 60\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"2,2\" /><path d=\"M 60 60 Q 140 20 240 85\" fill=\"none\" stroke=\"#2563eb\" stroke-width=\"2\" /><text x=\"80\" y=\"102\" font-size=\"8\" fill=\"#475569\" font-weight=\"bold\" text-anchor=\"middle\">a = 0</text><text x=\"200\" y=\"102\" font-size=\"8\" fill=\"#475569\" font-weight=\"bold\" text-anchor=\"middle\">b = 3</text><text x=\"140\" y=\"65\" font-size=\"9\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">&Aacute;rea = 9</text></svg>",
+                    "svgDescription": "Una curva azul que delimita una región sombreada en azul suave entre dos límites punteados x = 0 y x = 3, representando la integral definida y su área calculada de 9.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Calcula el área bajo la curva de la función continua $f(x) = x^2$ acotada entre $x = 0$ y $x = 3$.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1:</strong> Halla la integral indefinida (antiderivada $F(x)$) de $x^2$: <br>$$F(x) = \\int x^2 \\, dx = \\frac{x^3}{3}$$</li><li><strong>Paso 2:</strong> Evalúa la antiderivada en el límite superior $b = 3$: <br>$$F(3) = \\frac{3^3}{3} = \\frac{27}{3} = 9$$</li><li><strong>Paso 3:</strong> Evalúa la antiderivada en el límite inferior $a = 0$: <br>$$F(0) = \\frac{0^3}{3} = 0$$</li><li><strong>Paso 4:</strong> Resta los resultados según el Teorema: <br>$$F(3) - F(0) = 9 - 0 = 9$$</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> El área neta bajo la curva es exactamente de <strong>9 unidades cuadradas</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Restar al revés:</strong> Evaluar $F(a) - F(b)$. Esto arroja un área de signo contrario (negativo). Haz siempre: $F(\\text{superior}) - F(\\text{inferior})$.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Evalúa la integral definida: ∫_{1}^{3} 2x dx. (Ingresa solo el número entero):",
+                            "correctAnswer": "8",
+                            "hint": "La antiderivada de 2x es x². Evalúa el límite superior 3² y réstale el inferior 1².",
+                            "feedbackCorrect": "¡Excelente! 3² - 1² = 9 - 1 = 8.",
+                            "feedbackIncorrect": "Incorrecto. F(x) = x². F(3) - F(1) = 9 - 1 = 8.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cuál es el significado geométrico exacto de la integral definida ∫_{a}^{b} f(x) dx si f(x) >= 0?",
+                            "options": [
+                                "La longitud de la recta secante que cruza la función.",
+                                "La pendiente de la recta tangente promedio entre a y b.",
+                                "El área de la región plana acotada por la función, el eje X y las verticales x = a y x = b.",
+                                "El volumen de una esfera en revolución cartesiana."
+                            ],
+                            "correctAnswer": 2,
+                            "hint": "Visualiza la zona comprendida entre la curva y el piso de la gráfica (eje X) dentro del intervalo.",
+                            "feedbackCorrect": "¡Excelente! Representa de forma matemática exacta el área bajo la curva.",
+                            "feedbackIncorrect": "Incorrecto. Representa el área bajo la curva en el intervalo cerrado.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Evalúa la integral definida trigonométrica: ∫_{0}^{π} sen(x) dx. (Ingresa solo el número entero):",
+                            "correctAnswer": "2",
+                            "hint": "La antiderivada de sen(x) es -cos(x). Evalúa: -cos(pi) - (-cos(0)). Recuerda que cos(pi) = -1 y cos(0) = 1.",
+                            "feedbackCorrect": "¡Perfecto! -(-1) - (-1) = 1 + 1 = 2.",
+                            "feedbackIncorrect": "Incorrecto. [-cos(x)]_{0}^{π} = -cos(π) - (-cos(0)) = 1 + 1 = 2.",
+                            "difficulty": "avanzado",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Resuelve la integral definida: ∫_{1}^{2} 3x² dx. (Ingresa solo el número entero):",
+                            "correctAnswer": "7",
+                            "hint": "La antiderivada es x³. Evalúa 2³ y réstale 1³.",
+                            "feedbackCorrect": "¡Excelente! 2³ - 1³ = 8 - 1 = 7.",
+                            "feedbackIncorrect": "Incorrecto. F(x) = x³. F(2) - F(1) = 8 - 1 = 7.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cuánto vale la integral definida de cualquier función impar f(x) integrada en un intervalo perfectamente simétrico [-a, a]?",
+                            "options": [
+                                "2 * F(a)",
+                                "0 (Las áreas de signo contrario a la izquierda y derecha se anulan)",
+                                "Infinito positivo",
+                                "-1"
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Las funciones impares son simétricas respecto al origen; el área a la izquierda del eje y es el espejo negativo del área a la derecha.",
+                            "feedbackCorrect": "¡Excelente! Al ser simétricas e impares, las áreas se cancelan entre sí, resultando en exactamente 0.",
+                            "feedbackIncorrect": "Incorrecto. Se anulan mutuamente, dando como resultado 0.",
+                            "difficulty": "avanzado",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "La integral definida consolida el cálculo al unificar la derivación con la medición de áreas complejas de límites curvos a través del Teorema Fundamental del Cálculo.",
+                    "videoPlaceholderText": "Video de Cálculo: Demostración y aplicaciones de la Integral Definida y áreas."
+                }
+            ]
+        }
+    ]
+},
 
     "intro-fisica": {
     "isRichCourse": true,
