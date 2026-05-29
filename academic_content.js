@@ -5299,1010 +5299,2625 @@ window.ACADEMIC_CONTENT = {
     ]
 },
 
-    "vectores-fisica": `# Curso: Vectores en Física
-* **Materia:** Ciencias | **Nivel sugerido:** Diversificado
-* **Público objetivo:** Alumnos de bachillerato e ingeniería que desean comprender de forma profunda el álgebra de vectores y su aplicación práctica a fuerzas y movimientos en dos dimensiones.
-* **Objetivos de aprendizaje:** Representar vectores gráfica y analíticamente en planos cartesianos, realizar sumas analíticas de vectores mediante componentes ortogonales y resolver aplicaciones prácticas de vectores en física de fuerzas concurrentes.
-
-## Unidad 1: Magnitudes Escalares y Vectoriales
-### Lección 1.1: Magnitudes Escalares y Vectoriales
-* **Objetivo:** Diferenciar conceptualmente entre magnitudes que solo requieren un valor numérico y unidades (escalares) y aquellas que exigen dirección y sentido (vectoriales).
-* **Explicación:** 
-  - **Magnitud Escalar:** Se describe por completo con un número y su correspondiente unidad de medida (ej. temperatura: 37°C, masa: 5 kg, distancia: 10 m, tiempo: 5 s).
-  - **Magnitud Vectorial:** Requiere un valor numérico (módulo), unidad y además una **dirección y sentido** para ser explicada con claridad (ej. velocidad: 80 km/h al norte, desplazamiento: 5 metros a 30° al este, fuerza: 10 N hacia abajo).
-* **Ejemplo Resuelto:** Clasifica las siguientes variables en magnitudes escalares o vectoriales: 1) El viento sopla a 20 km/h rumbo al volcán de Agua en dirección suroeste, 2) Una maleta tiene un peso de 15 libras.
-  - *Paso 1 Viento:* Se describe con una rapidez (20 km/h) y una dirección rumbo al volcán. Es una magnitud vectorial (velocidad).
-  - *Paso 2 Maleta:* Se describe solo con su peso/masa de 15 libras. Es una magnitud escalar (masa/peso escalar).
-  - *Resultado:* 1) Vectorial, 2) Escalar.
-* **Errores Comunes:** Confundir rapidez (escalar, ej. 80 km/h) con velocidad (vectorial, ej. 80 km/h al oeste).
-* **Ejercicios de Práctica:**
-  1. Clasifica el tiempo de 45 minutos como escalar o vectorial. (R: Escalar).
-  2. ¿Es la aceleración de gravedad hacia el centro de la Tierra una magnitud vectorial? (R: Sí. Tiene magnitud, unidad y dirección hacia abajo).
-  3. Clasifica la temperatura ambiental en Quetzaltenango como escalar o vectorial. (R: Escalar).
-  4. ¿Es la fuerza de empuje de una grúa que jala un bus en Ciudad de Guatemala un vector? (R: Sí. Requiere dirección para saber hacia dónde se desplaza el bus).
-  5. ¿Cómo se define el término "módulo" o "magnitud" de un vector? (R: Es el tamaño o longitud del vector, representado por un valor numérico positivo e inmune a la dirección).
-* **¿Necesitas ayuda?** Aprender a pensar en vectores te abrirá las puertas al mundo de la física clásica. ¡Conéctate con tu tutor de CEDETU y repasa los conceptos básicos!
-
-### Lección 1.2: Representación Gráfica de Vectores
-* **Objetivo:** Dibujar vectores en un plano cartesiano utilizando escalas adecuadas e identificar sus elementos geométricos (origen, extremo, ángulo).
-* **Explicación:** Gráficamente un vector se representa como una flecha orientada en el plano cartesiano. Sus componentes clave son:
-  - **Origen o cola:** Punto de partida del vector.
-  - **Extremo o cabeza:** Punto de llegada indicado por la punta de la flecha.
-  - **Módulo:** Longitud física de la flecha dibujada según una escala elegida (ej. 1 cm = 10 Newtons).
-  - **Dirección:** Ángulo $	heta$ medido con respecto al eje X positivo en sentido antihorario.
-* **Ejemplo Resuelto:** Representa gráficamente un vector de desplazamiento de 50 metros en dirección 143° (segundo cuadrante). ¿Cuál es su ángulo de referencia respecto al eje X negativo?
-  - *Paso 1 Dibujar:* Dibuja los ejes X e Y. Ubica el transportador en el origen y marca 143° partiendo del eje X positivo en sentido antihorario. Dibuja la línea de la flecha.
-  - *Paso 2 Ángulo de Referencia:* El eje X negativo está en 180°. El ángulo de referencia es la diferencia: $180^{circ} - 143^{circ} = 37^{circ}$.
-  - *Resultado:* El vector se ubica en el segundo cuadrante y forma un ángulo de 37° con el eje X negativo.
-* **Errores Comunes:** Medir el ángulo de dirección partiendo desde el eje Y o en sentido horario, violando la convención cartesiana estándar.
-* **Ejercicios de Práctica:**
-  1. ¿En qué cuadrante se localiza un vector cuya dirección angular es de 210°? (R: Tercer cuadrante (III)).
-  2. Si defines una escala de 1 cm = 5 N, ¿cuántos cm debe medir la flecha de un vector de fuerza de 35 N? (R: 7 cm).
-  3. ¿Cuál es el sentido de un vector situado sobre el eje Y negativo? (R: Hacia abajo).
-  4. Si un vector apunta directamente hacia el sureste, ¿cuál es su dirección angular en posición normal? (R: 315°).
-  5. ¿Cómo se representan dos vectores opuestos que tienen igual módulo y dirección pero sentidos contrarios? (R: Como dos flechas de igual tamaño paralelas que apuntan en direcciones opuestas).
-* **¿Necesitas ayuda?** La física experimental requiere un dibujo técnico pulido y preciso de tus vectores. ¡Aprende a trazarlos de forma limpia con tu tutor de CEDETU!
-
-### Lección 1.3: Sistemas de Coordenadas
-* **Objetivo:** Convertir la representación de vectores de coordenadas polares $(R, 	heta)$ a coordenadas cartesianas $(x, y)$ y viceversa en el plano.
-* **Explicación:** 
-  - **Coordenadas Polares:** Expresan al vector por su magnitud $R$ y su dirección angular $	heta$: $(R, 	heta)$.
-  - **Coordenadas Cartesianas:** Expresan al vector por sus componentes horizontal y vertical $(x, y)$.
-  - Las fórmulas de conversión son:
-    - Cartesianas a Polares: $R = sqrt{x^2 + y^2}$, $	heta = 	an^{-1}(y/x)$.
-    - Polares a Cartesianas: $x = R cos(	heta)$, $y = R operatorname{sen}(	heta)$.
-* **Ejemplo Resuelto:** Un excursionista en Petén viaja en una dirección descrita por el vector polar $(10 	ext{ km}, 30^{circ})$. Expresa esta posición en coordenadas cartesianas.
-  - *Paso 1 Componente x:* $x = 10 cos(30^{circ}) = 10 	imes 0.866 = 8.66 	ext{ km}$.
-  - *Paso 2 Componente y:* $y = 10 operatorname{sen}(30^{circ}) = 10 	imes 0.50 = 5.00 	ext{ km}$.
-  - *Resultado:* El vector en coordenadas cartesianas es $(8.66, 5.00) 	ext{ km}$.
-* **Errores Comunes:** Usar el coseno para calcular el componente vertical y el seno para el horizontal por distracción o mala memorización de fórmulas.
-* **Ejercicios de Práctica:**
-  1. Convierte el vector cartesiano (3, 4) cm a coordenadas polares. (R: (5 cm, 53.13°)).
-  2. Calcula el componente horizontal x de un vector de fuerza de 50 N a 60° de dirección. (R: 25 N).
-  3. Convierte a cartesianas el vector polar (8 m, 180°). (R: (-8, 0) m).
-  4. Si un vector tiene componentes (-3, -3) m, ¿en qué cuadrante se localiza y cuál es su dirección en posición normal? (R: Tercer cuadrante, dirección de 225°).
-  5. Calcula el módulo del vector cuyas componentes cartesianas son (12, 5) N. (R: 13 N).
-* **¿Necesitas ayuda?** La trigonometría y los vectores están totalmente entrelazados. ¡Pide ayuda a tu tutor de CEDETU y aclara tus dudas al instante!
-
-## Evaluación Unidad 1
-* Un barco en el lago de Atitlán zarpa con rumbo norte $60^{circ}$ este (lo que equivale a una dirección de $30^{circ}$ en posición estándar) y viaja 12 km. Expresa su vector de desplazamiento en coordenadas polares y cartesianas. (R: Polar = (12 km, 30°); Cartesiana = (10.39, 6.00) km. Retroalimentación: x = 12cos(30°) = 10.39; y = 12sen(30°) = 6).
-* Si las componentes de un vector de velocidad son v_x = -8 m/s y v_y = 6 m/s, calcula su magnitud y dirección angular en posición estándar. (R: Magnitud = 10 m/s, Dirección = 143.13°. Retroalimentación: v = √(-8)²+6² = 10. θ = tan⁻¹(6/-8) = -36.87°. Como está en el II cuadrante, sumamos 180° = 143.13°).
-* ¿Qué componente de un vector es nula si este apunta verticalmente hacia abajo? (R: La componente horizontal x es exactamente cero).
-
----
-
-## Unidad 2: Métodos Geométricos y Operaciones Básicas
-### Lección 2.1: Suma Gráfica de Vectores (Triángulo y Polígono)
-* **Objetivo:** Sumar múltiples vectores mediante el método gráfico de cabeza y cola (cola del segundo vector en la cabeza del primero) y trazar el vector resultante.
-* **Explicación:** Para sumar vectores de forma gráfica:
-  1. Dibuja el primer vector a escala con su respectivo ángulo partiendo del origen.
-  2. Dibuja el segundo vector con su respectiva dirección y tamaño, pero colocando su origen exactamente en la punta de la flecha (extremo) del primer vector.
-  3. Repite para todos los vectores (método del polígono).
-  4. El **vector resultante** es la flecha trazada desde el origen del primer vector hasta la punta del último vector dibujado.
-* **Ejemplo Resuelto:** Un aventurero camina en el Parque de Tikal 3 cm (a escala) al este y luego 4 cm al norte. Traza e interpreta gráficamente el vector resultante.
-  - *Paso 1:* Dibuja un vector horizontal de 3 cm apuntando a la derecha (este).
-  - *Paso 2:* En la punta de ese vector, dibuja un vector vertical de 4 cm apuntando hacia arriba (norte).
-  - *Paso 3:* Traza una línea recta desde el origen hasta la punta del segundo vector. Dibuja la cabeza allí.
-  - *Resultado:* El vector resultante forma la hipotenusa de un triángulo rectángulo de lados 3 y 4. Su longitud física es de 5 cm orientada hacia el noreste.
-* **Errores Comunes:** Dibujar todos los vectores partiendo simultáneamente del mismo origen al aplicar el método del polígono, lo cual anula el resultado.
-* **Ejercicios de Práctica:**
-  1. ¿Cómo se le llama al vector que produce el mismo efecto que todos los vectores del sistema sumados juntos? (R: Vector Resultante).
-  2. Si sumas un vector de 10 N al este con otro de 10 N al oeste, ¿cuál es el módulo del vector resultante? (R: 0 N. Se anulan mutuamente).
-  3. Si caminas 8 m al norte y luego 6 m al sur, ¿cuál es tu desplazamiento resultante neto de forma gráfica? (R: 2 m hacia el norte).
-  4. En el método del triángulo, ¿cuál es el origen del vector resultante? (R: El origen o cola del primer vector de la suma).
-  5. Si sumas tres vectores que forman un triángulo cerrado continuo (la cabeza del tercero coincide con la cola del primero), ¿cuánto vale la resultante? (R: Vector Nulo o Cero).
-* **¿Necesitas ayuda?** La suma gráfica ayuda a desarrollar una intuición espectacular para la física antes de programar fórmulas. ¡Practícala de forma dinámica con tu tutor!
-
-### Lección 2.2: Método del Paralelogramo
-* **Objetivo:** Calcular la magnitud del vector resultante de dos vectores concurrentes utilizando el método del paralelogramo y la Ley de Cosenos para vectores.
-* **Explicación:** Si dos vectores parten del mismo origen, podemos trazar líneas paralelas a cada uno en sus extremos formando un paralelogramo. La resultante es la diagonal que parte del origen común. Su magnitud se calcula con la variante de la Ley de Cosenos:
-  $R = sqrt{A^2 + B^2 + 2AB cos(	heta)}$
-  donde $	heta$ es el ángulo entre los dos vectores concurrentes.
-* **Ejemplo Resuelto:** Dos fuerzas concurrentes de $F_1 = 3 	ext{ N}$ y $F_2 = 4 	ext{ N}$ actúan sobre un mismo anillo con un ángulo de $60^{circ}$ entre ellas. Calcula la magnitud de la fuerza resultante.
-  - *Paso 1 Plantea Fórmula:* $R = sqrt{3^2 + 4^2 + 2(3)(4) cos(60^{circ})}$.
-  - *Paso 2 Opera:* $R = sqrt{9 + 16 + 24 	imes (0.5)} = sqrt{25 + 12} = sqrt{37}$.
-  - *Paso 3:* $R approx 6.08$ Newtons.
-  - *Resultado:* La magnitud de la fuerza resultante es de 6.08 N.
-* **Errores Comunes:** Usar el signo menos del teorema de cosenos matemático clásico (que busca el lado opuesto de un triángulo) en lugar del signo más, que es el correcto al sumar vectores concurrentes en diagonal.
-* **Ejercicios de Práctica:**
-  1. Si dos vectores concurrentes de módulos 5 y 12 son perpendiculares (ángulo de 90°), ¿cuál es el módulo de la resultante? (R: 13. Retroalimentación: cos(90°) = 0, reduciéndose a Pitágoras).
-  2. ¿Cuál es el rango de magnitud posible para la resultante de dos vectores de 10 N y 6 N al variar el ángulo entre ellos? (R: Entre 4 N y 16 N).
-  3. Calcula la resultante de dos vectores de 3 N y 5 N que apuntan en la misma dirección (ángulo 0°). (R: 8 N. Retroalimentación: cos(0°) = 1; R = √3²+5²+30 = √64 = 8).
-  4. Dos vectores iguales de magnitud F forman un ángulo de 120° entre sí. ¿Cuál es la magnitud de su resultante? (R: F. Retroalimentación: R = √F²+F²+2F²cos(120°) = √2F² - F² = F).
-  5. ¿Qué dirección geométrica tiene la resultante de dos vectores de igual módulo que parten del mismo origen? (R: La bisectriz del ángulo formado por los dos vectores).
-* **¿Necesitas ayuda?** El método del paralelogramo es fundamental para analizar la suspensión y el equilibrio de objetos. ¡Domínalo junto a tu tutor de CEDETU!
-
-### Lección 2.3: Multiplicación de un Vector por un Escalar
-* **Objetivo:** Multiplicar un vector por un número real (escalar) analizando cómo se modifica su módulo, dirección o sentido.
-* **Explicación:** Al multiplicar un vector $ec{A}$ por un escalar $k$:
-  - El nuevo módulo es $|k| cdot M$.
-  - Si $k$ es **positivo**, la dirección y el sentido del vector se mantienen idénticos.
-  - Si $k$ es **negativo**, el sentido del vector se invierte exactamente a la dirección opuesta ($180^{circ}$ de desfase).
-* **Ejemplo Resuelto:** Un auto viaja a una velocidad constante descrita por el vector $ec{v} = (3 	ext{ m/s}, 4 	ext{ m/s})$ (cartesiano). Si acelera al triple, ¿cuál es su nuevo vector de velocidad?
-  - *Paso 1:* Multiplica cada componente por el escalar $k = 3$:
-    $ec{v}_{	ext{nuevo}} = 3 	imes (3, 4) = (3 	imes 3, 3 	imes 4) = (9, 12) 	ext{ m/s}$.
-  - *Resultado:* El nuevo vector de velocidad es $(9, 12)$ m/s (la magnitud aumentó de 5 m/s a 15 m/s, pero mantiene la misma dirección).
-* **Errores Comunes:** Olvidar multiplicar el componente vertical o cambiar el signo incorrectamente.
-* **Ejercicios de Práctica:**
-  1. Si un vector A tiene magnitud de 10 cm, ¿cuál es la magnitud del vector -2A? (R: 20 cm. Retroalimentación: El módulo siempre es positivo).
-  2. ¿Qué le ocurre al sentido de un vector de fuerza si se multiplica por el escalar -1? (R: Se invierte exactamente en sentido contrario).
-  3. Si A = (5, -2) N, calcula el vector resultante de 4A. (R: (20, -8) N).
-  4. Si multiplicas un vector con dirección de 45° por el escalar -3, ¿cuál es la dirección angular del nuevo vector en posición normal? (R: 225°. Retroalimentación: 45° + 180° = 225°).
-  5. ¿Qué es un "vector unitario"? (R: Un vector con magnitud exactamente igual a 1, utilizado para indicar una dirección en el espacio).
-* **¿Necesitas ayuda?** La multiplicación escalar se utiliza para modelar las leyes físicas como F = ma. ¡Compréndela a fondo con ayuda de tu tutor de CEDETU!
-
-## Evaluación Unidad 2
-* Si dos fuerzas concurrentes F_1 y F_2 de igual módulo F producen una resultante de magnitud F√3, ¿cuál es el ángulo formado entre ellas? (R: 60°. Retroalimentación: R² = 3F² = F² + F² + 2F²cos(θ); F² = 2F²cos(θ); cos(θ) = 0.5; θ = 60°).
-* Si A = (-3, 4) m y B = (12, 5) m, calcula el vector suma resultante S = A + B y su módulo. (R: S = (9, 9) m; Módulo = 9√2 m ≈ 12.73 m. Retroalimentación: S_x = -3+12 = 9; S_y = 4+5 = 9. Módulo = √9²+9² = 9√2).
-* Si multiplicas un vector de desplazamiento de 5 metros hacia el este por un escalar de -0.5, ¿cuál es el vector resultante final? (R: 2.5 metros hacia el oeste).
-
----
-
-## Unidad 3: Componentes Rectangulares y Aplicaciones
-### Lección 3.1: Descomposición de Vectores en Componentes
-* **Objetivo:** Calcular los componentes ortogonales de un vector a partir de su módulo y dirección empleando funciones trigonométricas.
-* **Explicación:** Descomponer un vector consiste en proyectarlo sobre los ejes coordenados X e Y. Estos componentes actúan de forma independiente y se calculan como:
-  - Componente horizontal: $A_x = A cos(	heta)$
-  - Componente vertical: $A_y = A operatorname{sen}(	heta)$
-  donde $A$ es la magnitud y $	heta$ el ángulo de dirección en posición normal.
-* **Ejemplo Resuelto:** Un niño jala un carrito de madera en una plaza de Antigua aplicando una fuerza de 40 Newtons a través de una cuerda que forma un ángulo de $30^{circ}$ con el suelo. Calcula la componente horizontal de la fuerza que realmente tira del carro.
-  - *Paso 1 Identificar:* Magnitud $F = 40$ N. Ángulo $	heta = 30^{circ}$.
-  - *Paso 2 Componente Horizontal:* $F_x = F cos(30^{circ})$.
-  - *Paso 3 Operar:* $F_x = 40 	imes 0.866 = 34.64$ Newtons.
-  - *Resultado:* La fuerza útil horizontal que tira del carrito es de 34.64 N.
-* **Errores Comunes:** Asumir que la componente horizontal siempre es con el coseno y la vertical con el seno; esto solo se cumple si el ángulo de referencia se mide respecto al eje horizontal X.
-* **Ejercicios de Práctica:**
-  1. Calcula la componente vertical de una fuerza de 100 N aplicada a 45° con la horizontal. (R: 70.71 N).
-  2. Si un vector de velocidad de magnitud 20 m/s apunta en dirección de 270°, ¿cuáles son sus componentes cartesianos? (R: (0, -20) m/s).
-  3. Calcula el componente horizontal x de un vector de desplazamiento de 12 m a 120° de dirección. (R: -6 m. Retroalimentación: 12 * cos(120°) = -6).
-  4. Si un vector A tiene componentes A_x = 8 y A_y = -8, ¿cuánto vale su dirección en posición normal? (R: 315°).
-  5. ¿Qué significa que dos componentes de un vector sean ortogonales? (R: Que son perpendiculares entre sí, formando un ángulo de 90°).
-* **¿Necesitas ayuda?** La descomposición vectorial es la base para resolver cualquier problema de física clásica de nivel universitario. ¡Asegura tu destreza con tu tutor de CEDETU!
-
-### Lección 3.2: Suma Analítica de Vectores por Componentes
-* **Objetivo:** Sumar cualquier cantidad de vectores de forma exacta descomponiéndolos en sus componentes cartesianas, sumando los componentes en X e Y de forma independiente y reconstruyendo el vector resultante.
-* **Explicación:** El método analítico es el más exacto:
-  1. Descompón cada vector del sistema en sus componentes $(x, y)$.
-  2. Suma algebraicamente todas las componentes horizontales para hallar la resultante en X: $R_x = sum A_x$.
-  3. Suma algebraicamente todas las componentes verticales para hallar la resultante en Y: $R_y = sum A_y$.
-  4. Calcula la magnitud del vector resultante final: $R = sqrt{R_x^2 + R_y^2}$.
-  5. Determina la dirección angular: $	heta = 	an^{-1}(R_y / R_x)$, ajustando según el cuadrante.
-* **Ejemplo Resuelto:** Suma analíticamente los vectores: $ec{A} = (5 	ext{ N}, 0^{circ})$ y $ec{B} = (10 	ext{ N}, 90^{circ})$.
-  - *Paso 1 Descomponer:*
-    - Vector A: $A_x = 5 cos(0^{circ}) = 5 	ext{ N}$, $A_y = 0 	ext{ N}$.
-    - Vector B: $B_x = 0 	ext{ N}$, $B_y = 10 cos(0^{circ}) = 10 	ext{ N}$.
-  - *Paso 2 Sumar:* $R_x = 5 + 0 = 5 	ext{ N}$. $R_y = 0 + 10 = 10 	ext{ N}$.
-  - *Paso 3 Reconstruir Magnitud:* $R = sqrt{5^2 + 10^2} = sqrt{25 + 100} = sqrt{125} approx 11.18 	ext{ Newtons}$.
-  - *Paso 4 Dirección:* $	heta = 	an^{-1}(10 / 5) = 	an^{-1}(2) approx 63.43^{circ}$.
-  - *Resultado:* Magnitud = 11.18 N, Dirección = 63.43°.
-* **Errores Comunes:** Olvidar colocar los signos negativos a las componentes que apuntan hacia el eje X negativo (oeste) o Y negativo (sur) al hacer la suma.
-* **Ejercicios de Práctica:**
-  1. Suma los vectores coplanares A = (3, 5) y B = (-2, -3). (R: (1, 2)).
-  2. Calcula la resultante de tres fuerzas de 10 N, 20 N y 30 N que apuntan al norte (90°). (R: 60 N al norte).
-  3. Si R_x = -3 y R_y = 3, calcula el ángulo de dirección de la resultante ajustado al segundo cuadrante. (R: 135°. Retroalimentación: tan⁻¹(3/-3) = -45°; sumamos 180° = 135°).
-  4. Suma los vectores cartesianos F₁ = (8, -2) N y F₂ = (-5, 6) N. Calcula la magnitud de la resultante. (R: 5 N. Retroalimentación: R = (3, 4) N. Magnitud = √3²+4² = 5).
-  5. ¿Por qué es el método analítico preferido sobre el método gráfico en ingeniería? (R: Porque no depende de la precisión del dibujo a mano y evita errores sistemáticos de medición instrumental).
-* **¿Necesitas ayuda?** La suma analítica por componentes es la pregunta fija en exámenes parciales universitarios de física. ¡Practícala paso a paso de forma divertida junto a tu tutor de CEDETU!
-
-### Lección 3.3: Aplicaciones en Física (Fuerzas y Equilibrio)
-* **Objetivo:** Resolver problemas de estática y equilibrio traslacional aplicando la primera ley de Newton en términos vectoriales ($sum F_x = 0$ y $sum F_y = 0$).
-* **Explicación:** Un sistema de fuerzas concurrentes está en equilibrio traslacional si la fuerza resultante neta es exactamente cero. Vectorialmente, esto exige resolver un sistema de dos ecuaciones independientes:
-  - $sum F_x = 0$ (La suma de fuerzas horizontales es cero).
-  - $sum F_y = 0$ (La suma de fuerzas verticales es cero).
-* **Ejemplo Resuelto:** Un semáforo de 100 Newtons de peso cuelga simétricamente de dos cables tensores que forman ángulos de $30^{circ}$ con la horizontal a cada lado. Calcula la tensión (T) en cada cable.
-  - *Paso 1 DCL y Ecuación Vertical:* Las fuerzas verticales que sostienen el semáforo son las componentes de las tensiones: $T_y + T_y - 	ext{Peso} = 0 Rightarrow 2 T operatorname{sen}(30^{circ}) - 100 = 0$.
-  - *Paso 2 Opera:* Dado que $operatorname{sen}(30^{circ}) = 0.5$, la ecuación queda: $2 T (0.5) - 100 = 0$.
-  - *Paso 3 Despeja:* $T - 100 = 0 Rightarrow T = 100 	ext{ Newtons}$.
-  - *Resultado:* La tensión en cada cable de la instalación es de 100 Newtons.
-* **Errores Comunes:** Olvidar incluir el peso propio del cuerpo o mezclar las componentes verticales de las tensiones con el coseno.
-* **Ejercicios de Práctica:**
-  1. Si un cuadro decorativo de 50 N de peso cuelga de un solo cable vertical, ¿cuál es la tensión de dicho cable? (R: 50 N).
-  2. ¿Cuál es el valor de la fuerza resultante que actúa sobre un camión estacionado en una pendiente pronunciada de Xela si se encuentra en perfecto equilibrio? (R: 0 Newtons).
-  3. Si un objeto de 20 kg se apoya en una mesa horizontal, ¿cuál es el valor de la fuerza normal vertical hacia arriba que ejerce la mesa? (g = 9.8 m/s²). (R: 196 N).
-  4. Tres fuerzas tiran de un bloque. Si F₁ = 10 N al este y F₂ = 15 N al oeste, ¿cuál debe ser la magnitud y dirección de F₃ para mantener el bloque en equilibrio? (R: 5 N al este).
-  5. ¿Qué ley física establece que para que un objeto no acelere, la fuerza neta vectorial sobre él debe ser nula? (R: Primera Ley de Newton o de la Inercia).
-* **¿Necesitas ayuda?** La física de tensiones y cables requiere dominar sistemas de ecuaciones algebraicas sencillas. ¡Aprende a plantearlas con tu tutor de CEDETU y garantiza tu éxito!
-
-## Evaluación Unidad 3
-* Tres fuerzas coplanares actúan sobre un perno: F_1 = (10, 8) N, F_2 = (-4, 6) N y F_3 = (-6, -14) N. ¿Está el perno en equilibrio traslacional y cuál es la fuerza resultante neta? (R: Sí, está en perfecto equilibrio traslacional y la resultante es nula. Retroalimentación: ∑F_x = 10 - 4 - 6 = 0; ∑F_y = 8 + 6 - 14 = 0).
-* Un bloque de 10 kg es arrastrado sobre un piso horizontal sin fricción por una fuerza de 50 N que forma un ángulo de 37° con la horizontal. Calcula la aceleración horizontal del bloque. (Dato: cos(37°) ≈ 0.8). (R: 4.0 m/s². Retroalimentación: F_x = 50 * 0.8 = 40 N. Aceleración a = F_x / m = 40 / 10 = 4 m/s²).
-* Si tiras de un cable con una fuerza descrita por el vector polar (100 N, 240°), calcula sus componentes cartesianos. (R: (-50, -86.6) N. Retroalimentación: x = 100cos(240°) = -50; y = 100sen(240°) = -86.6).
-`,
-
-    "fisica-movimiento": `# Curso: Cinemática
-* **Materia:** Ciencias | **Nivel sugerido:** Diversificado / Universidad
-* **Público objetivo:** Alumnos que inician física clásica y necesitan dominar el movimiento y sus ecuaciones matemáticas.
-* **Objetivos de aprendizaje:** Diferenciar entre distancia y desplazamiento, calcular velocidad media e interpretar el Movimiento Rectilíneo Uniforme (MRU) y Uniformemente Acelerado (MRUA).
-
-## Unidad 1: Movimiento y Posición en Una Dimensión
-### Lección 1.1: Distancia versus Desplazamiento
-* **Objetivo:** Diferenciar de forma teórica y práctica entre una magnitud escalar (distancia) y una vectorial (desplazamiento).
-* **Explicación:** La **distancia** es la longitud total de la trayectoria recorrida por un objeto sin importar el sentido (es un número siempre positivo, magnitud escalar). El **desplazamiento** es el cambio neto de posición de un objeto, medido en línea recta desde el punto de partida hasta el de llegada, e indica dirección (magnitud vectorial).
-* **Ejemplo Resuelto:** Un repartidor de Antigua camina 50 metros al este y luego regresa 30 metros al oeste. ¿Cuál fue su distancia recorrida y su desplazamiento?
-  - *Paso 1 Distancia:* Suma todas las longitudes: 50 m + 30 m = 80 m.
-  - *Paso 2 Desplazamiento:* Toma en cuenta los sentidos. El este es positivo (+50 m) y el oeste es negativo (-30 m). Desplazamiento = +50 m - 30 m = +20 m (hacia el este).
-  - *Resultado:* Distancia = 80 m, Desplazamiento = 20 m al este.
-* **Errores Comunes:** Pensar que la distancia y el desplazamiento siempre valen lo mismo, lo cual solo ocurre en movimientos en línea recta sin cambios de sentido.
-* **Ejercicios de Práctica:**
-  1. Si corres alrededor de una pista circular de 400 metros y regresas exactamente al punto de partida, ¿cuál es tu distancia y tu desplazamiento? (R: Distancia = 400 m, Desplazamiento = 0 m).
-  2. Un automóvil viaja 80 km hacia el norte y luego 60 km hacia el sur. ¿Cuál es su desplazamiento? (R: 20 km al norte).
-  3. Un peatón camina 3 metros al norte y luego 4 metros al este. ¿Cuál es la distancia recorrida y cuál es el desplazamiento total en línea recta (módulo)? (R: Distancia = 7 m, Desplazamiento = 5 m. Retroalimentación: Usa el teorema de Pitágoras para el desplazamiento: √(3² + 4²) = 5).
-  4. Si caminas 10 pasos hacia adelante y 10 pasos hacia atrás, ¿cuál es tu desplazamiento? (R: 0 pasos).
-  5. Una hormiga recorre 1.5 metros por el borde de una regla. Si se arrepiente y regresa al inicio, ¿qué distancia recorrió? (R: 3.0 metros).
-* **¿Necesitas ayuda?** La física vectorial requiere entender la diferencia entre "el camino largo" y "el atajo". ¡Un tutor de CEDETU te lo enseñará con sencillas animaciones interactivas!
-
-### Lección 1.2: Velocidad y Rapidez
-* **Objetivo:** Calcular la rapidez media (escalar) y la velocidad media (vectorial) a partir de la distancia, desplazamiento y tiempo empleado.
-* **Explicación:** La **rapidez media** es la distancia dividida entre el tiempo total. La **velocidad media** es el desplazamiento dividido entre el tiempo empleado. En física, la velocidad lleva dirección, mientras que la rapidez no.
-  * Rapidez media: $v = d / t$
-  * Velocidad media: $\vec{v} = \Delta \vec{x} / t$
-* **Ejemplo Resuelto:** Un bus extraurbano recorre 150 km en 2.5 horas. ¿Cuál fue su rapidez media en km/h y en m/s?
-  - *Paso 1 km/h:* Divide la distancia por el tiempo: 150 km ÷ 2.5 h = 60 km/h.
-  - *Paso 2 m/s:* Para convertir de km/h a m/s dividimos por 3.6: 60 ÷ 3.6 = 16.67 m/s.
-  - *Resultado:* 60 km/h o 16.67 m/s.
-* **Errores Comunes:** Olvidar convertir el tiempo a horas o a segundos según las unidades del Sistema Internacional requeridas.
-* **Ejercicios de Práctica:**
-  1. Si nadas 100 metros en 50 segundos, ¿cuál es tu rapidez media en m/s? (R: 2 m/s).
-  2. Un ciclista viaja a una rapidez de 8 m/s. ¿Qué distancia recorrerá en un minuto? (R: 480 metros. Retroalimentación: 1 minuto = 60 segundos. Distancia = 8 × 60 = 480).
-  3. Convierte 36 km/h a m/s. (R: 10 m/s. Retroalimentación: 36 ÷ 3.6 = 10).
-  4. Un atleta corre 200 metros con rapidez constante de 5 m/s. ¿Cuánto tiempo tarda en recorrerlos? (R: 40 segundos. Retroalimentación: t = d/v = 200/5 = 40).
-  5. Un rayo cae a 3,400 metros de distancia de ti. Si la velocidad del sonido es de 340 m/s, ¿cuántos segundos tardarás en escuchar el trueno? (R: 10 segundos).
-* **¿Necesitas ayuda?** La conversión de unidades de velocidad (km/h a m/s) suele causar fallos en los parciales de física. ¡Asegura tus notas repasándolo con tu tutor!
-
-### Lección 1.3: Movimiento Rectilíneo Uniforme (MRU)
-* **Objetivo:** Resolver problemas de movimiento donde el objeto viaja en línea recta y a velocidad constante (sin aceleración).
-* **Explicación:** En el MRU la velocidad no cambia; el objeto recorre distancias iguales en tiempos iguales. La ecuación clave es:
-  * Distancia = Velocidad × Tiempo ($d = v \times t$)
-* **Ejemplo Resuelto:** Dos automóviles de carga salen de Ciudad de Guatemala hacia Quetzaltenango (distancia de 200 km). El auto A viaja a 50 km/h constantes y el auto B a 80 km/h constantes. ¿Con cuánto tiempo de diferencia llegará el auto B respecto al A?
-  - *Paso 1 Auto A:* Tiempo_A = d ÷ v_A = 200 km ÷ 50 km/h = 4 horas.
-  - *Paso 2 Auto B:* Tiempo_B = d ÷ v_B = 200 km ÷ 80 km/h = 2.5 horas.
-  - *Paso 3 Diferencia:* Tiempo_A - Tiempo_B = 4 h - 2.5 h = 1.5 horas.
-  - *Resultado:* El auto B llegará 1.5 horas antes (1 hora y 30 minutos).
-* **Errores Comunes:** Utilizar esta ecuación simple cuando el movimiento involucra aceleraciones o frenadas.
-* **Ejercicios de Práctica:**
-  1. ¿Qué distancia recorre un tren que viaja a 90 km/h constantes durante 4 horas? (R: 360 km).
-  2. Si una onda de radio viaja a la velocidad de la luz (300,000 km/s), ¿cuántos segundos tarda en llegar a la Luna si la distancia es de 384,000 km? (R: 1.28 segundos).
-  3. Si caminas a una velocidad constante de 1.5 m/s, ¿cuánto tardas en recorrer 150 metros? (R: 100 segundos).
-  4. Un motociclista de la capital viaja a 20 m/s constantes. ¿Qué distancia en kilómetros recorre en media hora? (R: 36 km. Retroalimentación: Media hora = 1,800 segundos. Distancia = 20 × 1,800 = 36,000 m = 36 km).
-  5. Dos corredores corren en sentidos opuestos alejándose con velocidades de 3 m/s y 5 m/s. ¿Qué distancia los separa tras 10 segundos? (R: 80 metros. Retroalimentación: Se alejan a una velocidad relativa de 3 + 5 = 8 m/s. d = 8 × 10 = 80).
-* **¿Necesitas ayuda?** Los problemas de encuentro y persecución en MRU son desafíos clásicos de física de diversificado. ¡Domina los planteos de sistemas físicos con tu tutor de CEDETU!
-
-## Evaluación Unidad 1
-* Un auto viaja a 72 km/h constantes. ¿Cuántos metros recorre en un lapso de 15 segundos? (R: 300 metros. Retroalimentación: Convierte 72 km/h a m/s: 72 ÷ 3.6 = 20 m/s. Distancia = 20 × 15 = 300 m).
-* Diferencia conceptual: Si das una vuelta a una cuadra de 100 metros por lado y vuelves al inicio, ¿cuál fue tu desplazamiento y la distancia? (R: Distancia = 400 m, Desplazamiento = 0 m).
-* Si una señal de sonido tarda 4 segundos en rebotar del fondo del mar y la velocidad del sonido en el agua es 1,500 m/s, ¿cuál es la profundidad? (R: 3,000 metros. Retroalimentación: El sonido viaja de ida y vuelta, por lo que tarda 2 segundos de ida. Profundidad = 1,500 × 2 = 3,000 m).
-
----
-
-## Unidad 2: Aceleración y MRUA
-### Lección 2.1: El Concepto de Aceleración
-* **Objetivo:** Calcular la aceleración media de un móvil a partir del cambio en su velocidad y el intervalo de tiempo.
-* **Explicación:** La aceleración representa qué tan rápido cambia la velocidad de un objeto. Si un objeto aumenta su velocidad, la aceleración es positiva; si frena o disminuye su velocidad (desaceleración), la aceleración es negativa. La unidad de medida en el SI es metros por segundo al cuadrado ($m/s^2$).
-  * Aceleración: $a = (v_f - v_i) / t$
-* **Ejemplo Resuelto:** Un auto deportivo en la autopista de Escuintla parte del reposo y alcanza una velocidad de 30 m/s en un tiempo de 6 segundos. ¿Cuál fue su aceleración media?
-  - *Paso 1:* Identifica los datos: velocidad inicial ($v_i = 0$ ya que parte del reposo), velocidad final ($v_f = 30$ m/s), tiempo ($t = 6$ s).
-  - *Paso 2:* Aplica la fórmula: $a = (30 - 0) ÷ 6 = 30 ÷ 6 = 5$.
-  - *Resultado:* Aceleración = $5 m/s^2$.
-* **Errores Comunes:** Olvidar restar la velocidad inicial o confundir las unidades de aceleración con las de velocidad.
-* **Ejercicios de Práctica:**
-  1. Un vehículo frena pasando de 25 m/s a 5 m/s en 4 segundos. ¿Cuál fue su aceleración? (R: -5 m/s². Retroalimentación: Al frenar, la aceleración es negativa: (5 - 25)/4 = -5).
-  2. Si una moto arranca con aceleración constante de 3 m/s², ¿cuál será su velocidad tras 8 segundos? (R: 24 m/s).
-  3. Un objeto cae desde un edificio partiendo del reposo. Si la aceleración de la gravedad es de 9.8 m/s², ¿qué velocidad tendrá tras 3 segundos? (R: 29.4 m/s).
-  4. ¿Cuánto tiempo tarda un corredor en pasar de 2 m/s a 8 m/s si acelera a razón de 1.5 m/s²? (R: 4 segundos. Retroalimentación: t = (8 - 2)/1.5 = 4).
-  5. Un tren viaja a 40 m/s y frena a razón de -2 m/s². ¿Cuánto tiempo tarda en detenerse por completo? (R: 20 segundos).
-* **¿Necesitas ayuda?** La aceleración mide el "cambio", no el movimiento mismo. ¡Toma una tutoría rápida en CEDETU y despeja todas tus dudas conceptuales!
-
-### Lección 2.2: Ecuaciones del MRUA
-* **Objetivo:** Resolver problemas de movimiento acelerado eligiendo y aplicando la ecuación correcta según los datos provistos.
-* **Explicación:** En el MRUA la aceleración es constante. Existen 4 ecuaciones fundamentales para relacionar distancia ($d$), velocidad inicial ($v_i$), velocidad final ($v_f$), aceleración ($a$) y tiempo ($t$):
-  1. $v_f = v_i + a \cdot t$
-  2. $d = v_i \cdot t + (1/2) \cdot a \cdot t^2$
-  3. $v_f^2 = v_i^2 + 2 \cdot a \cdot d$
-  4. $d = ((v_i + v_f) / 2) \cdot t$
-* **Ejemplo Resuelto:** Un auto acelera de 10 m/s a 20 m/s a lo largo de una distancia de 75 metros en línea recta. ¿Cuánto vale su aceleración?
-  - *Paso 1:* Identifica datos: $v_i = 10$ m/s, $v_f = 20$ m/s, $d = 75$ m. Queremos $a$. El tiempo $t$ no está en los datos.
-  - *Paso 2:* Elegimos la ecuación que no requiere tiempo (Ecuación 3): $v_f^2 = v_i^2 + 2ad$.
-  - *Paso 3:* Reemplaza: $20^2 = 10^2 + 2 \cdot a \cdot 75 \Rightarrow 400 = 100 + 150a$.
-  - *Paso 4:* Despeja $a$: $400 - 100 = 150a \Rightarrow 300 = 150a \Rightarrow a = 300 ÷ 150 = 2$.
-  - *Resultado:* Aceleración = $2 m/s^2$.
-* **Errores Comunes:** Escoger una ecuación que contenga dos variables desconocidas, haciendo imposible el despeje.
-* **Ejercicios de Práctica:**
-  1. Un auto parte del reposo y acelera a 4 m/s² durante 5 segundos. ¿Qué distancia recorre? (R: 50 metros. Retroalimentación: d = 0 × 5 + 0.5 × 4 × 5² = 50).
-  2. Si un móvil viaja a 15 m/s y frena hasta detenerse en 30 metros, ¿cuál fue su desaceleración? (R: -3.75 m/s². Retroalimentación: 0 = 15² + 2 × a × 30; a = -225/60 = -3.75).
-  3. Con los datos del ejercicio anterior, ¿cuánto tiempo tardó en detenerse? (R: 4 segundos. Retroalimentación: d = ((15 + 0)/2) × t; 30 = 7.5t; t = 4).
-  4. Un avión necesita alcanzar 60 m/s para despegar. Si acelera a 3 m/s² desde el reposo, ¿qué longitud mínima de pista necesita? (R: 600 metros).
-  5. Una motocicleta acelera a 2 m/s² partiendo del reposo. ¿Cuál será su velocidad final al cabo de recorrer 100 metros? (R: 20 m/s. Retroalimentación: v_f² = 0 + 2 × 2 × 100 = 400; v_f = 20).
-* **¿Necesitas ayuda?** Aprender a elegir "cuál de las 4 fórmulas usar" es el truco dorado del MRUA. ¡Tu tutor de CEDETU te enseñará una tabla de selección infalible!
-
-### Lección 2.3: Caída Libre y Tiro Vertical
-* **Objetivo:** Resolver problemas de movimiento vertical bajo la influencia exclusiva de la gravedad terrestre.
-* **Explicación:** La caída libre es un caso especial de MRUA en el eje vertical (Y), donde la aceleración siempre es igual a la gravedad de la Tierra ($g = 9.8 m/s^2$ o $10 m/s^2$ para simplificar cálculos). Al lanzar un objeto hacia arriba, su velocidad disminuye hasta llegar a cero en su punto más alto (altura máxima) y luego cae acelerando.
-* **Ejemplo Resuelto:** Se deja caer una piedra desde un puente de 45 metros de altura. ¿Cuánto tiempo tardará en impactar contra el agua? (Usa $g = 10 m/s^2$).
-  - *Paso 1:* Identifica datos: $v_i = 0$ (se deja caer), altura/distancia $d = 45$ m, gravedad $a = 10 m/s^2$.
-  - *Paso 2:* Elegimos la fórmula de distancia vertical: $d = v_i \cdot t + (1/2) \cdot g \cdot t^2 \Rightarrow 45 = 0 \cdot t + (1/2) \cdot 10 \cdot t^2$.
-  - *Paso 3:* Simplifica: $45 = 5 \cdot t^2$.
-  - *Paso 4:* Despeja $t$: $t^2 = 45 ÷ 5 = 9 \Rightarrow t = \sqrt{9} = 3$.
-  - *Resultado:* Tardará 3 segundos.
-* **Errores Comunes:** Olvidar que la gravedad siempre jala hacia abajo, por lo que si definimos que hacia arriba es positivo, la gravedad debe ingresarse como negativa ($-9.8 m/s^2$).
-* **Ejercicios de Práctica:**
-  1. Si lanzas una pelota verticalmente hacia arriba a 20 m/s, ¿cuánto tiempo tarda en alcanzar su punto más alto? (Usa g = 10 m/s²). (R: 2 segundos. Retroalimentación: En la altura máxima v_f = 0. 0 = 20 - 10t; t = 2).
-  2. Con los datos del ejercicio anterior, ¿cuál es la altura máxima alcanzada por la pelota? (R: 20 metros. Retroalimentación: d = ((20 + 0)/2) × 2 = 20 m).
-  3. Se deja caer un objeto desde lo alto de una torre y tarda 4 segundos en tocar el suelo. ¿De qué altura cayó? (Usa g = 9.8 m/s²). (R: 78.4 metros. Retroalimentación: d = 0.5 × 9.8 × 4² = 78.4 m).
-  4. ¿Con qué velocidad inicial se debe lanzar un objeto verticalmente hacia arriba para que alcance una altura de 80 metros? (Usa g = 10 m/s²). (R: 40 m/s).
-  5. Una manzana cae de un árbol y toca el suelo en 0.8 segundos. ¿Con qué rapidez impacta el suelo? (Usa g = 10 m/s²). (R: 8 m/s).
-* **¿Necesitas ayuda?** La física del movimiento vertical tiene reglas estrictas de signos según el marco de referencia que elijas. ¡Toma una clase con un tutor y olvídate de fallar por culpa de un signo!
-
-## Evaluación Unidad 2
-* Un auto de carreras parte del reposo con aceleración constante de 6 m/s². ¿Qué velocidad tendrá tras recorrer una distancia de 75 metros? (R: 30 m/s. Retroalimentación: v_f² = 0 + 2 × 6 × 75 = 900; v_f = 30).
-* Se lanza un objeto verticalmente hacia arriba con una velocidad de 30 m/s. ¿Cuánto tiempo permanece en el aire en total antes de regresar al suelo? (Usa g = 10 m/s²). (R: 6 segundos. Retroalimentación: Tarda 3 segundos en subir y otros 3 segundos en bajar).
-* Un conductor que viaja a 20 m/s ve un obstáculo y frena con desaceleración constante de -4 m/s². ¿Qué distancia recorre el auto antes de detenerse? (R: 50 metros).
-
----
-
-## Unidad 3: Movimiento en Dos Dimensiones
-### Lección 3.1: Composición de Movimientos (Tiro Parabólico)
-* **Objetivo:** Resolver problemas de proyectiles analizando de forma independiente el eje horizontal (MRU) y el eje vertical (MRUA).
-* **Explicación:** El tiro parabólico es el movimiento de un proyectil lanzado con cierto ángulo. Se descompone en dos movimientos simultáneos y perpendiculares:
-  * **Eje X (horizontal):** Sin fuerzas que actúen, viaja con velocidad constante (MRU).
-  * **Eje Y (vertical):** Afectado por la gravedad, experimenta aceleración constante (MRUA / Caída Libre).
-* **Ejemplo Resuelto:** Una pelota es lanzada horizontalmente desde lo alto de una mesa de 1.25 metros de altura con una velocidad de 4 m/s. ¿A qué distancia de la base de la mesa caerá la pelota? (Usa $g = 10 m/s^2$).
-  - *Paso 1 Tiempo de Caída (Eje Y):* $h = (1/2) \cdot g \cdot t^2 \Rightarrow 1.25 = 5t^2 \Rightarrow t^2 = 1.25 ÷ 5 = 0.25 \Rightarrow t = \sqrt{0.25} = 0.5$ segundos.
-  - *Paso 2 Alcance Horizontal (Eje X):* $d = v_x \cdot t \Rightarrow d = 4 \text{ m/s} \times 0.5 \text{ s} = 2$ metros.
-  - *Resultado:* Caerá a 2 metros de la base.
-* **Errores Comunes:** Intentar mezclar la velocidad del eje X con las fórmulas de gravedad del eje Y.
-* **Ejercicios de Práctica:**
-  1. Si un proyectil es lanzado con velocidad horizontal de 15 m/s desde una altura de 20 metros, ¿cuánto tiempo tarda en caer? (Usa g = 10 m/s²). (R: 2 segundos).
-  2. Con los datos del ejercicio anterior, ¿cuál es el alcance horizontal total del proyectil? (R: 30 metros. Retroalimentación: d = v_x × t = 15 × 2 = 30 m).
-  3. Un deportista patea un balón con un ángulo tal que su velocidad inicial en el eje X es de 12 m/s y en el eje Y es de 20 m/s. ¿Cuál es el tiempo de vuelo del balón? (Usa g = 10 m/s²). (R: 4 segundos. Retroalimentación: Tarda 2 segundos en subir y 2 en bajar).
-  4. Con los datos del ejercicio anterior, ¿cuál fue la distancia horizontal total (alcance) del balón? (R: 48 metros. Retroalimentación: d = v_x × t_vuelo = 12 × 4 = 48 m).
-  5. ¿Qué velocidad vertical tiene un proyectil en su punto más alto de trayectoria parabólica? (R: 0 m/s. Retroalimentación: Toda la velocidad en ese punto es únicamente horizontal).
-* **¿Necesitas ayuda?** El movimiento parabólico es el tema estrella en los exámenes finales de física de bachillerato. ¡Asegura tu comprensión practicando los componentes vectoriales con un tutor experto de CEDETU!
-
-### Lección 3.2: Movimiento Circular Uniforme (MCU)
-* **Objetivo:** Calcular el período, frecuencia, velocidad angular y aceleración centrípeta de un objeto con trayectoria circular constante.
-* **Explicación:** En el MCU el objeto gira en círculos con rapidez constante. Aunque la rapidez no cambia, la **dirección** de la velocidad sí cambia continuamente. Este cambio de dirección genera una aceleración que apunta siempre hacia el centro del círculo, llamada **aceleración centrípeta** ($a_c$).
-  * Velocidad angular: $\omega = 2\pi / T$
-  * Aceleración centrípeta: $a_c = v^2 / r$
-* **Ejemplo Resuelto:** Un objeto gira en una pista circular de 2 metros de radio con una velocidad tangencial constante de 6 m/s. ¿Cuál es su aceleración centrípeta?
-  - *Paso 1:* Identifica datos: radio $r = 2$ m, velocidad $v = 6$ m/s.
-  - *Paso 2:* Aplica la fórmula: $a_c = v^2 ÷ r = 6^2 ÷ 2 = 36 ÷ 2 = 18$.
-  - *Resultado:* $18 m/s^2$.
-* **Errores Comunes:** Pensar que la aceleración en el movimiento circular es cero porque el velocímetro marca una rapidez constante.
-* **Ejercicios de Práctica:**
-  1. Si un disco da 30 vueltas completas en un minuto, ¿cuál es su período en segundos? (R: 2 segundos. Retroalimentación: Período = tiempo / vueltas = 60 / 30 = 2).
-  2. Con los datos del ejercicio anterior, ¿cuál es su frecuencia en Hertz (Hz)? (R: 0.5 Hz. Retroalimentación: Frecuencia = 1 / Período = 0.5).
-  3. Un carro de juguete gira en un círculo de 0.5 metros de radio con rapidez constante. Si su aceleración centrípeta es de 8 m/s², ¿cuál es su rapidez lineal? (R: 2 m/s. Retroalimentación: v² = a_c × r = 8 × 0.5 = 4; v = √4 = 2).
-  4. Calcula la velocidad angular (rad/s) de un ventilador que da una vuelta completa cada 0.2 segundos. (R: 31.4 rad/s. Retroalimentación: ω = 2π / T = 2 × 3.14 / 0.2 = 31.4).
-  5. ¿Hacia dónde apunta la fuerza centrípeta que mantiene a un satélite girando alrededor de la Tierra? (R: Hacia el centro de la Tierra, provocada por la gravedad).
-* **¿Necesitas ayuda?** Entender el movimiento circular es fundamental para entender poleas, engranajes y astronomía. ¡Toma una tutoría virtual en CEDETU y aclara tus conceptos!
-
-### Lección 3.3: Aplicaciones Didácticas y del Entorno
-* **Objetivo:** Resolver problemas de movimiento contextualizados a la infraestructura y geografía de Guatemala y Centroamérica.
-* **Explicación:** Aplicar los conceptos de movimiento a situaciones locales (como las curvas de la autopista Palín-Escuintla, el recorrido de buses de transporte extraurbano, o los tiempos de caída en los barrancos de la capital) ayuda a que los conceptos físicos tengan verdadero sentido práctico.
-* **Ejemplo Resuelto:** Un bus extraurbano recorre la carretera Interamericana de Ciudad de Guatemala a Tecpán (88 km). Si sale a las 7:00 AM y su rapidez promedio es de 44 km/h debido al tráfico de San Lucas, ¿a qué hora llegará a su destino?
-  - *Paso 1:* Calcula el tiempo de viaje: $t = d ÷ v = 88 \text{ km} ÷ 44 \text{ km/h} = 2$ horas.
-  - *Paso 2:* Suma el tiempo de viaje a la hora de salida: 7:00 AM + 2 horas = 9:00 AM.
-  - *Resultado:* Llegará a las 9:00 AM.
-* **Errores Comunes:** Trabajar con unidades de distancia en metros y de tiempo en horas sin hacer la homogeneización previa de las variables.
-* **Ejercicios de Práctica:**
-  1. Si un puente peatonal de la Calzada Roosevel tiene 6 metros de altura, ¿cuánto tardaría una moneda en golpear el asfalto si se deja caer libremente? (Usa g = 10 m/s²). (R: 1.1 segundos. Retroalimentación: t = √(2h/g) = √(12/10) = √1.2 = 1.1s).
-  2. Un camión de carga de caña de azúcar viaja por la costa sur a 54 km/h. ¿A cuántos metros por segundo equivale esta velocidad? (R: 15 m/s. Retroalimentación: 54 / 3.6 = 15).
-  3. Si vas en una curva de la bajada de las Cañas a Antigua a 10 m/s y el radio de curvatura es de 25 metros, ¿qué aceleración centrípeta experimentas? (R: 4 m/s²).
-  4. Para evitar colisiones en la autopista, se requiere que la distancia de frenado de un auto a 80 km/h sea de 40 metros. ¿Qué desaceleración constante de frenos debe garantizar el auto? (R: -6.17 m/s²).
-  5. Un niño suelta un barrilete gigante en Sumpango desde lo alto de una colina de 80 metros de altura. ¿Cuánto tardaría en llegar al suelo si cayera verticalmente como un cuerpo libre? (Usa g = 10 m/s²). (R: 4 segundos).
-* **¿Necesitas ayuda?** La física se vive todos los días a nuestro alrededor. ¡Tu tutor de CEDETU te enseñará a ver el mundo con ojos de científico para que disfrutes y ganes tus materias!
-
-## Evaluación Unidad 3
-* Un objeto es lanzado desde un puente con una velocidad horizontal de 20 m/s y tarda 3 segundos en tocar el lecho del río. ¿Cuál es la altura del puente y a qué distancia horizontal de la vertical de lanzamiento cayó? (Usa g = 10 m/s²). (R: Altura = 45 m, Distancia horizontal = 60 m. Retroalimentación: h = 0.5 × 10 × 3² = 45 m. d = 20 × 3 = 60 m).
-* Un auto de juguete recorre una pista circular de 4 metros de diámetro dando una vuelta completa cada 2 segundos. ¿Cuál es su velocidad lineal y su aceleración centrípeta? (R: Velocidad = 6.28 m/s, Aceleración centrípeta = 19.74 m/s². Retroalimentación: Radio r = 2m. v = 2πr / T = 12.56/2 = 6.28 m/s. a_c = v²/r = 39.48/2 = 19.74 m/s²).
-* Si lanzas un balón de básquetbol con un ángulo de elevación de forma que su velocidad vertical inicial es de 8 m/s, ¿cuál es la altura máxima que alcanzará antes de empezar a caer? (Usa g = 10 m/s²). (R: 3.2 metros. Retroalimentación: h = v_iy² / 2g = 64 / 20 = 3.2 m).
-\`,
-
-    // -----------------------------------------------------------------
-    // C. ESTADÍSTICA
-    // -----------------------------------------------------------------
-    
-    "curso-estadistica-aplicada": \`# Curso: Estadística Descriptiva
-* **Materia:** Matemáticas | **Nivel sugerido:** Diversificado / Universidad
-* **Público objetivo:** Estudiantes de bachillerato, administración o ingeniería que se inician en el análisis exploratorio de datos.
-* **Objetivos de aprendizaje:** Organizar datos en tablas de frecuencia, graficar distribuciones de datos, calcular las medidas de tendencia central y medir la variabilidad de una muestra.
-
-## Unidad 1: Organización y Presentación de Datos
-### Lección 1.1: Tablas de Frecuencia para Datos No Agrupados
-* **Objetivo:** Organizar un conjunto de datos brutos en una tabla estructurada que muestre la frecuencia absoluta, acumulada, relativa y porcentual.
-* **Explicación:** 
-  * **Frecuencia Absoluta ($f$):** Número de veces que aparece un valor.
-  * **Frecuencia Acumulada ($F$):** Suma sucesiva de las frecuencias absolutas.
-  * **Frecuencia Relativa ($fr$):** Frecuencia absoluta dividida entre el total de datos ($n$).
-  * **Frecuencia Porcentual ($f\%$):** Frecuencia relativa multiplicada por 100.
-* **Ejemplo Resuelto:** Durante una semana se encuestó a 10 familias de un condominio sobre la cantidad de hijos que tienen. Los datos fueron: 2, 1, 0, 2, 3, 2, 1, 0, 1, 2. Organiza el dato '2 hijos' en la tabla.
-  - *Paso 1 Frecuencia Absoluta:* Cuenta cuántas familias tienen exactamente 2 hijos. Los datos son: [2, 2, 2, 2]. Hay 4 familias. Frecuencia absoluta ($f = 4$).
-  - *Paso 2 Frecuencia Relativa:* Divide el valor entre el total de encuestados ($n = 10$): $fr = 4 ÷ 10 = 0.40$.
-  - *Paso 3 Frecuencia Porcentual:* Multiplica por 100: $f\% = 0.40 \times 100 = 40\%$.
-  - *Resultado:* El valor 2 tiene una frecuencia de 4 familias, que representa el 40% del total.
-* **Errores Comunes:** Sumar incorrectamente las frecuencias relativas; la suma de todas las frecuencias relativas debe dar exactamente 1 (o 100% en porcentuales).
-* **Ejercicios de Práctica:**
-  1. En una muestra de 20 estudiantes, 5 tienen notas excelentes. ¿Cuál es la frecuencia relativa de alumnos excelentes? (R: 0.25).
-  2. Con los datos anteriores, ¿a qué porcentaje equivale? (R: 25%).
-  3. Si la frecuencia acumulada del tercer intervalo en una tabla es 15 y la frecuencia absoluta del cuarto intervalo es 6, ¿cuál es la frecuencia acumulada del cuarto intervalo? (R: 21. Retroalimentación: F_4 = F_3 + f_4 = 15 + 6 = 21).
-  4. ¿Qué tipo de gráfico es el más adecuado para representar la frecuencia de una variable cualitativa nominal (como el color favorito)? (R: Gráfico de barras o circular).
-  5. En una encuesta de satisfacción, 8 personas respondieron "Muy Bueno" de un total de 40. ¿Cuál es el porcentaje de esta respuesta? (R: 20%).
-* **¿Necesitas ayuda?** Construir tablas de frecuencias largas puede ser monótono y dar lugar a errores de conteo sencillos. ¡Aprende a estructurarlas con ayuda de tu tutor de forma divertida!
-
-### Lección 1.2: Histogramas y Polígonos de Frecuencia
-* **Objetivo:** Diseñar e interpretar gráficos de distribución de datos agrupados para variables cuantitativas continuas.
-* **Explicación:** Un **histograma** es un gráfico de barras verticales pegadas entre sí, donde el ancho de la barra representa el intervalo de la clase (límites reales) y la altura representa la frecuencia. El **polígono de frecuencia** se forma uniendo con líneas rectas los puntos medios (marcas de clase) de las partes superiores de las barras del histograma.
-* **Ejemplo Resuelto:** Un grupo de estudio midió la estatura en metros de 30 estudiantes y agrupó los datos en intervalos. El intervalo [1.50 - 1.60) tiene una frecuencia de 12 alumnos. ¿Cómo se dibuja esta barra en el histograma?
-  - *Paso 1:* En el eje horizontal (X), marca el inicio en 1.50 y el final en 1.60.
-  - *Paso 2:* En el eje vertical (Y), rotula las frecuencias de 1 en 1 o de 2 en 2 hasta llegar al menos a 12.
-  - *Paso 3:* Dibuja una barra que inicie exactamente en 1.50, termine en 1.60 y tenga una altura de 12 unidades.
-  - *Resultado:* Una barra rectangular de ancho 0.10 y altura 12.
-* **Errores Comunes:** Dibujar el histograma con las barras separadas (esto es un gráfico de barras para datos categóricos, no un histograma de variables continuas).
-* **Ejercicios de Práctica:**
-  1. ¿Qué representa la "marca de clase" en una tabla de datos agrupados? (R: El punto medio del intervalo. Se calcula sumando el límite inferior más el superior y dividiendo entre 2).
-  2. Si el intervalo es [20, 30), ¿cuál es su marca de clase? (R: 25).
-  3. Si la base de una barra en un histograma va de 10.5 a 15.5, ¿cuál es la amplitud del intervalo? (R: 5).
-  4. ¿Para qué tipo de datos es ideal el uso de una gráfica de sectores o pastel? (R: Para variables categóricas que representan porcentajes de un todo).
-  5. Si el polígono de frecuencias toca el eje X al inicio y al final, ¿en qué valores lo hace? (R: En las marcas de clase ficticias anterior a la primera y posterior a la última con frecuencia cero).
-* **¿Necesitas ayuda?** Interpretar gráficos estadísticos es una de las preguntas fijas del examen de matemáticas de admisión a la universidad. ¡Toma una tutoría en CEDETU y asegúrate esos puntos!
-
-### Lección 1.3: Diagramas de Caja y Bigotes (Boxplot)
-* **Objetivo:** Representar y analizar de forma visual la dispersión y asimetría de un conjunto de datos a partir de sus cinco medidas clave (mínimo, Q1, mediana, Q3 y máximo).
-* **Explicación:** Un boxplot resume gráficamente la distribución de los datos. La "caja" contiene el 50% central de los datos, delimitada por el Primer Cuartil (Q1) a la izquierda y el Tercer Cuartil (Q3) a la derecha. Una línea interna marca la Mediana (Q2). Los "bigotes" se extienden hasta el valor mínimo y máximo no atípicos.
-* **Ejemplo Resuelto:** Dados los cuartiles de un examen sobre 100 puntos: Mínimo = 40, Q1 = 55, Mediana = 70, Q3 = 85, Máximo = 95. ¿Qué porcentaje de alumnos obtuvieron una nota superior a 85 puntos?
-  - *Paso 1:* Identifica que 85 puntos corresponde al Tercer Cuartil (Q3).
-  - *Paso 2:* Por definición de cuartiles, el Q3 divide los datos dejando el 75% por debajo y el 25% por encima de su valor.
-  - *Resultado:* El 25% de los alumnos obtuvo una nota superior a 85 puntos.
-* **Errores Comunes:** Pensar que las cuatro secciones del boxplot (mínimo-Q1, Q1-mediana, mediana-Q3, Q3-máximo) tienen diferente cantidad de datos porque tienen diferente tamaño visual. Cada sección contiene exactamente el 25% de los datos.
-* **Ejercicios de Práctica:**
-  1. ¿Qué porcentaje de los datos se encuentra dentro de la "caja" de un boxplot? (R: El 50% de los datos).
-  2. ¿Cómo se calcula el Rango Intercuartílico (RIC)? (R: Restando Q3 - Q1).
-  3. Si Q1 = 12 y Q3 = 20, ¿cuánto vale el Rango Intercuartílico? (R: 8).
-  4. En un boxplot, ¿cómo se representan los datos atípicos o muy extremos? (R: Con puntos o asteriscos fuera de los límites de los bigotes).
-  5. Si la línea de la mediana está muy cerca del lado izquierdo de la caja (Q1), ¿qué nos indica sobre la asimetría de los datos? (R: Que los datos tienen una asimetría positiva o hacia la derecha).
-* **¿Necesitas ayuda?** Los cuartiles y los diagramas de caja son abstractos y difíciles de graficar a mano. ¡Un tutor de CEDETU te enseñará a dominarlos de manera interactiva y muy sencilla!
-
-## Unidad 2: Medidas de Tendencia Central
-### Lección 2.1: Media Aritmética (Promedio)
-* **Objetivo:** Calcular la media aritmética para conjuntos de datos agrupados y no agrupados, y comprender su sensibilidad ante valores extremos.
-* **Explicación:** La media (promedio) es la suma de todos los valores de la muestra dividida entre el tamaño total de la muestra ($n$).
-  * Media: $\bar{x} = \sum x_i / n$
-* **Ejemplo Resuelto:** Las notas de 5 tareas de matemáticas de un alumno son: 80, 95, 90, 40 y 95. Calcula su promedio.
-  - *Paso 1:* Suma todos los valores: 80 + 95 + 90 + 40 + 95 = 400.
-  - *Paso 2:* Divide el total de la suma entre la cantidad de tareas ($n = 5$): 400 ÷ 5 = 80.
-  - *Resultado:* La nota promedio es 80 puntos. (Nota cómo la tarea de 40 puntos jaló el promedio hacia abajo notablemente).
-* **Errores Comunes:** No dividir por el total de elementos reales, o ignorar los valores que valen cero al hacer el promedio.
-* **Ejercicios de Práctica:**
-  1. Calcula la media de los siguientes datos: 12, 15, 18, 20, 25. (R: 18. Retroalimentación: Suma = 90; n = 5; 90 / 5 = 18).
-  2. Un comerciante vende Q200 el lunes, Q350 el martes y Q650 el miércoles. ¿Cuál fue su venta promedio diaria en esos 3 días? (R: Q400).
-  3. Si el promedio de 4 exámenes es 85, ¿cuánto deben sumar las notas de los 4 exámenes en total? (R: 340 puntos. Retroalimentación: Suma = Promedio × n = 85 × 4 = 340).
-  4. Si agregas un dato extremo gigante (como 1,000) a una muestra de números entre 10 y 20, ¿qué le ocurre a la media? (R: Aumenta drásticamente. La media es muy sensible a datos atípicos).
-  5. En una oficina de 6 empleados, las edades son: 25, 28, 30, 25, 40, 26. ¿Cuál es el promedio de edad? (R: 29 años).
-* **¿Necesitas ayuda?** La media ponderada es otro concepto clave (usada para promedios de colegios y universidades). ¡Aprende a calcular tu zona académica con la guía de tu tutor de CEDETU!
-
-### Lección 2.2: Mediana (El Valor Central)
-* **Objetivo:** Determinar la mediana de un conjunto de datos ordenándolos previamente y diferenciando si el tamaño de la muestra es par o impar.
-* **Explicación:** La mediana es el valor central que divide la muestra en dos partes exactamente iguales: el 50% de los datos queda por debajo y el 50% por encima.
-  * *Paso Obligatorio:* Ordenar los datos de menor a mayor.
-  * Si $n$ es **impar**: La mediana es el dato de la posición central: $(n + 1)/2$.
-  * Si $n$ es **par**: La mediana es el promedio de los dos datos centrales del medio.
-* **Ejemplo Resuelto:** Encuentra la mediana de las siguientes velocidades: 12 m/s, 5 m/s, 20 m/s, 8 m/s, 15 m/s, 10 m/s.
-  - *Paso 1 Ordenar:* 5, 8, 10, 12, 15, 20.
-  - *Paso 2 Identificar n:* Hay 6 datos ($n$ es par).
-  - *Paso 3 Promediar los centrales:* Los dos datos del medio son 10 y 12. Mediana = (10 + 12) ÷ 2 = 11 m/s.
-  - *Resultado:* Mediana = 11 m/s.
-* **Errores Comunes:** Calcular la mediana directamente de la lista desordenada sin ordenarla previamente.
-* **Ejercicios de Práctica:**
-  1. Encuentra la mediana de: 7, 3, 9, 12, 5. (R: 7. Retroalimentación: Ordenados son 3, 5, 7, 9, 12. El del centro es 7).
-  2. Encuentra la mediana de: 150, 200, 180, 160. (R: 170. Retroalimentación: Ordenados son 150, 160, 180, 200. Promedio de 160 y 180 es 170).
-  3. Si la mediana de los salarios de una empresa es de Q4,500, ¿qué significa con respecto a los trabajadores? (R: Que el 50% de los trabajadores gana Q4,500 o menos, y el otro 50% gana Q4,500 o más).
-  4. Encuentra la mediana de: 0, 0, 1, 2, 5, 8, 10. (R: 2).
-  5. ¿Se ve afectada la mediana si cambiamos el dato más grande de una muestra por uno diez veces mayor? (R: No. La mediana es robusta y no le afectan los valores extremos atípicos).
-* **¿Necesitas ayuda?** La robustez de la mediana es un concepto hermoso de la estadística. ¡Entiéndelo perfectamente con tu tutor de CEDETU y sácate un 100!
-
-### Lección 2.3: Moda (El Valor Más Frecuente)
-* **Objetivo:** Identificar el valor o valores con mayor frecuencia absoluta y comprender cuándo una muestra es bimodal, multimodal o no tiene moda.
-* **Explicación:** La moda es simplemente el valor que ocurre con mayor frecuencia en una distribución de datos. Una muestra puede tener una única moda (unimodal), dos modas (bimodal), varias modas (multimodal) o ninguna moda si todos los datos se repiten la misma cantidad de veces (amodal).
-* **Ejemplo Resuelto:** Determina la moda de los siguientes datos de colores de camisas vendidos en un almacén de Xela: Azul, Rojo, Azul, Verde, Rojo, Azul, Negro.
-  - *Paso 1 Contar frecuencias:* Negro: 1, Verde: 1, Rojo: 2, Azul: 3.
-  - *Paso 2 Identificar el mayor:* El color con mayor frecuencia es el Azul, con 3 repeticiones.
-  - *Resultado:* Moda = Azul.
-* **Errores Comunes:** Pensar que la moda siempre es un número único, o decir que la moda es cero en lugar de "no tiene moda" cuando todos los datos se repiten igual.
-* **Ejercicios de Práctica:**
-  1. ¿Cuál es la moda de: 4, 5, 5, 6, 7, 7, 8? (R: 5 y 7. Retroalimentación: Esta muestra es bimodal).
-  2. ¿Cuál es la moda de: 10, 12, 14, 16? (R: No tiene moda. Retroalimentación: Todos los datos se repiten exactamente una vez).
-  3. En un salón de clases, las estaturas son: 1.60m, 1.65m, 1.60m, 1.70m, 1.60m, 1.65m. ¿Cuál es la moda? (R: 1.60m).
-  4. ¿Para qué tipo de variables (cualitativas o cuantitativas) es la moda la única medida de tendencia central que se puede aplicar? (R: Para variables cualitativas nominales).
-  5. Si los datos son: 3, 3, 3, 5, 5, 5, 8, 8, 8. ¿Cuál es la moda? (R: No tiene moda. Retroalimentación: Aunque se repiten 3 veces, todos tienen la misma frecuencia máxima, por lo que no hay un valor único dominante).
-* **¿Necesitas ayuda?** La moda es el dato de mayor popularidad. ¡Aprende a analizarla y graficarla en curvas de distribución con tu tutor!
-
-## Evaluación Unidad 2
-* Las edades de 7 amigos son: 12, 15, 12, 14, 13, 12, 16. Calcula la media, mediana y moda de sus edades. (R: Media = 13.0 años, Mediana = 12.0 años, Moda = 12.0 años. Retroalimentación: Suma = 91; 91/7 = 13. Ordenados: 12, 12, 12, 13, 14, 15, 16. El central es 13. El que más se repite es 12).
-* Si las notas promedio de un estudiante en 3 materias son 70, 80 y 90, pero cada materia vale diferente porcentaje (Materia 1 vale 20%, Materia 2 vale 30% y Materia 3 vale 50%), ¿cuál es su promedio ponderado real? (R: 82 puntos. Retroalimentación: Promedio = 70×0.20 + 80×0.30 + 90×0.50 = 14 + 24 + 45 = 83).
-* En un conjunto de datos ordenados de menor a mayor, el dato central es la mediana. ¿A qué percentil equivale esta medida? (R: Percentil 50. Retroalimentación: La mediana divide los datos exactamente al 50%).
-
----
-
-## Unidad 3: Medidas de Dispersión
-### Lección 3.1: Rango y Desviación Media
-* **Objetivo:** Calcular el rango total y la desviación media de una muestra para cuantificar la dispersión de los datos respecto a la media.
-* **Explicación:** 
-  * **Rango:** La diferencia entre el valor máximo y el valor mínimo: $R = \text{Máx} - \text{Mín}$.
-  * **Desviación Media (DM):** El promedio de las diferencias absolutas de cada dato respecto a la media aritmética de la muestra:
-    $\text{DM} = \sum |x_i - \bar{x}| / n$
-* **Ejemplo Resuelto:** Calcula el rango y la desviación media de los datos: 2, 4, 6 (la media de estos datos es $\bar{x} = 4$).
-  - *Paso 1 Rango:* Máximo (6) - Mínimo (2) = 4.
-  - *Paso 2 Desviaciones:*
-    * Para 2: $|2 - 4| = 2$
-    * Para 4: $|4 - 4| = 0$
-    * Para 6: $|6 - 4| = 2$
-  - *Paso 3 Desviación Media:* Promedia los valores absolutos: $(2 + 0 + 2) ÷ 3 = 4 ÷ 3 = 1.33$.
-  - *Resultado:* Rango = 4, Desviación Media = 1.33.
-* **Errores Comunes:** Olvidar aplicar el valor absoluto en la desviación media, lo que causaría que las desviaciones positivas y negativas se anularan sumando cero.
-* **Ejercicios de Práctica:**
-  1. Calcula el rango de los datos: 15, 30, 20, 85, 40. (R: 70. Retroalimentación: 85 - 15 = 70).
-  2. ¿Qué significa un rango muy pequeño en una muestra de notas de exámenes? (R: Que el grupo es muy homogéneo y casi todos obtuvieron notas similares).
-  3. Calcula la desviación media de los datos: 10 y 20 (la media es 15). (R: 5. Retroalimentación: |10-15| = 5; |20-15| = 5. Promedio = (5+5)/2 = 5).
-  4. Si todos los datos de una muestra son idénticos (ej. 5, 5, 5, 5), ¿cuánto vale su desviación media? (R: 0).
-  5. En una carrera de atletismo, el tiempo promedio es 12 segundos y la desviación media es 0.5 segundos. ¿En qué rango aproximado están la mayoría de los tiempos? (R: Entre 11.5 y 12.5 segundos).
-* **¿Necesitas ayuda?** La dispersión mide qué tan "confiables" son los promedios. ¡Comprende este concepto crucial con ayuda de tu tutor de CEDETU!
-
-### Lección 3.2: Varianza y Desviación Estándar Muestral
-* **Objetivo:** Calcular la varianza y la desviación estándar de una muestra analizando el grado de dispersión promedio de los datos elevados al cuadrado.
-* **Explicación:** La **varianza ($s^2$)** mide la dispersión promediando los cuadrados de las diferencias de cada dato respecto a la media. Para una muestra dividimos entre $n - 1$ (corrección de Bessel). La **desviación estándar ($s$)** es la raíz cuadrada de la varianza, lo que regresa la medida a las unidades originales de los datos.
-  * Varianza muestral: $s^2 = \sum (x_i - \bar{x})^2 / (n - 1)$
-  * Desviación estándar: $s = \sqrt{s^2}$
-* **Ejemplo Resuelto:** Calcula la varianza y la desviación estándar de los datos: 3, 5, 7 (la media es $\bar{x} = 5$, tamaño $n = 3$).
-  - *Paso 1 Diferencias al cuadrado:*
-    * $(3 - 5)^2 = (-2)^2 = 4$
-    * $(5 - 5)^2 = 0^2 = 0$
-    * $(7 - 5)^2 = 2^2 = 4$
-  - *Paso 2 Suma de cuadrados:* $4 + 0 + 4 = 8$.
-  - *Paso 3 Varianza (dividir entre n - 1):* $s^2 = 8 ÷ (3 - 1) = 8 ÷ 2 = 4$.
-  - *Paso 4 Desviación Estándar:* $s = \sqrt{4} = 2$.
-  - *Resultado:* Varianza = 4, Desviación Estándar = 2.
-* **Errores Comunes:** Dividir entre $n$ en lugar de $n - 1$ cuando se trata de una muestra y no de la población completa.
-* **Ejercicios de Práctica:**
-  1. Si la varianza de un conjunto de datos es 16, ¿cuál es su desviación estándar? (R: 4. Retroalimentación: √16 = 4).
-  2. Si la desviación estándar del peso de unos sacos de café es de 3 libras, ¿cuánto vale su varianza? (R: 9. Retroalimentación: 3² = 9).
-  3. Calcula la varianza muestral de los datos: 10 y 20 (la media es 15, n = 2). (R: 50. Retroalimentación: (10-15)² + (20-15)² = 25 + 25 = 50. Dividimos entre n - 1 = 1: 50/1 = 50).
-  4. Con los datos anteriores, ¿cuál es su desviación estándar? (R: 7.07. Retroalimentación: √50 = 7.07).
-  5. ¿Puede una varianza dar alguna vez un resultado negativo? (R: No. Al estar las diferencias elevadas al cuadrado, el resultado siempre es positivo o cero).
-* **¿Necesitas ayuda?** La desviación estándar es la medida de dispersión más utilizada en ciencias y finanzas. ¡Asegura tu comprensión de esta fórmula con tu tutor de CEDETU!
-
-### Lección 3.3: Coeficiente de Variación (CV)
-* **Objetivo:** Calcular el coeficiente de variación para comparar la variabilidad relativa de dos muestras que tienen diferentes unidades de medida o medias muy distintas.
-* **Explicación:** El coeficiente de variación ($CV$) expresa la desviación estándar como un porcentaje de la media aritmética. Al ser una unidad adimensional, nos permite saber con precisión cuál de dos conjuntos de datos es más homogéneo o tiene menor dispersión relativa.
-  * Coeficiente de Variación: $CV = (s / \bar{x}) \times 100\%$
-* **Ejemplo Resuelto:** Un salón de clases tiene una estatura media de 1.60 m con desviación estándar de 0.08 m. Otro salón tiene un peso medio de 50 kg con desviación estándar de 5 kg. ¿Cuál salón tiene datos más dispersos relativamente?
-  - *Paso 1 CV Estaturas:* $(0.08 ÷ 1.60) \times 100\% = 0.05 \times 100\% = 5\%$.
-  - *Paso 2 CV Pesos:* $(5 ÷ 50) \times 100\% = 0.10 \times 100\% = 10\%$.
-  - *Paso 3 Comparación:* El CV de los pesos (10%) es mayor que el de las estaturas (5%).
-  - *Resultado:* El peso de los alumnos tiene una variabilidad relativa mayor que su estatura.
-* **Errores Comunes:** Expresar el coeficiente de variación sin el símbolo de porcentaje o dividir la media entre la desviación en lugar del revés.
-* **Ejercicios de Práctica:**
-  1. Si la media es 40 y la desviación estándar es 8, ¿cuál es el coeficiente de variación? (R: 20%. Retroalimentación: (8 / 40) × 100% = 20%).
-  2. Si una muestra de salarios tiene un CV del 45% y otra del 15%, ¿cuál muestra es más homogénea? (R: La muestra con CV del 15%).
-  3. Calcula el CV si la media es 10 y la desviación estándar es 1.5. (R: 15%).
-  4. ¿Para qué sirve el coeficiente de variación en comparación con la desviación estándar común? (R: Para comparar la dispersión entre variables con diferentes unidades de medida o medias muy diferentes).
-  5. Si el CV de las ventas semanales de un negocio es de 8%, ¿indica esto una gran estabilidad en las ventas? (R: Sí. Un CV menor al 10% se considera de muy baja variabilidad o alta estabilidad).
-* **¿Necesitas ayuda?** Aprender a interpretar el coeficiente de variación te dará una ventaja analítica enorme en tus cursos de estadística. ¡Consúltalo con tu tutor de CEDETU!
-
-## Evaluación Unidad 3
-* Calcula el Rango, Varianza Muestral y Desviación Estándar de las siguientes temperaturas: 18°C, 20°C, 22°C (la media es 20°C). (R: Rango = 4°C, Varianza = 4, Desviación Estándar = 2°C. Retroalimentación: Suma de diferencias al cuadrado = (18-20)² + (20-20)² + (22-20)² = 4 + 0 + 4 = 8. Varianza = 8 / (3-1) = 4. Desviación = √4 = 2).
-* Si dos proyectos de inversión tienen el mismo rendimiento promedio del 15% anual, pero el Proyecto A tiene una desviación estándar del 2% y el Proyecto B del 8%, ¿cuál proyecto es más riesgoso y por qué? (R: El Proyecto B. Tiene mayor desviación estándar, lo que representa una mayor variabilidad y por ende mayor riesgo).
-* Si un conjunto de datos tiene una media de 50 y una desviación estándar de 5, ¿cuál es su coeficiente de variación? (R: 10%).
-`,
-
-    "leyes-newton": `# Curso: Leyes de Newton
-* **Materia:** Ciencias | **Nivel sugerido:** Diversificado
-* **Público objetivo:** Estudiantes de bachillerato y primeros semestres universitarios que buscan dominar las leyes fundamentales de la dinámica y la resolución de sistemas mecánicos con fricción.
-* **Objetivos de aprendizaje:** Explicar y aplicar las tres Leyes de Newton a sistemas de partículas, dibujar Diagramas de Cuerpo Libre (DCL) perfectos y resolver problemas dinámicos con coeficientes de fricción estáticos y cinéticos.
-
-## Unidad 1: Fuerzas y la Primera Ley (Inercia)
-### Lección 1.1: El Concepto de Fuerza y sus Tipos
-* **Objetivo:** Definir fuerza como una interacción vectorial e identificar las fuerzas mecánicas básicas (Peso, Normal, Tensión y Fricción).
-* **Explicación:** Una fuerza es todo agente capaz de modificar la cantidad de movimiento o la forma de los materiales. Es vectorial y su unidad en el SI es el Newton ($N$). Tipos comunes:
-  - **Peso ($ec{w}$):** Fuerza de atracción gravitatoria dirigida verticalmente hacia abajo ($w = mg$).
-  - **Normal ($ec{N}$):** Fuerza de soporte perpendicular ejercida por una superficie sobre un objeto apoyado en ella.
-  - **Tensión ($ec{T}$):** Fuerza de tracción transmitida a lo largo de cuerdas, cables o cadenas estiradas.
-  - **Fricción ($ec{f}$):** Fuerza de resistencia al deslizamiento paralela a la superficie y opuesta al movimiento relativo.
-* **Ejemplo Resuelto:** Un bloque de madera de 5 kg está en reposo apoyado sobre una mesa horizontal en Xela. Identifica y calcula las fuerzas verticales que actúan sobre el bloque. (g = 9.8 m/s²).
-  - *Paso 1 Peso:* $w = mg = 5 	ext{ kg} 	imes 9.8 	ext{ m/s}^2 = 49 	ext{ Newtons}$ hacia abajo.
-  - *Paso 2 Fuerza Normal:* Como el bloque está en equilibrio vertical, la fuerza normal compensa exactamente al peso: $N = w$.
-  - *Resultado:* Peso = 49 N (abajo), Normal = 49 N (arriba).
-* **Errores Comunes:** Dibujar la fuerza normal siempre apuntando verticalmente hacia arriba, ignorando que si la superficie está inclinada, la normal se inclina también para mantenerse perpendicular.
-* **Ejercicios de Práctica:**
-  1. ¿Cuál es el peso en Newtons de un objeto de masa 10 kg en la Tierra? (R: 98 N).
-  2. ¿Qué dirección geométrica tiene siempre la fuerza normal ejercida por una pared vertical sobre un bloque apoyado en ella? (R: Horizontal. Apuntando hacia afuera de la pared).
-  3. Si la masa de una persona en la Tierra es de 60 kg, ¿cuál será su masa aproximada si viaja a la Luna? (R: 60 kg. Retroalimentación: La masa es la cantidad de materia e invariable; lo que varía con la gravedad es el peso).
-  4. ¿Cómo se le llama a la fuerza que ejerce una cuerda tensa sobre un objeto atado a ella? (R: Tensión).
-  5. ¿En qué dirección actúa la fuerza de fricción sobre un bloque que se desliza hacia la derecha? (R: Hacia la izquierda, oponiéndose al deslizamiento).
-* **¿Necesitas ayuda?** Comprender las fuerzas de forma intuitiva te permitirá resolver con facilidad los problemas de dinámica. ¡Toma una tutoría hoy y domina las bases!
-
-### Lección 1.2: Primera Ley de Newton (Inercia)
-* **Objetivo:** Explicar la Primera Ley de Newton y analizar el comportamiento de los cuerpos cuando la fuerza neta resultante sobre ellos es nula.
-* **Explicación:** La Primera Ley de Newton (Ley de la Inercia) establece que todo cuerpo permanece en su estado de reposo o de movimiento rectilíneo uniforme (MRU) a menos que actúe sobre él una fuerza neta externa que lo obligue a cambiar dicho estado. La **inercia** es la resistencia natural de la materia al cambio de velocidad.
-* **Ejemplo Resuelto:** Un bus extraurbano frena bruscamente en una parada en Tecpán. Explica físicamente por qué los pasajeros salen proyectados hacia adelante.
-  - *Paso 1 Estado Inicial:* Los pasajeros viajan a la misma velocidad constante del bus.
-  - *Paso 2 Acción Externa:* El freno del bus aplica una fuerza de parada sobre el chasis y los asientos.
-  - *Paso 3 Inercia:* Dado que no se aplica una fuerza de parada directa sobre los pasajeros, sus cuerpos tienden por inercia a mantener el movimiento rectilíneo constante que llevaban, desplazándose hacia adelante con respecto al bus en desaceleración.
-  - *Resultado:* Es una consecuencia directa de la inercia de sus masas.
-* **Errores Comunes:** Pensar que para que un objeto se mantenga en movimiento a velocidad constante se requiere una fuerza neta positiva activa, ignorando que el movimiento rectilíneo uniforme es un estado natural de equilibrio dinámico si no hay fricción.
-* **Ejercicios de Práctica:**
-  1. Si un disco de hockey se desliza sobre hielo liso sin fricción a 5 m/s, ¿cuál será su velocidad tras 10 segundos de recorrido libre? (R: 5 m/s. Retroalimentación: Al no haber fuerzas externas netas, mantiene su MRU indefinidamente).
-  2. ¿Qué magnitud física mide la inercia de un cuerpo de forma cuantitativa? (R: Su masa inercial).
-  3. Si la fuerza resultante sobre un objeto es cero, ¿cuáles son los dos estados de movimiento posibles en los que puede encontrarse? (R: Reposo o Movimiento Rectilíneo Uniforme (MRU)).
-  4. ¿Por qué es obligatorio el uso del cinturón de seguridad en autos basándose en la primera ley de Newton? (R: Para aplicar una fuerza externa que detenga el cuerpo del pasajero e impida que choque contra el parabrisas por inercia).
-  5. ¿Qué establece el concepto de equilibrio de una partícula? (R: Que la suma vectorial de todas las fuerzas externas que actúan sobre ella es nula (∑F = 0)).
-* **¿Necesitas ayuda?** La inercia es uno de los conceptos más contraintuitivos pero fundamentales de la física clásica. ¡Discútelo con tu tutor para despejar todas tus dudas!
-
-### Lección 1.3: Diagramas de Cuerpo Libre (DCL)
-* **Objetivo:** Diseñar y trazar Diagramas de Cuerpo Libre perfectos aislando el cuerpo e identificando todas las fuerzas vectoriales externas que actúan sobre él.
-* **Explicación:** Un Diagrama de Cuerpo Libre (DCL) es un bosquejo gráfico utilizado en física para analizar las fuerzas que actúan sobre un cuerpo libre de su entorno. Se representa al cuerpo como un punto o bloque y se dibujan todas las fuerzas como vectores que parten de su centro de gravedad.
-* **Ejemplo Resuelto:** Un bloque de masa m se desliza hacia abajo en un plano inclinado de ángulo $	heta$ en Antigua. Dibuja y descompón el peso del bloque en el sistema de coordenadas alineado al plano.
-  - *Paso 1 Identificar Fuerzas:* Peso ($w$, vertical hacia abajo), Normal ($N$, perpendicular al plano inclinado), Fricción ($f$, paralela al plano apuntando hacia arriba).
-  - *Paso 2 Alinear Coordenadas:* Eje X paralelo al plano inclinado, eje Y perpendicular al plano.
-  - *Paso 3 Descomponer el Peso:*
-    - Componente vertical perpendicular: $w_y = mg cos(	heta)$.
-    - Componente horizontal paralela que tira del bloque: $w_x = mg operatorname{sen}(	heta)$.
-  - *Resultado:* El peso se descompone en $mg operatorname{sen}(	heta)$ (paralelo) y $mg cos(	heta)$ (perpendicular).
-* **Errores Comunes:** Incluir fuerzas ficticias o internas en el DCL, o dibujar la fuerza "de movimiento" como si fuera una fuerza real externa sin que exista ningún agente físico que empuje al bloque.
-* **Ejercicios de Práctica:**
-  1. ¿Se debe dibujar la fuerza normal en el DCL de un objeto colgado de una cuerda en el aire? (R: No. Al no haber contacto con una superficie, no hay normal).
-  2. ¿Cuántas fuerzas actúan sobre un bloque apoyado en una mesa horizontal si una cuerda tira de él horizontalmente y hay fricción? (R: 4 fuerzas: Peso, Normal, Tensión y Fricción).
-  3. ¿Hacia dónde apunta el vector del peso propio en un DCL dibujado en un plano de coordenadas inclinado? (R: Verticalmente hacia abajo, formando un ángulo con los ejes del plano).
-  4. ¿Qué fuerzas actúan sobre una manzana en caída libre libre de la resistencia del aire? (R: 1 fuerza: Únicamente su peso gravitatorio).
-  5. ¿Cuál es el propósito fundamental de dibujar un DCL antes de escribir las ecuaciones matemáticas del problema? (R: Identificar de forma visual y sin omisiones todas las fuerzas para plantear correctamente la suma de componentes en X e Y).
-* **¿Necesitas ayuda?** Trazar diagramas DCL limpios y ordenados es el paso más importante para resolver con éxito cualquier parcial de física. ¡Aprende a dibujarlos junto a tu tutor de CEDETU!
-
-## Evaluación Unidad 1
-* Un bloque de 8 kg cuelga del techo de un aula en Sololá sostenido por dos cuerdas verticales iguales. Dibuja el DCL del bloque y calcula la tensión en cada cuerda. (g = 9.8 m/s²). (R: Tensión = 39.2 Newtons en cada cuerda. Retroalimentación: Peso = 8*9.8 = 78.4 N. Equilibrio vertical: 2T - 78.4 = 0 => T = 39.2).
-* Si un auto viaja a velocidad constante de 60 km/h en línea recta en una autopista plana, ¿cuánto vale la fuerza resultante neta ejercida por todos los factores mecánicos sobre el auto? (R: 0 Newtons. Retroalimentación: Al ser velocidad constante, la aceleración es nula y por tanto la fuerza neta es exactamente cero).
-* ¿Cuál de las componentes del peso en un plano inclinado de ángulo θ es la encargada de hacer deslizar al bloque cuesta abajo? (R: La componente paralela al plano: w_x = mg sen(θ)).
-
----
-
-## Unidad 2: La Segunda Ley de Newton (Fuerza y Aceleración)
-### Lección 2.1: La Segunda Ley de Newton (F = ma)
-* **Objetivo:** Aplicar la fórmula fundamental de la dinámica $ec{F} = m ec{a}$ para calcular fuerza, masa o aceleración en sistemas de una sola masa.
-* **Explicación:** La Segunda Ley de Newton establece que la aceleración de un objeto es directamente proporcional a la fuerza neta resultante que actúa sobre él, tiene la misma dirección y sentido que dicha fuerza, e inversamente proporcional a la masa del cuerpo.
-  - Ecuación matemática: $sum ec{F} = m ec{a}$.
-  - Unidad de fuerza: $1 	ext{ Newton (N)} = 1 	ext{ kg} cdot 1 	ext{ m/s}^2$.
-* **Ejemplo Resuelto:** Un bloque de 10 kg es empujado sobre una superficie horizontal lisa en Xela por una fuerza constante de 30 Newtons. Calcula la aceleración del bloque.
-  - *Paso 1 Ecuación Dinámica:* $sum F_x = m a_x$. (Superficie lisa, no hay fricción).
-  - *Paso 2 Sustituye valores:* $30 	ext{ N} = 10 	ext{ kg} cdot a$.
-  - *Paso 3 Despeja:* $a = 30 / 10 = 3 	ext{ m/s}^2$.
-  - *Resultado:* La aceleración del bloque es de 3 m/s².
-* **Errores Comunes:** Olvidar que la fuerza F en la fórmula representa la **fuerza neta resultante** (la suma de todas las fuerzas en esa dirección), y no simplemente cualquier fuerza aplicada aislada.
-* **Ejercicios de Práctica:**
-  1. ¿Qué fuerza neta se necesita para acelerar un carrito de 5 kg a 4 m/s²? (R: 20 Newtons).
-  2. Si aplicas una fuerza neta constante de 50 N a un objeto y este acelera a 2.5 m/s², ¿cuál es la masa del objeto? (R: 20 kg).
-  3. Si duplicas la fuerza neta sobre un cuerpo pero mantienes su masa idéntica, ¿qué ocurre con su aceleración? (R: Se duplica).
-  4. Si duplicas la masa de un objeto pero mantienes la fuerza neta constante, ¿qué ocurre con su aceleración? (R: Se reduce a la mitad).
-  5. Un cohete de juguete tiene una masa de 2 kg. Si su motor produce un empuje vertical hacia arriba de 30 N, calcula su aceleración ascendente. (g = 10 m/s²). (R: 5 m/s². Retroalimentación: Fuerza neta vertical = Empuje - Peso = 30 - 20 = 10 N. Aceleración = 10 / 2 = 5).
-* **¿Necesitas ayuda?** La segunda ley es la espina dorsal del movimiento acelerado. ¡Vuélvete un experto en resolver dinámicas variadas con ayuda de tu tutor de CEDETU!
-
-### Lección 2.2: Masa versus Peso
-* **Objetivo:** Diferenciar de forma teórica y analítica entre la masa inercial de un cuerpo (invariable) y su peso gravitatorio (variable con la gravedad g).
-* **Explicación:** 
-  - **Masa (m):** Medida cuantitativa de la inercia de un cuerpo, representa la resistencia al cambio de velocidad. Es una constante intrínseca de la materia y se mide en kilogramos ($kg$).
-  - **Peso (w):** Fuerza de atracción gravitatoria ejercida sobre la masa. Varía dependiendo del campo gravitatorio del planeta. Se mide en Newtons ($N$).
-    - Fórmula: $w = m g$.
-* **Ejemplo Resuelto:** Un astronauta tiene una masa de 80 kg. Calcula su masa y su peso en la Tierra ($g_{	ext{Tierra}} = 9.8 	ext{ m/s}^2$) y en la Luna ($g_{	ext{Luna}} = 1.6 	ext{ m/s}^2$).
-  - *Paso 1 Masa:* La masa es idéntica en cualquier lugar del universo. Masa = 80 kg.
-  - *Paso 2 Peso en la Tierra:* $w_{	ext{Tierra}} = 80 	ext{ kg} 	imes 9.8 	ext{ m/s}^2 = 784 	ext{ Newtons}$.
-  - *Paso 3 Peso en la Luna:* $w_{	ext{Luna}} = 80 	ext{ kg} 	imes 1.6 	ext{ m/s}^2 = 128 	ext{ Newtons}$.
-  - *Resultado:* Masa = 80 kg en ambos; Peso = 784 N en Tierra y 128 N en la Luna.
-* **Errores Comunes:** Expresar el peso en kilogramos en la vida diaria de los laboratorios escolares, lo cual es una confusión de lenguaje común (kilogramo-fuerza es otra unidad).
-* **Ejercicios de Práctica:**
-  1. Si un saco de maíz en Sololá pesa 490 Newtons, ¿cuál es su masa? (g = 9.8 m/s²). (R: 50 kg).
-  2. ¿Cuál es el peso de una masa de 2 kg en la Luna si la gravedad lunar es 1.6 m/s²? (R: 3.2 Newtons).
-  3. Si viajas al espacio exterior lejos de estrellas y planetas donde la gravedad es nula, ¿cuánto vale tu masa y tu peso? (R: Masa se mantiene idéntica, Peso = 0 Newtons).
-  4. ¿Qué instrumento mide directamente el peso por extensión de un resorte calibrado? (R: El dinamómetro).
-  5. ¿Con qué instrumento se compara e identifica la masa inercial estándar? (R: Con una balanza analítica clásica de dos platillos).
-* **¿Necesitas ayuda?** La gravedad es una aceleración variable y misteriosa. ¡Entiende todas sus implicaciones y resuelve problemas de gravedad con tu tutor!
-
-### Lección 2.3: Sistemas de Varias Masas (Máquina de Atwood)
-* **Objetivo:** Resolver la aceleración y la tensión en sistemas con dos o más masas acopladas mediante cuerdas y poleas sin fricción.
-* **Explicación:** Para resolver sistemas de múltiples masas:
-  1. Dibuja el DCL de cada bloque por separado.
-  2. Plantea la ecuación de la segunda ley para cada bloque en el sentido del movimiento esperado.
-  3. Suma las ecuaciones algebraicas para eliminar la tensión interna del cable y despejar la aceleración del sistema.
-  4. Sustituye la aceleración en cualquiera de las ecuaciones de DCL individuales para hallar la tensión.
-* **Ejemplo Resuelto:** Una Máquina de Atwood consta de dos masas colgadas de una polea fija mediante un cable ideal. Si $m_1 = 3 	ext{ kg}$ y $m_2 = 2 	ext{ kg}$, calcula la aceleración del sistema y la tensión del cable. (g = 10 m/s²).
-  - *Paso 1 Ecuaciones de Bloques:*
-    - Bloque 1 (baja por ser mayor): $m_1 g - T = m_1 a Rightarrow 30 - T = 3a$.
-    - Bloque 2 (sube): $T - m_2 g = m_2 a Rightarrow T - 20 = 2a$.
-  - *Paso 2 Sumar ecuaciones:* $(30 - T) + (T - 20) = 3a + 2a Rightarrow 10 = 5a$.
-  - *Paso 3 Despejar aceleración:* $a = 10 / 5 = 2 	ext{ m/s}^2$.
-  - *Paso 4 Calcular Tensión:* Sustituye $a = 2$ en la ecuación 2: $T - 20 = 2(2) Rightarrow T = 24 	ext{ Newtons}$.
-  - *Resultado:* Aceleración = 2 m/s², Tensión = 24 Newtons.
-* **Errores Comunes:** Suponer que la tensión del cable es igual al peso de la masa mayor suspendida, lo que anularía la aceleración del sistema.
-* **Ejercicios de Práctica:**
-  1. Dos masas de 6 kg y 4 kg están en una máquina de Atwood. Calcula la aceleración del sistema. (g = 10 m/s²). (R: 2 m/s²).
-  2. Si en una máquina de Atwood ambas masas son idénticas (m = 5 kg c/u), ¿cuál es la aceleración y la tensión? (R: Aceleración = 0 m/s²; Tensión = 50 N (si g = 10)).
-  3. Una masa de 5 kg está sobre una mesa lisa horizontal y se jala por una cuerda horizontal que pasa por una polea en el borde de la cual cuelga otra masa de 5 kg. Calcula la aceleración. (g = 10 m/s²). (R: 5 m/s². Retroalimentación: m₂g = (m₁+m₂)a => 50 = 10a).
-  4. Con los datos del ejercicio anterior, calcula la tensión en la cuerda. (R: 25 Newtons. Retroalimentación: T = m₁a = 5 * 5 = 25 N).
-  5. ¿Qué propiedades debe cumplir un cable ideal en física de poleas? (R: Masa despreciable, inextensible y libre de fricción interna).
-* **¿Necesitas ayuda?** La resolución de sistemas de poleas acopladas requiere un álgebra limpia y metódica de ecuaciones. ¡Domínala al instante de la mano de tu tutor de CEDETU!
-
-## Evaluación Unidad 2
-* Un ascensor de 800 kg de masa total asciende con una aceleración constante de 2.0 m/s². Calcula la tensión en el cable que eleva el ascensor. (g = 9.8 m/s²). (R: Tensión = 9,440 Newtons. Retroalimentación: T - mg = ma => T = m(g+a) = 800*(9.8 + 2.0) = 800 * 11.8 = 9,440).
-* Si un empuje horizontal neto de 40 N produce una aceleración de 8 m/s² sobre un trineo de juguete, ¿cuál es la masa del trineo? (R: 5 kg).
-* En una máquina de Atwood, si la masa mayor es de 15 kg y la aceleración medida del sistema es de 3 m/s², calcula el valor de la masa menor. (g = 10 m/s²). (R: 8.07 kg. Retroalimentación: a = (m₁ - m₂)g / (m₁ + m₂) => 3 = (15 - m₂)10 / (15 + m₂) => 45 + 3m₂ = 150 - 10m₂ => 13m₂ = 105 => m₂ ≈ 8.08 kg).
-
----
-
-## Unidad 3: Tercera Ley de Newton y Fricción
-### Lección 3.1: Tercera Ley de Newton (Acción y Reacción)
-* **Objetivo:** Explicar la Tercera Ley de Newton e identificar las parejas de fuerzas acción-reacción que actúan en interacciones cotidianas.
-* **Explicación:** La Tercera Ley de Newton establece que si un cuerpo A ejerce una fuerza sobre un cuerpo B (Acción), el cuerpo B ejerce simultáneamente una fuerza de igual magnitud pero en sentido opuesto sobre el cuerpo A (Reacción).
-  - Ecuación: $ec{F}_{	ext{A sobre B}} = -ec{F}_{	ext{B sobre A}}$.
-  - Las fuerzas de acción-reacción actúan sobre **cuerpos diferentes**, por lo tanto, nunca se cancelan entre sí.
-* **Ejemplo Resuelto:** Un nadador empuja la pared de una piscina olímpica con sus pies para impulsarse. Explica la fuerza de acción-reacción.
-  - *Paso 1 Acción:* Los pies del nadador ejercen una fuerza horizontal hacia atrás sobre la pared rígida.
-  - *Paso 2 Reacción:* La pared ejerce simultáneamente una fuerza de igual magnitud pero horizontal hacia adelante sobre los pies del nadador.
-  - *Resultado:* El nadador es impulsado hacia adelante debido a la fuerza de reacción de la pared sobre su cuerpo.
-* **Errores Comunes:** Pensar que las fuerzas de acción y reacción se cancelan mutuamente porque tienen la misma magnitud y sentidos opuestos, olvidando que actúan sobre dos objetos distintos.
-* **Ejercicios de Práctica:**
-  1. Si la Tierra ejerce una fuerza gravitatoria de atracción de 600 N sobre una persona, ¿qué fuerza de atracción ejerce la persona sobre la Tierra? (R: 600 Newtons).
-  2. ¿Por qué se siente un fuerte "retroceso" o "patada" en el hombro al disparar un rifle de caza? (R: Por la fuerza de reacción del proyectil impulsado hacia adelante sobre el rifle hacia atrás).
-  3. Si empujas una pared con una fuerza de 100 N y no se mueve, ¿con qué fuerza empuja la pared a tu cuerpo? (R: 100 Newtons).
-  4. ¿Cómo impulsa la hélice de un bote el avance del agua y del bote? (R: La hélice empuja el agua hacia atrás (acción); el agua reacciona empujando el bote hacia adelante (reacción)).
-  5. ¿Por qué es imposible empujar un auto atascado desde el asiento de adentro empujando el tablero con las manos? (R: Porque son fuerzas internas al sistema mecánico del auto; se requiere una fuerza externa del piso contra los pies en el exterior).
-* **¿Necesitas ayuda?** La tercera ley explica desde cómo caminamos hasta cómo los cohetes vuelan en el vacío del espacio exterior. ¡Aprende a analizarla con tu tutor!
-
-### Lección 3.2: Fricción Estática y Cinética
-* **Objetivo:** Calcular la fuerza de fricción estática máxima y cinética aplicando la fórmula fundamental $f = mu N$.
-* **Explicación:** La fricción se produce por la rugosidad a escala microscópica de las superficies en contacto.
-  - **Fricción Estática ($f_s$):** Actúa antes del deslizamiento. Su valor máximo es: $f_{s,	ext{máx}} = mu_s N$.
-  - **Fricción Cinética ($f_k$):** Actúa durante el deslizamiento constante: $f_k = mu_k N$.
-  - En general, $mu_s > mu_k$ (cuesta más empezar a mover un cuerpo que mantenerlo en movimiento).
-* **Ejemplo Resuelto:** Un bloque de madera de 10 kg se encuentra sobre un piso horizontal en Antigua con coeficientes de fricción $mu_s = 0.50$ y $mu_k = 0.30$. Si aplicas una fuerza horizontal de $40 	ext{ Newtons}$, determina si el bloque se mueve y calcula la fuerza de fricción real. (g = 10 m/s²).
-  - *Paso 1 Fuerza Normal:* $N = w = mg = 10 	ext{ kg} 	imes 10 	ext{ m/s}^2 = 100 	ext{ Newtons}$.
-  - *Paso 2 Fricción Estática Máxima:* $f_{s,	ext{máx}} = mu_s N = 0.50 	imes 100 	ext{ N} = 50 	ext{ Newtons}$.
-  - *Paso 3 Comparar Fuerzas:* La fuerza aplicada es de 40 N, que es menor que el límite máximo de resistencia estática (50 N). Por lo tanto, el bloque **no se mueve**.
-  - *Paso 4 Fricción Real:* Dado que está en reposo, la fricción equilibra exactamente a la fuerza aplicada: $f_s = F_{	ext{aplicada}} = 40 	ext{ Newtons}$.
-  - *Resultado:* El bloque no se mueve y la fuerza de fricción real es de 40 Newtons.
-* **Errores Comunes:** Calcular directamente $mu_s N$ como la fricción real en todos los casos estáticos, olvidando que $mu_s N$ es un límite máximo y la fricción real es menor si la fuerza aplicada no supera ese límite.
-* **Ejercicios de Práctica:**
-  1. Si un bloque de 20 kg se desliza sobre el suelo horizontal con un coeficiente de fricción cinética de 0.20, ¿cuál es el valor de la fricción cinética? (g = 10 m/s²). (R: 40 N. Retroalimentación: N = 200 N; f_k = 0.2 * 200 = 40 N).
-  2. ¿Por qué es más fácil jalar un mueble pesado una vez que ya ha comenzado a deslizarse que sacarlo del reposo absoluto? (R: Porque el coeficiente de fricción cinética (μ_k) es menor que el coeficiente de fricción estática (μ_s)).
-  3. Si duplicas la masa de un bloque sobre una mesa horizontal, ¿qué ocurre con el valor de la fuerza normal y el límite máximo de fricción? (R: Ambos se duplican).
-  4. Calcula el coeficiente de fricción cinética si un bloque de 5 kg se desliza a velocidad constante impulsado por una fuerza horizontal de 15 N. (g = 10 m/s²). (R: 0.30. Retroalimentación: f_k = F_aplicada = 15 N. N = 50 N. μ_k = 15 / 50 = 0.3).
-  5. ¿Hacia dónde apunta la fuerza de fricción cinética sobre un bloque de madera que es empujado hacia el norte? (R: Hacia el sur).
-* **¿Necesitas ayuda?** La fricción es el factor clave que diferencia los problemas escolares ideales de los problemas de ingeniería real. ¡Domínala al lado de tu tutor de CEDETU!
-
-### Lección 3.3: Dinámica del Movimiento Circular Uniforme
-* **Objetivo:** Resolver problemas de aceleración centrípeta y fuerzas centrales necesarias para mantener un cuerpo en una trayectoria circular constante.
-* **Explicación:** Un cuerpo en movimiento circular uniforme cambia constantemente de dirección, lo que genera una **aceleración centrípeta ($a_c$)** dirigida hacia el centro del círculo: $a_c = v^2 / r$. La fuerza neta encargada de producir esta aceleración es la **Fuerza Centrípeta ($F_c$)**:
-  $F_c = m a_c = rac{m v^2}{r}$
-* **Ejemplo Resuelto:** Un auto de 1,000 kg toma una curva circular plana de 50 metros de radio en una carretera a una rapidez constante de $10 	ext{ m/s}$. Calcula la fuerza de fricción lateral mínima necesaria para que el auto no derrape.
-  - *Paso 1 Ecuación Fuerza Centrípeta:* La fricción estática lateral actúa como la fuerza centrípeta que mantiene al auto en la curva: $f_s = F_c = rac{m v^2}{r}$.
-  - *Paso 2 Opera:* $f_s = rac{1,000 	ext{ kg} 	imes 10^2}{50} = rac{1,000 	imes 100}{50} = rac{100,000}{50} = 2,000 	ext{ Newtons}$.
-  - *Resultado:* Se requiere una fuerza de fricción lateral mínima de 2,000 N.
-* **Errores Comunes:** Dibujar la "fuerza centrífuga" en el DCL del auto como si fuera una fuerza real externa que empuja hacia afuera de la curva; la fuerza centrífuga es en realidad una sensación ficticia producida por la inercia del cuerpo.
-* **Ejercicios de Práctica:**
-  1. ¿Cuál es el valor de la aceleración centrípeta de un objeto con rapidez constante de 6 m/s en un círculo de 4 m de radio? (R: 9 m/s²).
-  2. Si reduces a la mitad el radio de una trayectoria circular pero mantienes la velocidad lineal del objeto constante, ¿qué le ocurre a la aceleración centrípeta? (R: Se duplica).
-  3. Si duplicas la velocidad de un auto en una curva de radio fijo, ¿cuántas veces aumenta la fuerza lateral necesaria para evitar el derrape? (R: 4 veces. Retroalimentación: La fuerza centrípeta es proporcional al cuadrado de la velocidad).
-  4. ¿Qué fuerza actúa como fuerza centrípeta que mantiene a un satélite artificial en órbita circular alrededor de la Tierra? (R: La fuerza de atracción gravitatoria).
-  5. Un niño hace girar una piedra de 0.5 kg atada a un cordón de 1.5 metros de longitud con una rapidez de 3 m/s. Calcula la tensión del cordón. (R: 3 Newtons. Retroalimentación: T = mv²/r = 0.5 * 9 / 1.5 = 3).
-* **¿Necesitas ayuda?** El movimiento circular y las fuerzas centrípetas son fascinantes y se aplican a montañas rusas y satélites. ¡Compréndelas perfectamente con CEDETU!
-
-## Evaluación Unidad 3
-* Un bloque de 5 kg se lanza cuesta arriba sobre una rampa inclinada 30° con el suelo. Si el coeficiente de fricción cinética es de 0.20, calcula la desaceleración del bloque mientras sube. (g = 10 m/s²). (R: 6.73 m/s². Retroalimentación: Fuerzas que frenan cuesta abajo: w_x = mg sen(30°) = 25 N; f_k = μ_k mg cos(30°) = 0.2 * 50 * 0.866 = 8.66 N. Fuerza neta = -33.66 N. Desaceleración = 33.66 / 5 = 6.73).
-* Una persona empuja una caja pesada de 50 kg sobre el suelo plano con una fuerza horizontal de 200 N. Si la caja acelera a 1.0 m/s², calcula el valor de la fuerza de fricción cinética. (R: 150 Newtons. Retroalimentación: F_aplicada - f_k = ma => 200 - f_k = 50 * 1 => f_k = 150).
-* ¿Es el "coeficiente de fricción" una cantidad adimensional sin unidades físicas? (R: Sí. Al ser la razón de dos fuerzas (fricción/normal), las unidades se cancelan por completo, quedando un número puro sin dimensiones).
-`,
-
-    "trabajo-energia-potencia": `# Curso: Trabajo, Energía y Potencia
-* **Materia:** Ciencias | **Nivel sugerido:** Diversificado / Universidad
-* **Público objetivo:** Estudiantes que quieren comprender el concepto de energía, las leyes de conservación mecánica y el cálculo de potencia aplicada a motores y máquinas térmicas.
-* **Objetivos de aprendizaje:** Definir y calcular el trabajo mecánico de fuerzas constantes, operar sistemas con energía cinética y potencial conservativos y no conservativos, y calcular la potencia de un motor mecánico de forma analítica.
-
-## Unidad 1: Trabajo Mecánico
-### Lección 1.1: Trabajo Mecánico de una Fuerza Constante
-* **Objetivo:** Calcular el trabajo realizado por una fuerza constante sobre un objeto en movimiento rectilíneo utilizando la fórmula $W = F d cos(	heta)$.
-* **Explicación:** En física, se realiza **trabajo mecánico ($W$)** cuando una fuerza externa desplaza a un objeto a lo largo de una distancia. Su unidad en el SI es el Julio ($1 	ext{ J} = 1 	ext{ N} cdot 	ext{m}$).
-  - Fórmula: $W = F d cos(	heta)$.
-  - $	heta$ es el ángulo formado entre el vector de fuerza y el vector de desplazamiento.
-  - Si la fuerza es perpendicular al movimiento ($	heta = 90^{circ}$), el trabajo es exactamente cero.
-* **Ejemplo Resuelto:** Una persona arrastra una maleta en una estación de autobuses de Guatemala una distancia de 15 metros aplicando una fuerza constante de 50 Newtons a través de una correa que forma un ángulo de $60^{circ}$ con el suelo. Calcula el trabajo realizado sobre la maleta.
-  - *Paso 1 Plantea Fórmula:* $W = F d cos(	heta)$.
-  - *Paso 2 Sustituye valores:* $W = 50 	ext{ N} 	imes 15 	ext{ m} 	imes cos(60^{circ})$.
-  - *Paso 3 Opera:* $W = 750 	imes 0.50 = 375 	ext{ Julios}$.
-  - *Resultado:* El trabajo realizado es de 375 Julios.
-* **Errores Comunes:** Multiplicar de forma directa la fuerza total por la distancia en todos los casos, ignorando que el ángulo de inclinación de la fuerza reduce el trabajo mecánico útil.
-* **Ejercicios de Práctica:**
-  1. ¿Qué trabajo realiza una fuerza de 20 N que empuja un bloque a lo largo de 5 metros en la misma dirección del movimiento? (R: 100 Julios).
-  2. Si cargas una cubeta de agua pesada de 10 kg y caminas horizontalmente a velocidad constante una distancia de 20 metros, ¿cuánto trabajo mecánico realiza la fuerza vertical de tus brazos sobre la cubeta? (R: 0 Julios. Retroalimentación: La fuerza de tus brazos es vertical y el movimiento horizontal (ángulo 90°)).
-  3. Si una fuerza de fricción de 15 N se opone al movimiento de un trineo que avanza 6 metros, ¿cuál es el trabajo realizado por la fricción? (R: -90 Julios. Retroalimentación: El ángulo es 180° y cos(180°) = -1. Es trabajo negativo).
-  4. Calcula el trabajo necesario para elevar verticalmente un saco de cemento de 50 kg una altura de 2 metros en una construcción. (g = 10 m/s²). (R: 1,000 Julios. Retroalimentación: Fuerza = Peso = 500 N; W = 500 * 2 = 1000).
-  5. ¿Cuál es el significado de trabajo neto sobre un objeto? (R: La suma de los trabajos individuales realizados por cada una de las fuerzas que actúan sobre él).
-* **¿Necesitas ayuda?** El trabajo mecánico es la transferencia de energía a través de fuerzas. ¡Aprende a analizar su signo y dirección con tu tutor de CEDETU!
-
-### Lección 1.2: Trabajo de Múltiples Fuerzas Concurrentes
-* **Objetivo:** Calcular el trabajo neto de un sistema calculando el trabajo individual realizado por múltiples fuerzas coplanares concurrentes y sumándolos algebraicamente.
-* **Explicación:** Si sobre un objeto actúan varias fuerzas (Peso, Normal, Empuje, Fricción), el trabajo neto total ($W_{	ext{neto}}$) es la suma de los trabajos individuales:
-  $W_{	ext{neto}} = W_1 + W_2 + W_3 + dots$
-  También se puede calcular hallando primero la Fuerza Resultante Neta en la dirección del movimiento ($sum F_x$) y multiplicándola por la distancia: $W_{	ext{neto}} = (sum F_x) cdot d$.
-* **Ejemplo Resuelto:** Un bloque de 10 kg es arrastrado 5 metros sobre un piso horizontal rugoso por una fuerza horizontal de empuje de 50 N. Si la fuerza de fricción cinética constante es de 20 N, calcula el trabajo neto total realizado sobre el bloque. (g = 10 m/s²).
-  - *Paso 1 Trabajo de la fuerza de empuje:* $W_{	ext{empuje}} = 50 	ext{ N} 	imes 5 	ext{ m} 	imes cos(0^{circ}) = 250 	ext{ Julios}$.
-  - *Paso 2 Trabajo de la fricción:* $W_{	ext{fricción}} = 20 	ext{ N} 	imes 5 	ext{ m} 	imes cos(180^{circ}) = -100 	ext{ Julios}$.
-  - *Paso 3 Trabajo de Peso y Normal:* El movimiento es horizontal, por lo que $W_{	ext{peso}} = 0$ y $W_{	ext{normal}} = 0$.
-  - *Paso 4 Sumar:* $W_{	ext{neto}} = 250 - 100 + 0 + 0 = 150 	ext{ Julios}$.
-  - *Resultado:* El trabajo neto total es de 150 Julios.
-* **Errores Comunes:** Olvidar restar el trabajo negativo realizado por la fuerza de fricción, lo cual exageraría la transferencia de energía neta.
-* **Ejercicios de Práctica:**
-  1. Un bloque avanza 10 m. Si el empuje hace un trabajo de 400 J y la fricción hace -150 J, ¿cuánto vale el trabajo neto? (R: 250 Julios).
-  2. ¿Qué trabajo realiza la fuerza normal que ejerce la calle sobre un auto en movimiento plano? (R: 0 Julios).
-  3. Si un bloque de 5 kg desciende por un plano inclinado de 3 metros de longitud sin fricción, ¿cuál es el trabajo neto realizado por el peso? (Ángulo rampa = 30°). (g = 10 m/s²). (R: 75 Julios. Retroalimentación: Fuerza paralela = mg sen(30°) = 25 N. Trabajo = 25 * 3 = 75).
-  4. Si el trabajo neto realizado sobre un cuerpo es positivo, ¿qué le ocurre a su velocidad? (R: Aumenta. Acelera).
-  5. Si el trabajo neto sobre un objeto es cero, ¿cuál es su tipo de movimiento? (R: Movimiento a velocidad constante (MRU) o reposo).
-* **¿Necesitas ayuda?** Analizar el trabajo neto de múltiples fuerzas es el paso previo al Teorema de la Energía. ¡Consolida tus bases con tu tutor de CEDETU!
-
-### Lección 1.3: Trabajo de Fuerzas Variables (Fuerza Elástica)
-* **Objetivo:** Calcular el trabajo mecánico realizado por una fuerza variable (como la fuerza de un resorte que obedece la Ley de Hooke) empleando métodos analíticos.
-* **Explicación:** Si la fuerza no es constante, no podemos usar la multiplicación directa. El trabajo equivale matemáticamente al área bajo la curva de un gráfico de Fuerza versus Posición (F vs x). Para un resorte que obedece la **Ley de Hooke ($F_e = kx$)**, el trabajo necesario para estirarlo o comprimirlo una distancia $x$ es:
-  $W = rac{1}{2} k x^2$
-  donde $k$ es la constante elástica del resorte en N/m.
-* **Ejemplo Resuelto:** Un dinamómetro de laboratorio tiene un resorte con constante elástica $k = 200 	ext{ N/m}$. Calcula el trabajo mecánico necesario para estirar el resorte una distancia de $10 	ext{ cm}$ desde su longitud de equilibrio.
-  - *Paso 1 Unidades:* Convierte $10$ cm a metros: $x = 0.10$ metros.
-  - *Paso 2 Ecuación Trabajo Elástico:* $W = rac{1}{2} k x^2$.
-  - *Paso 3 Opera:* $W = 0.5 	imes 200 	ext{ N/m} 	imes (0.10 	ext{ m})^2 = 100 	imes 0.01 = 1 	ext{ Julio}$.
-  - *Resultado:* El trabajo mecánico necesario es de exactly 1 Julio.
-* **Errores Comunes:** Olvidar elevar la distancia al cuadrado en la fórmula o no convertir los centímetros a metros, lo que arrojaría valores extremadamente altos e irreales.
-* **Ejercicios de Práctica:**
-  1. ¿Qué fuerza ejerce un resorte de k = 500 N/m al ser comprimido 0.2 metros? (R: 100 Newtons).
-  2. Calcula el trabajo realizado para comprimir 0.2 metros el resorte anterior. (R: 10 Julios. Retroalimentación: W = 0.5 * 500 * (0.2)² = 250 * 0.04 = 10).
-  3. ¿Cómo se halla gráficamente el trabajo mecánico si se tiene un gráfico de Fuerza en el eje Y y Posición en el eje X? (R: Calculando el área de la figura geométrica bajo la línea de la gráfica).
-  4. Si estiras un resorte el doble de la distancia original, ¿cuántas veces aumenta el trabajo elástico requerido? (R: 4 veces. Retroalimentación: El trabajo es proporcional al cuadrado del estiramiento).
-  5. ¿Cuál es el trabajo realizado por una fuerza constante de 10 N sobre una distancia de 5 m, calculado como el área de un gráfico F vs x? (R: 50 Julios. Área del rectángulo = 10 * 5 = 50).
-* **¿Necesitas ayuda?** La fuerza elástica y el cálculo analítico de áreas son temas avanzados de física escolar. ¡Pide ayuda a tu tutor de CEDETU y prepárate para brillar!
-
-## Evaluación Unidad 1
-* Un bloque de 12 kg es arrastrado 8 metros cuesta arriba sobre un plano inclinado 37° sin fricción por una fuerza paralela a la rampa de 100 N. Calcula el trabajo neto. (g = 10 m/s², sen(37°) ≈ 0.6). (R: 224 Julios. Retroalimentación: Trabajo empuje = 100*8 = 800 J. Trabajo peso cuesta abajo = -mg sen(37°) * 8 = -120 * 0.6 * 8 = -576 J. W_neto = 800 - 576 = 224).
-* Si un resorte de juguete se estira 5 cm requiriendo 0.5 Julios de trabajo, calcula la constante elástica k del resorte. (R: 400 N/m. Retroalimentación: 0.5 = 0.5 * k * (0.05)² => 1 = k * 0.0025 => k = 400).
-* Si una fuerza constante actúa a un ángulo de 120° con el desplazamiento, ¿qué signo tiene el trabajo mecánico realizado y qué significa? (R: Signo negativo. Significa que la fuerza se opone parcialmente al movimiento y le resta energía al cuerpo).
-
----
-
-## Unidad 2: Energía Cinética y Potencial
-### Lección 2.1: Energía Cinética y el Teorema del Trabajo y la Energía
-* **Objetivo:** Calcular la energía cinética de un cuerpo en movimiento ($E_c = rac{1}{2} m v^2$) y aplicar el Teorema del Trabajo y la Energía para resolver velocidades.
-* **Explicación:** La **energía cinética ($E_c$)** es la energía que posee un cuerpo debido a su movimiento.
-  - Fórmula: $E_c = rac{1}{2} m v^2$.
-  - **Teorema del Trabajo y la Energía:** El trabajo neto total realizado por las fuerzas externas sobre una partícula es igual al cambio en su energía cinética:
-    $W_{	ext{neto}} = Delta E_c = E_{c,	ext{final}} - E_{c,	ext{inicial}}$.
-* **Ejemplo Resuelto:** Un carro de juguete de 2 kg parte del reposo y es empujado por una fuerza neta constante que realiza un trabajo neto de 16 Julios. Calcula la velocidad final del carro.
-  - *Paso 1 Plantea Teorema:* $W_{	ext{neto}} = E_{c,f} - E_{c,i}$. (Como parte del reposo, $E_{c,i} = 0$).
-  - *Paso 2 Sustituye valores:* $16 = rac{1}{2} m v_f^2 Rightarrow 16 = rac{1}{2} (2 	ext{ kg}) v_f^2$.
-  - *Paso 3 Simplifica y Despeja:* $16 = v_f^2 Rightarrow v_f = sqrt{16} = 4 	ext{ m/s}$.
-  - *Resultado:* La velocidad final del carro es de 4 m/s.
-* **Errores Comunes:** Olvidar extraer la raíz cuadrada al despejar la velocidad a partir de la fórmula de energía cinética.
-* **Ejercicios de Práctica:**
-  1. Calcula la energía cinética de un atleta de 70 kg que corre a una velocidad de 6 m/s en un entrenamiento en Antigua. (R: 1,260 Julios).
-  2. Si duplicas la velocidad de un carro en movimiento, ¿cuántas veces aumenta su energía cinética? (R: 4 veces. Retroalimentación: La energía cinética varía con el cuadrado de la velocidad).
-  3. Un bloque de 4 kg tiene inicialmente una energía cinética de 50 J. Si se le realiza un trabajo neto de 30 J en la dirección del movimiento, ¿cuál es su nueva energía cinética final? (R: 80 Julios).
-  4. Con los datos del ejercicio anterior, calcula la velocidad final del bloque. (R: 6.32 m/s. Retroalimentación: 80 = 0.5 * 4 * v² => 40 = v² => v ≈ 6.32).
-  5. ¿Qué ocurre con la energía cinética de un auto si frena hasta detenerse por completo? (R: Se reduce a cero).
-* **¿Necesitas ayuda?** El teorema del trabajo y la energía te permite calcular velocidades sin necesidad de resolver complejas fórmulas de cinemática de aceleración. ¡Consúltalo con tu tutor!
-
-### Lección 2.2: Energía Potencial Gravitatoria
-* **Objetivo:** Calcular la energía potencial gravitatoria de un objeto elevado ($E_p = m g h$) con respecto a un nivel de referencia elegido.
-* **Explicación:** La **energía potencial gravitatoria ($E_p$ o $U_g$)** es la energía almacenada en un objeto debido a su posición elevada en un campo gravitatorio.
-  - Fórmula: $E_p = m g h$.
-  - Es fundamental elegir un **nivel de referencia** ($h = 0$) para medir la altura; la energía potencial es relativa a este nivel.
-* **Ejemplo Resuelto:** Un bloque de piedra de 5 kg está sobre el borde de un andamio a una altura de 6 metros sobre el suelo en una obra constructiva en Tecpán. Calcula su energía potencial gravitatoria con respecto al suelo y con respecto a una mesa situada a 1.5 metros de altura en el suelo. (g = 10 m/s²).
-  - *Paso 1 Respecto al Suelo:* Altura $h = 6$ m.
-    $E_{p,	ext{suelo}} = m g h = 5 	ext{ kg} 	imes 10 	ext{ m/s}^2 	imes 6 	ext{ m} = 300 	ext{ Julios}$.
-  - *Paso 2 Respecto a la Mesa:* Altura relativa $h = 6 - 1.5 = 4.5$ m.
-    $E_{p,	ext{mesa}} = 5 	ext{ kg} 	imes 10 	ext{ m/s}^2 	imes 4.5 	ext{ m} = 225 	ext{ Julios}$.
-  - *Resultado:* Ep respecto al suelo = 300 J, respecto a la mesa = 225 J.
-* **Errores Comunes:** Olvidar que la altura h debe medirse de forma estrictamente vertical y perpendicular al suelo, sin importar si el objeto subió por una rampa inclinada.
-* **Ejercicios de Práctica:**
-  1. ¿Qué energía potencial almacena un saco de maíz de 20 kg a una altura de 4 metros? (g = 10 m/s²). (R: 800 Julios).
-  2. Si bajas un bloque de 5 kg desde una altura de 10 metros hasta 6 metros sobre el suelo, ¿cuánta energía potencial pierde? (g = 10 m/s²). (R: 200 Julios. Retroalimentación: ΔEp = 5*10*(10-6) = 200).
-  3. ¿Puede la energía potencial gravitatoria ser negativa? (R: Sí. Si el objeto se encuentra por debajo del nivel de referencia elegido (h = 0)).
-  4. Calcula la masa de un objeto si almacena 150 J de energía potencial al ser elevado a 3 metros de altura. (g = 10 m/s²). (R: 5 kg).
-  5. Si un excursionista de 70 kg escala una montaña en Petén ganando 100 metros de altura vertical, ¿cuánto trabajo realiza la gravedad sobre él? (g = 10 m/s²). (R: -70,000 Julios. Retroalimentación: La gravedad tira hacia abajo y él sube; realiza trabajo negativo).
-* **¿Necesitas ayuda?** La energía potencial es una de las ideas más potentes de la física del diseño de montañas rusas y presas hidroeléctricas. ¡Asegura tu destreza con tu tutor de CEDETU!
-
-### Lección 2.3: Energía Potencial Elástica
-* **Objetivo:** Calcular la energía potencial elástica almacenada en resortes comprimidos o estirados ($E_{pe} = rac{1}{2} k x^2$) resolviendo problemas mecánicos.
-* **Explicación:** La **energía potencial elástica ($E_{pe}$ o $U_e$)** es la energía almacenada en materiales elásticos (como resortes, ligas o ballestas) debido a su deformación temporal (compresión o estiramiento).
-  - Fórmula: $E_{pe} = rac{1}{2} k x^2$.
-  - Al liberar el resorte, toda esta energía almacenada se transforma rápidamente en energía cinética del cuerpo acoplado.
-* **Ejemplo Resuelto:** Un juguete de resorte tiene una constante elástica $k = 400 	ext{ N/m}$. Si se comprime exactamente $5 	ext{ cm}$ para lanzar una pequeña bola de 0.1 kg, calcula la energía elástica almacenada en el resorte.
-  - *Paso 1 Unidades:* Convierte $5$ cm a metros: $x = 0.05$ m.
-  - *Paso 2 Ecuación:* $E_{pe} = rac{1}{2} k x^2$.
-  - *Paso 3 Opera:* $E_{pe} = 0.5 	imes 400 	ext{ N/m} 	imes (0.05 	ext{ m})^2 = 200 	imes 0.0025 = 0.5 	ext{ Julios}$.
-  - *Resultado:* La energía elástica almacenada es de exactly 0.5 Julios.
-* **Errores Comunes:** Ignorar el exponente cuadrático o equivocarse en la constante k al cambiar las unidades de longitud de los centímetros a metros.
-* **Ejercicios de Práctica:**
-  1. ¿Cuánta energía potencial elástica almacena un resorte de k = 1,000 N/m al ser comprimido 0.1 metros? (R: 5 Julios).
-  2. Si un resorte almacena 8 J de energía al ser estirado 0.2 m, ¿cuál es su constante elástica k? (R: 400 N/m. Retroalimentación: 8 = 0.5 * k * 0.04 => 8 = 0.02k => k = 400).
-  3. Si duplicas la compresión de un resorte, ¿qué le ocurre a la cantidad de energía almacenada? (R: Se cuadruplica).
-  4. Una liga tiene k = 100 N/m. ¿Qué estiramiento se necesita para almacenar 2 J de energía elástica? (R: 0.2 metros. Retroalimentación: 2 = 0.5 * 100 * x² => 2 = 50x² => x² = 0.04 => x = 0.2).
-  5. ¿En qué tipo de energía se transforma la energía elástica acumulada en un arco cuando se dispara una flecha? (R: En energía cinética de la flecha).
-* **¿Necesitas ayuda?** La física elástica es la base del diseño de amortiguadores de vehículos y sistemas de seguridad. ¡Aprende a dominarla paso a paso con tu tutor de CEDETU!
-
-## Evaluación Unidad 2
-* Si dejas caer una piedra de 2 kg desde un puente en Antigua de 20 metros de altura, calcula la energía potencial inicial y la energía cinética final justo un instante antes de chocar contra el suelo. (g = 10 m/s²). (R: Energía Potencial Inicial = 400 J, Energía Cinética Final = 400 J. Retroalimentación: Por conservación de la energía, toda la Ep inicial se transforma íntegramente en Ec final al no haber fricción).
-* Si una flecha de 0.2 kg viaja con una energía cinética de 90 Julios, calcula su velocidad de avance. (R: 30 m/s. Retroalimentación: 90 = 0.5 * 0.2 * v² => 90 = 0.1 v² => v² = 900 => v = 30).
-* Calcula la energía total almacenada en un sistema formado por un bloque de 2 kg elevado a 3 metros de altura con respecto a un resorte comprimido 10 cm con k = 500 N/m en el suelo. (g = 10 m/s²). (R: 62.5 Julios. Retroalimentación: Ep_gravitatoria = 2*10*3 = 60 J. Ep_elástica = 0.5 * 500 * (0.1)² = 2.5 J. Energía total = 60 + 2.5 = 62.5).
-
----
-
-## Unidad 3: Conservación de la Energía y Potencia
-### Lección 3.1: Conservación de la Energía Mecánica
-* **Objetivo:** Resolver problemas mecánicos aplicando la Ley de Conservación de la Energía en sistemas ideales donde la energía mecánica total se mantiene constante ($E_i = E_f$).
-* **Explicación:** La energía no se crea ni se destruye, solo se transforma. En un sistema ideal libre de fricción y otras fuerzas no conservativas, la **Energía Mecánica Total ($E_m$)** (suma de cinética y potencial) se mantiene constante a lo largo de toda la trayectoria:
-  $E_{m,	ext{inicial}} = E_{m,	ext{final}} Rightarrow E_{ci} + E_{pi} = E_{cf} + E_{pf}$.
-* **Ejemplo Resuelto:** Una patinadora de 50 kg parte del reposo desde la cima de una rampa circular de 5 metros de altura en un parque de Xela. Calcula su velocidad en la base de la rampa. (g = 10 m/s²).
-  - *Paso 1 Ecuación de Conservación:* $E_{ci} + E_{pi} = E_{cf} + E_{pf}$.
-  - *Paso 2 Identificar estados:*
-    - Inicial (cima, reposo): $E_{ci} = 0$, $E_{pi} = mgh$.
-    - Final (base, altura 0): $E_{cf} = rac{1}{2} mv_f^2$, $E_{pf} = 0$.
-  - *Paso 3 Sustituye y cancela masa:* $mgh = rac{1}{2} mv_f^2 Rightarrow gh = rac{1}{2} v_f^2$.
-  - *Paso 4 Despeja:* $v_f = sqrt{2gh} = sqrt{2 	imes 10 	ext{ m/s}^2 	imes 5 	ext{ m}} = sqrt{100} = 10 	ext{ m/s}$.
-  - *Resultado:* La velocidad de la patinadora en la base es de 10 m/s. (Nota: ¡La velocidad no depende de la masa de la persona!).
-* **Errores Comunes:** Incluir la masa en la calculadora cuando se simplifica en ambos lados de la ecuación de conservación, aumentando innecesariamente los pasos aritméticos.
-* **Ejercicios de Práctica:**
-  1. Si dejas caer un objeto de 3 kg desde 45 metros de altura, ¿con qué velocidad choca contra el suelo? (g = 10 m/s²). (R: 30 m/s. Retroalimentación: v = √2gh = √2*10*45 = √900 = 30).
-  2. ¿Qué ocurre con la energía mecánica total de un péndulo oscilante ideal? (R: Se mantiene constante en todo momento; la energía oscila continuamente entre cinética en la base y potencial en los extremos).
-  3. Un bloque se desliza sin fricción. Si en la parte alta tiene Ep = 100 J y Ec = 20 J, ¿cuál es su energía cinética en la base si la altura se reduce a cero? (R: 120 Julios).
-  4. ¿Cómo se define formalmente una "fuerza conservativa"? (R: Una fuerza cuyo trabajo sobre una trayectoria cerrada es nulo; el trabajo realizado no depende del camino seguido, solo del punto inicial y final).
-  5. Si un proyectil es lanzado verticalmente hacia arriba a 20 m/s, ¿cuál es la altura máxima que alcanza? (g = 10 m/s²). (R: 20 metros. Retroalimentación: 0.5 * v² = gh => 0.5 * 400 = 10h => 200 = 10h => h = 20).
-* **¿Necesitas ayuda?** La conservación de la energía es la ley más fundamental de toda la física y la ingeniería. ¡Aprende a dominar su planteamiento analítico con tu tutor de CEDETU!
-
-### Lección 3.2: Sistemas No Conservativos (Pérdidas por Fricción)
-* **Objetivo:** Resolver problemas de energía en sistemas reales que incluyen pérdidas por fricción aplicando el teorema general del trabajo de las fuerzas no conservativas.
-* **Explicación:** En la realidad hay fuerzas no conservativas (como la fricción o resistencia del aire). El trabajo realizado por estas fuerzas ($W_{	ext{nc}}$) disipa energía mecánica transformándola en calor. La ecuación general es:
-  $E_{	ext{inicial}} + W_{	ext{nc}} = E_{	ext{final}} Rightarrow (E_{ci} + E_{pi}) - f_k d = (E_{cf} + E_{pf})$.
-* **Ejemplo Resuelto:** Un bloque de 10 kg se desliza por una rampa de 5 metros de largo desde una altura de 2 metros en Antigua. Si llega a la base con una velocidad de $4 	ext{ m/s}$ debido a la fricción, calcula el trabajo realizado por la fuerza de fricción sobre el bloque. (g = 10 m/s²).
-  - *Paso 1 Energía Inicial:* $E_i = mgh = 10 	ext{ kg} 	imes 10 	ext{ m/s}^2 	imes 2 	ext{ m} = 200 	ext{ Julios}$.
-  - *Paso 2 Energía Final:* $E_f = rac{1}{2} mv_f^2 = 0.5 	imes 10 	ext{ kg} 	imes 4^2 = 5 	imes 16 = 80 	ext{ Julios}$.
-  - *Paso 3 Ecuación:* $E_i + W_{	ext{fricción}} = E_f Rightarrow 200 + W_{	ext{fricción}} = 80$.
-  - *Paso 4 Despeja:* $W_{	ext{fricción}} = 80 - 200 = -120 	ext{ Julios}$.
-  - *Resultado:* El trabajo de la fricción es de -120 Julios (el sistema perdió 120 Julios de energía en forma de calor disipado).
-* **Errores Comunes:** Olvidar que el trabajo de fricción siempre tiene signo negativo porque la fuerza se opone al sentido del movimiento del bloque.
-* **Ejercicios de Práctica:**
-  1. Si un bloque con E_i = 150 J pierde 40 J por fricción en una rampa, ¿cuál es su energía final en la base? (R: 110 Julios).
-  2. ¿En qué forma de energía se disipa típicamente la energía mecánica "perdida" por fricción en un motor? (R: En energía térmica o calor).
-  3. Un bloque de 5 kg se desliza sobre una mesa rugosa partiendo con v_i = 6 m/s y se detiene tras recorrer 3 metros. Calcula el trabajo de la fricción. (R: -90 Julios. Retroalimentación: Ec_i = 0.5 * 5 * 36 = 90 J; Ec_f = 0. W_fricción = Ec_f - Ec_i = -90 J).
-  4. Con los datos del ejercicio anterior, calcula la fuerza de fricción constante que detuvo al bloque. (R: 30 Newtons. Retroalimentación: W = f * d => -90 = f * (-3) => f = 30 N).
-  5. ¿Es aplicable el principio de conservación de la energía total en un sistema con fricción? (R: Sí. La energía mecánica disminuye, pero la energía total incluyendo el calor disipado sigue siendo exactamente la misma).
-* **¿Necesitas ayuda?** La física de sistemas no conservativos es el pilar para entender el desgaste y la eficiencia en la industria. ¡Consúltalo con tu tutor de CEDETU!
-
-### Lección 3.3: Potencia y Rendimiento Mecánico
-* **Objetivo:** Calcular la potencia mecánica desarrollada por motores o fuerzas ($P = W/t$) y la eficiencia o rendimiento de sistemas mecánicos.
-* **Explicación:** 
-  - **Potencia ($P$):** La rapidez con la que se realiza un trabajo o se transfiere energía. Su unidad en el SI es el Vatio o Watt ($1 	ext{ W} = 1 	ext{ J/s}$). Otra unidad común es el caballo de fuerza ($1 	ext{ HP} approx 746 	ext{ W}$).
-    - Fórmulas: $P = rac{W}{t}$ o $P = F cdot v$ (fuerza por velocidad constante).
-  - **Eficiencia o Rendimiento ($eta$):** El porcentaje de energía o potencia útil obtenida con respecto a la total suministrada a la máquina:
-    $eta = left( rac{	ext{Potencia Útil}}{	ext{Potencia Suministrada}} ight) 	imes 100%$.
-* **Ejemplo Resuelto:** Un motor eléctrico en Escuintla eleva un elevador de carga de 200 kg a una altura de 15 metros en un tiempo de 10 segundos con velocidad constante. Calcula la potencia útil desarrollada por el motor y exprésala en HP. (g = 10 m/s²).
-  - *Paso 1 Trabajo Útil:* $W = mgh = 200 	ext{ kg} 	imes 10 	ext{ m/s}^2 	imes 15 	ext{ m} = 30,000 	ext{ Julios}$.
-  - *Paso 2 Potencia en Watts:* $P = W / t = 30,000 	ext{ J} / 10 	ext{ s} = 3,000 	ext{ Watts}$.
-  - *Paso 3 Convertir a HP:* $3,000 	ext{ W} / 746 	ext{ W/HP} approx 4.02 	ext{ HP}$.
-  - *Resultado:* Potencia Útil = 3,000 Watts (aprox. 4.0 HP).
-* **Errores Comunes:** Confundir la potencia teórica total consumida de la red eléctrica por un motor con la potencia mecánica útil real que este entrega, ignorando las pérdidas internas en el cálculo de rendimiento.
-* **Ejercicios de Práctica:**
-  1. ¿Qué potencia desarrolla una grúa que realiza 5,000 Julios de trabajo en 20 segundos? (R: 250 Watts).
-  2. Si un motor consume 1,000 Watts de energía de la red pero solo entrega 800 Watts de potencia mecánica útil, ¿cuál es su rendimiento o eficiencia? (R: 80%).
-  3. Calcula la potencia desarrollada por un tractor que tira de un arado con una fuerza constante de 2,000 N a una velocidad constante de 3 m/s. (R: 6,000 Watts o 6 kW).
-  4. ¿Cuántos Kilowatts (kW) son 10 HP? (R: 7.46 kW).
-  5. ¿Cuánto trabajo realiza un motor de 150 Watts encendido durante un minuto? (R: 9,000 Julios. Retroalimentación: Trabajo = Potencia * Tiempo = 150 * 60 = 9000).
-* **¿Necesitas ayuda?** La potencia y el rendimiento son la clave del ahorro energético y la productividad industrial. ¡Aprende a dominarlos con tu tutor de CEDETU!
-
-## Evaluación Unidad 3
-* Una bomba de agua de 2.0 HP de potencia útil debe llenar un estanque de 3,000 litros situado a 10 metros de altura en una finca de Tecpán. ¿Cuánto tiempo tardará en realizar la tarea? (Nota: 1 litro de agua = 1 kg de masa, 1 HP = 746 W, g = 10 m/s²). (R: 201 segundos ≈ 3.35 minutos. Retroalimentación: Trabajo necesario = mgh = 3000 * 10 * 10 = 300,000 J. Potencia útil = 2 * 746 = 1,492 W. Tiempo = W / P = 300,000 / 1,492 ≈ 201 s).
-* Si un ciclista sube una colina a 5 m/s aplicando una fuerza de empuje constante de 60 N paralela al suelo, ¿cuál es la potencia desarrollada por sus piernas? (R: 300 Watts).
-* ¿Es posible que una máquina real tenga una eficiencia o rendimiento del 100% o superior? (R: No. Por la Segunda Ley de la Termodinámica, siempre hay pérdidas inevitables de energía disipada por fricción y calor, haciendo que la eficiencia sea siempre menor al 100%).
-`,
+    "vectores-fisica": {
+    "isRichCourse": true,
+    "title": "Vectores en Física",
+    "units": [
+        {
+            "title": "Unidad 1: Magnitudes Escalares y Vectoriales",
+            "lessons": [
+                {
+                    "id": "magnitudes-escalares-vectoriales",
+                    "title": "Lección 1.1: Magnitudes Escalares y Vectoriales",
+                    "introduction": "En física, las magnitudes se dividen en dos categorías según la información necesaria para definirlas completamente: escalares y vectoriales.",
+                    "explanationHtml": "<p>Para describir la naturaleza física, medimos propiedades llamadas magnitudes. Estas se clasifican en:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Magnitud Escalar:</strong> Se describe completamente con un número y su correspondiente unidad de medida. No posee orientación espacial. <br><em>Ejemplos:</em> Temperatura ($37^\\circ\\text{C}$), masa ($5\\text{ kg}$), volumen ($2\\text{ L}$), tiempo ($5\\text{ s}$), distancia ($10\\text{ m}$).</li><li><strong>Magnitud Vectorial:</strong> Requiere un valor numérico (módulo o magnitud), una unidad de medida, y además, una **dirección y sentido** para ser explicada por completo. <br><em>Ejemplos:</em> Velocidad ($80\\text{ km/h al norte}$), desplazamiento ($5\\text{ m a } 30^\\circ$), fuerza ($10\\text{ N hacia abajo}$), aceleración.</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Conceptos Fundamentales</p><p class=\"text-xs font-mono font-bold text-primary\">Rapidez = Escalar (e.g. 10 m/s) &nbsp;&bull;&nbsp; Velocidad = Vector (e.g. 10 m/s al Este)</p><p class=\"text-xs text-slate-500\">Módulo: Es el tamaño absoluto del vector (siempre un valor positivo, e.g. |A| = 10 N).</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">ESCALAR VS VECTOR</text><rect x=\"25\" y=\"38\" width=\"110\" height=\"55\" fill=\"#eff6ff\" stroke=\"#bfdbfe\" rx=\"8\" /><text x=\"80\" y=\"55\" font-size=\"9\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">Magnitud Escalar</text><text x=\"80\" y=\"75\" font-size=\"14\" font-family=\"monospace\" fill=\"#2563eb\" font-weight=\"bold\" text-anchor=\"middle\">37°C</text><text x=\"80\" y=\"87\" font-size=\"7\" fill=\"#64748b\" text-anchor=\"middle\">Temperatura (Solo valor/unidad)</text><rect x=\"165\" y=\"38\" width=\"110\" height=\"55\" fill=\"#fef2f2\" stroke=\"#fca5a5\" rx=\"8\" /><text x=\"220\" y=\"53\" font-size=\"9\" fill=\"#991b1b\" font-weight=\"bold\" text-anchor=\"middle\">Magnitud Vectorial</text><line x1=\"185\" y1=\"75\" x2=\"245\" y2=\"75\" stroke=\"#ef4444\" stroke-width=\"2.5\" stroke-linecap=\"round\" /><polygon points=\"245,71 255,75 245,79\" fill=\"#ef4444\" /><text x=\"220\" y=\"67\" font-size=\"8\" font-family=\"monospace\" fill=\"#ef4444\" font-weight=\"bold\" text-anchor=\"middle\">v = 80 km/h</text><text x=\"220\" y=\"88\" font-size=\"7\" fill=\"#64748b\" text-anchor=\"middle\">Velocidad (Valor, dir. y sentido)</text></svg>",
+                    "svgDescription": "Comparación gráfica de una magnitud escalar (temperatura de 37°C) y una vectorial (velocidad representada con una flecha dirigida v = 80 km/h).",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Clasifica las siguientes variables en magnitudes escalares o vectoriales: 1) El viento sopla a $20\\text{ km/h}$ rumbo al Volcán de Agua en dirección suroeste, 2) Una maleta tiene un peso de $15\\text{ libras}$.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1 (Viento):</strong> Se nos indica la rapidez ($20\\text{ km/h}$), las unidades y un rumbo específico hacia el suroeste. Al incluir orientación espacial, se trata de una **velocidad**, la cual es una <strong>magnitud vectorial</strong>.</li><li><strong>Paso 2 (Maleta):</strong> Se nos indica un valor numérico y una unidad ($15\\text{ lb}$). La masa o el peso escalar de la maleta se define por completo sin necesidad de una dirección espacial. Es una <strong>magnitud escalar</strong>.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> 1) Vectorial, 2) Escalar.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Confundir rapidez con velocidad:</strong> La rapidez es escalar (ej. \"el auto va a 100 km/h\"), mientras que la velocidad exige obligatoriamente dirección (ej. \"el auto va a 100 km/h al oeste\").</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Clasifica el tiempo transcurrido de 45 minutos. Escribe si es 'escalar' o 'vectorial' en minúsculas:",
+                            "correctAnswer": "escalar",
+                            "hint": "Piensa si necesitas decir '45 minutos al norte' para entender cuánto tiempo pasó.",
+                            "feedbackCorrect": "¡Excelente! El tiempo es una magnitud escalar pura.",
+                            "feedbackIncorrect": "Incorrecto. El tiempo no posee dirección espacial, por lo que es 'escalar'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Es la aceleración de la gravedad hacia el centro de la Tierra una magnitud de tipo vectorial?",
+                            "options": [
+                                "Sí, porque posee módulo, unidad de medida, y una dirección fija hacia el centro terrestre.",
+                                "No, porque la gravedad afecta a todos los objetos por igual.",
+                                "No, la gravedad es una constante escalar pura de valor 9.8 m/s².",
+                                "Sí, pero solo cuando los objetos están cayendo en el aire."
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Para ser vectorial necesita tener una magnitud, unidades y una dirección y sentido definidos.",
+                            "feedbackCorrect": "¡Perfecto! La aceleración de la gravedad es un vector que apunta verticalmente hacia abajo.",
+                            "feedbackIncorrect": "Incorrecto. Tiene dirección vertical hacia abajo, por lo que es vectorial.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Clasifica la temperatura ambiental medida en la ciudad de Quetzaltenango. Escribe si es 'escalar' o 'vectorial' en minúsculas:",
+                            "correctAnswer": "escalar",
+                            "hint": "La temperatura se define en su totalidad por un número y la escala de grados, sin orientación en el espacio.",
+                            "feedbackCorrect": "¡Excelente! La temperatura es una magnitud escalar.",
+                            "feedbackIncorrect": "Incorrecto. La temperatura no tiene dirección, es una magnitud 'escalar'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Es la fuerza de empuje de una grúa que jala un bus en Ciudad de Guatemala un vector?",
+                            "options": [
+                                "No, porque es una máquina física.",
+                                "Sí, porque para saber el efecto del jalón es indispensable definir la intensidad y la dirección de la fuerza.",
+                                "No, las fuerzas son escalares y el movimiento resultante es vectorial.",
+                                "Sí, pero solo si la grúa se desplaza en línea recta."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Las fuerzas son interacciones que deforman o cambian el movimiento en direcciones específicas.",
+                            "feedbackCorrect": "¡Excelente! Toda fuerza es un vector ya que su efecto depende de hacia dónde empuje o jale.",
+                            "feedbackIncorrect": "Incorrecto. Las fuerzas son magnitudes vectoriales obligatoriamente.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "¿Cómo se define de forma física y geométrica el 'módulo' de un vector?",
+                            "options": [
+                                "Es el ángulo de orientación medido respecto a la horizontal.",
+                                "Es el tamaño o longitud del vector, representado por un valor numérico siempre positivo.",
+                                "Es el punto exacto de aplicación u origen de la fuerza.",
+                                "Es la inversión de sentido del vector multiplicada por -1."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "El módulo representa la magnitud o 'largo' de la flecha del vector.",
+                            "feedbackCorrect": "¡Perfecto! El módulo cuantifica el tamaño absoluto del vector y siempre es positivo.",
+                            "feedbackIncorrect": "Incorrecto. El módulo es la longitud o intensidad absoluta del vector.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "Las magnitudes físicas se clasifican en escalares (solo valor y unidad) y vectoriales (módulo, unidad, dirección y sentido), siendo estas últimas fundamentales para modelar interacciones espaciales.",
+                    "videoPlaceholderText": "Video de Física: Diferencias fundamentales entre escalares y vectores con ejemplos cotidianos."
+                },
+                {
+                    "id": "representacion-grafica-vectores",
+                    "title": "Lección 1.2: Representación Gráfica de Vectores",
+                    "introduction": "Aprende a dibujar vectores como flechas dirigidas en el plano cartesiano empleando escalas geométricas adecuadas.",
+                    "explanationHtml": "<p>Gráficamente, un <strong>vector</strong> se representa mediante un segmento de recta dirigido (una flecha) trazado sobre un sistema de coordenadas. Sus elementos geométricos son:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Origen (o cola):</strong> Punto inicial de aplicación del vector ($P$).</li><li><strong>Extremo (o cabeza):</strong> Punta de la flecha que indica el sentido ($Q$).</li><li><strong>Línea de Acción:</strong> Recta infinita sobre la cual descansa el vector.</li><li><strong>Módulo:</strong> Longitud proporcional de la flecha dibujada según una escala establecida (ej. $1\\text{ cm} = 10\\text{ Newtons}$).</li><li><strong>Dirección:</strong> Ángulo $\\theta$ medido con respecto al eje X positivo en sentido antihorario (posición normal).</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Elementos del Vector Graficado</p><p class=\"text-xs font-mono font-bold text-primary\">Dirección (&theta;): Medido en sentido antihorario a partir del eje +X</p><p class=\"text-xs text-slate-500\">Sentido: Indicado por la punta de la flecha (ej. Noroeste, Suroeste).</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">DIBUJO DE VECTOR EN PLANO</text><line x1=\"40\" y1=\"90\" x2=\"260\" y2=\"90\" stroke=\"#94a3b8\" stroke-width=\"1\" /><line x1=\"150\" y1=\"25\" x2=\"150\" y2=\"105\" stroke=\"#94a3b8\" stroke-width=\"1\" /><line x1=\"150\" y1=\"90\" x2=\"90\" y2=\"40\" stroke=\"#2563eb\" stroke-width=\"2\" /><polygon points=\"90,44 85,36 94,39\" fill=\"#2563eb\" /><path d=\"M 150 90 A 20 20 0 0 0 170 90\" fill=\"none\" stroke=\"#e11d48\" stroke-width=\"1\" /><path d=\"M 150 90 A 20 20 0 0 1 102 70\" fill=\"none\" stroke=\"#059669\" stroke-width=\"1.5\" /><text x=\"115\" y=\"83\" font-size=\"8\" fill=\"#059669\" font-weight=\"bold\">143°</text><text x=\"158\" y=\"77\" font-size=\"8\" fill=\"#e11d48\" font-weight=\"bold\">37°</text><line x1=\"150\" y1=\"90\" x2=\"180\" y2=\"90\" stroke=\"#ef4444\" stroke-width=\"1\" stroke-dasharray=\"2,2\" /></svg>",
+                    "svgDescription": "Un vector de desplazamiento dibujado en el segundo cuadrante a 143° medido antihorariamente desde el eje X positivo. Se muestra el ángulo complementario de referencia de 37° con el eje X negativo.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Representa gráficamente un vector de desplazamiento de $50\\text{ metros}$ en dirección $143^\\circ$ (segundo cuadrante). ¿Cuál es su ángulo de referencia respecto al eje X negativo?</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1:</strong> Dibuja el eje cartesiano $X-Y$. Sitúa el origen en $(0,0)$.</li><li><strong>Paso 2:</strong> Mide $143^\\circ$ con el transportador desde el eje X positivo en sentido antihorario (girando a la izquierda). La línea cruzará al segundo cuadrante.</li><li><strong>Paso 3:</strong> Traza la flecha del vector. Si usamos la escala $1\\text{ cm} = 10\\text{ m}$, la flecha debe medir $5\\text{ cm}$.</li><li><strong>Paso 4 (Ángulo de Referencia):</strong> El eje X negativo está en la horizontal a $180^\\circ$. El ángulo de referencia $\\phi$ con el eje horizontal más cercano es: <br>$$\\phi = 180^\\circ - 143^\\circ = 37^\\circ$$</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> El vector se ubica en el segundo cuadrante, y su ángulo de referencia con el eje X negativo es de <strong>37°</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Medir ángulos en sentido horario:</strong> Los ángulos de dirección estándar siempre se miden girando en sentido antihorario a partir de la rama positiva del eje X.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "¿En qué cuadrante (números romanos: I, II, III, IV) del plano cartesiano se localiza un vector cuya dirección angular estándar es de 210°?",
+                            "correctAnswer": "III",
+                            "hint": "Compara los límites angulares de los cuadrantes: I (0° a 90°), II (90° a 180°), III (180° a 270°), IV (270° a 360°).",
+                            "feedbackCorrect": "¡Excelente! 210° cae entre 180° y 270°, perteneciendo al tercer cuadrante (III).",
+                            "feedbackIncorrect": "Incorrecto. 210° está en el tercer cuadrante (III), ya que es mayor a 180° y menor a 270°.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si defines una escala gráfica de 1 cm = 5 N, ¿cuántos cm debe medir la flecha física de un vector de fuerza de 35 N? (Ingresa solo el número):",
+                            "correctAnswer": "7",
+                            "hint": "Divide el módulo del vector de fuerza entre la escala establecida: 35 / 5.",
+                            "feedbackCorrect": "¡Perfecto! 35 N / 5 N/cm = 7 cm de longitud de flecha.",
+                            "feedbackIncorrect": "Incorrecto. Con la escala dada, 35 / 5 = 7 cm.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cuál es el sentido cardinal exacto de un vector situado sobre el eje Y negativo?",
+                            "options": [
+                                "Norte",
+                                "Sur",
+                                "Este",
+                                "Oeste"
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "El eje Y vertical apunta hacia arriba (Norte) en su lado positivo y hacia abajo (Sur) en su lado negativo.",
+                            "feedbackCorrect": "¡Excelente! El eje Y negativo corresponde al sentido cardinal Sur.",
+                            "feedbackIncorrect": "Incorrecto. Y negativo apunta verticalmente hacia abajo, lo que es el Sur.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Si un vector de velocidad apunta exactamente en dirección Sureste (SE), ¿cuál es su dirección angular en posición estándar?",
+                            "options": [
+                                "45°",
+                                "135°",
+                                "225°",
+                                "315°"
+                            ],
+                            "correctAnswer": 3,
+                            "hint": "El Sureste está a la mitad exacta del cuarto cuadrante. Resta 45° a 360° (o suma 270° + 45°).",
+                            "feedbackCorrect": "¡Perfecto! El Sureste en posición estándar es 360° - 45° = 315°.",
+                            "feedbackIncorrect": "Incorrecto. Está a 315° en posición estándar.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "¿Cómo se grafican dos vectores considerados opuestos?",
+                            "options": [
+                                "Como dos flechas perpendiculares que forman un ángulo recto.",
+                                "Como dos flechas de igual módulo (tamaño) y dirección (paralelas) pero sentidos contrarios.",
+                                "Como dos vectores que comparten la misma cabeza y cola en el origen.",
+                                "Como dos flechas que tienen diferente longitud y apuntan a 90°."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Vectores opuestos contrarrestan sus sentidos mutuamente sin cambiar su tamaño.",
+                            "feedbackCorrect": "¡Excelente! Son paralelos, del mismo tamaño, pero sus flechas apuntan a 180° de desfase.",
+                            "feedbackIncorrect": "Incorrecto. Tienen igual magnitud, dirección, pero sentidos contrarios.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "La representación gráfica de vectores mediante flechas a escala en el plano cartesiano permite visualizar la orientación de variables como fuerzas y desplazamientos de forma geométrica.",
+                    "videoPlaceholderText": "Video de Física: Cómo dibujar vectores a escala utilizando transportador y regla."
+                },
+                {
+                    "id": "sistemas-coordenadas-polares-cartesianas",
+                    "title": "Lección 1.3: Sistemas de Coordenadas",
+                    "introduction": "Domina la conversión analítica de vectores entre coordenadas polares $(R, \\theta)$ y cartesianas $(x, y)$ utilizando trigonometría.",
+                    "explanationHtml": "<p>En el plano bidimensional, un vector se puede definir bajo dos formatos de coordenadas equivalentes:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Coordenadas Polares $(R, \\theta)$:</strong> Expresan al vector por su magnitud o radio $R$ (longitud) y su ángulo de dirección $\\theta$. <br><em>Ejemplo:</em> $(10\\text{ m}, 30^\\circ)$.</li><li><strong>Coordenadas Cartesianas $(x, y)$:</strong> Expresan al vector por sus componentes rectangulares horizontal ($x$) y vertical ($y$). <br><em>Ejemplo:</em> $(8.66, 5.00)\\text{ m}$.</li></ul><p class=\"mt-2 font-bold text-slate-800\">Fórmulas de Conversión:</p><ul class=\"list-disc pl-5 space-y-1 my-2\"><li><strong>De Cartesianas a Polares:</strong> <br>$$R = \\sqrt{x^2 + y^2} \\quad \\theta = \\tan^{-1}\\left(\\frac{y}{x}\\right)$$</li><li><strong>De Polares a Cartesianas:</strong> <br>$$x = R \\cos(\\theta) \\quad y = R \\operatorname{sen}(\\theta)$$</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Conversión de Coordenadas</p><p class=\"text-xs font-mono font-bold text-primary\">x = R cos(&theta;) &nbsp;|&nbsp; y = R sen(&theta;)</p><p class=\"text-xs font-mono font-bold text-primary\">R = &radic;(x&sup2; + y&sup2;) &nbsp;|&nbsp; &theta; = arctan(y/x)</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">POLARES &lt;=&gt; CARTESIANAS</text><line x1=\"40\" y1=\"95\" x2=\"260\" y2=\"95\" stroke=\"#94a3b8\" stroke-width=\"1.5\" /><line x1=\"60\" y1=\"25\" x2=\"60\" y2=\"105\" stroke=\"#94a3b8\" stroke-width=\"1.5\" /><line x1=\"60\" y1=\"95\" x2=\"210\" y2=\"45\" stroke=\"#2563eb\" stroke-width=\"2.5\" stroke-linecap=\"round\" /><polygon points=\"210,49 214,42 206,44\" fill=\"#2563eb\" /><line x1=\"210\" y1=\"45\" x2=\"210\" y2=\"95\" stroke=\"#059669\" stroke-width=\"1.2\" stroke-dasharray=\"2,2\" /><line x1=\"60\" y1=\"45\" x2=\"210\" y2=\"45\" stroke=\"#d97706\" stroke-width=\"1\" stroke-dasharray=\"2,2\" /><path d=\"M 80 95 A 20 20 0 0 0 78 88\" fill=\"none\" stroke=\"#ef4444\" stroke-width=\"1.5\" /><text x=\"85\" y=\"90\" font-size=\"8\" fill=\"#ef4444\" font-weight=\"bold\">30°</text><text x=\"135\" y=\"60\" font-size=\"9\" fill=\"#1e40af\" font-weight=\"bold\">R = 10</text><text x=\"135\" y=\"105\" font-size=\"8\" fill=\"#b45309\" font-weight=\"bold\" text-anchor=\"middle\">x = 8.66</text><text x=\"222\" y=\"70\" font-size=\"8\" fill=\"#047857\" font-weight=\"bold\">y = 5.00</text></svg>",
+                    "svgDescription": "Un vector en el primer cuadrante con magnitud R = 10 y ángulo de 30 grados. Muestra mediante proyecciones punteadas los componentes cartesianos resultantes x = 8.66 e y = 5.00.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Un excursionista en Petén viaja en una dirección descrita por el vector polar $(10\\text{ km}, 30^\\circ)$. Expresa esta posición en coordenadas cartesianas.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1:</strong> Identifica los parámetros polares: magnitud $R = 10\\text{ km}$ y dirección $\\theta = 30^\\circ$.</li><li><strong>Paso 2:</strong> Calcula la componente horizontal $x$ con el coseno: <br>$$x = R \\cos(\\theta) = 10 \\cos(30^\\circ)$$ <br>Con $\\cos(30^\\circ) \\approx 0.866$: <br>$x = 10 \\times 0.866 = 8.66\\text{ km}$.</li><li><strong>Paso 3:</strong> Calcula la componente vertical $y$ con el seno: <br>$$y = R \\operatorname{sen}(\\theta) = 10 \\operatorname{sen}(30^\\circ)$$ <br>Con $\\operatorname{sen}(30^\\circ) = 0.50$: <br>$y = 10 \\times 0.50 = 5.00\\text{ km}$.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> El vector expresado en coordenadas cartesianas es <strong>(8.66, 5.00) km</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Intercambiar funciones trigonométricas:</strong> Usar el seno para la componente horizontal ($x$) y el coseno para la componente vertical ($y$). Recuerda que si el ángulo se mide con respecto a la horizontal, $x$ va con coseno e $y$ con seno.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Convierte el vector en coordenadas cartesianas (3, 4) cm a coordenadas polares en el primer cuadrante. Escribe en formato (magnitud,ángulo°) sin espacios (ej: (5,53.13°)):",
+                            "correctAnswer": "(5,53.13°)",
+                            "hint": "Calcula R = sqrt(3^2 + 4^2) = 5. Luego calcula el ángulo con arctan(4/3) ≈ 53.13°.",
+                            "feedbackCorrect": "¡Excelente! El vector en polares es (5,53.13°).",
+                            "feedbackIncorrect": "Incorrecto. R = 5, θ = arctan(4/3) ≈ 53.13°. Se representa como '(5,53.13°)'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Calcula el componente horizontal x en Newtons de un vector de fuerza cuya magnitud polar es de 50 N y tiene 60° de dirección. (Ingresa solo el número entero):",
+                            "correctAnswer": "25",
+                            "hint": "Usa la fórmula x = R * cos(theta). Reemplaza R = 50 y cos(60°) = 0.5.",
+                            "feedbackCorrect": "¡Excelente! x = 50 * cos(60°) = 50 * 0.5 = 25 N.",
+                            "feedbackIncorrect": "Incorrecto. x = 50 * cos(60°) = 50 * 0.5 = 25.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Convierte a coordenadas cartesianas el vector polar (8 m, 180°). Escribe la respuesta como par ordenado sin espacios (ej: (-8,0)):",
+                            "correctAnswer": "(-8,0)",
+                            "hint": "Aplica x = 8 * cos(180°) e y = 8 * sen(180°). Recuerda que cos(180°) = -1 y sen(180°) = 0.",
+                            "feedbackCorrect": "¡Perfecto! El vector es (-8,0).",
+                            "feedbackIncorrect": "Incorrecto. Apunta directamente a la izquierda: (-8,0).",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si las componentes de un vector son (-3, -3) m, ¿en qué cuadrante se localiza y cuál es su dirección angular en posición estándar?",
+                            "options": [
+                                "Segundo cuadrante, dirección de 135°",
+                                "Tercer cuadrante, dirección de 225°",
+                                "Tercer cuadrante, dirección de 45°",
+                                "Cuarto cuadrante, dirección de 315°"
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Al ser ambas componentes negativas, pertenece al tercer cuadrante. El ángulo base es arctan(-3/-3) = 45°. Suma 180° por estar en el III cuadrante.",
+                            "feedbackCorrect": "¡Excelente! Al estar en el tercer cuadrante, sumamos 180° al ángulo de referencia, resultando en 225°.",
+                            "feedbackIncorrect": "Incorrecto. Se localiza en el tercer cuadrante a una dirección de 225°.",
+                            "difficulty": "avanzado",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Calcula el módulo o magnitud en Newtons del vector cuyas componentes cartesianas son (12, 5) N. (Ingresa solo el número entero):",
+                            "correctAnswer": "13",
+                            "hint": "Aplica el Teorema de Pitágoras: R = sqrt(x^2 + y^2) = sqrt(12^2 + 5^2).",
+                            "feedbackCorrect": "¡Perfecto! R = sqrt(144 + 25) = sqrt(169) = 13 N.",
+                            "feedbackIncorrect": "Incorrecto. R = sqrt(12² + 5²) = sqrt(169) = 13.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        }
+                    ],
+                    "summaryHtml": "Las coordenadas polares y cartesianas describen el mismo vector mediante parámetros geométricos o componentes ortogonales. La trigonometría básica proporciona el puente bidireccional exacto de conversión.",
+                    "videoPlaceholderText": "Video de Física: Conversión entre coordenadas polares y cartesianas explicada desde cero."
+                }
+            ]
+        },
+        {
+            "title": "Unidad 2: Métodos Geométricos y Operaciones Básicas",
+            "lessons": [
+                {
+                    "id": "suma-grafica-vectores",
+                    "title": "Lección 2.1: Suma Gráfica de Vectores (Triángulo y Polígono)",
+                    "introduction": "Comprende la suma de vectores desde una perspectiva puramente visual utilizando los métodos del triángulo y del polígono.",
+                    "explanationHtml": "<p>A diferencia de los escalares, los vectores no se suman de forma puramente aritmética debido a sus direcciones. El **método gráfico** más elemental es el **método de cabeza y cola (o del polígono)**:</p><ol class=\"list-decimal pl-5 space-y-1.5 my-3\"><li><strong>Paso 1:</strong> Traza el primer vector $\\vec{A}$ a escala partiendo del origen del plano.</li><li><strong>Paso 2:</strong> Dibuja el segundo vector $\\vec{B}$ a escala, pero colocando su origen (cola) exactamente en la cabeza (extremo) del primer vector.</li><li><strong>Paso 3:</strong> Repite el proceso consecutivamente para todos los vectores que desees sumar.</li><li><strong>Paso 4:</strong> El <strong>vector resultante $\\vec{R}$</strong> es la flecha directa trazada desde el origen del primer vector hasta la punta o extremo del último vector.</li></ol>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Ley del Polígono</p><p class=\"text-xs font-mono font-bold text-primary\">R = A + B + C + ...</p><p class=\"text-xs text-slate-500\">Si el polígono se cierra sobre sí mismo (la punta del último toca la cola del primero), la resultante es cero.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">SUMA DE VECTORES: COLA A PUNTA</text><line x1=\"40\" y1=\"95\" x2=\"260\" y2=\"95\" stroke=\"#94a3b8\" stroke-width=\"1\" /><line x1=\"60\" y1=\"20\" x2=\"60\" y2=\"105\" stroke=\"#94a3b8\" stroke-width=\"1\" /><line x1=\"60\" y1=\"95\" x2=\"160\" y2=\"95\" stroke=\"#2563eb\" stroke-width=\"2.5\" stroke-linecap=\"round\" /><polygon points=\"160,91 170,95 160,99\" fill=\"#2563eb\" /><text x=\"110\" y=\"87\" font-size=\"8\" fill=\"#1e40af\" font-weight=\"bold\">Vector A (3m al Este)</text><line x1=\"170\" y1=\"95\" x2=\"170\" y2=\"40\" stroke=\"#f59e0b\" stroke-width=\"2.5\" stroke-linecap=\"round\" /><polygon points=\"166,40 170,30 174,40\" fill=\"#f59e0b\" /><text x=\"180\" y=\"65\" font-size=\"8\" fill=\"#b45309\" font-weight=\"bold\">Vector B (4m al Norte)</text><line x1=\"60\" y1=\"95\" x2=\"170\" y2=\"30\" stroke=\"#ef4444\" stroke-width=\"2\" stroke-linecap=\"round\" /><polygon points=\"164,34 170,30 172,38\" fill=\"#ef4444\" /><text x=\"100\" y=\"55\" font-size=\"10\" fill=\"#ef4444\" font-weight=\"bold\">Resultante R = 5m</text></svg>",
+                    "svgDescription": "Suma gráfica de dos vectores perpendiculares A (3m al Este) y B (4m al Norte) colocados uno a continuación del otro. Se traza el vector resultante R de magnitud 5m formando un triángulo rectángulo.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Un aventurero camina en el Parque Nacional Tikal $3\\text{ km}$ hacia el este y luego $4\\text{ km}$ hacia el norte. Dibuja e interpreta la suma gráfica resultante.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1:</strong> Traza el vector $\\vec{A}$ como una flecha horizontal de $3\\text{ cm}$ (escala $1\\text{ cm} = 1\\text{ km}$) apuntando hacia la derecha (este).</li><li><strong>Paso 2:</strong> Justo en la punta de la flecha de $\\vec{A}$, traza el vector $\\vec{B}$ vertical de $4\\text{ cm}$ hacia arriba (norte).</li><li><strong>Paso 3:</strong> Dibuja la línea resultante $\\vec{R}$ que va desde el inicio (origen de $\\vec{A}$) hasta la punta final de $\\vec{B}$.</li><li><strong>Paso 4:</strong> Mide con regla la resultante. Mide exactamente $5\\text{ cm}$, lo que equivale a $5\\text{ km}$ de desplazamiento en sentido noreste.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> El vector de desplazamiento neto resultante tiene un módulo de <strong>5 km</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Dibujar todos los vectores partiendo del origen común:</strong> Si los dibujas naciendo del mismo punto, estás aplicando erróneamente el método para fuerzas concurrentes pero no el método del polígono/triángulo, anulando la suma gráfica.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "¿Cómo se denomina formalmente al vector único que produce exactamente el mismo efecto físico que la suma de todos los vectores del sistema?",
+                            "options": [
+                                "Vector Equilibrante",
+                                "Vector Resultante",
+                                "Vector Nulo o Vacío",
+                                "Vector Ortogonal"
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Es el vector que 'resulta' de realizar la suma de todos los componentes.",
+                            "feedbackCorrect": "¡Excelente! Se llama vector resultante y representa la suma vectorial del sistema.",
+                            "feedbackIncorrect": "Incorrecto. Se le llama vector resultante.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Si sumas gráficamente un vector de fuerza de 10 N al Este con otro vector de fuerza de 10 N al Oeste, ¿cuánto vale el módulo de la fuerza resultante en Newtons? (Ingresa solo el número):",
+                            "correctAnswer": "0",
+                            "hint": "Ambos vectores son de igual módulo pero tienen sentidos exactamente opuestos. Se contrarrestan linealmente.",
+                            "feedbackCorrect": "¡Perfecto! Las fuerzas se cancelan, dando una resultante de 0 N.",
+                            "feedbackIncorrect": "Incorrecto. Al apuntar en sentidos opuestos con igual módulo, se restan: 10 - 10 = 0.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Caminas 8 metros hacia el Norte y luego 6 metros hacia el Sur en línea recta. ¿Cuál es la magnitud en metros de tu desplazamiento resultante neto? (Ingresa solo el número):",
+                            "correctAnswer": "2",
+                            "hint": "Representa el movimiento: +8 en el eje vertical positivo, y luego -6 hacia abajo. Resta algebraicamente.",
+                            "feedbackCorrect": "¡Excelente! Te has desplazado 2 metros netos hacia el Norte respecto al origen.",
+                            "feedbackIncorrect": "Incorrecto. El desplazamiento resultante es la distancia neta al origen: 8 - 6 = 2.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "En el método gráfico del triángulo, ¿dónde se sitúa de forma exacta el origen o cola del vector resultante?",
+                            "options": [
+                                "En la cabeza del último vector sumado.",
+                                "En el origen o cola del primer vector de la secuencia de suma.",
+                                "En el centro geométrico del triángulo formado.",
+                                "En el vértice opuesto al ángulo recto."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "El vector resultante cierra el camino trazado, partiendo de donde empezó todo.",
+                            "feedbackCorrect": "¡Perfecto! El vector resultante siempre nace en el origen del primer vector y muere en la punta del último.",
+                            "feedbackIncorrect": "Incorrecto. Nace en la cola o inicio del primer vector.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Si sumas tres vectores coplanares y al dibujarlos la cabeza del tercer vector coincide exactamente con la cola del primer vector (cerrando el triángulo continuo), ¿cuánto vale el módulo de su resultante?",
+                            "correctAnswer": "0",
+                            "hint": "Si terminas exactamente en el mismo punto donde iniciaste la caminata, no te has desplazado de tu posición inicial.",
+                            "feedbackCorrect": "¡Excelente! Al cerrarse la trayectoria continua, la resultante neta es exactamente cero (vector nulo).",
+                            "feedbackIncorrect": "Incorrecto. Si la figura gráfica se cierra de forma continua sobre sí misma, la resultante es 0.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        }
+                    ],
+                    "summaryHtml": "La suma gráfica de vectores (cabeza y cola) establece la base geométrica intuitiva de la resultante, modelando trayectorias físicas de forma visual.",
+                    "videoPlaceholderText": "Video de Física: Suma de vectores por el método del polígono y del triángulo."
+                },
+                {
+                    "id": "metodo-del-paralelogramo",
+                    "title": "Lección 2.2: Método del Paralelogramo",
+                    "introduction": "Aprende a sumar dos vectores concurrentes que comparten el mismo origen geométrico y calcula la resultante analíticamente.",
+                    "explanationHtml": "<p>El <strong>método del paralelogramo</strong> es un procedimiento gráfico y analítico útil para sumar dos vectores concurrentes (que parten del mismo origen). Consiste en dibujar líneas paralelas a cada vector en sus extremos para cerrar un paralelogramo. La resultante $\\vec{R}$ es la diagonal que nace del origen común.</p><p>Para calcular analíticamente el módulo de la resultante, empleamos la ley de cosenos adaptada para suma vectorial:</p><p class=\"text-center font-mono font-extrabold text-primary text-base my-2\">$$R = \\sqrt{A^2 + B^2 + 2AB \\cos(\\theta)}$$</p><p class=\"mt-2\">Donde $\\theta$ es el ángulo formado entre ambos vectores naciendo de su origen común. (Nota el signo **positivo** del término duplicado, a diferencia de la ley de cosenos para triángulos ordinarios).</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Fórmula de Resultante Concurrente</p><p class=\"text-xs font-mono font-bold text-primary\">R = &radic;(A&sup2; + B&sup2; + 2AB cos(&theta;))</p><p class=\"text-xs text-slate-500\">Si &theta; = 90&deg;, cos(90&deg;) = 0 &rArr; R = &radic;(A&sup2; + B&sup2;) (Teorema de Pitágoras clásico).</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">MÉTODO DEL PARALELOGRAMO</text><line x1=\"60\" y1=\"95\" x2=\"160\" y2=\"95\" stroke=\"#2563eb\" stroke-width=\"2.5\" stroke-linecap=\"round\" /><polygon points=\"160,91 170,95 160,99\" fill=\"#2563eb\" /><text x=\"115\" y=\"105\" font-size=\"8\" fill=\"#1e40af\" font-weight=\"bold\">F1 = 3 N</text><line x1=\"60\" y1=\"95\" x2=\"110\" y2=\"45\" stroke=\"#2563eb\" stroke-width=\"2.5\" stroke-linecap=\"round\" /><polygon points=\"110,49 114,42 106,44\" fill=\"#2563eb\" /><text x=\"75\" y=\"45\" font-size=\"8\" fill=\"#1e40af\" font-weight=\"bold\">F2 = 4 N</text><line x1=\"170\" y1=\"95\" x2=\"220\" y2=\"45\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"2,2\" /><line x1=\"110\" y1=\"45\" x2=\"220\" y2=\"45\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"2,2\" /><line x1=\"60\" y1=\"95\" x2=\"220\" y2=\"45\" stroke=\"#ef4444\" stroke-width=\"2\" stroke-linecap=\"round\" /><polygon points=\"218,50 220,45 214,46\" fill=\"#ef4444\" /><text x=\"150\" y=\"65\" font-size=\"10\" fill=\"#ef4444\" font-weight=\"bold\">R ≈ 6.08 N</text><path d=\"M 80 95 A 20 20 0 0 0 75 80\" fill=\"none\" stroke=\"#ef4444\" stroke-width=\"1\" /><text x=\"85\" y=\"90\" font-size=\"7\" fill=\"#ef4444\">60°</text></svg>",
+                    "svgDescription": "Dos vectores F1 de 3 N y F2 de 4 N que nacen del mismo origen formando un ángulo de 60 grados. Líneas punteadas completan el paralelogramo, y una diagonal roja muestra la fuerza resultante R de 6.08 N.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Dos fuerzas concurrentes de $F_1 = 3\\text{ N}$ y $F_2 = 4\\text{ N}$ tiran de un mismo gancho con un ángulo de $60^\\circ$ entre ellas. Calcula la magnitud analítica de la fuerza resultante.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1:</strong> Identifica que los vectores son concurrentes y conoces el ángulo entre ellos. Aplica la variante vectorial de la Ley de Cosenos: <br>$$R = \\sqrt{F_1^2 + F_2^2 + 2F_1F_2 \\cos(\\theta)}$$</li><li><strong>Paso 2:</strong> Reemplaza con los valores conocidos: <br>$$R = \\sqrt{3^2 + 4^2 + 2(3)(4) \\cos(60^\\circ)}$$</li><li><strong>Paso 3:</strong> Opera los cuadrados y la multiplicación: <br>$$R = \\sqrt{9 + 16 + 24 \\cos(60^\\circ)}$$</li><li><strong>Paso 4:</strong> Reemplaza el coseno notable $\\cos(60^\\circ) = 0.5$: <br>$$R = \\sqrt{25 + 24(0.5)} = \\sqrt{25 + 12} = \\sqrt{37}$$</li><li><strong>Paso 5:</strong> Extrae la raíz cuadrada de $37$: $R \\approx 6.08\\text{ Newtons}$.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> La magnitud de la fuerza resultante es de aproximadamente <strong>6.08 N</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Usar el signo menos del teorema trigonométrico clásico:</strong> Aplicar $-2AB\\cos(\\theta)$ en lugar de la suma $+2AB\\cos(\\theta)$. Recuerda que para la diagonal larga del paralelogramo vectorial (resultante de la suma), el término duplicado se suma.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Si dos vectores de módulos 5 y 12 actúan de forma perpendicular (ángulo de 90°), calcula el módulo de la resultante. (Ingresa solo el número entero):",
+                            "correctAnswer": "13",
+                            "hint": "Dado que cos(90°) = 0, el término duplicado se anula por completo, reduciendo la fórmula a Pitágoras: R = sqrt(5^2 + 12^2).",
+                            "feedbackCorrect": "¡Excelente! R = sqrt(25 + 144) = sqrt(169) = 13.",
+                            "feedbackIncorrect": "Incorrecto. Se reduce a Pitágoras: sqrt(5² + 12²) = 13.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si tienes dos vectores de fuerza de magnitudes 10 N y 6 N, ¿cuál es el rango de magnitud posible (mínima y máxima) para la fuerza resultante final al variar el ángulo entre ellos?",
+                            "options": [
+                                "De 0 N a 16 N",
+                                "De 4 N a 16 N",
+                                "De 6 N a 10 N",
+                                "Siempre es exactamente 11.66 N"
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "La resultante máxima ocurre cuando apuntan en el mismo sentido (suma directa: 10 + 6). La mínima cuando son opuestos (resta directa: 10 - 6).",
+                            "feedbackCorrect": "¡Excelente! Rango de magnitud va desde la diferencia (4 N) hasta la suma (16 N).",
+                            "feedbackIncorrect": "Incorrecto. La resultante varía entre |A-B| (4 N) y A+B (16 N).",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Calcula el módulo en Newtons de la resultante de dos vectores de 3 N y 5 N que apuntan exactamente en la misma dirección (ángulo de 0°). (Ingresa solo el número entero):",
+                            "correctAnswer": "8",
+                            "hint": "Cuando dos vectores tienen un ángulo de 0°, cos(0°) = 1, lo que permite sumarlos de forma aritmética directa: A + B.",
+                            "feedbackCorrect": "¡Excelente! Al apuntar al mismo sentido, se suman de forma directa: 3 + 5 = 8 Newtons.",
+                            "feedbackIncorrect": "Incorrecto. Si van al mismo sentido, se suman aritméticamente: 3 + 5 = 8.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Dos vectores de igual módulo F forman un ángulo de 120° entre sí. Calcula el módulo de la resultante en términos de F.",
+                            "options": [
+                                "F * &radic;3",
+                                "F / 2",
+                                "F",
+                                "2F"
+                            ],
+                            "correctAnswer": 2,
+                            "hint": "Usa la ley de cosenos con A=F, B=F y cos(120°) = -0.5. Desarrolla y simplifica los términos.",
+                            "feedbackCorrect": "¡Excelente! R = sqrt(F² + F² + 2F²(-0.5)) = sqrt(2F² - F²) = sqrt(F²) = F. Se forma un triángulo equilátero.",
+                            "feedbackIncorrect": "Incorrecto. A 120°, la resultante de dos vectores idénticos es exactamente igual a F.",
+                            "difficulty": "avanzado",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "¿Qué dirección geométrica tiene el vector resultante de dos vectores coplanares de igual módulo que nacen del mismo origen?",
+                            "options": [
+                                "Apunta a 90° de ambos vectores.",
+                                "Es la bisectriz exacta del ángulo formado por los dos vectores.",
+                                "Apunta en sentido opuesto al vector más largo.",
+                                "Tiene una dirección de 45° en todos los casos."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Al ser de igual módulo, el paralelogramo es un rombo perfecto. La diagonal divide al ángulo en partes iguales.",
+                            "feedbackCorrect": "¡Perfecto! Al ser de idéntica magnitud, la resultante divide al ángulo exactamente por la mitad (bisectriz).",
+                            "feedbackIncorrect": "Incorrecto. Divide al ángulo a la mitad, actuando como la bisectriz.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "El método del paralelogramo unifica la suma de vectores concurrentes. La variante de la Ley de Cosenos ($R = \\sqrt{A^2 + B^2 + 2AB \\cos\\theta}$) permite calcular magnitudes resultantes para cualquier abertura angular.",
+                    "videoPlaceholderText": "Video de Física: Suma de fuerzas concurrentes por el método del paralelogramo analítico."
+                },
+                {
+                    "id": "multiplicacion-vector-escalar",
+                    "title": "Lección 2.3: Multiplicación de un Vector por un Escalar",
+                    "introduction": "Descubre cómo los números reales (escalares) pueden contraer, dilatar o invertir el sentido de un vector físico.",
+                    "explanationHtml": "<p>Multiplicar un vector $\\vec{A}$ por un número real llamado <strong>escalar ($k$)</strong> produce un nuevo vector $\\vec{B} = k\\vec{A}$. Las propiedades del nuevo vector son:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Módulo:</strong> Se multiplica linealmente por el valor absoluto del escalar: <br>$$|\\vec{B}| = |k| \\cdot |\\vec{A}|$$</li><li><strong>Dirección:</strong> La línea de acción y dirección angular base se conserva paralela en todos los casos.</li><li><strong>Sentido:</strong> <br>-- Si $k$ es **positivo ($k > 0$)**, el sentido del vector se mantiene **idéntico**. <br>-- Si $k$ es **negativo ($k < 0$)**, el sentido del vector se **invierte por completo** ($180^\\circ$ de desfase).</li></ul><p class=\"mt-2 text-slate-700\">Analíticamente, multiplicamos cada componente del vector cartesiano por el escalar: $k(x, y) = (kx, ky)$.</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Operación Escalar</p><p class=\"text-xs font-mono font-bold text-primary\">k &bull; (Ax, Ay) = (kAx, kAy)</p><p class=\"text-xs text-slate-500\">Ejemplo: -2 &bull; (3, -4) = (-6, 8).</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">ESCALADO DE VECTORES</text><line x1=\"40\" y1=\"90\" x2=\"260\" y2=\"90\" stroke=\"#94a3b8\" stroke-width=\"1\" /><line x1=\"150\" y1=\"25\" x2=\"150\" y2=\"105\" stroke=\"#94a3b8\" stroke-width=\"1\" /><line x1=\"150\" y1=\"90\" x2=\"190\" y2=\"70\" stroke=\"#2563eb\" stroke-width=\"2.5\" stroke-linecap=\"round\" /><polygon points=\"190,74 194,68 186,70\" fill=\"#2563eb\" /><text x=\"175\" y=\"60\" font-size=\"8\" fill=\"#1e40af\" font-weight=\"bold\">u = (2,1)</text><line x1=\"150\" y1=\"90\" x2=\"230\" y2=\"50\" stroke=\"#059669\" stroke-width=\"1.5\" stroke-linecap=\"round\" /><polygon points=\"230,54 234,48 226,50\" fill=\"#059669\" /><text x=\"215\" y=\"42\" font-size=\"8\" fill=\"#047857\" font-weight=\"bold\">2u = (4,2)</text><line x1=\"150\" y1=\"90\" x2=\"110\" y2=\"110\" stroke=\"#ef4444\" stroke-width=\"1.5\" stroke-linecap=\"round\" /><polygon points=\"110,106 106,112 114,110\" fill=\"#ef4444\" /><text x=\"115\" y=\"105\" font-size=\"8\" fill=\"#991b1b\" font-weight=\"bold\">-u = (-2,-1)</text></svg>",
+                    "svgDescription": "Gráfica que muestra un vector base u = (2, 1) en azul, su duplicado escalar 2u = (4, 2) en verde (mismo sentido, doble tamaño), y su opuesto -u = (-2, -1) en rojo (sentido invertido).",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Un auto de carreras viaja a velocidad constante descrita por el vector cartesiano $\\vec{v} = (3, 4)\\text{ m/s}$. Si el piloto acelera al triple de velocidad, ¿cuál es su nuevo vector de velocidad?</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1:</strong> Identifica el escalar de aumento: $k = 3$.</li><li><strong>Paso 2:</strong> Multiplica analíticamente cada componente del vector cartesiano de velocidad por el escalar: <br>$$\\vec{v}_{\\text{nuevo}} = 3 \\cdot (3\\text{ m/s}, 4\\text{ m/s}) = (3 \\cdot 3, 3 \\cdot 4)\\text{ m/s}$$</li><li><strong>Paso 3:</strong> Opera aritméticamente: $\\vec{v}_{\\text{nuevo}} = (9, 12)\\text{ m/s}$.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> El nuevo vector de velocidad es de <strong>(9, 12) m/s</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Olvidar el signo en la magnitud final:</strong> Escribir que la magnitud de $-2\\vec{A}$ es $-20$ cm. ¡Error! Las magnitudes y módulos de vectores son longitudes físicas reales, por lo que siempre deben expresarse con valores positivos ($+20$ cm).</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Si un vector de fuerza A tiene una magnitud de 10 cm, ¿cuál es el módulo del vector resultante -2A en cm? (Ingresa solo el número positivo):",
+                            "correctAnswer": "20",
+                            "hint": "El módulo o magnitud física representa un tamaño absoluto, por lo que es inmune a signos de dirección. Multiplica 10 por el valor absoluto |-2|.",
+                            "feedbackCorrect": "¡Excelente! Magnitud = | -2 | * 10 = 20 cm.",
+                            "feedbackIncorrect": "Incorrecto. El módulo siempre es positivo: |-2| * 10 = 20 cm.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Qué le ocurre exactamente al sentido de un vector si es multiplicado por el escalar real de valor -1?",
+                            "options": [
+                                "Permanece idéntico pero su magnitud colapsa a cero.",
+                                "Se gira en un ángulo recto de 90° respecto a la horizontal.",
+                                "Se invierte por completo hacia la dirección exactamente opuesta (180° de desfase).",
+                                "La dirección se mantiene paralela pero el módulo se duplica."
+                            ],
+                            "correctAnswer": 2,
+                            "hint": "Multiplicar por -1 cambia el sentido de la punta de la flecha al extremo contrario en la misma recta.",
+                            "feedbackCorrect": "¡Perfecto! Invertir el signo cambia el sentido a su opuesto con 180° de desfase angular.",
+                            "feedbackIncorrect": "Incorrecto. Se invierte exactamente en el sentido opuesto.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Si el vector A es igual a (5, -2) N, calcula las componentes cartesianas del vector resultante de la operación 4A. Escribe la respuesta como par ordenado sin espacios (ej: (20,-8)):",
+                            "correctAnswer": "(20,-8)",
+                            "hint": "Multiplica cada componente (horizontal x y vertical y) de forma independiente por el escalar 4: 4*5 y 4*-2.",
+                            "feedbackCorrect": "¡Excelente! 4 * (5, -2) = (20, -8) N.",
+                            "feedbackIncorrect": "Incorrecto. Multiplica cada parte por 4: (20, -8).",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si multiplicas un vector que tiene dirección angular estándar de 45° por el escalar negativo -3, ¿cuál es la dirección angular en grados del nuevo vector resultante?",
+                            "correctAnswer": "225",
+                            "hint": "Multiplicar por un escalar negativo gira el vector exactamente 180° respecto a su posición original. Suma 45° + 180°.",
+                            "feedbackCorrect": "¡Perfecto! Al invertirse, la dirección es 45° + 180° = 225°.",
+                            "feedbackIncorrect": "Incorrecto. Suma 180° al ángulo original por ser un escalar negativo: 45° + 180° = 225°.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cómo se define de forma rigurosa un 'vector unitario' en física?",
+                            "options": [
+                                "Es un vector que tiene un módulo exactamente igual a 0.",
+                                "Es un vector sin dimensiones físicas cuya magnitud o módulo es exactamente igual a 1.",
+                                "Es un vector que solo tiene componentes en el eje X.",
+                                "Es el vector resultante de multiplicar por 10."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Se representan comúnmente como i, j, k y sirven para marcar de forma pura una dirección espacial.",
+                            "feedbackCorrect": "¡Excelente! Un vector unitario tiene un módulo inmune de 1 y sirve exclusivamente para indicar dirección.",
+                            "feedbackIncorrect": "Incorrecto. Es un vector sin dimensiones de magnitud exactamente igual a 1.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "La multiplicación de un vector por un escalar amplifica, reduce o invierte la intensidad y sentido de la variable vectorial manteniéndola paralela en su dirección base.",
+                    "videoPlaceholderText": "Video de Física: Multiplicación de un vector por un escalar de forma analítica y gráfica."
+                }
+            ]
+        },
+        {
+            "title": "Unidad 3: Componentes Rectangulares y Aplicaciones",
+            "lessons": [
+                {
+                    "id": "descomposicion-vectores-componentes",
+                    "title": "Lección 3.1: Descomposición de Vectores en Componentes",
+                    "introduction": "Aprende a proyectar un vector inclinado sobre las componentes ortogonales X e Y empleando funciones trigonométricas.",
+                    "explanationHtml": "<p>Descomponer un vector consiste en dividir su efecto tridimensional o bidimensional en **componentes ortogonales independientes** alineadas con los ejes rectangulares del plano cartesiano ($X, Y$).</p><p>Si medimos el ángulo de dirección estándar $\\theta$ respecto a la horizontal (eje X positivo), los componentes se calculan de forma exacta como:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Componente Horizontal ($A_x$):</strong> <br>$$A_x = A \\cos(\\theta)$$</li><li><strong>Componente Vertical ($A_y$):</strong> <br>$$A_y = A \\operatorname{sen}(\\theta)$$</li></ul><p class=\"mt-2\">Donde $A$ representa el módulo o magnitud total del vector de fuerza, velocidad o desplazamiento.</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Proyección de Componentes</p><p class=\"text-xs font-mono font-bold text-primary\">Ax = A cos(&theta;) &nbsp;|&nbsp; Ay = A sen(&theta;)</p><p class=\"text-xs text-slate-550\">Nota: Si el ángulo se define respecto a la vertical, los roles trigonométricos de sen/cos se invierten.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">DESCOMPOSICIÓN DE FUERZA</text><line x1=\"40\" y1=\"95\" x2=\"260\" y2=\"95\" stroke=\"#94a3b8\" stroke-width=\"1.5\" /><line x1=\"60\" y1=\"25\" x2=\"60\" y2=\"105\" stroke=\"#94a3b8\" stroke-width=\"1.5\" /><line x1=\"60\" y1=\"95\" x2=\"200\" y2=\"45\" stroke=\"#2563eb\" stroke-width=\"2.5\" stroke-linecap=\"round\" /><polygon points=\"200,49 204,42 196,44\" fill=\"#2563eb\" /><line x1=\"200\" y1=\"45\" x2=\"200\" y2=\"95\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"2,2\" /><line x1=\"60\" y1=\"45\" x2=\"200\" y2=\"45\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"2,2\" /><text x=\"130\" y=\"62\" font-size=\"9\" fill=\"#1e40af\" font-weight=\"bold\">F = 40 N</text><path d=\"M 80 95 A 20 20 0 0 0 78 86\" fill=\"none\" stroke=\"#ef4444\" stroke-width=\"1.5\" /><text x=\"85\" y=\"90\" font-size=\"8\" fill=\"#ef4444\" font-weight=\"bold\">30°</text><text x=\"130\" y=\"107\" font-size=\"8\" fill=\"#b45309\" font-weight=\"bold\" text-anchor=\"middle\">Fx = 34.64 N</text><text x=\"210\" y=\"70\" font-size=\"8\" fill=\"#047857\" font-weight=\"bold\">Fy = 20 N</text></svg>",
+                    "svgDescription": "Un vector de fuerza F = 40 N a 30 grados. Muestra las componentes rectangulares proyectadas en los ejes: Fx horizontal de 34.64 N y Fy vertical de 20 N.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Un niño jala un carrito de madera en una plaza de Antigua Guatemala aplicando una fuerza de $40\\text{ Newtons}$ a través de una cuerda inclinada a $30^\\circ$ con el suelo. Calcula la componente horizontal de la fuerza que realmente tira del carrito.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1:</strong> Identifica los datos: Magnitud de la fuerza $F = 40\\text{ N}$, dirección angular horizontal $\\theta = 30^\\circ$.</li><li><strong>Paso 2:</strong> Plantea la ecuación de la componente horizontal ($x$) con coseno: <br>$$F_x = F \\cos(\\theta)$$</li><li><strong>Paso 3:</strong> Reemplaza y opera: $F_x = 40 \\cos(30^\\circ)$. <br>Con $\\cos(30^\\circ) \\approx 0.866$: <br>$F_x = 40 \\times 0.866 = 34.64\\text{ Newtons}$.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> La componente de fuerza útil horizontal es de <strong>34.64 Newtons</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Asumir que X siempre es con coseno e Y con seno:</strong> Esto es correcto únicamente si el ángulo se mide con respecto a la horizontal. Si se define respecto a la vertical, las componentes se invierten ($A_x = A\\operatorname{sen}\\theta$ y $A_y = A\\cos\\theta$). Lee siempre el enunciado con cuidado.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Calcula la componente vertical en Newtons de una fuerza de 100 N aplicada con una inclinación de 45° respecto al suelo. (Usa sen(45°) ≈ 0.707. Ingresa decimal con punto, ej: 70.7):",
+                            "correctAnswer": "70.7",
+                            "hint": "Usa la fórmula vertical: Fy = F * sen(theta). Reemplaza F = 100 y sen(45°) ≈ 0.707.",
+                            "feedbackCorrect": "¡Excelente! Fy = 100 * 0.707 = 70.7 N.",
+                            "feedbackIncorrect": "Incorrecto. Fy = 100 * sen(45°) = 70.7.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Un vector de velocidad de magnitud 20 m/s apunta en dirección de 270° (hacia abajo). Escribe sus componentes cartesianos en formato (x,y) sin espacios (ej: (0,-20)):",
+                            "correctAnswer": "(0,-20)",
+                            "hint": "Aplica x = 20*cos(270°) e y = 20*sen(270°). Recuerda que cos(270°) = 0 y sen(270°) = -1.",
+                            "feedbackCorrect": "¡Perfecto! El vector cartesiano es (0,-20). No tiene componente horizontal.",
+                            "feedbackIncorrect": "Incorrecto. Apunta directo en el eje y negativo: '(0,-20)'.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Calcula la componente horizontal x en metros de un vector de desplazamiento de 12 m de longitud a una dirección angular de 120° en posición normal. (Ingresa solo el número entero, incluyendo signo si aplica):",
+                            "correctAnswer": "-6",
+                            "hint": "Usa Ax = A * cos(theta). Reemplaza A = 12 y cos(120°) = -0.5.",
+                            "feedbackCorrect": "¡Excelente! Ax = 12 * cos(120°) = 12 * -0.5 = -6 m.",
+                            "feedbackIncorrect": "Incorrecto. Ax = 12 * cos(120°) = 12 * -0.5 = -6.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si un vector tiene componentes Ax = 8 N y Ay = -8 N, ¿cuál es su dirección angular en grados en posición normal?",
+                            "options": [
+                                "45°",
+                                "135°",
+                                "225°",
+                                "315°"
+                            ],
+                            "correctAnswer": 3,
+                            "hint": "x es positiva e y es negativa, por ende el vector está en el cuarto cuadrante. El ángulo es 360° - 45°.",
+                            "feedbackCorrect": "¡Excelente! Al ubicarse en el cuarto cuadrante con componentes de igual módulo, la dirección es 315°.",
+                            "feedbackIncorrect": "Incorrecto. Está en el cuarto cuadrante a una dirección de 315°.",
+                            "difficulty": "avanzado",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "¿Qué significa de forma geométrica que dos componentes de un vector sean ortogonales?",
+                            "options": [
+                                "Que apuntan en la misma dirección y sentido.",
+                                "Que son perpendiculares entre sí, formando un ángulo de 90°.",
+                                "Que tienen magnitudes contrarias de signos inversos.",
+                                "Que se anulan mutuamente dando un vector resultante cero."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Las proyecciones cartesianas sobre los ejes X e Y forman una esquina recta.",
+                            "feedbackCorrect": "¡Perfecto! Ortogonales significa perpendiculares, formando un ángulo de 90°.",
+                            "feedbackIncorrect": "Incorrecto. Significa que son mutuamente perpendiculares (forman 90°).",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "La descomposición rectangular de vectores proyecta fuerzas y velocidades sobre ejes coordenados perpendiculares independientes empleando las funciones seno y coseno.",
+                    "videoPlaceholderText": "Video de Física: Cómo descomponer un vector en sus componentes cartesianas."
+                },
+                {
+                    "id": "suma-analitica-vectores-componentes",
+                    "title": "Lección 3.2: Suma Analítica de Vectores por Componentes",
+                    "introduction": "Descubre el método analítico, el procedimiento más exacto y riguroso para sumar cualquier cantidad de vectores.",
+                    "explanationHtml": "<p>El <strong>método analítico por componentes</strong> es el procedimiento de suma más exacto y robusto en física, ya que evita las imprecisiones instrumentales de los dibujos a mano. El algoritmo sistemático es:</p><ol class=\"list-decimal pl-5 space-y-2 my-3\"><li><strong>Paso 1 (Descomponer):</strong> Calcula los componentes horizontales ($A_x$) y verticales ($A_y$) de cada vector utilizando las funciones $\\cos(\\theta)$ y $\\operatorname{sen}(\\theta)$.</li><li><strong>Paso 2 (Sumar X):</strong> Suma algebraicamente todas las componentes horizontales para hallar la resultante horizontal: <br>$$R_x = \\sum A_x = A_{1x} + B_{2x} + C_{3x} + ...$$</li><li><strong>Paso 3 (Sumar Y):</strong> Suma algebraicamente todas las componentes verticales para hallar la resultante vertical: <br>$$R_y = \\sum A_y = A_{1y} + B_{2y} + C_{3y} + ...$$</li><li><strong>Paso 4 (Reconstruir):</strong> Calcula la magnitud de la resultante total mediante Pitágoras: <br>$$R = \\sqrt{R_x^2 + R_y^2}$$</li><li><strong>Paso 5 (Dirección):</strong> Determina el ángulo de dirección: $\\theta = \\tan^{-1}\\left|\\frac{R_y}{R_x}\\right|$, ajustando su cuadrante según el signo de $R_x$ y $R_y$.</li></ol>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Algoritmo de Suma Analítica</p><p class=\"text-xs font-mono font-bold text-primary\">Rx = &Sigma;Ax &nbsp;|&nbsp; Ry = &Sigma;Ay &nbsp;|&nbsp; R = &radic;(Rx&sup2; + Ry&sup2;)</p><p class=\"text-xs text-slate-550\">Ten cuidado con los signos negativos de los componentes al sumar.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">RECONSTRUCCIÓN DE RESULTANTE</text><line x1=\"40\" y1=\"95\" x2=\"260\" y2=\"95\" stroke=\"#94a3b8\" stroke-width=\"1\" /><line x1=\"60\" y1=\"20\" x2=\"60\" y2=\"105\" stroke=\"#94a3b8\" stroke-width=\"1\" /><line x1=\"60\" y1=\"95\" x2=\"160\" y2=\"95\" stroke=\"#b45309\" stroke-width=\"2\" stroke-linecap=\"round\" /><text x=\"110\" y=\"105\" font-size=\"8\" fill=\"#b45309\" font-weight=\"bold\">Rx = 5</text><line x1=\"160\" y1=\"95\" x2=\"160\" y2=\"35\" stroke=\"#047857\" stroke-width=\"2\" stroke-linecap=\"round\" /><text x=\"170\" y=\"65\" font-size=\"8\" fill=\"#047857\" font-weight=\"bold\">Ry = 10</text><line x1=\"60\" y1=\"95\" x2=\"160\" y2=\"35\" stroke=\"#ef4444\" stroke-width=\"2.5\" stroke-linecap=\"round\" /><polygon points=\"158,40 160,35 154,37\" fill=\"#ef4444\" /><text x=\"100\" y=\"55\" font-size=\"9\" fill=\"#991b1b\" font-weight=\"bold\">R = 11.18 N</text></svg>",
+                    "svgDescription": "Diagrama que muestra la reconstrucción analítica del vector resultante R a partir de sus componentes acumulados Rx = 5 y Ry = 10, aplicando el teorema de Pitágoras.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Suma analíticamente los vectores concurrentes de fuerza: $\\vec{A} = (5\\text{ N}, 0^\\circ)$ y $\\vec{B} = (10\\text{ N}, 90^\\circ)$.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1:</strong> Descompón cada vector en sus componentes $(x, y)$: <br>-- Vector A: $A_x = 5 \\cos(0^\\circ) = 5\\text{ N}$, $A_y = 5 \\operatorname{sen}(0^\\circ) = 0\\text{ N}$. <br>-- Vector B: $B_x = 10 \\cos(90^\\circ) = 0\\text{ N}$, $B_y = 10 \\operatorname{sen}(90^\\circ) = 10\\text{ N}$.</li><li><strong>Paso 2:</strong> Suma las componentes horizontales: $R_x = 5 + 0 = 5\\text{ Newtons}$.</li><li><strong>Paso 3:</strong> Suma las componentes verticales: $R_y = 0 + 10 = 10\\text{ Newtons}$.</li><li><strong>Paso 4:</strong> Reconstruye la magnitud resultante: <br>$$R = \\sqrt{R_x^2 + R_y^2} = \\sqrt{5^2 + 10^2} = \\sqrt{25 + 100} = \\sqrt{125} \\approx 11.18\\text{ N}$$</li><li><strong>Paso 5:</strong> Determina la dirección angular: <br>$$\\theta = \\tan^{-1}\\left(\\frac{10}{5}\\right) = \\tan^{-1}(2) \\approx 63.43^\\circ$$</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> El vector de fuerza resultante tiene un módulo de <strong>11.18 N</strong> y una dirección de <strong>63.43°</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Olvidar colocar los signos a las componentes:</strong> No asignar signo negativo a las componentes que apuntan hacia el oeste (-X) o sur (-Y). Esto provoca una suma incorrecta de las fuerzas acumuladas.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Suma los vectores en formato cartesiano: A = (3, 5) N y B = (-2, -3) N. Escribe el vector resultante en formato (x,y) sin espacios (ej: (1,2)):",
+                            "correctAnswer": "(1,2)",
+                            "hint": "Suma las componentes x de forma independiente (3 + -2) y las componentes y (5 + -3).",
+                            "feedbackCorrect": "¡Excelente! El vector resultante es (1,2) N.",
+                            "feedbackIncorrect": "Incorrecto. Suma término a término: (3-2, 5-3) = (1,2).",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Calcula el módulo resultante exacto de tres fuerzas concurrentes de 10 N, 20 N y 30 N que apuntan todas en sentido Norte (90°). (Ingresa solo el número entero):",
+                            "correctAnswer": "60",
+                            "hint": "Al tener la misma dirección y sentido, sus componentes X son todas 0 y las Y se suman directamente.",
+                            "feedbackCorrect": "¡Perfecto! Al ser colineales del mismo sentido, se suman de forma aritmética directa: 10 + 20 + 30 = 60 Newtons.",
+                            "feedbackIncorrect": "Incorrecto. Apuntan al mismo sentido, se suman directamente: 10+20+30 = 60.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si la componente resultante Rx = -3 m y Ry = 3 m, calcula la dirección angular de la resultante en posición estándar en grados. (Ingresa solo el número entero):",
+                            "correctAnswer": "135",
+                            "hint": "Calcula arctan(3/-3) = -45°. Como x es negativa e y es positiva, el vector está en el II cuadrante; suma 180°.",
+                            "feedbackCorrect": "¡Excelente! Dirección = -45° + 180° = 135°.",
+                            "feedbackIncorrect": "Incorrecto. Al ubicarse en el segundo cuadrante, la dirección es 180° - 45° = 135°.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Suma los vectores de fuerza F₁ = (8, -2) N y F₂ = (-5, 6) N. Calcula la magnitud en Newtons del vector resultante final. (Ingresa solo el número entero):",
+                            "correctAnswer": "5",
+                            "hint": "Suma las componentes: Rx = 8 - 5 = 3, Ry = -2 + 6 = 4. Reconstruye la magnitud con Pitágoras: R = sqrt(3^2 + 4^2).",
+                            "feedbackCorrect": "¡Perfecto! R = sqrt(9 + 16) = sqrt(25) = 5 Newtons.",
+                            "feedbackIncorrect": "Incorrecto. El vector suma es (3, 4). Su magnitud es sqrt(3² + 4²) = 5.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Por qué el método analítico por componentes es el preferido sobre el método gráfico en ingeniería y arquitectura?",
+                            "options": [
+                                "Porque es mucho más rápido de dibujar en cuadernos.",
+                                "Porque elimina la imprecisión instrumental del trazado de líneas y el uso de transportadores, ofreciendo un resultado matemático exacto.",
+                                "Porque no requiere el uso de sumas ni funciones trigonométricas.",
+                                "Porque solo sirve para vectores de igual dirección."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "El método analítico se apoya en cálculos rigurosos del álgebra ordinaria en lugar de estimaciones visuales de dibujo.",
+                            "feedbackCorrect": "¡Perfecto! El método analítico elimina errores sistemáticos de medición del dibujo técnico.",
+                            "feedbackIncorrect": "Incorrecto. Se prefiere por su precisión matemática absoluta.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "La suma analítica por componentes descompone vectores coplanares en el plano cartesiano para resolver sumatorias aritméticas horizontales y verticales independientes de alta precisión.",
+                    "videoPlaceholderText": "Video de Física: Suma analítica de múltiples vectores por componentes rectangulares."
+                },
+                {
+                    "id": "aplicaciones-fisica-fuerzas-equilibrio",
+                    "title": "Lección 3.3: Aplicaciones en Física (Fuerzas y Equilibrio)",
+                    "introduction": "Utiliza los vectores para resolver problemas de estática y estabilidad estructural aplicando la Primera Ley de Newton.",
+                    "explanationHtml": "<p>En física, un sistema de fuerzas concurrentes aplicadas sobre un cuerpo se encuentra en **equilibrio traslacional** si la fuerza resultante neta vectorial es exactamente cero.</p><p>Para resolver estos sistemas en el plano bidimensional, aplicamos la Primera Ley de Newton dividiéndola en dos ecuaciones independientes de equilibrio escalar:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Equilibrio en X (fuerzas horizontales):</strong> <br>$$\\sum F_x = 0 \\quad \\text{(Fuerzas a la derecha = Fuerzas a la izquierda)}$$</li><li><strong>Equilibrio en Y (fuerzas verticales):</strong> <br>$$\\sum F_y = 0 \\quad \\text{(Fuerzas hacia arriba = Fuerzas hacia abajo)}$$</li></ul><p class=\"mt-2 text-slate-700\">Esto permite determinar tensiones en cables de puentes, postes y estructuras edilicias complejas.</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Condiciones de Equilibrio de Newton</p><p class=\"text-xs font-mono font-bold text-primary\">&Sigma;Fx = 0 &nbsp;|&nbsp; &Sigma;Fy = 0</p><p class=\"text-xs text-slate-550\">DCL (Diagrama de Cuerpo Libre): Dibuja todas las fuerzas aisladas antes de plantear la sumatoria.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">SISTEMA EN EQUILIBRIO TRASLACIONAL</text><circle cx=\"150\" cy=\"55\" r=\"10\" fill=\"#3b82f6\" stroke=\"#1d4ed8\" stroke-width=\"2\" /><line x1=\"150\" y1=\"55\" x2=\"230\" y2=\"35\" stroke=\"#ef4444\" stroke-width=\"2\" stroke-linecap=\"round\" /><polygon points=\"228,39 235,33 225,32\" fill=\"#ef4444\" /><text x=\"210\" y=\"28\" font-size=\"8\" fill=\"#991b1b\" font-weight=\"bold\">T1 = 100 N</text><line x1=\"150\" y1=\"55\" x2=\"70\" y2=\"35\" stroke=\"#ef4444\" stroke-width=\"2\" stroke-linecap=\"round\" /><polygon points=\"75,32 65,33 72,39\" fill=\"#ef4444\" /><text x=\"90\" y=\"28\" font-size=\"8\" fill=\"#991b1b\" font-weight=\"bold\">T2 = 100 N</text><line x1=\"150\" y1=\"55\" x2=\"150\" y2=\"105\" stroke=\"#f59e0b\" stroke-width=\"2.5\" stroke-linecap=\"round\" /><polygon points=\"146,100 150,105 154,100\" fill=\"#f59e0b\" /><text x=\"162\" y=\"90\" font-size=\"8\" fill=\"#b45309\" font-weight=\"bold\">Peso = 100 N</text></svg>",
+                    "svgDescription": "Un diagrama de fuerzas concurrentes de un semáforo (peso 100 N hacia abajo) sostenido por dos tensiones inclinadas a 30 grados respecto a la horizontal, ilustrando el equilibrio en Y.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Un semáforo de $100\\text{ Newtons}$ de peso cuelga simétricamente en equilibrio de dos cables tensores que forman ángulos de $30^\\circ$ con la horizontal a cada lado. Calcula el valor de la tensión ($T$) en cada cable.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1:</strong> Dibuja el Diagrama de Cuerpo Libre (DCL). En el nudo central convergen 3 fuerzas: el peso de $100\\text{ N}$ hacia abajo, la tensión $T$ a $30^\\circ$ a la derecha, y la tensión $T$ a $30^\\circ$ a la izquierda.</li><li><strong>Paso 2:</strong> Plantea la ecuación de equilibrio vertical (eje Y): <br>$$\\sum F_y = 0 \\Rightarrow T_y + T_y - \\text{Peso} = 0$$</li><li><strong>Paso 3:</strong> Sustituye las componentes verticales por su expresión trigonométrica ($T_y = T \\operatorname{sen}(30^\\circ)$): <br>$$T \\operatorname{sen}(30^\\circ) + T \\operatorname{sen}(30^\\circ) - 100 = 0 \\Rightarrow 2T \\operatorname{sen}(30^\\circ) = 100$$</li><li><strong>Paso 4:</strong> Reemplaza $\\operatorname{sen}(30^\\circ) = 0.5$: <br>$$2T(0.5) = 100 \\Rightarrow T = 100\\text{ Newtons}$$</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> La tensión en cada cable de soporte es de <strong>100 Newtons</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Olvidar que hay dos cables tensores sosteniendo la carga:</strong> Escribir $T \\operatorname{sen}(30^\\circ) = 100$ y dar $T = 200\\text{ N}$. Recuerde que la carga vertical se distribuye equitativamente entre ambos cables ($2T_y = 100$).</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Un hermoso cuadro de 50 N de peso cuelga simétricamente de un solo cable tensor vertical. ¿Cuál es la tensión en Newtons del cable? (Ingresa solo el número entero):",
+                            "correctAnswer": "50",
+                            "hint": "Para que esté en equilibrio vertical, la sumatoria de fuerzas Fy = 0. La tensión hacia arriba debe ser igual al peso hacia abajo.",
+                            "feedbackCorrect": "¡Excelente! Tensión = Peso = 50 N.",
+                            "feedbackIncorrect": "Incorrecto. Al estar suspendido verticalmente por un único cable, la tensión sostiene la totalidad del peso: 50 N.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cuál es el valor resultante de la sumatoria neta de todas las fuerzas vectoriales que actúan sobre un camión estacionado en perfecto equilibrio sobre una colina de Quetzaltenango? (Ingresa solo el número entero):",
+                            "correctAnswer": "0",
+                            "hint": "El enunciado indica que el camión está en perfecto equilibrio traslacional. Aplica la Primera Ley de Newton.",
+                            "feedbackCorrect": "¡Perfecto! Al estar en equilibrio, la sumatoria de todas las fuerzas (fuerza neta) es exactamente 0 N.",
+                            "feedbackIncorrect": "Incorrecto. Por ley de equilibrio, la fuerza neta resultante es obligatoriamente 0.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Un bloque de masa m = 20 kg está apoyado en reposo sobre una mesa horizontal. Calcula el valor de la fuerza Normal vertical en Newtons que ejerce la mesa sobre el bloque. (Usa g = 9.8 m/s². Ingresa solo el número entero):",
+                            "correctAnswer": "196",
+                            "hint": "La sumatoria de fuerzas verticales es Normal - Peso = 0. Normal = Peso = m * g.",
+                            "feedbackCorrect": "¡Excelente! Peso = 20 kg * 9.8 m/s² = 196 N. Por ende, la Normal mide 196 N.",
+                            "feedbackIncorrect": "Incorrecto. Normal = Peso = 20 * 9.8 = 196 N.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Tres fuerzas horizontales tiran de un anillo central en un experimento. Si la fuerza F₁ = 10 N apunta al Este, la fuerza F₂ = 15 N apunta al Oeste. ¿Cuál debe ser la magnitud y sentido de la fuerza F₃ para mantener el anillo en perfecto equilibrio?",
+                            "options": [
+                                "5 N al Este",
+                                "5 N al Oeste",
+                                "25 N al Este",
+                                "25 N al Oeste"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Suma los vectores conocidos: +10 (Este) y -15 (Oeste) = -5 N. F₃ debe equilibrar contrarrestando con signo opuesto.",
+                            "feedbackCorrect": "¡Excelente! F₃ = +5 N (apuntando al Este) para que la suma total sea exactamente cero.",
+                            "feedbackIncorrect": "Incorrecto. F₁ + F₂ = -5 N (Oeste). F₃ debe valer +5 N (Este) para equilibrar.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "¿Qué ley física fundamental de la mecánica establece que si la sumatoria de fuerzas sobre un cuerpo es nula, este permanecerá en reposo o MRU?",
+                            "options": [
+                                "Segunda Ley de Newton",
+                                "Primera Ley de Newton (Ley de la Inercia)",
+                                "Tercera Ley de Newton (Acción y Reacción)",
+                                "Ley de la Gravitación Universal"
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Es la ley que define el comportamiento de los cuerpos cuando no actúan fuerzas externas desbalanceadas.",
+                            "feedbackCorrect": "¡Perfecto! Es la Primera Ley de Newton o de la Inercia, la base de la estática de partículas.",
+                            "feedbackIncorrect": "Incorrecto. Es la Primera Ley de Newton (Ley de la Inercia).",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "El equilibrio traslacional exige vectorialmente que la sumatoria de fuerzas concurrentes sea nula, resolviéndose mediante sistemas independientes de ecuaciones horizontales y verticales.",
+                    "videoPlaceholderText": "Video de Física: Resolución de problemas de estática y diagramas de cuerpo libre (DCL)."
+                }
+            ]
+        }
+    ]
+},
+
+    "fisica-movimiento": {
+    "isRichCourse": true,
+    "title": "Física I: Movimiento y Fuerzas",
+    "units": [
+        {
+            "title": "Unidad 1: Movimiento y Posición en Una Dimensión",
+            "lessons": [
+                {
+                    "id": "distancia-versus-desplazamiento",
+                    "title": "Lección 1.1: Distancia versus Desplazamiento",
+                    "introduction": "Descubre la diferencia fundamental en mecánica clásica entre la longitud del camino recorrido y el cambio neto de posición.",
+                    "explanationHtml": "<p>En cinemática, para describir la trayectoria de un cuerpo, diferenciamos entre dos variables clave:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Distancia ($d$):</strong> Magnitud escalar que mide la longitud total de la trayectoria recorrida por un objeto, sin importar su sentido ni dirección. Siempre es un valor positivo o nulo.</li><li><strong>Desplazamiento ($\\vec{\\Delta x}$):</strong> Magnitud vectorial que representa el cambio neto de posición de un objeto en el espacio. Se mide en línea recta desde la posición inicial ($x_i$) hasta la posición final ($x_f$), e indica dirección y sentido: <br>$$\\vec{\\Delta x} = x_f - x_i$$</li></ul><p class=\"mt-2 text-slate-700\">Si un móvil realiza una trayectoria de ida y vuelta regresando exactamente al punto de origen, la distancia recorrida es el doble del camino, pero su desplazamiento resultante es exactamente **cero**.</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Fórmula de Desplazamiento</p><p class=\"text-xs font-mono font-bold text-primary\">&Delta;x = x_final - x_inicial</p><p class=\"text-xs text-slate-550\">Distancia = Sumatoria de las magnitudes absolutas de todos los pasos recorridos.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">DISTANCIA VS DESPLAZAMIENTO</text><line x1=\"30\" y1=\"90\" x2=\"270\" y2=\"90\" stroke=\"#94a3b8\" stroke-width=\"1.5\" /><circle cx=\"40\" cy=\"90\" r=\"4\" fill=\"#3b82f6\" /><text x=\"40\" y=\"103\" font-size=\"8\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">Inicio (0m)</text><line x1=\"40\" y1=\"70\" x2=\"240\" y2=\"70\" stroke=\"#2563eb\" stroke-width=\"2\" stroke-linecap=\"round\" /><polygon points=\"238,66 246,70 238,74\" fill=\"#2563eb\" /><text x=\"140\" y=\"64\" font-size=\"8\" fill=\"#1e40af\" font-weight=\"bold\">Ida: +50 m (Este)</text><line x1=\"246\" y1=\"45\" x2=\"126\" y2=\"45\" stroke=\"#f59e0b\" stroke-width=\"2\" stroke-linecap=\"round\" /><polygon points=\"128,49 120,45 128,41\" fill=\"#f59e0b\" /><text x=\"180\" y=\"39\" font-size=\"8\" fill=\"#b45309\" font-weight=\"bold\">Vuelta: -30 m (Oeste)</text><circle cx=\"120\" cy=\"90\" r=\"4\" fill=\"#ef4444\" /><text x=\"120\" y=\"103\" font-size=\"8\" fill=\"#991b1b\" font-weight=\"bold\" text-anchor=\"middle\">Llegada (+20m)</text></svg>",
+                    "svgDescription": "Un repartidor que camina 50m al Este (azul) y regresa 30m al Oeste (naranja). El desplazamiento resultante neto es de +20m al Este (distancia entre el círculo azul de Inicio y el rojo de Llegada).",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Un mensajero en Antigua Guatemala camina $50\\text{ metros}$ hacia el este y luego regresa sobre sus pasos $30\\text{ metros}$ hacia el oeste. ¿Cuál fue su distancia recorrida y su desplazamiento resultante?</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1 (Distancia):</strong> La distancia es un escalar que acumula la longitud total recorrida. Se suman directamente los valores absolutos: <br>$$d = 50\\text{ m} + 30\\text{ m} = 80\\text{ metros}$$</li><li><strong>Paso 2 (Desplazamiento):</strong> El desplazamiento es un vector. Definimos el este como positivo ($+$) y el oeste como negativo ($-$): <br>$$\\vec{\\Delta x} = +50\\text{ m} - 30\\text{ m} = +20\\text{ metros}$$</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> Recorrió una distancia de <strong>80 m</strong> y su desplazamiento neto resultante fue de <strong>20 m al Este</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Pensar que siempre son iguales:</strong> Esto solo ocurre si el cuerpo viaja estrictamente en línea recta sin reversas o cambios de sentido. En cuanto hay un retorno o una curva, la distancia siempre superará al módulo del desplazamiento.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Corres alrededor de una pista atlética circular de 400 metros de longitud y regresas exactamente al punto de partida. ¿Cuál es tu desplazamiento en metros? (Ingresa solo el número entero):",
+                            "correctAnswer": "0",
+                            "hint": "El desplazamiento mide el cambio de posición x_final - x_inicial. Si regresas al mismo punto inicial, no cambiaste de posición.",
+                            "feedbackCorrect": "¡Excelente! Como la posición inicial y final coinciden, tu desplazamiento es exactamente 0 metros.",
+                            "feedbackIncorrect": "Incorrecto. Regresaste al punto de inicio, por ende el desplazamiento resultante es 0.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Un automóvil viaja 80 km hacia el Norte y luego regresa 60 km hacia el Sur sobre la misma avenida. ¿Cuál es la magnitud en km de su desplazamiento resultante? (Ingresa solo el número entero):",
+                            "correctAnswer": "20",
+                            "hint": "Desplazamiento = +80 km (Norte) - 60 km (Sur). Resta los vectores opuestos.",
+                            "feedbackCorrect": "¡Perfecto! El desplazamiento neto es de 20 km hacia el Norte.",
+                            "feedbackIncorrect": "Incorrecto. Apuntan a sentidos opuestos, se restan: 80 - 60 = 20 km.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Un peatón camina 3 metros hacia el Norte y luego 4 metros hacia el Este. Calcula la magnitud en metros de su desplazamiento resultante en línea recta: (Ingresa solo el número entero):",
+                            "correctAnswer": "5",
+                            "hint": "El desplazamiento en 2D es la hipotenusa de un triángulo rectángulo de lados 3 y 4 m. Aplica el Teorema de Pitágoras.",
+                            "feedbackCorrect": "¡Excelente! Desplazamiento = sqrt(3^2 + 4^2) = sqrt(25) = 5 metros.",
+                            "feedbackIncorrect": "Incorrecto. Aplica Pitágoras para hallar la diagonal resultante: sqrt(3² + 4²) = 5.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si caminas 10 pasos hacia adelante e inmediatamente 10 pasos exactamente hacia atrás, ¿cuál es tu desplazamiento final medido en pasos? (Ingresa solo el número entero):",
+                            "correctAnswer": "0",
+                            "hint": "Toma el frente como positivo (+10) y la parte de atrás como negativa (-10).",
+                            "feedbackCorrect": "¡Perfecto! Terminaste en la misma baldosa inicial, tu desplazamiento es 0 pasos.",
+                            "feedbackIncorrect": "Incorrecto. Los 10 pasos de ida y 10 de vuelta se contrarrestan: desplazamiento = 0.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Una hormiga recorre 1.5 metros por el borde de una regla escolar. Si se asusta y regresa al punto de inicio, ¿cuál es la distancia total recorrida por la hormiga en metros? (Ingresa el número decimal con punto):",
+                            "correctAnswer": "3.0",
+                            "hint": "La distancia es un escalar acumulativo. Suma el camino de ida (1.5 m) más el de regreso (1.5 m).",
+                            "feedbackCorrect": "¡Excelente! La distancia acumulada de ida y vuelta es de 3.0 metros.",
+                            "feedbackIncorrect": "Incorrecto. La distancia sumada es 1.5 + 1.5 = 3.0 metros.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        }
+                    ],
+                    "summaryHtml": "La distancia es el trayecto escalar real recorrido; el desplazamiento es el vector de cambio neto de posición. Su diferenciación rigurosa cimienta el análisis cinemático.",
+                    "videoPlaceholderText": "Video de Física: Diferencias de distancia vs desplazamiento explicadas con simulaciones animadas."
+                },
+                {
+                    "id": "velocidad-rapidez-media",
+                    "title": "Lección 1.2: Velocidad y Rapidez",
+                    "introduction": "Diferencia analíticamente entre la rapidez (escalar) y la velocidad (vectorial) y aprende a realizar conversiones de unidades.",
+                    "explanationHtml": "<p>Al igual que la distancia y el desplazamiento, el ritmo de movimiento se divide en dos magnitudes distintas:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Rapidez Media ($v$):</strong> Magnitud escalar que mide la distancia recorrida por unidad de tiempo: <br>$$v = \\frac{\\text{Distancia total}(d)}{\\text{Tiempo total}(t)}$$</li><li><strong>Velocidad Media ($\\vec{v}$):</strong> Magnitud vectorial que mide el desplazamiento neto por unidad de tiempo: <br>$$\\vec{v} = \\frac{\\text{Desplazamiento}(\\vec{\\Delta x})}{t}$$</li></ul><p class=\"mt-2 text-slate-700\">En el Sistema Internacional (SI) la velocidad se mide en <strong>metros por segundo (m/s)</strong>. Para convertir de **kilómetros por hora (km/h) a m/s**, dividimos de forma directa el valor entre el factor constante **3.6**.</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Conversión y Ecuaciones</p><p class=\"text-xs font-mono font-bold text-primary\">Rapidez = d / t &nbsp;|&nbsp; Velocidad = &Delta;x / t</p><p class=\"text-xs font-mono font-bold text-primary\">km/h &divide; 3.6 = m/s &nbsp;&bull;&nbsp; m/s &times; 3.6 = km/h</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">VELOCIDAD EN FÍSICA</text><circle cx=\"60\" cy=\"70\" r=\"12\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"1.5\" /><path d=\"M 60 70 L 140 70\" stroke=\"#ef4444\" stroke-width=\"2.5\" stroke-linecap=\"round\" /><polygon points=\"140,66 148,70 140,74\" fill=\"#ef4444\" /><text x=\"105\" y=\"62\" font-size=\"9\" font-family=\"monospace\" fill=\"#ef4444\" font-weight=\"bold\">v = 16.67 m/s (60 km/h)</text><text x=\"60\" y=\"105\" font-size=\"8\" fill=\"#475569\" text-anchor=\"middle\">Objeto (t = 2.5 h)</text><text x=\"220\" y=\"74\" font-size=\"8\" fill=\"#1e40af\" font-weight=\"bold\">Desplazamiento = 150 km</text></svg>",
+                    "svgDescription": "Un objeto en movimiento con su vector de velocidad horizontal marcado en rojo de 16.67 m/s (equivalente a 60 km/h), describiendo la velocidad vectorial.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Un autobús extraurbano recorre una distancia de $150\\text{ km}$ en un tiempo de $2.5\\text{ horas}$. ¿Cuál fue su rapidez media expresada en km/h y en m/s?</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1 (km/h):</strong> Aplica la fórmula de rapidez dividiendo la distancia entre el tiempo: <br>$$v = \\frac{150\\text{ km}}{2.5\\text{ h}} = 60\\text{ km/h}$$</li><li><strong>Paso 2 (m/s):</strong> Convierte de km/h a metros por segundo (m/s) dividiendo por el factor constante de conversión $3.6$: <br>$$v_{\\text{m/s}} = \\frac{60}{3.6} \\approx 16.67\\text{ m/s}$$</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> Su rapidez media fue de <strong>60 km/h</strong> o aproximadamente <strong>16.67 m/s</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Multiplicar por 3.6 al pasar a m/s:</strong> Confundir la dirección del factor. Recuerda: para ir de una unidad grande (km/h) a una más compacta (m/s) debes <strong>dividir</strong> entre 3.6. Para el camino inverso, multiplicas.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Si completas nadando 100 metros en una piscina olímpica en exactamente 50 segundos, ¿cuál es tu rapidez media en m/s? (Ingresa solo el número entero):",
+                            "correctAnswer": "2",
+                            "hint": "Aplica la fórmula directa v = d / t. Reemplaza d = 100 m y t = 50 s.",
+                            "feedbackCorrect": "¡Excelente! v = 100 / 50 = 2 m/s.",
+                            "feedbackIncorrect": "Incorrecto. La rapidez es 100 / 50 = 2.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Un ciclista viaja a una rapidez promedio constante de 8 m/s. ¿Qué distancia en metros recorrerá en un lapso exacto de un minuto? (Ingresa solo el número entero):",
+                            "correctAnswer": "480",
+                            "hint": "Homogeneiza las unidades: 1 minuto equivale a 60 segundos. Despeja distancia como d = v * t.",
+                            "feedbackCorrect": "¡Perfecto! d = 8 m/s * 60 s = 480 metros.",
+                            "feedbackIncorrect": "Incorrecto. 1 minuto = 60s. d = v * t = 8 * 60 = 480 m.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Convierte una rapidez de 36 km/h a unidades de metros por segundo (m/s). (Ingresa solo el número entero):",
+                            "correctAnswer": "10",
+                            "hint": "Aplica el factor directo. Divide el valor de km/h entre 3.6.",
+                            "feedbackCorrect": "¡Excelente! 36 / 3.6 = 10 m/s.",
+                            "feedbackIncorrect": "Incorrecto. 36 km/h equivale a 36 / 3.6 = 10 m/s.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Un atleta de alto rendimiento corre 200 metros con una rapidez constante de 5 m/s. ¿Cuánto tiempo en segundos tarda en recorrerlos? (Ingresa solo el número entero):",
+                            "correctAnswer": "40",
+                            "hint": "A partir de d = v * t, despeja el tiempo como t = d / v. Reemplaza d = 200 y v = 5.",
+                            "feedbackCorrect": "¡Perfecto! t = 200 / 5 = 40 segundos.",
+                            "feedbackIncorrect": "Incorrecto. t = d/v = 200 / 5 = 40.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Un rayo cae a una distancia de 3,400 metros de tu posición. Si la velocidad del sonido en el aire es de 340 m/s, ¿cuántos segundos tardarás en escuchar el trueno?",
+                            "options": [
+                                "1 segundo",
+                                "5 segundos",
+                                "10 segundos",
+                                "34 segundos"
+                            ],
+                            "correctAnswer": 2,
+                            "hint": "Calcula el tiempo necesario para que la onda de sonido recorra la distancia: t = d / v.",
+                            "feedbackCorrect": "¡Excelente! t = 3,400 m / 340 m/s = 10 segundos.",
+                            "feedbackIncorrect": "Incorrecto. El sonido tarda t = 3400 / 340 = 10 segundos en llegar a tus oídos.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "La rapidez es el promedio escalar de la trayectoria y el tiempo; la velocidad es la tasa vectorial de desplazamiento espacial. La homogeneidad de unidades (m/s) es crucial en física.",
+                    "videoPlaceholderText": "Video de Física: Cómo calcular velocidad y rapidez media de forma sencilla."
+                },
+                {
+                    "id": "movimiento-rectilineo-uniforme-mru",
+                    "title": "Lección 1.3: Movimiento Rectilíneo Uniforme (MRU)",
+                    "introduction": "Aprende las características del movimiento a velocidad constante en línea recta, donde la aceleración es nula.",
+                    "explanationHtml": "<p>El <strong>Movimiento Rectilíneo Uniforme (MRU)</strong> ocurre cuando un objeto se desplaza en línea recta y a **velocidad constante**. Al no cambiar de velocidad, la aceleración del sistema es exactamente **cero**.</p><p>Las tres propiedades fundamentales del MRU son:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li>La trayectoria es una línea recta.</li><li>La velocidad mantiene de forma idéntica su magnitud, dirección y sentido.</li><li>El objeto recorre **distancias iguales en intervalos de tiempo iguales** (relación lineal directa).</li></ul><p class=\"mt-2 font-bold text-slate-800\">La Ecuación Fundamental:</p><p class=\"text-center font-mono font-extrabold text-primary text-base my-2\">d = v \\cdot t</p><p class=\"text-slate-700\">Donde $d$ es la distancia, $v$ la rapidez constante, y $t$ el tiempo empleado.</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Triángulo de Ecuaciones MRU</p><p class=\"text-xs font-mono font-bold text-primary\">d = v &bull; t &nbsp;|&nbsp; v = d / t &nbsp;|&nbsp; t = d / v</p><p class=\"text-xs text-slate-550\">Herramienta: Tapa la letra que deseas calcular para obtener su despeje algebraico directo.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">MRU: VELOCIDAD CONSTANTE</text><line x1=\"30\" y1=\"85\" x2=\"270\" y2=\"85\" stroke=\"#94a3b8\" stroke-width=\"1.5\" /><circle cx=\"50\" cy=\"70\" r=\"10\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"1.5\" /><path d=\"M 50 70 L 95 70\" stroke=\"#3b82f6\" stroke-width=\"2\" stroke-linecap=\"round\" /><polygon points=\"93,66 100,70 93,74\" fill=\"#3b82f6\" /><text x=\"50\" y=\"98\" font-size=\"8\" fill=\"#475569\" text-anchor=\"middle\">t = 0 s</text><circle cx=\"150\" cy=\"70\" r=\"10\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"1.5\" /><path d=\"M 150 70 L 195 70\" stroke=\"#3b82f6\" stroke-width=\"2\" stroke-linecap=\"round\" /><polygon points=\"193,66 200,70 193,74\" fill=\"#3b82f6\" /><text x=\"150\" y=\"98\" font-size=\"8\" fill=\"#475569\" text-anchor=\"middle\">t = 1 s</text><circle cx=\"250\" cy=\"70\" r=\"10\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"1.5\" /><text x=\"250\" y=\"98\" font-size=\"8\" fill=\"#475569\" text-anchor=\"middle\">t = 2 s</text><text x=\"100\" y=\"55\" font-size=\"8\" fill=\"#2563eb\" font-weight=\"bold\" text-anchor=\"middle\">Distancia = 10m</text><text x=\"200\" y=\"55\" font-size=\"8\" fill=\"#2563eb\" font-weight=\"bold\" text-anchor=\"middle\">Distancia = 10m</text></svg>",
+                    "svgDescription": "Un móvil en MRU que viaja en línea recta horizontal a velocidad constante, recorriendo distancias idénticas de 10 metros en cada intervalo regular de 1 segundo.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Dos automóviles salen de Ciudad de Guatemala hacia Quetzaltenango (distancia de $200\\text{ km}$). El auto A viaja a una rapidez constante de $50\\text{ km/h}$ y el auto B a $80\\text{ km/h}$ constantes. ¿Con cuánto tiempo de diferencia llegará el auto B respecto al A?</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1 (Auto A):</strong> Calcula su tiempo despejando de la fórmula ($t = d/v$): <br>$$t_A = \\frac{200\\text{ km}}{50\\text{ km/h}} = 4\\text{ horas}$$</li><li><strong>Paso 2 (Auto B):</strong> Calcula su tiempo de la misma forma: <br>$$t_B = \\frac{200\\text{ km}}{80\\text{ km/h}} = 2.5\\text{ horas}$$</li><li><strong>Paso 3 (Diferencia):</strong> Resta los dos tiempos para hallar la ventaja temporal: <br>$$\\text{Diferencia} = t_A - t_B = 4\\text{ h} - 2.5\\text{ h} = 1.5\\text{ horas}$$</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> El auto B llegará exactly **1.5 horas antes** (1 hora y 30 minutos) que el auto A.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Usar la fórmula en movimientos acelerados:</strong> Querer aplicar $d = v \\cdot t$ a caída libre o autos frenando. Esta fórmula es de uso exclusivo si la velocidad no cambia (aceleración nula).</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "¿Qué distancia en kilómetros recorre un tren de pasajeros que viaja a 90 km/h constantes durante un viaje de 4 horas? (Ingresa solo el número entero):",
+                            "correctAnswer": "360",
+                            "hint": "Aplica la fórmula fundamental del MRU: d = v * t. Reemplaza v = 90 y t = 4.",
+                            "feedbackCorrect": "¡Excelente! d = 90 * 4 = 360 km.",
+                            "feedbackIncorrect": "Incorrecto. d = v * t = 90 * 4 = 360.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si una onda de radio viaja a la velocidad de la luz (300,000 km/s), ¿cuántos segundos tardará en llegar a la Luna si la distancia promedio es de 384,000 km? (Ingresa el número decimal con punto):",
+                            "correctAnswer": "1.28",
+                            "hint": "Aplica t = d / v. Reemplaza d = 384,000 km y v = 300,000 km/s.",
+                            "feedbackCorrect": "¡Perfecto! t = 384,000 / 300,000 = 1.28 segundos.",
+                            "feedbackIncorrect": "Incorrecto. t = d / v = 384000 / 300000 = 1.28.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Caminas a una velocidad constante de 1.5 m/s. ¿Cuánto tiempo en segundos tardas en recorrer una calle recta de 150 metros? (Ingresa solo el número entero):",
+                            "correctAnswer": "100",
+                            "hint": "Despeja el tiempo a partir de la fórmula: t = d / v. Reemplaza d = 150 y v = 1.5.",
+                            "feedbackCorrect": "¡Excelente! t = 150 / 1.5 = 100 segundos.",
+                            "feedbackIncorrect": "Incorrecto. t = d / v = 150 / 1.5 = 100.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Un motociclista de la capital viaja a 20 m/s constantes. ¿Qué distancia en kilómetros recorre en media hora? (Ingresa solo el número entero):",
+                            "correctAnswer": "36",
+                            "hint": "Homogeneiza las unidades: media hora son 1,800 segundos. Calcula d = 20 * 1,800 = 36,000 m. Convierte a km dividiendo entre 1,000.",
+                            "feedbackCorrect": "¡Perfecto! 36,000 metros equivalen a exactamente 36 km.",
+                            "feedbackIncorrect": "Incorrecto. Media hora = 1800s. d = 20 * 1800 = 36000 m = 36 km.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Dos atletas corren en sentidos opuestos alejándose a velocidades constantes de 3 m/s y 5 m/s. ¿Qué distancia en metros los separa tras 10 segundos?",
+                            "options": [
+                                "20 metros",
+                                "30 metros",
+                                "50 metros",
+                                "80 metros"
+                            ],
+                            "correctAnswer": 3,
+                            "hint": "Al correr en sentidos contrarios, su velocidad relativa de separación se suma: 3 m/s + 5 m/s = 8 m/s. Calcula d = v_relativa * t.",
+                            "feedbackCorrect": "¡Excelente! Se separan a 8 m/s, tras 10 s están a 8 * 10 = 80 metros.",
+                            "feedbackIncorrect": "Incorrecto. Se separan a razón de 8 m/s, por lo que en 10 s recorren 80 metros.",
+                            "difficulty": "avanzado",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "El MRU describe movimientos rectilíneos sin aceleración. La constancia de la velocidad ($d = v cdot t$) modela sistemas estáticos y cinemáticas uniformes.",
+                    "videoPlaceholderText": "Video de Física: Conceptos de MRU y resolución de problemas de persecución."
+                }
+            ]
+        },
+        {
+            "title": "Unidad 2: Aceleración y MRUA",
+            "lessons": [
+                {
+                    "id": "concepto-de-aceleracion",
+                    "title": "Lección 2.1: El Concepto de Aceleración",
+                    "introduction": "Comprende la aceleración como la tasa de cambio temporal de la velocidad e interpreta aceleraciones positivas y negativas.",
+                    "explanationHtml": "<p>En la realidad física, los cuerpos rara vez viajan a velocidad constante. La <strong>aceleración</strong> es la magnitud vectorial que mide qué tan rápido cambia la velocidad de un objeto por unidad de tiempo:</p><p class=\"text-center font-mono font-extrabold text-primary text-base my-2\">$$a = \\frac{v_f - v_i}{t}$$</p><p class=\"mt-2 text-slate-800\">Donde $v_f$ es la velocidad final, $v_i$ la velocidad inicial, y $t$ el tiempo empleado. La unidad de medida en el Sistema Internacional es <strong>metros por segundo al cuadrado (m/s²)</strong>.</p><p class=\"mt-2 font-bold text-slate-800\">Interpretación de Signos:</p><ul class=\"list-disc pl-5 space-y-1.5 my-2\"><li><strong>Aceleración Positiva ($a > 0$):</strong> El móvil aumenta su velocidad con el tiempo (acelera).</li><li><strong>Aceleración Negativa ($a < 0$):</strong> El móvil reduce su velocidad con el tiempo (desacelera o frena).</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Fórmula de Aceleración</p><p class=\"text-xs font-mono font-bold text-primary\">a = (v_final - v_inicial) / t</p><p class=\"text-xs text-slate-550\">Recuerda: Si el objeto parte del reposo, su velocidad inicial (v_i) es exactamente cero.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">ACELERACIÓN EN EL TIEMPO</text><line x1=\"30\" y1=\"85\" x2=\"270\" y2=\"85\" stroke=\"#94a3b8\" stroke-width=\"1.5\" /><circle cx=\"50\" cy=\"70\" r=\"10\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"1.5\" /><text x=\"50\" y=\"98\" font-size=\"7\" fill=\"#475569\" text-anchor=\"middle\">vi = 0 m/s (Reposo)</text><circle cx=\"230\" cy=\"70\" r=\"10\" fill=\"#fef2f2\" stroke=\"#ef4444\" stroke-width=\"1.5\" /><text x=\"230\" y=\"98\" font-size=\"7\" fill=\"#475569\" text-anchor=\"middle\">vf = 30 m/s</text><line x1=\"90\" y1=\"50\" x2=\"190\" y2=\"50\" stroke=\"#059669\" stroke-width=\"2\" stroke-linecap=\"round\" /><polygon points=\"188,46 196,50 188,54\" fill=\"#059669\" /><text x=\"143\" y=\"42\" font-size=\"8\" fill=\"#047857\" font-weight=\"bold\" text-anchor=\"middle\">Aceleración a = 5 m/s²</text><text x=\"143\" y=\"112\" font-size=\"7\" fill=\"#64748b\" text-anchor=\"middle\">Tiempo transcurrido = 6 s</text></svg>",
+                    "svgDescription": "Un vehículo acelerando desde vi = 0 hasta vf = 30 m/s en 6 segundos. Se ilustra la aceleración media de 5 m/s² constante que lo empuja hacia adelante.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Un automóvil deportivo en la autopista de Escuintla parte del reposo y alcanza una velocidad de $30\\text{ m/s}$ en un tiempo de $6\\text{ segundos}$. ¿Cuál fue su aceleración media?</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1:</strong> Identifica las variables dadas: velocidad inicial ($v_i = 0$ por \"reposo\"), velocidad final ($v_f = 30\\text{ m/s}$), tiempo ($t = 6\\text{ s}$).</li><li><strong>Paso 2:</strong> Plantea la fórmula de aceleración: <br>$$a = \\frac{v_f - v_i}{t}$$</li><li><strong>Paso 3:</strong> Reemplaza y opera: <br>$$a = \\frac{30 - 0}{6} = \\frac{30}{6} = 5\\text{ m/s}^2$$</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> Su aceleración media fue de exactamente <strong>5 m/s²</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Olvidar el orden de resta:</strong> Restar $v_i - v_f$. Esto alteraría el signo de la aceleración. Haz siempre velocidad FINAL menos velocidad INICIAL.</li><li><strong>Unidades erróneas:</strong> Escribir $m/s$ en lugar de $m/s^2$ para la aceleración.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Un vehículo frena pasando de 25 m/s a 5 m/s en un intervalo de 4 segundos. ¿Cuál fue su aceleración en m/s²? (Ingresa el valor entero, incluyendo signo si aplica):",
+                            "correctAnswer": "-5",
+                            "hint": "Aplica a = (vf - vi) / t. Reemplaza vf = 5, vi = 25 y t = 4. Debe resultar negativo al estar frenando.",
+                            "feedbackCorrect": "¡Excelente! a = (5 - 25) / 4 = -20 / 4 = -5 m/s².",
+                            "feedbackIncorrect": "Incorrecto. Al frenar da aceleración negativa: (5 - 25) / 4 = -5.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si una motocicleta arranca con una aceleración constante de 3 m/s², ¿cuál será su velocidad final en m/s tras 8 segundos? (Ingresa solo el número entero):",
+                            "correctAnswer": "24",
+                            "hint": "Despeja velocidad final de la ecuación: vf = vi + a * t. Recuerda que parte del reposo (vi = 0).",
+                            "feedbackCorrect": "¡Perfecto! vf = 0 + 3 * 8 = 24 m/s.",
+                            "feedbackIncorrect": "Incorrecto. vf = a * t = 3 * 8 = 24.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Un objeto cae libremente desde un edificio partiendo del reposo. Si la aceleración de la gravedad es de 9.8 m/s², ¿qué velocidad en m/s tendrá tras 3 segundos? (Ingresa el número decimal con punto):",
+                            "correctAnswer": "29.4",
+                            "hint": "Aplica vf = vi + g * t. Reemplaza vi = 0, g = 9.8 y t = 3.",
+                            "feedbackCorrect": "¡Excelente! vf = 9.8 * 3 = 29.4 m/s.",
+                            "feedbackIncorrect": "Incorrecto. vf = 9.8 * 3 = 29.4.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cuánto tiempo en segundos tardará un corredor en pasar de una velocidad de 2 m/s a una de 8 m/s si acelera a razón de 1.5 m/s²? (Ingresa solo el número entero):",
+                            "correctAnswer": "4",
+                            "hint": "Despeja el tiempo de la fórmula: t = (vf - vi) / a. Reemplaza vf = 8, vi = 2, a = 1.5.",
+                            "feedbackCorrect": "¡Perfecto! t = (8 - 2) / 1.5 = 6 / 1.5 = 4 segundos.",
+                            "feedbackIncorrect": "Incorrecto. t = (8 - 2) / 1.5 = 4.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Un tren viaja a 40 m/s y el maquinista aplica los frenos desacelerando a razón constante de -2 m/s². ¿Cuánto tiempo en segundos tarda en detenerse por completo? (Ingresa solo el número entero):",
+                            "correctAnswer": "20",
+                            "hint": "Al detenerse, su velocidad final (vf) es exactamente 0. Plantea t = (vf - vi) / a.",
+                            "feedbackCorrect": "¡Excelente! t = (0 - 40) / -2 = 20 segundos.",
+                            "feedbackIncorrect": "Incorrecto. t = (0 - 40) / -2 = 20.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        }
+                    ],
+                    "summaryHtml": "La aceleración cuantifica la tasa de variación instantánea de la velocidad. Aceleraciones positivas describen arranques y las negativas frenados de móviles en el espacio.",
+                    "videoPlaceholderText": "Video de Física: Concepto de aceleración y su diferencia con la velocidad explicada."
+                },
+                {
+                    "id": "ecuaciones-fundamentales-mrua",
+                    "title": "Lección 2.2: Ecuaciones del MRUA",
+                    "introduction": "Domina las 4 ecuaciones de oro del Movimiento Rectilíneo Uniformemente Variado y aprende cuál elegir según cada problema.",
+                    "explanationHtml": "<p>En el <strong>Movimiento Rectilíneo Uniformemente Acelerado (MRUA)</strong> la aceleración del sistema es constante. Para resolver problemas de este tipo, relacionamos 5 variables: distancia ($d$), velocidad inicial ($v_i$), velocidad final ($v_f$), aceleración ($a$) y tiempo ($t$).</p><p class=\"mt-2 font-bold text-slate-800\">Las 4 Ecuaciones Fundamentales:</p><ol class=\"list-decimal pl-5 space-y-2 my-3\"><li>$$v_f = v_i + a \\cdot t \\quad \\text{(No contiene } d\\text{)}$$</li><li>$$d = v_i \\cdot t + \\frac{1}{2} a \\cdot t^2 \\quad \\text{(No contiene } v_f\\text{)}$$</li><li>$$v_f^2 = v_i^2 + 2a \\cdot d \\quad \\text{(No contiene } t\\text{)}$$</li><li>$$d = \\left( \\frac{v_i + v_f}{2} \\right) \\cdot t \\quad \\text{(No contiene } a\\text{)}$$</li></ol><p class=\"mt-2 text-slate-700\">El secreto para resolver cualquier ejercicio es identificar qué variable **no es dato ni se pregunta**, y elegir la fórmula que prescinde de ella.</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Guía de Selección de Ecuación</p><p class=\"text-xs font-mono font-bold text-primary\">Buscar variable faltante &rArr; Seleccionar ecuaci&oacute;n correspondiente</p><p class=\"text-xs text-slate-500\">Ejemplo: Si no te dan tiempo ni lo piden, usa la Ecuación 3.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">ECUACIONES DE ORO DEL MRUA</text><rect x=\"15\" y=\"35\" width=\"130\" height=\"32\" fill=\"#eff6ff\" stroke=\"#bfdbfe\" rx=\"4\" /><text x=\"80\" y=\"47\" font-size=\"7\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">1. vf = vi + at</text><text x=\"80\" y=\"59\" font-size=\"7\" fill=\"#64748b\" text-anchor=\"middle\">Fórmula lineal de velocidad</text><rect x=\"155\" y=\"35\" width=\"130\" height=\"32\" fill=\"#ecfdf5\" stroke=\"#a7f3d0\" rx=\"4\" /><text x=\"220\" y=\"47\" font-size=\"7\" fill=\"#065f46\" font-weight=\"bold\" text-anchor=\"middle\">2. d = vi·t + ½at²</text><text x=\"220\" y=\"59\" font-size=\"7\" fill=\"#64748b\" text-anchor=\"middle\">Fórmula cuadrática de distancia</text><rect x=\"15\" y=\"75\" width=\"130\" height=\"32\" fill=\"#fffbeb\" stroke=\"#fde68a\" rx=\"4\" /><text x=\"80\" y=\"87\" font-size=\"7\" fill=\"#d97706\" font-weight=\"bold\" text-anchor=\"middle\">3. vf² = vi² + 2ad</text><text x=\"80\" y=\"99\" font-size=\"7\" fill=\"#64748b\" text-anchor=\"middle\">Independiente del tiempo</text><rect x=\"155\" y=\"75\" width=\"130\" height=\"32\" fill=\"#fef2f2\" stroke=\"#fca5a5\" rx=\"4\" /><text x=\"220\" y=\"87\" font-size=\"7\" fill=\"#991b1b\" font-weight=\"bold\" text-anchor=\"middle\">4. d = [(vi+vf)/2]·t</text><text x=\"220\" y=\"99\" font-size=\"7\" fill=\"#64748b\" text-anchor=\"middle\">Velocidad media multiplicada</text></svg>",
+                    "svgDescription": "Cajas estilizadas que presentan de forma estructurada las 4 ecuaciones de oro del MRUA para facilitar su visualización y consulta rápida.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Un auto acelera de $10\\text{ m/s}$ a $20\\text{ m/s}$ de forma constante a lo largo de una distancia de $75\\text{ metros}$ en línea recta. ¿Cuánto vale su aceleración?</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1:</strong> Registra las variables dadas: $v_i = 10\\text{ m/s}$, $v_f = 20\\text{ m/s}$, $d = 75\\text{ m}$. Queremos hallar $a$. El tiempo $t$ no figura como dato ni como pregunta.</li><li><strong>Paso 2:</strong> Elegimos la Ecuación 3, que es la única que prescinde del tiempo: <br>$$v_f^2 = v_i^2 + 2ad$$</li><li><strong>Paso 3:</strong> Sustituye las variables: <br>$$20^2 = 10^2 + 2 \\cdot a \\cdot 75 \\Rightarrow 400 = 100 + 150a$$</li><li><strong>Paso 4:</strong> Despeja el término de la aceleración: <br>$$400 - 100 = 150a \\Rightarrow 300 = 150a \\Rightarrow a = \\frac{300}{150} = 2\\text{ m/s}^2$$</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> La aceleración del móvil es de exactamente <strong>2 m/s²</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Usar fórmulas con dos incógnitas:</strong> Tratar de calcular la aceleración usando la ecuación 2 cuando no conoces ni la distancia ni el tiempo. Analiza primero tus variables antes de elegir la fórmula.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Un automóvil parte del reposo y acelera a una tasa constante de 4 m/s² durante 5 segundos. ¿Qué distancia en metros recorre? (Ingresa solo el número entero):",
+                            "correctAnswer": "50",
+                            "hint": "Usa la Ecuación 2: d = vi * t + 0.5 * a * t². Como parte del reposo, vi = 0.",
+                            "feedbackCorrect": "¡Excelente! d = 0.5 * 4 * 5² = 2 * 25 = 50 metros.",
+                            "feedbackIncorrect": "Incorrecto. d = 0.5 * a * t² = 0.5 * 4 * 25 = 50 m.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Un móvil viaja a 15 m/s y frena hasta detenerse por completo tras recorrer una distancia lineal de 30 metros. ¿Cuál fue su desaceleración en m/s²? (Ingresa el número decimal con punto y signo negativo, ej: -3.75):",
+                            "correctAnswer": "-3.75",
+                            "hint": "Usa la Ecuación 3: vf² = vi² + 2ad. Como se detiene, vf = 0. Resuelve 0 = 15² + 2 * a * 30. Despeja 'a'.",
+                            "feedbackCorrect": "¡Perfecto! 0 = 225 + 60a => a = -225 / 60 = -3.75 m/s².",
+                            "feedbackIncorrect": "Incorrecto. a = -vi² / 2d = -225 / 60 = -3.75.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Con los datos del ejercicio anterior, ¿cuánto tiempo en segundos tardó el móvil en detenerse por completo? (Ingresa solo el número entero):",
+                            "correctAnswer": "4",
+                            "hint": "Usa la Ecuación 4: d = ((vi + vf) / 2) * t. Reemplaza d = 30, vi = 15, vf = 0 y despeja t.",
+                            "feedbackCorrect": "¡Excelente! 30 = 7.5 * t => t = 30 / 7.5 = 4 segundos.",
+                            "feedbackIncorrect": "Incorrecto. t = 2d / (vi + vf) = 60 / 15 = 4.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Un avión comercial necesita alcanzar una velocidad de 60 m/s para despegar. Si acelera de forma constante a razón de 3 m/s² a partir del reposo, ¿qué longitud mínima de pista en metros requiere?",
+                            "options": [
+                                "300 metros",
+                                "450 metros",
+                                "600 metros",
+                                "900 metros"
+                            ],
+                            "correctAnswer": 2,
+                            "hint": "Aplica vf² = vi² + 2ad. Reemplaza vf = 60, vi = 0, a = 3 y despeja d.",
+                            "feedbackCorrect": "¡Excelente! 60² = 2 * 3 * d => 3600 = 6d => d = 600 metros.",
+                            "feedbackIncorrect": "Incorrecto. d = vf² / 2a = 3600 / 6 = 600 metros.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Una motocicleta acelera a razón constante de 2 m/s² partiendo del reposo. ¿Cuál será su velocidad final en m/s al cabo de recorrer una recta de 100 metros? (Ingresa solo el número entero):",
+                            "correctAnswer": "20",
+                            "hint": "Usa la Ecuación 3: vf² = vi² + 2ad. Saca la raíz cuadrada del resultado para despejar vf.",
+                            "feedbackCorrect": "¡Perfecto! vf² = 2 * 2 * 100 = 400 => vf = sqrt(400) = 20 m/s.",
+                            "feedbackIncorrect": "Incorrecto. vf² = 2 * 2 * 100 = 400; vf = 20.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        }
+                    ],
+                    "summaryHtml": "Las 4 ecuaciones fundamentales del MRUA unifican analíticamente las variables de movimiento lineal con aceleración constante, permitiendo predecir estados cinemáticos futuros.",
+                    "videoPlaceholderText": "Video de Cálculo: Cómo resolver cualquier problema de MRUA memorizando una tabla de selección."
+                },
+                {
+                    "id": "caida-libre-tiro-vertical",
+                    "title": "Lección 2.3: Caída Libre y Tiro Vertical",
+                    "introduction": "Aprende el comportamiento del movimiento vertical bajo la influencia gravitacional, y domina las convenciones de signos de caída.",
+                    "explanationHtml": "<p>La <strong>caída libre</strong> y el <strong>tiro vertical</strong> son aplicaciones del MRUA sobre el eje vertical ($Y$). En estos movimientos, la aceleración es constante e igual a la aceleración de la gravedad terrestre:</p><p class=\"text-center font-mono font-extrabold text-primary text-base my-2\">g ≈ 9.8 m/s² (o 10 m/s² para simplificar)</p><p class=\"mt-2 font-bold text-slate-800\">Reglas y Convenio de Signos:</p><ul class=\"list-disc pl-5 space-y-1.5 my-2\"><li>La gravedad siempre jala **hacia abajo** (rumbo al centro de la Tierra), por lo que en las ecuaciones vectoriales su aceleración se ingresa con signo negativo: $g = -9.8\\text{ m/s}^2$.</li><li>Al lanzar un objeto hacia arriba (tiro vertical), su velocidad disminuye hasta llegar a cero en su punto más alto (altura máxima). Luego, inicia su descenso acelerando hacia abajo.</li><li>El tiempo que tarda un objeto en subir es exactamente igual al tiempo que tarda en bajar al mismo nivel de lanzamiento.</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Ecuaciones Verticales (Eje Y)</p><p class=\"text-xs font-mono font-bold text-primary\">vf = vi - gt &nbsp;|&nbsp; y = vi&bull;t - &frac12;gt&sup2; &nbsp;|&nbsp; vf&sup2; = vi&sup2; - 2gy</p><p class=\"text-xs text-slate-550\">Nota: Al usar el signo menos en las fórmulas, la gravedad g se ingresa como positiva (9.8).</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">CAÍDA LIBRE (g = 10 m/s²)</text><line x1=\"80\" y1=\"30\" x2=\"80\" y2=\"105\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"2,2\" /><circle cx=\"80\" cy=\"30\" r=\"5\" fill=\"#3b82f6\" /><text x=\"92\" y=\"33\" font-size=\"7\" fill=\"#475569\">t = 0 s (vi = 0)</text><circle cx=\"80\" cy=\"45\" r=\"5\" fill=\"#3b82f6\" opacity=\"0.8\" /><text x=\"92\" y=\"48\" font-size=\"7\" fill=\"#475569\">t = 1 s (v = 10m/s)</text><circle cx=\"80\" cy=\"70\" r=\"5\" fill=\"#3b82f6\" opacity=\"0.6\" /><text x=\"92\" y=\"73\" font-size=\"7\" fill=\"#475569\">t = 2 s (v = 20m/s)</text><circle cx=\"80\" cy=\"105\" r=\"5\" fill=\"#ef4444\" /><text x=\"92\" y=\"108\" font-size=\"7\" fill=\"#991b1b\" font-weight=\"bold\">t = 3 s (v = 30m/s)</text><text x=\"210\" y=\"65\" font-size=\"10\" fill=\"#ef4444\" font-weight=\"bold\" text-anchor=\"middle\">Altura H = 45m</text></svg>",
+                    "svgDescription": "Representación de una caída libre de 3 segundos desde un puente de 45m. Los círculos de posición se separan cada vez más en el tiempo por efecto de la aceleración constante de la gravedad.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Se deja caer una piedra desde lo alto de un puente de $45\\text{ metros}$ de altura. ¿Cuánto tiempo tardará en impactar contra el agua? (Usa la gravedad simplificada $g = 10\\text{ m/s}^2$).</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1:</strong> Registra los datos: velocidad inicial ($v_i = 0$ al \"dejarse caer\"), distancia vertical ($d = 45\\text{ m}$), aceleración de gravedad ($g = 10\\text{ m/s}^2$).</li><li><strong>Paso 2:</strong> Elige la ecuación de distancia vertical sin velocidad final (Ecuación 2): <br>$$d = v_i \\cdot t + \\frac{1}{2} g \\cdot t^2$$</li><li><strong>Paso 3:</strong> Sustituye los valores: <br>$$45 = 0 \\cdot t + \\frac{1}{2} (10) \\cdot t^2 \\Rightarrow 45 = 5t^2$$</li><li><strong>Paso 4:</strong> Despeja el tiempo al cuadrado: $t^2 = 45 ÷ 5 = 9$.</li><li><strong>Paso 5:</strong> Saca la raíz cuadrada: $t = \\sqrt{9} = 3\\text{ segundos}$.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> La piedra tarda exactamente <strong>3 segundos</strong> en golpear el agua.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Ignorar el signo de la gravedad al lanzar hacia arriba:</strong> Si un objeto sube, su velocidad apunta hacia arriba ($+$) pero la gravedad jala hacia abajo ($-$). Si no colocas signo negativo a la gravedad en este caso, la ecuación te arrojará de forma errónea que el objeto acelera hacia arriba infinitamente en lugar de frenarse.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Lanzas una pelota verticalmente hacia arriba a una velocidad inicial de 20 m/s. ¿Cuánto tiempo en segundos tarda en alcanzar su altura máxima? (Usa g = 10 m/s². Ingresa solo el número entero):",
+                            "correctAnswer": "2",
+                            "hint": "En el punto de altura máxima la velocidad final (vf) es exactamente cero. Aplica la fórmula: vf = vi - g * t.",
+                            "feedbackCorrect": "¡Excelente! 0 = 20 - 10t => 10t = 20 => t = 2 segundos.",
+                            "feedbackIncorrect": "Incorrecto. En la altura máxima vf=0. 0 = 20 - 10t; t = 2 segundos.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Con los mismos datos del ejercicio anterior (vi = 20 m/s, t = 2 s), ¿cuál es la altura máxima en metros alcanzada por la pelota? (Ingresa solo el número entero):",
+                            "correctAnswer": "20",
+                            "hint": "Usa la fórmula de distancia promedio: d = ((vi + vf) / 2) * t. Reemplaza vi = 20, vf = 0 y t = 2.",
+                            "feedbackCorrect": "¡Perfecto! d = ((20 + 0) / 2) * 2 = 10 * 2 = 20 metros.",
+                            "feedbackIncorrect": "Incorrecto. Altura = ((20 + 0)/2) * 2 = 20 metros.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Se deja caer libremente un objeto desde lo alto de una torre de telecomunicaciones y tarda exactamente 4 segundos en golpear el suelo. ¿De qué altura en metros cayó? (Usa g = 9.8 m/s². Ingresa el número decimal con punto):",
+                            "correctAnswer": "78.4",
+                            "hint": "Aplica d = 0.5 * g * t² con vi = 0. Reemplaza g = 9.8 y t = 4.",
+                            "feedbackCorrect": "¡Excelente! d = 0.5 * 9.8 * 16 = 4.9 * 16 = 78.4 metros.",
+                            "feedbackIncorrect": "Incorrecto. d = 0.5 * 9.8 * 4² = 78.4 m.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Con qué velocidad inicial en m/s se debe lanzar una piedra verticalmente hacia arriba para que logre una altura máxima de 80 metros? (Usa g = 10 m/s². Ingresa solo el número entero):",
+                            "correctAnswer": "40",
+                            "hint": "Aplica vf² = vi² - 2gy. En la altura máxima vf = 0 y y = 80. Resuelve 0 = vi² - 2 * 10 * 80.",
+                            "feedbackCorrect": "¡Perfecto! vi² = 1600 => vi = sqrt(1600) = 40 m/s.",
+                            "feedbackIncorrect": "Incorrecto. vi² = 2 * 10 * 80 = 1600; vi = 40.",
+                            "difficulty": "avanzado",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Una jugosa manzana se desprende de una rama alta y cae tocando el suelo en 0.8 segundos. ¿Con qué rapidez en m/s impacta contra el asfalto? (Usa g = 10 m/s². Ingresa solo el número entero):",
+                            "correctAnswer": "8",
+                            "hint": "Aplica la ecuación de velocidad: vf = vi + g * t. Como se desprende, vi = 0.",
+                            "feedbackCorrect": "¡Excelente! vf = 0 + 10 * 0.8 = 8 m/s.",
+                            "feedbackIncorrect": "Incorrecto. vf = g * t = 10 * 0.8 = 8.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        }
+                    ],
+                    "summaryHtml": "La caída libre y el tiro vertical son movimientos uniaxiales acelerados por la gravedad. El riguroso control vectorial de signos asegura el éxito analítico de la altura máxima.",
+                    "videoPlaceholderText": "Video de Física: Caída libre y tiro vertical con ejercicios típicos resueltos paso a paso."
+                }
+            ]
+        },
+        {
+            "title": "Unidad 3: Movimiento en Dos Dimensiones",
+            "lessons": [
+                {
+                    "id": "tiro-parabolico-proyectiles",
+                    "title": "Lección 3.1: Composición de Movimientos (Tiro Parabólico)",
+                    "introduction": "Domina el análisis del movimiento en 2D descomponiéndolo en un eje horizontal con velocidad constante y un eje vertical acelerado.",
+                    "explanationHtml": "<p>El <strong>tiro parabólico</strong> o movimiento de proyectiles describe la trayectoria curva de un cuerpo lanzado al aire con un ángulo de inclinación $\\theta$. Galileo Galilei demostró que este movimiento se compone de dos movimientos independientes y perpendiculares:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Eje Horizontal (X):</strong> No hay fuerzas que aceleren al proyectil en esta dirección (despreciando el aire). Viaja con **velocidad constante (MRU)**: <br>$$d_x = v_x \\cdot t \\quad \\text{donde } v_x = v_i \\cos(\\theta)$$</li><li><strong>Eje Vertical (Y):</strong> Afectado de forma constante por la aceleración de la gravedad. Realiza un **movimiento acelerado (MRUA / Caída libre)**: <br>$$v_y = v_{iy} - gt \\quad \\text{donde } v_{iy} = v_i \\operatorname{sen}(\\theta)$$</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Componentes de Lanzamiento</p><p class=\"text-xs font-mono font-bold text-primary\">vx = vi cos(&theta;) (Constante) &nbsp;|&nbsp; viy = vi sen(&theta;) (Afectado por g)</p><p class=\"text-xs text-slate-550\">El puente de conexión entre ambos ejes es siempre la variable del TIEMPO (t).</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">TIRO PARABÓLICO EN EL PLANO</text><path d=\"M 40 95 Q 140 10 240 95\" fill=\"none\" stroke=\"#2563eb\" stroke-dasharray=\"2,2\" stroke-width=\"2\" /><circle cx=\"40\" cy=\"95\" r=\"5\" fill=\"#3b82f6\" /><line x1=\"40\" y1=\"95\" x2=\"80\" y2=\"55\" stroke=\"#ef4444\" stroke-width=\"2\" stroke-linecap=\"round\" /><polygon points=\"78,59 83,52 75,53\" fill=\"#ef4444\" /><text x=\"65\" y=\"47\" font-size=\"8\" fill=\"#ef4444\" font-weight=\"bold\">vi</text><circle cx=\"140\" cy=\"52.5\" r=\"5\" fill=\"#3b82f6\" /><line x1=\"140\" y1=\"52.5\" x2=\"175\" y2=\"52.5\" stroke=\"#059669\" stroke-width=\"1.5\" /><polygon points=\"173,49 180,52.5 173,56\" fill=\"#059669\" /><text x=\"160\" y=\"45\" font-size=\"8\" fill=\"#047857\" font-weight=\"bold\">vx</text><circle cx=\"240\" cy=\"95\" r=\"5\" fill=\"#ef4444\" /><text x=\"140\" y=\"112\" font-size=\"8\" fill=\"#64748b\" text-anchor=\"middle\">Eje X: MRU (vx) | Eje Y: MRUA (viy, g)</text></svg>",
+                    "svgDescription": "Gráfico de trayectoria parabólica de un proyectil. Muestra el vector de velocidad de lanzamiento vi descompuesto en vx horizontal constante e viy vertical afectada por la gravedad.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Una pelota es lanzada horizontalmente desde lo alto de una mesa de $1.25\\text{ metros}$ de altura con una velocidad horizontal de $4\\text{ m/s}$. ¿A qué distancia de la base de la mesa caerá la pelota? (Usa la gravedad simplificada $g = 10\\text{ m/s}^2$).</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1 (Eje Y - Tiempo de Caída):</strong> Como el lanzamiento es puramente horizontal, la velocidad inicial en Y es cero ($v_{iy} = 0$). Planteamos la caída vertical: <br>$$h = \\frac{1}{2} g t^2 \\Rightarrow 1.25 = \\frac{1}{2}(10) t^2 \\Rightarrow 1.25 = 5t^2$$ <br>Despejamos: $t^2 = 1.25 ÷ 5 = 0.25 \\Rightarrow t = \\sqrt{0.25} = 0.5$ segundos.</li><li><strong>Paso 2 (Eje X - Alcance Horizontal):</strong> Usamos el tiempo calculado ($t = 0.5\\text{ s}$) y la velocidad horizontal constante $v_x = 4\\text{ m/s}$: <br>$$d_x = v_x \\cdot t = 4\\text{ m/s} \\times 0.5\\text{ s} = 2\\text{ metros}$$</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> La pelota impactará el suelo a una distancia horizontal de exactly **2 metros** de la base.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Mezclar componentes en las fórmulas:</strong> Usar la velocidad horizontal en la fórmula vertical de caída ($h = v_x t + 0.5gt^2$). Mantén separados de forma estricta los dos ejes en tu planteo.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Si un proyectil es lanzado con una velocidad horizontal de 15 m/s desde una altura de 20 metros, ¿cuánto tiempo en segundos tarda en caer? (Usa g = 10 m/s². Ingresa solo el número entero):",
+                            "correctAnswer": "2",
+                            "hint": "Calcula el tiempo vertical con t = sqrt(2h/g). Reemplaza h = 20 y g = 10.",
+                            "feedbackCorrect": "¡Excelente! t = sqrt(2*20 / 10) = sqrt(40 / 10) = sqrt(4) = 2 segundos.",
+                            "feedbackIncorrect": "Incorrecto. t = sqrt(2h/g) = sqrt(40/10) = 2.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Con los datos del ejercicio anterior (vx = 15 m/s, t = 2 s), ¿cuál es el alcance horizontal total en metros del proyectil? (Ingresa solo el número entero):",
+                            "correctAnswer": "30",
+                            "hint": "Aplica la fórmula horizontal directa: d = vx * t. Reemplaza vx = 15 y t = 2.",
+                            "feedbackCorrect": "¡Perfecto! d = 15 * 2 = 30 metros de distancia horizontal.",
+                            "feedbackIncorrect": "Incorrecto. Alcance = vx * t = 15 * 2 = 30 metros.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Un futbolista patea un balón con un ángulo de elevación de modo que su velocidad inicial horizontal es de 12 m/s y su velocidad inicial vertical es de 20 m/s. ¿Cuál es el tiempo de vuelo total en segundos del balón? (Usa g = 10 m/s². Ingresa solo el número entero):",
+                            "correctAnswer": "4",
+                            "hint": "El tiempo de vuelo es el doble del tiempo de subida. Tiempo de subida = viy / g = 20 / 10 = 2 s. Multiplica por 2.",
+                            "feedbackCorrect": "¡Excelente! Tiempo de vuelo = 2 * (20 / 10) = 4 segundos.",
+                            "feedbackIncorrect": "Incorrecto. Subida = 2s, por lo que el vuelo completo es de 4 segundos.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Con los mismos datos del ejercicio anterior (vx = 12 m/s, tiempo de vuelo = 4 s), ¿cuál fue el alcance horizontal total en metros del balón? (Ingresa solo el número entero):",
+                            "correctAnswer": "48",
+                            "hint": "El alcance se calcula multiplicando la velocidad horizontal constante por el tiempo de vuelo completo: d = vx * t_vuelo.",
+                            "feedbackCorrect": "¡Perfecto! d = 12 m/s * 4 s = 48 metros.",
+                            "feedbackIncorrect": "Incorrecto. Alcance = vx * t = 12 * 4 = 48.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Qué velocidad vertical posee un proyectil exactamente en su punto más alto (altura máxima) de su trayectoria parabólica?",
+                            "options": [
+                                "Es igual a la velocidad inicial de lanzamiento.",
+                                "Es exactamente cero (0 m/s).",
+                                "Es igual a la velocidad horizontal de avance.",
+                                "Depende de la aceleración del aire."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Al dejar de subir y empezar a bajar, la velocidad en Y se anula puntualmente; sin embargo, sigue avanzando horizontalmente.",
+                            "feedbackCorrect": "¡Perfecto! En la cúspide la velocidad vertical es 0 m/s, toda la velocidad en ese punto es puramente horizontal.",
+                            "feedbackIncorrect": "Incorrecto. Al dejar de subir y antes de bajar, su velocidad vertical es exactamente cero.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "El tiro parabólico es la composición ortogonal de un MRU horizontal y un MRUA vertical. El tiempo de vuelo actúa como el parámetro de conexión fundamental entre ambos ejes.",
+                    "videoPlaceholderText": "Video de Física: Lanzamiento de proyectiles y descomposición de movimientos."
+                },
+                {
+                    "id": "movimiento-circular-uniforme-mcu",
+                    "title": "Lección 3.2: Movimiento Circular Uniforme (MCU)",
+                    "introduction": "Estudia el movimiento de rotación a rapidez constante y comprende la aceleración centrípeta de cambio direccional.",
+                    "explanationHtml": "<p>En el <strong>Movimiento Circular Uniforme (MCU)</strong>, un cuerpo describe una trayectoria circular con una **rapidez constante**. Sin embargo, la **dirección** del vector velocidad cambia continuamente en cada punto de la curva.</p><p>Este cambio de dirección de la velocidad produce una aceleración que apunta siempre hacia el centro del círculo, llamada <strong>aceleración centrípeta ($a_c$)</strong>:</p><p class=\"text-center font-mono font-extrabold text-primary text-base my-2\">$$a_c = \\frac{v^2}{r} = \\omega^2 \\cdot r$$</p><p class=\"mt-2 font-bold text-slate-800\">Conceptos Clave:</p><ul class=\"list-disc pl-5 space-y-1 my-2\"><li><strong>Período ($T$):</strong> Tiempo necesario para dar una vuelta completa (segundos).</li><li><strong>Frecuencia ($f$):</strong> Vueltas dadas por segundo (Hertz, $f = 1/T$).</li><li><strong>Velocidad Angular ($\\omega$):</strong> Rapidez de rotación en radianes por segundo ($\\omega = 2\\pi f$).</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Fórmulas del MCU</p><p class=\"text-xs font-mono font-bold text-primary\">v = &omega;&bull;r &nbsp;|&nbsp; ac = v&sup2; / r &nbsp;|&nbsp; &omega; = 2&pi; / T</p><p class=\"text-xs text-slate-550\">Recuerda: ac apunta siempre radialmente hacia el centro del círculo.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">MOVIMIENTO CIRCULAR (MCU)</text><circle cx=\"100\" cy=\"70\" r=\"35\" fill=\"none\" stroke=\"#3b82f6\" stroke-width=\"1.5\" /><circle cx=\"100\" cy=\"70\" r=\"3\" fill=\"#64748b\" /><line x1=\"100\" y1=\"70\" x2=\"135\" y2=\"70\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"2,2\" /><text x=\"117\" y=\"66\" font-size=\"7\" fill=\"#64748b\" font-weight=\"bold\">r = 2m</text><circle cx=\"135\" cy=\"70\" r=\"5\" fill=\"#ef4444\" /><line x1=\"135\" y1=\"70\" x2=\"135\" y2=\"35\" stroke=\"#059669\" stroke-width=\"2\" stroke-linecap=\"round\" /><polygon points=\"131,35 135,27 139,35\" fill=\"#059669\" /><text x=\"142\" y=\"42\" font-size=\"8\" fill=\"#047857\" font-weight=\"bold\">v = 6 m/s</text><line x1=\"135\" y1=\"70\" x2=\"105\" y2=\"70\" stroke=\"#ef4444\" stroke-width=\"2\" stroke-linecap=\"round\" /><polygon points=\"110,66 102,70 110,74\" fill=\"#ef4444\" /><text x=\"118\" y=\"80\" font-size=\"7\" fill=\"#991b1b\" font-weight=\"bold\">ac</text></svg>",
+                    "svgDescription": "Objeto en trayectoria circular con radio de 2m. Ilustra la velocidad lineal tangencial v = 6 m/s en verde y la aceleración centrípeta ac en rojo apuntando hacia el centro.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Un auto de juguete gira en una pista circular de $2\\text{ metros}$ de radio con una velocidad tangencial constante de $6\\text{ m/s}$. ¿Cuál es la magnitud de su aceleración centrípeta?</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1:</strong> Registra las variables dadas: radio de la pista $r = 2\\text{ m}$, rapidez lineal $v = 6\\text{ m/s}$.</li><li><strong>Paso 2:</strong> Plantea la fórmula de la aceleración centrípeta: <br>$$a_c = \\frac{v^2}{r}$$</li><li><strong>Paso 3:</strong> Reemplaza y opera: <br>$$a_c = \\frac{6^2}{2} = \\frac{36}{2} = 18\\text{ m/s}^2$$</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> La aceleración centrípeta del auto es de <strong>18 m/s²</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Creer que la aceleración es nula por rapidez constante:</strong> Un error conceptual muy común. Al girar, la velocidad cambia de dirección, por lo que **sí existe aceleración** (centrípeta). Solo si viajara en línea recta a rapidez constante la aceleración sería cero.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Si un disco da 30 vueltas completas en un tiempo de un minuto, ¿cuál es su período (T) de rotación en segundos? (Ingresa solo el número entero):",
+                            "correctAnswer": "2",
+                            "hint": "El período es el tiempo para dar una sola vuelta: T = tiempo total / número de vueltas. Recuerda que un minuto son 60 segundos.",
+                            "feedbackCorrect": "¡Excelente! T = 60 s / 30 vueltas = 2 segundos.",
+                            "feedbackIncorrect": "Incorrecto. T = 60 / 30 = 2 segundos.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Con los datos de rotación del ejercicio anterior (período T = 2 s), ¿cuál es su frecuencia (f) de giro en Hertz (Hz)? (Ingresa el decimal con punto):",
+                            "correctAnswer": "0.5",
+                            "hint": "La frecuencia es el recíproco del período: f = 1 / T. Divide 1 entre 2.",
+                            "feedbackCorrect": "¡Perfecto! f = 1 / 2 = 0.5 Hz.",
+                            "feedbackIncorrect": "Incorrecto. f = 1 / T = 1 / 2 = 0.5.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Un automóvil de juguete gira en un círculo de 0.5 m de radio. Si su aceleración centrípeta es de 8 m/s², ¿cuál es su rapidez tangencial lineal en m/s? (Ingresa solo el número entero):",
+                            "correctAnswer": "2",
+                            "hint": "Despeja v de la fórmula ac = v² / r. vf² = ac * r = 8 * 0.5 = 4. Saca raíz cuadrada de 4.",
+                            "feedbackCorrect": "¡Excelente! v² = 4 => v = sqrt(4) = 2 m/s.",
+                            "feedbackIncorrect": "Incorrecto. v² = ac * r = 8 * 0.5 = 4; v = 2.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Calcula la velocidad angular aproximada en rad/s de un ventilador de aspas que da una vuelta completa cada 0.2 segundos. (Usa Pi ≈ 3.14. Ingresa el decimal con punto):",
+                            "correctAnswer": "31.4",
+                            "hint": "Aplica w = 2*Pi / T. Reemplaza T = 0.2 y Pi = 3.14.",
+                            "feedbackCorrect": "¡Perfecto! w = (2 * 3.14) / 0.2 = 6.28 / 0.2 = 31.4 rad/s.",
+                            "feedbackIncorrect": "Incorrecto. w = 2π / T = 6.28 / 0.2 = 31.4.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Hacia dónde apunta de forma vectorial la aceleración centrípeta en cualquier movimiento circular?",
+                            "options": [
+                                "En sentido tangencial a la curva, empujando hacia adelante.",
+                                "Radialmente hacia afuera del círculo (fuga del centro).",
+                                "Radialmente hacia adentro (hacia el centro del círculo).",
+                                "Forma un ángulo de 45° con el radio de curvatura."
+                            ],
+                            "correctAnswer": 2,
+                            "hint": "La aceleración centrípeta debe tirar del objeto hacia adentro para obligarlo a curvarse sin salir disparado.",
+                            "feedbackCorrect": "¡Excelente! Apunta radialmente hacia el centro geométrico del círculo.",
+                            "feedbackIncorrect": "Incorrecto. Apunta siempre hacia el centro del círculo de rotación.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "El MCU describe giros de rapidez uniforme. El cambio direccional del vector velocidad produce una aceleración centrípeta radial hacia el centro de la rotación.",
+                    "videoPlaceholderText": "Video de Física: Conceptos de movimiento circular, período, frecuencia y aceleración centrípeta."
+                },
+                {
+                    "id": "aplicaciones-didacticas-cinematica",
+                    "title": "Lección 3.3: Aplicaciones Didácticas y del Entorno",
+                    "introduction": "Aprende a aplicar las fórmulas de cinemática a escenarios reales de carreteras y geografía de Guatemala.",
+                    "explanationHtml": "<p>La cinemática no es una abstracción de laboratorio; describe el movimiento diario de vehículos y de la naturaleza a nuestro alrededor.</p><p>Analizar situaciones de nuestro entorno ayuda a asentar el sentido físico:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Carreteras locales:</strong> Las pendientes de la Bajada de las Cañas a Antigua o las curvas cerradas de la Autopista Palín-Escuintla exigen límites de velocidad para no superar el límite de fricción y la fuerza centrípeta.</li><li><strong>Frenado de Emergencia:</strong> Calcular la desaceleración y tiempo de reacción al frenar de imprevisto en el tráfico pesado de la Calzada Roosevelt de Ciudad de Guatemala.</li><li><strong>Caídas Libres:</strong> Los tiempos de caída de objetos en barrancos o puentes viales de la capital.</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Frenado y Curvatura Segura</p><p class=\"text-xs font-mono font-bold text-primary\">Dist. Frenado: d = -vi&sup2; / 2a &nbsp;|&nbsp; ac = v&sup2; / r</p><p class=\"text-xs text-slate-550\">Una desaceleración de frenos segura suele rondar entre -5 y -7 m/s².</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">CINEMÁTICA EN CARRETERA</text><path d=\"M 40 90 Q 150 90 260 40\" fill=\"none\" stroke=\"#64748b\" stroke-width=\"8\" /><circle cx=\"60\" cy=\"85\" r=\"8\" fill=\"#ef4444\" /><text x=\"60\" y=\"70\" font-size=\"8\" fill=\"#ef4444\" font-weight=\"bold\" text-anchor=\"middle\">Guatemala</text><circle cx=\"240\" cy=\"45\" r=\"8\" fill=\"#059669\" /><text x=\"240\" y=\"32\" font-size=\"8\" fill=\"#059669\" font-weight=\"bold\" text-anchor=\"middle\">Tecpán</text><text x=\"150\" y=\"105\" font-size=\"8\" fill=\"#334155\" text-anchor=\"middle\" font-weight=\"bold\">Distancia: 88 km | v_promedio = 44 km/h | t = 2 h</text></svg>",
+                    "svgDescription": "Infografía de ruta vial entre Ciudad de Guatemala y Tecpán separadas por 88 km, ilustrando el cálculo cinemático de tiempo de viaje (2 horas) a rapidez constante.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Un autobús de transporte extraurbano recorre la carretera Interamericana desde Ciudad de Guatemala hasta Tecpán ($88\\text{ km}$). Si sale a las 7:00 AM y su rapidez promedio es de $44\\text{ km/h}$ debido al tráfico habitual en San Lucas, ¿a qué hora llegará a su destino?</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1:</strong> Identifica datos: distancia $d = 88\\text{ km}$, rapidez constante $v = 44\\text{ km/h}$.</li><li><strong>Paso 2:</strong> Calcula el tiempo necesario con la ecuación del MRU: <br>$$t = \\frac{d}{v} = \\frac{88\\text{ km}}{44\\text{ km/h}} = 2\\text{ horas}$$</li><li><strong>Paso 3:</strong> Suma el tiempo de viaje a la hora de salida del autobús: <br>$$\\text{Hora de llegada} = 7:00\\text{ AM} + 2\\text{ horas} = 9:00\\text{ AM}$$</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> El autobús llegará a Tecpán a las <strong>9:00 AM</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>No homogeneizar unidades de tiempo:</strong> Sumar minutos directos a horas decimales. Por ejemplo, decir que 1.5 horas son 1 hora y 50 minutos. ¡Error! 1.5 horas equivale a 1 hora y 30 minutos (0.5 horas * 60 min = 30 min).</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Un peatón cruza un puente de 6 metros de altura en la Calzada Roosevelt y deja caer una moneda libremente. ¿Cuánto tiempo en segundos tardará en golpear el asfalto? (Usa g = 10 m/s². Ingresa decimal con punto, ej: 1.1):",
+                            "correctAnswer": "1.1",
+                            "hint": "Aplica t = sqrt(2h/g). Reemplaza h = 6 y g = 10. t = sqrt(12/10) = sqrt(1.2).",
+                            "feedbackCorrect": "¡Excelente! t = sqrt(1.2) ≈ 1.1 segundos.",
+                            "feedbackIncorrect": "Incorrecto. t = sqrt(2*6 / 10) = sqrt(1.2) ≈ 1.1s.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Un camión de carga de caña de azúcar viaja por la Costa Sur a una velocidad constante de 54 km/h. ¿A cuántos metros por segundo (m/s) equivale esta velocidad? (Ingresa solo el número entero):",
+                            "correctAnswer": "15",
+                            "hint": "Para convertir de km/h a m/s, divide el valor de velocidad directamente entre 3.6.",
+                            "feedbackCorrect": "¡Perfecto! 54 / 3.6 = 15 m/s.",
+                            "feedbackIncorrect": "Incorrecto. 54 km/h / 3.6 = 15 m/s.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si conduces un automóvil a 10 m/s en una curva pronunciada de la Bajada de las Cañas a Antigua Guatemala y el radio de curvatura es de 25 metros, ¿qué aceleración centrípeta en m/s² experimentas? (Ingresa solo el número entero):",
+                            "correctAnswer": "4",
+                            "hint": "Aplica la fórmula ac = v² / r. Reemplaza v = 10 y r = 25.",
+                            "feedbackCorrect": "¡Excelente! ac = 10² / 25 = 100 / 25 = 4 m/s².",
+                            "feedbackIncorrect": "Incorrecto. ac = 10² / 25 = 100 / 25 = 4.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Para evitar colisiones de tráfico, la distancia de frenado seguro de un auto a 80 km/h (22.22 m/s) debe ser de 40 metros. ¿Qué desaceleración constante de frenos en m/s² debe garantizar el auto? (Usa signo negativo. Ingresa decimal con punto, ej: -6.17):",
+                            "correctAnswer": "-6.17",
+                            "hint": "Usa vf² = vi² + 2ad con vf = 0. Resuelve 0 = 22.22² + 2 * a * 40. a = -493.73 / 80.",
+                            "feedbackCorrect": "¡Perfecto! La desaceleración requerida es de -6.17 m/s².",
+                            "feedbackIncorrect": "Incorrecto. a = -vi² / 2d = -493.73 / 80 = -6.17.",
+                            "difficulty": "avanzado",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Un niño suelta un barrilete gigante en Sumpango desde lo alto de una colina de 80 metros de altura. ¿Cuánto tiempo en segundos tardaría en chocar contra el suelo si cayera libremente en el vacío? (Usa g = 10 m/s². Ingresa solo el número entero):",
+                            "correctAnswer": "4",
+                            "hint": "Aplica t = sqrt(2h/g). Reemplaza h = 80 y g = 10.",
+                            "feedbackCorrect": "¡Excelente! t = sqrt(2 * 80 / 10) = sqrt(160 / 10) = sqrt(16) = 4 segundos.",
+                            "feedbackIncorrect": "Incorrecto. t = sqrt(160 / 10) = sqrt(16) = 4.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        }
+                    ],
+                    "summaryHtml": "La cinemática aplicada vincula ecuaciones de movimiento y aceleraciones a incidentes vehiculares, geografía regional e infraestructura urbana del entorno real.",
+                    "videoPlaceholderText": "Video de Física: Cinemática en la vida real y la física de accidentes viales."
+                }
+            ]
+        }
+    ]
+},
+
+    "leyes-newton": {
+    "isRichCourse": true,
+    "title": "Leyes de Newton",
+    "units": [
+        {
+            "title": "Unidad 1: Fuerzas y la Primera Ley (Inercia)",
+            "lessons": [
+                {
+                    "id": "concepto-fuerza-tipos",
+                    "title": "Lección 1.1: El Concepto de Fuerza y sus Tipos",
+                    "introduction": "Define fuerza como una interacción vectorial e identifica las fuerzas mecánicas básicas que actúan sobre un cuerpo en equilibrio o movimiento.",
+                    "explanationHtml": "<p>En física clásica, una <strong>fuerza ($\\vec{F}$)</strong> es toda interacción capaz de modificar el estado de reposo o de movimiento de un cuerpo, o de producir en él una deformación. Se trata de una magnitud vectorial (posee magnitud, dirección y sentido), y su unidad de medida en el Sistema Internacional (SI) es el <strong>Newton ($N$)</strong>, donde $1\\text{ N} = 1\\text{ kg}\\cdot\\text{m/s}^2$.</p><p class=\"mt-2 text-slate-700\">Las cuatro fuerzas mecánicas básicas de contacto y campo que analizaremos son:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Peso ($\\vec{w}$):</strong> Fuerza de atracción gravitatoria que ejerce la Tierra sobre cualquier masa. Siempre apunta verticalmente hacia abajo (rumbo al centro terrestre): <br>$$w = m \\cdot g$$</li><li><strong>Normal ($\\vec{N}$):</strong> Fuerza de soporte o contacto perpendicular que ejerce una superficie rígida sobre un objeto apoyado en ella.</li><li><strong>Tensión ($\\vec{T}$):</strong> Fuerza de tracción o jalón transmitida a lo largo de cuerdas, cables o cadenas estiradas.</li><li><strong>Fricción o Rozamiento ($\\vec{f}$):</strong> Fuerza de resistencia al deslizamiento que actúa paralela a las superficies en contacto y en sentido opuesto al movimiento relativo.</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Ecuación Gravitatoria Básica</p><p class=\"text-xs font-mono font-bold text-primary\">w = m &bull; g</p><p class=\"text-xs text-slate-500\">Masa (m) en kg, gravedad (g &asymp; 9.8 m/s&sup2; o 10 m/s&sup2;), Peso (w) en Newtons.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">FUERZAS MECÁNICAS BÁSICAS</text><line x1=\"30\" y1=\"90\" x2=\"270\" y2=\"90\" stroke=\"#94a3b8\" stroke-width=\"1.5\" /><rect x=\"110\" y=\"55\" width=\"80\" height=\"35\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"1.5\" rx=\"4\" /><text x=\"150\" y=\"76\" font-size=\"9\" font-family=\"sans-serif\" font-weight=\"bold\" fill=\"#1e40af\" text-anchor=\"middle\">Bloque m</text><line x1=\"150\" y1=\"55\" x2=\"150\" y2=\"25\" stroke=\"#10b981\" stroke-width=\"2\" stroke-linecap=\"round\" /><polygon points=\"146,27 150,19 154,27\" fill=\"#10b981\" /><text x=\"156\" y=\"28\" font-size=\"8\" fill=\"#047857\" font-weight=\"bold\">Normal (N)</text><line x1=\"150\" y1=\"72\" x2=\"150\" y2=\"110\" stroke=\"#ef4444\" stroke-width=\"2\" stroke-linecap=\"round\" /><polygon points=\"146,108 150,116 154,108\" fill=\"#ef4444\" /><text x=\"156\" y=\"106\" font-size=\"8\" fill=\"#b91c1c\" font-weight=\"bold\">Peso (w = mg)</text><line x1=\"190\" y1=\"72\" x2=\"240\" y2=\"72\" stroke=\"#3b82f6\" stroke-width=\"2\" stroke-linecap=\"round\" /><polygon points=\"238,68 246,72 238,76\" fill=\"#3b82f6\" /><text x=\"210\" y=\"66\" font-size=\"8\" fill=\"#1e40af\" font-weight=\"bold\">Tensión (T)</text><line x1=\"110\" y1=\"90\" x2=\"60\" y2=\"90\" stroke=\"#f59e0b\" stroke-width=\"2\" stroke-linecap=\"round\" /><polygon points=\"62,94 54,90 62,86\" fill=\"#f59e0b\" /><text x=\"70\" y=\"84\" font-size=\"8\" fill=\"#b45309\" font-weight=\"bold\">Fricción (f)</text></svg>",
+                    "svgDescription": "Un bloque de masa m apoyado sobre el suelo y jalado por una cuerda. Se ilustran las cuatro fuerzas mecánicas fundamentales concurrentes: Peso (rojo), Normal (verde), Tensión (azul) y Fricción (naranja).",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Un bloque de madera de $5\\text{ kg}$ está en reposo apoyado sobre una mesa horizontal en Xela. Identifica y calcula las fuerzas verticales que actúan sobre el bloque (usa $g = 9.8\\text{ m/s}^2$).</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1 (Calcular Peso):</strong> El peso actúa verticalmente hacia abajo debido a la atracción gravitatoria: <br>$$w = m \\cdot g = 5\\text{ kg} \\times 9.8\\text{ m/s}^2 = 49\\text{ Newtons (abajo)}$$</li><li><strong>Paso 2 (Fuerza Normal):</strong> Al estar apoyado sobre una mesa en reposo horizontal sin aceleración vertical, la mesa debe contrarrestar exactamente al peso ejerciendo una fuerza normal de soporte hacia arriba: <br>$$\\sum F_y = 0 \\Rightarrow N - w = 0 \\Rightarrow N = w = 49\\text{ Newtons (arriba)}$$</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> El bloque experimenta un peso de <strong>49 N</strong> hacia abajo y una fuerza normal de <strong>49 N</strong> hacia arriba.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Normal siempre vertical:</strong> Dibujar la fuerza normal siempre apuntando verticalmente hacia arriba. Recuerda que la Normal es siempre <strong>perpendicular a la superficie</strong>. Si la superficie está inclinada, la normal también se inclinará.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "¿Cuál es el peso en Newtons de un objeto de masa 10 kg en la Tierra? (Usa g = 9.8 m/s² y escribe únicamente el número entero):",
+                            "correctAnswer": "98",
+                            "hint": "Aplica w = m * g. Multiplica m = 10 por g = 9.8.",
+                            "feedbackCorrect": "¡Excelente! w = 10 kg * 9.8 m/s² = 98 Newtons.",
+                            "feedbackIncorrect": "Incorrecto. Recuerda que Peso = m * g = 10 * 9.8 = 98.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Qué dirección geométrica tiene siempre la fuerza normal ejercida por una pared vertical sobre un bloque apoyado en ella?",
+                            "options": [
+                                "Vertical apuntando hacia arriba.",
+                                "Vertical apuntando hacia abajo.",
+                                "Horizontal apuntando hacia afuera de la pared.",
+                                "Horizontal apuntando hacia adentro de la pared."
+                            ],
+                            "correctAnswer": 2,
+                            "hint": "La normal siempre es perpendicular (a 90 grados) de la superficie de contacto.",
+                            "feedbackCorrect": "¡Perfecto! Al ser la pared vertical, la normal perpendicular es horizontal y apunta hacia afuera para soportar al bloque.",
+                            "feedbackIncorrect": "Incorrecto. Al ser la pared vertical, la normal es perpendicular a ella, es decir, horizontal hacia afuera.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Si la masa de una persona en la Tierra es de 60 kg, ¿cuál será su masa aproximada en kg si viaja a la Luna? (Ingresa solo el número entero):",
+                            "correctAnswer": "60",
+                            "hint": "Diferencia masa de peso. La masa representa la cantidad de materia inercial invariable.",
+                            "feedbackCorrect": "¡Excelente! La masa es una propiedad intrínseca e invariable de la materia. Lo que varía en la Luna es su peso debido a la baja gravedad.",
+                            "feedbackIncorrect": "Incorrecto. La masa no cambia con la gravedad; seguirá siendo de 60 kg. El peso es el que varía.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cómo se le llama a la fuerza mecánica que ejerce una cuerda tensa sobre un objeto atado a ella?",
+                            "options": [
+                                "Fuerza Normal",
+                                "Peso Gravitatorio",
+                                "Fricción Estática",
+                                "Tensión"
+                            ],
+                            "correctAnswer": 3,
+                            "hint": "Las cuerdas y cables transmiten fuerzas de tracción llamadas...",
+                            "feedbackCorrect": "¡Perfecto! La Tensión es la fuerza transmitida por tracción en cables y cuerdas.",
+                            "feedbackIncorrect": "Incorrecto. Se le conoce como fuerza de Tensión.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "¿En qué dirección actúa la fuerza de fricción sobre un bloque que se desliza horizontalmente hacia la derecha?",
+                            "options": [
+                                "Hacia la derecha, impulsándolo.",
+                                "Hacia la izquierda, oponiéndose al deslizamiento.",
+                                "Vertical hacia arriba.",
+                                "Vertical hacia abajo."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "La fricción siempre se opone a la tendencia de movimiento relativo entre las superficies.",
+                            "feedbackCorrect": "¡Perfecto! Como el bloque avanza a la derecha, la fricción actúa hacia la izquierda para oponerse al movimiento.",
+                            "feedbackIncorrect": "Incorrecto. La fricción se opone al movimiento, por lo que actúa hacia la izquierda.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "Una fuerza es una interacción vectorial que altera el movimiento o la forma de un objeto. Identificar correctamente Normal, Peso, Tensión y Fricción es crucial.",
+                    "videoPlaceholderText": "Video de Física: Introducción a las fuerzas y cómo identificarlas en un bloque."
+                },
+                {
+                    "id": "primera-ley-inercia",
+                    "title": "Lección 1.2: Primera Ley de Newton (Inercia)",
+                    "introduction": "Explica la Primera Ley de Newton y analiza cuantitativamente el equilibrio en cuerpos libres de fuerza neta.",
+                    "explanationHtml": "<p>La <strong>Primera Ley de Newton (o Ley de la Inercia)</strong> establece que todo cuerpo persevera en su estado de reposo o de movimiento rectilíneo uniforme (MRU) a menos que sea obligado a cambiar dicho estado por fuerzas netas externas aplicadas sobre él.</p><p class=\"mt-2 text-slate-700\">Conceptos fundamentales de esta ley:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Inercia:</strong> Es la propiedad intrínseca que tiene la materia de oponerse o resistirse a cualquier cambio en su estado de movimiento o velocidad. La masa es la medida cuantitativa de la inercia.</li><li><strong>Fuerza Neta Nula:</strong> Si la suma vectorial de todas las fuerzas externas que actúan sobre un cuerpo es cero ($\\sum \\vec{F} = 0$), el cuerpo está en <strong>equilibrio mecánico</strong>. Esto tiene dos consecuencias físicas posibles: <br>1. El cuerpo está en reposo relativo (Equilibrio estático). <br>2. El cuerpo viaja a velocidad estrictamente constante en línea recta (MRU, Equilibrio dinámico).</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Primera Condición de Equilibrio</p><p class=\"text-xs font-mono font-bold text-primary\">&sum;F = 0 &rArr; &sum;F_x = 0 &nbsp;y&nbsp; &sum;F_y = 0</p><p class=\"text-xs text-slate-500\">Un cuerpo sin fuerza neta no acelera; mantiene su velocidad constante.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">LEY DE LA INERCIA (1ª LEY)</text><line x1=\"20\" y1=\"95\" x2=\"280\" y2=\"95\" stroke=\"#94a3b8\" stroke-width=\"1.5\" /><path d=\"M 180 95 L 190 85 L 200 95 Z\" fill=\"#64748b\" stroke=\"#475569\" stroke-width=\"1\" /><line x1=\"140\" y1=\"88\" x2=\"182\" y2=\"88\" stroke=\"#3b82f6\" stroke-width=\"3\" /><circle cx=\"150\" cy=\"92\" r=\"3.5\" fill=\"#1e293b\" /><circle cx=\"172\" cy=\"92\" r=\"3.5\" fill=\"#1e293b\" /><text x=\"135\" y=\"106\" font-size=\"7\" fill=\"#1e40af\" font-weight=\"bold\">Patineta se detiene</text><circle cx=\"215\" cy=\"50\" r=\"6\" fill=\"#f43f5e\" /><line x1=\"215\" y1=\"56\" x2=\"200\" y2=\"70\" stroke=\"#f43f5e\" stroke-width=\"2.5\" /><line x1=\"215\" y1=\"58\" x2=\"230\" y2=\"52\" stroke=\"#f43f5e\" stroke-width=\"1.8\" /><line x1=\"200\" y1=\"70\" x2=\"185\" y2=\"75\" stroke=\"#f43f5e\" stroke-width=\"1.8\" /><line x1=\"200\" y1=\"70\" x2=\"190\" y2=\"82\" stroke=\"#f43f5e\" stroke-width=\"1.8\" /><path d=\"M 195 40 Q 215 35 235 45\" fill=\"none\" stroke=\"#ef4444\" stroke-width=\"1.5\" stroke-dasharray=\"3,3\" /><polygon points=\"233,48 238,44 231,41\" fill=\"#ef4444\" /><text x=\"215\" y=\"32\" font-size=\"7\" fill=\"#b91c1c\" font-weight=\"bold\" text-anchor=\"middle\">El cuerpo sigue por inercia</text></svg>",
+                    "svgDescription": "Un patinador choca contra una roca. La patineta es frenada en seco por la roca (fuerza externa), pero por inercia el cuerpo del patinador tiende a mantener su velocidad y sale proyectado hacia adelante.",
+                    "workedExampleHtml": "<p><strong>Ejemplo de análisis:</strong> Un autobús frena bruscamente en Tecpán. Explica físicamente por qué los pasajeros salen proyectados hacia adelante con respecto a sus asientos.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1 (Estado Inicial):</strong> Los pasajeros y el autobús viajan juntos a la misma velocidad constante del movimiento rectilíneo.</li><li><strong>Paso 2 (Fuerza Externa):</strong> Al frenar, los frenos ejercen una fuerza externa de frenado sobre el chasis del autobús, lo que desacelera el vehículo.</li><li><strong>Paso 3 (Inercia):</strong> Al no actuar una fuerza de frenado directa sobre el torso y cabeza de los pasajeros, sus cuerpos tienden por inercia a mantener la misma rapidez constante y dirección original, proyectándose hacia adelante con respecto al chasis en desaceleración.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Explicación final:</strong> Es una manifestación directa de la inercia de los cuerpos, que se resisten al cambio de velocidad impuesto al bus.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Creer que movimiento requiere fuerza activa:</strong> Pensar que para que un objeto continúe moviéndose en el espacio es obligatorio que actúe una fuerza activa constante. En el vacío sin fricción, un objeto en movimiento viajará a velocidad constante indefinidamente sin necesidad de empujes.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Si un disco de hockey se desliza sobre hielo liso libre de fricción a una rapidez constante de 5 m/s, ¿cuál será su rapidez en m/s tras 10 segundos de recorrido libre? (Ingresa solo el número entero):",
+                            "correctAnswer": "5",
+                            "hint": "La Primera Ley de Newton establece que en ausencia de fuerzas resultantes externas, el MRU se mantiene inalterado.",
+                            "feedbackCorrect": "¡Excelente! Al no haber fricción ni fuerzas externas netas, la velocidad del disco de hockey se mantiene constante en 5 m/s por inercia.",
+                            "feedbackIncorrect": "Incorrecto. Sin fricción ni fuerzas netas, la rapidez se mantiene exactamente igual: 5 m/s.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Qué magnitud física mide cuantitativamente la inercia de un cuerpo?",
+                            "options": [
+                                "Su peso gravitacional.",
+                                "Su masa inercial.",
+                                "Su aceleración resultante.",
+                                "Su volumen geométrico."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "La inercia es la resistencia al cambio de movimiento; cuanta más materia tenga un cuerpo, más inercia tendrá.",
+                            "feedbackCorrect": "¡Perfecto! La masa es la medida cuantitativa y directa de la inercia de un cuerpo.",
+                            "feedbackIncorrect": "Incorrecto. La masa mide de forma directa cuantitativa la inercia de un objeto.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Si la fuerza resultante sobre un objeto es cero, ¿cuáles son los dos únicos estados de movimiento posibles?",
+                            "options": [
+                                "Solo reposo o movimiento circular.",
+                                "Solo reposo o movimiento acelerado.",
+                                "Reposo absoluto o Movimiento Rectilíneo Uniforme (MRU).",
+                                "Movimiento parabólico o caída libre."
+                            ],
+                            "correctAnswer": 2,
+                            "hint": "Suma de fuerzas nula implica aceleración nula. Sin aceleración, la velocidad debe ser constante (MRU) o nula (reposo).",
+                            "feedbackCorrect": "¡Excelente! El equilibrio mecánico implica que la velocidad es constante en magnitud y dirección, lo cual cubre reposo (v = 0) o MRU (v = constante).",
+                            "feedbackIncorrect": "Incorrecto. Si no hay fuerza neta, no hay aceleración, lo que permite el reposo o el MRU.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "¿Por qué es físicamente obligatorio el cinturón de seguridad en automóviles basándose en la primera ley de Newton?",
+                            "options": [
+                                "Para reducir la masa inercial del conductor.",
+                                "Para aplicar una fuerza externa que detenga el cuerpo del pasajero evitando que continúe con el movimiento del auto por inercia.",
+                                "Para aumentar la atracción gravitatoria del asiento.",
+                                "Para contrarrestar la fricción cinética de los neumáticos."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Si el auto frena, tu cuerpo intentará seguir viajando hacia adelante a la velocidad que llevaba.",
+                            "feedbackCorrect": "¡Excelente! El cinturón ejerce la fuerza externa necesaria para detener tu cuerpo e impedir que salgas proyectado por inercia.",
+                            "feedbackIncorrect": "Incorrecto. El cinturón proporciona la fuerza de parada externa para detener tu cuerpo y vencer su inercia de movimiento.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Si una partícula se encuentra en equilibrio estático o dinámico, ¿cuánto vale la sumatoria de todas las fuerzas externas aplicadas sobre ella en Newtons? (Ingresa solo el número entero):",
+                            "correctAnswer": "0",
+                            "hint": "Equilibrio significa que las fuerzas se cancelan vectorialmente por completo.",
+                            "feedbackCorrect": "¡Perfecto! El equilibrio de una partícula se define precisamente cuando la fuerza resultante neta es exactamente 0 N.",
+                            "feedbackIncorrect": "Incorrecto. La primera condición de equilibrio establece que la sumatoria de fuerzas es 0.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        }
+                    ],
+                    "summaryHtml": "La Primera Ley de Newton establece que sin fuerzas netas externas, los cuerpos mantienen su reposo o su velocidad lineal constante (MRU) debido a su masa (inercia).",
+                    "videoPlaceholderText": "Video de Física: La ley de la inercia explicada con experimentos divertidos."
+                },
+                {
+                    "id": "diagrama-cuerpo-libre-dcl",
+                    "title": "Lección 1.3: Diagramas de Cuerpo Libre (DCL)",
+                    "introduction": "Aprende a diseñar y trazar Diagramas de Cuerpo Libre perfectos, aislando el cuerpo y descomponiendo vectores en planos inclinados.",
+                    "explanationHtml": "<p>Un <strong>Diagrama de Cuerpo Libre (DCL)</strong> es un bosquejo o representación gráfica vectorial utilizada para analizar de forma aislada las fuerzas externas que actúan sobre un solo objeto. Representamos al cuerpo como un punto o bloque y dibujamos todas las fuerzas como vectores que parten del centro de gravedad.</p><p class=\"mt-2 text-slate-700\">Pasos clave para dibujar y resolver un DCL en planos inclinados:</p><ol class=\"list-decimal pl-5 space-y-2 my-3\"><li><strong>Aislar el objeto:</strong> Retirar el entorno (suelos, cuerdas, poleas) y tratar al cuerpo como una partícula puntual.</li><li><strong>Dibujar las fuerzas reales:</strong> Graficar Peso (vertical hacia abajo), Normal (perpendicular a la rampa), Tensión (paralela a la cuerda) y Fricción (opuesta al movimiento).</li><li><strong>Alinear los ejes coordenados:</strong> Para facilitar el álgebra, alineamos el eje $X$ de forma paralela a la rampa inclinada y el eje $Y$ perpendicular a ella.</li><li><strong>Descomponer el Peso:</strong> El peso gravitatorio ($w = mg$) es la única fuerza que no queda alineada a estos ejes rotados, por lo que se descompone en: <br>$$\\text{Componente paralela al plano (hace deslizar): } w_x = mg \\cdot \\operatorname{sen}(\\theta)$$ <br>$$\\text{Componente perpendicular al plano (presiona): } w_y = mg \\cdot \\cos(\\theta)$$</li></ol>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Descomposición del Peso en Rampa (&theta;)</p><p class=\"text-xs font-mono font-bold text-primary\">w_x = m&bull;g&bull;sen(&theta;) &nbsp;(Eje X paralelo)</p><p class=\"text-xs font-mono font-bold text-primary\">w_y = m&bull;g&bull;cos(&theta;) &nbsp;(Eje Y perpendicular)</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">DCL EN PLANO INCLINADO</text><polygon points=\"40,95 240,95 240,40\" fill=\"#f1f5f9\" stroke=\"#cbd5e1\" stroke-width=\"1.5\" /><path d=\"M 65 95 A 25 25 0 0 0 60 90\" fill=\"none\" stroke=\"#475569\" stroke-width=\"1\" /><text x=\"70\" y=\"91\" font-size=\"8\" fill=\"#475569\">&theta;</text><g transform=\"translate(140,68) rotate(-15.5)\"><rect x=\"-25\" y=\"-15\" width=\"50\" height=\"30\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"1.5\" rx=\"3\" /><line x1=\"-40\" y1=\"0\" x2=\"50\" y2=\"0\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"2,2\" /><text x=\"46\" y=\"-3\" font-size=\"7\" fill=\"#64748b\">Eje X</text><line x1=\"0\" y1=\"-30\" x2=\"0\" y2=\"40\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"2,2\" /><text x=\"4\" y=\"-24\" font-size=\"7\" fill=\"#64748b\">Eje Y</text><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"-28\" stroke=\"#10b981\" stroke-width=\"1.5\" /><polygon points=\"-3,-25 0,-30 3,-25\" fill=\"#10b981\" /><text x=\"5\" y=\"-18\" font-size=\"7\" fill=\"#047857\" font-weight=\"bold\">Normal (N)</text><line x1=\"0\" y1=\"0\" x2=\"-35\" y2=\"0\" stroke=\"#f59e0b\" stroke-width=\"1.5\" /><polygon points=\"-32,-3 -37,0 -32,3\" fill=\"#f59e0b\" /><text x=\"-32\" y=\"-5\" font-size=\"7\" fill=\"#b45309\" font-weight=\"bold\">f</text><line x1=\"0\" y1=\"0\" x2=\"25\" y2=\"0\" stroke=\"#ef4444\" stroke-width=\"1.2\" stroke-dasharray=\"1,1\" /><polygon points=\"22,-2 26,0 22,2\" fill=\"#ef4444\" /><text x=\"14\" y=\"8\" font-size=\"6\" fill=\"#b91c1c\">mg&bull;sen&theta;</text><line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"30\" stroke=\"#ef4444\" stroke-width=\"1.2\" stroke-dasharray=\"1,1\" /><polygon points=\"-2,27 0,31 2,27\" fill=\"#ef4444\" /><text x=\"4\" y=\"25\" font-size=\"6\" fill=\"#b91c1c\">mg&bull;cos&theta;</text></g></svg>",
+                    "svgDescription": "Diagrama de Cuerpo Libre detallado para un bloque apoyado en una rampa con ángulo θ. El sistema de coordenadas está rotado (X paralelo al plano). El peso se descompone en mg·sen(θ) (paralela) y mg·cos(θ) (perpendicular).",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Un bloque de masa $m$ se desliza hacia abajo en un plano inclinado de ángulo $\\theta = 30^{\\circ}$ en Antigua. Escribe la expresión para la fuerza que tira del bloque hacia abajo del plano inclinado y calcula su valor si $m = 10\\text{ kg}$ y $g = 10\\text{ m/s}^2$ (sabiendo que $\\operatorname{sen}(30^{\\circ}) = 0.5$).</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1 (Identificar la componente activa):</strong> Al trazar el DCL, la normal equilibra a $mg \\cos(\\theta)$ en el eje Y. La única fuerza no equilibrada en el eje X (cuesta abajo) es la componente paralela del peso: <br>$$w_x = m \\cdot g \\cdot \\operatorname{sen}(\\theta)$$</li><li><strong>Paso 2 (Operar valores):</strong> Sustituimos los datos dados en la fórmula: <br>$$w_x = 10\\text{ kg} \\times 10\\text{ m/s}^2 \\times \\operatorname{sen}(30^{\\circ})$$ <br>$$w_x = 100 \\times 0.5 = 50\\text{ Newtons}$$</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> La componente paralela del peso que hace deslizar al bloque es de <strong>50 Newtons</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Fuerzas ficticias:</strong> Añadir una fuerza ficticia llamada \"fuerza de empuje\" o \"fuerza de movimiento\" cuesta abajo en el DCL. Si no hay una cuerda, motor o persona empujando activamente, esa fuerza no existe. El causante del movimiento es únicamente la componente del peso ($mg\\operatorname{sen}(\\theta)$).</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "¿Se debe dibujar la fuerza normal en el DCL de una esfera colgada verticalmente de una cuerda suspendida en el aire?",
+                            "options": [
+                                "Sí, toda masa tiene normal.",
+                                "No, al no haber contacto directo con una superficie de apoyo no hay fuerza normal.",
+                                "Solo si la esfera se desplaza.",
+                                "Sí, apunta hacia abajo."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "La fuerza normal es de soporte y contacto; requiere que el objeto presione físicamente contra una superficie.",
+                            "feedbackCorrect": "¡Excelente! Si el cuerpo no está apoyado sobre una superficie rígida, la fuerza de soporte Normal es nula.",
+                            "feedbackIncorrect": "Incorrecto. No hay normal porque el objeto está suspendido en el aire sin apoyarse en ninguna superficie.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "¿Cuántas fuerzas externas en total actúan sobre un bloque de madera apoyado en una mesa rugosa si una persona tira de él horizontalmente con una cuerda y hay fricción? (Ingresa solo el número entero):",
+                            "correctAnswer": "4",
+                            "hint": "Cuenta el peso (gravedad), el soporte de la mesa, el jalón de la cuerda y la resistencia de rugosidad.",
+                            "feedbackCorrect": "¡Perfecto! Son 4 fuerzas: Peso (vertical abajo), Normal (vertical arriba), Tensión (horizontal jalón) y Fricción (horizontal opuesta).",
+                            "feedbackIncorrect": "Incorrecto. Son 4 fuerzas: Peso, Normal, Tensión y Fricción.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Hacia dónde apunta el vector del peso propio en un DCL dibujado en un plano inclinado?",
+                            "options": [
+                                "Perpendicular a la rampa hacia abajo.",
+                                "Paralelo a la rampa hacia abajo.",
+                                "Verticalmente hacia abajo (rumbo al centro de la Tierra).",
+                                "Horizontal a la izquierda."
+                            ],
+                            "correctAnswer": 2,
+                            "hint": "La gravedad no se altera por la inclinación de la rampa sobre la que reposa el objeto.",
+                            "feedbackCorrect": "¡Perfecto! La gravedad y por tanto el Peso propio siempre actúan verticalmente hacia abajo, sin importar la inclinación de la superficie.",
+                            "feedbackIncorrect": "Incorrecto. El peso siempre apunta verticalmente hacia abajo, con independencia del plano inclinado.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "¿Cuántas fuerzas reales actúan sobre una manzana lanzada en el aire en caída libre, despreciando la resistencia del aire? (Ingresa solo el número entero):",
+                            "correctAnswer": "1",
+                            "hint": "Despreciar la resistencia del aire elimina las fuerzas de arrastre del fluido.",
+                            "feedbackCorrect": "¡Perfecto! En caída libre ideal, la única fuerza externa que actúa sobre el cuerpo es su propio Peso gravitatorio.",
+                            "feedbackIncorrect": "Incorrecto. Si no hay resistencia del aire, únicamente actúa 1 fuerza: el Peso.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cuál es el propósito fundamental de dibujar un DCL en física?",
+                            "options": [
+                                "Darle una presentación artística al reporte de laboratorio.",
+                                "Identificar de forma visual y rigurosa todas las fuerzas externas que actúan sobre un cuerpo para formular correctamente la sumatoria vectorial.",
+                                "Calcular numéricamente el coeficiente de fricción de forma directa.",
+                                "Medir el ángulo de inclinación de la rampa."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "El DCL es la herramienta que nos permite plantear las ecuaciones de Newton sin omitir ninguna interacción física.",
+                            "feedbackCorrect": "¡Excelente! El DCL es el mapa de fuerzas que asegura no olvidar ninguna interacción al plantear ∑F = ma.",
+                            "feedbackIncorrect": "Incorrecto. Sirve para identificar y aislar visualmente todas las fuerzas externas que actúan sobre la partícula.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "Un DCL aisla al cuerpo y grafica vectorialmente las fuerzas externas que actúan sobre él. En planos inclinados con ángulo θ, el peso se descompone en $mg\\operatorname{sen}(\\theta)$ y $mg\\cos(\theta)$.",
+                    "videoPlaceholderText": "Video de Física: Cómo trazar un diagrama de cuerpo libre perfecto paso a paso."
+                }
+            ]
+        },
+        {
+            "title": "Unidad 2: La Segunda Ley de Newton (Fuerza y Aceleración)",
+            "lessons": [
+                {
+                    "id": "segunda-ley-newton-fma",
+                    "title": "Lección 2.1: La Segunda Ley de Newton (F = ma)",
+                    "introduction": "Aplica el principio fundamental de la dinámica lineal $\\vec{F}_{\\text{neta}} = m\\vec{a}$ para relacionar fuerza, masa y aceleración.",
+                    "explanationHtml": "<p>La <strong>Segunda Ley de Newton (o Ley del Movimiento)</strong> establece que cuando una fuerza neta externa actúa sobre un cuerpo, este experimenta una aceleración que es directamente proporcional a la magnitud de dicha fuerza neta, tiene la misma dirección y sentido que ella, y es inversamente proporcional a la masa inercial del cuerpo.</p><p class=\"mt-2 text-slate-700\">La ecuación vectorial fundamental se plantea como:</p><p class=\"text-center font-mono font-extrabold text-primary text-base my-2\">$$\\sum \\vec{F} = m \\cdot \\vec{a}$$</p><p class=\"mt-2 text-slate-700\">Donde:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>$\\sum \\vec{F}$ o $\\vec{F}_{\\text{neta}}$:</strong> Suma vectorial de todas las fuerzas externas aplicadas al cuerpo ($N$).</li><li><strong>$m$:</strong> Masa inercial del cuerpo ($kg$).</li><li><strong>$\\vec{a}$:</strong> Aceleración resultante ($m/s^2$).</li></ul><p class=\"mt-2 text-slate-705\">Una fuerza de $1\\text{ Newton (N)}$ equivale exactamente a la fuerza necesaria para acelerar una masa de $1\\text{ kg}$ a una tasa constante de $1\\text{ m/s}^2$ ($1\\text{ N} = 1\\text{ kg}\\cdot\\text{m/s}^2$).</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Segunda Ley de Newton</p><p class=\"text-xs font-mono font-bold text-primary\">F_neta = m &bull; a &nbsp;|&nbsp; a = F_neta / m &nbsp;|&nbsp; m = F_neta / a</p><p class=\"text-xs text-slate-500\">Recuerda: F_neta representa la SUMA de fuerzas a favor menos las fuerzas en contra.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">SEGUNDA LEY: F = m &bull; a</text><line x1=\"30\" y1=\"90\" x2=\"270\" y2=\"90\" stroke=\"#94a3b8\" stroke-width=\"1.5\" /><rect x=\"90\" y=\"50\" width=\"70\" height=\"30\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"1.5\" rx=\"3\" /><circle cx=\"105\" cy=\"85\" r=\"5.5\" fill=\"#1e293b\" /><circle cx=\"145\" cy=\"85\" r=\"5.5\" fill=\"#1e293b\" /><text x=\"125\" y=\"68\" font-size=\"8\" font-family=\"sans-serif\" font-weight=\"bold\" fill=\"#1e40af\" text-anchor=\"middle\">Masa: 10 kg</text><line x1=\"160\" y1=\"65\" x2=\"220\" y2=\"65\" stroke=\"#ef4444\" stroke-width=\"2.5\" /><polygon points=\"218,61 226,65 218,69\" fill=\"#ef4444\" /><text x=\"193\" y=\"57\" font-size=\"8\" fill=\"#b91c1c\" font-weight=\"bold\" text-anchor=\"middle\">F_neta = 30 N</text><line x1=\"100\" y1=\"38\" x2=\"150\" y2=\"38\" stroke=\"#10b981\" stroke-width=\"2\" /><polygon points=\"148,35 154,38 148,41\" fill=\"#10b981\" /><text x=\"125\" y=\"32\" font-size=\"8\" fill=\"#047857\" font-weight=\"bold\" text-anchor=\"middle\">a = 3 m/s&sup2;</text></svg>",
+                    "svgDescription": "Un carro de masa m = 10 kg empujado por una fuerza neta de 30 N en superficie lisa. La aceleración resultante constante (verde) es de 3 m/s² en la misma dirección de la fuerza.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Un bloque de $10\\text{ kg}$ es empujado sobre una superficie horizontal lisa en Xela por una fuerza constante de $30\\text{ Newtons}$. Calcula la aceleración del bloque.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1 (Escribir Ecuación):</strong> Dado que la superficie es lisa, no hay fricción retardante. La fuerza aplicada de 30 N es la fuerza neta: <br>$$\\sum F_x = m \\cdot a$$</li><li><strong>Paso 2 (Reemplazar y despejar):</strong> Reemplazamos la masa ($m = 10\\text{ kg}$) y la fuerza ($F = 30\\text{ N}$): <br>$$30 = 10 \\cdot a \\Rightarrow a = \\frac{30}{10} = 3\\text{ m/s}^2$$</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> El bloque acelera a una tasa constante de <strong>3 m/s²</strong> en dirección de la fuerza.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Usar fuerzas individuales en vez de la neta:</strong> Olvidar restar las fuerzas opuestas (como la fricción) al aplicar la ecuación de Newton, lo cual llevaría a un valor de aceleración erróneo y sobreestimado.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "¿Qué magnitud de fuerza neta en Newtons se necesita para acelerar un carrito de 5 kg a una aceleración de 4 m/s²? (Ingresa solo el número entero):",
+                            "correctAnswer": "20",
+                            "hint": "Aplica de forma directa la Segunda Ley de Newton: F_neta = m * a.",
+                            "feedbackCorrect": "¡Excelente! F = 5 kg * 4 m/s² = 20 Newtons.",
+                            "feedbackIncorrect": "Incorrecto. F_neta = m * a = 5 * 4 = 20 Newtons.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si aplicas una fuerza neta constante de 50 N a un bloque de metal y este acelera a 2.5 m/s², ¿cuál es la masa del bloque en kg? (Ingresa solo el número entero):",
+                            "correctAnswer": "20",
+                            "hint": "Despeja la masa de la fórmula de la Segunda Ley: m = F_neta / a.",
+                            "feedbackCorrect": "¡Perfecto! m = 50 N / 2.5 m/s² = 20 kg.",
+                            "feedbackIncorrect": "Incorrecto. Masa m = F/a = 50 / 2.5 = 20 kg.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si duplicas la fuerza neta resultante sobre un objeto de masa constante, ¿qué ocurre con su aceleración?",
+                            "options": [
+                                "Se reduce a la mitad.",
+                                "Se duplica.",
+                                "Se mantiene constante.",
+                                "Se cuadruplica."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "La aceleración es directamente proporcional a la fuerza neta en la Segunda Ley de Newton.",
+                            "feedbackCorrect": "¡Excelente! Al ser directamente proporcional, si la fuerza neta se duplica, la aceleración también se duplica.",
+                            "feedbackIncorrect": "Incorrecto. Es directamente proporcional, por ende se duplica.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Si duplicas la masa de un objeto bajo la acción de una fuerza neta constante, ¿qué ocurre con su aceleración?",
+                            "options": [
+                                "Se reduce a la mitad.",
+                                "Se duplica.",
+                                "Se mantiene constante.",
+                                "Se cuadruplica."
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "La aceleración es inversamente proporcional a la masa del cuerpo.",
+                            "feedbackCorrect": "¡Perfecto! A mayor inercia (masa), menor será la aceleración generada por la misma fuerza neta (se reduce a la mitad).",
+                            "feedbackIncorrect": "Incorrecto. La masa es inversamente proporcional a la aceleración, por lo que se reduce a la mitad.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Un cohete de juguete tiene una masa de 2 kg. Si su motor produce un empuje vertical hacia arriba de 30 N, calcula su aceleración ascendente en m/s². (Considera la gravedad g = 10 m/s² e ingresa solo el número entero):",
+                            "correctAnswer": "5",
+                            "hint": "Calcula primero la Fuerza Neta vertical: Empuje (arriba) - Peso (abajo). Peso = m * g = 2 * 10 = 20 N. Luego aplica a = F_neta / m.",
+                            "feedbackCorrect": "¡Excelente! F_neta = 30 N - 20 N = 10 N. Aceleración a = 10 N / 2 kg = 5 m/s².",
+                            "feedbackIncorrect": "Incorrecto. Peso = 20 N. F_neta = 30 - 20 = 10 N. Aceleración = 10 / 2 = 5 m/s².",
+                            "difficulty": "avanzado",
+                            "type": "short"
+                        }
+                    ],
+                    "summaryHtml": "La Segunda Ley establece que la fuerza neta causa aceleración ($F = ma$). El Newton ($N$) relaciona de forma unificada masa, longitud y tiempo.",
+                    "videoPlaceholderText": "Video de Física: La Segunda Ley de Newton y resolución de dinámicas horizontales básicas."
+                },
+                {
+                    "id": "masa-versus-peso",
+                    "title": "Lección 2.2: Masa versus Peso",
+                    "introduction": "Diferencia con rigor científico entre la masa inercial (constante) y el peso gravitacional (variable según el campo g).",
+                    "explanationHtml": "<p>En el habla cotidiana a menudo confundimos masa con peso, pero en física e ingeniería representan dos conceptos totalmente diferentes:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Masa ($m$):</strong> Es una magnitud escalar que mide la cantidad inercial de materia de un cuerpo, es decir, su resistencia a ser acelerado. Es una constante intrínseca; su valor es el **mismo en cualquier lugar del universo**. Su unidad en el SI es el **kilogramo ($kg$)**.</li><li><strong>Peso ($w$):</strong> Es una magnitud vectorial que mide la fuerza de atracción gravitatoria ejercida sobre un cuerpo por un planeta o astro. Es **variable** y depende del valor local de la aceleración de la gravedad ($g$). Su unidad en el SI es el **Newton ($N$)** y se calcula con: <br>$$w = m \\cdot g$$</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Comparación de Variables</p><p class=\"text-xs font-mono font-bold text-primary\">Masa &rArr; Kilogramos (kg) &bull; Escalar e Invariable</p><p class=\"text-xs font-mono font-bold text-primary\">Peso (w = m&bull;g) &rArr; Newtons (N) &bull; Vectorial y Variable</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">MASA (CTE) VS PESO (VARIABLE)</text><line x1=\"15\" y1=\"100\" x2=\"135\" y2=\"100\" stroke=\"#3b82f6\" stroke-width=\"1.5\" /><text x=\"75\" y=\"112\" font-size=\"7\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">TIERRA (g = 9.8 m/s&sup2;)</text><circle cx=\"75\" cy=\"55\" r=\"8\" fill=\"#475569\" /><line x1=\"75\" y1=\"63\" x2=\"75\" y2=\"85\" stroke=\"#475569\" stroke-width=\"2\" /><line x1=\"75\" y1=\"85\" x2=\"68\" y2=\"100\" stroke=\"#475569\" stroke-width=\"1.5\" /><line x1=\"75\" y1=\"85\" x2=\"82\" y2=\"100\" stroke=\"#475569\" stroke-width=\"1.5\" /><line x1=\"75\" y1=\"70\" x2=\"65\" y2=\"78\" stroke=\"#475569\" stroke-width=\"1.5\" /><line x1=\"75\" y1=\"70\" x2=\"85\" y2=\"78\" stroke=\"#475569\" stroke-width=\"1.5\" /><text x=\"75\" y=\"42\" font-size=\"7\" fill=\"#1e293b\" text-anchor=\"middle\">m = 80 kg</text><line x1=\"75\" y1=\"63\" x2=\"75\" y2=\"95\" stroke=\"#ef4444\" stroke-width=\"1.5\" /><polygon points=\"72,93 75,98 78,93\" fill=\"#ef4444\" /><text x=\"96\" y=\"78\" font-size=\"7\" fill=\"#b91c1c\" font-weight=\"bold\" text-anchor=\"middle\">w = 784 N</text><line x1=\"150\" y1=\"30\" x2=\"150\" y2=\"110\" stroke=\"#cbd5e1\" stroke-width=\"1\" stroke-dasharray=\"3,3\" /><line x1=\"165\" y1=\"100\" x2=\"285\" y2=\"100\" stroke=\"#f59e0b\" stroke-width=\"1.5\" /><text x=\"225\" y=\"112\" font-size=\"7\" fill=\"#b45309\" font-weight=\"bold\" text-anchor=\"middle\">LUNA (g = 1.6 m/s&sup2;)</text><circle cx=\"225\" cy=\"55\" r=\"8\" fill=\"#475569\" /><line x1=\"225\" y1=\"63\" x2=\"225\" y2=\"85\" stroke=\"#475569\" stroke-width=\"2\" /><line x1=\"225\" y1=\"85\" x2=\"218\" y2=\"100\" stroke=\"#475569\" stroke-width=\"1.5\" /><line x1=\"225\" y1=\"85\" x2=\"232\" y2=\"100\" stroke=\"#475569\" stroke-width=\"1.5\" /><line x1=\"225\" y1=\"70\" x2=\"215\" y2=\"78\" stroke=\"#475569\" stroke-width=\"1.5\" /><line x1=\"225\" y1=\"70\" x2=\"235\" y2=\"78\" stroke=\"#475569\" stroke-width=\"1.5\" /><text x=\"225\" y=\"42\" font-size=\"7\" fill=\"#1e293b\" text-anchor=\"middle\">m = 80 kg</text><line x1=\"225\" y1=\"63\" x2=\"225\" y2=\"78\" stroke=\"#ef4444\" stroke-width=\"1.5\" /><polygon points=\"222,76 225,81 228,76\" fill=\"#ef4444\" /><text x=\"246\" y=\"73\" font-size=\"7\" fill=\"#b91c1c\" font-weight=\"bold\" text-anchor=\"middle\">w = 128 N</text></svg>",
+                    "svgDescription": "Un astronauta de masa m = 80 kg en la Tierra (g = 9.8 m/s²) y la Luna (g = 1.6 m/s²). Su masa inercial de 80 kg permanece inalterada, pero su peso de atracción varía de 784 N a 128 N.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Un astronauta tiene una masa de $80\\text{ kg}$. Calcula su masa y su peso en la Tierra ($g_{\\text{Tierra}} = 9.8\\text{ m/s}^2$) y en la Luna ($g_{\\text{Luna}} = 1.6\\text{ m/s}^2$).</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1 (Masa):</strong> La masa representa la inercia inalterable. Por lo tanto, la masa es idéntica en ambos cuerpos celestes: <br>$$m = 80\\text{ kg}$$</li><li><strong>Paso 2 (Peso en la Tierra):</strong> Multiplicamos por la gravedad de la Tierra: <br>$$w_{\\text{Tierra}} = m \\cdot g_{\\text{Tierra}} = 80\\text{ kg} \\times 9.8\\text{ m/s}^2 = 784\\text{ Newtons}$$</li><li><strong>Paso 3 (Peso en la Luna):</strong> Multiplicamos por la gravedad de la Luna: <br>$$w_{\\text{Luna}} = m \\cdot g_{\\text{Luna}} = 80\\text{ kg} \\times 1.6\\text{ m/s}^2 = 128\\text{ Newtons}$$</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> Su masa es de <strong>80 kg</strong> en ambos astros; su peso es de <strong>784 N</strong> en la Tierra y de <strong>128 N</strong> en la Luna.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Confundir unidades de laboratorio:</strong> Expresar el peso en kilogramos en reportes o tareas escolares. El peso es una fuerza y siempre debe medirse en Newtons en el SI.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Si un saco de maíz en Sololá tiene un peso de 490 Newtons, ¿cuál es su masa inercial en kg? (Usa g = 9.8 m/s² y escribe solo el número entero):",
+                            "correctAnswer": "50",
+                            "hint": "Despeja masa a partir de w = m * g. Es decir, m = w / g.",
+                            "feedbackCorrect": "¡Excelente! m = 490 N / 9.8 m/s² = 50 kg.",
+                            "feedbackIncorrect": "Incorrecto. Masa m = w/g = 490 / 9.8 = 50 kg.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cuál es el peso en Newtons de una masa de 2 kg en la superficie de la Luna, si la gravedad lunar es de 1.6 m/s²? (Ingresa el número decimal con punto):",
+                            "correctAnswer": "3.2",
+                            "hint": "Aplica w = m * g_luna. Reemplaza m = 2 y g_luna = 1.6.",
+                            "feedbackCorrect": "¡Perfecto! w = 2 kg * 1.6 m/s² = 3.2 Newtons.",
+                            "feedbackIncorrect": "Incorrecto. Peso lunar = 2 * 1.6 = 3.2 Newtons.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si viajas al espacio profundo lejos de la atracción de estrellas y planetas donde la gravedad es nula, ¿cuál será el valor de tu masa y tu peso?",
+                            "options": [
+                                "Masa se reduce a cero, Peso se mantiene idéntico.",
+                                "Masa se mantiene idéntica, Peso es cero.",
+                                "Tanto la masa como el peso se reducen a cero.",
+                                "Ambos se duplican por la presión estelar."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "La cantidad de materia no cambia en el espacio, pero sí desaparece la atracción gravitatoria.",
+                            "feedbackCorrect": "¡Excelente! Tu masa (cantidad de materia) sigue siendo idéntica, pero al no haber gravedad, tu peso es exactamente 0 N.",
+                            "feedbackIncorrect": "Incorrecto. La masa es constante en el universo, mientras que el peso depende de g, siendo cero en el espacio vacío.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "¿Qué instrumento de medición mide directamente la fuerza de un peso mediante la deformación de un resorte interno?",
+                            "options": [
+                                "Balanza analítica clásica.",
+                                "Dinamómetro.",
+                                "Termómetro.",
+                                "Cronómetro digital."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Se basa en la Ley de Hooke, calibrando la extensión de un resorte con marcas en Newtons.",
+                            "feedbackCorrect": "¡Perfecto! El dinamómetro es el instrumento que mide fuerzas y pesos estirando un resorte.",
+                            "feedbackIncorrect": "Incorrecto. El dinamómetro es el instrumento calibrado para medir fuerzas y peso.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "¿Con qué instrumento físico se compara e identifica la masa inercial de un cuerpo usando masas de referencia?",
+                            "options": [
+                                "Dinamómetro de gancho.",
+                                "Balanza clásica de dos platillos.",
+                                "Barómetro de mercurio.",
+                                "Manómetro."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Compara fuerzas equilibradas en dos platillos suspendidos.",
+                            "feedbackCorrect": "¡Perfecto! La balanza de platillos compara la masa del cuerpo con masas estándar de referencia, anulando el efecto del valor de g.",
+                            "feedbackIncorrect": "Incorrecto. La balanza clásica de dos platillos es el instrumento que mide y compara masas inerciales.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "La masa mide inercia ($kg$) y es invariable. El peso mide fuerza de gravedad ($N$) y varía con la aceleración gravitacional del entorno ($w = mg$).",
+                    "videoPlaceholderText": "Video de Física: Diferencia visual y conceptual entre masa y peso explicada."
+                },
+                {
+                    "id": "sistemas-varias-masas-atwood",
+                    "title": "Lección 2.3: Sistemas de Varias Masas (Máquina de Atwood)",
+                    "introduction": "Aprende a analizar y resolver la aceleración y la tensión en sistemas mecánicos de masas múltiples conectadas por cuerdas.",
+                    "explanationHtml": "<p>Para resolver sistemas dinámicos con múltiples masas acopladas (como la célebre <strong>Máquina de Atwood</strong> o bloques arrastrados sobre mesas), aplicamos un método analítico estructurado en cuatro pasos:</p><ol class=\"list-decimal pl-5 space-y-2 my-3\"><li><strong>Dibujar DCL individuales:</strong> Trazar un Diagrama de Cuerpo Libre por separado para cada uno de los bloques del sistema.</li><li><strong>Plantear la Segunda Ley:</strong> Escribir la ecuación de la Segunda Ley de Newton ($\\sum F = m \\cdot a$) para cada bloque. Es sumamente recomendable definir el eje positivo a favor del sentido esperado de movimiento de cada bloque.</li><li><strong>Sumar las ecuaciones:</strong> Sumar algebraicamente todas las ecuaciones. Al hacerlo, las tensiones internas de las cuerdas ideales (fuerzas internas acción-reacción) se cancelarán mutuamente, permitiendo despejar directamente la aceleración del sistema ($a$).</li><li><strong>Calcular Tensión ($T$):</strong> Sustituir el valor de la aceleración calculado en cualquiera de las ecuaciones de DCL individuales para despejar la tensión de la cuerda.</li></ol>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Ecuación Aceleración Máquina de Atwood</p><p class=\"text-xs font-mono font-bold text-primary\">a = (m1 - m2) &bull; g / (m1 + m2)</p><p class=\"text-xs text-slate-500\">Considerando m1 &gt; m2. Las tensiones en cuerdas ideales son iguales en ambos lados.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">MÁQUINA DE ATWOOD</text><rect x=\"145\" y=\"25\" width=\"10\" height=\"10\" fill=\"#64748b\" /><circle cx=\"150\" cy=\"40\" r=\"12\" fill=\"#eff6ff\" stroke=\"#475569\" stroke-width=\"2\" /><circle cx=\"150\" cy=\"40\" r=\"3\" fill=\"#1e293b\" /><line x1=\"138\" y1=\"40\" x2=\"138\" y2=\"75\" stroke=\"#475569\" stroke-width=\"1.5\" /><rect x=\"125\" y=\"75\" width=\"26\" height=\"22\" fill=\"#fca5a5\" stroke=\"#ef4444\" stroke-width=\"1.5\" rx=\"3\" /><text x=\"138\" y=\"88\" font-size=\"7\" font-weight=\"bold\" fill=\"#991b1b\" text-anchor=\"middle\">m1</text><text x=\"138\" y=\"105\" font-size=\"6\" fill=\"#475569\" text-anchor=\"middle\">3 kg (a &darr;)</text><line x1=\"162\" y1=\"40\" x2=\"162\" y2=\"60\" stroke=\"#475569\" stroke-width=\"1.5\" /><rect x=\"150\" y=\"60\" width=\"24\" height=\"20\" fill=\"#bfdbfe\" stroke=\"#3b82f6\" stroke-width=\"1.5\" rx=\"3\" /><text x=\"162\" y=\"72\" font-weight=\"bold\" font-size=\"7\" fill=\"#1e40af\" text-anchor=\"middle\">m2</text><text x=\"162\" y=\"90\" font-size=\"6\" fill=\"#475569\" text-anchor=\"middle\">2 kg (a &uarr;)</text><line x1=\"138\" y1=\"75\" x2=\"138\" y2=\"60\" stroke=\"#10b981\" stroke-width=\"1\" /><polygon points=\"136,62 138,58 140,62\" fill=\"#10b981\" /><text x=\"131\" y=\"66\" font-size=\"6\" fill=\"#047857\">T</text><line x1=\"162\" y1=\"60\" x2=\"162\" y2=\"48\" stroke=\"#10b981\" stroke-width=\"1\" /><polygon points=\"160,50 162,46 164,50\" fill=\"#10b981\" /><text x=\"167\" y=\"53\" font-size=\"6\" fill=\"#047857\">T</text><line x1=\"110\" y1=\"75\" x2=\"110\" y2=\"85\" stroke=\"#f59e0b\" stroke-width=\"1.5\" /><polygon points=\"108,83 110,87 112,83\" fill=\"#f59e0b\" /><text x=\"104\" y=\"81\" font-size=\"7\" fill=\"#b45309\" font-weight=\"bold\">a</text></svg>",
+                    "svgDescription": "Máquina de Atwood clásica en funcionamiento. La masa mayor m1 desciende acelerando, mientras la menor m2 asciende. La cuerda ideal transmite una tensión T igual para ambos lados.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Una Máquina de Atwood consta de dos masas colgadas de una polea fija mediante un cable ideal. Si $m_1 = 3\\text{ kg}$ y $m_2 = 2\\text{ kg}$, calcula la aceleración del sistema y la tensión en el cable (usa $g = 10\\text{ m/s}^2$).</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1 (Escribir ecuaciones de DCL):</strong> <br>Definimos el movimiento de $m_1$ (baja por ser mayor) y $m_2$ (sube): <br>- Bloque 1: $m_1 g - T = m_1 a \\Rightarrow 30 - T = 3a$ <br>- Bloque 2: $T - m_2 g = m_2 a \\Rightarrow T - 20 = 2a$</li><li><strong>Paso 2 (Sumar ecuaciones para cancelar T):</strong> <br>$$(30 - T) + (T - 20) = 3a + 2a \\Rightarrow 10 = 5a$$</li><li><strong>Paso 3 (Resolver aceleración):</strong> <br>$$a = \\frac{10}{5} = 2\\text{ m/s}^2$$</li><li><strong>Paso 4 (Resolver Tensión):</strong> <br>Sustituimos $a = 2\\text{ m/s}^2$ en la ecuación del Bloque 2: <br>$$T - 20 = 2(2) \\Rightarrow T = 20 + 4 = 24\\text{ Newtons}$$</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultados:</strong> Aceleración = <strong>2 m/s²</strong>, Tensión en la cuerda = <strong>24 Newtons</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Suponer Tensiones estáticas:</strong> Creer que la tensión en la cuerda es simplemente igual al peso de la masa mayor ($m_1 g$). Si esto ocurriera, la fuerza neta en $m_1$ sería cero y el sistema no podría acelerar en lo absoluto.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Dos masas de 6 kg y 4 kg se conectan en una máquina de Atwood clásica. Calcula la magnitud de la aceleración del sistema en m/s². (Considera g = 10 m/s² e ingresa solo el número entero):",
+                            "correctAnswer": "2",
+                            "hint": "Aplica a = (m1 - m2)g / (m1 + m2). Reemplaza m1 = 6, m2 = 4 y g = 10.",
+                            "feedbackCorrect": "¡Excelente! a = (6 - 4)*10 / (6 + 4) = 2*10 / 10 = 2 m/s².",
+                            "feedbackIncorrect": "Incorrecto. Aceleración = (6 - 4)*10 / (6 + 4) = 20 / 10 = 2 m/s².",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si en una máquina de Atwood las dos masas son idénticas (m = 5 kg cada una), ¿cuál será el valor de la aceleración resultante del sistema en m/s²? (Ingresa solo el número entero):",
+                            "correctAnswer": "0",
+                            "hint": "Masas iguales implican pesos iguales tirando de ambos extremos, lo que anula la fuerza neta de giro.",
+                            "feedbackCorrect": "¡Perfecto! Al ser de igual masa, las fuerzas gravitatorias se equilibran perfectamente, resultando en una aceleración nula (0 m/s²).",
+                            "feedbackIncorrect": "Incorrecto. Al ser las masas iguales el sistema está en equilibrio, por lo que la aceleración es 0.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Una masa de 5 kg está sobre una mesa lisa horizontal y se jala por una cuerda horizontal ideal que pasa por una polea en el borde de la cual cuelga otra masa de 5 kg. Calcula la aceleración del sistema en m/s². (Usa g = 10 m/s² e ingresa el número decimal con punto):",
+                            "correctAnswer": "5.0",
+                            "hint": "La fuerza motora es el peso del bloque colgante w2 = m2 * g = 50 N. La masa total acelerada es m1 + m2 = 10 kg. Aplica a = w2 / M_total.",
+                            "feedbackCorrect": "¡Excelente! a = 50 N / (5 + 5) kg = 50 / 10 = 5.0 m/s².",
+                            "feedbackIncorrect": "Incorrecto. La aceleración es a = m2*g / (m1 + m2) = 50 / 10 = 5.0 m/s².",
+                            "difficulty": "avanzado",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Con los datos del sistema de mesa lisa del ejercicio anterior (m1 = 5 kg en mesa, m2 = 5 kg colgando), calcula la tensión de la cuerda en Newtons: (Ingresa el número decimal con punto):",
+                            "correctAnswer": "25.0",
+                            "hint": "Para el bloque 1 en la mesa lisa, la única fuerza en X es T. Por lo tanto, T = m1 * a. Usa a = 5.0 m/s².",
+                            "feedbackCorrect": "¡Perfecto! T = m1 * a = 5 kg * 5.0 m/s² = 25.0 Newtons.",
+                            "feedbackIncorrect": "Incorrecto. Tensión T = m1 * a = 5 * 5 = 25.0 Newtons.",
+                            "difficulty": "avanzado",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Qué propiedades ideales debe cumplir un cable o cuerda en física clásica de poleas?",
+                            "options": [
+                                "Debe tener masa despreciable (ultraligera), ser inextensible (no elástica) y no tener fricción interna.",
+                                "Debe ser muy pesada para añadir estabilidad al sistema.",
+                                "Debe ser muy elástica como un resorte de goma.",
+                                "Debe ser de metal grueso para disipar el peso de los bloques."
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Las cuerdas reales tienen masa y se estiran. Buscamos el modelo simplificado ideal.",
+                            "feedbackCorrect": "¡Excelente! Una cuerda ideal en física no tiene masa apreciable y no se estira, transmitiendo la tensión de forma perfecta y uniforme.",
+                            "feedbackIncorrect": "Incorrecto. Una cuerda ideal debe ser inextensible, sin masa y libre de fricciones.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "Resolver poleas acopladas requiere trazar DCL independientes y plantear la suma de ecuaciones para eliminar tensiones internas y hallar la aceleración.",
+                    "videoPlaceholderText": "Video de Física: Cómo resolver sistemas de poleas y Atwood paso a paso paso."
+                }
+            ]
+        },
+        {
+            "title": "Unidad 3: Tercera Ley de Newton y Fricción",
+            "lessons": [
+                {
+                    "id": "tercera-ley-accion-reaccion",
+                    "title": "Lección 3.1: Tercera Ley de Newton (Acción y Reacción)",
+                    "introduction": "Domina la Ley de Acción y Reacción e identifica parejas de fuerzas mecánicas en interacciones cotidianas.",
+                    "explanationHtml": "<p>La <strong>Tercera Ley de Newton (o Principio de Acción y Reacción)</strong> establece que si un cuerpo A ejerce una fuerza sobre un cuerpo B (Fuerza de Acción), el cuerpo B ejerce simultáneamente una fuerza de igual magnitud pero en dirección opuesta sobre el cuerpo A (Fuerza de Reacción).</p><p class=\"mt-2 text-slate-700\">La ecuación matemática que describe esta interacción es:</p><p class=\"text-center font-mono font-extrabold text-primary text-base my-2\">$$\\vec{F}_{\\text{A sobre B}} = -\\vec{F}_{\\text{B sobre A}}$$</p><p class=\"mt-2 text-slate-700\">Dos reglas de oro fundamentales de esta ley:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li>Las fuerzas de acción-reacción ocurren en **parejas simultáneas**.</li><li>Estas fuerzas actúan sobre **cuerpos diferentes**. Por esta razón, **nunca se anulan o cancelan entre sí** en un Diagrama de Cuerpo Libre individual.</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Ley de Acción y Reacción</p><p class=\"text-xs font-mono font-bold text-primary\">F_AB = - F_BA</p><p class=\"text-xs text-slate-500\">Misma magnitud y dirección, sentidos opuestos, actúan sobre cuerpos diferentes.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">ACCIÓN Y REACCIÓN (3ª LEY)</text><line x1=\"30\" y1=\"95\" x2=\"270\" y2=\"95\" stroke=\"#94a3b8\" stroke-width=\"1.5\" /><rect x=\"220\" y=\"30\" width=\"30\" height=\"65\" fill=\"#f1f5f9\" stroke=\"#cbd5e1\" stroke-width=\"1.5\" /><path d=\"M 220 40 L 250 30 M 220 55 L 250 45 M 220 70 L 250 60 M 220 85 L 250 75\" stroke=\"#cbd5e1\" stroke-width=\"1\" /><circle cx=\"130\" cy=\"52\" r=\"6\" fill=\"#475569\" /><line x1=\"130\" y1=\"58\" x2=\"150\" y2=\"78\" stroke=\"#475569\" stroke-width=\"2\" /><line x1=\"130\" y1=\"62\" x2=\"220\" y2=\"62\" stroke=\"#475569\" stroke-width=\"1.5\" /><line x1=\"150\" y1=\"78\" x2=\"135\" y2=\"95\" stroke=\"#475569\" stroke-width=\"1.5\" /><line x1=\"150\" y1=\"78\" x2=\"165\" y2=\"95\" stroke=\"#475569\" stroke-width=\"1.5\" /><line x1=\"190\" y1=\"50\" x2=\"220\" y2=\"50\" stroke=\"#ef4444\" stroke-width=\"1.5\" /><polygon points=\"218,48 222,50 218,52\" fill=\"#ef4444\" /><text x=\"175\" y=\"44\" font-size=\"6.5\" fill=\"#b91c1c\" font-weight=\"bold\">F_acción (100 N)</text><line x1=\"220\" y1=\"74\" x2=\"185\" y2=\"74\" stroke=\"#10b981\" stroke-width=\"1.5\" /><polygon points=\"187,72 183,74 187,76\" fill=\"#10b981\" /><text x=\"210\" y=\"84\" font-size=\"6.5\" fill=\"#047857\" font-weight=\"bold\" text-anchor=\"end\">F_reacción (-100 N)</text></svg>",
+                    "svgDescription": "Una persona empuja una pared rígida. La persona aplica una fuerza F_acción (rojo) hacia la derecha sobre la pared; simultáneamente, la pared reacciona aplicando una fuerza F_reacción (verde) de igual magnitud hacia la izquierda sobre las manos de la persona.",
+                    "workedExampleHtml": "<p><strong>Ejemplo práctico:</strong> Un nadador empuja con fuerza la pared de una piscina con sus pies para impulsarse. Explica las fuerzas de acción y reacción.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1 (Fuerza de Acción):</strong> Los pies del nadador ejercen una fuerza muscular horizontal hacia atrás sobre la pared de la piscina.</li><li><strong>Paso 2 (Fuerza de Reacción):</strong> La pared rígida de la piscina reacciona aplicando de forma simultánea una fuerza de igual magnitud pero horizontal hacia adelante sobre los pies del nadador.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Conclusión:</strong> El nadador es impulsado y acelera en el agua hacia adelante gracias a la fuerza de reacción que ejerce la pared sobre él.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Creer que las fuerzas se cancelan:</strong> Pensar que como la fuerza de acción es igual y opuesta a la de reacción, siempre deben sumarse y dar resultante cero. Recuerda que la resultante cero solo se da si actúan sobre el <strong>mismo</strong> cuerpo. Aquí actúan sobre dos cuerpos distintos, por lo que causan aceleraciones individuales.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Si la Tierra ejerce una fuerza de atracción gravitatoria de 600 Newtons sobre una persona, ¿qué magnitud de fuerza en Newtons ejerce la persona sobre la Tierra por reacción? (Ingresa solo el número entero):",
+                            "correctAnswer": "600",
+                            "hint": "Aplica la Tercera Ley de Newton de forma directa. La fuerza de atracción es mutua y de idéntica magnitud.",
+                            "feedbackCorrect": "¡Excelente! La persona ejerce una fuerza gravitatoria idéntica de 600 Newtons sobre la Tierra por reacción.",
+                            "feedbackIncorrect": "Incorrecto. Por la 3ª ley, la fuerza que ejerce la persona sobre la Tierra es idéntica en magnitud: 600 Newtons.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Al disparar un rifle de caza, el cazador experimenta un fuerte retroceso ('patada') del arma sobre su hombro. ¿Cómo se explica físicamente?",
+                            "options": [
+                                "Por la atracción gravitatoria del proyectil.",
+                                "Por la fuerza de reacción que el proyectil ejerce sobre el rifle en sentido opuesto al avance del disparo.",
+                                "Por la inercia del hombro que se desplaza solo.",
+                                "Por la resistencia del aire dentro del cañón."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "El rifle empuja el proyectil hacia adelante (acción); por ende el proyectil debe empujar al rifle...",
+                            "feedbackCorrect": "¡Perfecto! La fuerza de reacción empuja al rifle hacia atrás con la misma cantidad de movimiento dada a la bala hacia adelante.",
+                            "feedbackIncorrect": "Incorrecto. Es la fuerza de reacción del proyectil impulsado sobre el rifle hacia atrás.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Empujas con tus manos una pared de hormigón rígida aplicando una fuerza de 100 Newtons. Si la pared no se desplaza en lo absoluto, ¿con qué magnitud de fuerza en Newtons te empuja la pared a ti? (Ingresa solo el número entero):",
+                            "correctAnswer": "100",
+                            "hint": "La Tercera Ley de Newton se cumple estrictamente sin importar si hay movimiento o reposo.",
+                            "feedbackCorrect": "¡Excelente! La pared ejerce una fuerza de reacción exacta de 100 Newtons de vuelta sobre tus manos.",
+                            "feedbackIncorrect": "Incorrecto. Por reacción, la fuerza devuelta por la pared es exactamente de 100 Newtons.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cómo impulsa la hélice de un bote a motor su desplazamiento sobre la superficie del agua?",
+                            "options": [
+                                "La hélice empuja el agua hacia adelante, lo que tira del bote.",
+                                "La hélice empuja el agua hacia atrás (acción); el agua reacciona empujando a la hélice y al bote hacia adelante (reacción).",
+                                "La hélice succiona el aire para evaporar el agua debajo.",
+                                "Por la inercia estática del timón."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Para avanzar hacia el frente, debes empujar la materia de soporte hacia atrás.",
+                            "feedbackCorrect": "¡Excelente! Acción: empujar el agua hacia atrás. Reacción: el agua empuja al bote hacia adelante.",
+                            "feedbackIncorrect": "Incorrecto. La hélice empuja el agua hacia atrás y el agua reacciona empujando el bote adelante.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "¿Por qué es físicamente imposible empujar un automóvil atascado si te sientas en el asiento del conductor y empujas el tablero con tus manos?",
+                            "options": [
+                                "Porque la masa del tablero es infinita.",
+                                "Porque son fuerzas internas al sistema del automóvil. Para alterar el movimiento del sistema se requiere una fuerza externa del suelo contra tus pies apoyados afuera.",
+                                "Porque la gravedad del auto cancela las tensiones.",
+                                "Porque la fricción cinética de los asientos es muy alta."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Las fuerzas de acción-reacción internas a un mismo sistema se equilibran y no alteran su cantidad de movimiento global.",
+                            "feedbackCorrect": "¡Excelente! Solo las fuerzas externas netas pueden acelerar un sistema. Las fuerzas internas entre tú y el tablero se cancelan dentro del auto.",
+                            "feedbackIncorrect": "Incorrecto. Se trata de fuerzas internas que no pueden alterar el movimiento del sistema; se requiere una fuerza externa del suelo.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "La Tercera Ley de Newton detalla que las fuerzas son interacciones mutuas que ocurren en parejas de igual magnitud y sentido opuesto en cuerpos diferentes.",
+                    "videoPlaceholderText": "Video de Física: Acción y reacción explicada de forma interactiva en la vida real."
+                },
+                {
+                    "id": "friccion-estatica-cinetica",
+                    "title": "Lección 3.2: Fricción Estática y Cinética",
+                    "introduction": "Diferencia analíticamente entre la fricción estática y cinética, y domina el cálculo de fuerzas retardadoras con $f = \\mu N$.",
+                    "explanationHtml": "<p>La <strong>fuerza de fricción o rozamiento ($\\vec{f}$)</strong> es una fuerza de contacto paralela a las superficies producida por las rugosidades e imperfecciones microscópicas de los materiales en contacto. Se divide en dos tipos fundamentales:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Fricción Estática ($f_s$):</strong> Actúa impidiendo el inicio del deslizamiento entre dos superficies en reposo relativo. Su valor varía para contrarrestar la fuerza aplicada hasta alcanzar un límite máximo umbral de despegue: <br>$$f_{s,\\text{máx}} = \\mu_s \\cdot N$$</li><li><strong>Fricción Cinética ($f_k$):</strong> Actúa una vez que el objeto ya está en deslizamiento constante. Su valor es constante durante el movimiento: <br>$$f_k = \\mu_k \\cdot N$$</li></ul><p class=\"mt-2 text-slate-705\">Donde $\\mu_s$ es el coeficiente de fricción estática, $\\mu_k$ el coeficiente de fricción cinética, y $N$ la fuerza normal. Científicamente, **$\\mu_s > \\mu_k$**; es decir, siempre cuesta más sacar un cuerpo pesado del reposo que mantenerlo en movimiento constante.</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Fórmulas de Fricción</p><p class=\"text-xs font-mono font-bold text-primary\">fs_max = &mu;_s &bull; N &nbsp;|&nbsp; fk = &mu;_k &bull; N</p><p class=\"text-xs text-slate-500\">Recuerda: El coeficiente &mu; es adimensional (no tiene unidades).</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">FRICCIÓN ESTÁTICA Y CINÉTICA</text><line x1=\"30\" y1=\"90\" x2=\"270\" y2=\"90\" stroke=\"#94a3b8\" stroke-width=\"1.5\" /><rect x=\"110\" y=\"50\" width=\"80\" height=\"40\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"1.5\" rx=\"4\" /><text x=\"150\" y=\"68\" font-size=\"8\" font-family=\"sans-serif\" font-weight=\"bold\" fill=\"#1e40af\" text-anchor=\"middle\">Masa: 10 kg</text><text x=\"150\" y=\"80\" font-size=\"7\" fill=\"#475569\" text-anchor=\"middle\">Normal = 100 N</text><line x1=\"190\" y1=\"70\" x2=\"245\" y2=\"70\" stroke=\"#3b82f6\" stroke-width=\"2\" /><polygon points=\"243,67 249,70 243,73\" fill=\"#3b82f6\" /><text x=\"217\" y=\"63\" font-size=\"7\" fill=\"#1e40af\" font-weight=\"bold\">F_ap = 40 N</text><line x1=\"110\" y1=\"90\" x2=\"55\" y2=\"90\" stroke=\"#f59e0b\" stroke-width=\"2\" stroke-linecap=\"round\" /><polygon points=\"57,93 51,90 57,87\" fill=\"#f59e0b\" /><text x=\"80\" y=\"83\" font-size=\"7\" fill=\"#b45309\" font-weight=\"bold\" text-anchor=\"middle\">fs = 40 N</text><text x=\"80\" y=\"102\" font-size=\"6\" fill=\"#b45309\" text-anchor=\"middle\">Limit: fs_max = 50 N</text></svg>",
+                    "svgDescription": "Un bloque de masa m = 10 kg en reposo. Se le aplica una fuerza horizontal de 40 N (azul). La fricción estática real (naranja) es exactamente de 40 N, equilibrándolo. El límite máximo de fricción antes de deslizar es de 50 N.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Un bloque de madera de $10\\text{ kg}$ se encuentra sobre un piso horizontal en Antigua con coeficientes de fricción $\\mu_s = 0.50$ y $\\mu_k = 0.30$. Si aplicas una fuerza horizontal de $40\\text{ Newtons}$, determina si el bloque se mueve y calcula la fuerza de fricción real (usa $g = 10\\text{ m/s}^2$).</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1 (Calcular Fuerza Normal):</strong> En superficie plana: <br>$$N = w = m \\cdot g = 10\\text{ kg} \\times 10\\text{ m/s}^2 = 100\\text{ Newtons}$$</li><li><strong>Paso 2 (Calcular Límite Estático Máximo):</strong> <br>$$f_{s,\\text{máx}} = \\mu_s \\cdot N = 0.50 \\times 100\\text{ N} = 50\\text{ Newtons}$$</li><li><strong>Paso 3 (Comparar):</strong> La fuerza horizontal aplicada ($F = 40\\text{ N}$) no supera el umbral límite estático máximo ($f_{s,\\text{máx}} = 50\\text{ N}$). Por lo tanto, el bloque <strong>no se mueve</strong>.</li><li><strong>Paso 4 (Calcular Fricción Real):</strong> Como está en reposo estático, la fricción real se ajusta exactamente para equilibrar la fuerza aplicada: <br>$$f_s = F_{\\text{aplicada}} = 40\\text{ Newtons}$$</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> El bloque permanece en reposo y la fuerza de fricción real es de <strong>40 Newtons</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Calcular la fricción estática máxima como real:</strong> Responder directamente $50\\text{ N}$ como la fricción del ejemplo. Si la fricción estática fuera de $50\\text{ N}$ y solo empujamos con $40\\text{ N}$, ¡el bloque aceleraría solo hacia atrás rumbo a nosotros, lo cual viola la conservación de la energía!</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Un bloque de 20 kg se desliza sobre un suelo horizontal rugoso con un coeficiente de fricción cinética de 0.20. ¿Cuál es el valor en Newtons de la fricción cinética? (g = 10 m/s². Ingresa solo el número entero):",
+                            "correctAnswer": "40",
+                            "hint": "Aplica fk = μ_k * N. En suelo plano horizontal, N = m * g = 20 * 10 = 200 N.",
+                            "feedbackCorrect": "¡Excelente! N = 200 N. fk = 0.20 * 200 N = 40 Newtons.",
+                            "feedbackIncorrect": "Incorrecto. Normal = 200 N. Fricción cinética = 0.2 * 200 = 40 Newtons.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Por qué es considerablemente más fácil arrastrar o empujar un refrigerador pesado una vez que ya ha comenzado a deslizarse que sacarlo del reposo absoluto?",
+                            "options": [
+                                "Porque la masa del refrigerador disminuye con la velocidad.",
+                                "Porque el coeficiente de fricción cinética (μ_k) es menor que el coeficiente de fricción estática (μ_s).",
+                                "Porque la gravedad se anula temporalmente durante el deslizamiento.",
+                                "Porque la normal se desplaza hacia atrás."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Compara el valor de los coeficientes de rozamiento antes y después de iniciar el movimiento.",
+                            "feedbackCorrect": "¡Perfecto! Al ser μ_k < μ_s, la fuerza necesaria para vencer la fricción en movimiento es menor que la requerida para el despegue.",
+                            "feedbackIncorrect": "Incorrecto. Se debe a que el coeficiente de fricción cinética es menor que el estático.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Si duplicas la masa de un bloque que reposa sobre una mesa horizontal, ¿qué le ocurre al valor de la normal y al límite máximo de la fricción estática?",
+                            "options": [
+                                "Ambos se reducen a la mitad.",
+                                "Ambos se duplican.",
+                                "La normal se duplica, pero el límite de fricción se mantiene idéntico.",
+                                "Ambos se cuadruplican."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "La normal en mesa horizontal es mg. La fricción máxima es μ_s * N. Ambas dependen linealmente de la masa.",
+                            "feedbackCorrect": "¡Excelente! Al duplicar la masa, se duplica el peso y la normal. Por ende, la fricción máxima (proporcional a la normal) también se duplica.",
+                            "feedbackIncorrect": "Incorrecto. Tanto la normal como la fricción estática máxima se duplican.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Calcula el coeficiente de fricción cinética si un bloque de 5 kg se desliza a velocidad constante impulsado por una fuerza horizontal de 15 N. (g = 10 m/s². Ingresa el número decimal con punto):",
+                            "correctAnswer": "0.3",
+                            "hint": "Velocidad constante implica aceleración nula. Por lo tanto, fk = F_aplicada = 15 N. La Normal es N = mg = 50 N. Despeja μ_k = fk / N.",
+                            "feedbackCorrect": "¡Perfecto! μ_k = 15 N / 50 N = 0.3 (adimensional).",
+                            "feedbackIncorrect": "Incorrecto. Normal = 50 N. μ_k = fk / Normal = 15 / 50 = 0.3.",
+                            "difficulty": "avanzado",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Hacia dónde apunta la fuerza de fricción cinética que experimenta un bloque de madera si es arrastrado hacia el Norte?",
+                            "options": [
+                                "Hacia el Este.",
+                                "Hacia el Oeste.",
+                                "Hacia el Sur.",
+                                "Hacia el Norte."
+                            ],
+                            "correctAnswer": 2,
+                            "hint": "La fricción cinética actúa paralela a la superficie y en sentido opuesto al deslizamiento real.",
+                            "feedbackCorrect": "¡Perfecto! Como desliza hacia el Norte, la fricción apunta en sentido opuesto, es decir, hacia el Sur.",
+                            "feedbackIncorrect": "Incorrecto. Se opone al sentido de deslizamiento (Norte), por lo que apunta al Sur.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "La fricción se opone al deslizamiento. Fricción estática máxima ($f_{s,max} = \\mu_s N$) es mayor que la fricción cinética ($f_k = \\mu_k N$).",
+                    "videoPlaceholderText": "Video de Física: Rozamiento estático y dinámico y experimentos con planos inclinados."
+                },
+                {
+                    "id": "dinamica-movimiento-circular-uniforme",
+                    "title": "Lección 3.3: Dinámica del Movimiento Circular Uniforme",
+                    "introduction": "Calcula la aceleración y fuerza centrípeta necesarias para mantener a un cuerpo en órbita circular uniforme.",
+                    "explanationHtml": "<p>En el <strong>Movimiento Circular Uniforme (MCU)</strong>, aunque la rapidez lineal ($v$) del objeto sea constante, la dirección de su vector de velocidad cambia en cada instante. Este cambio de dirección genera una aceleración dirigida radialmente hacia el centro de la trayectoria circular, denominada <strong>aceleración centrípeta ($a_c$)</strong>:</p><p class=\"text-center font-mono font-extrabold text-primary text-base my-2\">$$a_c = \\frac{v^2}{r}$$</p><p class=\"mt-2 text-slate-700\">Por la Segunda Ley de Newton, la fuerza neta encargada de producir esta aceleración centrípeta es la <strong>Fuerza Centrípeta ($F_c$)</strong>, que apunta siempre al centro del círculo:</p><p class=\"text-center font-mono font-extrabold text-primary text-base my-2\">$$F_c = m \\cdot a_c = \\frac{m \\cdot v^2}{r}$$</p><p class=\"mt-2 text-slate-707\">La Fuerza Centrípeta **no es una fuerza nueva o física independiente**; es simplemente el nombre que recibe la fuerza neta resultante encargada de desviar al móvil (puede ser la fricción lateral de las llantas en una curva, la tensión en una honda o la atracción gravitatoria en un satélite).</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Ecuaciones Dinámicas Circulares</p><p class=\"text-xs font-mono font-bold text-primary\">a_c = v&sup2; / r &nbsp;|&nbsp; F_c = m &bull; v&sup2; / r</p><p class=\"text-xs text-slate-500\">Masa (m), velocidad lineal (v), radio de giro (r).</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">MOVIMIENTO CIRCULAR (Fc)</text><circle cx=\"150\" cy=\"70\" r=\"35\" fill=\"none\" stroke=\"#cbd5e1\" stroke-width=\"1\" stroke-dasharray=\"3,3\" /><circle cx=\"150\" cy=\"70\" r=\"2.5\" fill=\"#475569\" /><text x=\"150\" y=\"82\" font-size=\"6.5\" fill=\"#475569\" text-anchor=\"middle\">Centro</text><line x1=\"150\" y1=\"70\" x2=\"175\" y2=\"45\" stroke=\"#94a3b8\" stroke-width=\"1\" /><text x=\"166\" y=\"62\" font-size=\"6.5\" fill=\"#64748b\" font-weight=\"bold\">r = 50m</text><circle cx=\"175\" cy=\"45\" r=\"5\" fill=\"#3b82f6\" /><line x1=\"175\" y1=\"45\" x2=\"153\" y2=\"23\" stroke=\"#ef4444\" stroke-width=\"2\" /><polygon points=\"156,22 150,20 152,26\" fill=\"#ef4444\" /><text x=\"155\" y=\"16\" font-size=\"7\" fill=\"#b91c1c\" font-weight=\"bold\">v = 10 m/s</text><line x1=\"175\" y1=\"45\" x2=\"155\" y2=\"65\" stroke=\"#10b981\" stroke-width=\"2\" /><polygon points=\"159,65 152,68 156,61\" fill=\"#10b981\" /><text x=\"172\" y=\"58\" font-size=\"7\" fill=\"#047857\" font-weight=\"bold\">Fc = 2,000 N</text></svg>",
+                    "svgDescription": "Un auto recorre una curva circular. Su vector velocidad (rojo) es tangente a la órbita. Su vector fuerza centrípeta (verde) apunta en dirección perpendicular hacia el centro del giro.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Un automóvil de $1,000\\text{ kg}$ toma una curva circular plana de $50\\text{ metros}$ de radio a una rapidez constante de $10\\text{ m/s}$. Calcula la fuerza de fricción lateral mínima que deben ejercer los neumáticos para que el auto no derrape.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1 (Identificar la Fuerza Centrípeta):</strong> La fricción estática lateral entre llanta y asfalto es la única fuerza neta que apunta al centro y actúa como la fuerza centrípeta: <br>$$f_s = F_c = \\frac{m \\cdot v^2}{r}$$</li><li><strong>Paso 2 (Reemplazar y calcular):</strong> <br>$$f_s = \\frac{1,000\\text{ kg} \\times (10\\text{ m/s})^2}{50\\text{ m}}$$ <br>$$f_s = \\frac{1,000 \\times 100}{50} = \\frac{100,000}{50} = 2,000\\text{ Newtons}$$</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> La fuerza de fricción lateral mínima requerida es de <strong>2,000 Newtons</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Dibujar la fuerza centrífuga:</strong> Incluir la \"fuerza centrífuga\" (hacia afuera) en el DCL del auto. La fuerza centrífuga no es una fuerza real ejercida por ningún agente físico; es una sensación inercial ficticia debido a que tu cuerpo quiere seguir recto por inercia mientras el auto gira.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "¿Cuál es la magnitud de la aceleración centrípeta en m/s² de una partícula que viaja a rapidez constante de 6 m/s en un círculo de radio 4 metros? (Ingresa el número decimal con punto):",
+                            "correctAnswer": "9.0",
+                            "hint": "Aplica ac = v² / r. Reemplaza v = 6 y r = 4.",
+                            "feedbackCorrect": "¡Excelente! ac = 6² / 4 = 36 / 4 = 9.0 m/s².",
+                            "feedbackIncorrect": "Incorrecto. ac = v²/r = 36 / 4 = 9.0 m/s².",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si reduces a la mitad el radio de una trayectoria circular pero mantienes la velocidad lineal del objeto constante, ¿qué le ocurre a su aceleración centrípeta?",
+                            "options": [
+                                "Se reduce a la mitad.",
+                                "Se duplica.",
+                                "Se mantiene constante.",
+                                "Se reduce a la cuarta parte."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "La aceleración centrípeta es inversamente proporcional al radio de la curva (ac = v²/r).",
+                            "feedbackCorrect": "¡Excelente! Al ser inversamente proporcional al radio, al reducir el radio a la mitad, la aceleración centrípeta se duplica.",
+                            "feedbackIncorrect": "Incorrecto. Al dividir el radio por 2, la aceleración centrípeta se duplica.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Si duplicas la velocidad de un carro en una curva circular de radio fijo, ¿cuántas veces aumenta la fuerza centrípeta requerida para no derrapar?",
+                            "options": [
+                                "Aumenta 2 veces (se duplica).",
+                                "Aumenta 4 veces (se cuadruplica).",
+                                "Aumenta 8 veces.",
+                                "Se mantiene idéntica."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "La fuerza centrípeta es proporcional al cuadrado de la velocidad (Fc = m * v² / r).",
+                            "feedbackCorrect": "¡Perfecto! Al depender del cuadrado de la velocidad, duplicar la velocidad implica (2)² = 4 veces más fuerza lateral requerida.",
+                            "feedbackIncorrect": "Incorrecto. Depende del cuadrado de la velocidad, por lo que aumenta 4 veces.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "¿Qué fuerza física real actúa como fuerza centrípeta que desvía y mantiene a la Luna en su órbita circular alrededor de la Tierra?",
+                            "options": [
+                                "La tensión de un cable espacial invisible.",
+                                "La fuerza de atracción gravitatoria ejercida por la Tierra.",
+                                "La fricción estática del vacío lunar.",
+                                "La fuerza de empuje magnético polar."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Es una fuerza de campo a distancia que atrae de forma mutua a las masas de los astros.",
+                            "feedbackCorrect": "¡Excelente! La gravedad terrestre actúa como la fuerza centrípeta neta encargada de mantener a la Luna orbitando.",
+                            "feedbackIncorrect": "Incorrecto. Es la fuerza de atracción gravitatoria terrestre.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Un niño hace girar una piedra de 0.5 kg atada a un cordón de 1.5 metros de longitud con una rapidez constante de 3 m/s. Calcula la tensión del cordón en Newtons. (Ingresa solo el número entero):",
+                            "correctAnswer": "3",
+                            "hint": "La tensión es la fuerza centrípeta: T = m * v² / r. Reemplaza m = 0.5, v = 3 y r = 1.5.",
+                            "feedbackCorrect": "¡Excelente! T = 0.5 * 3² / 1.5 = 0.5 * 9 / 1.5 = 4.5 / 1.5 = 3 Newtons.",
+                            "feedbackIncorrect": "Incorrecto. T = m*v²/r = 0.5 * 9 / 1.5 = 3 Newtons.",
+                            "difficulty": "avanzado",
+                            "type": "short"
+                        }
+                    ],
+                    "summaryHtml": "El MCU requiere una aceleración centrípeta hacia el centro ($a_c = v^2/r$) provista por una fuerza centrípeta neta ($F_c = mv^2/r$).",
+                    "videoPlaceholderText": "Video de Física: Fuerza centrípeta explicada con cubetas de agua giratorias."
+                }
+            ]
+        }
+    ]
+},
+
+    "trabajo-energia-potencia": {
+    "isRichCourse": true,
+    "title": "Trabajo, Energía y Potencia",
+    "units": [
+        {
+            "title": "Unidad 1: Trabajo Mecánico",
+            "lessons": [
+                {
+                    "id": "trabajo-mecanico-fuerza-constante",
+                    "title": "Lección 1.1: Trabajo Mecánico de una Fuerza Constante",
+                    "introduction": "Calcula el trabajo mecánico realizado por fuerzas constantes sobre un objeto en desplazamiento aplicando el factor de inclinación angular.",
+                    "explanationHtml": "<p>En física clásica, se realiza <strong>trabajo mecánico ($W$)</strong> sobre un cuerpo únicamente cuando una fuerza externa aplicada desplaza a dicho cuerpo a lo largo de una distancia. El trabajo mide la cantidad de energía transferida al cuerpo por medio de dicha fuerza. Su unidad de medida en el Sistema Internacional (SI) es el <strong>Julio ($J$)</strong>, donde $1\\text{ J} = 1\\text{ N}\\cdot\\text{m}$.</p><p class=\"mt-2 text-slate-700\">La ecuación general fundamental es:</p><p class=\"text-center font-mono font-extrabold text-primary text-base my-2\">$$W = F \\cdot d \\cdot \\cos(\\theta)$$</p><p class=\"mt-2 text-slate-700\">Donde:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>$F$:</strong> Magnitud de la fuerza constante aplicada ($N$).</li><li><strong>$d$:</strong> Distancia total del desplazamiento rectilíneo ($m$).</li><li><strong>$\\theta$:</strong> Ángulo geométrico formado entre el vector de fuerza y el vector de desplazamiento.</li></ul><p class=\"mt-2 text-slate-700\">Dependiendo de la dirección de la fuerza, el signo del trabajo varía:</p><ul class=\"list-disc pl-5 space-y-1.5 my-2\"><li><strong>Trabajo Positivo ($W > 0$):</strong> La fuerza ayuda al movimiento ($0^{\\circ} \\le \\theta < 90^{\\circ}$).</li><li><strong>Trabajo Nulo ($W = 0$):</strong> La fuerza es **perpendicular** al movimiento ($\\theta = 90^{\\circ}$).</li><li><strong>Trabajo Negativo ($W < 0$):</strong> La fuerza se opone activamente al movimiento ($90^{\\circ} < \\theta \\le 180^{\\circ}$).</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Trabajo de Fuerza Constante</p><p class=\"text-xs font-mono font-bold text-primary\">W = F &bull; d &bull; cos(&theta;)</p><p class=\"text-xs text-slate-500\">Nota: cos(90&deg;) = 0 (fuerzas perpendiculares al movimiento no realizan trabajo).</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">TRABAJO: W = F &bull; d &bull; cos(&theta;)</text><line x1=\"30\" y1=\"90\" x2=\"270\" y2=\"90\" stroke=\"#94a3b8\" stroke-width=\"1.5\" /><rect x=\"50\" y=\"55\" width=\"60\" height=\"35\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"1.5\" rx=\"4\" /><line x1=\"110\" y1=\"72\" x2=\"160\" y2=\"47\" stroke=\"#ef4444\" stroke-width=\"2\" /><polygon points=\"156,44 163,45 159,51\" fill=\"#ef4444\" /><text x=\"150\" y=\"38\" font-size=\"8\" fill=\"#b91c1c\" font-weight=\"bold\">Fuerza F</text><line x1=\"110\" y1=\"72\" x2=\"165\" y2=\"72\" stroke=\"#94a3b8\" stroke-width=\"1\" stroke-dasharray=\"2,2\" /><path d=\"M 130 72 A 20 20 0 0 0 126 64\" fill=\"none\" stroke=\"#475569\" stroke-width=\"1\" /><text x=\"133\" y=\"69\" font-size=\"8\" fill=\"#475569\">&theta; = 60&deg;</text><line x1=\"80\" y1=\"102\" x2=\"220\" y2=\"102\" stroke=\"#10b981\" stroke-width=\"2.5\" stroke-linecap=\"round\" /><polygon points=\"218,98 226,102 218,106\" fill=\"#10b981\" /><text x=\"150\" y=\"112\" font-size=\"8.5\" fill=\"#047857\" font-weight=\"bold\" text-anchor=\"middle\">Desplazamiento d = 15m</text></svg>",
+                    "svgDescription": "Un bloque jalado 15 metros por una fuerza F a un ángulo de θ = 60° con respecto al suelo horizontal (dirección de desplazamiento d). El trabajo efectivo transferido al bloque es F·d·cos(60°).",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Una persona arrastra una maleta en una estación de autobuses de Guatemala una distancia de $15\\text{ metros}$ aplicando una fuerza constante de $50\\text{ Newtons}$ a través de una correa que forma un ángulo de $60^{\\circ}$ con el suelo horizontal. Calcula el trabajo realizado sobre la maleta (sabiendo que $\\cos(60^{\\circ}) = 0.5$).</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1 (Escribir Fórmula):</strong> <br>$$W = F \\cdot d \\cdot \\cos(\\theta)$$</li><li><strong>Paso 2 (Reemplazar valores y operar):</strong> <br>$$W = 50\\text{ N} \\times 15\\text{ m} \\times \\cos(60^{\\circ})$$ <br>$$W = 750 \\times 0.50 = 375\\text{ Julios}$$</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> El trabajo mecánico útil realizado sobre la maleta fue de <strong>375 Julios</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Multiplicar directo omitiendo el ángulo:</strong> Calcular $W = 50 \\times 15 = 750\\text{ J}$, ignorando la correa inclinada. Solo si la fuerza es perfectamente paralela a la trayectoria ($\theta = 0^{circ}$, $cos(0^{circ}) = 1$) podemos omitir el coseno.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "¿Qué trabajo mecánico en Julios realiza una fuerza horizontal constante de 20 N que empuja un bloque a lo largo de 5 metros en la misma dirección y sentido del movimiento? (Ingresa solo el número entero):",
+                            "correctAnswer": "100",
+                            "hint": "Al viajar en la misma dirección y sentido, el ángulo θ es 0° y cos(0°) = 1. Aplica W = F * d.",
+                            "feedbackCorrect": "¡Excelente! W = 20 N * 5 m * cos(0°) = 100 Julios.",
+                            "feedbackIncorrect": "Incorrecto. W = F * d = 20 * 5 = 100 Julios.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Cargas una cubeta con agua de 10 kg en la mano y caminas horizontalmente a velocidad constante una distancia de 20 metros. ¿Cuánto trabajo mecánico en Julios realiza la fuerza vertical de tus brazos sobre la cubeta? (Ingresa solo el número entero):",
+                            "correctAnswer": "0",
+                            "hint": "Compara la dirección de la fuerza vertical de tus brazos de soporte con el desplazamiento estrictamente horizontal.",
+                            "feedbackCorrect": "¡Excelente! La fuerza vertical de tus brazos y el desplazamiento horizontal forman un ángulo de 90°. Al ser cos(90°) = 0, el trabajo es nulo.",
+                            "feedbackIncorrect": "Incorrecto. Las fuerzas perpendiculares al movimiento no realizan trabajo mecánico, por lo que el trabajo es 0.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Una fuerza de fricción constante de 15 N se opone al movimiento de un trineo que avanza en línea recta una distancia de 6 metros. ¿Cuál es el trabajo realizado en Julios por la fuerza de fricción? (Ingresa el número entero, incluyendo signo si aplica):",
+                            "correctAnswer": "-90",
+                            "hint": "La fricción se opone al movimiento, lo que significa un ángulo de 180° con el desplazamiento y cos(180°) = -1.",
+                            "feedbackCorrect": "¡Excelente! W = 15 N * 6 m * cos(180°) = -90 Julios. Es trabajo negativo.",
+                            "feedbackIncorrect": "Incorrecto. Al oponerse al movimiento, cos(180°) = -1, dando un trabajo de -90 Julios.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Calcula el trabajo mecánico en Julios necesario para elevar verticalmente y con velocidad constante un saco de cemento de 50 kg una altura de 2 metros en una construcción. (g = 10 m/s². Ingresa solo el número entero):",
+                            "correctAnswer": "1000",
+                            "hint": "La fuerza vertical requerida es igual al peso del saco w = m * g = 50 * 10 = 500 N. El desplazamiento es hacia arriba a favor de la fuerza (θ = 0°).",
+                            "feedbackCorrect": "¡Perfecto! Fuerza = 500 N. W = 500 N * 2 m * cos(0°) = 1,000 Julios.",
+                            "feedbackIncorrect": "Incorrecto. Peso = 500 N. Trabajo = 500 * 2 = 1,000 Julios.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cuál es la interpretación física del concepto de 'trabajo neto total' sobre un cuerpo?",
+                            "options": [
+                                "Es el trabajo realizado únicamente por la fuerza de fricción.",
+                                "Es la suma algebraica de los trabajos individuales realizados por cada una de las fuerzas externas que actúan sobre el cuerpo.",
+                                "Es la energía potencial almacenada en el campo gravitacional.",
+                                "Es el producto de la velocidad del cuerpo por el tiempo."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Mide la transferencia neta acumulada sobre la masa a partir de todas las interacciones físicas.",
+                            "feedbackCorrect": "¡Excelente! El trabajo neto total es igual a la suma algebraica de todos los trabajos individuales.",
+                            "feedbackIncorrect": "Incorrecto. El trabajo neto es la suma de los trabajos individuales de todas las fuerzas actuantes.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "El trabajo mide la energía transferida por una fuerza a lo largo de una distancia ($W = Fd\\cos(\\theta)$). Fuerzas a 90° del movimiento hacen trabajo nulo.",
+                    "videoPlaceholderText": "Video de Física: Concepto de trabajo mecánico y el significado de su signo."
+                },
+                {
+                    "id": "trabajo-multiples-fuerzas",
+                    "title": "Lección 1.2: Trabajo de Múltiples Fuerzas Concurrentes",
+                    "introduction": "Aprende a evaluar el trabajo mecánico neto sobre un cuerpo calculando y sumando algebraicamente el trabajo de cada una de las fuerzas aplicadas.",
+                    "explanationHtml": "<p>Cuando un cuerpo es sometido a la acción simultánea de varias fuerzas (como Peso, Normal, Fuerza de Empuje y Fricción), existen dos métodos equivalentes para calcular el <strong>trabajo mecánico neto o resultante ($W_{\\text{neto}}$)</strong> realizado sobre él:</p><p class=\"mt-2 font-bold text-slate-800\">Método A: Sumatoria de Trabajos Individuales</p><p class=\"text-slate-700\">Calculamos de forma independiente el trabajo mecánico realizado por cada fuerza y los sumamos de forma estrictamente algebraica (respetando sus signos):</p><p class=\"text-center font-mono font-extrabold text-primary text-base my-2\">$$W_{\\text{neto}} = W_1 + W_2 + W_3 + \\dots + W_n$$</p><p class=\"mt-2 font-bold text-slate-800\">Método B: Trabajo de la Fuerza Resultante</p><p class=\"text-slate-700\">Hallamos en primer lugar la fuerza resultante neta en la dirección del movimiento ($\\sum F_x$) y la multiplicamos por la distancia del desplazamiento:</p><p class=\"text-center font-mono font-extrabold text-primary text-base my-2\">$$W_{\\text{neto}} = \\left( \\sum F_x \\right) \\cdot d$$</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Trabajo Neto Resultante</p><p class=\"text-xs font-mono font-bold text-primary\">W_neto = &sum;W_individuales = F_neta &bull; d</p><p class=\"text-xs text-slate-500\">Recuerda: El trabajo de la Normal y el Peso en superficies horizontales es cero.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">TRABAJO NETO (W_neto)</text><line x1=\"30\" y1=\"90\" x2=\"270\" y2=\"90\" stroke=\"#94a3b8\" stroke-width=\"1.5\" /><rect x=\"110\" y=\"55\" width=\"80\" height=\"35\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"1.5\" rx=\"4\" /><line x1=\"150\" y1=\"55\" x2=\"150\" y2=\"30\" stroke=\"#10b981\" stroke-width=\"1.5\" /><polygon points=\"147,32 150,27 153,32\" fill=\"#10b981\" /><text x=\"154\" y=\"36\" font-size=\"6.5\" fill=\"#047857\" font-weight=\"bold\">N (W=0)</text><line x1=\"150\" y1=\"72\" x2=\"150\" y2=\"105\" stroke=\"#475569\" stroke-width=\"1.5\" /><polygon points=\"147,103 150,108 153,103\" fill=\"#475569\" /><text x=\"154\" y=\"104\" font-size=\"6.5\" fill=\"#475569\" font-weight=\"bold\">w (W=0)</text><line x1=\"190\" y1=\"72\" x2=\"235\" y2=\"72\" stroke=\"#3b82f6\" stroke-width=\"2\" /><polygon points=\"233,69 239,72 233,75\" fill=\"#3b82f6\" /><text x=\"210\" y=\"65\" font-size=\"7\" fill=\"#1e40af\" font-weight=\"bold\">F_emp = 50N</text><line x1=\"110\" y1=\"90\" x2=\"65\" y2=\"90\" stroke=\"#ef4444\" stroke-width=\"2\" /><polygon points=\"67,93 61,90 67,87\" fill=\"#ef4444\" /><text x=\"80\" y=\"83\" font-size=\"7\" fill=\"#b91c1c\" font-weight=\"bold\" text-anchor=\"middle\">fk = 20N</text></svg>",
+                    "svgDescription": "Un bloque de madera arrastrado horizontalmente. El Peso y la Normal ejercen trabajos nulos (90° del movimiento). La fuerza de empuje realiza trabajo positivo y la fricción trabajo negativo. El trabajo neto es el balance de ambos.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Un bloque de $10\\text{ kg}$ es arrastrado $5\\text{ metros}$ sobre un piso horizontal rugoso por una fuerza horizontal constante de empuje de $50\\text{ N}$. Si la fuerza de fricción cinética es constante e igual a $20\\text{ N}$, calcula el trabajo neto total realizado sobre el bloque (usa $g = 10\\text{ m/s}^2$).</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1 (Trabajo del Empuje):</strong> A favor del movimiento ($\\theta = 0^{\\circ}$): <br>$$W_{\\text{empuje}} = F \\cdot d \\cdot \\cos(0^{\\circ}) = 50\\text{ N} \\times 5\\text{ m} \\times 1 = 250\\text{ Julios}$$</li><li><strong>Paso 2 (Trabajo de la Fricción):</strong> En contra del movimiento ($\\theta = 180^{\\circ}$): <br>$$W_{\\text{fricción}} = f_k \\cdot d \\cdot \\cos(180^{\\circ}) = 20\\text{ N} \\times 5\\text{ m} \\times (-1) = -100\\text{ Julios}$$</li><li><strong>Paso 3 (Trabajo de Normal y Peso):</strong> Al actuar verticalmente y ser el movimiento puramente horizontal, formulan $90^{\\circ}$: <br>$$W_{\\text{peso}} = 0\\text{ J} \\quad \\text{y} \\quad W_{\\text{normal}} = 0\\text{ J}$$</li><li><strong>Paso 4 (Sumar):</strong> <br>$$W_{\\text{neto}} = W_{\\text{empuje}} + W_{\\text{fricción}} + W_{\\text{peso}} + W_{\\text{normal}}$$ <br>$$W_{\\text{neto}} = 250 - 100 + 0 + 0 = 150\\text{ Julios}$$</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> El trabajo mecánico neto total realizado sobre el bloque es de <strong>150 Julios</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Olvidar el signo negativo de la fricción:</strong> Sumar de forma directa el trabajo de la fricción como positivo ($250 + 100 = 350\\text{ J}$), lo cual daría un resultado erróneo y violaría las leyes físicas. La fricción roba energía, por lo que su trabajo resta.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Un bloque es arrastrado 10 m horizontalmente. Si la fuerza de empuje realiza un trabajo de 400 J y la fricción realiza -150 J, ¿cuánto vale el trabajo neto en Julios? (Ingresa solo el número entero):",
+                            "correctAnswer": "250",
+                            "hint": "Suma algebraicamente los trabajos individuales: W_neto = W_empuje + W_friccion.",
+                            "feedbackCorrect": "¡Excelente! W_neto = 400 J + (-150 J) = 250 Julios.",
+                            "feedbackIncorrect": "Incorrecto. W_neto = 400 - 150 = 250 Julios.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Qué trabajo mecánico en Julios realiza la fuerza normal que ejerce la calle sobre las llantas de un auto que avanza sobre una avenida recta plana? (Ingresa solo el número entero):",
+                            "correctAnswer": "0",
+                            "hint": "La normal actúa perpendicular a la superficie, es decir, vertical hacia arriba, mientras el vehículo se desplaza en el eje horizontal.",
+                            "feedbackCorrect": "¡Perfecto! Al ser la normal perpendicular al desplazamiento (ángulo de 90°), su trabajo es nulo (0 J).",
+                            "feedbackIncorrect": "Incorrecto. Por ser perpendicular a la trayectoria, el trabajo de la normal es exactamente 0.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si un bloque de 5 kg desciende por una rampa inclinada de 3 metros de longitud libre de fricción, ¿cuál es el trabajo neto en Julios realizado por la gravedad sobre el bloque? (g = 10 m/s², ángulo de la rampa = 30° de modo que sen(30°) = 0.5. Ingresa solo el número entero):",
+                            "correctAnswer": "75",
+                            "hint": "La fuerza activa cuesta abajo en el DCL es la componente paralela del peso: F = m * g * sen(30°) = 5 * 10 * 0.5 = 25 N. Multiplica esta fuerza por la distancia de 3 metros.",
+                            "feedbackCorrect": "¡Perfecto! Fuerza paralela = 25 N. Trabajo = 25 N * 3 m = 75 Julios.",
+                            "feedbackIncorrect": "Incorrecto. Componente paralela del peso = 25 N. Trabajo = 25 * 3 = 75 Julios.",
+                            "difficulty": "avanzado",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si el trabajo mecánico neto realizado sobre un cuerpo es estrictamente positivo (W_neto > 0), ¿qué le ocurre a su velocidad?",
+                            "options": [
+                                "La velocidad disminuye (el objeto desacelera).",
+                                "La velocidad aumenta (el objeto acelera).",
+                                "La velocidad se mantiene constante en MRU.",
+                                "La velocidad se reduce instantáneamente a cero."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Un trabajo positivo implica una transferencia de energía hacia el cuerpo, aumentando su energía de movimiento.",
+                            "feedbackCorrect": "¡Excelente! Un trabajo neto positivo aumenta la energía cinética de la masa, provocando un aumento en su velocidad.",
+                            "feedbackIncorrect": "Incorrecto. Un trabajo neto positivo acelera el objeto, aumentando su velocidad.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Si el trabajo neto total sobre un objeto en movimiento es exactamente cero, ¿cuál es su estado de movimiento?",
+                            "options": [
+                                "El objeto se encuentra en reposo absoluto o en movimiento a velocidad constante (MRU).",
+                                "El objeto describe un movimiento acelerado de despegue.",
+                                "El objeto cae libremente en el vacío.",
+                                "El objeto orbita de forma helicoidal acelerada."
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Trabajo neto nulo implica aceleración nula por el Teorema del Trabajo y la Energía. Revisa los casos de aceleración cero.",
+                            "feedbackCorrect": "¡Excelente! Al no haber transferencia neta de energía, la velocidad se mantiene constante o nula.",
+                            "feedbackIncorrect": "Incorrecto. Trabajo nulo implica aceleración nula, caracterizando al reposo o al MRU.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "El trabajo neto es el balance total de transferencia energética ($W_{neto} = \\sum W = F_{neta} \\cdot d$). Determina de forma directa si un objeto acelera o frena.",
+                    "videoPlaceholderText": "Video de Física: Resolución de problemas de trabajo de múltiples fuerzas concurrentes."
+                },
+                {
+                    "id": "trabajo-fuerzas-variables-elastica",
+                    "title": "Lección 1.3: Trabajo de Fuerzas Variables (Fuerza Elástica)",
+                    "introduction": "Aprende a calcular el trabajo mecánico desarrollado por fuerzas variables como la elástica de un resorte usando áreas e integrales.",
+                    "explanationHtml": "<p>Si la fuerza aplicada sobre un cuerpo varía a lo largo de la distancia, no es posible aplicar la fórmula directa del producto lineal ($W = F \\cdot d$). Matemáticamente, el trabajo mecánico equivale de forma exacta al <strong>área bajo la curva</strong> en un gráfico de Fuerza versus Posición ($F$ vs $x$).</p><p class=\"mt-2 text-slate-700\">El ejemplo por excelencia de fuerza variable es la **fuerza elástica de un resorte** que obedece la **Ley de Hooke** ($F_e = k \\cdot x$), donde $k$ es la constante elástica del resorte en $N/m$ y $x$ es la deformación con respecto al equilibrio. El trabajo requerido para estirar o comprimir un resorte una distancia $x$ se calcula como el área del triángulo de la gráfica $F$-$x$:</p><p class=\"text-center font-mono font-extrabold text-primary text-base my-2\">$$W_e = \\frac{1}{2} k \\cdot x^2$$</p><p class=\"mt-2 text-slate-705\">Esta cantidad representa también la energía elástica que queda almacenada en el resorte deformado.</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Trabajo de Fuerza Elástica (Hooke)</p><p class=\"text-xs font-mono font-bold text-primary\">W_e = &frac12; &bull; k &bull; x&sup2;</p><p class=\"text-xs text-slate-500\">Importante: La distancia de estiramiento x debe ingresarse estrictamente en metros (m).</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">TRABAJO ELÁSTICO: ½kx²</text><line x1=\"30\" y1=\"95\" x2=\"270\" y2=\"95\" stroke=\"#94a3b8\" stroke-width=\"1.5\" /><rect x=\"30\" y=\"40\" width=\"10\" height=\"55\" fill=\"#cbd5e1\" stroke=\"#94a3b8\" /><path d=\"M 40 68 L 50 68 L 55 58 L 65 78 L 75 58 L 85 78 L 95 58 L 105 78 L 115 58 L 125 68 L 135 68\" fill=\"none\" stroke=\"#475569\" stroke-width=\"2\" stroke-linejoin=\"round\" /><rect x=\"135\" y=\"48\" width=\"40\" height=\"40\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"1.5\" rx=\"3\" /><line x1=\"175\" y1=\"48\" x2=\"215\" y2=\"48\" stroke=\"#cbd5e1\" stroke-dasharray=\"2,2\" /><line x1=\"215\" y1=\"48\" x2=\"215\" y2=\"90\" stroke=\"#cbd5e1\" stroke-dasharray=\"2,2\" /><line x1=\"215\" y1=\"68\" x2=\"175\" y2=\"68\" stroke=\"#f59e0b\" stroke-width=\"1.5\" /><polygon points=\"178,65 172,68 178,71\" fill=\"#f59e0b\" /><text x=\"195\" y=\"62\" font-size=\"8\" fill=\"#b45309\" font-weight=\"bold\" text-anchor=\"middle\">x = 10 cm</text></svg>",
+                    "svgDescription": "Un resorte ideal con constante elástica k acoplado a un bloque es comprimido una distancia x = 10 cm (0.10 metros) desde su posición de equilibrio. El trabajo acumulado equivale a ½kx².",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Un dinamómetro escolar posee un resorte con una constante elástica $k = 200\\text{ N/m}$. Calcula el trabajo mecánico necesario para estirar el resorte una distancia de $10\\text{ cm}$ desde su longitud de equilibrio.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1 (Homogeneizar unidades):</strong> La distancia del estiramiento está dada en centímetros. Debemos convertirla obligatoriamente a metros: <br>$$x = 10\\text{ cm} = 0.10\\text{ metros}$$</li><li><strong>Paso 2 (Escribir Fórmula):</strong> <br>$$W_e = \\frac{1}{2} k \\cdot x^2$$</li><li><strong>Paso 3 (Reemplazar y calcular):</strong> <br>$$W_e = 0.5 \\times 200\\text{ N/m} \\times (0.10\\text{ m})^2$$ <br>$$W_e = 100 \\times 0.01 = 1\\text{ Julio}$$</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> El trabajo mecánico necesario para estirar el resorte es de exactamente <strong>1 Julio</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Introducir centímetros directamente en la fórmula:</strong> Multiplicar $0.5 \\times 200 \\times 10^2 = 10,000\\text{ J}$, lo cual daría un valor de energía absurdo y gigante. Convierta siempre a metros en el SI.</li><li><strong>Olvidar el exponente cuadrático:</strong> Escribir $\\frac{1}{2}kx$ en lugar de $\\frac{1}{2}kx^2$.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "¿Qué magnitud de fuerza en Newtons ejerce un resorte de constante k = 500 N/m al ser comprimido una distancia de 0.2 metros? (Ingresa solo el número entero):",
+                            "correctAnswer": "100",
+                            "hint": "Aplica de forma directa la Ley de Hooke para la fuerza: Fe = k * x.",
+                            "feedbackCorrect": "¡Excelente! Fe = 500 N/m * 0.2 m = 100 Newtons.",
+                            "feedbackIncorrect": "Incorrecto. Fe = k * x = 500 * 0.2 = 100 Newtons.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Calcula el trabajo mecánico en Julios realizado para comprimir una distancia de 0.2 metros al resorte del ejercicio anterior (k = 500 N/m). (Ingresa solo el número entero):",
+                            "correctAnswer": "10",
+                            "hint": "Aplica la fórmula del trabajo elástico: We = 0.5 * k * x². Reemplaza k = 500 y x = 0.2.",
+                            "feedbackCorrect": "¡Perfecto! We = 0.5 * 500 * (0.2)² = 250 * 0.04 = 10 Julios.",
+                            "feedbackIncorrect": "Incorrecto. We = 0.5 * 500 * 0.04 = 10 Julios.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cómo se calcula gráficamente el trabajo mecánico si se te presenta un gráfico con la Fuerza en el eje Y y la Posición en el eje X?",
+                            "options": [
+                                "Calculando la pendiente de la recta tangente.",
+                                "Calculando el área de la figura geométrica bajo la línea de la curva de la gráfica.",
+                                "Multiplicando el valor máximo de fuerza por el tiempo medio.",
+                                "Dividiendo el eje Y entre el eje X."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "La operación de multiplicar fuerza por cambio de posición equivale en geometría analítica a...",
+                            "feedbackCorrect": "¡Excelente! El área bajo la curva en un gráfico F-x representa el trabajo mecánico total acumulado.",
+                            "feedbackIncorrect": "Incorrecto. El trabajo equivale analíticamente al área bajo la curva de la gráfica F-x.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Si estiras un resorte el doble de la distancia original, ¿cuántas veces aumenta el trabajo elástico requerido para realizarlo?",
+                            "options": [
+                                "Aumenta 2 veces (se duplica).",
+                                "Aumenta 4 veces (se cuadruplica).",
+                                "Se mantiene constante.",
+                                "Se reduce a la mitad."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "El trabajo elástico depende del cuadrado de la distancia de estiramiento (x²).",
+                            "feedbackCorrect": "¡Perfecto! Al depender del cuadrado, estirar el doble ($2$) implica que el trabajo aumenta ($2^2 = 4$) veces.",
+                            "feedbackIncorrect": "Incorrecto. Depende del cuadrado de la deformación, por ende se cuadruplica (4 veces).",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Calcula el trabajo en Julios realizado por una fuerza constante de 10 N que actúa a lo largo de 5 metros, resuelto geométricamente como el área de un rectángulo en un gráfico de F vs x. (Ingresa solo el número entero):",
+                            "correctAnswer": "50",
+                            "hint": "El área de un rectángulo es Base * Altura. La base es el desplazamiento d = 5 m y la altura es F = 10 N.",
+                            "feedbackCorrect": "¡Perfecto! Área = 5 m * 10 N = 50 Julios.",
+                            "feedbackIncorrect": "Incorrecto. Área del rectángulo = 5 * 10 = 50 Julios.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        }
+                    ],
+                    "summaryHtml": "El trabajo de fuerzas variables es el área bajo la curva F-x. Para resortes que obedecen la Ley de Hooke, el trabajo acumulado es $W_e = \\frac{1}{2} k x^2$.",
+                    "videoPlaceholderText": "Video de Física: El concepto de fuerza elástica y el trabajo de resortes analizado gráficamente."
+                }
+            ]
+        },
+        {
+            "title": "Unidad 2: Energía Cinética y Potencial",
+            "lessons": [
+                {
+                    "id": "energia-cinetica-teorema-trabajo",
+                    "title": "Lección 2.1: Energía Cinética y el Teorema del Trabajo y la Energía",
+                    "introduction": "Calcula la energía cinética de un cuerpo en movimiento y aplica el potente Teorema del Trabajo y la Energía para resolver velocidades.",
+                    "explanationHtml": "<p>La <strong>energía</strong> es la capacidad que posee un cuerpo o sistema para realizar trabajo mecánico. Se mide en <strong>Julios ($J$)</strong>.</p><p class=\"mt-2 text-slate-700\">La <strong>energía cinética ($E_c$)</strong> es la energía que posee un cuerpo debido exclusivamente a su estado de movimiento o velocidad. Se calcula con:</p><p class=\"text-center font-mono font-extrabold text-primary text-base my-2\">$$E_c = \\frac{1}{2} m \\cdot v^2$$</p><p class=\"mt-2 text-slate-700\">El **Teorema del Trabajo y la Energía** establece un puente fundamental entre la dinámica y la cinemática: el trabajo neto total realizado por fuerzas externas sobre un cuerpo es igual al cambio o variación en su energía cinética:</p><p class=\"text-center font-mono font-extrabold text-primary text-base my-2\">$$W_{\\text{neto}} = \\Delta E_c = E_{c,\\text{final}} - E_{c,\\text{inicial}}$$</p><p class=\"mt-2 text-slate-707\">Si partimos del reposo, $E_{c,\\text{inicial}} = 0$, lo que simplifica la ecuación a: $W_{\\text{neto}} = \\frac{1}{2} m v_f^2$.</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Teorema del Trabajo y la Energía</p><p class=\"text-xs font-mono font-bold text-primary\">Ec = &frac12; &bull; m &bull; v&sup2; &nbsp;|&nbsp; W_neto = Ec_final - Ec_inicial</p><p class=\"text-xs text-slate-500\">Masa (m) en kg, velocidad (v) en m/s. Ec se mide en Julios (J).</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">TEOREMA DEL TRABAJO Y EC</text><line x1=\"30\" y1=\"90\" x2=\"270\" y2=\"90\" stroke=\"#94a3b8\" stroke-width=\"1.5\" /><rect x=\"40\" y=\"55\" width=\"40\" height=\"25\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"1.5\" rx=\"3\" /><text x=\"60\" y=\"70\" font-size=\"7\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">vi = 0</text><text x=\"60\" y=\"103\" font-size=\"7\" fill=\"#475569\" text-anchor=\"middle\">Ec_i = 0 J</text><line x1=\"90\" y1=\"67\" x2=\"190\" y2=\"67\" stroke=\"#10b981\" stroke-width=\"1.5\" stroke-dasharray=\"3,3\" /><polygon points=\"187,64 193,67 187,70\" fill=\"#10b981\" /><text x=\"140\" y=\"60\" font-size=\"8\" fill=\"#047857\" font-weight=\"bold\" text-anchor=\"middle\">W_neto = 16 J</text><rect x=\"200\" y=\"55\" width=\"40\" height=\"25\" fill=\"#fef2f2\" stroke=\"#ef4444\" stroke-width=\"1.5\" rx=\"3\" /><text x=\"220\" y=\"70\" font-size=\"7\" fill=\"#b91c1c\" font-weight=\"bold\" text-anchor=\"middle\">vf = 4 m/s</text><text x=\"220\" y=\"103\" font-size=\"7\" fill=\"#475569\" text-anchor=\"middle\">Ec_f = 16 J</text></svg>",
+                    "svgDescription": "Un carro de juguete de 2 kg parte del reposo (Ec = 0 J). Una fuerza neta realiza un trabajo neto de 16 J sobre él. Toda esta energía se transforma en energía cinética final, haciendo que el carro adquiera una velocidad de 4 m/s.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Un carro de juguete de $2\\text{ kg}$ parte del reposo y es empujado por una fuerza neta constante que realiza un trabajo neto de $16\\text{ Julios}$. Calcula la velocidad final del carro.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1 (Plantear Teorema):</strong> <br>$$W_{\\text{neto}} = E_{c,f} - E_{c,i}$$ <br>Como parte del reposo, $E_{c,i} = 0$: <br>$$W_{\\text{neto}} = \\frac{1}{2} m v_f^2$$</li><li><strong>Paso 2 (Sustituir datos):</strong> <br>$$16 = \\frac{1}{2} (2\\text{ kg}) \\cdot v_f^2$$ <br>$$16 = 1 \\cdot v_f^2 \\Rightarrow v_f^2 = 16$$</li><li><strong>Paso 3 (Despejar velocidad con raíz cuadrada):</strong> <br>$$v_f = \\sqrt{16} = 4\\text{ m/s}$$</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> La velocidad final del carro de juguete es de <strong>4 m/s</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Olvidar extraer la raíz cuadrada:</strong> Despejar $v_f^2 = 16$ y responder $16\\text{ m/s}$ de velocidad, lo cual es incorrecto. No olvide despejar el exponente cuadrático aplicando raíz.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Calcula la energía cinética en Julios de un atleta de 70 kg que corre a una velocidad de 6 m/s en Antigua. (Ingresa solo el número entero):",
+                            "correctAnswer": "1260",
+                            "hint": "Aplica Ec = 0.5 * m * v². Reemplaza m = 70 y v = 6. Recuerda elevar 6 al cuadrado.",
+                            "feedbackCorrect": "¡Excelente! Ec = 0.5 * 70 kg * (6 m/s)² = 35 * 36 = 1,260 Julios.",
+                            "feedbackIncorrect": "Incorrecto. Ec = 0.5 * m * v² = 0.5 * 70 * 36 = 1,260 Julios.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si duplicas la velocidad de un automóvil en la carretera, ¿cuántas veces aumenta su energía cinética?",
+                            "options": [
+                                "Se duplica (aumenta 2 veces).",
+                                "Aumenta 4 veces (se cuadruplica).",
+                                "Aumenta 8 veces.",
+                                "Se mantiene constante."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "La energía cinética depende directamente del cuadrado de la velocidad del móvil (v²).",
+                            "feedbackCorrect": "¡Perfecto! Al ser proporcional al cuadrado de la velocidad, duplicarla (2) implica que la energía cinética aumenta (2² = 4) veces.",
+                            "feedbackIncorrect": "Incorrecto. Varía con el cuadrado de la velocidad, por ende aumenta 4 veces.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Un bloque de 4 kg tiene una energía cinética inicial de 50 J. Si una fuerza horizontal constante realiza sobre él un trabajo neto de 30 J, ¿cuál es su energía cinética final en Julios? (Ingresa solo el número entero):",
+                            "correctAnswer": "80",
+                            "hint": "Aplica el Teorema del Trabajo y la Energía: W_neto = Ec_final - Ec_inicial. Despeja Ec_final.",
+                            "feedbackCorrect": "¡Perfecto! Ec_final = Ec_inicial + W_neto = 50 J + 30 J = 80 Julios.",
+                            "feedbackIncorrect": "Incorrecto. Ec_final = 50 + 30 = 80 Julios.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Con los datos del ejercicio anterior (m = 4 kg, Ec_final = 80 J), calcula la magnitud de su velocidad final en m/s. (Ingresa el número decimal con punto aproximado, ej: 6.32):",
+                            "correctAnswer": "6.32",
+                            "hint": "Plantea Ec_final = 0.5 * m * vf² => 80 = 0.5 * 4 * vf². Despeja vf aplicando raíz cuadrada.",
+                            "feedbackCorrect": "¡Excelente! 80 = 2 * vf² => vf² = 40 => vf = sqrt(40) ≈ 6.32 m/s.",
+                            "feedbackIncorrect": "Incorrecto. vf = sqrt(80/2) = sqrt(40) ≈ 6.32 m/s.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Qué ocurre con la energía cinética de un automóvil si el conductor aplica a fondo los frenos y se detiene por completo?",
+                            "options": [
+                                "Se duplica por la fuerza de fricción.",
+                                "Se reduce exactamente a cero.",
+                                "Se transforma en energía potencial elástica.",
+                                "Se disipa en el espacio en forma de masa."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "La velocidad de un cuerpo en reposo absoluto es cero.",
+                            "feedbackCorrect": "¡Excelente! Al ser v = 0, la energía cinética (½mv²) se reduce a cero, transformándose en calor en los frenos por fricción.",
+                            "feedbackIncorrect": "Incorrecto. Al detenerse (velocidad cero), la energía cinética se reduce a cero.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "La energía cinética depende de la velocidad al cuadrado ($E_c = \\frac{1}{2} m v^2$). El trabajo neto es el causante de alterar esta energía ($W_{neto} = \\Delta E_c$).",
+                    "videoPlaceholderText": "Video de Física: Energía cinética y la demostración experimental del Teorema del Trabajo."
+                },
+                {
+                    "id": "energia-potencial-gravitatoria",
+                    "title": "Lección 2.2: Energía Potencial Gravitatoria",
+                    "introduction": "Aprende a evaluar la energía potencial gravitatoria acumulada en masas elevadas y comprende la relevancia del nivel de referencia.",
+                    "explanationHtml": "<p>La <strong>energía potencial gravitatoria ($E_p$ o $U_g$)</strong> es la energía que posee un cuerpo debido a su posición elevada con respecto a un campo gravitatorio. Se trata de energía almacenada que tiene el potencial de transformarse en energía cinética al descender.</p><p class=\"mt-2 text-slate-700\">La ecuación fundamental para calcularla es:</p><p class=\"text-center font-mono font-extrabold text-primary text-base my-2\">$$E_p = m \\cdot g \\cdot h$$</p><p class=\"mt-2 text-slate-700\">Donde:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>$m$:</strong> Masa del cuerpo ($kg$).</li><li><strong>$g$:</strong> Aceleración de la gravedad local ($m/s^2$).</li><li><strong>$h$:</strong> Altura medida de forma vertical ($m$).</li></ul><p class=\"mt-2 text-slate-700\"><strong>El Nivel de Referencia ($h = 0$):</strong> La energía potencial es relativa. Para medir la altura $h$, es obligatorio elegir primero de forma arbitraria un nivel de referencia en el espacio. Un mismo objeto puede tener $E_p = 300\\text{ J}$ con respecto al suelo del primer piso, pero tener $E_p = 0\\text{ J}$ si tomamos como referencia la mesa sobre la que está apoyado.</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Energía Potencial Gravitatoria</p><p class=\"text-xs font-mono font-bold text-primary\">E_p = m &bull; g &bull; h</p><p class=\"text-xs text-slate-500\">Recuerda: La altura h debe ser la distancia VERTICAL, sin importar la trayectoria.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">ENERGÍA POTENCIAL: mgh</text><line x1=\"30\" y1=\"105\" x2=\"270\" y2=\"105\" stroke=\"#94a3b8\" stroke-width=\"1.5\" /><text x=\"50\" y=\"115\" font-size=\"7.5\" fill=\"#64748b\">Ref: h = 0m (Ep = 0)</text><rect x=\"180\" y=\"50\" width=\"80\" height=\"6\" fill=\"#cbd5e1\" /><line x1=\"220\" y1=\"50\" x2=\"220\" y2=\"105\" stroke=\"#cbd5e1\" stroke-width=\"2\" /><rect x=\"200\" y=\"56\" width=\"40\" height=\"25\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"1.5\" rx=\"3\" /><text x=\"220\" y=\"72\" font-size=\"7\" font-weight=\"bold\" fill=\"#1e40af\" text-anchor=\"middle\">m = 5 kg</text><line x1=\"140\" y1=\"56\" x2=\"140\" y2=\"105\" stroke=\"#f59e0b\" stroke-width=\"1.5\" /><polygon points=\"137,59 140,53 143,59\" fill=\"#f59e0b\" /><polygon points=\"137,102 140,108 143,102\" fill=\"#f59e0b\" /><text x=\"130\" y=\"85\" font-size=\"8.5\" fill=\"#b45309\" font-weight=\"bold\" text-anchor=\"end\">h = 6 m</text><text x=\"220\" y=\"94\" font-size=\"7.5\" fill=\"#10b981\" font-weight=\"bold\" text-anchor=\"middle\">Ep = 300 J</text></svg>",
+                    "svgDescription": "Una caja de 5 kg se encuentra suspendida a h = 6 metros sobre el suelo (nivel de referencia h = 0). La energía potencial gravitatoria acumulada es Ep = mgh = 5 * 10 * 6 = 300 J.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Un bloque de piedra de $5\\text{ kg}$ está sobre el borde de un andamio a una altura de $6\\text{ metros}$ sobre el suelo en una obra constructiva en Tecpán. Calcula su energía potencial gravitatoria con respecto al suelo y con respecto a una mesa situada a $1.5\\text{ metros}$ de altura en el suelo (usa $g = 10\\text{ m/s}^2$).</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1 (Con respecto al Suelo):</strong> La altura total vertical es $h = 6\\text{ m}$: <br>$$E_{p,\\text{suelo}} = m \\cdot g \\cdot h = 5\\text{ kg} \\times 10\\text{ m/s}^2 \\times 6\\text{ m} = 300\\text{ Julios}$$</li><li><strong>Paso 2 (Con respecto a la Mesa):</strong> Medimos la altura relativa desde la mesa hasta la piedra ($h_{\\text{mesa}} = 6 - 1.5 = 4.5\\text{ m}$): <br>$$E_{p,\\text{mesa}} = m \\cdot g \\cdot h_{\\text{mesa}} = 5\\text{ kg} \\times 10\\text{ m/s}^2 \\times 4.5\\text{ m} = 225\\text{ Julios}$$</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> Su Ep con respecto al suelo es de <strong>300 J</strong> y con respecto a la mesa es de <strong>225 J</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Medir distancias inclinadas en vez de la altura vertical:</strong> Al subir un objeto por una rampa inclinada de $10\\text{ m}$ de longitud y que alcanza una altura vertical final de $3\\text{ m}$, usar $10\\text{ m}$ en el cálculo. La gravedad tira verticalmente, por lo que solo importa la altura vertical $h = 3\\text{ m}$.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "¿Qué energía potencial en Julios almacena un saco de maíz de 20 kg elevado a una altura de 4 metros? (g = 10 m/s². Ingresa solo el número entero):",
+                            "correctAnswer": "800",
+                            "hint": "Aplica Ep = m * g * h. Reemplaza m = 20, g = 10 y h = 4.",
+                            "feedbackCorrect": "¡Excelente! Ep = 20 kg * 10 m/s² * 4 m = 800 Julios.",
+                            "feedbackIncorrect": "Incorrecto. Ep = m * g * h = 20 * 10 * 4 = 800 Julios.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si desciendes un bloque de 5 kg desde una altura de 10 metros hasta 6 metros sobre el suelo, ¿cuánta energía potencial en Julios pierde? (g = 10 m/s². Ingresa solo el número entero):",
+                            "correctAnswer": "200",
+                            "hint": "Calcula la variación de altura Δh = 10 m - 6 m = 4 m. Luego opera la pérdida de energía potencial como m * g * Δh.",
+                            "feedbackCorrect": "¡Perfecto! Altura perdida = 4 m. Pérdida Ep = 5 kg * 10 m/s² * 4 m = 200 Julios.",
+                            "feedbackIncorrect": "Incorrecto. La diferencia de altura es 4m. Energía perdida = 5 * 10 * 4 = 200 Julios.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Puede la energía potencial gravitatoria tomar valores numéricos negativos?",
+                            "options": [
+                                "No, las energías siempre son escalares estrictamente positivos.",
+                                "Sí, si el objeto se sitúa por debajo del nivel de referencia elegido (h = 0).",
+                                "Solo en el espacio exterior.",
+                                "Solo si el peso se anula."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Revisa qué ocurre en la fórmula Ep = mgh si la coordenada h queda por debajo del origen (y < 0).",
+                            "feedbackCorrect": "¡Excelente! Al ser la altura relativa, si el cuerpo está por debajo del origen h = 0, la energía potencial es negativa.",
+                            "feedbackIncorrect": "Incorrecto. Sí puede ser negativa si el objeto se ubica por debajo del nivel de referencia.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Calcula la masa en kg de un objeto si almacena exactamente 150 J de energía potencial gravitatoria al ser elevado a una altura vertical de 3 metros. (g = 10 m/s². Ingresa solo el número entero):",
+                            "correctAnswer": "5",
+                            "hint": "Despeja la masa de la fórmula de energía potencial: m = Ep / (g * h). Reemplaza Ep = 150, g = 10 y h = 3.",
+                            "feedbackCorrect": "¡Excelente! m = 150 J / (10 * 3) = 150 / 30 = 5 kg.",
+                            "feedbackIncorrect": "Incorrecto. Masa m = Ep / (g * h) = 150 / 30 = 5 kg.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Un excursionista de 70 kg escala una montaña en Petén ganando una altura vertical de 100 metros. ¿Cuánto trabajo mecánico en Julios realiza la fuerza de gravedad sobre el excursionista mientras sube? (g = 10 m/s². Ingresa el valor entero con signo negativo):",
+                            "correctAnswer": "-70000",
+                            "hint": "La gravedad tira hacia abajo y el excursionista se desplaza hacia arriba (ángulo de 180°). El trabajo de la gravedad es negativo y equivale a -m * g * h.",
+                            "feedbackCorrect": "¡Perfecto! Como se opone a la subida, la gravedad realiza un trabajo negativo de -70,000 Julios (restando energía).",
+                            "feedbackIncorrect": "Incorrecto. Al ir en sentido contrario, el trabajo de la gravedad es -m * g * h = -70,000 Julios.",
+                            "difficulty": "avanzado",
+                            "type": "short"
+                        }
+                    ],
+                    "summaryHtml": "La energía potencial gravitatoria se define por la posición elevada ($E_p = mgh$). Su valor es relativo al nivel de referencia ($h=0$) seleccionado.",
+                    "videoPlaceholderText": "Video de Física: La energía potencial gravitatoria y el diseño de montañas rusas."
+                },
+                {
+                    "id": "energia-potencial-elastica",
+                    "title": "Lección 2.3: Energía Potencial Elástica",
+                    "introduction": "Calcula la energía potencial almacenada en materiales elásticos deformados y resuelve conversiones dinámicas.",
+                    "explanationHtml": "<p>La <strong>energía potencial elástica ($E_{pe}$ o $U_e$)</strong> es la energía almacenada en materiales elásticos (como resortes, ligas, ballestas o amortiguadores) cuando son sometidos a una deformación temporal por estiramiento o compresión.</p><p class=\"mt-2 text-slate-700\">La ecuación para calcular la energía almacenada en un resorte ideal es:</p><p class=\"text-center font-mono font-extrabold text-primary text-base my-2\">$$E_{pe} = \\frac{1}{2} k \\cdot x^2$$</p><p class=\"mt-2 text-slate-700\">Donde:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>$k$:</strong> Constante elástica del resorte ($N/m$).</li><li><strong>$x$:</strong> Distancia de deformación (estiramiento o compresión) con respecto a la longitud natural sin carga ($m$).</li></ul><p class=\"mt-2 text-slate-705\">Al igual que la gravitatoria, esta energía queda almacenada en el resorte y al liberarse se convierte de forma veloz en energía cinética de cualquier objeto acoplado a él.</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Energía Potencial Elástica</p><p class=\"text-xs font-mono font-bold text-primary\">E_pe = &frac12; &bull; k &bull; x&sup2;</p><p class=\"text-xs text-slate-500\">k representa la rigidez del resorte, x es la deformación en metros.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">ENERGÍA ELÁSTICA ALMACENADA</text><line x1=\"30\" y1=\"95\" x2=\"270\" y2=\"95\" stroke=\"#94a3b8\" stroke-width=\"1.5\" /><rect x=\"30\" y=\"40\" width=\"10\" height=\"55\" fill=\"#cbd5e1\" stroke=\"#94a3b8\" /><path d=\"M 40 68 L 47 68 L 50 58 L 54 78 L 58 58 L 62 78 L 66 58 L 70 78 L 74 58 L 81 68 L 88 68\" fill=\"none\" stroke=\"#475569\" stroke-width=\"2\" stroke-linejoin=\"round\" /><rect x=\"88\" y=\"48\" width=\"40\" height=\"40\" fill=\"#fef2f2\" stroke=\"#ef4444\" stroke-width=\"1.5\" rx=\"3\" /><text x=\"108\" y=\"72\" font-size=\"7\" font-weight=\"bold\" fill=\"#b91c1c\" text-anchor=\"middle\">Epe = 0.5 J</text><text x=\"150\" y=\"60\" font-size=\"7\" fill=\"#475569\">k = 400 N/m</text><text x=\"150\" y=\"72\" font-size=\"7\" fill=\"#475569\">x = 5 cm (0.05m)</text></svg>",
+                    "svgDescription": "Un resorte comprimido 5 cm con una constante de 400 N/m. Almacena una energía potencial elástica de exactly 0.5 Julios. Al liberar el bloqueo, se transformará en energía de movimiento.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Un juguete lanzador posee un resorte interno con constante elástica $k = 400\\text{ N/m}$. Si el resorte se comprime exactamente $5\\text{ cm}$ para cargar una pequeña esfera de $0.1\\text{ kg}$, calcula la energía elástica almacenada en el resorte.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1 (Convertir deformación a metros):</strong> <br>$$x = 5\\text{ cm} = 0.05\\text{ metros}$$</li><li><strong>Paso 2 (Escribir Fórmula):</strong> <br>$$E_{pe} = \\frac{1}{2} k \\cdot x^2$$</li><li><strong>Paso 3 (Reemplazar y operar):</strong> <br>$$E_{pe} = 0.5 \\times 400\\text{ N/m} \\times (0.05\\text{ m})^2$$ <br>$$E_{pe} = 200 \\times 0.0025 = 0.5\\text{ Julios}$$</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> La energía potencial elástica almacenada en el resorte cargado es de <strong>0.5 Julios</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Olvidar elevar la deformación al cuadrado:</strong> Calcular $0.5 \\times 400 \\times 0.05 = 10\\text{ J}$. Eleve siempre $x$ al cuadrado antes de multiplicar por la constante.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "¿Cuánta energía potencial elástica en Julios almacena un resorte de rigidez k = 1,000 N/m al ser comprimido una distancia de 0.1 metros? (Ingresa solo el número entero):",
+                            "correctAnswer": "5",
+                            "hint": "Aplica Epe = 0.5 * k * x². Reemplaza k = 1,000 y x = 0.1.",
+                            "feedbackCorrect": "¡Excelente! Epe = 0.5 * 1000 N/m * (0.1 m)² = 500 * 0.01 = 5 Julios.",
+                            "feedbackIncorrect": "Incorrecto. Epe = 0.5 * 1000 * 0.01 = 5 Julios.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si un resorte almacena exactamente 8 Julios de energía potencial elástica al ser estirado 0.2 metros, ¿cuál es el valor de su constante elástica k en N/m? (Ingresa solo el número entero):",
+                            "correctAnswer": "400",
+                            "hint": "Despeja k de la fórmula Epe = 0.5 * k * x². Es decir, k = 2 * Epe / x².",
+                            "feedbackCorrect": "¡Perfecto! k = 2 * 8 J / (0.2 m)² = 16 / 0.04 = 400 N/m.",
+                            "feedbackIncorrect": "Incorrecto. k = 16 / 0.04 = 400 N/m.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si duplicas el estiramiento o compresión de un resorte, ¿qué le ocurre a la cantidad de energía potencial elástica que almacena?",
+                            "options": [
+                                "Se reduce a la mitad.",
+                                "Se duplica (aumenta 2 veces).",
+                                "Se cuadruplica (aumenta 4 veces).",
+                                "Se mantiene idéntica."
+                            ],
+                            "correctAnswer": 2,
+                            "hint": "La energía elástica depende directamente del cuadrado de la distancia de deformación (x²).",
+                            "feedbackCorrect": "¡Excelente! Al depender del cuadrado, duplicar la deformación ($2$) cuadruplica ($2^2 = 4$) la energía almacenada.",
+                            "feedbackIncorrect": "Incorrecto. Depende del cuadrado de la deformación, por ende se cuadruplica.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Una liga elástica tiene una constante k = 100 N/m. ¿Qué estiramiento en metros se necesita para almacenar exactamente 2 Julios de energía elástica? (Ingresa el número decimal con punto):",
+                            "correctAnswer": "0.2",
+                            "hint": "Despeja x² de la fórmula: x² = 2 * Epe / k = 4 / 100 = 0.04. Saca la raíz cuadrada de 0.04 para hallar x.",
+                            "feedbackCorrect": "¡Excelente! x² = 0.04 => x = sqrt(0.04) = 0.2 metros.",
+                            "feedbackIncorrect": "Incorrecto. x = sqrt(4 / 100) = sqrt(0.04) = 0.2 metros.",
+                            "difficulty": "avanzado",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿En qué tipo de energía se transforma principalmente la energía elástica acumulada en la cuerda tensa de un arco cuando el arquero suelta la flecha?",
+                            "options": [
+                                "En energía potencial gravitatoria de la cuerda.",
+                                "En energía cinética (movimiento) de la flecha.",
+                                "En energía magnética polar.",
+                                "En masa inercial."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "La cuerda tensa empuja a la flecha, transfiriendo energía para hacerla volar.",
+                            "feedbackCorrect": "¡Perfecto! Toda la energía elástica se transfiere de forma rápida convirtiéndose en energía de movimiento (cinética) de la flecha.",
+                            "feedbackIncorrect": "Incorrecto. Se transforma en energía cinética para hacer avanzar a la flecha.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "La energía potencial elástica se acumula en materiales deformados ($E_{pe} = \\frac{1}{2} k x^2$). Es proporcional a la rigidez $k$ y al cuadrado de la deformación $x^2$.",
+                    "videoPlaceholderText": "Video de Física: Energía elástica en catapultas y ballestas antiguas."
+                }
+            ]
+        },
+        {
+            "title": "Unidad 3: Conservación de la Energía y Potencia",
+            "lessons": [
+                {
+                    "id": "conservacion-energia-mecanica",
+                    "title": "Lección 3.1: Conservación de la Energía Mecánica",
+                    "introduction": "Resuelve problemas mecánicos complejos aplicando la Ley de Conservación de la Energía Mecánica en sistemas libres de fricción.",
+                    "explanationHtml": "<p>La **Ley de Conservación de la Energía** establece que la energía no se crea ni se destruye, solo se transforma de una forma a otra. En un sistema ideal (libre de fricción, resistencia del aire y otras fuerzas no conservativas), la <strong>Energía Mecánica Total ($E_m$)</strong> (que es la suma de la energía cinética y las energías potenciales) permanece **estrictamente constante** en todo punto de la trayectoria:</p><p class=\"text-center font-mono font-extrabold text-primary text-base my-2\">$$E_{m,\\text{inicial}} = E_{m,\\text{final}}$$</p><p class=\"text-center font-mono font-extrabold text-primary text-base my-2\">$$E_{ci} + E_{pi} = E_{cf} + E_{pf}$$</p><p class=\"text-center font-mono font-extrabold text-primary text-base my-2\">$$\\frac{1}{2} m v_i^2 + m g h_i + \\frac{1}{2} k x_i^2 = \\frac{1}{2} m v_f^2 + m g h_f + \\frac{1}{2} k x_f^2$$</p><p class=\"mt-2 text-slate-707\">Este principio es una herramienta poderosísima en ingeniería: nos permite conocer velocidades y alturas en cualquier punto de un recorrido complejo sin necesidad de conocer las aceleraciones en el trayecto.</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Ley de Conservación Mecánica</p><p class=\"text-xs font-mono font-bold text-primary\">Ei = Ef &rArr; Ec_i + Ep_i = Ec_f + Ep_f</p><p class=\"text-xs text-slate-500\">Nota: En caída libre sin fricción partiendo del reposo: v_f = &radic;(2gh).</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">CONSERVACIÓN DE ENERGÍA (Ei = Ef)</text><path d=\"M 40 40 Q 140 120 260 100\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"2\" /><rect x=\"35\" y=\"23\" width=\"20\" height=\"12\" fill=\"#bfdbfe\" stroke=\"#3b82f6\" stroke-width=\"1\" rx=\"2\" /><text x=\"45\" y=\"15\" font-size=\"7\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">Cima (vi=0)</text><text x=\"15\" y=\"32\" font-size=\"6.5\" fill=\"#047857\">Ep = 2500 J</text><text x=\"15\" y=\"42\" font-size=\"6.5\" fill=\"#b91c1c\">Ec = 0 J</text><rect x=\"140\" y=\"80\" width=\"20\" height=\"12\" fill=\"#fca5a5\" stroke=\"#ef4444\" stroke-width=\"1\" rx=\"2\" /><text x=\"150\" y=\"98\" font-size=\"7\" fill=\"#b91c1c\" font-weight=\"bold\" text-anchor=\"middle\">Base (vf=10m/s)</text><text x=\"175\" y=\"82\" font-size=\"6.5\" fill=\"#047857\">Ep = 0 J</text><text x=\"175\" y=\"92\" font-size=\"6.5\" fill=\"#b91c1c\">Ec = 2500 J</text></svg>",
+                    "svgDescription": "Una patinadora en una rampa ideal libre de fricción. En la cima (altura máxima) toda su energía es Potencial. En el punto más bajo (altura nula), toda la Ep se convirtió en energía de movimiento Cinética. Ei = Ef = 2500 J.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Una patinadora de $50\\text{ kg}$ parte del reposo desde la cima de una rampa circular de $5\\text{ metros}$ de altura en un parque de Xela. Calcula su velocidad en la base de la rampa (usa $g = 10\\text{ m/s}^2$ y desprecia la fricción).</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1 (Plantear Conservación):</strong> <br>$$E_{ci} + E_{pi} = E_{cf} + E_{pf}$$</li><li><strong>Paso 2 (Identificar variables en estados):</strong> <br>- Inicial (cima, reposo): $E_{ci} = 0$, $E_{pi} = m \\cdot g \\cdot h$ <br>- Final (base, altura cero): $E_{pf} = 0$, $E_{cf} = \\frac{1}{2} m v_f^2$</li><li><strong>Paso 3 (Igualar y simplificar masa en ambos lados):</strong> <br>$$m \\cdot g \\cdot h = \\frac{1}{2} m v_f^2 \\Rightarrow g \\cdot h = \\frac{1}{2} v_f^2$$ <br>$$\\text{Despejando: } v_f^2 = 2 g h \\Rightarrow v_f = \\sqrt{2 g h}$$</li><li><strong>Paso 4 (Calcular):</strong> <br>$$v_f = \\sqrt{2 \\times 10\\text{ m/s}^2 \\times 5\\text{ m}} = \\sqrt{100} = 10\\text{ m/s}$$</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> La velocidad de la patinadora en la base es de <strong>10 m/s</strong> (nota que la velocidad no depende de la masa de la persona).</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Escribir la masa en la ecuación cuando se puede simplificar:</strong> Incluir los $50\\text{ kg}$ en la calculadora. Al cancelarse a ambos lados, es más ágil simplificar la variable $m$ algebraicamente para evitar errores aritméticos.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Si dejas caer libremente un objeto de 3 kg desde una altura de 45 metros, ¿con qué velocidad en m/s choca contra el suelo? (g = 10 m/s². Ingresa solo el número entero):",
+                            "correctAnswer": "30",
+                            "hint": "Aplica la conservación: mgh = 0.5 * m * v² => v = sqrt(2 * g * h). Reemplaza g = 10 y h = 45.",
+                            "feedbackCorrect": "¡Excelente! v = sqrt(2 * 10 * 45) = sqrt(900) = 30 m/s.",
+                            "feedbackIncorrect": "Incorrecto. v = sqrt(2*g*h) = sqrt(2*10*45) = sqrt(900) = 30 m/s.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Qué ocurre con la energía mecánica total de un péndulo oscilante en condiciones ideales sin resistencia del aire?",
+                            "options": [
+                                "Disminuye gradualmente en cada oscilación hasta detenerse.",
+                                "Se mantiene estrictamente constante en todo momento, oscilando continuamente entre cinética y potencial.",
+                                "Aumenta en cada oscilación por la fuerza de inercia.",
+                                "Se reduce a la mitad al pasar por el centro."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "En condiciones ideales libres de fricción, la energía total mecánica no se destruye, solo cambia de forma.",
+                            "feedbackCorrect": "¡Perfecto! La energía mecánica total es constante, transformándose de potencial (en los extremos elevados) a cinética (en el centro bajo).",
+                            "feedbackIncorrect": "Incorrecto. Se mantiene constante transformándose cíclicamente de cinética a potencial.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Un bloque se desliza sin fricción. Si en la parte más alta del plano inclinado tiene Ep = 100 J y Ec = 20 J, ¿cuál será su energía cinética en Julios cuando llega a la base si la altura se reduce a cero? (Ingresa solo el número entero):",
+                            "correctAnswer": "120",
+                            "hint": "Aplica Ei = Ef. En la cima, Ei = Ep + Ec. En la base, Ep = 0, por lo que Ef = Ec.",
+                            "feedbackCorrect": "¡Excelente! Ei = 100 + 20 = 120 J. En la base, Ep = 0, por lo que Ec = 120 Julios por conservación.",
+                            "feedbackIncorrect": "Incorrecto. Energía total = 100 + 20 = 120 J. En la base toda la energía es cinética, es decir, 120 Julios.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cómo se define formalmente una 'fuerza conservativa' en física clásica?",
+                            "options": [
+                                "Es una fuerza que conserva la temperatura del cuerpo.",
+                                "Es una fuerza cuyo trabajo realizado sobre un objeto para desplazarlo entre dos puntos es independiente de la trayectoria seguida, dependiendo solo de los puntos inicial y final.",
+                                "Es una fuerza que no puede realizar trabajo negativo.",
+                                "Es la fuerza de fricción en movimiento."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "La gravedad y la fuerza elástica son ejemplos de fuerzas conservativas; su trabajo en bucles cerrados es nulo.",
+                            "feedbackCorrect": "¡Excelente! El trabajo de una fuerza conservativa depende únicamente del punto de inicio y de llegada, no del camino.",
+                            "feedbackIncorrect": "Incorrecto. Es aquella fuerza cuyo trabajo realizado no depende de la trayectoria recorrida, solo de la posición inicial y final.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Si un proyectil es lanzado verticalmente hacia arriba a una velocidad inicial de 20 m/s, ¿cuál es la altura máxima en metros que alcanza? (g = 10 m/s². Ingresa solo el número entero):",
+                            "correctAnswer": "20",
+                            "hint": "En la altura máxima, la velocidad es cero. Toda la Ec inicial (0.5 * m * vi²) se transforma en Ep final (m * g * h). Despeja h = vi² / (2 * g).",
+                            "feedbackCorrect": "¡Perfecto! h = (20)² / (2 * 10) = 400 / 20 = 20 metros.",
+                            "feedbackIncorrect": "Incorrecto. Altura máxima h = vi² / 2g = 400 / 20 = 20 metros.",
+                            "difficulty": "avanzado",
+                            "type": "short"
+                        }
+                    ],
+                    "summaryHtml": "La energía total mecánica se conserva en sistemas libres de fricción ($E_i = E_f$). Toda pérdida potencial se traduce en ganancia cinética.",
+                    "videoPlaceholderText": "Video de Física: Leyes de conservación mecánica demostradas en un péndulo de demolición."
+                },
+                {
+                    "id": "sistemas-no-conservativos-friccion",
+                    "title": "Lección 3.2: Sistemas No Conservativos (Pérdidas por Fricción)",
+                    "introduction": "Aprende a analizar sistemas mecánicos reales donde la fricción disipa energía mecánica en forma de calor disipado.",
+                    "explanationHtml": "<p>En los sistemas reales, actúan **fuerzas no conservativas** (como la fricción cinética o la resistencia del aire). El trabajo realizado por estas fuerzas ($W_{\\text{nc}}$) disipa energía mecánica, retirándola del sistema en forma de energía térmica (calor y desgaste de las superficies).</p><p class=\"mt-2 text-slate-700\">La ecuación de conservación se modifica agregando el trabajo de las fuerzas no conservativas:</p><p class=\"text-center font-mono font-extrabold text-primary text-base my-2\">$$E_{\\text{inicial}} + W_{\\text{nc}} = E_{\\text{final}}$$</p><p class=\"text-center font-mono font-extrabold text-primary text-base my-2\">$$(E_{ci} + E_{pi}) + W_{\\text{nc}} = (E_{cf} + E_{pf})$$</p><p class=\"mt-2 text-slate-700\">Como la fricción siempre actúa en sentido opuesto al desplazamiento, su trabajo siempre es estrictamente **negativo** ($W_{\\text{nc}} = -f_k \\cdot d$), reduciendo la energía mecánica final:</p><p class=\"text-center font-mono font-extrabold text-primary text-base my-2\">$$(E_{ci} + E_{pi}) - f_k \\cdot d = (E_{cf} + E_{pf})$$</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Balance de Energía No Conservativa</p><p class=\"text-xs font-mono font-bold text-primary\">Ei - f_k &bull; d = Ef &nbsp;|&nbsp; W_friccion = Ef - Ei</p><p class=\"text-xs text-slate-500\">Recuerda: El trabajo de la fricción siempre resta energía (signo negativo).</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">SISTEMAS NO CONSERVATIVOS</text><polygon points=\"40,95 240,95 240,40\" fill=\"#f1f5f9\" stroke=\"#cbd5e1\" stroke-width=\"1.5\" /><g transform=\"translate(140,68) rotate(-15.5)\"><rect x=\"-15\" y=\"-10\" width=\"30\" height=\"20\" fill=\"#fca5a5\" stroke=\"#ef4444\" stroke-width=\"1\" rx=\"2\" /><line x1=\"0\" y1=\"0\" x2=\"-25\" y2=\"0\" stroke=\"#f59e0b\" stroke-width=\"1.5\" /><polygon points=\"-22,-3 -27,0 -22,3\" fill=\"#f59e0b\" /></g><text x=\"75\" y=\"55\" font-size=\"7.5\" fill=\"#047857\" font-weight=\"bold\">Ei = 200 J</text><text x=\"145\" y=\"50\" font-size=\"7\" fill=\"#b45309\" font-weight=\"bold\">W_fricción = -120 J (Calor)</text><text x=\"210\" y=\"85\" font-size=\"7.5\" fill=\"#b91c1c\" font-weight=\"bold\">Ef = 80 J</text></svg>",
+                    "svgDescription": "Un bloque deslizando cuesta abajo. Su energía mecánica inicial es de 200 J. Debido a la fricción, se realiza un trabajo no conservativo de -120 J (calor disipado). La energía mecánica final en la base se reduce a 80 J.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Un bloque de $10\\text{ kg}$ se desliza por una rampa de $5\\text{ metros}$ de longitud desde una altura de $2\\text{ metros}$ en Antigua. Si llega a la base con una velocidad de $4\\text{ m/s}$ debido a la fricción, calcula el trabajo realizado por la fuerza de fricción sobre el bloque (usa $g = 10\\text{ m/s}^2$).</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1 (Calcular Energía Inicial en la cima):</strong> <br>Partiendo del reposo ($E_{ci} = 0$): <br>$$E_i = E_{pi} = m \\cdot g \\cdot h = 10\\text{ kg} \\times 10\\text{ m/s}^2 \\times 2\\text{ m} = 200\\text{ Julios}$$</li><li><strong>Paso 2 (Calcular Energía Final en la base):</strong> <br>Como $h = 0$, toda la energía en la base es cinética: <br>$$E_f = E_{cf} = \\frac{1}{2} m v_f^2 = 0.5 \\times 10\\text{ kg} \\times (4\\text{ m/s})^2 = 5 \\times 16 = 80\\text{ Julios}$$</li><li><strong>Paso 3 (Aplicar Balance No Conservativo):</strong> <br>$$E_i + W_{\\text{fricción}} = E_f$$ <br>$$200 + W_{\\text{fricción}} = 80$$</li><li><strong>Paso 4 (Despejar el trabajo):</strong> <br>$$W_{\\text{fricción}} = 80 - 200 = -120\\text{ Julios}$$</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> El trabajo realizado por la fricción es de <strong>-120 Julios</strong> (el sistema disipó 120 Julios en forma de calor).</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Olvidar el signo negativo de fricción:</strong> Escribir $+120\\text{ J}$ como respuesta. Recuerde que al ser una pérdida energética, el trabajo de fricción debe ser negativo, indicando que el sistema perdió energía útil.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Si un bloque con energía mecánica inicial de 150 J pierde 40 J por fricción al deslizar por una rampa, ¿cuál es su energía final en la base en Julios? (Ingresa solo el número entero):",
+                            "correctAnswer": "110",
+                            "hint": "Aplica Ef = Ei + W_nc. Recuerda que la pérdida es un trabajo negativo: W_nc = -40 J.",
+                            "feedbackCorrect": "¡Excelente! Ef = 150 J - 40 J = 110 Julios.",
+                            "feedbackIncorrect": "Incorrecto. Ef = 150 - 40 = 110 Julios.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿En qué forma de energía se disipa comúnmente la energía mecánica 'perdida' por rozamiento en los pistones de un motor?",
+                            "options": [
+                                "En energía eléctrica acumulada.",
+                                "En energía térmica o calor.",
+                                "En energía potencial química.",
+                                "En masa gravitacional."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "Toca una superficie rugosa que ha sido frotada intensamente y siente su temperatura.",
+                            "feedbackCorrect": "¡Perfecto! La fricción excita los átomos de la superficie aumentando su temperatura (calor disipado).",
+                            "feedbackIncorrect": "Incorrecto. Se disipa en forma de energía térmica (calor).",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Un bloque de 5 kg se desliza sobre una mesa rugosa horizontal partiendo con una velocidad de 6 m/s y se detiene tras recorrer 3 metros. Calcula el trabajo realizado por la fricción en Julios. (Ingresa el valor entero con signo negativo):",
+                            "correctAnswer": "-90",
+                            "hint": "Como se detiene, Ef = 0. Calcula la energía cinética inicial: Ei = 0.5 * m * vi² = 0.5 * 5 * 36 = 90 J. Aplica W_friccion = Ef - Ei.",
+                            "feedbackCorrect": "¡Excelente! Ei = 90 J, Ef = 0 J. Trabajo de fricción = 0 - 90 = -90 Julios.",
+                            "feedbackIncorrect": "Incorrecto. Ei = 0.5 * 5 * 36 = 90 J. W_friccion = 0 - 90 = -90 Julios.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Con los datos del ejercicio anterior (m = 5 kg, d = 3 m, W_fricción = -90 J), calcula la magnitud de la fuerza de fricción constante en Newtons que detuvo al bloque. (Ingresa solo el número entero):",
+                            "correctAnswer": "30",
+                            "hint": "Aplica W = F * d * cos(180°) => W = -f * d. Reemplaza W = -90 y d = 3 m.",
+                            "feedbackCorrect": "¡Excelente! -90 J = -f * 3 m => f = 30 Newtons.",
+                            "feedbackIncorrect": "Incorrecto. f = |W|/d = 90 / 3 = 30 Newtons.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Es aplicable el Principio de Conservación de la Energía Total a un sistema real que presenta rozamiento?",
+                            "options": [
+                                "No, la fricción destruye la energía de forma absoluta.",
+                                "Sí, porque aunque la energía mecánica disminuya, la energía total (incluyendo el calor disipado) se mantiene constante.",
+                                "Solo si el objeto cae verticalmente.",
+                                "Solo si el coeficiente de fricción es cero."
+                            ],
+                            "correctAnswer": 1,
+                            "hint": "La energía mecánica no se conserva por la fricción, pero la energía total del universo sí se mantiene.",
+                            "feedbackCorrect": "¡Excelente! La energía total se conserva siempre; la energía 'perdida' es solo energía útil disipada en calor.",
+                            "feedbackIncorrect": "Incorrecto. El principio de conservación de la energía total es universal; la energía no se destruye, solo se calienta.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "En sistemas reales, las fuerzas no conservativas disipan energía mecánica ($E_i + W_{nc} = E_f$). El trabajo de la fricción es siempre negativo.",
+                    "videoPlaceholderText": "Video de Física: La física de la fricción en frenos y la disipación térmica explicada."
+                },
+                {
+                    "id": "potencia-rendimiento-mecanico",
+                    "title": "Lección 3.3: Potencia y Rendimiento Mecánico",
+                    "introduction": "Aprende a calcular la potencia mecánica desarrollada por motores ($P=W/t$) y evalúa el porcentaje de eficiencia o rendimiento.",
+                    "explanationHtml": "<p>En la práctica de la ingeniería, no basta con saber cuánto trabajo realiza una máquina; es crucial saber con qué rapidez lo hace y cuánta de la energía consumida es verdaderamente aprovechada:</p><p class=\"mt-2 font-bold text-slate-800\">1. Potencia Mecánica ($P$)</p><p class=\"text-slate-700\">Mide la rapidez con la que se realiza un trabajo o se transfiere energía. Su unidad de medida en el SI es el <strong>Vatio o Watt ($W$)</strong>, donde $1\\text{ W} = 1\\text{ J/s}$.</p><p class=\"mt-2 text-slate-700\">Fórmulas fundamentales:</p><p class=\"text-center font-mono font-extrabold text-primary text-base my-2\">$$P = \\frac{W}{t} \\quad \\text{y} \\quad P = F \\cdot v$$</p><p class=\"mt-2 text-slate-700\">donde $v$ es la velocidad constante. Otra unidad industrial común es el Caballo de Fuerza ($1\\text{ HP} \\approx 746\\text{ W}$).</p><p class=\"mt-2 font-bold text-slate-800\">2. Eficiencia o Rendimiento ($\\eta$)</p><p class=\"text-slate-700\">Representa la fracción o porcentaje de la energía suministrada a una máquina que es verdaderamente convertida en trabajo mecánico útil. Debido a pérdidas inevitables por fricción y calor, el rendimiento **siempre es menor al $100\\%$**:</p><p class=\"text-center font-mono font-extrabold text-primary text-base my-2\">$$\\eta = \\left( \\frac{\\text{Potencia Útil}}{\\text{Potencia Suministrada}} \\right) \\times 100\\%$$</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Potencia y Eficiencia</p><p class=\"text-xs font-mono font-bold text-primary\">P = W / t &nbsp;|&nbsp; P = F &bull; v &nbsp;|&nbsp; &eta; = (P_util / P_sumin) &times; 100%</p><p class=\"text-xs text-slate-500\">1 HP = 746 W. kW = 1000 W.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">POTENCIA Y RENDIMIENTO (&eta;)</text><rect x=\"40\" y=\"45\" width=\"60\" height=\"40\" fill=\"#eff6ff\" stroke=\"#3b82f6\" stroke-width=\"1.5\" rx=\"6\" /><text x=\"70\" y=\"68\" font-size=\"8\" font-family=\"sans-serif\" font-weight=\"bold\" fill=\"#1e40af\" text-anchor=\"middle\">MOTOR</text><circle cx=\"120\" cy=\"55\" r=\"10\" fill=\"#cbd5e1\" stroke=\"#475569\" stroke-width=\"1.5\" /><line x1=\"100\" y1=\"55\" x2=\"120\" y2=\"55\" stroke=\"#475569\" stroke-width=\"1.5\" /><line x1=\"130\" y1=\"55\" x2=\"130\" y2=\"85\" stroke=\"#475569\" stroke-width=\"1.5\" /><rect x=\"118\" y=\"85\" width=\"24\" height=\"20\" fill=\"#fca5a5\" stroke=\"#ef4444\" stroke-width=\"1.5\" rx=\"2\" /><text x=\"130\" y=\"97\" font-size=\"7.5\" fill=\"#991b1b\" font-weight=\"bold\" text-anchor=\"middle\">M</text><text x=\"70\" y=\"105\" font-size=\"7.5\" fill=\"#475569\" text-anchor=\"middle\">P_suministrada = 1000 W</text><text x=\"155\" y=\"65\" font-size=\"7.5\" fill=\"#047857\" font-weight=\"bold\">P_útil = 800 W</text><text x=\"155\" y=\"77\" font-size=\"8\" fill=\"#10b981\" font-weight=\"bold\">Eficiencia &eta; = 80%</text></svg>",
+                    "svgDescription": "Un motor eléctrico que consume 1000 W de potencia eléctrica de entrada (suministrada). Por fricciones y calor, pierde 200 W, entregando 800 W de potencia mecánica útil para elevar la caja. Su eficiencia es del 80%.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Un motor eléctrico en Escuintla eleva un montacargas de $200\\text{ kg}$ a una altura de $15\\text{ metros}$ en un tiempo de $10\\text{ segundos}$ con velocidad constante. Calcula la potencia útil desarrollada por el motor y exprésala en caballos de fuerza (HP) (sabiendo que $g = 10\\text{ m/s}^2$ y $1\\text{ HP} \\approx 746\\text{ W}$).</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1 (Calcular Trabajo Útil realizado):</strong> <br>$$W = m \\cdot g \\cdot h = 200\\text{ kg} \\times 10\\text{ m/s}^2 \\times 15\\text{ m} = 30,000\\text{ Julios}$$</li><li><strong>Paso 2 (Calcular Potencia útil en Watts):</strong> <br>$$P = \\frac{W}{t} = \\frac{30,000\\text{ J}}{10\\text{ s}} = 3,000\\text{ Watts (W)}$$</li><li><strong>Paso 3 (Convertir a HP):</strong> <br>$$P_{\\text{HP}} = \\frac{3,000\\text{ W}}{746\\text{ W/HP}} \\approx 4.02\\text{ HP}$$</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultados:</strong> Potencia útil = <strong>3,000 Watts</strong> (equivalente a aprox. <strong>4.0 HP</strong>).</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Confundir potencia eléctrica de red con la útil:</strong> Ignorar las pérdidas internas de calor del motor. La potencia suministrada por la red eléctrica siempre supera a la potencia mecánica real entregada en el eje.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "¿Qué potencia mecánica en Watts desarrolla una grúa que realiza exactamente 5,000 Julios de trabajo en un lapso de 20 segundos? (Ingresa solo el número entero):",
+                            "correctAnswer": "250",
+                            "hint": "Aplica la fórmula directa de la potencia: P = W / t. Reemplaza W = 5,000 y t = 20.",
+                            "feedbackCorrect": "¡Excelente! P = 5,000 J / 20 s = 250 Watts.",
+                            "feedbackIncorrect": "Incorrecto. Potencia P = W/t = 5000 / 20 = 250 Watts.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si un motor eléctrico consume 1,000 Watts de potencia de la red pero solo entrega 800 Watts de potencia mecánica útil en su eje, ¿cuál es el porcentaje de rendimiento o eficiencia del motor? (Ingresa solo el número entero sin el símbolo %):",
+                            "correctAnswer": "80",
+                            "hint": "Aplica η = (Potencia útil / Potencia suministrada) * 100.",
+                            "feedbackCorrect": "¡Perfecto! η = (800 / 1000) * 100 = 80%.",
+                            "feedbackIncorrect": "Incorrecto. Eficiencia = (800 / 1000) * 100 = 80.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Calcula la potencia útil en Watts desarrollada por un tractor que tira de un arado con una fuerza constante de 2,000 N a una velocidad constante de 3 m/s. (Ingresa solo el número entero):",
+                            "correctAnswer": "6000",
+                            "hint": "Usa la fórmula de potencia a velocidad constante: P = F * v. Reemplaza F = 2,000 y v = 3.",
+                            "feedbackCorrect": "¡Excelente! P = 2,000 N * 3 m/s = 6,000 Watts (equivalente a 6 kW).",
+                            "feedbackIncorrect": "Incorrecto. P = F * v = 2000 * 3 = 6,000 Watts.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cuántos Kilowatts (kW) de potencia equivalen aproximadamente a 10 caballos de fuerza (HP)? (Sabiendo que 1 HP ≈ 746 W. Ingresa el número decimal con punto):",
+                            "correctAnswer": "7.46",
+                            "hint": "Multiplica 10 HP por 746 W/HP para obtener la potencia en Watts. Luego divide entre 1,000 para pasar a kW.",
+                            "feedbackCorrect": "¡Excelente! 10 HP = 7,460 Watts = 7.46 Kilowatts.",
+                            "feedbackIncorrect": "Incorrecto. 10 HP * 746 W/HP = 7460 W = 7.46 kW.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Un motor eléctrico de 150 Watts de potencia útil trabaja de forma continua durante un minuto. ¿Cuánto trabajo mecánico en Julios realiza? (Ingresa solo el número entero):",
+                            "correctAnswer": "9000",
+                            "hint": "Homogeneiza unidades: un minuto equivale a 60 segundos. Despeja el trabajo como W = P * t.",
+                            "feedbackCorrect": "¡Perfecto! W = 150 W * 60 s = 9,000 Julios.",
+                            "feedbackIncorrect": "Incorrecto. Un minuto = 60s. Trabajo = 150 * 60 = 9,000 Julios.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        }
+                    ],
+                    "summaryHtml": "La potencia mide la rapidez de transferencia de energía ($P=W/t$). El rendimiento ($eta = \\frac{P_{util}}{P_{sumin}} \\times 100\\%$) mide la eficiencia real de una máquina.",
+                    "videoPlaceholderText": "Video de Física: Potencia, torque y eficiencia mecánica en motores industriales."
+                }
+            ]
+        }
+    ]
+},
 
     "curso-estadistica-aplicada": `# Curso: Estadística Descriptiva
 * **Materia:** Matemáticas | **Nivel sugerido:** Diversificado / Universidad
