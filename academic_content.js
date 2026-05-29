@@ -4098,418 +4098,903 @@ eq -1)$
 * Si un conjunto de datos tiene una media de 50 y una desviación estándar de 5, ¿cuál es su coeficiente de variación? (R: 10%).
 `,
 
-    "intro-estadistica": `# Curso: Introducción a la Estadística
-* **Materia:** Matemáticas | **Nivel sugerido:** Secundaria / Diversificado
-* **Público objetivo:** Alumnos de ciclo básico o bachillerato que inician su formación en el análisis de datos y la interpretación de estadísticas sociales o científicas.
-* **Objetivos de aprendizaje:** Comprender el propósito de la estadística, clasificar variables cuantitativas y cualitativas, diseñar muestreos aleatorios libres de sesgo y organizar datos categóricos en tablas y gráficos estructurados.
+    "intro-estadistica": {
+    "isRichCourse": true,
+    "title": "Introducción a la Estadística",
+    "units": [
+        {
+            "title": "Unidad 1: Fundamentos de la Estadística y Datos",
+            "lessons": [
+                {
+                    "id": "que-estudia-estadistica",
+                    "title": "Lección 1.1: Qué Estudia la Estadística y su Rol",
+                    "introduction": "La estadística es la ciencia del análisis de datos que nos permite transformar números en información útil para tomar decisiones inteligentes.",
+                    "explanationHtml": "<p>En la era de la información, estamos rodeados de datos. Sin embargo, los datos en bruto son difíciles de interpretar. La <strong>estadística</strong> es la disciplina que nos brinda las herramientas para recolectar, organizar, presentar, analizar e interpretar datos.</p><p class=\"mt-3\">Tradicionalmente, la estadística se divide en dos grandes ramas:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Estadística Descriptiva:</strong> Consiste en métodos para organizar, resumir y presentar datos de manera informativa (ej. tablas, gráficos y promedios).</li><li><strong>Estadística Inferencial:</strong> Consiste en métodos utilizados para determinar algo acerca de una población basándose en los resultados obtenidos de una muestra (ej. predecir elecciones o probar la eficacia de una vacuna).</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Ramas de la Estadística</p><p class=\"text-base font-mono font-extrabold text-primary\">Descriptiva (Resumir) &amp; Inferencial (Predecir)</p><p class=\"text-xs text-slate-500\">La descriptiva habla solo de los datos recolectados; la inferencial va más allá para generalizar a una población entera.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"22\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">RAMAS DE LA ESTADÍSTICA</text><rect x=\"20\" y=\"40\" width=\"115\" height=\"55\" fill=\"#eff6ff\" stroke=\"#bfdbfe\" rx=\"8\" /><text x=\"77.5\" y=\"58\" font-size=\"9\" fill=\"#1e40af\" font-weight=\"extrabold\" text-anchor=\"middle\">DESCRIPTIVA</text><text x=\"77.5\" y=\"78\" font-size=\"8\" fill=\"#1e40af\" text-anchor=\"middle\">Organiza, resume</text><text x=\"77.5\" y=\"88\" font-size=\"8\" fill=\"#1e40af\" text-anchor=\"middle\">y presenta datos (Tablas)</text><rect x=\"165\" y=\"40\" width=\"115\" height=\"55\" fill=\"#ecfdf5\" stroke=\"#a7f3d0\" rx=\"8\" /><text x=\"222.5\" y=\"58\" font-size=\"9\" fill=\"#065f46\" font-weight=\"extrabold\" text-anchor=\"middle\">INFERENCIAL</text><text x=\"222.5\" y=\"78\" font-size=\"8\" fill=\"#065f46\" text-anchor=\"middle\">Predice, estima</text><text x=\"222.5\" y=\"88\" font-size=\"8\" fill=\"#065f46\" text-anchor=\"middle\">y generaliza (Muestras)</text></svg>",
+                    "svgDescription": "Esquema comparativo de las dos ramas de la estadística. La descriptiva resume los datos de estudio y la inferencial generaliza los hallazgos a una población mayor.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Un director de un colegio en Quetzaltenango calcula el promedio de notas de sus 300 estudiantes en física para reportar el rendimiento a los padres de familia. ¿Qué tipo de estadística aplica?</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1: Identifica el objetivo.</strong> El director quiere organizar y resumir las notas obtenidas por sus propios alumnos.</li><li><strong>Paso 2: Verifica si hay generalizaciones.</strong> El director no está intentando predecir el comportamiento de alumnos de otros colegios ni estimar parámetros ocultos; solo describe su propio grupo de 300 alumnos.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> El director aplica la <strong>Estadística Descriptiva</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Creer que son excluyentes:</strong> Pensar que un estudio formal solo usa una rama. En realidad, la estadística descriptiva es el paso previo y obligatorio antes de realizar cualquier inferencia.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "¿Qué división de la estadística se encarga de realizar generalizaciones sobre una población a partir del análisis de una muestra?",
+                            "correctAnswer": "Estadistica Inferencial",
+                            "hint": "Es la rama que va más allá de los datos simples para realizar estimaciones o predicciones sobre grupos más grandes (ingrésalo sin tildes).",
+                            "feedbackCorrect": "¡Excelente! La estadística inferencial permite inferir o generalizar conclusiones a partir de una muestra.",
+                            "feedbackIncorrect": "Incorrecto. Se encarga de generalizar conclusiones, por lo que es la 'Estadistica Inferencial'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si una empresa de calzado en Antigua Guatemala prueba la calidad de un lote de 1,000 pares inspeccionando únicamente 50 de ellos, ¿qué tipo de estadística aplica?",
+                            "correctAnswer": "Estadistica Inferencial",
+                            "hint": "Usa una pequeña muestra (50) para tomar una decisión sobre el lote completo (población).",
+                            "feedbackCorrect": "¡Perfecto! Al tomar una muestra para inferir el estado de toda la población, aplica la estadística inferencial.",
+                            "feedbackIncorrect": "Incorrecto. Como infiere el estado del lote a partir de una muestra de 50, es la 'Estadistica Inferencial'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cuál es el primer paso en cualquier estudio o investigación estadística formal?",
+                            "correctAnswer": "Recoleccion de datos",
+                            "hint": "Consiste en obtener o reunir la información y las mediciones de las variables de interés (escríbelo sin tildes).",
+                            "feedbackCorrect": "¡Excelente! El primer paso es la recolección de los datos.",
+                            "feedbackIncorrect": "Incorrecto. Primero debemos juntar los datos: 'Recoleccion de datos'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si una institución publica el precio promedio de la canasta básica en los mercados de Ciudad de Guatemala del mes actual, ¿qué rama de la estadística está utilizando?",
+                            "options": [
+                                "Estadística Descriptiva",
+                                "Estadística Inferencial",
+                                "Probabilidad Matemática",
+                                "Estadística Teórica"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Solo resume y presenta de forma informativa los datos reales recolectados sin hacer predicciones.",
+                            "feedbackCorrect": "¡Correcto! Solo presenta información resumida, por lo que es descriptiva.",
+                            "feedbackIncorrect": "Incorrecto. Al ser una presentación de datos informativos resumidos (el promedio), es descriptiva.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "¿Por qué es crucial la estadística descriptiva en el área de la salud pública?",
+                            "options": [
+                                "Para resumir y presentar de forma clara el número de casos de enfermedades y la tasa de recuperación de los pacientes.",
+                                "Para adivinar qué pacientes se enfermarán en el futuro sin necesidad de hacer análisis.",
+                                "Para recetar medicamentos directamente sin supervisión médica.",
+                                "Para calcular el costo exacto de los tratamientos médicos de forma teórica."
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "La descriptiva resume y organiza los datos reales de salud pública de forma clara y entendible.",
+                            "feedbackCorrect": "¡Excelente! Nos permite organizar y reportar la situación de salud de forma precisa.",
+                            "feedbackIncorrect": "Incorrecto. Su rol descriptivo es resumir de forma veraz los datos de salud.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "La estadística nos brinda las metodologías para recolectar y resumir datos de manera clara (descriptiva) y para deducir y generalizar propiedades sobre poblaciones a partir de muestras (inferencial).",
+                    "videoPlaceholderText": "Video de Estadística: Introducción y diferencias entre descriptiva e inferencial."
+                },
+                {
+                    "id": "tipos-datos-variables",
+                    "title": "Lección 1.2: Tipos de Datos y Variables",
+                    "introduction": "Aprende a identificar y clasificar las variables en cualitativas y cuantitativas para elegir los análisis correctos.",
+                    "explanationHtml": "<p>Una <strong>variable</strong> es una característica de interés de una persona o de un objeto que puede tomar diferentes valores. Se clasifican según su naturaleza:</p><p class=\"mt-3\"><strong>1. Variables Cualitativas (Categóricas):</strong> Describen una cualidad, característica o categoría no numérica.</p><ul class=\"list-disc pl-5 space-y-1.5 my-2\"><li>*Nominal:* Categorías sin orden implícito (ej. color favorito, género, departamento).</li><li>*Ordinal:* Categorías con un orden o jerarquía implícita (ej. grado escolar, nivel de satisfacción).</li></ul><p class=\"mt-3\"><strong>2. Variables Cuantitativas (Numéricas):</strong> Expresan cantidades numéricas con las que se pueden realizar operaciones aritméticas.</p><ul class=\"list-disc pl-5 space-y-1.5 my-2\"><li>*Discreta:* Valores contables enteros aislados (ej. cantidad de hijos, autos producidos).</li><li>*Continua:* Valores infinitos dentro de un rango medible (ej. peso en libras, estatura en metros, salario).</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Glosario de Clasificación de Variables</p><p class=\"text-xs text-slate-555 font-mono font-bold text-primary\">Cualitativa Nominal: Género | Cualitativa Ordinal: Grado militar</p><p class=\"text-xs text-slate-555 font-mono font-bold text-primary\">Cuantitativa Discreta: Hijos (enteros) | Cuantitativa Continua: Estatura (decimales)</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">CLASIFICACIÓN DE VARIABLES</text><line x1=\"150\" y1=\"30\" x2=\"150\" y2=\"105\" stroke=\"#cbd5e1\" stroke-width=\"1\" stroke-dasharray=\"3,3\" /><text x=\"75\" y=\"42\" font-size=\"10\" font-family=\"sans-serif\" fill=\"#2563eb\" font-weight=\"bold\" text-anchor=\"middle\">CUALITATIVAS</text><text x=\"75\" y=\"65\" font-size=\"8\" fill=\"#475569\" text-anchor=\"middle\">Nominal (ej. Color)</text><text x=\"75\" y=\"85\" font-size=\"8\" fill=\"#475569\" text-anchor=\"middle\">Ordinal (ej. Grado escolar)</text><text x=\"225\" y=\"42\" font-size=\"10\" font-family=\"sans-serif\" fill=\"#059669\" font-weight=\"bold\" text-anchor=\"middle\">CUANTITATIVAS</text><text x=\"225\" y=\"65\" font-size=\"8\" fill=\"#475569\" text-anchor=\"middle\">Discreta (ej. Autos [enteros])</text><text x=\"225\" y=\"85\" font-size=\"8\" fill=\"#475569\" text-anchor=\"middle\">Continua (ej. Estatura [decimal])</text></svg>",
+                    "svgDescription": "Árbol de decisión de clasificación de variables. Divide las variables según si describen categorías (cualitativas) o cantidades (cuantitativas).",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Clasifica las siguientes variables de una encuesta escolar: a) Departamento de procedencia de los alumnos, b) Cantidad de materias aprobadas en el año, c) Tiempo diario dedicado al estudio en horas.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1 Departamento:</strong> Es una cualidad no numérica y no tiene un orden jerárquico inherente. Por tanto, es una **Variable cualitativa nominal**.</li><li><strong>Paso 2 Cantidad de materias:</strong> Se expresa con números enteros aislados que provienen de un conteo (1, 2, 3...). Es una **Variable cuantitativa discreta**.</li><li><strong>Paso 3 Tiempo diario de estudio:</strong> Es una medición que puede tomar infinitos valores decimales en un rango (ej: 1.5 horas, 2.3 horas). Es una **Variable cuantitativa continua**.</li></ol>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Confundir discreta con continua:</strong> Tratar el dinero o las calificaciones numéricas con decimales como discretas por costumbre. Si la variable admite decimales y mediciones intermedias infinitas, es continua.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Clasifica el 'salario mensual en Quetzales' de los trabajadores de una fábrica de Antigua Guatemala. Escribe la clasificación exacta sin tildes (ej: cuantitativa continua o cualitativa nominal):",
+                            "correctAnswer": "cuantitativa continua",
+                            "hint": "El salario es numérico y se mide en Quetzales, pudiendo tomar decimales infinitos en un rango.",
+                            "feedbackCorrect": "¡Excelente! Es una variable cuantitativa continua.",
+                            "feedbackIncorrect": "Incorrecto. Al ser numérica con decimales intermedios posibles, es 'cuantitativa continua'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Clasifica la 'calificación de una tarea escolar asignada como Excelente, Bueno, Regular o Deficiente'. Ingrésalo sin tildes:",
+                            "correctAnswer": "cualitativa ordinal",
+                            "hint": "Es categórica (no numérica) pero tiene un orden y una jerarquía muy claros.",
+                            "feedbackCorrect": "¡Perfecto! Es una variable cualitativa ordinal.",
+                            "feedbackIncorrect": "Incorrecto. Es categórica con jerarquía, por lo que es 'cualitativa ordinal'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Clasifica la 'cantidad de tuk-tuks registrados en Panajachel'. Ingrésalo sin tildes:",
+                            "correctAnswer": "cuantitativa discreta",
+                            "hint": "Se trata de un número entero resultante de un conteo (no hay 1.5 tuk-tuks).",
+                            "feedbackCorrect": "¡Excelente! Es una variable cuantitativa discreta.",
+                            "feedbackIncorrect": "Incorrecto. Proviene de un conteo entero, es 'cuantitativa discreta'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cuál de las siguientes opciones describe correctamente a una variable cualitativa nominal?",
+                            "options": [
+                                "La profesión u oficio de una persona encuestada",
+                                "La estatura en centímetros de un grupo de niños",
+                                "La cantidad de libros leídos durante las vacaciones",
+                                "El nivel de satisfacción del cliente como Alto, Medio o Bajo"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Debe ser categórica y no debe requerir un ordenamiento jerárquico lógico.",
+                            "feedbackCorrect": "¡Excelente! La profesión es cualitativa nominal.",
+                            "feedbackIncorrect": "Incorrecto. La estatura es cuantitativa continua, los libros son cuantitativa discreta y la satisfacción es cualitativa ordinal.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Clasifica la variable 'temperatura registrada en Quetzaltenango en grados Celsius'.",
+                            "options": [
+                                "Cuantitativa continua",
+                                "Cuantitativa discreta",
+                                "Cualitativa ordinal",
+                                "Cualitativa nominal"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "La temperatura se mide con instrumentos y puede tomar valores decimales fraccionarios.",
+                            "feedbackCorrect": "¡Correcto! La temperatura es una variable cuantitativa continua.",
+                            "feedbackIncorrect": "Incorrecto. Se mide en una escala continua de valores reales, por lo que es cuantitativa continua.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "Las variables se clasifican en cualitativas (nominales u ordinales) si describen categorías, y cuantitativas (discretas o continuas) si describen cantidades contables o medibles.",
+                    "videoPlaceholderText": "Video de Estadística: Cómo clasificar variables cualitativas y cuantitativas con ejemplos."
+                },
+                {
+                    "id": "poblacion-muestra",
+                    "title": "Lección 1.3: Población, Muestra, Parámetro y Estadístico",
+                    "introduction": "Aprende a diferenciar el todo de las partes y a distinguir los parámetros poblacionales de los estadísticos muestrales.",
+                    "explanationHtml": "<p>En cualquier estudio estadístico, debemos definir con total claridad sobre quiénes se realiza la investigación:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Población:</strong> Es el conjunto completo de todos los elementos, individuos o medidas que se desean estudiar (el todo). Su medida resumen se llama <strong>Parámetro</strong> (ej: la media de toda la población $\\mu$).</li><li><strong>Muestra:</strong> Es un subgrupo o subconjunto representativo de elementos extraídos directamente de la población. Su medida resumen se llama <strong>Estadístico</strong> (ej: la media de la muestra $\\bar{x}$).</li></ul><p class=\"mt-3\">El objetivo de la estadística inferencial es estimar los **parámetros** (difíciles de calcular por requerir censos) utilizando los **estadísticos** obtenidos de forma más económica en la muestra.</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Conceptos Asociados</p><p class=\"text-base font-mono font-extrabold text-primary\">Población &rarr; Parámetro (&mu;) || Muestra &rarr; Estadístico (x̄)</p><p class=\"text-xs text-slate-505\">Los parámetros describen a la población y los estadísticos describen a la muestra.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"22\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">POBLACIÓN Y MUESTRA</text><!-- Poblacion (Ovalo Grande) --><ellipse cx=\"110\" cy=\"70\" rx=\"60\" ry=\"30\" fill=\"#eff6ff\" stroke=\"#bfdbfe\" stroke-width=\"2\" /><text x=\"80\" y=\"73\" font-size=\"9\" fill=\"#1e40af\" font-weight=\"bold\">Población (N)</text><!-- Muestra (Ovalo pequeño dentro de Poblacion) --><ellipse cx=\"140\" cy=\"70\" rx=\"20\" ry=\"15\" fill=\"#ecfdf5\" stroke=\"#059669\" stroke-width=\"1.5\" /><text x=\"140\" y=\"73\" font-size=\"7\" fill=\"#065f46\" font-weight=\"bold\" text-anchor=\"middle\">Muestra (n)</text><path d=\"M 160 70 Q 210 50 240 70\" stroke=\"#f59e0b\" stroke-width=\"1.5\" stroke-dasharray=\"2,2\" marker-end=\"url(#arrow)\" /><text x=\"210\" y=\"52\" font-size=\"8\" fill=\"#d97706\" font-weight=\"bold\" text-anchor=\"middle\">Muestreo</text></svg>",
+                    "svgDescription": "Diagrama de conjuntos. La muestra es un subconjunto representativo extraído directamente de la población total mediante técnicas de muestreo.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Un investigador médico de Guatemala desea conocer la estatura promedio de todos los niños de 8 años del país. Como es imposible medirlos a todos, mide a 500 niños de diferentes departamentos y obtiene un promedio de 1.22 metros. Identifica la población, la muestra y el estadístico.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1 Población:</strong> El todo. Corresponde a **todos los niños de 8 años de Guatemala**.</li><li><strong>Paso 2 Muestra:</strong> El subgrupo. Corresponde a los **500 niños evaluados**.</li><li><strong>Paso 3 Estadístico:</strong> La medida de la muestra. Es la **estatura promedio de 1.22 metros** calculada sobre la muestra.</li></ol>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Confundir parámetro con estadístico:</strong> Pensar que el promedio calculado de una muestra es el parámetro real de la población. No lo es; es un estadístico estimador. El parámetro real es desconocido a menos que hagamos un censo completo.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Si medimos la estatura de todos los estudiantes de un único salón de clases de 30 alumnos, el promedio obtenido es un (ingresa: parametro o estadistico):",
+                            "correctAnswer": "parametro",
+                            "hint": "Dado que evaluamos a la población completa definida (el salón de clases completo), la medida resumen es un parámetro.",
+                            "feedbackCorrect": "¡Excelente! Al evaluar a todos los elementos del grupo bajo estudio, es un parámetro.",
+                            "feedbackIncorrect": "Incorrecto. Si evaluamos al 100% de la población de interés, la medida es un 'parametro'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si realizamos una encuesta de opinión a 1,200 ciudadanos guatemaltecos aptos para votar y calculamos que el 45% apoya una ley, este porcentaje calculado es un:",
+                            "correctAnswer": "estadistico",
+                            "hint": "Proviene de una muestra de 1,200 personas extraída de una población electoral mucho mayor (ingrésalo sin tildes).",
+                            "feedbackCorrect": "¡Perfecto! Como proviene de una muestra, es un estadístico.",
+                            "feedbackIncorrect": "Incorrecto. Proviene de una muestra, por lo que es un 'estadistico'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cómo se llama el estudio formal y completo que recopila información de TODOS los elementos de una población?",
+                            "correctAnswer": "censo",
+                            "hint": "Es el término utilizado por instituciones como el INE para referirse al conteo completo de población.",
+                            "feedbackCorrect": "¡Excelente! Se llama censo.",
+                            "feedbackIncorrect": "Incorrecto. El estudio del 100% de la población se llama 'censo'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Un investigador agrícola de Sololá analiza la presencia de plagas en un cultivo de 10,000 plantas de papa. Revisa detalladamente 200 plantas distribuidas al azar en el terreno. ¿Cuál es la muestra en este estudio?",
+                            "options": [
+                                "Las 200 plantas revisadas detalladamente",
+                                "Las 10,000 plantas del cultivo completo",
+                                "La presencia de plagas en las plantas",
+                                "Las papas cosechadas de todo el terreno"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "La muestra es el subgrupo seleccionado de forma representativa para la recolección de los datos.",
+                            "feedbackCorrect": "¡Excelente! Las 200 plantas revisadas constituyen la muestra.",
+                            "feedbackIncorrect": "Incorrecto. Las 10,000 plantas son la población; las 200 plantas revisadas son la muestra.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "La relación correcta entre los conceptos es:",
+                            "options": [
+                                "Población se asocia a Parámetro; Muestra se asocia a Estadístico",
+                                "Población se asocia a Estadístico; Muestra se asocia a Parámetro",
+                                "Parámetro se calcula siempre sobre la Muestra",
+                                "Estadístico y Parámetro son sinónimos idénticos"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Los parámetros describen poblaciones (ambos empiezan con P) y los estadísticos describen muestras (ambos empiezan con E/M).",
+                            "feedbackCorrect": "¡Perfecto! La asociación correcta es Población-Parámetro y Muestra-Estadístico.",
+                            "feedbackIncorrect": "Incorrecto. Recuerda que Población &rarr; Parámetro y Muestra &rarr; Estadístico.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "La población es el todo y su resumen es un parámetro; la muestra es el subgrupo representativo y su resumen calculado es un estadístico.",
+                    "videoPlaceholderText": "Video de Estadística: Población, Muestra, Parámetros y Estadísticos explicados de forma muy visual."
+                }
+            ]
+        },
+        {
+            "title": "Unidad 2: Recolección de Datos y Muestreo",
+            "lessons": [
+                {
+                    "id": "muestreo-aleatorio-simple",
+                    "title": "Lección 2.1: Muestreo Aleatorio Simple y Sistemático",
+                    "introduction": "Descubre los métodos básicos de muestreo probabilístico para garantizar muestras representativas y libres de sesgo.",
+                    "explanationHtml": "<p>Para que un estudio estadístico inferencial sea veraz, la muestra elegida debe ser **representativa** de la población. Las técnicas de muestreo probabilístico aseguran que cada elemento tenga una probabilidad conocida de ser elegido.</p><p class=\"mt-3\"><strong>1. Muestreo Aleatorio Simple (MAS):</strong> Es el método de selección más básico, equivalente a una rifa. Cada elemento de la población tiene exactamente la misma probabilidad de ser seleccionado. Requiere una lista numerada completa de la población (marco muestral).</p><p class=\"mt-3\"><strong>2. Muestreo Aleatorio Sistemático:</strong> Se selecciona un punto de partida al azar en la lista de la población, y luego se elige sistemáticamente cada k-ésimo elemento ($k = N / n$, donde $N$ es la población y $n$ la muestra).</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Fórmula de Intervalo Sistemático</p><p class=\"text-base font-mono font-extrabold text-primary\">k = N / n</p><p class=\"text-xs text-slate-500\">Donde \"k\" es el intervalo de selección. Si N = 100 y n = 10 &rarr; seleccionamos cada 10 elementos.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"22\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">MUESTREO SISTEMÁTICO (k = 3)</text><!-- Elementos 1 a 7 en fila --><circle cx=\"40\" cy=\"65\" r=\"10\" fill=\"#eff6ff\" stroke=\"#2563eb\" /><text x=\"40\" y=\"68\" font-size=\"8\" fill=\"#1e40af\" text-anchor=\"middle\">1</text><circle cx=\"80\" cy=\"65\" r=\"10\" fill=\"#eff6ff\" stroke=\"#2563eb\" /><text x=\"80\" y=\"68\" font-size=\"8\" fill=\"#1e40af\" text-anchor=\"middle\">2</text><circle cx=\"120\" cy=\"65\" r=\"10\" fill=\"#fffbeb\" stroke=\"#d97706\" stroke-width=\"2\" /><text x=\"120\" y=\"68\" font-size=\"8\" fill=\"#b45309\" font-weight=\"bold\" text-anchor=\"middle\">3★</text><circle cx=\"160\" cy=\"65\" r=\"10\" fill=\"#eff6ff\" stroke=\"#2563eb\" /><text x=\"160\" y=\"68\" font-size=\"8\" fill=\"#1e40af\" text-anchor=\"middle\">4</text><circle cx=\"200\" cy=\"65\" r=\"10\" fill=\"#eff6ff\" stroke=\"#2563eb\" /><text x=\"200\" y=\"68\" font-size=\"8\" fill=\"#1e40af\" text-anchor=\"middle\">5</text><circle cx=\"240\" cy=\"65\" r=\"10\" fill=\"#fffbeb\" stroke=\"#d97706\" stroke-width=\"2\" /><text x=\"240\" y=\"68\" font-size=\"8\" fill=\"#b45309\" font-weight=\"bold\" text-anchor=\"middle\">6★</text><path d=\"M 130 65 L 230 65 M 240 65 Q 240 65 240 65\" stroke=\"#d97706\" stroke-width=\"1.5\" stroke-dasharray=\"2,2\" /><text x=\"180\" y=\"55\" font-size=\"8\" fill=\"#d97706\" font-weight=\"bold\" text-anchor=\"middle\">Salto k = 3</text></svg>",
+                    "svgGraphicDescription": "Esquema de selección sistemática. Partiendo del elemento 3 seleccionado al azar, se eligen elementos con un salto constante de k = 3 (elemento 3, 6, 9...).",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Un colegio en Quetzaltenango tiene 600 estudiantes inscritos (numerados del 1 al 600) y el director desea extraer una muestra sistemática de 30 alumnos para una encuesta de satisfacción. Calcula el intervalo sistemático $k$ y explica cómo seleccionar a los alumnos.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1: Calcula el intervalo k.</strong> Dividimos la población total ($N = 600$) entre la muestra deseada ($n = 30$): <br>$k = 600 div 30 = 20$.</li><li><strong>Paso 2: Punto de partida aleatorio.</strong> Elegimos al azar un número entre 1 y 20 en una tómbola. Supongamos que sale el **7**.</li><li><strong>Paso 3: Selecciona la muestra.</strong> El primer alumno es el número 7. Los siguientes se seleccionan sumando 20 sucesivamente: $7, 27, 47, 67, 87, 107...$ hasta completar los 30 alumnos de la muestra.</li></ol>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Introducir sesgos al elegir el inicio:</strong> En el muestreo sistemático, elegir siempre el número 1 como punto de partida por facilidad, en lugar de elegirlo al azar. Esto viola las leyes de probabilidad.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Calcula el intervalo k para una población N = 800 y una muestra n = 40. Ingresa el número entero:",
+                            "correctAnswer": "20",
+                            "hint": "Aplica la fórmula k = N / n: divide 800 entre 40.",
+                            "feedbackCorrect": "¡Excelente! El intervalo k es 20.",
+                            "feedbackIncorrect": "Incorrecto. 800 ÷ 40 = 20.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "En un muestreo sistemático con N = 500 y n = 50, si el primer elemento elegido al azar es el 4, ¿cuál es el número del tercer elemento seleccionado?",
+                            "correctAnswer": "24",
+                            "hint": "Calcula k = 500 / 50 = 10. Primer elemento = 4. Segundo = 4+10 = 14. Tercero = 14+10 = 24.",
+                            "feedbackCorrect": "¡Perfecto! El tercer elemento es el número 24.",
+                            "feedbackIncorrect": "Incorrecto. k = 10. Los elementos seleccionados son 4, 14, 24. El tercero es 24.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cómo se llama el marco o listado completo que contiene a todos los elementos numerados de la población a estudiar?",
+                            "correctAnswer": "marco muestral",
+                            "hint": "Es el registro base indispensable para aplicar el muestreo aleatorio simple (ingrésalo sin tildes).",
+                            "feedbackCorrect": "¡Excelente! Se llama marco muestral.",
+                            "feedbackIncorrect": "Incorrecto. Se le conoce formalmente como 'marco muestral'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "El muestreo aleatorio simple se caracteriza porque:",
+                            "options": [
+                                "Cada elemento de la población tiene exactamente la misma probabilidad de ser seleccionado",
+                                "Los elementos se eligen de forma manual basándose en la comodidad del investigador",
+                                "Se eligen primero los elementos impares y luego los pares",
+                                "Solo se eligen los primeros 10 elementos que aparezcan en la lista escolar"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Todos los elementos tienen la misma oportunidad de entrar a la muestra, eliminando sesgos de selección.",
+                            "feedbackCorrect": "¡Excelente! Esa es la característica fundamental del muestreo aleatorio simple.",
+                            "feedbackIncorrect": "Incorrecto. En el muestreo aleatorio simple cada elemento tiene igual probabilidad de selección.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Si un investigador en Antigua Guatemala decide encuestar a los clientes de un restaurante eligiendo sistemáticamente a cada décima persona que ingresa por la puerta a partir de una selección inicial aleatoria, ¿qué método de muestreo aplica?",
+                            "options": [
+                                "Muestreo Aleatorio Sistemático",
+                                "Muestreo Aleatorio Simple",
+                                "Muestreo Estratificado",
+                                "Muestreo por Conglomerados"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "La palabra clave es la selección de forma ordenada cada décima persona (salto constante).",
+                            "feedbackCorrect": "¡Correcto! Aplica el muestreo aleatorio sistemático.",
+                            "feedbackIncorrect": "Incorrecto. Como usa un intervalo de paso constante, es muestreo aleatorio sistemático.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "El muestreo aleatorio simple otorga igual probabilidad de elección a todos los elementos, y el sistemático simplifica el proceso seleccionando a paso constante a partir de un inicio aleatorio.",
+                    "videoPlaceholderText": "Video de Estadística: Cómo realizar un muestreo aleatorio simple en Excel."
+                },
+                {
+                    "id": "muestreo-estratificado",
+                    "title": "Lección 2.2: Muestreo Estratificado y Conglomerados",
+                    "introduction": "Domina los métodos avanzados de muestreo probabilístico para poblaciones diversas o geográficamente dispersas.",
+                    "explanationHtml": "<p>Cuando las poblaciones son complejas o muy grandes, los métodos simples de muestreo pueden dejar fuera subgrupos clave. En estos casos, usamos muestreos estructurados:</p><p class=\"mt-3\"><strong>1. Muestreo Estratificado:</strong> Dividimos la población en grupos mutuamente excluyentes llamados **estratos** que comparten características relevantes (ej: edad, género, región). Luego, se extrae una muestra aleatoria simple de cada estrato. Puede ser **proporcional** para mantener los pesos reales de la población.</p><p class=\"mt-3\"><strong>2. Muestreo por Conglomerados (o áreas):</strong> Se divide la población en subgrupos que son representaciones miniatura de la población llamados **conglomerados** (ej. manzanas de una ciudad, colegios). Se eligen al azar algunos conglomerados completos y se estudia a todos sus integrantes.</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Estratificado Proporcional</p><p class=\"text-xs font-mono font-bold text-primary\">n_estrato = n_total &times; (N_estrato / N_total)</p><p class=\"text-xs text-slate-500\">Mantiene la proporción exacta de cada estrato en la muestra final.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">MUESTREO ESTRATIFICADO</text><!-- Estrato A --><rect x=\"30\" y=\"35\" width=\"110\" height=\"35\" fill=\"#eff6ff\" stroke=\"#bfdbfe\" rx=\"6\" /><text x=\"85\" y=\"47\" font-size=\"8\" fill=\"#1e40af\" font-weight=\"bold\" text-anchor=\"middle\">Estrato A (Hombres 60%)</text><circle cx=\"65\" cy=\"58\" r=\"4\" fill=\"#2563eb\" /><circle cx=\"85\" cy=\"58\" r=\"4\" fill=\"#2563eb\" /><circle cx=\"105\" cy=\"58\" r=\"4\" fill=\"#2563eb\" /><!-- Estrato B --><rect x=\"160\" y=\"35\" width=\"110\" height=\"35\" fill=\"#fef2f2\" stroke=\"#fca5a5\" rx=\"6\" /><text x=\"215\" y=\"47\" font-size=\"8\" fill=\"#991b1b\" font-weight=\"bold\" text-anchor=\"middle\">Estrato B (Mujeres 40%)</text><circle cx=\"195\" cy=\"58\" r=\"4\" fill=\"#dc2626\" /><circle cx=\"235\" cy=\"58\" r=\"4\" fill=\"#dc2626\" /><path d=\"M 85 75 L 110 95 M 215 75 L 190 95\" stroke=\"#94a3b8\" stroke-width=\"1.5\" stroke-dasharray=\"2,2\" /><rect x=\"95\" y=\"90\" width=\"110\" height=\"22\" fill=\"#fffbeb\" stroke=\"#fde68a\" rx=\"4\" /><text x=\"150\" y=\"103\" font-size=\"8\" fill=\"#b45309\" font-weight=\"extrabold\" text-anchor=\"middle\">Muestra Proporcional</text></svg>",
+                    "svgDescription": "Esquema de muestreo estratificado. La población se divide por género (estratos) y se extrae una muestra proporcional de cada grupo para no sesgar el estudio.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Un colegio de Guatemala tiene 1,000 estudiantes: 600 de Primaria y 400 de Secundaria. Si queremos extraer una muestra **estratificada proporcional** de 100 estudiantes totales, ¿cuántos estudiantes de cada nivel debemos elegir?</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1: Calcula el porcentaje de cada estrato.</strong> <br>Primaria representa: $600 / 1000 = 60%$ de la población. <br>Secundaria representa: $400 / 1000 = 40%$ de la población.</li><li><strong>Paso 2: Aplica la proporción a la muestra (100 alumnos).</strong> <br>Muestra de Primaria: $100 \times 0.60 = 60$ alumnos. <br>Muestra de Secundaria: $100 \times 0.40 = 40$ alumnos.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> Elegiremos a <strong>60 alumnos de Primaria</strong> y <strong>40 de Secundaria</strong> de forma aleatoria.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Confundir estrato con conglomerado:</strong> Recordar que los *estratos* son grupos internamente homogéneos (ej. solo mujeres) y la muestra se toma de todos los estratos. Los *conglomerados* son grupos internamente diversos (conglomerados completos se eligen o se descartan).</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Un colegio tiene 800 alumnos en la jornada matutina y 200 en la vespertina. En una muestra estratificada proporcional de 100 alumnos, ¿cuántos de la jornada vespertina deben seleccionarse?",
+                            "correctAnswer": "20",
+                            "hint": "Vespertina es el 20% (200/1000). Calcula el 20% de la muestra de 100: 100 × 0.20 = 20.",
+                            "feedbackCorrect": "¡Excelente! Debes seleccionar 20 alumnos de la vespertina.",
+                            "feedbackIncorrect": "Incorrecto. El 20% de 100 es 20 alumnos.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si dividimos el mapa de Ciudad de Guatemala por zonas y elegimos al azar 3 zonas completas para censar a todos sus residentes, ¿qué tipo de muestreo aplicamos? (Ingresar sin tildes):",
+                            "correctAnswer": "Muestreo por conglomerados",
+                            "hint": "Cada zona actúa como un grupo heterogéneo representativo y se investiga en su totalidad.",
+                            "feedbackCorrect": "¡Perfecto! Al seleccionar grupos geográficos completos aplicas el muestreo por conglomerados.",
+                            "feedbackIncorrect": "Incorrecto. Se trata del 'Muestreo por conglomerados'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cómo se definen los subgrupos formados en el muestreo estratificado que comparten características de interés comunes?",
+                            "correctAnswer": "estratos",
+                            "hint": "Son grupos homogéneos, por ejemplo dividir por rangos de edad o niveles socioeconómicos.",
+                            "feedbackCorrect": "¡Excelente! Se les conoce como estratos.",
+                            "feedbackIncorrect": "Incorrecto. Los subgrupos se llaman 'estratos'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cuál es la principal ventaja del muestreo aleatorio estratificado proporcional sobre el muestreo aleatorio simple?",
+                            "options": [
+                                "Garantiza que los subgrupos minoritarios importantes queden adecuadamente representados en la muestra final en su proporción real",
+                                "Es mucho más fácil de hacer porque no requiere conocer a la población",
+                                "Siempre requiere menos cantidad de alumnos para la muestra",
+                                "No necesita que la selección sea aleatoria"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Garantiza que la muestra mantenga la misma diversidad estructural de la población original.",
+                            "feedbackCorrect": "¡Excelente! Esa es la ventaja fundamental de la estratificación proporcional.",
+                            "feedbackIncorrect": "Incorrecto. La ventaja es asegurar la representatividad proporcional de los estratos.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Si deseamos realizar un estudio sobre la calidad del servicio de salud en todo el territorio de Guatemala y elegimos al azar 15 hospitales públicos completos para entrevistar a todas las personas en ellos, ¿cuál es el conglomerado en esta investigación?",
+                            "options": [
+                                "Cada uno de los hospitales públicos elegidos",
+                                "Todos los médicos y enfermeros de Guatemala",
+                                "Las personas de Ciudad de Guatemala únicamente",
+                                "El Ministerio de Salud Pública"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Los conglomerados son los subgrupos naturales preexistentes en los cuales se divide la población.",
+                            "feedbackCorrect": "¡Excelente! Cada hospital actúa como un conglomerado representativo.",
+                            "feedbackIncorrect": "Incorrecto. El hospital es la unidad que agrupa a los pacientes de forma natural (conglomerado).",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "El muestreo estratificado divide la población en subgrupos homogéneos y toma muestras de cada uno, y el muestreo por conglomerados elige grupos completos preexistentes por razones de logística o geografía.",
+                    "videoPlaceholderText": "Video de Estadística: Muestreo estratificado vs por conglomerados en terreno."
+                },
+                {
+                    "id": "sesgo-muestreo",
+                    "title": "Lección 2.3: Sesgo en el Muestreo y Cómo Evitarlo",
+                    "introduction": "Aprende a identificar los errores sistemáticos de selección que pueden invalidar por completo un estudio estadístico.",
+                    "explanationHtml": "<p>Aun usando fórmulas correctas, una investigación puede fallar por completo debido al **sesgo**. El <strong>sesgo en el muestreo</strong> es una tendencia sistemática a favorecer la selección de ciertos elementos de la población sobre otros, haciendo que la muestra sea no representativa.</p><p class=\"mt-3\"><strong>Principales tipos de sesgo:</strong></p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Sesgo de Selección (o Conveniencia):</strong> Ocurre cuando el investigador elige a los elementos más fáciles o cercanos (ej. encuestar de educación solo en tu colonia).</li><li><strong>Sesgo de Autoselección (Voluntario):</strong> Ocurre cuando las personas deciden voluntariamente participar en el estudio (ej. encuestas web).</li><li><strong>Sesgo de No Respuesta:</strong> Ocurre cuando las personas elegidas se niegan a contestar, sesgando el resultado si su perfil es diferente.</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Variabilidad vs Sesgo</p><p class=\"text-xs font-mono font-bold text-primary\">Precisi&oacute;n: Baja variabilidad (puntos juntos)</p><p class=\"text-xs font-mono font-bold text-primary\">Exactitud: Bajo sesgo (puntos en el centro)</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"22\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">TIRO AL BLANCO: SESGO VS VARIANZA</text><!-- Caso 1: Alto Sesgo (fuera de centro pero agrupados) --><circle cx=\"80\" cy=\"70\" r=\"20\" fill=\"none\" stroke=\"#94a3b8\" /><circle cx=\"80\" cy=\"70\" r=\"10\" fill=\"none\" stroke=\"#94a3b8\" /><circle cx=\"80\" cy=\"70\" r=\"2\" fill=\"#94a3b8\" /><circle cx=\"68\" cy=\"58\" r=\"2.5\" fill=\"#dc2626\" /><circle cx=\"72\" cy=\"56\" r=\"2.5\" fill=\"#dc2626\" /><circle cx=\"70\" cy=\"61\" r=\"2.5\" fill=\"#dc2626\" /><text x=\"80\" y=\"105\" font-size=\"8\" font-family=\"sans-serif\" fill=\"#dc2626\" font-weight=\"bold\" text-anchor=\"middle\">Alto Sesgo</text><!-- Caso 2: Sin Sesgo (en el centro) --><circle cx=\"220\" cy=\"70\" r=\"20\" fill=\"none\" stroke=\"#94a3b8\" /><circle cx=\"220\" cy=\"70\" r=\"10\" fill=\"none\" stroke=\"#94a3b8\" /><circle cx=\"220\" cy=\"70\" r=\"2\" fill=\"#94a3b8\" /><circle cx=\"220\" cy=\"70\" r=\"2.5\" fill=\"#059669\" /><circle cx=\"222\" cy=\"67\" r=\"2.5\" fill=\"#059669\" /><circle cx=\"218\" cy=\"72\" r=\"2.5\" fill=\"#059669\" /><text x=\"220\" y=\"105\" font-size=\"8\" font-family=\"sans-serif\" fill=\"#059669\" font-weight=\"bold\" text-anchor=\"middle\">Sin Sesgo (Exacto)</text></svg>",
+                    "svgDescription": "Comparativa visual de sesgo. El sesgo desplaza sistemáticamente nuestras estimaciones fuera del centro real (parámetro de la población), invalidando el estudio.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Un canal de televisión de Guatemala realiza una encuesta telefónica en vivo preguntando: \"¿Tiene usted servicio de energía eléctrica estable en su hogar?\". El 98% responde que sí. ¿Existe algún sesgo en este muestreo?</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1: Analiza el método de recolección.</strong> La encuesta es telefónica y por televisión en vivo.</li><li><strong>Paso 2: Identifica excluidos.</strong> Las personas que no tienen televisión ni energía eléctrica estable difícilmente podrán ver el canal o tener un teléfono activo para responder la llamada.</li><li><strong>Paso 3: Concluye.</strong> Existe un fuerte **Sesgo de Selección o Conveniencia**, ya que el método excluye de forma sistemática al grupo con problemas de energía, alterando el resultado real.</li></ol>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Creer que muestras gigantes salvan el sesgo:</strong> Pensar que una muestra de 100,000 personas voluntarias en internet es mejor que una muestra aleatoria de 1,000 personas. El tamaño no elimina el sesgo sistemático de autoselección.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Si realizamos una encuesta sobre la satisfacción del transporte público de Ciudad de Guatemala entrevistando únicamente a las personas que viajan en taxi propio, ¿qué tipo de sesgo aplicamos? (Nombrar: sesgo de seleccion o sesgo voluntario):",
+                            "correctAnswer": "sesgo de seleccion",
+                            "hint": "Excluye sistemáticamente al público objetivo real del transporte público (buses, Transmetro).",
+                            "feedbackCorrect": "¡Excelente! Es un claro sesgo de selección.",
+                            "feedbackIncorrect": "Incorrecto. Se le conoce como 'sesgo de seleccion'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si un canal de televisión lanza una encuesta en su cuenta de Twitter para saber la opinión sobre una ley, el resultado tiene un fuerte:",
+                            "correctAnswer": "sesgo voluntario",
+                            "hint": "Las personas eligen por sí mismas y voluntariamente si desean participar en la votación (o sesgo de autoseleccion).",
+                            "feedbackCorrect": "¡Perfecto! Se le llama sesgo voluntario o de autoselección.",
+                            "feedbackIncorrect": "Incorrecto. Es un caso típico de 'sesgo voluntario'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cómo se llama el sesgo que ocurre cuando una gran cantidad de personas elegidas al azar para una encuesta deciden colgar el teléfono o negarse a contestar?",
+                            "correctAnswer": "sesgo de no respuesta",
+                            "hint": "Las opiniones de los que se niegan pueden ser radicalmente diferentes a los de los que sí contestan.",
+                            "feedbackCorrect": "¡Excelente! Es el sesgo de no respuesta.",
+                            "feedbackIncorrect": "Incorrecto. Se le conoce como 'sesgo de no respuesta'.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Para evitar de forma absoluta los sesgos de selección del investigador, la regla de oro que se debe aplicar siempre al extraer elementos es:",
+                            "options": [
+                                "La selección aleatoria (al azar) mediante métodos probabilísticos",
+                                "Elegir a las personas con las mejores notas escolares",
+                                "Duplicar el tamaño de la muestra encuestando a toda tu familia",
+                                "Elegir solo a las personas que se acerquen voluntariamente a hablar"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "El azar probabilístico elimina el criterio subjetivo del investigador y asegura igual oportunidad de selección.",
+                            "feedbackCorrect": "¡Excelente! La selección aleatoria es la regla de oro.",
+                            "feedbackIncorrect": "Incorrecto. La selección aleatoria es la única forma científica de evitar sesgos subjetivos de selección.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Un estudio electoral en Guatemala quiere predecir el ganador de las elecciones presidenciales. Para ello, realiza encuestas exclusivas en centros comerciales premium de la Zona 10. ¿Por qué este muestreo es sesgado?",
+                            "options": [
+                                "Porque excluye de forma sistemática a los votantes de áreas rurales, cabeceras departamentales y sectores socioeconómicos diferentes.",
+                                "Porque la Zona 10 tiene demasiadas personas inscritas para votar.",
+                                "Porque las personas de centros comerciales no votan.",
+                                "Porque el tamaño de la muestra de centros comerciales es siempre de 10 personas."
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "La muestra debe representar la diversidad socioeconómica y geográfica de todo el electorado del país.",
+                            "feedbackCorrect": "¡Perfecto! Excluye a la gran mayoría representativa del electorado nacional.",
+                            "feedbackIncorrect": "Incorrecto. El sesgo ocurre porque la muestra no representa la realidad socioeconómica ni geográfica nacional.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "El sesgo de muestreo es un error sistemático en la selección que invalida las generalizaciones sobre una población, debiendo evitarse mediante muestreos probabilísticos aleatorios.",
+                    "videoPlaceholderText": "Video de Estadística: Tipos de sesgos muestrales y cómo arruinaron predicciones famosas."
+                }
+            ]
+        },
+        {
+            "title": "Unidad 3: Organización Visual de Datos",
+            "lessons": [
+                {
+                    "id": "tablas-frecuencia",
+                    "title": "Lección 3.1: Tablas de Frecuencia para Datos Cualitativos",
+                    "introduction": "Aprende a estructurar y ordenar datos categóricos en tablas resumen para facilitar su análisis visual directo.",
+                    "explanationHtml": "<p>Cuando recolectamos datos cualitativos (ej: color de un producto, opiniones), obtenemos una lista desordenada. Para resumirlos, usamos una <strong>Tabla de Frecuencias</strong> que contiene:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Frecuencia Absoluta ($f_i$):</strong> Es el número de veces que se repite un dato o categoría en la muestra (la suma de frecuencias absolutas da el tamaño de muestra $n$).</li><li><strong>Frecuencia Relativa ($h_i$):</strong> Es la proporción que representa cada categoría respecto al total ($h_i = f_i / n$). La suma de las frecuencias relativas debe dar exactamente 1.0.</li><li><strong>Frecuencia Porcentual ($%$):</strong> Es la frecuencia relativa expresada en porcentaje ($% = h_i \times 100%$). La suma debe dar 100%.</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Fórmulas de Frecuencia</p><p class=\"text-base font-mono font-extrabold text-primary\">h_i = f_i / n &nbsp;&bull;&nbsp; % = h_i &times; 100%</p><p class=\"text-xs text-slate-500\">Ejemplo: si 10 personas de 40 eligen Rojo &rarr; f = 10, h = 0.25, % = 25%.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 125\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"125\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">TABLA DE FRECUENCIAS (n = 40)</text><!-- Estructura de Tabla resumida --><rect x=\"30\" y=\"35\" width=\"240\" height=\"70\" fill=\"#ffffff\" stroke=\"#cbd5e1\" rx=\"8\" /><line x1=\"30\" y1=\"55\" x2=\"270\" y2=\"55\" stroke=\"#cbd5e1\" /><line x1=\"110\" y1=\"35\" x2=\"110\" y2=\"105\" stroke=\"#cbd5e1\" /><line x1=\"190\" y1=\"35\" x2=\"190\" y2=\"105\" stroke=\"#cbd5e1\" /><text x=\"70\" y=\"48\" font-size=\"8\" font-family=\"sans-serif\" font-weight=\"bold\" fill=\"#64748b\" text-anchor=\"middle\">Categoría</text><text x=\"150\" y=\"48\" font-size=\"8\" font-family=\"sans-serif\" font-weight=\"bold\" fill=\"#64748b\" text-anchor=\"middle\">Frec. Absoluta (f)</text><text x=\"230\" y=\"48\" font-size=\"8\" font-family=\"sans-serif\" font-weight=\"bold\" fill=\"#64748b\" text-anchor=\"middle\">Frec. Porcentual (%)</text><text x=\"70\" y=\"70\" font-size=\"9\" font-family=\"sans-serif\" font-weight=\"bold\" fill=\"#334155\" text-anchor=\"middle\">Rojo</text><text x=\"150\" y=\"70\" font-size=\"9\" font-family=\"monospace\" fill=\"#334155\" text-anchor=\"middle\">10</text><text x=\"230\" y=\"70\" font-size=\"9\" font-family=\"monospace\" fill=\"#2563eb\" font-weight=\"bold\" text-anchor=\"middle\">25%</text><text x=\"70\" y=\"90\" font-size=\"9\" font-family=\"sans-serif\" font-weight=\"bold\" fill=\"#334155\" text-anchor=\"middle\">Azul</text><text x=\"150\" y=\"90\" font-size=\"9\" font-family=\"monospace\" fill=\"#334155\" text-anchor=\"middle\">30</text><text x=\"230\" y=\"90\" font-size=\"9\" font-family=\"monospace\" fill=\"#059669\" font-weight=\"bold\" text-anchor=\"middle\">75%</text></svg>",
+                    "svgDescription": "Estructura de una tabla de frecuencia cualitativa. Las sumas totales de las frecuencias absolutas dan el tamaño de muestra y los porcentajes suman 100%.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> En un local de recuerdos de Antigua Guatemala, se registra el color de 40 artesanías vendidas: 10 Rojas, 20 Verdes y 10 Azules. Construye la tabla de frecuencias y calcula la frecuencia relativa y porcentual del color Verde.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1 Frecuencia Absoluta:</strong> El dato se repite 20 veces. $f_V = 20$. Tamaño de muestra $n = 40$.</li><li><strong>Paso 2 Frecuencia Relativa:</strong> Dividimos la frecuencia absoluta entre el total de datos: <br>$h_V = 20 / 40 = 0.50$.</li><li><strong>Paso 3 Frecuencia Porcentual:</strong> Multiplicamos por 100%: <br>$%_V = 0.50 \times 100% = 50%$.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> El color Verde tiene una frecuencia relativa de <strong>0.50</strong> y porcentual del <strong>50%</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Errores de redondeo que no suman 100%:</strong> Dejar los porcentajes decimales redondeados de tal forma que al sumarlos den 99% o 101%. Ajusta con precisión decimal.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "En una muestra de n = 50 personas, 15 eligen el sabor Fresa. ¿Cuál es la frecuencia relativa de este sabor? Escribe el decimal con punto (ej: 0.30):",
+                            "correctAnswer": "0.30",
+                            "hint": "Divide la frecuencia absoluta (15) entre el tamaño total n (50): 15 ÷ 50 = 0.3.",
+                            "feedbackCorrect": "¡Excelente! La frecuencia relativa es 0.30 (o 0.3).",
+                            "feedbackIncorrect": "Revisa la división: 15 / 50 = 0.30.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Con los datos anteriores de Fresa (15 de 50), ¿cuál es su frecuencia porcentual? (Escribe el número entero sin el símbolo %):",
+                            "correctAnswer": "30",
+                            "hint": "Multiplica la frecuencia relativa (0.30) por 100: 0.30 × 100 = 30.",
+                            "feedbackCorrect": "¡Perfecto! Representa el 30% de la muestra.",
+                            "feedbackIncorrect": "Incorrecto. 0.30 × 100 = 30%.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si sumamos todas las frecuencias relativas de una tabla con 5 categorías, el resultado exacto debe ser siempre igual a (ingresar número entero o decimal):",
+                            "correctAnswer": "1",
+                            "hint": "Las proporciones individuales de un todo siempre deben sumar la unidad completa (1.0).",
+                            "feedbackCorrect": "¡Excelente! La suma total de frecuencias relativas siempre es exactamente 1.",
+                            "feedbackIncorrect": "Incorrecto. La suma de todas las proporciones relativas es igual a 1 (1.0).",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si en un estudio estadístico de n = 200 personas la frecuencia porcentual de la categoría 'Excelente' es del 25%, ¿cuántas personas eligieron esta categoría?",
+                            "options": [
+                                "50 personas",
+                                "25 personas",
+                                "75 personas",
+                                "100 personas"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Multiplica el tamaño de muestra (200) por el decimal del porcentaje (0.25): 200 × 0.25.",
+                            "feedbackCorrect": "¡Excelente! Corresponde a 50 personas.",
+                            "feedbackIncorrect": "Incorrecto. 200 × 0.25 = 50 personas.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Si en una tabla de frecuencias absolutas tenemos 3 categorías con valores f1 = 12, f2 = 18 y f3 = 10, ¿cuál es el tamaño de la muestra n?",
+                            "options": [
+                                "40",
+                                "30",
+                                "50",
+                                "20"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "El tamaño total de la muestra n es igual a la suma de todas las frecuencias absolutas: 12 + 18 + 10.",
+                            "feedbackCorrect": "¡Perfecto! El tamaño de la muestra n es 40.",
+                            "feedbackIncorrect": "Incorrecto. La suma de frecuencias absolutas es 12 + 18 + 10 = 40.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "Las tablas de frecuencia cualitativas nos permiten ordenar datos en categorías mostrando la cantidad absoluta, la proporción relativa y el porcentaje relativo de cada clase.",
+                    "videoPlaceholderText": "Video de Estadística: Cómo armar una tabla de frecuencia para variables cualitativas."
+                },
+                {
+                    "id": "graficos-barras-circulares",
+                    "title": "Lección 3.2: Gráficos de Barras y Gráficos Circulares",
+                    "introduction": "Domina el diseño y la interpretación de los dos gráficos más populares para representar variables categóricas.",
+                    "explanationHtml": "<p>Los gráficos estadísticos permiten asimilar información compleja de forma instantánea. Para datos cualitativos, los dos gráficos estándar son:</p><p class=\"mt-3\"><strong>1. Gráfico de Barras:</strong> Representa las categorías en el eje horizontal y las frecuencias (absolutas o porcentuales) en el eje vertical. La altura de cada barra es proporcional a su frecuencia. Permite comparar valores individuales fácilmente.</p><p class=\"mt-3\"><strong>2. Gráfico Circular (o de Pastel):</strong> Representa la muestra como un círculo completo y cada categoría como un sector circular proporcional a su porcentaje. El ángulo de cada sector se calcula como: $\\theta = \\text{porcentaje} \\times 3.6^\\circ$. Es ideal para ilustrar la composición relativa del todo.</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Cálculo del Ángulo de Pastel</p><p class=\"text-base font-mono font-extrabold text-primary\">Angulo = Porcentaje &times; 3.6</p><p class=\"text-xs text-slate-500\">Ejemplo: para el 25% del total &rarr; 25 &times; 3.6 = 90&deg; (un ángulo recto de pastel).</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"20\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">ÁNGULOS EN GRÁFICOS DE PASTEL</text><!-- Circulo representativo --><circle cx=\"150\" cy=\"70\" r=\"30\" fill=\"none\" stroke=\"#e2e8f0\" stroke-width=\"2\" /><!-- Sector 25% (90 grados) --><path d=\"M 150 70 L 150 40 A 30 30 0 0 1 180 70 Z\" fill=\"#2563eb\" fill-opacity=\"0.3\" stroke=\"#2563eb\" stroke-width=\"1.5\" /><text x=\"185\" y=\"55\" font-size=\"8\" font-family=\"sans-serif\" fill=\"#2563eb\" font-weight=\"bold\">25% (90&deg;)</text><text x=\"110\" y=\"80\" font-size=\"8\" font-family=\"sans-serif\" fill=\"#64748b\">75% Restante</text></svg>",
+                    "svgDescription": "Cálculo sectorial para gráficos de pastel. Un porcentaje de 25% se traduce multiplicándolo por 3.6 en un ángulo recto exacto de 90°.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Si el 25% de los turistas de un hotel prefiere visitar Antigua Guatemala, calcula qué ángulo en grados corresponderá a este sector en un gráfico circular.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1: Identifica la equivalencia total.</strong> El círculo completo representa 360 grados y equivale al 100%.</li><li><strong>Paso 2: Aplica la constante de proporción.</strong> Cada 1% equivale a: $360^circ / 100 = 3.6^circ$.</li><li><strong>Paso 3: Multiplica el porcentaje.</strong> $25 \times 3.6^circ = 90^circ$.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> Al 25% le corresponderá un sector circular exacto de <strong>90 grados</strong>.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Usar pasteles para demasiadas categorías:</strong> Dibujar un gráfico circular con 15 categorías diferentes. El gráfico se vuelve ilegible por la cantidad de rebanadas delgadas. Usa diagramas de barras en esos casos.</li><li><strong>Pasteles que no suman 100%:</strong> Diseñar rebanadas que al sumar sus porcentajes dan valores diferentes a 100%.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Calcula el ángulo en grados para un sector que representa el 50% de la muestra. Ingresa el número entero:",
+                            "correctAnswer": "180",
+                            "hint": "El 50% es la mitad del círculo. Multiplica 50 × 3.6 o calcula la mitad de 360 grados.",
+                            "feedbackCorrect": "¡Excelente! Equivale a 180 grados (medio círculo).",
+                            "feedbackIncorrect": "Incorrecto. 50 × 3.6 = 180 grados.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Calcula el ángulo en grados para un sector que representa el 10% de la muestra:",
+                            "correctAnswer": "36",
+                            "hint": "Multiplica el porcentaje (10) por la constante 3.6.",
+                            "feedbackCorrect": "¡Perfecto! Equivale a 36 grados.",
+                            "feedbackIncorrect": "Incorrecto. 10 × 3.6 = 36 grados.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cómo se llama el eje horizontal estándar en un gráfico de barras donde se colocan los nombres de las categorías?",
+                            "correctAnswer": "eje x",
+                            "hint": "Es el eje horizontal de coordenadas cartesianas (o eje de abscisas, escríbelo simplificado de dos letras).",
+                            "feedbackCorrect": "¡Excelente! Es el eje X.",
+                            "feedbackIncorrect": "Incorrecto. Las categorías se ubican en el 'eje x'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "El gráfico circular o de pastel es ideal principalmente para representar:",
+                            "options": [
+                                "La composición relativa de partes respecto a un todo (el 100%)",
+                                "La evolución temporal de la temperatura durante un mes completo",
+                                "La relación de dispersión entre la estatura y el peso de las personas",
+                                "Variables cuantitativas continuas con más de 20 rangos diferentes"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Compara cómo se divide el pastel total en rebanadas proporcionales que suman 100%.",
+                            "feedbackCorrect": "¡Excelente! Es ideal para mostrar proporciones respecto al todo.",
+                            "feedbackIncorrect": "Incorrecto. Su objetivo fundamental es mostrar la participación relativa de partes sobre el 100%.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Si tenemos un gráfico de barras que muestra la cantidad de vehículos vendidos (Motos: 50, Autos: 30, Camiones: 10), ¿cuánto medirá la barra de Motos respecto a la de Camiones?",
+                            "options": [
+                                "Será exactamente cinco veces más alta",
+                                "Será el doble de alta",
+                                "Medirá lo mismo",
+                                "Será tres veces más alta"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "La altura es proporcional a la frecuencia: Motos (50) dividido entre Camiones (10) es igual a 5.",
+                            "feedbackCorrect": "¡Excelente! La barra será exactamente cinco veces más alta.",
+                            "feedbackIncorrect": "Incorrecto. Al ser 50 frente a 10, la barra es cinco veces más alta.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "Los gráficos de barras comparan frecuencias absolutas individuales de categorías y los gráficos circulares muestran de forma clara las proporciones relativas respecto a la suma del 100%.",
+                    "videoPlaceholderText": "Video de Estadística: Cómo graficar barras y pasteles de forma profesional."
+                },
+                {
+                    "id": "diagramas-tallo-hojas",
+                    "title": "Lección 3.3: Diagramas de Tallo y Hojas",
+                    "introduction": "Aprende a estructurar un diagrama de tallo y hojas para clasificar y visualizar la distribución y valores exactos de datos cuantitativos de forma rápida.",
+                    "explanationHtml": "<p>El <strong>Diagrama de Tallo y Hojas</strong> es un método semi-gráfico para organizar y resumir datos numéricos conservando los **valores individuales exactos** de la muestra (a diferencia de las tablas grupales).</p><p class=\"mt-3\">Cada dato se divide en dos componentes:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Tallo (columna izquierda):</strong> Representa los dígitos de mayor peso posicional (habitualmente las decenas o centenas).</li><li><strong>Hojas (columna derecha):</strong> Representa los dígitos de menor peso posicional (las unidades) colocados de forma ordenada de menor a mayor.</li></ul><p class=\"mt-3\">Por ejemplo, el número **45** se representa con un tallo **4** y una hoja **5**. Varios números con la misma decena compartirán el mismo tallo.</p>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Ejemplo de Representación</p><p class=\"text-base font-mono font-extrabold text-primary\">Valores: 21, 25, 28 &rArr; Tallo 2 | Hojas: 1, 5, 8</p><p class=\"text-xs text-slate-500\">Permite ver la forma de la distribución sin perder los datos originales.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"22\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">DIAGRAMA DE TALLO Y HOJAS</text><rect x=\"60\" y=\"35\" width=\"180\" height=\"65\" fill=\"#ffffff\" stroke=\"#cbd5e1\" rx=\"6\" /><line x1=\"110\" y1=\"35\" x2=\"110\" y2=\"100\" stroke=\"#94a3b8\" stroke-width=\"1.5\" /><text x=\"85\" y=\"50\" font-size=\"9\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\">Tallo</text><text x=\"175\" y=\"50\" font-size=\"9\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\">Hojas</text><text x=\"85\" y=\"70\" font-size=\"12\" font-family=\"monospace\" fill=\"#334155\" font-weight=\"bold\" text-anchor=\"middle\">3</text><text x=\"175\" y=\"70\" font-size=\"12\" font-family=\"monospace\" fill=\"#2563eb\" font-weight=\"bold\" text-anchor=\"middle\">2 &nbsp; 5 &nbsp; 5 &nbsp; 8</text><text x=\"85\" y=\"90\" font-size=\"12\" font-family=\"monospace\" fill=\"#334155\" font-weight=\"bold\" text-anchor=\"middle\">4</text><text x=\"175\" y=\"90\" font-size=\"12\" font-family=\"monospace\" fill=\"#059669\" font-weight=\"bold\" text-anchor=\"middle\">0 &nbsp; 1 &nbsp; 5</text></svg>",
+                    "svgDescription": "Representación de datos. El tallo 3 con hojas 2, 5, 5, 8 representa los números reales: 32, 35, 35 y 38.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Organiza los siguientes puntajes de un examen corto en un diagrama de tallo y hojas: <span class=\"font-mono\">35, 42, 38, 50, 42, 45, 35</span>.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1: Identifica las decenas (tallos).</strong> Los números van desde los treintas hasta los cincuentas. Los tallos son **3, 4 y 5**.</li><li><strong>Paso 2: Organiza las hojas (unidades) de forma ordenada por tallo.</strong> <br>Para tallo 3: 35, 35, 38 &rarr; hojas: **5, 5, 8**. <br>Para tallo 4: 42, 42, 45 &rarr; hojas: **2, 2, 5**. <br>Para tallo 5: 50 &rarr; hoja: **0**.</li><li><strong>Paso 3: Dibuja el diagrama.</strong> <br>Tallo 3 | 5, 5, 8 <br>Tallo 4 | 2, 2, 5 <br>Tallo 5 | 0.</li></ol>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>No colocar hojas repetidas:</strong> Escribir una sola hoja en el tallo 3 para el número 35 cuando el dato aparece dos veces. ¡Cada dato debe tener su propia hoja!</li><li><strong>Escribir las hojas desordenadas:</strong> Colocar las hojas como 3 | 8, 5, 5. Las hojas deben ordenarse siempre estrictamente de menor a mayor.</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Con el diagrama anterior (Tallo 3 | 5, 5, 8; Tallo 4 | 2, 2, 5; Tallo 5 | 0), ¿cuántas veces se repite el número 42?",
+                            "correctAnswer": "2",
+                            "hint": "Observa el tallo 4. Cuenta cuántas veces aparece el número 2 en su lista de hojas.",
+                            "feedbackCorrect": "¡Excelente! El número 42 se repite 2 veces.",
+                            "feedbackIncorrect": "Incorrecto. Hay dos hojas '2' en el tallo 4, por lo que el número 42 aparece 2 veces.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si en un diagrama de tallo y hojas tenemos 'Tallo 12 | 5', y la clave dice que el tallo representa centenas-decenas y la hoja unidades, ¿cuál es el número real?",
+                            "correctAnswer": "125",
+                            "hint": "Une el tallo (12) con la hoja (5) de forma consecutiva.",
+                            "feedbackCorrect": "¡Perfecto! El número representado es 125.",
+                            "feedbackIncorrect": "Incorrecto. Tallo 12 y hoja 5 representan el número 125.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si una muestra de notas tiene los datos 8, 12, 15, ¿cuál será la hoja asignada al dato 8 si el tallo representa las decenas?",
+                            "correctAnswer": "8",
+                            "hint": "El número 8 equivale a tener 0 decenas y 8 unidades, por lo que el tallo es 0 y la hoja es 8.",
+                            "feedbackCorrect": "¡Excelente! La hoja es 8 (bajo el tallo 0).",
+                            "feedbackIncorrect": "Incorrecto. Al no tener decenas, el tallo es 0 y la hoja correspondiente es 8.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "La principal ventaja de usar un diagrama de tallo y hojas sobre una tabla de frecuencias agrupada es:",
+                            "options": [
+                                "Permite visualizar la distribución de los datos sin perder de vista los valores individuales exactos de la muestra original",
+                                "Es mucho más bonito a la vista en presentaciones de negocios",
+                                "No necesita que se ordenen las cifras numéricas",
+                                "Se puede utilizar con variables cualitativas nominales complejas"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Conserva todos los datos originales legibles en las hojas en vez de ocultarlos en rangos.",
+                            "feedbackCorrect": "¡Excelente! Esa es la ventaja fundamental de este diagrama.",
+                            "feedbackIncorrect": "Incorrecto. Su gran valor es conservar y mostrar los datos exactos originales.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Si observamos el diagrama 'Tallo 5 | 0, 1, 3' y 'Tallo 6 | 2, 8', ¿cuál es el rango total de la muestra (Máximo - Mínimo)?",
+                            "options": [
+                                "18",
+                                "28",
+                                "15",
+                                "10"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "El dato máximo es 68 y el mínimo es 50. Calcula la diferencia: 68 - 50 = 18.",
+                            "feedbackCorrect": "¡Excelente! El rango total de los datos es 18.",
+                            "feedbackIncorrect": "Incorrecto. Máximo (68) - Mínimo (50) = 18.",
+                            "difficulty": "avanzado",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "El diagrama de tallo y hojas es una herramienta semi-gráfica que organiza datos numéricos dividiendo cada valor en decenas (tallo) y unidades (hojas) ordenadas.",
+                    "videoPlaceholderText": "Video de Estadística: Cómo construir un diagrama de tallo y hojas a mano."
+                }
+            ]
+        }
+    ]
+},
 
-## Unidad 1: Fundamentos de la Estadística y Datos
-### Lección 1.1: Qué Estudia la Estadística y su Rol en la Toma de Decisiones
-* **Objetivo:** Definir la estadística y reconocer su división en descriptiva e inferencial y su valor en decisiones reales en Latinoamérica.
-* **Explicación:** La estadística es la ciencia que recolecta, organiza, presenta, analiza e interpreta datos para ayudar a una toma de decisiones más efectiva. Se divide en:
-  - **Estadística Descriptiva:** Métodos para organizar, resumir y presentar datos de forma informativa (ej. promedios de notas escolares).
-  - **Estadística Inferencial:** Métodos para estimar propiedades de una población basándose en los resultados de una muestra (ej. sondeos de intención de voto).
-* **Ejemplo Resuelto:** Un director de colegio en Tecpán promedia las notas de sus 300 alumnos en matemáticas para evaluar el rendimiento escolar global. ¿Qué tipo de estadística está aplicando?
-  - *Paso 1:* El director toma los datos de todos los alumnos, calcula el promedio y presenta los resultados informativos.
-  - *Paso 2:* No está intentando predecir ni hacer suposiciones sobre otros colegios de Guatemala; solo describe el suyo.
-  - *Resultado:* Estadística Descriptiva.
-* **Errores Comunes:** Pensar que la estadística descriptiva e inferencial son excluyentes, cuando en realidad se complementan en cualquier estudio científico complejo.
-* **Ejercicios de Práctica:**
-  1. ¿Qué división de la estadística se encarga de realizar predicciones o generalizaciones sobre una población a partir de una muestra? (R: Estadística Inferencial).
-  2. Si una empresa de Xela evalúa la calidad de un lote de 1,000 bombillas probando solo 50 de ellas, ¿qué tipo de estadística aplica? (R: Estadística Inferencial).
-  3. ¿Cuál es el primer paso en cualquier estudio o investigación estadística seria? (R: La definición del problema y recolección de los datos).
-  4. Si publicas el precio promedio del frijol en el mercado central de Ciudad de Guatemala, ¿qué tipo de estadística aplicas? (R: Estadística Descriptiva).
-  5. ¿Por qué es crucial la estadística en las ciencias de la salud? (R: Para evaluar la efectividad de medicamentos y tratamientos mediante el análisis de datos de pacientes).
-* **¿Necesitas ayuda?** La estadística es la herramienta más poderosa para convencer con datos reales. ¡Domina sus fundamentos con la ayuda de tu tutor de CEDETU!
-
-### Lección 1.2: Tipos de Datos y Variables
-* **Objetivo:** Clasificar variables en cualitativas (nominales, ordinales) y cuantitativas (discretas, continuas) de forma fluida.
-* **Explicación:** Una variable es una característica de interés de un objeto o persona. Se clasifican en:
-  - **Cualitativas (Categóricas):** Describen cualidades o categorías sin valor numérico intrínseco.
-    - *Nominal:* Sin orden jerárquico (ej. color favorito, género, departamento de Guatemala).
-    - *Ordinal:* Con orden jerárquico implícito (ej. grado escolar, nivel de satisfacción).
-  - **Cuantitativas (Numéricas):** Expresan cantidades numéricas.
-    - *Discreta:* Valores contables enteros aislados (ej. cantidad de hijos, autos vendidos).
-    - *Continua:* Valores fraccionarios infinitos en un rango medible (ej. peso en libras, estatura, salario en Quetzales).
-* **Ejemplo Resuelto:** Clasifica las siguientes variables de una encuesta escolar: a) Departamento de procedencia, b) Cantidad de materias aprobadas, c) Tiempo diario de estudio en horas.
-  - *Paso 1 Departamento:* Es una cualidad sin orden. Cualitativa nominal.
-  - *Paso 2 Cantidad de materias:* Se cuentan con enteros (1, 2, 3...). Cuantitativa discreta.
-  - *Paso 3 Tiempo de estudio:* Se mide y puede tener fracciones (1.5 horas, 2.3 horas). Cuantitativa continua.
-  - *Resultado:* a) Cualitativa nominal, b) Cuantitativa discreta, c) Cuantitativa continua.
-* **Errores Comunes:** Tratar a las variables cuantitativas discretas como continuas al representarlas en histogramas o promediarlas de forma no lógica en la interpretación.
-* **Ejercicios de Práctica:**
-  1. Clasifica el "salario mensual en Quetzales" de los trabajadores de una fábrica de calzado en Antigua. (R: Cuantitativa continua).
-  2. Clasifica el "color favorito de camiseta" vendido en un almacén. (R: Cualitativa nominal).
-  3. Clasifica la "calificación de una tarea como Excelente, Bueno, Regular o Deficiente". (R: Cualitativa ordinal).
-  4. ¿Qué tipo de variable es la "temperatura diaria promedio de Quetzaltenango"? (R: Cuantitativa continua).
-  5. Clasifica la "cantidad de tuk-tuks registrados en Panajachel". (R: Cuantitativa discreta).
-* **¿Necesitas ayuda?** Saber clasificar las variables es fundamental para elegir los gráficos y las fórmulas estadísticas correctas. ¡Repásalas con tu tutor de CEDETU!
-
-### Lección 1.3: Población, Muestra, Parámetro y Estadístico
-* **Objetivo:** Diferenciar entre los conceptos de población y muestra, y relacionarlos con los términos de parámetro y estadístico.
-* **Explicación:** 
-  - **Población:** Conjunto completo de todos los elementos, medidas o individuos de interés en un estudio.
-  - **Muestra:** Subconjunto de la población elegido para ser estudiado de forma directa.
-  - **Parámetro:** Un valor numérico que resume una característica de la **población** completa (ej. la media poblacional $mu$).
-  - **Estadístico:** Un valor numérico calculado a partir de la **muestra** (ej. la media muestral $ar{x}$).
-* **Ejemplo Resuelto:** Un analista político realiza una encuesta a 1,000 votantes en Guatemala y reporta que el 52% apoya al candidato A. Identifica la población, la muestra y el tipo de dato.
-  - *Paso 1 Población:* Todos los votantes aptos registrados en Guatemala.
-  - *Paso 2 Muestra:* Los 1,000 votantes efectivamente encuestados.
-  - *Paso 3 Tipo de dato:* El 52% es un estadístico (calculado a partir de la muestra).
-  - *Resultado:* Población = Votantes registrados, Muestra = 1,000 encuestados, Dato = Estadístico.
-* **Errores Comunes:** Confundir parámetro (poblacional) con estadístico (muestral), asumiendo que los resultados de una pequeña encuesta representan la verdad absoluta de toda la población sin margen de error.
-* **Ejercicios de Práctica:**
-  1. ¿Cómo se define a una característica numérica calculada de una población completa? (R: Parámetro).
-  2. Si mides la estatura promedio de todos los alumnos de un salón específico de 40 estudiantes, ¿el promedio obtenido es un parámetro o estadístico con respecto al salón? (R: Parámetro. El salón es tu población de interés).
-  3. ¿Cuál es el término utilizado para el proceso de seleccionar una parte de la población para su estudio? (R: Muestreo).
-  4. Si un biólogo analiza el pH del agua en 5 puntos diferentes del lago de Atitlán, ¿cuál es la muestra? (R: Los 5 puntos de agua tomados).
-  5. ¿Por qué se prefiere trabajar con muestras en lugar de poblaciones completas en la mayoría de investigaciones de mercado? (R: Por economía de tiempo, menor costo y factibilidad logística).
-* **¿Necesitas ayuda?** Entender la diferencia entre muestra y población te preparará perfectamente para tus cursos de metodología de investigación. ¡Asegura tu comprensión con tu tutor!
-
-## Evaluación Unidad 1
-* Una empresa encuestadora entrevista a 500 familias en Ciudad de Guatemala sobre su ingreso mensual promedio y obtiene Q8,500. Identifica la población de interés, la muestra y si Q8,500 es parámetro o estadístico. (R: Población = Todas las familias de Ciudad de Guatemala; Muestra = Las 500 familias entrevistadas; Q8,500 = Estadístico muestral).
-* Clasifica las variables: 1) Código postal de tu dirección, 2) Número de páginas de un libro de texto de física. (R: 1) Cualitativa nominal. (Nota: Aunque son números, no expresan cantidad contable, son etiquetas de ubicación); 2) Cuantitativa discreta).
-* ¿Cuál es el nombre del estudio estadístico que intenta recabar datos de la población completa en lugar de usar muestras? (R: Censo).
-
----
-
-## Unidad 2: Métodos de Muestreo y Sesgos
-### Lección 2.1: Muestreo Probabilístico
-* **Objetivo:** Definir y clasificar los métodos de muestreo probabilístico (Aleatorio simple, sistemático y estratificado) reconociendo su importancia en la validez del estudio.
-* **Explicación:** Un muestreo es probabilístico si todos los elementos de la población tienen una probabilidad conocida y no nula de ser seleccionados. Garantiza que la muestra sea representativa.
-  - **Aleatorio Simple:** Selección al azar (ej. sorteo o tómbola).
-  - **Sistemático:** Se elige un punto de partida y luego se selecciona cada $k$-ésimo elemento de una lista ordenada (ej. cada 10 personas).
-  - **Estratificado:** Se divide la población en subgrupos homogéneos (estratos, ej. por edades o departamentos) y se toma una muestra aleatoria de cada uno.
-* **Ejemplo Resuelto:** Un colegio tiene 600 alumnos de primaria y 400 de secundaria. Se quiere tomar una muestra de 100 alumnos respetando la proporción de nivel. ¿Cómo se hace?
-  - *Paso 1:* Divide en estratos: Primaria (60% de la población) y Secundaria (40% de la población).
-  - *Paso 2:* Calcula la muestra proporcional por estrato: Primaria = 60 alumnos, Secundaria = 40 alumnos.
-  - *Paso 3:* Selecciona aleatoriamente 60 alumnos de la lista de primaria y 40 de secundaria.
-  - *Resultado:* Muestreo Aleatorio Estratificado Proporcional aplicado correctamente.
-* **Errores Comunes:** Confundir muestreo por conglomerados (grupos heterogéneos) con muestreo estratificado (grupos homogéneos).
-* **Ejercicios de Práctica:**
-  1. ¿Qué tipo de muestreo se realiza si seleccionas al azar cada 15 clientes que entran a un supermercado en Antigua? (R: Muestreo Sistemático).
-  2. ¿Cuál es el muestreo donde cada miembro de la población tiene exactamente la misma probabilidad de ser seleccionado? (R: Muestreo Aleatorio Simple).
-  3. En un censo de salud de Xela, se divide la población en vecindarios o cantones y se encuestan todos los hogares de 5 vecindarios elegidos al azar. ¿Qué muestreo es? (R: Muestreo por Conglomerados).
-  4. ¿Por qué es fundamental el uso del muestreo probabilístico en investigaciones de mercado científicas? (R: Para evitar el sesgo de selección del encuestador y poder generalizar los resultados con validez matemática).
-  5. Si tienes una población de 500 personas y quieres una muestra sistemática de 50, ¿cada cuántos elementos debes seleccionar a tu candidato? (R: Cada 10 personas).
-* **¿Necesitas ayuda?** Diseñar un buen muestreo es el pilar invisible de cualquier tesis o investigación de éxito. ¡Aprende a estructurarlos de forma profesional junto a tu tutor de CEDETU!
-
-### Lección 2.2: Muestreo No Probabilístico y Sesgos
-* **Objetivo:** Identificar los métodos de muestreo no probabilístico (conveniencia, cuotas) y diagnosticar fuentes comunes de sesgos estadísticos.
-* **Explicación:** 
-  - **Muestreo No Probabilístico:** La selección no depende del azar, sino del criterio del investigador (ej. por conveniencia: encuestar a tus amigos o a los que pasan cerca). No se pueden generalizar los resultados estadísticamente.
-  - **Sesgos Comunes:**
-    - *Sesgo de Selección (o de conveniencia):* Muestra no representativa.
-    - *Sesgo de No Respuesta:* Personas que deciden no participar y tienen opiniones diferentes.
-    - *Sesgo de Respuesta (o de deseabilidad social):* Mentir en las respuestas por vergüenza.
-* **Ejemplo Resuelto:** Un programa de radio en Guatemala pide a los oyentes que llamen para opinar sobre una nueva ley. El 90% llama para opinar en contra. ¿Es representativo este resultado?
-  - *Paso 1:* La muestra está formada solo por las personas que escuchan esa estación de radio específica a esa hora (conveniencia).
-  - *Paso 2:* Además, requiere la iniciativa del oyente para llamar (muestreo de respuesta voluntaria, donde las personas con opiniones extremas están más motivadas a participar).
-  - *Resultado:* No es representativo. Presenta un severo sesgo de autoselección.
-* **Errores Comunes:** Presentar encuestas realizadas en redes sociales (como Twitter o Facebook) como si fueran la opinión representativa de todo un país, ignorando las brechas digitales de edad e interés.
-* **Ejercicios de Práctica:**
-  1. ¿Cómo se llama al muestreo no probabilístico donde el investigador elige a los sujetos simplemente porque están más cerca y accesibles? (R: Muestreo por Conveniencia).
-  2. Si un encuestador entrevista solo a las personas que salen de un gimnasio en Xela para evaluar la nutrición de toda la ciudad, ¿qué sesgo comete? (R: Sesgo de Selección).
-  3. ¿Qué es el sesgo de no respuesta? (R: Ocurre cuando un porcentaje significativo de la muestra elegida se rehúsa a contestar, sesgando los resultados hacia quienes sí contestaron).
-  4. Si haces preguntas de forma sesgada (ej. "¿No cree usted que el tráfico de la ciudad es insoportable?"), ¿qué tipo de sesgo induces? (R: Sesgo de Respuesta o de Redacción).
-  5. ¿Se pueden aplicar fórmulas de margen de error e intervalos de confianza sobre muestras no probabilísticas? (R: No. La teoría de probabilidad exige muestreos estrictamente probabilísticos).
-* **¿Necesitas ayuda?** Identificar sesgos te hará leer las noticias y estadísticas con un ojo analítico y crítico espectacular. ¡Entrénalo junto a tu tutor!
-
-### Lección 2.3: Experimentos versus Estudios Observacionales
-* **Objetivo:** Diferenciar entre un estudio observacional (sin intervención) y un experimento diseñado (con asignación aleatoria de tratamientos), identificando variables de confusión.
-* **Explicación:** 
-  - **Estudio Observacional:** El investigador solo observa y mide variables de interés sin alterar el entorno ni aplicar tratamientos (ej. registrar la dieta de los alumnos y sus notas). Solo muestra **correlación**, no causalidad.
-  - **Experimento Diseñado:** El investigador asigna aleatoriamente tratamientos a los sujetos de estudio para observar el efecto directo de una variable independiente sobre la dependiente. Puede demostrar **causalidad**.
-* **Ejemplo Resuelto:** Una escuela de natación quiere saber si su nuevo método intensivo funciona. Toma a 100 alumnos, divide a 50 en el grupo tradicional y a 50 en el intensivo al azar, comparando los tiempos al mes. ¿Es estudio o experimento?
-  - *Paso 1:* El investigador intervino activamente aplicando un tratamiento (método tradicional vs. intensivo).
-  - *Paso 2:* Los sujetos fueron asignados de forma aleatoria a cada tratamiento para aislar el efecto.
-  - *Resultado:* Experimento Diseñado.
-* **Errores Comunes:** Concluir relaciones de causa y efecto a partir de estudios meramente observacionales (ej. decir que el café causa buena memoria porque los estudiantes con buenas notas toman café, ignorando la variable de confusión de las horas de estudio).
-* **Ejercicios de Práctica:**
-  1. ¿Qué tipo de investigación estadística es aquella donde se registran las calificaciones y las horas de sueño de los estudiantes sin interferir? (R: Estudio Observacional).
-  2. ¿Cuál es el propósito de utilizar un "grupo de control" en un experimento diseñado? (R: Servir como referencia o línea base de comparación, sin recibir el tratamiento activo).
-  3. ¿Cómo se le llama a una variable oculta que influye tanto en la variable independiente como en la dependiente, sugiriendo una falsa causalidad? (R: Variable de Confusión).
-  4. ¿Qué es un experimento de "doble ciego" en medicina? (R: Aquel donde ni los pacientes ni los médicos que evalúan los resultados saben quién recibió el tratamiento real y quién el placebo).
-  5. ¿Se puede establecer una relación de causalidad inequívoca a partir de un estudio observacional? (R: No. Solo correlación).
-* **¿Necesitas ayuda?** Diseñar experimentos es el método de oro de la ciencia moderna. ¡Aprende a plantearlos con rigor de la mano de tu tutor de CEDETU!
-
-## Evaluación Unidad 2
-* Un investigador quiere evaluar un nuevo abono para maíz en Sololá. Divide un terreno en 20 parcelas, aplica el nuevo abono a 10 parcelas elegidas al azar y el abono tradicional a las otras 10, midiendo la altura final del maíz al mes. ¿Es estudio o experimento, y cuál es el grupo de control? (R: Experimento Diseñado. El grupo de control son las 10 parcelas que recibieron el abono tradicional).
-* ¿Qué tipo de sesgo se produce si al realizar una encuesta telefónica sobre la posesión de internet en Guatemala la muestra se toma del directorio de teléfonos fijos residenciales? (R: Sesgo de Selección (o de subcobertura), ya que se excluye a los hogares que solo usan teléfonos celulares o no tienen línea fija).
-* ¿Qué es un "placebo" en el diseño de experimentos de medicamentos? (R: Una sustancia inactiva idéntica en apariencia al medicamento real dada al grupo de control para controlar el efecto psicológico de estar siendo tratado).
-
----
-
-## Unidad 3: Organización de Datos Cualitativos
-### Lección 3.1: Tablas de Frecuencia Cualitativas
-* **Objetivo:** Construir tablas de distribución de frecuencias para variables categóricas cualitativas nominales y ordinales a partir de datos brutos.
-* **Explicación:** Para organizar variables categóricas, contamos la cantidad de veces que ocurre cada categoría (Frecuencia Absoluta, $f$) y calculamos la proporción que representa del total de datos de la muestra ($n$).
-  - **Frecuencia Relativa ($fr$):** $fr = f / n$.
-  - **Frecuencia Porcentual ($f%$):** $f% = fr 	imes 100%$.
-* **Ejemplo Resuelto:** En una muestra de 20 estudiantes de Antigua, se registran sus especialidades preferidas: Ciencias (C), Letras (L), Arte (A). Los datos son: C, L, C, A, C, L, C, C, A, L, C, L, A, C, C, L, A, C, L, C. Organiza la especialidad "Ciencias" en una tabla de frecuencia.
-  - *Paso 1 Frecuencia Absoluta:* Cuenta cuántos prefieren Ciencias (C): hay 10 estudiantes ($f = 10$).
-  - *Paso 2 Frecuencia Relativa:* Divide entre el total de datos ($n = 20$): $fr = 10 / 20 = 0.50$.
-  - *Paso 3 Frecuencia Porcentual:* Multiplica por 100: $f% = 0.50 	imes 100% = 50%$.
-  - *Resultado:* Ciencias tiene frecuencia absoluta 10, relativa 0.50 y representa el 50% de la muestra.
-* **Errores Comunes:** Calcular frecuencias acumuladas para variables cualitativas nominales; la acumulación solo tiene sentido matemático si las categorías tienen un orden jerárquico implícito (variables cualitativas ordinales).
-* **Ejercicios de Práctica:**
-  1. Si en un estudio de 50 camisas vendidas en Xela, 15 son rojas, ¿cuál es la frecuencia porcentual de las camisas rojas? (R: 30%).
-  2. ¿Cuál debe ser el valor exacto de la suma de todas las frecuencias relativas en cualquier tabla cualitativa? (R: 1).
-  3. Si la frecuencia relativa de la categoría "Excelente" es de 0.18, ¿cuál es la frecuencia absoluta si el total de datos es n = 200? (R: 36).
-  4. ¿Para qué tipo de variables es adecuado hacer una tabla de contingencia bidimensional? (R: Para dos variables cualitativas analizadas simultáneamente).
-  5. Si tienes una muestra de 40 autos y 10 son de color negro, ¿cuál es su frecuencia relativa? (R: 0.25).
-* **¿Necesitas ayuda?** La organización limpia de datos cualitativos es el inicio de cualquier reporte de negocios. ¡Aprende a automatizarla con tu tutor de CEDETU!
-
-### Lección 3.2: Gráficos de Barras y Sectores (Pastel)
-* **Objetivo:** Seleccionar y diseñar gráficos de barras (frecuencias absolutas) o de sectores circulares (proporciones) para representar variables categóricas cualitativas.
-* **Explicación:** 
-  - **Gráfico de Barras:** Ideal para comparar la frecuencia absoluta de categorías independientes. Las barras se dibujan separadas para indicar que los datos son categóricos disjuntos (a diferencia del histograma de variables continuas).
-  - **Gráfico de Sectores (Pastel):** Ideal para representar partes de un todo de forma visual (frecuencias porcentuales). El ángulo de cada rebanada se calcula como: $alpha = 360^{circ} 	imes fr$.
-* **Ejemplo Resuelto:** Un restaurante en Xela vende 3 tipos de platos típicos: Pepián (40%), Jocón (35%) y Kak'ik (25%). Calcula el ángulo que debe tener la rebanada del "Kak'ik" en el gráfico de sectores circular.
-  - *Paso 1:* La frecuencia relativa del Kak'ik es $fr = 0.25$.
-  - *Paso 2:* Multiplica por 360° para hallar el ángulo: $alpha = 360^{circ} 	imes 0.25 = 90^{circ}$.
-  - *Resultado:* La rebanada del Kak'ik debe medir exactamente un ángulo de 90° (un cuarto del círculo).
-* **Errores Comunes:** Diseñar gráficos de sectores circulares con demasiadas categorías (más de 6 o 7), lo cual hace el gráfico ilegible y confuso visualmente.
-* **Ejercicios de Práctica:**
-  1. ¿Qué tipo de gráfico es mejor para mostrar la tendencia de una variable cualitativa a lo largo de varios años? (R: Gráfico de barras agrupadas o líneas categóricas).
-  2. Si la frecuencia porcentual de una categoría es del 10%, ¿cuál es el ángulo de su sector circular? (R: 36°).
-  3. ¿Por qué se dibujan las barras separadas en un diagrama de barras cualitativo? (R: Para indicar que representan categorías discretas independientes y no intervalos continuos).
-  4. Si quieres comparar las ventas de 3 sucursales en diferentes departamentos de Guatemala de forma directa, ¿cuál gráfico es ideal? (R: Gráfico de barras).
-  5. ¿Qué propiedad debe cumplir la suma de todos los porcentajes representados en un gráfico de sectores circulares? (R: Debe ser exactamente el 100%).
-* **¿Necesitas ayuda?** Diseñar gráficos estadísticos hermosos y que impacten visualmente es un arte valiosísimo en la escuela y el trabajo. ¡Domínalo junto a tu tutor de CEDETU!
-
-### Lección 3.3: Diagrama de Pareto y Ley de 80/20
-* **Objetivo:** Diseñar e interpretar un diagrama de Pareto ordenando frecuencias absolutas y acumuladas para identificar las categorías prioritarias en la toma de decisiones.
-* **Explicación:** El Diagrama de Pareto es un gráfico de barras combinada con un polígono de frecuencias acumuladas. Las barras se ordenan de mayor a menor frecuencia absoluta de izquierda a derecha. Se basa en la **Ley de Pareto (Principio de 80/20)**: el 80% de los problemas o consecuencias provienen del 20% de las causas prioritarias.
-* **Ejemplo Resuelto:** Un negocio de tutorías en Guatemala registra las razones de quejas de alumnos al mes: 1) Ejercicios confusos (60 quejas), 2) Plataforma lenta (30 quejas), 3) Horarios rígidos (10 quejas). Determina el porcentaje acumulado de las primeras dos categorías para aplicar el análisis de Pareto.
-  - *Paso 1:* Total de quejas $n = 60 + 30 + 10 = 100$ quejas.
-  - *Paso 2:* Ordena de mayor a menor: Ejercicios confusos ($f=60$), Plataforma lenta ($f=30$), Horarios ($f=10$).
-  - *Paso 3 Frecuencias Porcentuales:* Ejercicios = 60%, Plataforma = 30%.
-  - *Paso 4 Porcentaje Acumulado:* Primera categoría = 60%; Primera y segunda acumuladas = 60% + 30% = 90%.
-  - *Resultado:* Al resolver las dos primeras categorías (Ejercicios y Plataforma) se solucionarían el 90% de las quejas totales del mes, validando el principio de Pareto.
-* **Errores Comunes:** Graficar las categorías en orden desordenado o aleatorio en el eje horizontal del diagrama de Pareto, violando la regla de orden descendente indispensable.
-* **Ejercicios de Práctica:**
-  1. ¿En qué orden deben colocarse las barras en un diagrama de Pareto de izquierda a derecha? (R: De mayor a menor frecuencia absoluta).
-  2. ¿Qué establece el principio de Pareto en términos de gestión y calidad? (R: Que aproximadamente el 80% de los efectos provienen del 20% de las causas).
-  3. Si las frecuencias de fallas son: A = 80, B = 15, C = 5. ¿Cuál es el porcentaje de fallas acumulado que representan A y B juntos? (R: 95%).
-  4. ¿Qué tipo de línea se superpone en el diagrama de Pareto para mostrar la acumulación? (R: Una gráfica de línea que representa el porcentaje acumulado (de 0% a 100%)).
-  5. Si un negocio quiere mejorar la satisfacción del cliente en Xela aplicando Pareto, ¿en qué quejas debe enfocarse primero? (R: En las pocas quejas iniciales de la izquierda que representan la gran mayoría de la frecuencia absoluta acumulada).
-* **¿Necesitas ayuda?** El Diagrama de Pareto es una de las herramientas de calidad industrial más famosas del mundo corporativo. ¡Aprende a construirla de forma fácil e interactiva junto a tu tutor!
-
-## Evaluación Unidad 3
-* Se encuestó a 50 personas sobre la razón de elegir el Centro de Tutorías: A) Profesores excelentes (25), B) Flexibilidad (15), C) Precio (10). Construye la tabla de frecuencias absolutas y porcentuales ordenadas de forma descendente y calcula el porcentaje acumulado de las dos primeras. (R: Profesores = 50%; Flexibilidad = 30%; Precio = 20%. Acumulado de las dos primeras = 80%. Retroalimentación: 25/50 = 50%; 15/50 = 30%; 50% + 30% = 80%).
-* Si diseñas un gráfico circular de sectores para representar los datos de la encuesta anterior, ¿cuántos grados del círculo debe medir el sector de la categoría "Flexibilidad"? (R: 108°. Retroalimentación: 360° * 0.30 = 108°).
-* ¿Para qué sirve cruzar la línea del 80% horizontal en el diagrama de Pareto? (R: Para identificar visualmente las causas prioritarias "vitales" a la izquierda de la intersección que causan la gran mayoría de problemas).
-`,
-
-    "probabilidad-basica": `# Curso: Probabilidad Básica
-* **Materia:** Matemáticas | **Nivel sugerido:** Diversificado / Universidad
-* **Público objetivo:** Estudiantes de bachillerato y universitarios que inician el estudio del azar, el cálculo de probabilidades y la toma de decisiones bajo incertidumbre.
-* **Objetivos de aprendizaje:** Definir experimentos aleatorios y espacios muestrales, calcular probabilidades elementales usando la Regla de Laplace, aplicar reglas de suma y producto para eventos condicionales e independientes, y resolver problemas utilizando el Teorema de Bayes.
-
-## Unidad 1: Fundamentos y Espacio Muestral
-### Lección 1.1: Experimentos Aleatorios y Espacio Muestral
-* **Objetivo:** Definir experimentos aleatorios, espacio muestral y eventos, identificando los resultados posibles en situaciones de juego y cotidianas.
-* **Explicación:** 
-  - **Experimento Aleatorio:** Aquel cuyo resultado no se puede predecir con certeza antes de realizarlo, incluso si se repite bajo las mismas condiciones (ej. lanzar un dado). Su contraparte es el experimento determinista (ej. calentar agua a 100°C).
-  - **Espacio Muestral ($S$ o $Omega$):** El conjunto completo de todos los resultados posibles y distintos de un experimento aleatorio.
-  - **Evento (o Suceso):** Cualquier subconjunto de resultados del espacio muestral (ej. obtener número par al lanzar un dado).
-* **Ejemplo Resuelto:** Se lanzan dos monedas quetzal al aire al mismo tiempo. Escribe el espacio muestral completo del experimento y define el evento "obtener al menos un escudo (E)". (Nota: escudo E, cara C).
-  - *Paso 1 Espacio Muestral:* Escribe las parejas posibles: $S = {CC, CE, EC, EE}$. Hay 4 resultados en total.
-  - *Paso 2 Identificar Evento:* "Al menos un escudo" significa 1 o 2 escudos. Los resultados que cumplen son: $A = {CE, EC, EE}$.
-  - *Resultado:* $S = {CC, CE, EC, EE}$ y $A = {CE, EC, EE}$.
-* **Errores Comunes:** Omitir el orden en experimentos encadenados, asumiendo que obtener cara y escudo (CE) es el mismo resultado único que escudo y cara (EC) en el espacio muestral.
-* **Ejercicios de Práctica:**
-  1. ¿Cuál es el espacio muestral de lanzar un dado de 6 caras común? (R: S = {1, 2, 3, 4, 5, 6}).
-  2. Clasifica el experimento "soltar una piedra desde un puente de Antigua y ver si cae por gravedad" como determinista o aleatorio. (R: Determinista).
-  3. Se lanza un dado y se define el evento "obtener un número mayor que 4". Escribe el subconjunto. (R: {5, 6}).
-  4. ¿Cuántos resultados posibles contiene el espacio muestral de lanzar tres monedas al aire al mismo tiempo? (R: 8 resultados. Retroalimentación: 2³ = 8).
-  5. ¿Cómo se define un "evento imposible" en teoría de probabilidad? (R: Aquel subconjunto que está vacío y no contiene ningún resultado del espacio muestral, su probabilidad es exactamente cero).
-* **¿Necesitas ayuda?** Visualizar el espacio muestral es la base de todo el cálculo de probabilidad. ¡Toma una clase interactiva con tu tutor de CEDETU y domina este pilar!
-
-### Lección 1.2: Definición Clásica de Probabilidad (Regla de Laplace)
-* **Objetivo:** Calcular la probabilidad de eventos simples utilizando la fórmula fundamental de Laplace de casos favorables sobre casos posibles en espacios equiprobables.
-* **Explicación:** Si todos los resultados de un espacio muestral son igualmente probables de ocurrir (equiprobables), la probabilidad de un evento $A$ se calcula mediante la **Regla de Laplace**:
-  $P(A) = rac{	ext{Número de casos favorables a } A}{	ext{Número total de casos posibles en } S}$
-  La probabilidad es un número decimal entre 0 y 1, que también se expresa como porcentaje (de 0% a 100%).
-* **Ejemplo Resuelto:** En una tómbola escolar en Sololá hay 30 papeles numerados del 1 al 30. Si se extrae un papel al azar, ¿cuál es la probabilidad de que sea un número múltiplo de 5?
-  - *Paso 1 Casos Posibles:* El espacio muestral completo tiene 30 resultados ($N = 30$).
-  - *Paso 2 Casos Favorables:* Múltiplos de 5 entre 1 y 30: $A = {5, 10, 15, 20, 25, 30}$. Hay 6 números favorables ($n(A) = 6$).
-  - *Paso 3 Aplicar Laplace:* $P(A) = 6 / 30 = 1 / 5 = 0.20$.
-  - *Resultado:* La probabilidad es de 0.20 o 20%.
-* **Errores Comunes:** Expresar probabilidades como números mayores que 1 o menores que 0, lo cual es una violación matemática grave de los axiomas de la probabilidad.
-* **Ejercicios de Práctica:**
-  1. ¿Cuál es la probabilidad de obtener un número par al lanzar un dado de 6 caras? (R: 0.50 o 50%).
-  2. En una baraja de 52 cartas, ¿cuál es la probabilidad de extraer un as al azar? (R: 1/13 o 7.69%).
-  3. Si en un salón de 40 estudiantes en Antigua 24 son mujeres, ¿cuál es la probabilidad de elegir un hombre al azar? (R: 0.40 o 40%. Retroalimentación: Hombres = 40 - 24 = 16. P = 16/40 = 0.4).
-  4. ¿Cuál es la probabilidad de obtener exactamente 7 al lanzar un dado común de 6 caras? (R: 0. Evento imposible).
-  5. En una bolsa hay 5 canicas rojas, 3 azules y 2 verdes. ¿Cuál es la probabilidad de extraer una canica azul? (R: 0.30 o 30%).
-* **¿Necesitas ayuda?** La regla de Laplace es el punto de partida para resolver cualquier probabilidad de juegos de azar. ¡Practícala de forma divertida con tu tutor de CEDETU!
-
-### Lección 1.3: Enfoque Frecuencial y Subjetivo
-* **Objetivo:** Diferenciar entre la probabilidad clásica (Laplace), la probabilidad frecuencial (basada en la experimentación repetida) y la subjetiva (basada en el juicio de expertos).
-* **Explicación:** 
-  - **Enfoque Clásico (Laplace):** Se calcula a priori sin realizar el experimento, asumiendo simetría y equiprobabilidad.
-  - **Enfoque Frecuencial (Empírico):** Se calcula a posteriori después de repetir el experimento un gran número de veces ($N$): $P(A) approx 	ext{Frecuencia Absoluta de } A / N$. Por la **Ley de los Grandes Números**, a mayor repetición, la probabilidad empírica se acerca a la teórica.
-  - **Enfoque Subjetivo:** Se basa en la intuición, experiencia o juicio de una persona ante eventos no repetibles (ej. probabilidad de que un nuevo negocio en Xela sea exitoso).
-* **Ejemplo Resuelto:** Un laboratorio farmacéutico en Guatemala prueba una vacuna en 10,000 voluntarios y registra que 9,850 desarrollaron inmunidad. ¿Qué probabilidad se está reportando y cuánto vale?
-  - *Paso 1:* Los datos provienen de un registro empírico real repetido en una muestra gigante de personas. No es un análisis simétrico a priori.
-  - *Paso 2 Cálculo:* $P(	ext{Inmunidad}) approx 9,850 / 10,000 = 0.985$.
-  - *Resultado:* Probabilidad Frecuencial de 0.985 o 98.5%.
-* **Errores Comunes:** Asumir que la probabilidad teórica de un dado de obtener un "6" (16.6%) significa que si lanzas el dado 6 veces obtendrás exactamente un 6 en la práctica, ignorando la variación aleatoria de muestras pequeñas.
-* **Ejercicios de Práctica:**
-  1. Si lanzas una moneda 1,000 veces y obtienes 512 caras, ¿cuál es la probabilidad frecuencial de obtener cara en esa moneda? (R: 0.512 o 51.2%).
-  2. ¿Qué ley matemática establece que al aumentar indefinidamente el número de ensayos de un experimento, la probabilidad frecuencial tiende a coincidir con la probabilidad clásica teórica? (R: La Ley de los Grandes Números).
-  3. Un economista estima: "Hay un 70% de probabilidad de que la inflación disminuya el próximo año en el país". ¿Qué enfoque aplica? (R: Enfoque Subjetivo).
-  4. ¿Para qué tipo de situaciones o eventos es la probabilidad subjetiva la única forma viable de análisis? (R: Para eventos únicos, no repetibles y de los cuales no existen datos históricos masivos o condiciones simétricas).
-  5. Si lanzas un dado 60 veces y obtienes el número 5 en 12 ocasiones, ¿cuál es su probabilidad empírica o frecuencial? (R: 0.20 o 20%).
-* **¿Necesitas ayuda?** La probabilidad empírica es el motor de los seguros y la medicina real. ¡Aprende a analizarla de forma muy analítica al lado de tu tutor!
-
-## Evaluación Unidad 1
-* Se lanzan tres monedas al aire al mismo tiempo. Escribe el espacio muestral completo y calcula la probabilidad clásica de obtener exactamente dos caras (C) y un escudo (E). (R: S = {CCC, CCE, CEC, ECC, EEC, ECE, CEE, EEE}. Total = 8 resultados. Favorables a 2C y 1E = {CCE, CEC, ECC} (3 casos). P = 3/8 = 0.375 o 37.5%).
-* Si una fábrica produce 5,000 piezas mecánicas y en el control de calidad se detectan 25 defectuosas, ¿cuál es la probabilidad empírica de que una pieza elegida al azar esté defectuosa? (R: 0.005 o 0.5%).
-* ¿Cuál es la probabilidad del evento seguro (aquel que contiene todo el espacio muestral)? (R: Exactamente 1 o 100%).
-
----
-
-## Unidad 2: Reglas de Probabilidad
-### Lección 2.1: Regla de la Adición (Evento Unión)
-* **Objetivo:** Calcular la probabilidad de la unión de dos eventos (evento A o evento B) diferenciando entre eventos mutuamente excluyentes y no excluyentes.
-* **Explicación:** El evento unión ($A cup B$) ocurre si se cumple el evento A, el evento B o ambos al mismo tiempo.
-  - **Eventos Mutuamente Excluyentes:** No pueden ocurrir al mismo tiempo (su intersección es vacía: $P(A cap B) = 0$).
-    - Fórmula: $P(A cup B) = P(A) + P(B)$.
-  - **Eventos No Excluyentes:** Sí pueden ocurrir juntos. Para no contar doble la intersección, la restamos:
-    - Fórmula: $P(A cup B) = P(A) + P(B) - P(A cap B)$.
-* **Ejemplo Resuelto:** Si extraes una carta al azar de una baraja estándar de 52 cartas, ¿cuál es la probabilidad de que la carta extraída sea un Rey (R) o un corazón (C)?
-  - *Paso 1 Identificar Eventos:* Hay 4 Reyes ($P(R) = 4/52$) y 13 cartas de corazón ($P(C) = 13/52$).
-  - *Paso 2 Intersección:* ¿Hay algún Rey que sea de corazón? Sí, el Rey de corazones ($P(R cap C) = 1/52$). Los eventos son no excluyentes.
-  - *Paso 3 Aplicar Fórmula:* $P(R cup C) = rac{4}{52} + rac{13}{52} - rac{1}{52} = rac{16}{52} = rac{4}{13} approx 0.307$.
-  - *Resultado:* La probabilidad es de 0.307 o 30.7%.
-* **Errores Comunes:** Olvidar restar la intersección en eventos no excluyentes, lo que infla de forma irreal la probabilidad del evento unión.
-* **Ejercicios de Práctica:**
-  1. Al lanzar un dado, ¿cuál es la probabilidad de obtener un 3 o un 5? (R: 1/3 o 33.3%. Retroalimentación: Eventos mutuamente excluyentes: 1/6 + 1/6 = 2/6 = 1/3).
-  2. En una urna hay 10 esferas: 4 rojas, 3 azules y 3 verdes. ¿Cuál es la probabilidad de extraer una esfera roja o verde? (R: 0.70 o 70%).
-  3. En un salón de 30 estudiantes en Xela, 15 juegan fútbol, 10 juegan baloncesto y 5 juegan ambos deportes. Si eliges un estudiante al azar, ¿cuál es la probabilidad de que juegue fútbol o baloncesto? (R: 0.67 o 66.7%. Retroalimentación: P = 15/30 + 10/30 - 5/30 = 20/30 = 2/3).
-  4. ¿Cómo se define el término "eventos mutuamente excluyentes"? (R: Eventos que no tienen elementos comunes y cuya probabilidad de ocurrir juntos es exactamente cero).
-  5. Al lanzar un dado, ¿cuál es la probabilidad de obtener un número impar o un número múltiplo de 3? (R: 0.67 o 66.7%. Retroalimentación: Impares = {1,3,5} (P=3/6), Múltiplos 3 = {3,6} (P=2/6), Intersección = {3} (P=1/6). P = 3/6 + 2/6 - 1/6 = 4/6 = 2/3).
-* **¿Necesitas ayuda?** La regla de la suma es fundamental para entender clasificaciones y agrupaciones de datos. ¡Domínala con tu tutor de CEDETU!
-
-### Lección 2.2: Regla de la Multiplicación e Independencia
-* **Objetivo:** Calcular la probabilidad de la intersección de dos eventos (evento A y evento B) aplicando la regla de multiplicación para eventos independientes y dependientes (muestreo con y sin reemplazo).
-* **Explicación:** El evento intersección ($A cap B$) ocurre si se cumplen el evento A y el evento B al mismo tiempo de forma encadenada.
-  - **Eventos Independientes:** La ocurrencia de uno no afecta en absoluto la probabilidad del otro (ej. lanzar una moneda dos veces).
-    - Fórmula: $P(A cap B) = P(A) 	imes P(B)$.
-  - **Eventos Dependientes (Condicionales):** La ocurrencia de uno altera la probabilidad del otro (ej. extraer cartas consecutivas sin devolverlas a la baraja).
-    - Fórmula: $P(A cap B) = P(A) 	imes P(B|A)$  donde $P(B|A)$ es la probabilidad de B dado que A ya ocurrió.
-* **Ejemplo Resuelto:** Una urna contiene 5 canicas rojas y 3 azules. Se extraen dos canicas una tras otra sin reemplazo (no se devuelven). Calcula la probabilidad de que ambas canicas extraídas sean rojas.
-  - *Paso 1 Primera Extracción:* Hay 5 canicas rojas de un total de 8: $P(R_1) = 5/8$.
-  - *Paso 2 Segunda Extracción (sin reemplazo):* Quedan 4 canicas rojas de un total de 7 canicas restantes: $P(R_2|R_1) = 4/7$.
-  - *Paso 3 Multiplicación:* $P(R_1 cap R_2) = rac{5}{8} 	imes rac{4}{7} = rac{20}{56} = rac{5}{14} approx 0.357$.
-  - *Resultado:* La probabilidad de extraer dos canicas rojas consecutivas es de 0.357 o 35.7%.
-* **Errores Comunes:** Mantener el mismo denominador total en la segunda fracción en problemas de muestreo sin reemplazo, ignorando que el total de elementos de la urna disminuyó.
-* **Ejercicios de Práctica:**
-  1. Lanzas una moneda quetzal y un dado común al mismo tiempo. ¿Cuál es la probabilidad de obtener escudo y el número 6? (R: 1/12 o 8.33%. Retroalimentación: Eventos independientes: 1/2 * 1/6 = 1/12).
-  2. Extraes dos cartas de una baraja de 52 cartas con reemplazo (devolviendo la primera). ¿Cuál es la probabilidad de obtener dos ases seguidos? (R: 1/169 o 0.59%. Retroalimentación: 4/52 * 4/52 = 1/13 * 1/13 = 1/169).
-  3. En la misma baraja de 52 cartas, ¿cuál es la probabilidad de extraer dos ases seguidos sin reemplazo? (R: 1/221 o 0.45%. Retroalimentación: 4/52 * 3/51 = 1/13 * 1/17 = 1/221).
-  4. Si la probabilidad de que llueva en Tecpán hoy es 0.60 y la de que llueva mañana es 0.50 de forma independiente, ¿cuál es la probabilidad de que llueva ambos días? (R: 0.30 o 30%).
-  5. ¿Cómo se define el concepto de eventos independientes? (R: Eventos tales que la ocurrencia de uno no modifica en absoluto la probabilidad de ocurrencia del otro).
-* **¿Necesitas ayuda?** Saber distinguir entre muestreos con y sin reemplazo es la base de los modelos de simulación y control industrial de calidad. ¡Aprende los trucos prácticos con tu tutor!
-
-### Lección 2.3: La Probabilidad del Complemento
-* **Objetivo:** Calcular la probabilidad de que un evento no ocurra utilizando la regla del complemento $P(A') = 1 - P(A)$ para simplificar problemas complejos del tipo "al menos uno".
-* **Explicación:** El complemento de un evento $A$ (denotado como $A'$ o $A^c$) está formado por todos los resultados del espacio muestral que no pertenecen a $A$. Dado que todo el espacio muestral suma una probabilidad de 1:
-  - Fórmula: $P(A') = 1 - P(A)$.
-  Es sumamente útil para problemas de probabilidad del tipo "al menos uno", que serían eternos de calcular sumando casos individuales directos.
-* **Ejemplo Resuelto:** Lanzas una moneda quetzal 4 veces consecutivas al aire. ¿Cuál es la probabilidad de obtener al menos un escudo (E) en los 4 lanzamientos?
-  - *Paso 1 Identifica el Complemento:* Lo contrario de "obtener al menos un escudo" es el evento "no obtener ningún escudo en absoluto" (es decir, obtener puras caras: CCCC).
-  - *Paso 2 Calcula el Complemento:* La probabilidad de obtener cara en un lanzamiento es 1/2. Al ser lanzamientos independientes:
-    $P(	ext{CCCC}) = (1/2)^4 = 1/16 = 0.0625$.
-  - *Paso 3 Aplica la Regla del Complemento:*
-    $P(	ext{Al menos un Escudo}) = 1 - P(	ext{CCCC}) = 1 - 1/16 = 15/16 = 0.9375$.
-  - *Resultado:* La probabilidad es de 0.9375 o 93.75%.
-* **Errores Comunes:** Intentar calcular de forma directa todas las combinaciones posibles de obtener 1, 2, 3 o 4 escudos a pie, aumentando dramáticamente la probabilidad de cometer un error aritmético sencillo.
-* **Ejercicios de Práctica:**
-  1. Si la probabilidad de que un lote de abono de Sololá sea defectuoso es de 0.03, ¿cuál es la probabilidad de que sea un lote no defectuoso? (R: 0.97).
-  2. Lanzas dos dados comunes al mismo tiempo. ¿Cuál es la probabilidad de obtener una suma de caras diferente de 7? (Nota: La probabilidad de sumar exactamente 7 es 6/36 = 1/6). (R: 5/6 o 83.3%).
-  3. Si la probabilidad de fallar un tiro penal en fútbol es del 25%, ¿cuál es la probabilidad de anotar el gol? (R: 75%).
-  4. Lanzas una moneda 3 veces. ¿Cuál es la probabilidad de obtener al menos una cara? (R: 7/8 o 87.5%. Retroalimentación: Complemento es puras escudos: EEE (P=1/8). 1 - 1/8 = 7/8).
-  5. ¿Qué propiedad geométrica o axiomática fundamenta que la suma de la probabilidad de un evento y su complemento sea exactamente igual a 1? (R: El axioma de coligación y certidumbre del espacio muestral completo).
-* **¿Necesitas ayuda?** La regla del complemento es la herramienta que ahorra más tiempo de examen en las pruebas de admisión universitaria. ¡Conoce todos sus usos lógicos junto a tu tutor de CEDETU!
-
-## Evaluación Unidad 2
-* En una encuesta de consumo en Xela, el 70% de las personas toma café, el 40% consume pan dulce en las tardes y el 30% hace ambas cosas simultáneamente. Si eliges una persona al azar, ¿cuál es la probabilidad de que consuma café o pan dulce? (R: 0.80 o 80%. Retroalimentación: P(A∪B) = 0.70 + 0.40 - 0.30 = 0.80).
-* En un almacén de Antigua hay una caja con 10 bombillas, de las cuales 3 están quemadas. Si se extraen dos bombillas al azar una tras otra sin reemplazo, ¿cuál es la probabilidad de que ninguna esté quemada (ambas buenas)? (R: 7/15 ≈ 0.467. Retroalimentación: Primera buena = 7/10; Segunda buena = 6/9. P = 7/10 * 6/9 = 42/90 = 7/15).
-* Si la probabilidad de que un estudiante apruebe el examen de admisión a la universidad es del 35%, ¿cuál es la probabilidad de que repruebe? (R: 65%).
-
----
-
-## Unidad 3: Probabilidad Condicional y Teorema de Bayes
-### Lección 3.1: Probabilidad Condicional
-* **Objetivo:** Calcular la probabilidad de un evento A dado que ya ha ocurrido el evento B, aplicando la fórmula de probabilidad condicional.
-* **Explicación:** La probabilidad condicional mide la probabilidad de un evento sabiendo que se ha restringido el espacio muestral debido a la ocurrencia de otro evento previo.
-  - Fórmula: $P(A|B) = rac{P(A cap B)}{P(B)} quad (	ext{para } P(B) > 0)$.
-  - $P(A|B)$ se lee "probabilidad de A dado B".
-* **Ejemplo Resuelto:** En un salón de 100 estudiantes universitarios, 40 estudian ingeniería, 30 estudian física y 20 estudian ambas carreras al mismo tiempo. Si se elige al azar un estudiante que sabemos que estudia ingeniería (evento B), ¿cuál es la probabilidad de que también estudie física (evento A)?
-  - *Paso 1 Identificar Probabilidades:* $P(	ext{Ingeniería}) = 40/100 = 0.40$. $P(	ext{Ambas}) = P(	ext{Física} cap 	ext{Ingeniería}) = 20/100 = 0.20$.
-  - *Paso 2 Aplicar Fórmula:* $P(	ext{Física}|	ext{Ingeniería}) = rac{P(	ext{Física} cap 	ext{Ingeniería})}{P(	ext{Ingeniería})} = rac{0.20}{0.40} = 0.50$.
-  - *Resultado:* Hay una probabilidad del 50% de que estudie física dado que ya sabemos que es estudiante de ingeniería. (Nota cómo el espacio muestral se redujo de 100 estudiantes totales a solo los 40 ingenieros).
-* **Errores Comunes:** Dividir entre la probabilidad del evento condicionado $P(A)$ en lugar de dividir por el evento condición $P(B)$ en el denominador.
-* **Ejercicios de Práctica:**
-  1. Si P(A) = 0.30, P(B) = 0.60 y P(A ∩ B) = 0.18, calcula P(A|B). (R: 0.30. Retroalimentación: P(A|B) = 0.18 / 0.60 = 0.3. Como P(A|B) = P(A), los eventos son independientes).
-  2. En un salón de 50 alumnos en Antigua, 20 juegan tenis. Si sabemos que 10 juegan tenis y squash, y elegimos a un tenista al azar, ¿cuál es la probabilidad de que juegue squash? (R: 0.50 o 50%).
-  3. Si la probabilidad de que una máquina falle es 0.10 y la probabilidad de que falle por falta de lubricación es 0.08, ¿cuál es la probabilidad de que falte lubricación dado que la máquina ya falló? (R: 0.80 o 80%).
-  4. ¿Cómo se expresa formalmente la probabilidad de que ocurra el evento Y bajo la condición de que el evento X ya haya ocurrido? (R: P(Y|X)).
-  5. Si P(A|B) = 0.50 y P(B) = 0.40, calcula la probabilidad de la intersección P(A ∩ B). (R: 0.20. Retroalimentación: P(A ∩ B) = P(A|B) * P(B) = 0.5 * 0.4 = 0.2).
-* **¿Necesitas ayuda?** La probabilidad condicional es fundamental para restringir bases de datos y hacer análisis demográficos selectivos. ¡Aprende a dominarla con tu tutor de CEDETU!
-
-### Lección 3.2: Tablas de Contingencia y Diagramas de Árbol
-* **Objetivo:** Organizar problemas de probabilidad condicional encadenados en diagramas de árbol o tablas de contingencia bidimensionales para resolver de forma visual e infalible.
-* **Explicación:** 
-  - **Tabla de Contingencia:** Tabla cruzada de dos variables cualitativas que muestra frecuencias conjuntas y totales marginales. Permite calcular probabilidades condicionales dividiendo la celda interna por el total de la fila o columna correspondiente.
-  - **Diagrama de Árbol:** Representación gráfica de eventos encadenados por ramas. Las probabilidades de las ramas sucesivas representan probabilidades condicionales; la multiplicación de las ramas de un camino da la intersección.
-* **Ejemplo Resuelto:** En un examen médico en Ciudad de Guatemala se evalúa a una población de fumadores (F) y no fumadores (NF) y la presencia de tos crónica (T) en la siguiente tabla:
-  - F y T = 25 personas | F y No T = 15 personas (Total F = 40)
-  - NF y T = 10 personas | NF y No T = 50 personas (Total NF = 60)
-  - Total de personas encuestadas = 100.
-  Si eliges a un fumador al azar de esta muestra, ¿cuál es la probabilidad de que tenga tos crónica?
-  - *Paso 1 Restringir al estrato:* El problema pide "dado que es fumador". Nos enfocamos solo en la fila de Fumadores (Total F = 40).
-  - *Paso 2 Casos Favorables:* Fumadores que tienen tos crónica = 25 personas.
-  - *Paso 3 Calcular:* $P(	ext{Tos}|	ext{Fumador}) = 25 / 40 = 5/8 = 0.625$.
-  - *Resultado:* Hay un 62.5% de probabilidad de tener tos crónica dentro del grupo de fumadores de la muestra.
-* **Errores Comunes:** Dividir por el gran total de 100 encuestados al calcular una probabilidad condicionada en una tabla de contingencia, cometiendo un error conceptual básico.
-* **Ejercicios de Práctica:**
-  1. Con la tabla anterior, ¿cuál es la probabilidad de elegir a una persona con tos crónica en toda la muestra? (R: 0.35 o 35%. Retroalimentación: Total Tos = 25 + 10 = 35 de 100).
-  2. ¿Qué representa la multiplicación de las probabilidades a lo largo de una sola rama de un diagrama de árbol? (R: La probabilidad de la intersección o conjunción de todos los eventos del camino).
-  3. En un diagrama de árbol de dos etapas, si la primera rama tiene P(A) = 0.4 y la rama secundaria tiene P(B|A) = 0.7, ¿cuánto vale la probabilidad de la intersección P(A ∩ B)? (R: 0.28).
-  4. ¿Qué propiedad debe cumplir la suma de las probabilidades de todas las ramas que parten de un mismo vértice o nodo común en un diagrama de árbol? (R: Debe ser exactamente igual a 1).
-  5. Con la tabla del ejemplo resuelto, si eliges a una persona que no tiene tos crónica, ¿cuál es la probabilidad de que no sea fumadora? (R: 0.769 o 76.9%. Retroalimentación: Total No Tos = 15 + 50 = 65. No Fumadores y No Tos = 50. P = 50/65 ≈ 0.769).
-* **¿Necesitas ayuda?** Los diagramas de árbol hacen sencillos los problemas de probabilidad condicional más enredados del bachillerato. ¡Construye los tuyos junto a tu tutor de CEDETU!
-
-### Lección 3.3: Introducción al Teorema de Bayes
-* **Objetivo:** Resolver problemas de probabilidad de causas (Teorema de Bayes) a partir de probabilidades a priori y verosimilitudes en contextos reales de diagnóstico y calidad.
-* **Explicación:** El Teorema de Bayes calcula la probabilidad a posteriori de una causa o hipótesis $A_i$ dada la ocurrencia de un efecto o resultado observado $B$:
-  $P(A_i|B) = rac{P(A_i) 	imes P(B|A_i)}{P(B)}$
-  donde $P(B) = sum P(A_j) 	imes P(B|A_j)$ es la Ley de Probabilidad Total (la suma de todas las formas en las que puede ocurrir el efecto B).
-* **Ejemplo Resuelto:** Una clínica de salud en Guatemala aplica una prueba para detectar una enfermedad que padece el 1% de la población (probabilidad a priori $P(E) = 0.01$). La prueba tiene una exactitud de diagnóstico (sensibilidad) del 95% para personas enfermas ($P(+|E) = 0.95$), pero da un 5% de falsos positivos en personas sanas ($P(+|S) = 0.05$). Si una persona al azar se hace la prueba y da positivo (+), ¿cuál es la probabilidad real de que esté enferma?
-  - *Paso 1 Probabilidad Total de dar Positivo P(+):*
-    $P(+) = P(E) cdot P(+|E) + P(S) cdot P(+|S) = 0.01 	imes 0.95 + 0.99 	imes 0.05 = 0.0095 + 0.0495 = 0.0590$.
-  - *Paso 2 Aplicar Teorema de Bayes:*
-    $P(E|+) = rac{P(E) cdot P(+|E)}{P(+)} = rac{0.0095}{0.0590} approx 0.161$.
-  - *Resultado:* Hay solo un 16.1% de probabilidad de que la persona que dio positivo realmente tenga la enfermedad (Esto se debe a que la enfermedad es sumamente rara y el número absoluto de falsos positivos en personas sanas es mayor que el de verdaderos positivos).
-* **Errores Comunes:** Confundir la exactitud teórica de la prueba en el laboratorio con la probabilidad real de estar enfermo dado un resultado positivo en la calle (lo cual confunde a muchos profesionales de la salud).
-* **Ejercicios de Práctica:**
-  1. Si una fábrica de Xela compra el 60% de sus insumos al Proveedor A y el 40% al Proveedor B. El Proveedor A tiene un 2% de piezas defectuosas y el B un 5%. Si se elige una pieza al azar y resulta defectuosa, calcula la probabilidad total de que sea defectuosa. (R: 0.032 o 3.2%).
-  2. Con los datos anteriores, calcula la probabilidad de que provenga del Proveedor A dado que resultó defectuosa. (R: 0.375 o 37.5%. Retroalimentación: P(A|D) = (0.6 * 0.02) / 0.032 = 0.012 / 0.032 = 0.375).
-  3. ¿Cómo se le conoce a la probabilidad inicial P(A_i) asignada a un evento antes de contar con nueva información o pruebas de diagnóstico en el Teorema de Bayes? (R: Probabilidad a Priori).
-  4. ¿Qué es la "sensibilidad" de una prueba de diagnóstico médico en términos de probabilidad condicional? (R: La probabilidad de dar positivo dado que el paciente realmente padece la enfermedad: P(+|Enfermo)).
-  5. Si P(A) = 0.50, P(B|A) = 0.20 y la probabilidad total P(B) = 0.25, calcula P(A|B). (R: 0.40. Retroalimentación: P(A|B) = 0.5 * 0.2 / 0.25 = 0.1 / 0.25 = 0.4).
-* **¿Necesitas ayuda?** El Teorema de Bayes es uno de los logros más hermosos del razonamiento lógico matemático y es la base de los filtros de spam y la Inteligencia Artificial. ¡Vuélvete un experto en Bayes junto a tu tutor de CEDETU!
-
-## Evaluación Unidad 3
-* Tres máquinas A, B y C producen el 50%, 30% y 20% del total de artículos de una fábrica. Los porcentajes de artículos defectuosos de cada máquina son 1%, 2% y 3% respectivamente. Si se selecciona un artículo al azar y resulta defectuoso, ¿cuál es la probabilidad de que haya sido producido por la máquina C? (R: 0.353 o 35.3%. Retroalimentación: Probabilidad total defectuoso = 0.50*0.01 + 0.30*0.02 + 0.20*0.03 = 0.005 + 0.006 + 0.006 = 0.017. P(C|D) = (0.20 * 0.03) / 0.017 = 0.006 / 0.017 = 6/17 ≈ 0.353).
-* En un colegio de Antigua, el 60% de los alumnos estudia inglés, el 40% estudia francés y el 20% estudia ambos. Si elegimos al azar a un alumno que estudia francés, ¿cuál es la probabilidad de que también estudie inglés? (R: 0.50 o 50%. Retroalimentación: P(I|F) = P(I∩F)/P(F) = 0.20 / 0.40 = 0.50).
-* ¿Quién formuló originalmente el teorema que permite actualizar nuestras creencias estadísticas y estimaciones lógicas a partir de evidencias experimentales nuevas? (R: El reverendo y matemático británico Thomas Bayes en el siglo XVIII).
-`,
+    "probabilidad-basica": {
+    "isRichCourse": true,
+    "title": "Probabilidad Básica",
+    "units": [
+        {
+            "title": "Unidad 1: Introducción a la Probabilidad y Eventos",
+            "lessons": [
+                {
+                    "id": "experimentos-aleatorios",
+                    "title": "Lección 1.1: Experimentos Aleatorios y Deterministas",
+                    "introduction": "Comprende la diferencia fundamental entre sucesos regidos por el azar (aleatorios) y por leyes físicas exactas (deterministas).",
+                    "explanationHtml": "<p>En las ciencias y en la vida diaria, nos enfrentamos a dos clases de fenómenos según la posibilidad de predecir su resultado exacto:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>1. Experimentos Deterministas:</strong> Son aquellos en los que, bajo las mismas condiciones iniciales, **podemos predecir con total certeza el resultado final** antes de realizarlo (ej: dejar caer una manzana y predecir que caerá por gravedad).</li><li><strong>2. Experimentos Aleatorios:</strong> Son aquellos en los que, aun realizando el experimento bajo las mismas condiciones, **no podemos predecir el resultado exacto**, solo conocemos el conjunto de todos los resultados posibles (ej: lanzar un dado o una moneda al aire).</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Definiciones Base</p><p class=\"text-base font-mono font-extrabold text-primary\">Determinista: Ley física fija &rArr; 100% predecible</p><p class=\"text-base font-mono font-extrabold text-primary\">Aleatorio: Azar &rArr; Múltiples resultados posibles</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"22\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">DETERMINISTA VS ALEATORIO</text><rect x=\"20\" y=\"40\" width=\"115\" height=\"55\" fill=\"#eff6ff\" stroke=\"#bfdbfe\" rx=\"8\" /><text x=\"77.5\" y=\"58\" font-size=\"9\" fill=\"#1e40af\" font-weight=\"extrabold\" text-anchor=\"middle\">GRAVEDAD (Det.)</text><path d=\"M 77.5 70 L 77.5 88\" stroke=\"#1e40af\" stroke-width=\"2\" marker-end=\"url(#arrow)\" /><circle cx=\"77.5\" cy=\"70\" r=\"4\" fill=\"#2563eb\" /><rect x=\"165\" y=\"40\" width=\"115\" height=\"55\" fill=\"#ecfdf5\" stroke=\"#a7f3d0\" rx=\"8\" /><text x=\"222.5\" y=\"58\" font-size=\"9\" fill=\"#065f46\" font-weight=\"extrabold\" text-anchor=\"middle\">MONEDA (Aleat.)</text><text x=\"222.5\" y=\"76\" font-size=\"10\" font-family=\"monospace\" fill=\"#059669\" font-weight=\"extrabold\" text-anchor=\"middle\">¿Cara o Escudo?</text></svg>",
+                    "svgDescription": "Comparativa visual. La caída de un objeto es determinista (predecible por gravedad). El lanzamiento de una moneda es aleatorio (regido por el azar).",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Clasifica las siguientes situaciones: a) Calentar agua limpia a nivel del mar a 100°C y evaluar si hierve, b) Lanzar un dado estándar y ver qué número sale.</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1 Situación a (Hervir agua):</strong> Bajo condiciones estándar, el agua hierve siempre a 100°C de forma exacta y repetible. Es un **Fenómeno determinista**.</li><li><strong>Paso 2 Situación b (Lanzar dado):</strong> Conocemos los resultados posibles (1 al 6), pero no podemos predecir si saldrá exactamente un 5 en el siguiente tiro. Es un **Fenómeno aleatorio**.</li></ol>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li>generic.chaos-vs-random<strong>Confundir falta de información con aleatoriedad:</strong> Pensar que el clima es determinista porque los meteorólogos tienen computadoras. En la práctica, al haber caos y variables complejas, se modela y trata como un experimento aleatorio (probabilidad de lluvia).</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Clasifica el 'lanzamiento de una moneda para decidir quién inicia un partido'. (Escribe: aleatorio o determinista):",
+                            "correctAnswer": "aleatorio",
+                            "hint": "No podemos saber con total seguridad si caerá cara o escudo antes de lanzarla.",
+                            "feedbackCorrect": "¡Excelente! El lanzamiento de una moneda es un experimento aleatorio.",
+                            "feedbackIncorrect": "Incorrecto. Está regido por el azar, por lo que es 'aleatorio'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Clasifica 'colocar una taza de agua limpia en un congelador a -10°C para ver si se congela':",
+                            "correctAnswer": "determinista",
+                            "hint": "Por leyes físicas termodinámicas, sabemos con 100% de certeza que se congelará.",
+                            "feedbackCorrect": "¡Perfecto! Al ser un proceso con resultado 100% predecible, es determinista.",
+                            "feedbackIncorrect": "Incorrecto. Se rige por leyes físicas fijas y es totalmente predecible: es 'determinista'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cómo se le conoce al conjunto de todos los resultados posibles en un experimento aleatorio?",
+                            "correctAnswer": "espacio muestral",
+                            "hint": "Se suele denotar con la letra S o la letra griega Omega (escríbelo sin tildes).",
+                            "feedbackCorrect": "¡Excelente! Se llama espacio muestral.",
+                            "feedbackIncorrect": "Incorrecto. El conjunto de todos los resultados se llama 'espacio muestral'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cuál de las siguientes situaciones se clasifica de forma correcta como un experimento ALEATORIO?",
+                            "options": [
+                                "Extraer una carta de una baraja estándar tapada y adivinar su color",
+                                "Calcular el área de un círculo usando la fórmula geométrica A = πr²",
+                                "Mezclar un ácido fuerte con una base y medir el calor liberado",
+                                "Dejar caer una piedra desde un tercer piso y medir su aceleración"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Debe ser un fenómeno donde no se pueda predecir con absoluta certeza el resultado exacto.",
+                            "feedbackCorrect": "¡Excelente! Extraer la carta es un experimento aleatorio.",
+                            "feedbackIncorrect": "Incorrecto. Las otras opciones son fórmulas y leyes físicas deterministas. Extraer la carta depende del azar.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Un experimento determinista se caracteriza fundamentalmente porque:",
+                            "options": [
+                                "Siempre se obtiene exactamente el mismo resultado al repetirse bajo las mismas condiciones",
+                                "Su resultado depende enteramente de la suerte y el azar",
+                                "Nunca se puede repetir más de dos veces",
+                                "Solo se puede realizar al aire libre"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Es completamente predecible bajo leyes físicas o matemáticas invariables.",
+                            "feedbackCorrect": "¡Perfecto! Su resultado es reproducible y predecible de forma idéntica.",
+                            "feedbackIncorrect": "Incorrecto. Los experimentos deterministas producen siempre el mismo resultado bajo iguales condiciones.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "Los experimentos deterministas son 100% predecibles mediante leyes fijas, y los aleatorios están regidos por el azar, con múltiples resultados posibles que definen un espacio muestral.",
+                    "videoPlaceholderText": "Video de Probabilidad: Fenómenos aleatorios y deterministas en la vida real."
+                },
+                {
+                    "id": "espacio-muestral",
+                    "title": "Lección 1.2: Espacio Muestral y Eventos (Sucesos)",
+                    "introduction": "Aprende a listar todos los resultados posibles de un experimento y a definir subconjuntos específicos llamados eventos.",
+                    "explanationHtml": "<p>Para calcular probabilidades, debemos dominar el vocabulario formal de la teoría de conjuntos:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Espacio Muestral ($S$ u $\\Omega$):</strong> Es el conjunto que contiene **todos los resultados posibles** de un experimento aleatorio. (ej: en un dado, $S = \\{1, 2, 3, 4, 5, 6\\}$).</li><li><strong>Evento o Suceso ($A, B...$):</strong> Es cualquier **subconjunto** del espacio muestral. Representa el suceso de interés que queremos evaluar.</li></ul><p class=\"mt-3\">Tipos de Eventos:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li>*Evento Simple:* Tiene un solo resultado (ej. sacar un 5).</li><li>*Evento Compuesto:* Tiene más de un resultado (ej. sacar un número par: $\\{2, 4, 6\\}$).</li><li>*Evento Seguro:* Coincide con todo el espacio muestral ($P = 1.0$).</li><li>*Evento Imposible:* No tiene elementos (conjunto vacío $\\emptyset$, $P = 0$).</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Notación de Conjuntos</p><p class=\"text-base font-mono font-extrabold text-primary\">S = {C, E} &nbsp;&bull;&nbsp; Evento A = {C}</p><p class=\"text-xs text-slate-500\">Ejemplo para lanzar una moneda: S es el espacio muestral y A es el evento \"sacar cara\".</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"22\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">ESPACIO MUESTRAL: MONEDAS</text><!-- Marco S --><rect x=\"30\" y=\"35\" width=\"240\" height=\"65\" fill=\"#ffffff\" stroke=\"#94a3b8\" rx=\"8\" /><text x=\"250\" y=\"48\" font-size=\"10\" font-family=\"monospace\" font-weight=\"bold\" fill=\"#64748b\">S</text><text x=\"70\" y=\"65\" font-size=\"11\" font-family=\"monospace\" fill=\"#334155\" font-weight=\"bold\">(C, C)</text><text x=\"120\" y=\"65\" font-size=\"11\" font-family=\"monospace\" fill=\"#334155\" font-weight=\"bold\">(C, E)</text><text x=\"170\" y=\"65\" font-size=\"11\" font-family=\"monospace\" fill=\"#334155\" font-weight=\"bold\">(E, C)</text><text x=\"220\" y=\"65\" font-size=\"11\" font-family=\"monospace\" fill=\"#334155\" font-weight=\"bold\">(E, E)</text></svg>",
+                    "svgDescription": "El espacio muestral completo para el lanzamiento de dos monedas. Contiene exactamente 4 puntos muestrales posibles.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> Lanzamos un dado estándar de 6 caras. Define el espacio muestral $S$ y el evento compuesto $A$: \"Obtener un número par\".</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1 Define S:</strong> Escribe todos los resultados posibles en llaves: <br>$S = \\{1, 2, 3, 4, 5, 6\\}$.</li><li><strong>Paso 2 Filtra el evento A:</strong> Busca solo los números pares dentro de $S$: <br>$A = \\{2, 4, 6\\}$.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> $S = \\{1, 2, 3, 4, 5, 6\\}$ y el evento $A = \\{2, 4, 6\\}$.</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Olvidar elementos en el espacio muestral:</strong> Al lanzar dos monedas, pensar que los resultados son solo 3: (ambas caras, ambas escudo, una y una). En realidad son 4 porque el orden importa: (C,C), (C,E), (E,C), (E,E).</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Escribe sin espacios el conjunto del espacio muestral S de lanzar una moneda al aire usando C para cara y E para escudo en llaves (ej: {C,E}):",
+                            "correctAnswer": "{C,E}",
+                            "hint": "Los dos resultados posibles son cara y escudo, colócalos en llaves separados por una coma.",
+                            "feedbackCorrect": "¡Excelente! El espacio muestral es {C,E}.",
+                            "feedbackIncorrect": "Incorrecto. Se escribe exactamente como {C,E}.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si definimos el experimento de lanzar un dado estándar y el evento A es 'obtener un número mayor que 4', ¿cuántos elementos tiene el conjunto A?",
+                            "correctAnswer": "2",
+                            "hint": "Los números mayores que 4 en un dado son el 5 y el 6.",
+                            "feedbackCorrect": "¡Perfecto! El conjunto A tiene 2 elementos: {5, 6}.",
+                            "feedbackIncorrect": "Incorrecto. Los números mayores que 4 son 5 y 6, por lo que hay 2 elementos.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "¿Cómo se llama el evento que no contiene ningún elemento y cuya probabilidad de ocurrir es estrictamente cero?",
+                            "correctAnswer": "evento imposible",
+                            "hint": "Es el conjunto vacío (ej. sacar un 8 al lanzar un dado estándar de 6 caras).",
+                            "feedbackCorrect": "¡Excelente! Se le conoce como evento imposible.",
+                            "feedbackIncorrect": "Incorrecto. Se llama 'evento imposible'.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si lanzas dos monedas al aire simultáneamente, ¿cuántos resultados posibles componen el espacio muestral completo?",
+                            "options": [
+                                "4 resultados posibles",
+                                "3 resultados posibles",
+                                "2 resultados posibles",
+                                "8 resultados posibles"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Los resultados son: Cara-Cara, Cara-Escudo, Escudo-Cara, Escudo-Escudo.",
+                            "feedbackCorrect": "¡Excelente! Son 4 resultados posibles.",
+                            "feedbackIncorrect": "Incorrecto. Son 4 resultados puesto que el orden de las monedas importa: (C,C), (C,E), (E,C), (E,E).",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "En un dado estándar, el evento 'obtener un número menor o igual que 6' se clasifica como un:",
+                            "options": [
+                                "Evento seguro",
+                                "Evento imposible",
+                                "Evento simple",
+                                "Evento nulo"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Todos los resultados posibles (1 al 6) cumplen con la condición, por lo que ocurrirá con 100% de certeza.",
+                            "feedbackCorrect": "¡Perfecto! Es un evento seguro.",
+                            "feedbackIncorrect": "Incorrecto. Ocurrirá siempre, por lo que es un evento seguro.",
+                            "difficulty": "básico",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "El espacio muestral define la totalidad de opciones de un experimento, y un evento representa cualquier subgrupo de interés que evaluamos probabilísticamente.",
+                    "videoPlaceholderText": "Video de Probabilidad: Espacio muestral y diagramas de árbol de eventos."
+                },
+                {
+                    "id": "enfoques-probabilidad",
+                    "title": "Lección 1.3: Enfoques de Probabilidad (Clásico y Laplace)",
+                    "introduction": "Aprende a calcular probabilidades teóricas exactas aplicando la famosa regla de Laplace de casos favorables sobre posibles.",
+                    "explanationHtml": "<p>La <strong>probabilidad</strong> es un valor numérico entre 0 y 1 (o entre 0% y 100%) que mide la certidumbre de que ocurra un evento.</p><p class=\"mt-3\"><strong>La Regla de Laplace (Enfoque Clásico):</strong> Si todos los resultados en el espacio muestral son igualmente probables (equiprobables), la probabilidad del evento $A$ se calcula como:</p><p class=\"text-center font-mono font-extrabold text-primary my-3\">P(A) = Casos Favorables / Casos Posibles</p><p class=\"mt-3\">Donde:</p><ul class=\"list-disc pl-5 space-y-1.5 my-3\"><li><strong>Casos Favorables:</strong> Cantidad de elementos del evento $A$.</li><li><strong>Casos Posibles:</strong> Cantidad de elementos del espacio muestral $S$.</li></ul>",
+                    "formulaBoxHtml": "<div class=\"space-y-1\"><p class=\"text-[10px] font-extrabold uppercase text-slate-400\">Regla de Laplace</p><p class=\"text-xl font-mono font-extrabold text-primary\">P(A) = n(A) / n(S)</p><p class=\"text-xs text-slate-505\">Da como resultado un decimal entre 0 y 1, que puede multiplicarse por 100 para ser un porcentaje.</p></div>",
+                    "svgGraphic": "<svg viewBox=\"0 0 300 120\" class=\"w-full max-w-[280px]\" xmlns=\"http://www.w3.org/2000/svg\"><rect x=\"0\" y=\"0\" width=\"300\" height=\"120\" fill=\"#f8fafc\" stroke=\"#e2e8f0\" stroke-width=\"1\" rx=\"16\" /><text x=\"150\" y=\"22\" font-size=\"10\" font-family=\"sans-serif\" font-weight=\"extrabold\" fill=\"#64748b\" text-anchor=\"middle\" letter-spacing=\"1\">FÓRMULA DE LAPLACE</text><rect x=\"35\" y=\"40\" width=\"230\" height=\"55\" fill=\"#eff6ff\" stroke=\"#bfdbfe\" rx=\"8\" /><text x=\"150\" y=\"60\" font-size=\"12\" font-family=\"monospace\" fill=\"#1e40af\" font-weight=\"extrabold\" text-anchor=\"middle\">P(A) = Favorables / Posibles</text><text x=\"150\" y=\"82\" font-size=\"8\" fill=\"#1e40af\" text-anchor=\"middle\">Ej: Sacar Par en Dado &rarr; 3 / 6 = 0.50 (50%)</text></svg>",
+                    "svgGraphicDescription": "Esquema matemático de la regla clásica de Laplace. Compara de forma directa las opciones favorables respecto a la totalidad de las opciones posibles.",
+                    "workedExampleHtml": "<p><strong>Problema:</strong> ¿Cuál es la probabilidad de obtener un número par al lanzar un dado de 6 caras?</p><ol class=\"list-decimal pl-5 space-y-2 mt-2\"><li><strong>Paso 1 Identifica Casos Posibles:</strong> El espacio muestral es $S = \\{1, 2, 3, 4, 5, 6\\}$. El total de casos posibles es 6.</li><li><strong>Paso 2 Identifica Casos Favorables:</strong> El evento es $A = \\{2, 4, 6\\}$. El total de casos favorables es 3.</li><li><strong>Paso 3 Aplica la fórmula:</strong> <br>$P(A) = 3 / 6 = 0.50$. Multiplicando por 100% obtenemos el 50%.</li></ol><p class=\"mt-3 text-xs text-emerald-800 bg-emerald-50 border border-emerald-200 p-3 rounded-xl\"><strong>Resultado:</strong> La probabilidad es de <strong>0.50</strong> (o 50%).</p>",
+                    "commonMistakesHtml": "<ul class=\"list-disc pl-5 space-y-2 text-red-950 bg-red-50/40 p-4 rounded-xl\"><li><strong>Dar valores mayores que 1:</strong> Reportar una probabilidad de 1.5 o de 150%. La probabilidad física está estrictamente acotada entre 0 (imposible) y 1 (seguro).</li><li><strong>Invertir la división:</strong> Dividir casos posibles entre favorables (ej. $6 / 3 = 2$).</li></ul>",
+                    "exercises": [
+                        {
+                            "question": "Si lanzas una moneda estándar al aire, ¿cuál es la probabilidad de obtener escudo en formato decimal? (ej: 0.5):",
+                            "correctAnswer": "0.5",
+                            "hint": "Casos favorables (escudo) = 1. Casos posibles (cara, escudo) = 2. Divide 1 ÷ 2.",
+                            "feedbackCorrect": "¡Excelente! La probabilidad es 0.5.",
+                            "feedbackIncorrect": "Incorrecto. 1 caso favorable de 2 posibles es 1/2 = 0.5.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "En una bolsa hay 3 canicas Rojas y 7 Azules. Si extraes una al azar, ¿cuál es la probabilidad de obtener una canica Roja en formato decimal? (ej: 0.3):",
+                            "correctAnswer": "0.3",
+                            "hint": "Total de canicas (casos posibles) = 10. Canicas rojas (favorables) = 3. Divide 3 ÷ 10.",
+                            "feedbackCorrect": "¡Perfecto! La probabilidad es 0.3.",
+                            "feedbackIncorrect": "Incorrecto. 3 favorables entre 10 posibles es 3/10 = 0.3.",
+                            "difficulty": "básico",
+                            "type": "short"
+                        },
+                        {
+                            "question": "En un mazo de barajas españolas de 40 cartas, ¿cuál es la probabilidad porcentual de sacar un As al azar? (Escribe el número entero sin %):",
+                            "correctAnswer": "10",
+                            "hint": "Hay 4 Ases en total. La probabilidad es 4/40 = 1/10 = 0.10. Multiplícalo por 100.",
+                            "feedbackCorrect": "¡Excelente! La probabilidad es del 10%.",
+                            "feedbackIncorrect": "Incorrecto. 4/40 = 0.10 = 10%.",
+                            "difficulty": "intermedio",
+                            "type": "short"
+                        },
+                        {
+                            "question": "Si lanzas un dado estándar de 6 caras, ¿cuál es la probabilidad de obtener un número mayor que 4?",
+                            "options": [
+                                "1/3 (o 33.3%)",
+                                "1/2 (o 50.0%)",
+                                "2/3 (o 66.7%)",
+                                "1/6 (o 16.7%)"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Los casos favorables son {5, 6} (2 casos). El total de casos posibles es 6. Simplifica 2/6.",
+                            "feedbackCorrect": "¡Excelente! 2/6 se simplifica a 1/3.",
+                            "feedbackIncorrect": "Incorrecto. Favorables = 2 (el 5 y el 6). Posibles = 6. Probabilidad = 2/6 = 1/3.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        },
+                        {
+                            "question": "Una urna de cristal contiene 5 esferas rojas, 3 esferas verdes y 2 esferas amarillas. Si se extrae una esfera completamente al azar, la probabilidad de que NO sea roja es de:",
+                            "options": [
+                                "0.50 (o 50%)",
+                                "0.30 (o 30%)",
+                                "0.70 (o 70%)",
+                                "0.20 (o 20%)"
+                            ],
+                            "correctAnswer": 0,
+                            "hint": "Las esferas que NO son rojas son las verdes (3) y amarillas (2), sumando 5 favorables de un total de 10 posibles.",
+                            "feedbackCorrect": "¡Perfecto! La probabilidad de que no sea roja es de 5/10 = 0.50.",
+                            "feedbackIncorrect": "Incorrecto. Total esferas = 10. Esferas no rojas = 5. Probabilidad = 5/10 = 0.50.",
+                            "difficulty": "intermedio",
+                            "type": "multiple"
+                        }
+                    ],
+                    "summaryHtml": "La probabilidad clásica se rige por la regla de Laplace, calculando la proporción de los casos favorables de un suceso respecto a la totalidad de casos posibles del espacio muestral.",
+                    "videoPlaceholderText": "Video de Probabilidad: La regla clásica de Laplace y cálculo con cartas."
+                }
+            ]
+        }
+    ]
+},
 
     "distribuciones-probabilidad": `# Curso: Distribuciones de Probabilidad
 * **Materia:** Matemáticas | **Nivel sugerido:** Universidad
