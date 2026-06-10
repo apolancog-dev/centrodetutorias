@@ -1,5 +1,4 @@
 {
-  "id": "U4yZmBSWM7TdSBid",
   "name": "Send Manual WhatsApp",
   "nodes": [
     {
@@ -16,7 +15,8 @@
         240
       ],
       "type": "n8n-nodes-base.webhook",
-      "typeVersion": 1.1
+      "typeVersion": 1.1,
+      "webhookId": "84be8da8-d8be-461e-a2fd-6f5d53ced2a5"
     },
     {
       "id": "check-channel",
@@ -60,7 +60,8 @@
         140
       ],
       "type": "n8n-nodes-base.whatsApp",
-      "typeVersion": 1.1
+      "typeVersion": 1.1,
+      "webhookId": "5f16df90-db1a-4613-972b-1c9eb68a8fe6"
     },
     {
       "id": "meta-send-manual",
@@ -72,7 +73,7 @@
         "url": "https://graph.facebook.com/v19.0/me/messages",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={{ { \"recipient\": { \"id\": $('Webhook').item.json.body.phone }, \"message\": { \"text\": $('Webhook').item.json.body.message } } }}",
+        "jsonBody": "={{ { \"recipient\": { \"id\": $('Webhook').item.json.body.phone }, \"message\": { \"text\": $('Webhook').item.json.body.message }, \"messaging_type\": \"MESSAGE_TAG\", \"tag\": \"HUMAN_AGENT\" } }}",
         "options": {}
       },
       "credentials": {
@@ -98,36 +99,32 @@
       "id": "supabase-insert",
       "name": "Log Manual Message",
       "parameters": {
-        "table": "whatsapp_messages",
-        "operation": "insert",
-        "columns": [
-          "phone",
-          "name",
-          "direction",
-          "content",
-          "channel"
-        ],
-        "valuesToSend": {
-          "values": [
+        "useCustomSchema": false,
+        "resource": "row",
+        "operation": "create",
+        "tableId": "whatsapp_messages",
+        "dataToSend": "defineBelow",
+        "fieldsUi": {
+          "fieldValues": [
             {
-              "column": "phone",
-              "value": "={{ $('Webhook').item.json.body.phone }}"
+              "fieldId": "phone",
+              "fieldValue": "={{ $('Webhook').item.json.body.phone }}"
             },
             {
-              "column": "name",
-              "value": "={{ $('Webhook').item.json.body.adminName || 'Admin' }}"
+              "fieldId": "name",
+              "fieldValue": "={{ $('Webhook').item.json.body.adminName || 'Admin' }}"
             },
             {
-              "column": "direction",
-              "value": "outbound"
+              "fieldId": "direction",
+              "fieldValue": "outbound"
             },
             {
-              "column": "content",
-              "value": "={{ $('Webhook').item.json.body.message }}"
+              "fieldId": "content",
+              "fieldValue": "={{ $('Webhook').item.json.body.message }}"
             },
             {
-              "column": "channel",
-              "value": "={{ $('Webhook').item.json.body.channel || 'whatsapp' }}"
+              "fieldId": "channel",
+              "fieldValue": "={{ $('Webhook').item.json.body.channel || 'whatsapp' }}"
             }
           ]
         }

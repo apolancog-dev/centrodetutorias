@@ -2,149 +2,121 @@
   "name": "Supabase Leads Automation",
   "nodes": [
     {
-      "parameters": {
-        "httpMethod": "POST",
-        "path": "supabase-leads",
-        "options": {}
-      },
       "id": "webhook-1",
       "name": "Webhook",
+      "parameters": {
+        "httpMethod": "POST",
+        "options": {},
+        "path": "supabase-leads"
+      },
       "position": [
         256,
         304
       ],
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 1,
-      "webhookId": "475ba48f-d4ac-4c09-aec1-451933753730"
+      "webhookId": "9106e6ff-3641-405a-b8b1-1d32e367caca"
     },
     {
-      "parameters": {
-        "chatId": "724801911",
-        "text": "={{'¡Nuevo Lead Recibido!\\\\nNombre: ' + $json.body.record.parent_or_student_name + '\\\\nTeléfono: ' + $json.body.record.phone + '\\\\nEmail: ' + $json.body.record.email + '\\\\nMateria: ' + $json.body.record.subject + '\\\\nDescripción: ' + $json.body.record.description}}",
-        "additionalFields": {}
-      },
-      "id": "telegram-1",
-      "name": "Notificación Telegram",
-      "type": "n8n-nodes-base.telegram",
-      "typeVersion": 1,
-      "position": [
-        512,
-        208
-      ],
-      "webhookId": "9eb66bb1-9f2e-4cab-8f1b-85985ded08d5",
       "credentials": {
         "telegramApi": {
           "id": "C70mrh8zZbUll0Zw",
           "name": "Telegram account"
         }
-      }
-    },
-    {
-      "parameters": {
-        "fromEmail": "operaciones@centrodetutorias.com",
-        "toEmail": "={{$json.body.record.email}}",
-        "subject": "=¡Hemos recibido tu solicitud, {{$json.body.record.parent_or_student_name}}! 🚀",
-        "text": "=Hola {{$json.body.record.parent_or_student_name}},\n\n¡Gracias por contactar al Centro de Tutorías!\n\nHemos recibido tu solicitud para apoyo en {{$json.body.record.subject}}.\n\nModalidad: {{$json.body.record.support_type}}\nDetalles: {{$json.body.record.description}}\n\nMuy pronto uno de nuestros coordinadores académicos te llamará al {{$json.body.record.phone}} para agendar tu entrevista de diagnóstico gratuita.\n\nSi tienes prisa, escríbenos directamente a WhatsApp: https://wa.me/50257152096\n\nSaludos cordiales,\nEl equipo del Centro de Tutorías",
-        "options": {}
       },
-      "id": "email-1",
-      "name": "Correo de Bienvenida",
-      "type": "n8n-nodes-base.emailSend",
-      "typeVersion": 2,
+      "id": "telegram-1",
+      "name": "Notificación Telegram",
+      "parameters": {
+        "operation": "sendMessage",
+        "additionalFields": {},
+        "chatId": "724801911",
+        "text": "={{'¡Nuevo Lead Recibido!\\\\\\\\nNombre: ' + $json.body.record.parent_or_student_name + '\\\\\\\\nTeléfono: ' + $json.body.record.phone + '\\\\\\\\nEmail: ' + $json.body.record.email + '\\\\\\\\nMateria: ' + $json.body.record.subject + '\\\\\\\\nDescripción: ' + $json.body.record.description}}"
+      },
       "position": [
         512,
-        400
+        208
       ],
-      "webhookId": "18129099-5ebe-4c2c-8a79-84dc97607f33",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1,
+      "webhookId": "9eb66bb1-9f2e-4cab-8f1b-85985ded08d5"
+    },
+    {
       "credentials": {
         "smtp": {
           "id": "RrEqzBTLbIQz9QNL",
           "name": "SMTP account"
         }
-      }
+      },
+      "id": "email-1",
+      "name": "Correo de Bienvenida",
+      "parameters": {
+        "fromEmail": "operaciones@centrodetutorias.com",
+        "options": {},
+        "subject": "=¡Hemos recibido tu solicitud, {{$json.body.record.parent_or_student_name}}! 🚀",
+        "text": "=Hola {{$json.body.record.parent_or_student_name}},\\n\\n¡Gracias por contactar al Centro de Tutorías!\\n\\nHemos recibido tu solicitud para apoyo en {{$json.body.record.subject}}.\\n\\nModalidad: {{$json.body.record.support_type}}\\nDetalles: {{$json.body.record.description}}\\n\\nMuy pronto uno de nuestros coordinadores académicos te llamará al {{$json.body.record.phone}} para agendar tu entrevista de diagnóstico gratuita.\\n\\nSi tienes prisa, escríbenos directamente a WhatsApp: https://wa.me/50257152096\\n\\nSaludos cordiales,\\nEl equipo del Centro de Tutorías",
+        "toEmail": "={{$json.body.record.email}}"
+      },
+      "position": [
+        512,
+        400
+      ],
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 2,
+      "webhookId": "18129099-5ebe-4c2c-8a79-84dc97607f33"
     },
     {
+      "id": "code-extract",
+      "name": "Extraer Datos del Lead",
       "parameters": {
         "jsCode": "return { json: $input.item.json.body.record || {} };"
       },
-      "id": "code-extract",
-      "name": "Extraer Datos del Lead",
-      "type": "n8n-nodes-base.code",
-      "typeVersion": 2,
       "position": [
         512,
         800
-      ]
+      ],
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2
     },
     {
-      "parameters": {
-        "workflowId": "Mwcb19HS9Zj1S76j",
-        "options": {}
-      },
       "id": "exec-1",
       "name": "Ejecutar Calificación",
-      "type": "n8n-nodes-base.executeWorkflow",
-      "typeVersion": 1,
+      "parameters": {
+        "options": {},
+        "workflowId": "Mwcb19HS9Zj1S76j"
+      },
       "position": [
         720,
         800
-      ]
+      ],
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1
     },
     {
-      "parameters": {
-        "operation": "send",
-        "phoneNumberId": "=1106627229206345",
-        "recipientPhoneNumber": "={{ $json.body.record.phone.startsWith('502') ? $json.body.record.phone : '502' + $json.body.record.phone }}",
-        "textBody": "=¡Hola {{$json.body.record.parent_or_student_name}}! 🚀 Te saludamos del Centro de Tutorías. Hemos recibido tu solicitud para apoyo en *{{$json.body.record.subject}}*.\n\nQuisiéramos agendar una breve *entrevista de diagnóstico gratuita de 15 minutos* para conocer el caso en detalle y asignarte al tutor ideal. ¿Te queda bien que coordinemos por aquí? 😊",
-        "additionalFields": {}
-      },
-      "id": "whatsapp-1",
-      "name": "WhatsApp Coordinar",
-      "type": "n8n-nodes-base.whatsApp",
-      "typeVersion": 1.1,
-      "position": [
-        512,
-        608
-      ],
-      "webhookId": "c0b076b4-c9f0-4474-8ead-c11217e31b94",
       "credentials": {
         "whatsAppApi": {
           "id": "b8AIBqrblIjhztKe",
           "name": "WhatsApp Account (Meta)"
         }
-      }
+      },
+      "id": "whatsapp-1",
+      "name": "WhatsApp Coordinar",
+      "parameters": {
+        "additionalFields": {},
+        "operation": "send",
+        "phoneNumberId": "=1106627229206345",
+        "recipientPhoneNumber": "={{ $json.body.record.phone.startsWith('502') ? $json.body.record.phone : '502' + $json.body.record.phone }}",
+        "resource": "message",
+        "textBody": "=¡Hola {{$json.body.record.parent_or_student_name}}! 🚀 Te saludamos del Centro de Tutorías. Hemos recibido tu solicitud para apoyo en *{{$json.body.record.subject}}*.\\n\\nQuisiéramos agendar una breve *entrevista de diagnóstico gratuita de 15 minutos* para conocer el caso en detalle y asignarte al tutor ideal. ¿Te queda bien que coordinemos por aquí? 😊"
+      },
+      "position": [
+        512,
+        608
+      ],
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1.1,
+      "webhookId": "c0b076b4-c9f0-4474-8ead-c11217e31b94"
     },
     {
-      "parameters": {
-        "table": "whatsapp_messages",
-        "operation": "insert",
-        "columns": [
-          "phone",
-          "name",
-          "direction",
-          "content"
-        ],
-        "valuesToSend": {
-          "values": [
-            {
-              "column": "phone",
-              "value": "={{ $json.recipientPhoneNumber }}"
-            },
-            {
-              "column": "name",
-              "value": "Sistema (Template)"
-            },
-            {
-              "column": "direction",
-              "value": "outbound"
-            },
-            {
-              "column": "content",
-              "value": "={{ $json.textBody }}"
-            }
-          ]
-        }
-      },
       "credentials": {
         "supabaseApi": {
           "id": "IVa19l81qjUZcHse",
@@ -153,48 +125,77 @@
       },
       "id": "supabase-log-template",
       "name": "Log Outbound Template Message",
-      "type": "n8n-nodes-base.supabase",
-      "typeVersion": 1,
+      "parameters": {
+        "columns": null,
+        "dataToSend": "defineBelow",
+        "fieldsUi": {
+          "fieldValues": [
+            {
+              "fieldId": "phone",
+              "fieldValue": "={{ $json.recipientPhoneNumber }}"
+            },
+            {
+              "fieldId": "name",
+              "fieldValue": "Sistema (Template)"
+            },
+            {
+              "fieldId": "direction",
+              "fieldValue": "outbound"
+            },
+            {
+              "fieldId": "content",
+              "fieldValue": "={{ $json.textBody }}"
+            }
+          ]
+        },
+        "operation": "create",
+        "resource": "row",
+        "table": null,
+        "tableId": "whatsapp_messages",
+        "valuesToSend": null
+      },
       "position": [
         750,
         608
-      ]
+      ],
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1
     }
   ],
   "connections": {
-    "Webhook": {
-      "main": [
-        [
-          {
-            "node": "Notificación Telegram",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Correo de Bienvenida",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Extraer Datos del Lead",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "WhatsApp Coordinar",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Extraer Datos del Lead": {
       "main": [
         [
           {
+            "index": 0,
             "node": "Ejecutar Calificación",
-            "type": "main",
-            "index": 0
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Webhook": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Notificación Telegram",
+            "type": "main"
+          },
+          {
+            "index": 0,
+            "node": "Correo de Bienvenida",
+            "type": "main"
+          },
+          {
+            "index": 0,
+            "node": "Extraer Datos del Lead",
+            "type": "main"
+          },
+          {
+            "index": 0,
+            "node": "WhatsApp Coordinar",
+            "type": "main"
           }
         ]
       ]
@@ -203,9 +204,9 @@
       "main": [
         [
           {
+            "index": 0,
             "node": "Log Outbound Template Message",
-            "type": "main",
-            "index": 0
+            "type": "main"
           }
         ]
       ]
@@ -213,15 +214,6 @@
   },
   "active": true,
   "settings": {
-    "executionOrder": "v1",
-    "saveDataErrorExecution": "all",
-    "saveDataSuccessExecution": "all",
-    "saveManualExecutions": true,
-    "saveExecutionProgress": true,
-    "binaryMode": "separate",
-    "timeSavedMode": "fixed",
-    "timezone": "America/Guatemala",
-    "callerPolicy": "workflowsFromSameOwner",
-    "availableInMCP": false
+    "executionOrder": "v1"
   }
 }
