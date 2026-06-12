@@ -27,10 +27,17 @@
         "genericAuthType": "httpHeaderAuth",
         "method": "GET",
         "options": {},
-        "qs": {
-          "status": "done"
+        "url": "http://cedetu-paperclipapp-6vqkln:3100/api/companies/87d21d03-de87-46f0-8f1d-27d223f99ce3/issues",
+        "queryParameters": {
+          "parameters": [
+            {
+              "name": "status",
+              "value": "done"
+            }
+          ]
         },
-        "url": "http://cedetu-paperclipapp-6vqkln:3100/api/companies/87d21d03-de87-46f0-8f1d-27d223f99ce3/issues"
+        "sendQuery": true,
+        "specifyQuery": "keypair"
       },
       "id": "http-get-done-1",
       "name": "PaperclipGetDoneIssues",
@@ -87,7 +94,9 @@
         "authentication": "genericCredentialType",
         "genericAuthType": "httpHeaderAuth",
         "method": "GET",
-        "options": {},
+        "options": {
+          "neverSplitResults": true
+        },
         "url": "=http://cedetu-paperclipapp-6vqkln:3100/api/issues/{{ $json.id }}/comments"
       },
       "id": "http-get-comments-1",
@@ -149,7 +158,7 @@
           "fieldValues": [
             {
               "fieldId": "issue_id",
-              "fieldValue": "={{ $json.id }}"
+              "fieldValue": "={{ $('ExtractResult').item.json.id }}"
             }
           ]
         },
