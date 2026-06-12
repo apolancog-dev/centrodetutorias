@@ -1,0 +1,221 @@
+{
+  "name": "DevOps Agent Workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "hours",
+              "hoursInterval": 6
+            }
+          ]
+        }
+      },
+      "id": "schedule-trigger-1",
+      "name": "Schedule Trigger",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        200,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "authentication": "privateKey",
+        "command": "echo \"=== MEMORY ===\"\nfree -m\necho \"=== DISK ===\"\ndf -h /\necho \"=== CONTAINERS ===\"\ndocker ps --format \"table {{.Names}}\\t{{.Status}}\"\necho \"=== STATS ===\"\ndocker stats --no-stream --format \"{{.Name}}: {{.CPUPerc}} | {{.MemUsage}}\"\necho \"=== BACKUPS ===\"\nls -lh /var/backups/db/",
+        "cwd": "/"
+      },
+      "id": "ssh-node-1",
+      "name": "SSH Execute",
+      "type": "n8n-nodes-base.ssh",
+      "typeVersion": 1,
+      "position": [
+        400,
+        300
+      ],
+      "credentials": {
+        "sshPrivateKey": {
+          "id": "CmHccwOoHeyDV8jC",
+          "name": "SSH VPS Host"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "mode": "runOnceForAllItems",
+        "jsCode": "const stdout = $('SSH Execute').first().json.stdout || '';\nconst now = new Date();\nconst todayStr = now.toISOString().split('T')[0];\nconst timeStr = now.toTimeString().split(' ')[0];\n\n// Dividir salida por secciones\nconst sections = {};\nconst sectionNames = ['MEMORY', 'DISK', 'CONTAINERS', 'STATS', 'BACKUPS'];\nlet currentSection = 'MEMORY';\nsections[currentSection] = [];\n\nconst lines = stdout.split('\\n');\nfor (const line of lines) {\n  let matched = false;\n  for (const name of sectionNames) {\n    if (line.includes(`=== ${name} ===`)) {\n      currentSection = name;\n      sections[currentSection] = [];\n      matched = true;\n      break;\n    }\n  }\n  if (!matched) {\n    sections[currentSection].push(line);\n  }\n}\n\n// 1. Parsear Memoria\nlet totalMem = 0;\nlet usedMem = 0;\nlet memPercent = 0;\nconst memLine = sections['MEMORY'].find(l => l.trim().startsWith('Mem:'));\nif (memLine) {\n  const parts = memLine.trim().split(/\\s+/);\n  totalMem = parseInt(parts[1], 10);\n  usedMem = parseInt(parts[2], 10);\n  memPercent = (usedMem / totalMem) * 100;\n}\n\n// 2. Parsear Disco\nlet diskPercent = 0;\nconst diskLine = sections['DISK'].find(l => l.includes(' /'));\nif (diskLine) {\n  const parts = diskLine.trim().split(/\\s+/);\n  const usePart = parts.find(p => p.endsWith('%'));\n  if (usePart) {\n    diskPercent = parseInt(usePart.replace('%', ''), 10);\n  }\n}\n\n// 3. Parsear Contenedores\nconst criticalContainers = [\n  { key: 'centrodetutoriasweb', name: 'Centro de Tutorías Web', pattern: /centrodetutoriasweb/i },\n  { key: 'paperclipapp', name: 'Paperclip App', pattern: /paperclipapp/i },\n  { key: 'paperclipdb', name: 'Paperclip DB', pattern: /paperclipdb/i },\n  { key: 'n8n', name: 'n8n App', pattern: /n8n-1/i },\n  { key: 'n8n-postgres', name: 'n8n Postgres DB', pattern: /postgres-1/i },\n  { key: 'supabase-db', name: 'Supabase DB', pattern: /supabase-db/i }\n];\n\nconst containerStatus = {};\nconst missingContainers = [];\nconst stoppedContainers = [];\n\nfor (const c of criticalContainers) {\n  const matchedLine = sections['CONTAINERS'].find(l => c.pattern.test(l));\n  if (!matchedLine) {\n    containerStatus[c.key] = 'Missing';\n    missingContainers.push(c.name);\n  } else {\n    if (matchedLine.includes('Up')) {\n      containerStatus[c.key] = 'Running';\n    } else {\n      containerStatus[c.key] = 'Stopped/Restarting';\n      stoppedContainers.push(`${c.name} (${matchedLine.trim()})`);\n    }\n  }\n}\n\n// 4. Parsear Backups\nconst requiredBackups = [\n  { key: 'n8n', name: 'n8n_backup.sql.gz' },\n  { key: 'paperclip', name: 'paperclip_backup.sql.gz' },\n  { key: 'supabase', name: 'supabase_backup.sql.gz' }\n];\n\nconst backupStatus = {};\nconst missingBackups = [];\nconst emptyBackups = [];\n\nfor (const b of requiredBackups) {\n  const matchedLine = sections['BACKUPS'].find(l => l.includes(b.name));\n  if (!matchedLine) {\n    backupStatus[b.key] = 'Missing';\n    missingBackups.push(b.name);\n  } else {\n    const parts = matchedLine.trim().split(/\\s+/);\n    const sizeStr = parts[4];\n    if (sizeStr === '0' || sizeStr === '0B') {\n      backupStatus[b.key] = 'Empty (0 bytes)';\n      emptyBackups.push(b.name);\n    } else {\n      backupStatus[b.key] = `OK (${sizeStr})`;\n    }\n  }\n}\n\n// 5. Evaluar Alertas\nlet alert = false;\nconst alertReasons = [];\nlet priority = 'low';\n\nif (memPercent > 85) {\n  alert = true;\n  priority = 'high';\n  alertReasons.push(`Uso de RAM crítico: ${memPercent.toFixed(1)}% (Límite: 85%)`);\n} else if (memPercent > 75) {\n  alert = true;\n  priority = 'medium';\n  alertReasons.push(`Uso de RAM elevado: ${memPercent.toFixed(1)}% (Límite preventivo: 75%)`);\n}\n\nif (diskPercent > 85) {\n  alert = true;\n  priority = 'high';\n  alertReasons.push(`Uso de Disco crítico: ${diskPercent}% (Límite: 85%)`);\n} else if (diskPercent > 75) {\n  alert = true;\n  if (priority !== 'high') priority = 'medium';\n  alertReasons.push(`Uso de Disco elevado: ${diskPercent}% (Límite preventivo: 75%)`);\n}\n\nif (missingContainers.length > 0) {\n  alert = true;\n  priority = 'high';\n  alertReasons.push(`Contenedores críticos faltantes: ${missingContainers.join(', ')}`);\n}\n\nif (stoppedContainers.length > 0) {\n  alert = true;\n  priority = 'high';\n  alertReasons.push(`Contenedores críticos no activos: ${stoppedContainers.join(', ')}`);\n}\n\nif (missingBackups.length > 0) {\n  alert = true;\n  priority = 'high';\n  alertReasons.push(`Copias de seguridad faltantes: ${missingBackups.join(', ')}`);\n}\n\nif (emptyBackups.length > 0) {\n  alert = true;\n  priority = 'high';\n  alertReasons.push(`Copias de seguridad vacías (0 bytes): ${emptyBackups.join(', ')}`);\n}\n\n// Generar reporte en Markdown\nlet markdownReport = `### 🖥️ REPORTE DE SALUD DEL SERVIDOR - CEDETU (${todayStr} ${timeStr})\\n\\n`;\nif (alert) {\n  markdownReport += `⚠️ **ALERTA DE SISTEMA RELEVADA** (Prioridad: **${priority.toUpperCase()}**)\\n`;\n  alertReasons.forEach(reason => {\n    markdownReport += `- 🔴 ${reason}\\n`;\n  });\n  markdownReport += `\\n---\\n\\n`;\n} else {\n  markdownReport += `✅ **Sistema saludable.** No se detectaron anomalías ni alertas.\\n\\n---\\n\\n`;\n}\n\nmarkdownReport += `#### 1. Recursos del Sistema\\n`;\nmarkdownReport += `*   **Uso de Memoria RAM:** ${memPercent.toFixed(1)}% (${usedMem}MB usados de ${totalMem}MB)\\n`;\nmarkdownReport += `*   **Uso de Disco Duro:** ${diskPercent}% ocupado\\n\\n`;\n\nmarkdownReport += `#### 2. Estado de Contenedores Críticos\\n`;\ncriticalContainers.forEach(c => {\n  const status = containerStatus[c.key] === 'Running' ? '🟢 Activo' : `🔴 ${containerStatus[c.key]}`;\n  markdownReport += `*   **${c.name}:** ${status}\\n`;\n});\nmarkdownReport += `\\n`;\n\nmarkdownReport += `#### 3. Estado de Copias de Seguridad\\n`;\nrequiredBackups.forEach(b => {\n  const status = backupStatus[b.key].startsWith('OK') ? `🟢 ${backupStatus[b.key]}` : `🔴 ${backupStatus[b.key]}`;\n  markdownReport += `*   **${b.name}:** ${status}\\n`;\n});\n\nmarkdownReport += `\\n\\n*Informe automatizado generado por DevOps Agent. En caso de fallas de prioridad alta/media, se genera un issue para su atención inmediata.*`;\n\nconst hour = now.getUTCHours();\n// Reporte rutinario si no hay alerta y es la ejecución de las 12:00 UTC (6 AM local o mediodía UTC)\nconst sendOkReport = !alert && (hour === 12 || hour === 13);\n\nreturn [{ json: { alert, priority, sendOkReport, today: todayStr, markdownReport } }];"
+      },
+      "id": "code-evaluate-metrics-1",
+      "name": "Evaluate Metrics",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        600,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $json.alert }}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "if-alert-1",
+      "name": "If Alert?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        800,
+        300
+      ]
+    },
+    {
+      "parameters": {
+        "url": "http://paperclip.centrodetutorias.com:3100/api/companies/87d21d03-de87-46f0-8f1d-27d223f99ce3/issues",
+        "method": "POST",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"title\": \"⚠️ ALERTA DE DevOps: Anomalía en Servidor ({{ $json.today }})\",\n  \"description\": {{ JSON.stringify($json.markdownReport) }},\n  \"status\": \"todo\",\n  \"priority\": {{ JSON.stringify($json.priority) }},\n  \"assigneeAgentId\": \"e895240c-8524-403a-8770-d095915d8302\"\n}",
+        "options": {}
+      },
+      "id": "paperclip-alert-issue-1",
+      "name": "Create Alert Issue",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        1050,
+        200
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "yF6GX0x5QPUy9d4K",
+          "name": "Paperclip Bearer Key"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "boolean": [
+            {
+              "value1": "={{ $json.sendOkReport }}",
+              "value2": true
+            }
+          ]
+        }
+      },
+      "id": "if-send-report-1",
+      "name": "Send OK Report?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1,
+      "position": [
+        1050,
+        400
+      ]
+    },
+    {
+      "parameters": {
+        "url": "http://paperclip.centrodetutorias.com:3100/api/companies/87d21d03-de87-46f0-8f1d-27d223f99ce3/issues",
+        "method": "POST",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"title\": \"✅ Reporte Diario de Salud del Servidor ({{ $json.today }})\",\n  \"description\": {{ JSON.stringify($json.markdownReport) }},\n  \"status\": \"todo\",\n  \"priority\": \"low\",\n  \"assigneeAgentId\": \"e895240c-8524-403a-8770-d095915d8302\"\n}",
+        "options": {}
+      },
+      "id": "paperclip-ok-report-issue-1",
+      "name": "Create OK Report Issue",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        1300,
+        350
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "yF6GX0x5QPUy9d4K",
+          "name": "Paperclip Bearer Key"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "SSH Execute",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "SSH Execute": {
+      "main": [
+        [
+          {
+            "node": "Evaluate Metrics",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Evaluate Metrics": {
+      "main": [
+        [
+          {
+            "node": "If Alert?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If Alert?": {
+      "main": [
+        [
+          {
+            "node": "Create Alert Issue",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Send OK Report?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send OK Report?": {
+      "main": [
+        [
+          {
+            "node": "Create OK Report Issue",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "errorWorkflow": "hqtExbNvPA6slEwu"
+  },
+  "active": true
+}
