@@ -3,10 +3,10 @@
   "nodes": [
     {
       "parameters": {
+        "additionalFields": {},
         "updates": [
           "message"
-        ],
-        "additionalFields": {}
+        ]
       },
       "id": "tel-trigger-1",
       "name": "TelegramTrigger",
@@ -25,7 +25,7 @@
     },
     {
       "parameters": {
-        "jsCode": "const message = $input.item.json.message;\nif (!message) return [];\n\nconst text = message.text || '';\nconst chatId = message.chat.id;\nconst messageId = message.message_id;\n\n// 1. Seguridad: solo Antonio Polanco\nif (chatId !== 724801911) {\n  return []; // Ignorar silenciosamente\n}\n\nfunction reply(text) {\n  return {\n    json: {\n      action: 'reply',\n      chatId,\n      replyToMessageId: messageId,\n      text,\n      parseMode: 'Markdown'\n    }\n  };\n}\n\n// 2. Ayuda e Inicio\nif (text.startsWith('/start') || text.startsWith('/help') || !text.startsWith('/tarea')) {\n  const helpMessage = `📝 *Cómo asignar tareas a tus agentes:*\\n` +\n    `Usa el siguiente formato:\\n` +\n    `\\\`/tarea [agente]: [instrucción]\\\`\\n\\n` +\n    `🤖 *Agentes disponibles (usa el alias):*\\n` +\n    `- *cto*: CTO Agent\\n` +\n    `- *n8n* o *automation*: n8n Automation Agent\\n` +\n    `- *reporting* o *reportes*: Reporting Agent\\n` +\n    `- *devops*: DevOps Agent\\n` +\n    `- *cos* o *chief*: Chief of Staff Agent\\n` +\n    `- *whatsapp* o *wa*: WhatsApp Business Agent\\n` +\n    `- *ceo*: CEO Agent\\n\\n` +\n    `💡 *Ejemplo:*\\n` +\n    `\\\`/tarea cto: Escribe un script en Python para limpiar la base de datos.\\\``;\n  return [reply(helpMessage)];\n}\n\n// 3. Expresión regular para parsear comando\nconst match = text.match(/^\\/tarea\\s+(\\w+)\\s*:\\s*(.+)$/is);\nif (!match) {\n  return [reply(`⚠️ *Formato incorrecto.*\\nUsa: \\\`/tarea [agente]: [instrucción]\\\`\\n\\nEjemplo: \\\`/tarea cto: Crear copia de seguridad.\\\``)];\n}\n\nconst agentAlias = match[1].toLowerCase().trim();\nconst instruction = match[2].trim();\n\nconst agentMap = {\n  'cto': '19948f90-95d4-4cb1-afd7-9ff64450fdf0',\n  'n8n': 'df330bdb-7956-4a34-a8c8-5e2df95c14e9',\n  'automation': 'df330bdb-7956-4a34-a8c8-5e2df95c14e9',\n  'automatizacion': 'df330bdb-7956-4a34-a8c8-5e2df95c14e9',\n  'reporting': '3c88bb29-c1d9-4358-aa4c-50c32bccc8f4',\n  'reportes': '3c88bb29-c1d9-4358-aa4c-50c32bccc8f4',\n  'devops': 'e895240c-8524-403a-8770-d095915d8302',\n  'cos': '9819d4cb-e0b7-45d8-8e26-b257298aac79',\n  'chief': '9819d4cb-e0b7-45d8-8e26-b257298aac79',\n  'staff': '9819d4cb-e0b7-45d8-8e26-b257298aac79',\n  'whatsapp': '876bad48-2bd7-4dd4-a429-6bf95f6a94f6',\n  'wa': '876bad48-2bd7-4dd4-a429-6bf95f6a94f6',\n  'comercial': '876bad48-2bd7-4dd4-a429-6bf95f6a94f6',\n  'ceo': 'b713f1b8-1b78-486c-b6ef-0fc2a885f2ec'\n};\n\nconst agentMapNames = {\n  '19948f90-95d4-4cb1-afd7-9ff64450fdf0': 'CTO Agent',\n  'df330bdb-7956-4a34-a8c8-5e2df95c14e9': 'n8n Automation Agent',\n  '3c88bb29-c1d9-4358-aa4c-50c32bccc8f4': 'Reporting Agent',\n  'e895240c-8524-403a-8770-d095915d8302': 'DevOps Agent',\n  '9819d4cb-e0b7-45d8-8e26-b257298aac79': 'Chief of Staff Agent',\n  '876bad48-2bd7-4dd4-a429-6bf95f6a94f6': 'WhatsApp Business Agent',\n  'b713f1b8-1b78-486c-b6ef-0fc2a885f2ec': 'CEO Agent'\n};\n\nconst agentId = agentMap[agentAlias];\nif (!agentId) {\n  return [reply(`❌ *Agente no reconocido: \"${agentAlias}\"*\\nPor favor usa uno de los alias de ayuda.`)]\n}\n\nif (!instruction) {\n  return [reply(`⚠️ *Falta la instrucción.*\\nPor favor escribe lo que el agente debe hacer.`)]\n}\n\nconst shortInstruction = instruction.split('\\n')[0].substring(0, 50) + (instruction.length > 50 ? '...' : '');\nconst title = `Telegram: ${shortInstruction}`;\n\nreturn [{\n  json: {\n    action: 'create_issue',\n    chatId,\n    replyToMessageId: messageId,\n    agentName: agentMapNames[agentId],\n    agentId,\n    title,\n    description: instruction\n  }\n}];"
+        "jsCode": "const message = $input.item.json.message;\nif (!message) return [];\n\nconst text = message.text || '';\nconst chatId = message.chat.id;\nconst messageId = message.message_id;\n\n// 1. Seguridad: solo Antonio Polanco\nif (chatId !== 724801911) {\n  return []; // Ignorar silenciosamente\n}\n\nfunction reply(text) {\n  return {\n    json: {\n      action: 'reply',\n      chatId,\n      replyToMessageId: messageId,\n      text,\n      parseMode: 'Markdown'\n    }\n  };\n}\n\n// 2. Ayuda e Inicio\nif (text.startsWith('/start') || text.startsWith('/help') || !text.startsWith('/tarea')) {\n  const helpMessage = `📝 *Cómo asignar tareas a tus agentes:*\nUsa el siguiente formato:\n\\`/tarea [agente]: [instrucción]\\`\n\n🤖 *Agentes disponibles (usa el alias):*\n- *cto*: CTO Agent\n- *n8n* o *automation*: n8n Automation Agent\n- *reporting* o *reportes*: Reporting Agent\n- *devops*: DevOps Agent\n- *cos* o *chief*: Chief of Staff Agent\n- *whatsapp* o *wa*: WhatsApp Business Agent\n- *ceo*: CEO Agent\n\n💡 *Ejemplo:*\n\\`/tarea cto: Escribe un script en Python para limpiar la base de datos.\\``;\n  return [reply(helpMessage)];\n}\n\n// 3. Expresión regular para parsear comando\nconst match = text.match(/^\\/tarea\\s+(\\w+)\\s*:\\s*(.+)$/is);\nif (!match) {\n  return [reply(`⚠️ *Formato incorrecto.*\nUsa: \\`/tarea [agente]: [instrucción]\\`\n\nEjemplo: \\`/tarea cto: Crear copia de seguridad.\\``)];\n}\n\nconst agentAlias = match[1].toLowerCase().trim();\nconst instruction = match[2].trim();\n\nconst agentMap = {\n  'cto': '19948f90-95d4-4cb1-afd7-9ff64450fdf0',\n  'n8n': 'df330bdb-7956-4a34-a8c8-5e2df95c14e9',\n  'automation': 'df330bdb-7956-4a34-a8c8-5e2df95c14e9',\n  'automatizacion': 'df330bdb-7956-4a34-a8c8-5e2df95c14e9',\n  'reporting': '3c88bb29-c1d9-4358-aa4c-50c32bccc8f4',\n  'reportes': '3c88bb29-c1d9-4358-aa4c-50c32bccc8f4',\n  'devops': 'e895240c-8524-403a-8770-d095915d8302',\n  'cos': '9819d4cb-e0b7-45d8-8e26-b257298aac79',\n  'chief': '9819d4cb-e0b7-45d8-8e26-b257298aac79',\n  'staff': '9819d4cb-e0b7-45d8-8e26-b257298aac79',\n  'whatsapp': '876bad48-2bd7-4dd4-a429-6bf95f6a94f6',\n  'wa': '876bad48-2bd7-4dd4-a429-6bf95f6a94f6',\n  'comercial': '876bad48-2bd7-4dd4-a429-6bf95f6a94f6',\n  'ceo': 'b713f1b8-1b78-486c-b6ef-0fc2a885f2ec'\n};\n\nconst agentMapNames = {\n  '19948f90-95d4-4cb1-afd7-9ff64450fdf0': 'CTO Agent',\n  'df330bdb-7956-4a34-a8c8-5e2df95c14e9': 'n8n Automation Agent',\n  '3c88bb29-c1d9-4358-aa4c-50c32bccc8f4': 'Reporting Agent',\n  'e895240c-8524-403a-8770-d095915d8302': 'DevOps Agent',\n  '9819d4cb-e0b7-45d8-8e26-b257298aac79': 'Chief of Staff Agent',\n  '876bad48-2bd7-4dd4-a429-6bf95f6a94f6': 'WhatsApp Business Agent',\n  'b713f1b8-1b78-486c-b6ef-0fc2a885f2ec': 'CEO Agent'\n};\n\nconst agentId = agentMap[agentAlias];\nif (!agentId) {\n  return [reply(`❌ *Agente no reconocido: \"${agentAlias}\"*\nPor favor usa uno de los alias de ayuda.`)];\n}\n\nif (!instruction) {\n  return [reply(`⚠️ *Falta la instrucción.*\nPor favor escribe lo que el agente debe hacer.`)];\n}\n\nconst shortInstruction = instruction.split('\\n')[0].substring(0, 50) + (instruction.length > 50 ? '...' : '');\nconst title = `Telegram: ${shortInstruction}`;\n\nreturn [{\n  json: {\n    action: 'create_issue',\n    chatId,\n    replyToMessageId: messageId,\n    agentName: agentMapNames[agentId],\n    agentId,\n    title,\n    description: instruction\n  }\n}];"
       },
       "id": "code-parser-1",
       "name": "ParseCommand",
@@ -69,11 +69,14 @@
       ]
     },
     {
-      "credentials": {
-        "telegramApi": {
-          "id": "C70mrh8zZbUll0Zw",
-          "name": "Telegram account"
-        }
+      "parameters": {
+        "additionalFields": {
+          "parse_mode": "Markdown",
+          "reply_to_message_id": "={{ $json.replyToMessageId }}"
+        },
+        "chatId": "={{ $json.chatId }}",
+        "operation": "sendMessage",
+        "text": "={{ $json.text }}"
       },
       "id": "tel-reply-1",
       "name": "TelegramReply",
@@ -83,22 +86,23 @@
         800,
         450
       ],
-      "parameters": {
-        "operation": "sendMessage",
-        "chatId": "={{ $json.chatId }}",
-        "text": "={{ $json.text }}",
-        "additionalFields": {
-          "parse_mode": "Markdown",
-          "reply_to_message_id": "={{ $json.replyToMessageId }}"
+      "credentials": {
+        "telegramApi": {
+          "id": "C70mrh8zZbUll0Zw",
+          "name": "Telegram account"
         }
       }
     },
     {
-      "credentials": {
-        "httpHeaderAuth": {
-          "id": "yF6GX0x5QPUy9d4K",
-          "name": "Paperclip Bearer Key"
-        }
+      "parameters": {
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "jsonBody": "={\\n  \\\"title\\\": \\\"{{ $json.title }}\\\",\\n  \\\"description\\\": \\\"{{ $json.description }}\\\",\\n  \\\"status\\\": \\\"todo\\\",\\n  \\\"priority\\\": \\\"medium\\\",\\n  \\\"assigneeAgentId\\\": \\\"{{ $json.agentId }}\\\"\\n}",
+        "method": "POST",
+        "options": {},
+        "sendBody": true,
+        "specifyBody": "json",
+        "url": "http://cedetu-paperclipapp-6vqkln:3100/api/companies/87d21d03-de87-46f0-8f1d-27d223f99ce3/issues"
       },
       "id": "http-create-issue-1",
       "name": "PaperclipCreateIssue",
@@ -108,23 +112,22 @@
         800,
         200
       ],
-      "parameters": {
-        "authentication": "genericCredentialType",
-        "genericAuthType": "httpHeaderAuth",
-        "url": "http://cedetu-paperclipapp-6vqkln:3100/api/companies/87d21d03-de87-46f0-8f1d-27d223f99ce3/issues",
-        "method": "POST",
-        "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "={\n  \"title\": \"{{ $json.title }}\",\n  \"description\": \"{{ $json.description }}\",\n  \"status\": \"todo\",\n  \"priority\": \"medium\",\n  \"assigneeAgentId\": \"{{ $json.agentId }}\"\n}",
-        "options": {}
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "yF6GX0x5QPUy9d4K",
+          "name": "Paperclip Bearer Key"
+        }
       }
     },
     {
-      "credentials": {
-        "telegramApi": {
-          "id": "C70mrh8zZbUll0Zw",
-          "name": "Telegram account"
-        }
+      "parameters": {
+        "additionalFields": {
+          "parse_mode": "Markdown",
+          "reply_to_message_id": "={{ $('ParseCommand').item.json.replyToMessageId }}"
+        },
+        "chatId": "={{ $('ParseCommand').item.json.chatId }}",
+        "operation": "sendMessage",
+        "text": "=🚀 *Tarea asignada correctamente a {{ $('ParseCommand').item.json.agentName }}*\\n\\n*ID:* {{ $json.identifier }}\\n*Título:* {{ $json.title }}\\n\\n🔗 [Ver en Paperclip](https://paperclip.centrodetutorias.com/cen/issues/{{ $json.id }})"
       },
       "id": "tel-confirm-1",
       "name": "TelegramConfirm",
@@ -134,54 +137,29 @@
         1050,
         200
       ],
-      "parameters": {
-        "operation": "sendMessage",
-        "chatId": "={{ $('ParseCommand').item.json.chatId }}",
-        "text": "=🚀 *Tarea asignada correctamente a {{ $('ParseCommand').item.json.agentName }}*\n\n*ID:* {{ $json.identifier }}\n*Título:* {{ $json.title }}\n\n🔗 [Ver en Paperclip](https://paperclip.centrodetutorias.com/cen/issues/{{ $json.id }})",
-        "additionalFields": {
-          "parse_mode": "Markdown",
-          "reply_to_message_id": "={{ $('ParseCommand').item.json.replyToMessageId }}"
+      "credentials": {
+        "telegramApi": {
+          "id": "C70mrh8zZbUll0Zw",
+          "name": "Telegram account"
         }
       }
     }
   ],
   "connections": {
-    "TelegramTrigger": {
-      "main": [
-        [
-          {
-            "node": "ParseCommand",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "ParseCommand": {
-      "main": [
-        [
-          {
-            "node": "IsCreateIssue",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "IsCreateIssue": {
       "main": [
         [
           {
+            "index": 0,
             "node": "PaperclipCreateIssue",
-            "type": "main",
-            "index": 0
+            "type": "main"
           }
         ],
         [
           {
+            "index": 0,
             "node": "TelegramReply",
-            "type": "main",
-            "index": 0
+            "type": "main"
           }
         ]
       ]
@@ -190,9 +168,31 @@
       "main": [
         [
           {
+            "index": 0,
             "node": "TelegramConfirm",
-            "type": "main",
-            "index": 0
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "ParseCommand": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "IsCreateIssue",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "TelegramTrigger": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "ParseCommand",
+            "type": "main"
           }
         ]
       ]

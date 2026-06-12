@@ -21,20 +21,6 @@
       ]
     },
     {
-      "credentials": {
-        "httpHeaderAuth": {
-          "id": "yF6GX0x5QPUy9d4K",
-          "name": "Paperclip Bearer Key"
-        }
-      },
-      "id": "http-get-done-1",
-      "name": "PaperclipGetDoneIssues",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.4,
-      "position": [
-        300,
-        200
-      ],
       "parameters": {
         "authentication": "genericCredentialType",
         "genericAuthType": "httpHeaderAuth",
@@ -44,14 +30,28 @@
           "status": "done"
         },
         "url": "http://cedetu-paperclipapp-6vqkln:3100/api/companies/87d21d03-de87-46f0-8f1d-27d223f99ce3/issues"
+      },
+      "id": "http-get-done-1",
+      "name": "PaperclipGetDoneIssues",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        300,
+        200
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "yF6GX0x5QPUy9d4K",
+          "name": "Paperclip Bearer Key"
+        }
       }
     },
     {
-      "credentials": {
-        "supabaseApi": {
-          "id": "IVa19l81qjUZcHse",
-          "name": "Supabase account"
-        }
+      "parameters": {
+        "operation": "getAll",
+        "options": {},
+        "returnAll": true,
+        "tableId": "notified_paperclip_issues"
       },
       "id": "supa-get-notified-1",
       "name": "SupabaseGetNotified",
@@ -61,14 +61,17 @@
         300,
         400
       ],
-      "parameters": {
-        "operation": "getAll",
-        "options": {},
-        "returnAll": true,
-        "tableId": "notified_paperclip_issues"
+      "credentials": {
+        "supabaseApi": {
+          "id": "IVa19l81qjUZcHse",
+          "name": "Supabase account"
+        }
       }
     },
     {
+      "parameters": {
+        "jsCode": "const doneIssues = $('PaperclipGetDoneIssues').all();\nconst notifiedIds = $('SupabaseGetNotified').all().map(item => item.json.issue_id);\n\nconst newIssues = doneIssues.filter(item => !notifiedIds.includes(item.json.id));\nreturn newIssues.map(item => ({ json: item.json }));"
+      },
       "id": "code-filter-1",
       "name": "FilterNewDoneIssues",
       "type": "n8n-nodes-base.code",
@@ -76,18 +79,15 @@
       "position": [
         550,
         300
-      ],
-      "parameters": {
-        "jsCode": "const doneIssues = $('PaperclipGetDoneIssues').all();\nconst notifiedIds = $('SupabaseGetNotified').all().map(item => item.json.issue_id);\n\nconst newIssues = doneIssues.filter(item => !notifiedIds.includes(item.json.id));\nreturn newIssues.map(item => ({ json: item.json }));\n",
-        "mode": "runOnceForAllItems"
-      }
+      ]
     },
     {
-      "credentials": {
-        "httpHeaderAuth": {
-          "id": "yF6GX0x5QPUy9d4K",
-          "name": "Paperclip Bearer Key"
-        }
+      "parameters": {
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpHeaderAuth",
+        "method": "GET",
+        "options": {},
+        "url": "=http://cedetu-paperclipapp-6vqkln:3100/api/issues/{{ $json.id }}/comments"
       },
       "id": "http-get-comments-1",
       "name": "PaperclipGetComments",
@@ -97,15 +97,17 @@
         750,
         300
       ],
-      "parameters": {
-        "authentication": "genericCredentialType",
-        "genericAuthType": "httpHeaderAuth",
-        "method": "GET",
-        "options": {},
-        "url": "=http://cedetu-paperclipapp-6vqkln:3100/api/issues/{{ $json.id }}/comments"
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "yF6GX0x5QPUy9d4K",
+          "name": "Paperclip Bearer Key"
+        }
       }
     },
     {
+      "parameters": {
+        "jsCode": "const comments = $input.item.json || [];\nconst issue = $('FilterNewDoneIssues').item.json;\n\n// Ordenar comentarios por fecha de creación desc para encontrar el más reciente\nconst latestComment = Array.isArray(comments) && comments.length > 0 \n  ? [...comments].sort((a,b) => new Date(b.createdAt) - new Date(a.createdAt))[0] \n  : null;\n  \nconst resultText = latestComment ? latestComment.body : '*Sin comentarios de resolución.*';\n\nconst agentMapNames = {\n  '19948f90-95d4-4cb1-afd7-9ff64450fdf0': 'CTO Agent',\n  'df330bdb-7956-4a34-a8c8-5e2df95c14e9': 'n8n Automation Agent',\n  '3c88bb29-c1d9-4358-aa4c-50c32bccc8f4': 'Reporting Agent',\n  'e895240c-8524-403a-8770-d095915d8302': 'DevOps Agent',\n  '9819d4cb-e0b7-45d8-8e26-b257298aac79': 'Chief of Staff Agent',\n  '876bad48-2bd7-4dd4-a429-6bf95f6a94f6': 'WhatsApp Business Agent',\n  'b713f1b8-1b78-486c-b6ef-0fc2a885f2ec': 'CEO Agent'\n};\n\nconst agentName = agentMapNames[issue.assigneeAgentId] || 'Agente Desconocido';\n\nreturn [{\n  json: {\n    id: issue.id,\n    identifier: issue.identifier,\n    title: issue.title,\n    agentName,\n    result: resultText\n  }\n}];"
+      },
       "id": "code-extract-1",
       "name": "ExtractResult",
       "type": "n8n-nodes-base.code",
@@ -113,17 +115,16 @@
       "position": [
         950,
         300
-      ],
-      "parameters": {
-        "jsCode": "const comments = $input.item.json || [];\nconst issue = $('FilterNewDoneIssues').item.json;\n\n// Ordenar comentarios por fecha de creación desc para encontrar el más reciente\nconst latestComment = Array.isArray(comments) && comments.length > 0 \n  ? [...comments].sort((a,b) => new Date(b.createdAt) - new Date(a.createdAt))[0] \n  : null;\n  \nconst resultText = latestComment ? latestComment.body : '*Sin comentarios de resolución.*';\n\nconst agentMapNames = {\n  '19948f90-95d4-4cb1-afd7-9ff64450fdf0': 'CTO Agent',\n  'df330bdb-7956-4a34-a8c8-5e2df95c14e9': 'n8n Automation Agent',\n  '3c88bb29-c1d9-4358-aa4c-50c32bccc8f4': 'Reporting Agent',\n  'e895240c-8524-403a-8770-d095915d8302': 'DevOps Agent',\n  '9819d4cb-e0b7-45d8-8e26-b257298aac79': 'Chief of Staff Agent',\n  '876bad48-2bd7-4dd4-a429-6bf95f6a94f6': 'WhatsApp Business Agent',\n  'b713f1b8-1b78-486c-b6ef-0fc2a885f2ec': 'CEO Agent'\n};\n\nconst agentName = agentMapNames[issue.assigneeAgentId] || 'Agente Desconocido';\n\nreturn [{\n  json: {\n    id: issue.id,\n    identifier: issue.identifier,\n    title: issue.title,\n    agentName,\n    result: resultText\n  }\n}];"
-      }
+      ]
     },
     {
-      "credentials": {
-        "telegramApi": {
-          "id": "C70mrh8zZbUll0Zw",
-          "name": "Telegram account"
-        }
+      "parameters": {
+        "additionalFields": {
+          "parse_mode": "Markdown"
+        },
+        "chatId": "724801911",
+        "operation": "sendMessage",
+        "text": "=✅ *Tarea Completada*\\n\\n*Agente:* {{ $json.agentName }}\\n*Tarea:* {{ $json.title }} ({{ $json.identifier }})\\n\\n*Resultado:* \\n{{ $json.result }}\\n\\n🔗 [Ver Tarea en Paperclip](https://paperclip.centrodetutorias.com/cen/issues/{{ $json.id }})"
       },
       "id": "tel-notify-done-1",
       "name": "TelegramNotifyCompleted",
@@ -133,30 +134,14 @@
         1150,
         300
       ],
-      "parameters": {
-        "additionalFields": {
-          "parse_mode": "Markdown"
-        },
-        "chatId": "724801911",
-        "operation": "sendMessage",
-        "text": "=✅ *Tarea Completada*\n\n*Agente:* {{ $json.agentName }}\n*Tarea:* {{ $json.title }} ({{ $json.identifier }})\n\n*Resultado:* \n{{ $json.result }}\n\n🔗 [Ver Tarea en Paperclip](https://paperclip.centrodetutorias.com/cen/issues/{{ $json.id }})"
+      "credentials": {
+        "telegramApi": {
+          "id": "C70mrh8zZbUll0Zw",
+          "name": "Telegram account"
+        }
       }
     },
     {
-      "credentials": {
-        "supabaseApi": {
-          "id": "IVa19l81qjUZcHse",
-          "name": "Supabase account"
-        }
-      },
-      "id": "supa-mark-1",
-      "name": "SupabaseMarkNotified",
-      "type": "n8n-nodes-base.supabase",
-      "typeVersion": 1,
-      "position": [
-        1350,
-        300
-      ],
       "parameters": {
         "dataToSend": "defineBelow",
         "fieldsUi": {
@@ -169,44 +154,31 @@
         },
         "options": {},
         "tableId": "notified_paperclip_issues"
+      },
+      "id": "supa-mark-1",
+      "name": "SupabaseMarkNotified",
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1,
+      "position": [
+        1350,
+        300
+      ],
+      "credentials": {
+        "supabaseApi": {
+          "id": "IVa19l81qjUZcHse",
+          "name": "Supabase account"
+        }
       }
     }
   ],
   "connections": {
-    "IntervalTrigger": {
+    "ExtractResult": {
       "main": [
         [
           {
-            "node": "PaperclipGetDoneIssues",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "SupabaseGetNotified",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "PaperclipGetDoneIssues": {
-      "main": [
-        [
-          {
-            "node": "FilterNewDoneIssues",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "SupabaseGetNotified": {
-      "main": [
-        [
-          {
-            "node": "FilterNewDoneIssues",
-            "type": "main",
-            "index": 1
+            "index": 0,
+            "node": "TelegramNotifyCompleted",
+            "type": "main"
           }
         ]
       ]
@@ -215,9 +187,25 @@
       "main": [
         [
           {
+            "index": 0,
             "node": "PaperclipGetComments",
-            "type": "main",
-            "index": 0
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "IntervalTrigger": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "PaperclipGetDoneIssues",
+            "type": "main"
+          },
+          {
+            "index": 0,
+            "node": "SupabaseGetNotified",
+            "type": "main"
           }
         ]
       ]
@@ -226,20 +214,31 @@
       "main": [
         [
           {
+            "index": 0,
             "node": "ExtractResult",
-            "type": "main",
-            "index": 0
+            "type": "main"
           }
         ]
       ]
     },
-    "ExtractResult": {
+    "PaperclipGetDoneIssues": {
       "main": [
         [
           {
-            "node": "TelegramNotifyCompleted",
-            "type": "main",
-            "index": 0
+            "index": 0,
+            "node": "FilterNewDoneIssues",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "SupabaseGetNotified": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "FilterNewDoneIssues",
+            "type": "main"
           }
         ]
       ]
@@ -248,9 +247,9 @@
       "main": [
         [
           {
+            "index": 0,
             "node": "SupabaseMarkNotified",
-            "type": "main",
-            "index": 0
+            "type": "main"
           }
         ]
       ]
