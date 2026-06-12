@@ -207,6 +207,7 @@
     "saveDataSuccessExecution": "all",
     "saveManualExecutions": true,
     "saveExecutionProgress": true,
-    "binaryMode": "separate"
+    "binaryMode": "separate",
+    "errorWorkflow": "hqtExbNvPA6slEwu"
   }
 }

@@ -1,0 +1,329 @@
+{
+  "name": "Calificación de Leads y Conversión",
+  "nodes": [
+    {
+      "parameters": {
+        "model": "gpt-5.4-mini",
+        "options": {}
+      },
+      "id": "openai-1",
+      "name": "OpenAI Model (Parser)",
+      "position": [
+        208,
+        208
+      ],
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1,
+      "credentials": {
+        "openAiApi": {
+          "id": "4iK6wrqLwNRksV0n",
+          "name": "OpenAI account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "prompt": "=Eres un evaluador de leads para \"Centro de Tutorías\". Tu objetivo es calificar el interés y la urgencia de los leads que ingresan a través del formulario web.\n\nRegla MUY IMPORTANTE: A veces los leads ingresan datos muy cortos, incompletos o de prueba (ej. nombres genéricos, descripciones de una sola palabra, texto de prueba). NUNCA te niegues a evaluar y NUNCA digas que faltan datos. Si el lead provee aunque sea un mínimo de información, asume que hay una necesidad real subyacente. \n\nDatos del lead ingresado:\nNombre: {{ $('Execute Workflow Trigger').item.json.parent_or_student_name }}\nEmail: {{ $('Execute Workflow Trigger').item.json.email }}\nTeléfono: {{ $('Execute Workflow Trigger').item.json.phone }}\nMateria a reforzar: {{ $('Execute Workflow Trigger').item.json.subject }}\nTipo de apoyo solicitado: {{ $('Execute Workflow Trigger').item.json.support_type }}\nDescripción de la necesidad/problema: {{ $('Execute Workflow Trigger').item.json.description }}\n\nCriterios de asignación de Lead_score (1 al 10):\n- Si el lead describe un problema urgente (ej. \"reprobando\", \"examen próximo\"): Score 9-10.\n- Si el lead pide información de una materia en específico pero da pocos detalles: Score 8.\n- Si los datos son sumamente cortos, incompletos o parecen \"texto de prueba\" (ej. \"prueba\", \"asd\", \"ayuda\"): Asigna un Score de 7. ¡Asume que es un lead válido que simplemente no quiso escribir mucho!\n- Solo asigna menos de 5 si el texto es evidentemente Spam vendiendo servicios.\n\nGenera ÚNICAMENTE un objeto JSON válido sin texto adicional ni bloques de código markdown, con la siguiente estructura:\n1. Lead_score (número del 1 al 10, según las reglas de arriba)\n2. Nivel_urgencia (Alta, Media, Baja)\n3. Resumen (Un resumen muy breve y optimista de la situación. Si la descripción es de prueba o incompleta, simplemente di que \"El lead está interesado en tutorías de [Materia] y requiere contacto para explorar sus necesidades\". NUNCA te quejes de que faltan datos)."
+      },
+      "id": "chain-1",
+      "name": "Basic LLM Chain (Parsing)",
+      "position": [
+        208,
+        0
+      ],
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "number": [
+            {
+              "operation": "larger",
+              "value1": "={{ $('Parse AI Output').first().json.parsed.Lead_score || 0 }}",
+              "value2": 5
+            }
+          ]
+        }
+      },
+      "id": "if-1",
+      "name": "IF Lead_score > 5",
+      "position": [
+        608,
+        0
+      ],
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "model": "gpt-4o",
+        "options": {}
+      },
+      "id": "openai-2",
+      "name": "OpenAI Model (Email)",
+      "position": [
+        800,
+        208
+      ],
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1,
+      "credentials": {
+        "openAiApi": {
+          "id": "4iK6wrqLwNRksV0n",
+          "name": "OpenAI account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "prompt": "=Redacta un correo electrónico persuasivo y de mucho valor basado en el análisis del lead:\nNombre: {{ $('Execute Workflow Trigger').item.json.parent_or_student_name }}\nProblema: {{ $('Execute Workflow Trigger').item.json.description }}\nMateria: {{ $('Execute Workflow Trigger').item.json.subject }}\nScore asignado: {{ $('Parse AI Output').first().json.parsed.Lead_score }}\nResumen AI: {{ $('Parse AI Output').first().json.parsed.Resumen }}\n\nEl correo debe hacer un análisis de su estado actual de forma empática, aportar valor específico sobre cómo nuestro servicio en Centro de Tutorías puede ayudarle a superar sus retos en la materia mencionada, y finalizar con un Call to Action claro para que agende una reunión de diagnóstico gratuito en nuestro calendario: https://calendly.com/cedetu\n\nFirma el correo siempre como: Lucía, Coordinadora Académica de Centro de Tutorías. NO uses placeholders como [Tu Nombre]."
+      },
+      "id": "chain-2",
+      "name": "Basic LLM Chain (Email Draft)",
+      "position": [
+        800,
+        0
+      ],
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "model": "gpt-4o",
+        "options": {}
+      },
+      "id": "openai-3",
+      "name": "OpenAI Model (HTML)",
+      "position": [
+        1008,
+        208
+      ],
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1,
+      "credentials": {
+        "openAiApi": {
+          "id": "4iK6wrqLwNRksV0n",
+          "name": "OpenAI account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "prompt": "=Convierte el siguiente texto de correo electrónico en un formato HTML bien estructurado y profesional. Al principio del correo (antes del saludo), incluye este logotipo usando la siguiente etiqueta HTML: <div style=\"text-align: left; margin-bottom: 20px;\"><img src=\"https://www.centrodetutorias.com/LOGO_CEDETU.png\" alt=\"Centro de Tutorías\" style=\"max-height: 60px;\"></div>. Usa etiquetas p, br, b, y a para el resto del contenido. No incluyas etiquetas html, head o body, solo el contenido del correo. NO uses bloques de código markdown como ```html.\n\n{{ $json.text }}"
+      },
+      "id": "chain-3",
+      "name": "Basic LLM Chain (Email HTML)",
+      "position": [
+        1008,
+        0
+      ],
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1
+    },
+    {
+      "parameters": {
+        "fromEmail": "operaciones@centrodetutorias.com",
+        "toEmail": "={{ $('Execute Workflow Trigger').item.json.email }}",
+        "subject": "Análisis y propuesta para tu caso",
+        "html": "={{ $json.text.replace(/```html/gi, '').replace(/```/g, '').trim() }}",
+        "options": {}
+      },
+      "id": "email-1",
+      "name": "Send Email",
+      "position": [
+        1200,
+        0
+      ],
+      "type": "n8n-nodes-base.emailSend",
+      "typeVersion": 1,
+      "credentials": {
+        "smtp": {
+          "id": "RrEqzBTLbIQz9QNL",
+          "name": "SMTP account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "https://services.leadconnectorhq.com/contacts/upsert",
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "Bearer pit-62719809-63ac-4b11-8e4a-df5942c8e80e"
+            },
+            {
+              "name": "Version",
+              "value": "2021-07-28"
+            },
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"locationId\": \"JhSnXQVvO5cUmHqXRced\",\n  \"email\": \"{{ $('Execute Workflow Trigger').item.json.email }}\",\n  \"firstName\": \"{{ $('Execute Workflow Trigger').item.json.parent_or_student_name }}\",\n  \"phone\": \"{{ $('Execute Workflow Trigger').item.json.phone }}\",\n  \"customFields\": [\n    {\n      \"key\": \"lead_score\",\n      \"field_value\": \"{{ $('Parse AI Output').first().json.parsed.Lead_score || '' }}\"\n    },\n    {\n      \"key\": \"nivel_urgencia\",\n      \"field_value\": \"{{ $('Parse AI Output').first().json.parsed.Nivel_urgencia || '' }}\"\n    },\n    {\n      \"key\": \"resumen\",\n      \"field_value\": \"{{ $('Parse AI Output').first().json.parsed.Resumen || '' }}\"\n    }\n  ]\n}",
+        "options": {}
+      },
+      "id": "http-1",
+      "name": "HTTP Request GHL",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1,
+      "position": [
+        400,
+        0
+      ]
+    },
+    {
+      "parameters": {},
+      "id": "trigger-1",
+      "name": "Execute Workflow Trigger",
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1,
+      "position": [
+        0,
+        0
+      ]
+    },
+    {
+      "id": "9be41cd9-8edd-4564-88b3-cec2b30bc5bf",
+      "name": "Parse AI Output",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        300,
+        0
+      ],
+      "parameters": {
+        "jsCode": "let parsed = {};\n\nif ($input.item.json.Lead_score !== undefined) {\n  parsed = {\n    Lead_score: $input.item.json.Lead_score,\n    Nivel_urgencia: $input.item.json.Nivel_urgencia,\n    Resumen: $input.item.json.Resumen\n  };\n} else if ($input.item.json.output && $input.item.json.output.Lead_score !== undefined) {\n  parsed = $input.item.json.output;\n} else if ($input.item.json.text && typeof $input.item.json.text === 'object' && $input.item.json.text.Lead_score !== undefined) {\n  parsed = $input.item.json.text;\n} else {\n  const textToParse = $input.item.json.text || $input.item.json.output || '';\n  if (typeof textToParse === 'string' && textToParse.length > 0) {\n    try {\n      const match = textToParse.match(/\\{[\\s\\S]*\\}/);\n      if (match) {\n        let tempParsed = JSON.parse(match[0]);\n        if (tempParsed.__structured___output) {\n          parsed = tempParsed.__structured___output;\n        } else {\n          parsed = tempParsed;\n        }\n      } else {\n        throw new Error(\"No JSON object found\");\n      }\n    } catch(e) {\n      parsed = { Lead_score: 1, Nivel_urgencia: 'Parse Error', Resumen: textToParse };\n    }\n  } else {\n      parsed = { Lead_score: 1, Nivel_urgencia: 'No Data', Resumen: JSON.stringify($input.item.json) };\n  }\n}\n\nif (parsed.Lead_score !== undefined) {\n    parsed.Lead_score = Number(parsed.Lead_score);\n}\n\nreturn { json: { ...$input.item.json, parsed } };"
+      }
+    }
+  ],
+  "connections": {
+    "Basic LLM Chain (Email Draft)": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Basic LLM Chain (Email HTML)",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "Basic LLM Chain (Email HTML)": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Send Email",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "IF Lead_score > 5": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Basic LLM Chain (Email Draft)",
+            "type": "main"
+          }
+        ]
+      ]
+    },
+    "OpenAI Model (Email)": {
+      "ai_languageModel": [
+        [
+          {
+            "index": 0,
+            "node": "Basic LLM Chain (Email Draft)",
+            "type": "ai_languageModel"
+          }
+        ]
+      ]
+    },
+    "OpenAI Model (HTML)": {
+      "ai_languageModel": [
+        [
+          {
+            "index": 0,
+            "node": "Basic LLM Chain (Email HTML)",
+            "type": "ai_languageModel"
+          }
+        ]
+      ]
+    },
+    "OpenAI Model (Parser)": {
+      "ai_languageModel": [
+        [
+          {
+            "index": 0,
+            "node": "Basic LLM Chain (Parsing)",
+            "type": "ai_languageModel"
+          }
+        ]
+      ]
+    },
+    "HTTP Request GHL": {
+      "main": [
+        [
+          {
+            "node": "IF Lead_score > 5",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Execute Workflow Trigger": {
+      "main": [
+        [
+          {
+            "node": "Basic LLM Chain (Parsing)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Basic LLM Chain (Parsing)": {
+      "main": [
+        [
+          {
+            "node": "Parse AI Output",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse AI Output": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request GHL",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": true,
+  "settings": {
+    "executionOrder": "v1",
+    "saveDataErrorExecution": "all",
+    "saveDataSuccessExecution": "all",
+    "saveManualExecutions": true,
+    "saveExecutionProgress": true,
+    "binaryMode": "separate",
+    "errorWorkflow": "hqtExbNvPA6slEwu"
+  }
+}

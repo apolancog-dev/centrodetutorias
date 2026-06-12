@@ -1,0 +1,61 @@
+{
+  "name": "Error Handler - n8n Automation",
+  "nodes": [
+    {
+      "id": "error-trigger-1",
+      "name": "Error Trigger",
+      "parameters": {},
+      "position": [
+        250,
+        300
+      ],
+      "type": "n8n-nodes-base.errorTrigger",
+      "typeVersion": 1
+    },
+    {
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "yF6GX0x5QPUy9d4K",
+          "name": "Paperclip Bearer Key"
+        }
+      },
+      "id": "paperclip-issue-request-error",
+      "name": "Crear Issue en Paperclip",
+      "parameters": {
+        "authentication": "genericCredentialType",
+        "contentType": "json",
+        "genericAuthType": "httpHeaderAuth",
+        "jsonBody": "={\n  \"title\": \"Fallo de ejecución en workflow: {{ $json.execution.workflow.name || '' }}\",\n  \"description\": \"El workflow '{{ $json.execution.workflow.name || '' }}' (ID: {{ $json.execution.workflow.id || '' }}) ha fallado.\\n\\nDetalles del error:\\n- Execution ID: {{ $json.execution.id || '' }}\\n- Último Nodo Ejecutado: {{ $json.execution.lastNodeExecuted || '' }}\\n- Mensaje de Error: {{ $json.execution.error.message || '' }}\\n\\nEnlace de ejecución en n8n:\\n{{ $json.execution.url || '' }}\",\n  \"status\": \"todo\",\n  \"priority\": \"high\",\n  \"assigneeAgentId\": \"df330bdb-7956-4a34-a8c8-5e2df95c14e9\"\n}",
+        "method": "POST",
+        "options": {},
+        "sendBody": true,
+        "specifyBody": "json",
+        "url": "http://paperclip.centrodetutorias.com:3100/api/companies/87d21d03-de87-46f0-8f1d-27d223f99ce3/issues"
+      },
+      "position": [
+        500,
+        300
+      ],
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4
+    }
+  ],
+  "connections": {
+    "Error Trigger": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Crear Issue en Paperclip",
+            "type": "main"
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "errorWorkflow": "hqtExbNvPA6slEwu"
+  },
+  "active": true
+}
