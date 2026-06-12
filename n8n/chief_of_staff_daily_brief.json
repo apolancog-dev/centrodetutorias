@@ -85,48 +85,6 @@
     },
     {
       "parameters": {
-        "messages": {
-          "values": [
-            {
-              "content": "Eres el Chief of Staff Agent de Antonio Polanco, CEO del Centro de Tutorías. Tu trabajo es generar un Brief Ejecutivo diario a partir de sus correos y agenda del día. El brief debe ser:\n- Accionable y conciso\n- Priorizado por impacto en el negocio\n- Escrito en español\n- Con formato markdown para Paperclip\n\nNUNCA incluyas newsletters, promociones o notificaciones automáticas en el brief.\nSIEMPRE incluyes correos financieros, de clientes, y con fechas límite.\n\nUsa exactamente esta estructura:\n\n## 🔴 PRIORIDAD MÁXIMA (Hacer hoy antes del mediodía)\n[máximo 3 bullets accionables]\n\n## 📅 REUNIONES DEL DÍA\n[lista de eventos con hora y acción de preparación]\n\n## 📨 CORREOS QUE REQUIEREN RESPUESTA\n[tabla o bullets: Remitente | Asunto | Acción sugerida]\n\n## 💼 OPORTUNIDADES / SEGUIMIENTOS\n[si hay algo estratégico]\n\n## ⚠️ RIESGOS Y ALERTAS\n[si hay algo urgente o de riesgo]\n\n## ✅ LISTA DE ACCIONES DEL DÍA\n[checklist priorizada]\n\nSi no hay datos para alguna sección, escribe 'Sin novedades para hoy.'",
-              "role": "system"
-            },
-            {
-              "content": "=Genera el brief ejecutivo para el día {{ $json.date }}.\n\n**CORREOS DE HOY ({{ $json.emailCount }} correos):**\n{{ $json.emailContext }}\n\n**AGENDA DE HOY ({{ $json.eventCount }} eventos):**\n{{ $json.calendarContext }}",
-              "role": "user"
-            }
-          ]
-        },
-        "modelId": {
-          "__rl": true,
-          "cachedResultName": "GPT-4o",
-          "mode": "list",
-          "value": "gpt-4o"
-        },
-        "operation": "complete",
-        "options": {
-          "maxTokens": 2000,
-          "temperature": 0.3
-        },
-        "resource": "chat"
-      },
-      "id": "openai-generate-brief",
-      "name": "GPT-4o — Generate Brief",
-      "type": "n8n-nodes-base.openAi",
-      "typeVersion": 1.8,
-      "position": [
-        912,
-        304
-      ],
-      "credentials": {
-        "openAiApi": {
-          "id": "4iK6wrqLwNRksV0n",
-          "name": "OpenAI account"
-        }
-      }
-    },
-    {
-      "parameters": {
         "authentication": "genericCredentialType",
         "body": "={{ JSON.stringify({ title: '🗂️ Brief Ejecutivo — ' + $('Merge & Format Context').item.json.date, description: $json.text || $json.message?.content || '', status: 'backlog', priority: 'high', assigneeAgentId: 'b713f1b8-1b78-486c-b6ef-0fc2a885f2ec' }) }}",
         "bodyContentType": "raw",
@@ -238,6 +196,43 @@
           "name": "Telegram account"
         }
       }
+    },
+    {
+      "id": "openai-generate-brief",
+      "name": "GPT-4o — Generate Brief",
+      "type": "n8n-nodes-base.openAi",
+      "typeVersion": 1.1,
+      "position": [
+        912,
+        304
+      ],
+      "parameters": {
+        "chatModel": "gpt-4o",
+        "operation": "complete",
+        "options": {
+          "maxTokens": 2000,
+          "temperature": 0.3
+        },
+        "prompt": {
+          "messages": [
+            {
+              "content": "Eres el Chief of Staff Agent de Antonio Polanco, CEO del Centro de Tutorías. Tu trabajo es generar un Brief Ejecutivo diario a partir de sus correos y agenda del día. El brief debe ser:\n- Accionable y conciso\n- Priorizado por impacto en el negocio\n- Escrito en español\n- Con formato markdown para Paperclip\n\nNUNCA incluyas newsletters, promociones o notificaciones automáticas en el brief.\nSIEMPRE incluyes correos financieros, de clientes, y con fechas límite.\n\nUsa exactamente esta estructura:\n\n## 🔴 PRIORIDAD MÁXIMA (Hacer hoy antes del mediodía)\n[máximo 3 bullets accionables]\n\n## 📅 REUNIONES DEL DÍA\n[lista de eventos con hora y acción de preparación]\n\n## 📨 CORREOS QUE REQUIEREN RESPUESTA\n[tabla o bullets: Remitente | Asunto | Acción sugerida]\n\n## 💼 OPORTUNIDADES / SEGUIMIENTOS\n[si hay algo estratégico]\n\n## ⚠️ RIESGOS Y ALERTAS\n[si hay algo urgente o de riesgo]\n\n## ✅ LISTA DE ACCIONES DEL DÍA\n[checklist priorizada]\n\nSi no hay datos para alguna sección, escribe 'Sin novedades para hoy.'",
+              "role": "system"
+            },
+            {
+              "content": "=Genera el brief ejecutivo para el día {{ $json.date }}.\n\n**CORREOS DE HOY ({{ $json.emailCount }} correos):**\n{{ $json.emailContext }}\n\n**AGENDA DE HOY ({{ $json.eventCount }} eventos):**\n{{ $json.calendarContext }}",
+              "role": "user"
+            }
+          ]
+        },
+        "resource": "chat"
+      },
+      "credentials": {
+        "openAiApi": {
+          "id": "4iK6wrqLwNRksV0n",
+          "name": "OpenAI account"
+        }
+      }
     }
   ],
   "connections": {
@@ -279,28 +274,6 @@
         ]
       ]
     },
-    "Merge & Format Context": {
-      "main": [
-        [
-          {
-            "node": "GPT-4o — Generate Brief",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "GPT-4o — Generate Brief": {
-      "main": [
-        [
-          {
-            "node": "Paperclip — Create Brief Issue",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Paperclip — Create Brief Issue": {
       "main": [
         [
@@ -324,6 +297,28 @@
         [
           {
             "node": "Telegram — Error Alert",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge & Format Context": {
+      "main": [
+        [
+          {
+            "node": "GPT-4o — Generate Brief",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GPT-4o — Generate Brief": {
+      "main": [
+        [
+          {
+            "node": "Paperclip — Create Brief Issue",
             "type": "main",
             "index": 0
           }
