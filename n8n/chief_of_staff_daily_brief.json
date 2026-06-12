@@ -1,0 +1,340 @@
+{
+  "name": "Chief of Staff — Daily Brief",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "30 13 * * 1-5"
+            }
+          ]
+        }
+      },
+      "id": "schedule-trigger-cos",
+      "name": "Schedule Trigger — 7:30 AM GT",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        208,
+        304
+      ],
+      "notes": "Runs Mon-Fri at 13:30 UTC = 7:30 AM Guatemala (UTC-6)"
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "limit": 30,
+        "filters": {
+          "q": "is:unread OR is:important newer_than:1d -category:promotions -category:social -from:noreply -from:no-reply"
+        }
+      },
+      "id": "gmail-get-emails",
+      "name": "Gmail — Get Today Emails",
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        400,
+        208
+      ],
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "lIv5y8WS3b8wte0l",
+          "name": "Gmail account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "calendar": {
+          "mode": "id",
+          "value": "apolancog@gmail.com"
+        },
+        "limit": 20,
+        "options": {}
+      },
+      "id": "google-calendar-events",
+      "name": "Calendar — Get Today Events",
+      "type": "n8n-nodes-base.googleCalendar",
+      "typeVersion": 1.3,
+      "position": [
+        400,
+        432
+      ],
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "Af2uPlpF8a6iow0u",
+          "name": "Google Calendar account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// Merge Gmail + Calendar data into a single brief context\nconst emailItems = $('Gmail — Get Today Emails').all();\nconst calendarItems = $('Calendar — Get Today Events').all();\n\n// Process emails\nconst emails = emailItems.map(item => {\n  const msg = item.json;\n  const headers = msg.payload?.headers || [];\n  const subject = headers.find(h => h.name === 'Subject')?.value || '(Sin asunto)';\n  const from = headers.find(h => h.name === 'From')?.value || 'Desconocido';\n  const date = headers.find(h => h.name === 'Date')?.value || '';\n  const isImportant = (msg.labelIds || []).includes('IMPORTANT');\n  const isUnread = (msg.labelIds || []).includes('UNREAD');\n  \n  return {\n    subject,\n    from,\n    date,\n    isImportant,\n    isUnread,\n    snippet: msg.snippet || ''\n  };\n});\n\n// Process calendar events\nconst events = calendarItems.map(item => {\n  const ev = item.json;\n  return {\n    summary: ev.summary || '(Sin título)',\n    start: ev.start?.dateTime || ev.start?.date || '',\n    end: ev.end?.dateTime || ev.end?.date || '',\n    location: ev.location || '',\n    description: ev.description || '',\n    attendees: (ev.attendees || []).map(a => a.email).join(', ')\n  };\n});\n\n// Format today's date in Guatemala (UTC-6)\nconst now = new Date();\nconst gtOffset = -6 * 60;\nconst gtTime = new Date(now.getTime() + gtOffset * 60000);\nconst dateStr = gtTime.toLocaleDateString('es-GT', { \n  weekday: 'long', \n  year: 'numeric', \n  month: 'long', \n  day: 'numeric',\n  timeZone: 'UTC'\n});\n\n// Build prompt context\nconst emailContext = emails.length > 0\n  ? emails.map((e, i) => \n      `${i+1}. ${e.isImportant ? '[IMPORTANTE] ' : ''}${e.isUnread ? '[NO LEÍDO] ' : ''}\\n   De: ${e.from}\\n   Asunto: ${e.subject}\\n   Preview: ${e.snippet}`\n    ).join('\\n\\n')\n  : 'No hay correos nuevos o importantes en las últimas 24 horas.';\n\nconst calendarContext = events.length > 0\n  ? events.map((e, i) => {\n      const startTime = e.start ? new Date(e.start).toLocaleTimeString('es-GT', {hour: '2-digit', minute: '2-digit', timeZone: 'UTC'}) : 'Todo el día';\n      const endTime = e.end ? new Date(e.end).toLocaleTimeString('es-GT', {hour: '2-digit', minute: '2-digit', timeZone: 'UTC'}) : '';\n      return `${i+1}. ${e.summary}\\n   Hora: ${startTime}${endTime ? ' - ' + endTime : ''}\\n   ${e.location ? 'Lugar: ' + e.location : ''}\\n   ${e.attendees ? 'Participantes: ' + e.attendees : ''}`;\n    }).join('\\n\\n')\n  : 'No tienes reuniones programadas para hoy.';\n\nreturn [{\n  json: {\n    date: dateStr,\n    emailContext,\n    calendarContext,\n    emailCount: emails.length,\n    eventCount: events.length\n  }\n}];\n"
+      },
+      "id": "merge-data-node",
+      "name": "Merge & Format Context",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        656,
+        304
+      ]
+    },
+    {
+      "parameters": {
+        "messages": {
+          "values": [
+            {
+              "content": "Eres el Chief of Staff Agent de Antonio Polanco, CEO del Centro de Tutorías. Tu trabajo es generar un Brief Ejecutivo diario a partir de sus correos y agenda del día. El brief debe ser:\n- Accionable y conciso\n- Priorizado por impacto en el negocio\n- Escrito en español\n- Con formato markdown para Paperclip\n\nNUNCA incluyas newsletters, promociones o notificaciones automáticas en el brief.\nSIEMPRE incluyes correos financieros, de clientes, y con fechas límite.\n\nUsa exactamente esta estructura:\n\n## 🔴 PRIORIDAD MÁXIMA (Hacer hoy antes del mediodía)\n[máximo 3 bullets accionables]\n\n## 📅 REUNIONES DEL DÍA\n[lista de eventos con hora y acción de preparación]\n\n## 📨 CORREOS QUE REQUIEREN RESPUESTA\n[tabla o bullets: Remitente | Asunto | Acción sugerida]\n\n## 💼 OPORTUNIDADES / SEGUIMIENTOS\n[si hay algo estratégico]\n\n## ⚠️ RIESGOS Y ALERTAS\n[si hay algo urgente o de riesgo]\n\n## ✅ LISTA DE ACCIONES DEL DÍA\n[checklist priorizada]\n\nSi no hay datos para alguna sección, escribe 'Sin novedades para hoy.'",
+              "role": "system"
+            },
+            {
+              "content": "=Genera el brief ejecutivo para el día {{ $json.date }}.\n\n**CORREOS DE HOY ({{ $json.emailCount }} correos):**\n{{ $json.emailContext }}\n\n**AGENDA DE HOY ({{ $json.eventCount }} eventos):**\n{{ $json.calendarContext }}",
+              "role": "user"
+            }
+          ]
+        },
+        "modelId": {
+          "__rl": true,
+          "cachedResultName": "GPT-4o",
+          "mode": "list",
+          "value": "gpt-4o"
+        },
+        "operation": "complete",
+        "options": {
+          "maxTokens": 2000,
+          "temperature": 0.3
+        },
+        "resource": "chat"
+      },
+      "id": "openai-generate-brief",
+      "name": "GPT-4o — Generate Brief",
+      "type": "n8n-nodes-base.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        912,
+        304
+      ],
+      "credentials": {
+        "openAiApi": {
+          "id": "4iK6wrqLwNRksV0n",
+          "name": "OpenAI account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "authentication": "genericCredentialType",
+        "body": "={{ JSON.stringify({ title: '🗂️ Brief Ejecutivo — ' + $('Merge & Format Context').item.json.date, description: $json.text || $json.message?.content || '', status: 'backlog', priority: 'high', assigneeAgentId: 'b713f1b8-1b78-486c-b6ef-0fc2a885f2ec' }) }}",
+        "bodyContentType": "raw",
+        "contentType": "raw",
+        "genericAuthType": "httpHeaderAuth",
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Content-Type",
+              "value": "application/json"
+            }
+          ]
+        },
+        "method": "POST",
+        "rawContentType": "application/json",
+        "sendBody": true,
+        "sendHeaders": true,
+        "url": "http://cedetu-paperclipapp-6vqkln:3100/api/companies/87d21d03-de87-46f0-8f1d-27d223f99ce3/issues"
+      },
+      "id": "paperclip-create-issue",
+      "name": "Paperclip — Create Brief Issue",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        1152,
+        304
+      ],
+      "credentials": {
+        "httpHeaderAuth": {
+          "id": "yF6GX0x5QPUy9d4K",
+          "name": "Paperclip Bearer Key"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "check-issue-created",
+              "leftValue": "={{ $json.id }}",
+              "operator": {
+                "operation": "exists",
+                "singleValue": true,
+                "type": "string"
+              }
+            }
+          ],
+          "options": {
+            "version": 2,
+            "leftValue": "",
+            "caseSensitive": true,
+            "typeValidation": "strict"
+          }
+        }
+      },
+      "id": "check-success",
+      "name": "Issue Created?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1408,
+        304
+      ]
+    },
+    {
+      "parameters": {
+        "chatId": "724801911",
+        "text": "=✅ *Brief Ejecutivo Generado*\n\nTu brief del día está listo en Paperclip.\n🔗 Issue #{{ $('Paperclip — Create Brief Issue').item.json.id }}\n\n_Chief of Staff Agent — {{ new Date().toLocaleString('es-GT', {timeZone: 'America/Guatemala'}) }}_",
+        "additionalFields": {
+          "parse_mode": "Markdown"
+        }
+      },
+      "id": "telegram-success",
+      "name": "Telegram — Brief Ready",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1664,
+        208
+      ],
+      "credentials": {
+        "telegramApi": {
+          "id": "C70mrh8zZbUll0Zw",
+          "name": "Telegram account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "chatId": "724801911",
+        "text": "=⚠️ *Error: Brief Ejecutivo*\n\nNo se pudo crear el Issue en Paperclip.\n\nError: {{ $json.error || 'Desconocido' }}\n\n_Revisa el workflow en n8n._",
+        "additionalFields": {
+          "parse_mode": "Markdown"
+        }
+      },
+      "id": "telegram-error",
+      "name": "Telegram — Error Alert",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1664,
+        432
+      ],
+      "credentials": {
+        "telegramApi": {
+          "id": "C70mrh8zZbUll0Zw",
+          "name": "Telegram account"
+        }
+      }
+    }
+  ],
+  "connections": {
+    "Schedule Trigger — 7:30 AM GT": {
+      "main": [
+        [
+          {
+            "node": "Gmail — Get Today Emails",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Calendar — Get Today Events",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Gmail — Get Today Emails": {
+      "main": [
+        [
+          {
+            "node": "Merge & Format Context",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Calendar — Get Today Events": {
+      "main": [
+        [
+          {
+            "node": "Merge & Format Context",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge & Format Context": {
+      "main": [
+        [
+          {
+            "node": "GPT-4o — Generate Brief",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "GPT-4o — Generate Brief": {
+      "main": [
+        [
+          {
+            "node": "Paperclip — Create Brief Issue",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Paperclip — Create Brief Issue": {
+      "main": [
+        [
+          {
+            "node": "Issue Created?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Issue Created?": {
+      "main": [
+        [
+          {
+            "node": "Telegram — Brief Ready",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Telegram — Error Alert",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "saveManualExecutions": true,
+    "errorWorkflow": "hqtExbNvPA6slEwu",
+    "binaryMode": "separate"
+  }
+}
