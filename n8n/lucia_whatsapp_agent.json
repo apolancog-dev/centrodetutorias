@@ -19,7 +19,7 @@
       "name": "AI Agent",
       "parameters": {
         "options": {
-          "systemMessage": "=Eres LucIA, la asistente virtual inteligente y empática del Centro de Tutorías (CEDETU), atendiendo a los clientes directamente por WhatsApp. Tu tono es sumamente cálido, amigable, profesional y paciente. \n\nREGLAS DE CONVERSACIÓN EN WHATSAPP:\n- Escribe de forma concisa y conversacional. Usa párrafos cortos de 2 o 3 líneas máximo. WhatsApp requiere respuestas dinámicas, evita textos extremadamente largos.\n- Usa emojis con buen gusto para hacer los mensajes dinámicos y legibles.\n- Usa negritas (*texto*) para resaltar palabras importantes (ej: *clases virtuales*, *entrevista de diagnóstico gratuita*).\n- Tu objetivo es responder dudas sobre las tutorías de CEDETU y recopilar los datos del lead de manera fluida:\n  - Nombre completo\n  - Correo electrónico\n  - Número de teléfono (Pregúntale activamente al cliente si desea registrar su número de WhatsApp actual: {{ $('Filter Text Message').item.json.from }} o si prefiere proporcionar otro número de contacto principal)\n  - Materia que necesita reforzar\n  - Nivel académico (Primaria, Secundaria, Bachillerato, Universidad)\n  - Breve descripción del caso\n- Cuando tengas al menos Nombre, Email, Teléfono y Materia de interés, DEBES invocar la herramienta \"guardar_lead\" para registrarlos en Supabase y GoHighLevel. (El número de teléfono a guardar debe ser el que te proporcione el cliente, o su número de WhatsApp actual: {{ $('Filter Text Message').item.json.from }} si no indica otro).\n- Siempre ofrece la opción de agendar un *Entrevista de Diagnóstico Gratuita de 20 minutos* directamente en nuestro Calendly: https://calendly.com/cedetu\n- Despídete cordialmente firmando como: \"*LucIA*, tu Asistente Virtual de CEDETU 🤖✨\"."
+          "systemMessage": "=Eres LucIA, la asistente virtual inteligente y empática del Centro de Tutorías (CEDETU), atendiendo a los clientes directamente por WhatsApp. Tu tono es sumamente cálido, amigable, profesional y paciente. \\n\\nREGLAS DE CONVERSACIÓN EN WHATSAPP:\\n- Escribe de forma concisa y conversacional. Usa párrafos cortos de 2 o 3 líneas máximo. WhatsApp requiere respuestas dinámicas, evita textos extremadamente largos.\\n- Usa emojis con buen gusto para make los mensajes dinámicos y legibles.\\n- Usa negritas (*texto*) para resaltar palabras importantes (ej: *clases virtuales*, *entrevista de diagnóstico gratuita*).\\n- Tu objetivo es responder dudas sobre las tutorías de CEDETU y recopilar los datos del lead de manera fluida:\\n  - Nombre completo\\n  - Correo electrónico\\n  - Número de teléfono (Pregúntale activamente al cliente si desea registrar su número de WhatsApp actual: {{ $('Filter Text Message').item.json.from }} o si prefiere proporcionar otro número de contacto principal)\\n  - Materia que necesita reforzar\\n  - Nivel académico (Primaria, Secundaria, Bachillerato, Universidad)\\n  - Breve descripción del caso\\n- Cuando tengas al menos Nombre, Email, Teléfono y Materia de interés, DEBES invocar la herramienta \\\"guardar_lead\\\" para registrarlos en Supabase y GoHighLevel. (El número de teléfono a guardar debe ser el que te proporcione el cliente, o su número de WhatsApp actual: {{ $('Filter Text Message').item.json.from }} si no indica otro).\\n- Siempre ofrece la opción de agendar un *Entrevista de Diagnóstico Gratuita de 20 minutos* directamente en nuestro Calendly: https://calendly.com/cedetu\\n- Despídete cordialmente firmando como: \\\"*LucIA*, tu Asistente Virtual de CEDETU 🤖✨\\\".\""
         },
         "promptType": "define",
         "text": "={{ $json.text }}"
@@ -73,7 +73,7 @@
       "name": "Guardar Lead Sub-Workflow Tool",
       "parameters": {
         "description": "Utiliza esta herramienta únicamente cuando el usuario te haya proporcionado sus datos de contacto completos (Nombre, Correo, Teléfono) y la Materia de interés, para registrarlos en el sistema Supabase y GoHighLevel.",
-        "inputSchema": "{\n  \"type\": \"object\",\n  \"properties\": {\n    \"nombre\": {\n      \"type\": \"string\",\n      \"description\": \"Nombre completo del lead\"\n    },\n    \"email\": {\n      \"type\": \"string\",\n      \"description\": \"Correo electrónico de contacto\"\n    },\n    \"telefono\": {\n      \"type\": \"string\",\n      \"description\": \"Número de teléfono del contacto\"\n    },\n    \"materia\": {\n      \"type\": \"string\",\n      \"description\": \"Materia que necesita reforzar\"\n    },\n    \"nivel\": {\n      \"type\": \"string\",\n      \"description\": \"Nivel académico del estudiante (Primaria, Secundaria, Bachillerato, Universidad)\"\n    },\n    \"descripcion\": {\n      \"type\": \"string\",\n      \"description\": \"Breve descripción de la necesidad académica\"\n    }\n  },\n  \"required\": [\"nombre\", \"email\", \"telefono\", \"materia\"]\n}",
+        "inputSchema": "{\\n  \\\"type\\\": \\\"object\\\",\\n  \\\"properties\\\": {\\n    \\\"nombre\\\": {\\n      \\\"type\\\": \\\"string\\\",\\n      \\\"description\\\": \\\"Nombre completo del lead\\\"\\n    },\\n    \\\"email\\\": {\\n      \\\"type\\\": \\\"string\\\",\\n      \\\"description\\\": \\\"Correo electrónico de contacto\\\"\\n    },\\n    \\\"telefono\\\": {\\n      \\\"type\\\": \\\"string\\\",\\n      \\\"description\\\": \\\"Número de teléfono del contacto\\\"\\n    },\\n    \\\"materia\\\": {\\n      \\\"type\\\": \\\"string\\\",\\n      \\\"description\\\": \\\"Materia que necesita reforzar\\\"\\n    },\\n    \\\"nivel\\\": {\\n      \\\"type\\\": \\\"string\\\",\\n      \\\"description\\\": \\\"Nivel académico del estudiante (Primaria, Secundaria, Bachillerato, Universidad)\\\"\\n    },\\n    \\\"descripcion\\\": {\\n      \\\"type\\\": \\\"string\\\",\\n      \\\"description\\\": \\\"Breve descripción de la necesidad académica\\\"\\n    }\\n  },\\n  \\\"required\\\": [\\\"nombre\\\", \\\"email\\\", \\\"telefono\\\", \\\"materia\\\"]\\n}",
         "name": "guardar_lead",
         "specifyInputSchema": true,
         "workflowId": "hITGXdI6ECjNDtYe"
@@ -100,7 +100,7 @@
       ],
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 1.1,
-      "webhookId": "ee9fc820-70dc-4ea5-8dc9-f9413c475781"
+      "webhookId": "88779547-0d91-4332-a496-a11bf2297208"
     },
     {
       "id": "28f92b7c-fa0e-4be7-8d82-df75c61abcc6",
@@ -118,14 +118,14 @@
       ],
       "type": "n8n-nodes-base.webhook",
       "typeVersion": 1.1,
-      "webhookId": "6e369b63-fd88-4dfa-8669-050e6f4b68db"
+      "webhookId": "66bf548e-b15a-4c7e-83e7-3ef647679b5e"
     },
     {
       "id": "38f92b7c-fa0e-4be7-8d82-df75c61abcc7",
       "name": "Respond to Webhook",
       "parameters": {
         "respondWith": "text",
-        "responseBody": "={{ $json.query[\"hub.challenge\"] }}"
+        "responseBody": "={{ $json.query[\\\"hub.challenge\\\"] }}"
       },
       "position": [
         420,
@@ -156,13 +156,12 @@
       ],
       "type": "n8n-nodes-base.whatsApp",
       "typeVersion": 1.1,
-      "webhookId": "0eb9fec1-8c4b-4e2f-82fa-f84126eaa434"
+      "webhookId": "4f3e28d5-531e-48c2-b351-bb413bbd70ad"
     },
     {
+      "id": "e64c1bb3-dd72-477d-9658-0056637b58c7",
+      "name": "HTTP Request GHL WhatsApp",
       "parameters": {
-        "method": "POST",
-        "url": "https://services.leadconnectorhq.com/contacts/upsert",
-        "sendHeaders": true,
         "headerParameters": {
           "parameters": [
             {
@@ -179,51 +178,21 @@
             }
           ]
         },
-        "sendBody": true,
-        "specifyBody": "json",
         "jsonBody": "={\n  \"locationId\": \"JhSnXQVvO5cUmHqXRced\",\n  \"firstName\": \"{{ $('Filter Text Message').item.json.contact_name }}\",\n  \"phone\": \"{{ $('Filter Text Message').item.json.from }}\",\n  \"tags\": [\n    \"lead-whatsapp-lucia\"\n  ]\n}",
-        "options": {}
+        "method": "POST",
+        "sendBody": true,
+        "sendHeaders": true,
+        "specifyBody": "json",
+        "url": "https://services.leadconnectorhq.com/contacts/upsert"
       },
-      "id": "e64c1bb3-dd72-477d-9658-0056637b58c7",
-      "name": "HTTP Request GHL WhatsApp",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.1,
       "position": [
         640,
         80
-      ]
+      ],
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.1
     },
     {
-      "parameters": {
-        "table": "whatsapp_messages",
-        "operation": "insert",
-        "columns": [
-          "phone",
-          "name",
-          "direction",
-          "content"
-        ],
-        "valuesToSend": {
-          "values": [
-            {
-              "column": "phone",
-              "value": "={{ $json.from }}"
-            },
-            {
-              "column": "name",
-              "value": "={{ $json.contact_name }}"
-            },
-            {
-              "column": "direction",
-              "value": "inbound"
-            },
-            {
-              "column": "content",
-              "value": "={{ $json.text }}"
-            }
-          ]
-        }
-      },
       "credentials": {
         "supabaseApi": {
           "id": "IVa19l81qjUZcHse",
@@ -232,44 +201,43 @@
       },
       "id": "supabase-log-inbound",
       "name": "Log Inbound Message",
-      "type": "n8n-nodes-base.supabase",
-      "typeVersion": 1,
+      "parameters": {
+        "columns": null,
+        "dataToSend": "defineBelow",
+        "fieldsUi": {
+          "fieldValues": [
+            {
+              "fieldId": "phone",
+              "fieldValue": "={{ $json.from }}"
+            },
+            {
+              "fieldId": "name",
+              "fieldValue": "={{ $json.contact_name }}"
+            },
+            {
+              "fieldId": "direction",
+              "fieldValue": "inbound"
+            },
+            {
+              "fieldId": "content",
+              "fieldValue": "={{ $json.text }}"
+            }
+          ]
+        },
+        "operation": "create",
+        "resource": "row",
+        "table": null,
+        "tableId": "whatsapp_messages",
+        "valuesToSend": null
+      },
       "position": [
         640,
         -100
-      ]
+      ],
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1
     },
     {
-      "parameters": {
-        "table": "whatsapp_messages",
-        "operation": "insert",
-        "columns": [
-          "phone",
-          "name",
-          "direction",
-          "content"
-        ],
-        "valuesToSend": {
-          "values": [
-            {
-              "column": "phone",
-              "value": "={{ $('Filter Text Message').item.json.from }}"
-            },
-            {
-              "column": "name",
-              "value": "LucIA (AI)"
-            },
-            {
-              "column": "direction",
-              "value": "outbound"
-            },
-            {
-              "column": "content",
-              "value": "={{ $('AI Agent').item.json.output }}"
-            }
-          ]
-        }
-      },
       "credentials": {
         "supabaseApi": {
           "id": "IVa19l81qjUZcHse",
@@ -278,12 +246,41 @@
       },
       "id": "supabase-log-outbound-ai",
       "name": "Log Outbound AI Message",
-      "type": "n8n-nodes-base.supabase",
-      "typeVersion": 1,
+      "parameters": {
+        "columns": null,
+        "dataToSend": "defineBelow",
+        "fieldsUi": {
+          "fieldValues": [
+            {
+              "fieldId": "phone",
+              "fieldValue": "={{ $('Filter Text Message').item.json.from }}"
+            },
+            {
+              "fieldId": "name",
+              "fieldValue": "LucIA (AI)"
+            },
+            {
+              "fieldId": "direction",
+              "fieldValue": "outbound"
+            },
+            {
+              "fieldId": "content",
+              "fieldValue": "={{ $('AI Agent').item.json.output }}"
+            }
+          ]
+        },
+        "operation": "create",
+        "resource": "row",
+        "table": null,
+        "tableId": "whatsapp_messages",
+        "valuesToSend": null
+      },
       "position": [
         1140,
         240
-      ]
+      ],
+      "type": "n8n-nodes-base.supabase",
+      "typeVersion": 1
     }
   ],
   "connections": {
@@ -307,14 +304,14 @@
             "type": "main"
           },
           {
+            "index": 0,
             "node": "HTTP Request GHL WhatsApp",
-            "type": "main",
-            "index": 0
+            "type": "main"
           },
           {
+            "index": 0,
             "node": "Log Inbound Message",
-            "type": "main",
-            "index": 0
+            "type": "main"
           }
         ]
       ]
@@ -337,6 +334,17 @@
             "index": 0,
             "node": "AI Agent",
             "type": "ai_languageModel"
+          }
+        ]
+      ]
+    },
+    "Send WhatsApp Message": {
+      "main": [
+        [
+          {
+            "index": 0,
+            "node": "Log Outbound AI Message",
+            "type": "main"
           }
         ]
       ]
@@ -370,17 +378,6 @@
             "index": 0,
             "node": "AI Agent",
             "type": "ai_memory"
-          }
-        ]
-      ]
-    },
-    "Send WhatsApp Message": {
-      "main": [
-        [
-          {
-            "node": "Log Outbound AI Message",
-            "type": "main",
-            "index": 0
           }
         ]
       ]
