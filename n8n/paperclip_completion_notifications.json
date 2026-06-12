@@ -37,7 +37,7 @@
       "typeVersion": 4.4,
       "position": [
         300,
-        200
+        300
       ],
       "credentials": {
         "httpHeaderAuth": {
@@ -58,8 +58,8 @@
       "type": "n8n-nodes-base.supabase",
       "typeVersion": 1,
       "position": [
-        300,
-        400
+        500,
+        300
       ],
       "credentials": {
         "supabaseApi": {
@@ -77,7 +77,7 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        550,
+        700,
         300
       ]
     },
@@ -94,7 +94,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.4,
       "position": [
-        750,
+        900,
         300
       ],
       "credentials": {
@@ -113,7 +113,7 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        950,
+        1100,
         300
       ]
     },
@@ -131,7 +131,7 @@
       "type": "n8n-nodes-base.telegram",
       "typeVersion": 1.2,
       "position": [
-        1150,
+        1300,
         300
       ],
       "credentials": {
@@ -160,7 +160,7 @@
       "type": "n8n-nodes-base.supabase",
       "typeVersion": 1,
       "position": [
-        1350,
+        1500,
         300
       ],
       "credentials": {
@@ -201,11 +201,6 @@
             "index": 0,
             "node": "PaperclipGetDoneIssues",
             "type": "main"
-          },
-          {
-            "index": 0,
-            "node": "SupabaseGetNotified",
-            "type": "main"
           }
         ]
       ]
@@ -221,13 +216,24 @@
         ]
       ]
     },
-    "PaperclipGetDoneIssues": {
+    "TelegramNotifyCompleted": {
       "main": [
         [
           {
             "index": 0,
-            "node": "FilterNewDoneIssues",
+            "node": "SupabaseMarkNotified",
             "type": "main"
+          }
+        ]
+      ]
+    },
+    "PaperclipGetDoneIssues": {
+      "main": [
+        [
+          {
+            "node": "SupabaseGetNotified",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
@@ -236,20 +242,9 @@
       "main": [
         [
           {
-            "index": 0,
             "node": "FilterNewDoneIssues",
-            "type": "main"
-          }
-        ]
-      ]
-    },
-    "TelegramNotifyCompleted": {
-      "main": [
-        [
-          {
-            "index": 0,
-            "node": "SupabaseMarkNotified",
-            "type": "main"
+            "type": "main",
+            "index": 0
           }
         ]
       ]
