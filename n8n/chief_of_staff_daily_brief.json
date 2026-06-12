@@ -154,7 +154,7 @@
     {
       "parameters": {
         "chatId": "724801911",
-        "text": "=✅ *Brief Ejecutivo Generado*\n\nTu brief del día está listo en Paperclip.\n🔗 Issue #{{ $('Paperclip — Create Brief Issue').item.json.id }}\n\n_Chief of Staff Agent — {{ new Date().toLocaleString('es-GT', {timeZone: 'America/Guatemala'}) }}_",
+        "text": "=✅ *Brief Ejecutivo Generado*\n\nTu brief del día está listo en Paperclip.\n🔗 [Ver en Paperclip](https://paperclip.centrodetutorias.com/cen/issues/{{ $('Paperclip — Create Brief Issue').item.json.id }})\n\n_Chief of Staff Agent — {{ new Date().toLocaleString('es-GT', {timeZone: 'America/Guatemala'}) }}_",
         "additionalFields": {
           "parse_mode": "Markdown"
         }
