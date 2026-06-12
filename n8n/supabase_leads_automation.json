@@ -132,7 +132,7 @@
           "fieldValues": [
             {
               "fieldId": "phone",
-              "fieldValue": "={{ $json.recipientPhoneNumber }}"
+              "fieldValue": "={{ $('Webhook').item.json.body.record.phone.startsWith('502') ? $('Webhook').item.json.body.record.phone : '502' + $('Webhook').item.json.body.record.phone }}"
             },
             {
               "fieldId": "name",
@@ -144,7 +144,7 @@
             },
             {
               "fieldId": "content",
-              "fieldValue": "={{ $json.textBody }}"
+              "fieldValue": "=¡Hola {{ $('Webhook').item.json.body.record.parent_or_student_name }}! 🚀 Te saludamos del Centro de Tutorías. Hemos recibido tu solicitud para apoyo en *{{ $('Webhook').item.json.body.record.subject }}*.\\n\\nQuisiéramos agendar una breve *entrevista de diagnóstico gratuita de 15 minutos* para conocer el caso en detalle y asignarte al tutor ideal. ¿Te queda bien que coordinemos por aquí? 😊"
             }
           ]
         },
