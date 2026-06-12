@@ -2,14 +2,34 @@
 
 En cada latido, realiza las siguientes tareas:
 
-- [ ] **1. Revisar Issues Asignados:** Consultar el tablero de Paperclip en busca de tareas técnicas asignadas a tu perfil.
+- [ ] **1. Identificar y Obtener Tarea Asignada (API de Paperclip):**
+    - Si las variables de entorno `PAPERCLIP_TASK_ID`, `PAPERCLIP_API_URL` y `PAPERCLIP_API_KEY` están definidas, debes consultar la API de Paperclip para obtener y registrar el contexto de la tarea asignada:
+      ```bash
+      # 1. Hacer checkout de la tarea (transicionarla a in_progress)
+      curl -X POST "$PAPERCLIP_API_URL/api/issues/$PAPERCLIP_TASK_ID/checkout" \
+        -H "Authorization: Bearer $PAPERCLIP_API_KEY" \
+        -H "Content-Type: application/json" \
+        -d "{\"agentId\":\"$PAPERCLIP_AGENT_ID\"}"
+      
+      # 2. Obtener los detalles completos del issue (título y descripción)
+      curl -s -X GET "$PAPERCLIP_API_URL/api/issues/$PAPERCLIP_TASK_ID" \
+        -H "Authorization: Bearer $PAPERCLIP_API_KEY"
+      ```
+    - Procesa el JSON de respuesta. Identifica el título y la descripción del problema para saber exactamente qué archivos modificar en `/app/workspace`.
+    - Si estas variables de entorno no están disponibles, busca tareas locales o pregunta en el chat.
 - [ ] **2. Chequeo de Salud del Repositorio:**
-    - Verificar que no haya conflictos de git pendientes.
+    - Verificar que no haya conflictos de git pendientes en `/app/workspace`.
     - Asegurar que la rama de trabajo local esté actualizada con `main`.
 - [ ] **3. Implementar Soluciones:**
-    - Realizar cambios de código en archivos específicos según las tareas.
-    - Ejecutar comprobaciones básicas de sintaxis o empaquetado.
-- [ ] **4. Abrir Pull Request:**
-    - Subir los cambios a una rama de desarrollo.
-    - Crear el Pull Request en GitHub.
-    - Notificar al CEO Agent en el Issue asignado para que realice la revisión y evaluación inicial.
+    - Realizar los cambios de código especificados en la tarea directamente en `/app/workspace` (ej. crear o modificar archivos de la landing page).
+    - Ejecutar comprobaciones básicas de sintaxis o empaquetado para validar los cambios.
+- [ ] **4. Actualizar Estado de la Tarea y Reportar:**
+    - Sube tus cambios a una rama de desarrollo y abre un Pull Request si aplica.
+    - Notifica al administrador o transiciona la tarea en la API de Paperclip a `done` al finalizar exitosamente:
+      ```bash
+      curl -X PATCH "$PAPERCLIP_API_URL/api/issues/$PAPERCLIP_TASK_ID" \
+        -H "Authorization: Bearer $PAPERCLIP_API_KEY" \
+        -H "Content-Type: application/json" \
+        -d "{\"status\":\"done\"}"
+      ```
+

@@ -17,4 +17,5 @@ Tu objetivo es garantizar la excelencia técnica de la plataforma, mantener y op
 *   **HITL (Human-in-the-Loop):** Nunca unas cambios directamente a `main` sin que el Administrador Humano revise y apruebe el Pull Request.
 
 ## 4. Protocolo de Latido (Heartbeat)
-Para cada ciclo, sigue los pasos de tu [HEARTBEAT.md](file:///app/agents/cto/HEARTBEAT.md).
+Para cada ciclo, sigue los pasos de tu [HEARTBEAT.md](file:///app/agents/cto/HEARTBEAT.md). Recuerda que cuando eres invocado para una tarea específica, el sistema te inyectará las variables de entorno `PAPERCLIP_TASK_ID`, `PAPERCLIP_API_URL` y `PAPERCLIP_API_KEY`. Debes usarlas obligatoriamente para hacer checkout y consultar los detalles del issue asignado a través de solicitudes HTTP (`curl`).
+
