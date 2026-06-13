@@ -13,19 +13,26 @@ Si `PAPERCLIP_WAKE_REASON=issue_assigned`, el CEO fue despertado para resolver u
 Cuando el issue tiene el prefijo `Telegram:` en el título, el Administrador Humano envió una petición desde Telegram y espera respuesta directa.
 
 - [ ] **a) Leer la tarea:** Obtener el issue asignado con `getIssue`. El cuerpo (`description`) contiene la petición completa.
-- [ ] **b) Ejecutar la petición:** Procesar lo que se solicita (reporte, listado, análisis, campaña, etc.) usando las herramientas disponibles.
-- [ ] **c) Escribir comentario de respuesta:** Agregar un comentario en el issue con el resultado completo y claro. Ser conciso pero completo — este comentario será enviado a Telegram.
-- [ ] **d) Marcar como `done`:** Actualizar el estado del issue a `done` con `updateIssue`. **CRÍTICO: este paso es obligatorio para que la notificación llegue a Telegram.**
+- [ ] **b) Evaluar Delegación:** Analizar la petición usando el **Directorio de Agentes** en `AGENTS.md`.
+    *   Si el requerimiento corresponde a la especialidad de otro agente (ej. cambios en código/estilos al **CTO Agent**, backups/servidores al **DevOps Agent**, flujos de n8n al **n8n Automation Agent**, etc.):
+        1.  **Comentar la delegación:** Agregar un comentario en el issue diciendo: `"Delegando esta tarea a [Nombre del Agente] para su atención ([Explicación de por qué se delega])."`
+        2.  **Reasignar y reencolar:** Usar `updateIssue` para establecer `assigneeAgentId` con el ID del agente correspondiente y cambiar el `status` a `todo`.
+        3.  **Terminar ciclo:** Detener la ejecución de este latido inmediatamente sin realizar más acciones sobre este issue.
+    *   Si el requerimiento es estratégico, financiero, un reporte consolidado o específico para el CEO, continúa con el paso **c**.
+- [ ] **c) Ejecutar la petición:** Procesar lo que se solicita (reporte, listado, análisis, campaña, etc.) usando las herramientas disponibles.
+- [ ] **d) Escribir comentario de respuesta:** Agregar un comentario en el issue con el resultado completo y claro. Ser conciso pero completo — este comentario será enviado a Telegram.
+- [ ] **e) Marcar como `done`:** Actualizar el estado del issue a `done` con `updateIssue`. **CRÍTICO: este paso es obligatorio para que la notificación llegue a Telegram.**
 
 ### A.2 — Tarea General
 
 Para cualquier otra tarea asignada:
 
-- [ ] **a)** Leer el issue y entender el contexto completo.
-- [ ] **b)** Ejecutar el trabajo requerido (análisis, investigación, coordinación, etc.).
-- [ ] **c)** Dejar un comentario de progreso o resultado en el issue.
-- [ ] **d)** Actualizar el estado según corresponda (`in_progress`, `done`, etc.).
-- [ ] **e)** Si la tarea requiere trabajo del CTO Agent, crear sub-issues o asignar al CTO.
+- [ ] **a) Leer la tarea:** Leer el issue y entender el contexto completo.
+- [ ] **b) Evaluar Delegación:** Analizar el contexto del issue y delegarlo al agente adecuado si corresponde (siguiendo el mismo procedimiento de reasignación y cambio a `todo` detallado en A.1.b). Si es para ti, continúa con el paso **c**.
+- [ ] **c) Ejecutar el trabajo:** Ejecutar el trabajo requerido (análisis, investigación, coordinación, etc.).
+- [ ] **d) Dejar comentario:** Dejar un comentario de progreso o resultado en el issue.
+- [ ] **e) Actualizar estado:** Actualizar el estado según corresponda (`in_progress`, `done`, etc.).
+- [ ] **f) Coordinación:** Si la tarea requiere trabajo del CTO Agent u otro, crear sub-issues o asignar tareas.
 
 ---
 
