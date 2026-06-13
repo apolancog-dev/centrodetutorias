@@ -23,13 +23,13 @@
                 theme: {
                     extend: {
                         colors: {
-                            primary: '#1E3A8A', 
-                            secondary: '#10B981', 
+                            primary: '#006493', 
+                            secondary: '#006e20', 
                             accent: '#F97316',
                             pastel: {
-                                blue: '#E0F2FE',
-                                mint: '#D1FAE5',
-                                lilac: '#EDE9FE',
+                                blue: '#8dcdff',
+                                mint: '#77dc7a',
+                                lilac: '#ccc0ee',
                                 yellow: '#FEF08A',
                                 coral: '#FECDD3'
                             }
@@ -45,15 +45,15 @@
     <style>
         /* Colores de marca garantizados por CSS directo (por si Tailwind tarda en cargar) */
         .btn-primary, a[class*="bg-primary"], button[class*="bg-primary"] {
-            background-color: #1E3A8A;
+            background-color: #006493;
             color: #FFFFFF;
         }
         #auth-btn {
-            color: #1E3A8A;
+            color: #006493;
             font-weight: 700;
         }
         a[href="#contacto"][class*="bg-primary"] {
-            background-color: #1E3A8A !important;
+            background-color: #006493 !important;
             color: #FFFFFF !important;
         }
 
@@ -112,10 +112,10 @@
     <!-- LucIA Chatbot Custom Styles -->
     <style>
         :root {
-            --chat--color--primary: #1E3A8A !important; /* Cobalt Blue */
+            --chat--color--primary: #006493 !important; /* Cobalt Blue */
             --chat--color--secondary: #10B981 !important; /* Emerald Green */
             --chat--color--primary-shade-50: #172554 !important;
-            --chat--color--primary-shade-100: #1E3A8A !important;
+            --chat--color--primary-shade-100: #006493 !important;
             --chat--color--secondary-shade-50: #064E3B !important;
         }
         
@@ -743,7 +743,41 @@
         const SUPABASE_URL = 'https://api.centrodetutorias.com';
         const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3NzkxNTA0OTEsImV4cCI6MTg5MzQ1NjAwMCwicm9sZSI6ImFub24iLCJpc3MiOiJzdXBhYmFzZSJ9.zlAS2xQq78_xvDfuaunxT7btPy2pn5II3pNk2gYFaKg';
         
-        let supabaseClient = null;
+            let supabaseClient = null;
+
+            // --- UTM Parameter Handling ---
+            function getUTMParameters() {
+                const params = new URLSearchParams(window.location.search);
+                const utm = {};
+                ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content'].forEach(key => {
+                    if (params.has(key)) {
+                        utm[key] = params.get(key);
+                    }
+                });
+                return utm;
+            }
+
+            function storeUTMParameters(utm) {
+                if (Object.keys(utm).length > 0) {
+                    sessionStorage.setItem('utm_parameters', JSON.stringify(utm));
+                }
+            }
+
+            function getStoredUTMParameters() {
+                const storedUtm = sessionStorage.getItem('utm_parameters');
+                return storedUtm ? JSON.parse(storedUtm) : {};
+            }
+
+            // Capture and store UTMs on initial load
+            const currentUtm = getUTMParameters();
+            storeUTMParameters(currentUtm);
+
+            // Get UTMs for form submission (priority to current URL, then session storage)
+            const utmsForSubmission = Object.keys(currentUtm).length > 0 ? currentUtm : getStoredUTMParameters();
+
+            // Log for debugging
+            console.log('UTM Parameters for submission:', utmsForSubmission);
+
 
         // Cargador ultra-robusto y resiliente del SDK de Supabase
         async function asegurarSupabaseSDK() {
@@ -897,7 +931,8 @@
                                     grade: document.getElementById('grado').value,
                                     subject: document.getElementById('materia').value,
                                     support_type: document.getElementById('tipo_apoyo').value,
-                                    description: document.getElementById('descripcion').value
+                                    description: document.getElementById('descripcion').value,
+                                    ...utmsForSubmission
                                 }
                             ]);
 

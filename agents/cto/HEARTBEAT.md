@@ -1,6 +1,15 @@
 # Heartbeat Checklist - CTO Agent
 
-En cada latido, realiza las siguientes tareas:
+> [!IMPORTANT]
+> **CRITICAL FIRST STEP:**
+> Before running any other command or tool, you MUST run this command in `bash` to determine why you were woken up and get your current task context:
+> ```bash
+> printenv | grep PAPERCLIP
+> ```
+> Identify the wake reason from `$PAPERCLIP_WAKE_REASON`.
+> If `$PAPERCLIP_WAKE_REASON` is `issue_assigned`, proceed immediately to step **1. Identificar y Obtener Tarea Asignada (API de Paperclip)** below and read the task details using the curl GET command with `$PAPERCLIP_TASK_ID`.
+
+---
 
 - [ ] **1. Identificar y Obtener Tarea Asignada (API de Paperclip):**
     - Si las variables de entorno `PAPERCLIP_TASK_ID`, `PAPERCLIP_API_URL` y `PAPERCLIP_API_KEY` están definidas, debes consultar la API de Paperclip para obtener y registrar el contexto de la tarea asignada:
@@ -9,7 +18,7 @@ En cada latido, realiza las siguientes tareas:
       curl -X POST "$PAPERCLIP_API_URL/api/issues/$PAPERCLIP_TASK_ID/checkout" \
         -H "Authorization: Bearer $PAPERCLIP_API_KEY" \
         -H "Content-Type: application/json" \
-        -d "{\"agentId\":\"$PAPERCLIP_AGENT_ID\"}"
+        -d "{\"agentId\":\"$PAPERCLIP_AGENT_ID\",\"expectedStatuses\":[\"todo\",\"backlog\",\"blocked\"]}"
       
       # 2. Obtener los detalles completos del issue (título y descripción)
       curl -s -X GET "$PAPERCLIP_API_URL/api/issues/$PAPERCLIP_TASK_ID" \

@@ -1,5 +1,14 @@
 # HEARTBEAT — Chief of Staff Agent
 
+> [!IMPORTANT]
+> **CRITICAL FIRST STEP:**
+> Before running any other command or tool, you MUST run this command in `bash` to determine why you were woken up and get your current task context:
+> ```bash
+> printenv | grep PAPERCLIP
+> ```
+> Identify the wake reason from `$PAPERCLIP_WAKE_REASON`.
+> If `$PAPERCLIP_WAKE_REASON` is `issue_assigned`, read the task details using the curl GET command with `$PAPERCLIP_TASK_ID` to understand what manual task has been assigned to you.
+
 Este documento define el ciclo de ejecución diario del Chief of Staff Agent.
 
 ## Horario
