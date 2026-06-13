@@ -39,30 +39,19 @@
     {
       "parameters": {
         "conditions": {
-          "combinator": "and",
-          "conditions": [
+          "string": [
             {
-              "id": "check-action",
-              "leftValue": "={{ $json.action }}",
-              "operator": {
-                "operation": "equals",
-                "rightValue": "create_issue",
-                "type": "string"
-              }
+              "value1": "={{ $json.action }}",
+              "operation": "equal",
+              "value2": "create_issue"
             }
-          ],
-          "options": {
-            "caseSensitive": true,
-            "leftValue": "",
-            "typeValidation": "strict",
-            "version": 2
-          }
+          ]
         }
       },
       "id": "if-action-1",
       "name": "IsCreateIssue",
       "type": "n8n-nodes-base.if",
-      "typeVersion": 2.2,
+      "typeVersion": 1,
       "position": [
         600,
         300
@@ -97,7 +86,7 @@
       "parameters": {
         "authentication": "genericCredentialType",
         "genericAuthType": "httpHeaderAuth",
-        "jsonBody": "={\\n  \\\"title\\\": \\\"{{ $json.title }}\\\",\\n  \\\"description\\\": \\\"{{ $json.description }}\\\",\\n  \\\"status\\\": \\\"todo\\\",\\n  \\\"priority\\\": \\\"medium\\\",\\n  \\\"assigneeAgentId\\\": \\\"{{ $json.agentId }}\\\"\\n}",
+        "jsonBody": "={\n  \"title\": \"{{ $json.title }}\",\n  \"description\": \"{{ $json.description }}\",\n  \"status\": \"todo\",\n  \"priority\": \"medium\",\n  \"assigneeAgentId\": \"{{ $json.agentId }}\"\n}",
         "method": "POST",
         "options": {},
         "sendBody": true,
