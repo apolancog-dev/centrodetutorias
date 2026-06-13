@@ -12,26 +12,71 @@ Si `PAPERCLIP_WAKE_REASON=issue_assigned`, el CEO fue despertado para resolver u
 
 Cuando el issue tiene el prefijo `Telegram:` en el título, el Administrador Humano envió una petición desde Telegram y espera respuesta directa.
 
-- [ ] **a) Leer la tarea:** Obtener el issue asignado con `getIssue`. El cuerpo (`description`) contiene la petición completa.
+- [ ] **a) Leer la tarea:** Obtener el issue asignado haciendo una llamada GET a la API de Paperclip:
+  ```bash
+  curl -s -X GET "$PAPERCLIP_API_URL/api/issues/$PAPERCLIP_TASK_ID" \
+    -H "Authorization: Bearer $PAPERCLIP_API_KEY"
+  ```
+  El cuerpo (`description`) contiene la petición completa.
 - [ ] **b) Evaluar Delegación:** Analizar la petición usando el **Directorio de Agentes** en `AGENTS.md`.
     *   Si el requerimiento corresponde a la especialidad de otro agente (ej. cambios en código/estilos al **CTO Agent**, backups/servidores al **DevOps Agent**, flujos de n8n al **n8n Automation Agent**, etc.):
-        1.  **Comentar la delegación:** Agregar un comentario en el issue diciendo: `"Delegando esta tarea a [Nombre del Agente] para su atención ([Explicación de por qué se delega])."`
-        2.  **Reasignar y reencolar:** Usar `updateIssue` para establecer `assigneeAgentId` con el ID del agente correspondiente y cambiar el `status` a `todo`.
+        1.  **Comentar la delegación:** Agregar un comentario en el issue:
+            ```bash
+            curl -s -X POST "$PAPERCLIP_API_URL/api/issues/$PAPERCLIP_TASK_ID/comments" \
+              -H "Authorization: Bearer $PAPERCLIP_API_KEY" \
+              -H "Content-Type: application/json" \
+              -d "{\"body\":\"Delegando esta tarea al DevOps Agent para su atención (DevOps Agent por favor audita el espacio libre en disco).\"}"
+            ```
+        2.  **Reasignar y reencolar:** Cambiar el asignado al ID del agente correspondiente y cambiar el `status` a `todo`:
+            ```bash
+            curl -s -X PATCH "$PAPERCLIP_API_URL/api/issues/$PAPERCLIP_TASK_ID" \
+              -H "Authorization: Bearer $PAPERCLIP_API_KEY" \
+              -H "Content-Type: application/json" \
+              -d "{\"assigneeAgentId\":\"e895240c-8524-403a-8770-d095915d8302\",\"status\":\"todo\"}"
+            ```
         3.  **Terminar ciclo:** Detener la ejecución de este latido inmediatamente sin realizar más acciones sobre este issue.
     *   Si el requerimiento es estratégico, financiero, un reporte consolidado o específico para el CEO, continúa con el paso **c**.
 - [ ] **c) Ejecutar la petición:** Procesar lo que se solicita (reporte, listado, análisis, campaña, etc.) usando las herramientas disponibles.
-- [ ] **d) Escribir comentario de respuesta:** Agregar un comentario en el issue con el resultado completo y claro. Ser conciso pero completo — este comentario será enviado a Telegram.
-- [ ] **e) Marcar como `done`:** Actualizar el estado del issue a `done` con `updateIssue`. **CRÍTICO: este paso es obligatorio para que la notificación llegue a Telegram.**
+- [ ] **d) Escribir comentario de respuesta:** Agregar un comentario en el issue con el resultado completo y claro. Ser conciso pero completo — este comentario será enviado a Telegram:
+  ```bash
+  curl -s -X POST "$PAPERCLIP_API_URL/api/issues/$PAPERCLIP_TASK_ID/comments" \
+    -H "Authorization: Bearer $PAPERCLIP_API_KEY" \
+    -H "Content-Type: application/json" \
+    -d "{\"body\":\"[Tu comentario de respuesta aquí]\"}"
+  ```
+- [ ] **e) Marcar como `done`:** Actualizar el estado del issue a `done`. **CRÍTICO: este paso es obligatorio para que la notificación llegue a Telegram:**
+  ```bash
+  curl -s -X PATCH "$PAPERCLIP_API_URL/api/issues/$PAPERCLIP_TASK_ID" \
+    -H "Authorization: Bearer $PAPERCLIP_API_KEY" \
+    -H "Content-Type: application/json" \
+    -d "{\"status\":\"done\"}"
+  ```
 
 ### A.2 — Tarea General
 
 Para cualquier otra tarea asignada:
 
-- [ ] **a) Leer la tarea:** Leer el issue y entender el contexto completo.
-- [ ] **b) Evaluar Delegación:** Analizar el contexto del issue y delegarlo al agente adecuado si corresponde (siguiendo el mismo procedimiento de reasignación y cambio a `todo` detallado en A.1.b). Si es para ti, continúa con el paso **c**.
+- [ ] **a) Leer la tarea:** Leer el issue haciendo una llamada GET a la API:
+  ```bash
+  curl -s -X GET "$PAPERCLIP_API_URL/api/issues/$PAPERCLIP_TASK_ID" \
+    -H "Authorization: Bearer $PAPERCLIP_API_KEY"
+  ```
+- [ ] **b) Evaluar Delegación:** Analizar el contexto del issue y delegarlo al agente adecuado si corresponde (siguiendo el mismo procedimiento de comentario, reasignación y cambio a `todo` detallado en A.1.b). Si es para ti, continúa con el paso **c**.
 - [ ] **c) Ejecutar el trabajo:** Ejecutar el trabajo requerido (análisis, investigación, coordinación, etc.).
-- [ ] **d) Dejar comentario:** Dejar un comentario de progreso o resultado en el issue.
-- [ ] **e) Actualizar estado:** Actualizar el estado según corresponda (`in_progress`, `done`, etc.).
+- [ ] **d) Dejar comentario:** Dejar un comentario de progreso o resultado en el issue:
+  ```bash
+  curl -s -X POST "$PAPERCLIP_API_URL/api/issues/$PAPERCLIP_TASK_ID/comments" \
+    -H "Authorization: Bearer $PAPERCLIP_API_KEY" \
+    -H "Content-Type: application/json" \
+    -d "{\"body\":\"[Tu comentario aquí]\"}"
+  ```
+- [ ] **e) Actualizar estado:** Actualizar el estado según corresponda (`in_progress`, `done`, etc.):
+  ```bash
+  curl -s -X PATCH "$PAPERCLIP_API_URL/api/issues/$PAPERCLIP_TASK_ID" \
+    -H "Authorization: Bearer $PAPERCLIP_API_KEY" \
+    -H "Content-Type: application/json" \
+    -d "{\"status\":\"done\"}"
+  ```
 - [ ] **f) Coordinación:** Si la tarea requiere trabajo del CTO Agent u otro, crear sub-issues o asignar tareas.
 
 ---
