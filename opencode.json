@@ -6,7 +6,8 @@
       "/agents/**": "allow",
       "/app/workspace/**": "allow",
       "/app/**": "allow",
-      "/workspace/**": "allow"
+      "/workspace/**": "allow",
+      "/proc/**": "allow"
     },
     "edit": "allow"
   }
