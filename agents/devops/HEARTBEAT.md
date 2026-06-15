@@ -2,13 +2,31 @@
 
 En cada latido de ejecución, realiza las siguientes tareas:
 
-- [ ] **1. Auditar Recursos del Servidor:**
-    - Ejecutar comandos bash para comprobar la memoria RAM libre (`free -m`), el uso de disco (`df -h`) y el uso de CPU promedio.
-- [ ] **2. Chequeo de Contenedores y Servicios (Dokploy/Docker):**
-    - Verificar que los contenedores docker de la base de datos de Paperclip, n8n, la landing page y el propio Paperclip estén activos.
-    - Capturar estadísticas de uso en caliente (`docker stats --no-stream`).
-- [ ] **3. Verificar Estado de Backups:**
-    - Validar que los archivos de backup programados en el VPS existan y tengan un tamaño de archivo correcto.
-- [ ] **4. Reportar Estado e Hitos:**
-    - Escribir un breve resumen del estado del servidor en la tarea de mantenimiento técnico del tablero de Paperclip.
-    - Si detectas uso de RAM > 85% o CPU saturada, crear un Issue de alerta de forma inmediata y notificar al Administrador Humano.
+- [ ] **1. Identificar y Obtener Tarea Asignada (API de Paperclip):**
+    - Si `$PAPERCLIP_WAKE_REASON` es `issue_assigned`, realiza el checkout de la tarea y lee sus detalles usando comandos curl:
+      ```bash
+      curl -s -X POST -H "Content-Type: application/json" -d '{"expectedStatuses":["in_progress"]}' "$PAPERCLIP_API_URL/api/issues/$PAPERCLIP_TASK_ID/checkout" -H "Authorization: Bearer $PAPERCLIP_API_KEY"
+      curl -s -X GET "$PAPERCLIP_API_URL/api/issues/$PAPERCLIP_TASK_ID" -H "Authorization: Bearer $PAPERCLIP_API_KEY"
+      ```
+- [ ] **2. Obtener Reporte de Salud del Servidor (n8n Webhook):**
+    - Dado que no tienes herramientas locales para monitorear docker o recursos de hardware directo en el sandbox, obtén las métricas en caliente consultando el webhook interno de n8n:
+      ```bash
+      curl -s http://cedetu-n8nwithpostgres-jwbet1-n8n-1:5678/webhook/vps-status
+      ```
+    - Este webhook ejecuta el diagnóstico SSH en el host y te devolverá un objeto JSON estructurado con:
+      - `memory`: `{ total, used, percent }`
+      - `disk`: `{ percent }`
+      - `containers`: `{ key: status }`
+      - `backups`: `{ key: status }`
+      - `alert`: `true/false`
+      - `markdownReport`: un reporte listo para publicar en formato Markdown.
+- [ ] **3. Reportar en el Issue y Completar:**
+    - Redacta un reporte final consolidado **estrictamente en español** basado en la información recibida del JSON.
+    - Publica el reporte de salud como comentario en el issue de Paperclip:
+      ```bash
+      curl -s -X POST -H "Content-Type: application/json" -d "{\"content\": \"$(echo -n "$REPORT" | sed 's/"/\\"/g')\"}" "$PAPERCLIP_API_URL/api/issues/$PAPERCLIP_TASK_ID/comments" -H "Authorization: Bearer $PAPERCLIP_API_KEY"
+      ```
+    - Transiciona la tarea a finalizada (`done`):
+      ```bash
+      curl -s -X PATCH -H "Content-Type: application/json" -d '{"status":"done"}' "$PAPERCLIP_API_URL/api/issues/$PAPERCLIP_TASK_ID" -H "Authorization: Bearer $PAPERCLIP_API_KEY"
+      ```
