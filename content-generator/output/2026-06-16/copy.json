@@ -1,0 +1,59 @@
+{
+  "fecha": "2026-06-16",
+  "tema_del_dia": "Dolor del padre o madre",
+  "tema_id": "parent-pain",
+  "materia_prioritaria": "Matemática",
+  "dolor_del_cliente": "Ver que su hijo dedica tiempo a matemática, pero termina frustrado y sin claridad.",
+  "headline_principal": "Que matemática no vuelva a ser una pelea en casa",
+  "subtitulo": "Acompañamos a tu hijo con explicaciones claras, paciencia y una ruta de aprendizaje personalizada.",
+  "texto_corto_imagen": "Menos tensión. Más claridad académica.",
+  "caption_instagram": "Que matemática no vuelva a ser una pelea en casa\n\nVer que su hijo dedica tiempo a matemática, pero termina frustrado y sin claridad.\n\nRevisamos dónde se perdió la comprensión y avanzamos paso a paso, sin convertir la tarde de estudio en otra discusión.\n\nSolicita apoyo académico. Visita https://www.centrodetutorias.com o escríbenos por WhatsApp.\n\n#CentroDeTutorías #TutoríasPersonalizadas #Matemática #ApoyoAcadémico #Educación",
+  "caption_facebook": "Que matemática no vuelva a ser una pelea en casa\n\nLa frustración repetida no siempre significa falta de capacidad. Muchas veces hay una base pendiente que nadie ha detectado.\n\nEn Centro de Tutorías, revisamos dónde se perdió la comprensión y avanzamos paso a paso, sin convertir la tarde de estudio en otra discusión.\n\nSolicita apoyo académico: https://www.centrodetutorias.com\nWhatsApp: +502 5715 2096",
+  "texto_tiktok": "Menos tensión. Más claridad académica. Solicita apoyo académico. #CentroDeTutorías #TutoríasPersonalizadas #Matemática #ApoyoAcadémico",
+  "hashtags": [
+    "#CentroDeTutorías",
+    "#TutoríasPersonalizadas",
+    "#Matemática",
+    "#ApoyoAcadémico",
+    "#Educación"
+  ],
+  "cta_principal": "Solicita apoyo académico",
+  "cta_secundario": "Conoce nuestras tutorías",
+  "url_destino": "https://www.centrodetutorias.com",
+  "whatsapp": "+502 5715 2096",
+  "whatsapp_link": "https://wa.me/50257152096?text=Hola%2C%20vi%20la%20publicaci%C3%B3n%20de%20Centro%20de%20Tutor%C3%ADas%20sobre%20dolor%20del%20padre%20o%20madre%20y%20quisiera%20informaci%C3%B3n%20sobre%20una%20clase%20modelo%20o%20diagn%C3%B3stico%20acad%C3%A9mico.",
+  "mensaje_whatsapp_sugerido": "Hola, vi la publicación de Centro de Tutorías sobre dolor del padre o madre y quisiera información sobre una clase modelo o diagnóstico académico.",
+  "alt_text": "Pieza de Centro de Tutorías sobre dolor del padre o madre. Que matemática no vuelva a ser una pelea en casa. Imagen de un estudiante en un ambiente de estudio y llamado a la acción: Solicita apoyo académico.",
+  "carrusel": [
+    {
+      "slide": 1,
+      "role": "gancho",
+      "title": "Que matemática no vuelva a ser una pelea en casa",
+      "body": "Acompañamos a tu hijo con explicaciones claras, paciencia y una ruta de aprendizaje personalizada."
+    },
+    {
+      "slide": 2,
+      "role": "problema",
+      "title": "Lo que suele estar pasando",
+      "body": "La frustración repetida no siempre significa falta de capacidad. Muchas veces hay una base pendiente que nadie ha detectado."
+    },
+    {
+      "slide": 3,
+      "role": "orientación",
+      "title": "Un mejor punto de partida",
+      "body": "Identificar la dificultad, ajustar la explicación y practicar con retroalimentación."
+    },
+    {
+      "slide": 4,
+      "role": "solución",
+      "title": "Cómo acompañamos",
+      "body": "Revisamos dónde se perdió la comprensión y avanzamos paso a paso, sin convertir la tarde de estudio en otra discusión."
+    },
+    {
+      "slide": 5,
+      "role": "cta",
+      "title": "El apoyo correcto puede empezar hoy",
+      "body": "Solicita apoyo académico. Descubre una tutoría enfocada en lo que realmente necesita."
+    }
+  ]
+}

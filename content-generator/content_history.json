@@ -1,0 +1,29 @@
+{
+  "version": 1,
+  "generated": [
+    {
+      "date": "2026-06-16",
+      "themeId": "parent-pain",
+      "themeName": "Dolor del padre o madre",
+      "subject": "Matemática",
+      "output": "output/2026-06-16",
+      "generatedAt": "2026-06-18T18:39:57.628Z"
+    },
+    {
+      "date": "2026-06-17",
+      "themeId": "exam-prep",
+      "themeName": "Preparación para exámenes",
+      "subject": "Matemática y Física",
+      "output": "output/2026-06-17",
+      "generatedAt": "2026-06-18T18:39:58.476Z"
+    },
+    {
+      "date": "2026-06-18",
+      "themeId": "university-statistics",
+      "themeName": "Estadística universitaria",
+      "subject": "Estadística",
+      "output": "output/2026-06-18",
+      "generatedAt": "2026-06-18T18:39:59.298Z"
+    }
+  ]
+}

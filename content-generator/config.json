@@ -1,0 +1,50 @@
+{
+  "brand": {
+    "name": "Centro de Tutorías",
+    "shortName": "CEDETU",
+    "url": "https://www.centrodetutorias.com",
+    "displayUrl": "centrodetutorias.com",
+    "whatsapp": "+502 5715 2096",
+    "whatsappLabel": "Escríbenos por WhatsApp",
+    "logo": "assets/logos/logo-placeholder.svg"
+  },
+  "colors": {
+    "navy": "#102A43",
+    "cobalt": "#1E3A8A",
+    "blue": "#2563EB",
+    "turquoise": "#12B8A6",
+    "sky": "#DDF4F2",
+    "paper": "#F7FAFC",
+    "white": "#FFFFFF",
+    "ink": "#14213D",
+    "muted": "#52647A",
+    "accent": "#F4B942"
+  },
+  "generation": {
+    "time": "07:00",
+    "timezone": "America/Guatemala",
+    "carouselSlides": 5,
+    "avoidRecentThemes": 3,
+    "activeThemes": [
+      "parent-pain",
+      "exam-prep",
+      "task-overload",
+      "university-statistics",
+      "college-transition",
+      "academic-confidence",
+      "academic-diagnosis",
+      "personalized-support",
+      "emotional-reminder",
+      "model-class"
+    ]
+  },
+  "subjects": [
+    "Matemática",
+    "Estadística",
+    "Física",
+    "Álgebra",
+    "Cálculo básico",
+    "Probabilidad",
+    "Econometría introductoria"
+  ]
+}

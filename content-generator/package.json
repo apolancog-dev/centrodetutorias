@@ -1,0 +1,14 @@
+{
+  "name": "cedetu-content-generator",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Generador diario de piezas orgánicas y carruseles para Centro de Tutorías.",
+  "scripts": {
+    "generate": "node generate_daily_content.js",
+    "generate:examples": "node generate_examples.js",
+    "validate": "node validate_outputs.js"
+  },
+  "dependencies": {
+    "sharp": "^0.34.5"
+  }
+}

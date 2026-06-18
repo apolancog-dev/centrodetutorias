@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-06-18T18:39:59.298Z",
+  "date": "2026-06-18",
+  "themeId": "university-statistics",
+  "themeName": "Estadística universitaria",
+  "status": "ready_for_human_review",
+  "publishing": "disabled",
+  "files": [
+    {
+      "path": "vertical_1080x1920.png",
+      "bytes": 1691133,
+      "sha256": "43175c1bb64085ef59b4e609be30e034af6cf4a29ac2bca592d96b487de232d9"
+    },
+    {
+      "path": "feed_1080x1080.png",
+      "bytes": 893081,
+      "sha256": "187a33732199494e91057fde9c28f83df34873366eb1283f9c26b1999df40332"
+    },
+    {
+      "path": "feed_1080x1350.png",
+      "bytes": 1091437,
+      "sha256": "625a033d91f7126ec49bce6855f559a9dbc08a44879ad3d0f0ca5c56250144e1"
+    },
+    {
+      "path": "source.html",
+      "bytes": 15026,
+      "sha256": "d69ee392894837f84e775a8f208dbe005d1154e99c39d6e3da7e58af7d123608"
+    },
+    {
+      "path": "copy.json",
+      "bytes": 3866,
+      "sha256": "2ea42f8c6098501894059cec9c0b30f0bef7b4791eb931a2d18a32b389e67f87"
+    },
+    {
+      "path": "carousel/slide_01_1080x1350.png",
+      "bytes": 1270860,
+      "sha256": "cc6345f1167e2615c9c6a358c5b984cfac9acd6513e043b532cf4749df61232f"
+    },
+    {
+      "path": "carousel/slide_02_1080x1350.png",
+      "bytes": 84694,
+      "sha256": "f56098d45a1bbe73d6ad471c88022446e10a018e5a6305b40b37115e4ee52560"
+    },
+    {
+      "path": "carousel/slide_03_1080x1350.png",
+      "bytes": 91985,
+      "sha256": "504c24140e4b3ae82c1fab92e6c797b7780d4f84611c73ac792d2f1163dcdfc3"
+    },
+    {
+      "path": "carousel/slide_04_1080x1350.png",
+      "bytes": 81835,
+      "sha256": "257534a0827cc9d26d0715ed867214e6135254b670906debcfa499308eda0913"
+    },
+    {
+      "path": "carousel/slide_05_1080x1350.png",
+      "bytes": 89667,
+      "sha256": "3dfc6a4874fcecc5401e01e641921cd2303d62c6825b876ad774e8e1ffae5c38"
+    }
+  ]
+}

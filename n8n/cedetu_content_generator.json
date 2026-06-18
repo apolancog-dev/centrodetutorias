@@ -1,0 +1,563 @@
+{
+  "name": "CEDETU Content Generator",
+  "nodes": [
+    {
+      "id": "schedule-trigger-1",
+      "name": "Schedule Trigger — 07:05 AM GT",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.3,
+      "position": [
+        100,
+        300
+      ],
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "field": "cronExpression",
+              "expression": "5 7 * * *"
+            }
+          ]
+        }
+      },
+      "notes": "Runs every day at 07:05 AM Guatemala Time (UTC-6)"
+    },
+    {
+      "id": "code-dates-paths-1",
+      "name": "Get Dates & Paths",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        300,
+        300
+      ],
+      "parameters": {
+        "jsCode": "const now = new Date();\nconst gtOffset = -6 * 60;\nconst gtTime = new Date(now.getTime() + gtOffset * 60000);\nconst yyyy = gtTime.getUTCFullYear();\nconst mm = String(gtTime.getUTCMonth() + 1).padStart(2, '0');\nconst dd = String(gtTime.getUTCDate()).padStart(2, '0');\nconst dateStr = `${yyyy}-${mm}-${dd}`;\n\nconst baseDir = \"/Users/antoniopolanco/Library/CloudStorage/GoogleDrive-apolancog@gmail.com/Mi unidad/NEGOCIOS/CENTRO DE TUTORIAS/CETU AGENT/content-generator\";\nconst outputDir = `${baseDir}/output/${dateStr}`;\n\nreturn [{\n  json: {\n    date: dateStr,\n    manifestPath: `${outputDir}/manifest.json`,\n    copyPath: `${outputDir}/copy.json`,\n    imagePath: `${outputDir}/feed_1080x1080.png`,\n    outputDir: outputDir\n  }\n}];"
+      }
+    },
+    {
+      "id": "read-manifest-1",
+      "name": "Read manifest.json",
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1.1,
+      "position": [
+        500,
+        200
+      ],
+      "parameters": {
+        "operation": "read",
+        "fileSelector": "={{ $json.manifestPath }}",
+        "options": {
+          "dataPropertyName": "manifestBinary"
+        }
+      }
+    },
+    {
+      "id": "read-copy-1",
+      "name": "Read copy.json",
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1.1,
+      "position": [
+        500,
+        400
+      ],
+      "parameters": {
+        "operation": "read",
+        "fileSelector": "={{ $('Get Dates & Paths').item.json.copyPath }}",
+        "options": {
+          "dataPropertyName": "copyBinary"
+        }
+      }
+    },
+    {
+      "id": "parse-manifest-copy-1",
+      "name": "Parse manifest & copy",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        750,
+        300
+      ],
+      "parameters": {
+        "jsCode": "const manifestBinary = $('Read manifest.json').first().binary.manifestBinary;\nconst copyBinary = $('Read copy.json').first().binary.copyBinary;\n\nconst manifestText = Buffer.from(manifestBinary.data, 'base64').toString('utf8');\nconst copyText = Buffer.from(copyBinary.data, 'base64').toString('utf8');\n\nconst manifest = JSON.parse(manifestText);\nconst copy = JSON.parse(copyText);\n\nconst datesNode = $('Get Dates & Paths').first().json;\n\nreturn [{\n  json: {\n    date: datesNode.date,\n    outputDir: datesNode.outputDir,\n    manifestPath: datesNode.manifestPath,\n    imagePath: datesNode.imagePath,\n    manifest,\n    copy\n  }\n}];"
+      }
+    },
+    {
+      "id": "is-ready-review-1",
+      "name": "Is Ready for Review?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        950,
+        300
+      ],
+      "parameters": {
+        "conditions": {
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "check-status",
+              "leftValue": "={{ $json.manifest.status }}",
+              "operator": {
+                "operation": "equals",
+                "type": "string"
+              },
+              "rightValue": "ready_for_human_review"
+            }
+          ],
+          "options": {
+            "version": 2,
+            "leftValue": "",
+            "caseSensitive": true,
+            "typeValidation": "strict"
+          }
+        }
+      }
+    },
+    {
+      "id": "read-image-1",
+      "name": "Read Feed Square Image",
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1.1,
+      "position": [
+        1150,
+        200
+      ],
+      "parameters": {
+        "operation": "read",
+        "fileSelector": "={{ $json.imagePath }}",
+        "options": {
+          "dataPropertyName": "feedSquareBinary"
+        }
+      }
+    },
+    {
+      "id": "telegram-send-preview-1",
+      "name": "Telegram — Send Preview",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1350,
+        200
+      ],
+      "credentials": {
+        "telegramApi": {
+          "id": "C70mrh8zZbUll0Zw",
+          "name": "Telegram account"
+        }
+      },
+      "parameters": {
+        "chatId": "724801911",
+        "operation": "sendPhoto",
+        "binaryData": true,
+        "binaryPropertyName": "feedSquareBinary",
+        "additionalFields": {
+          "parse_mode": "Markdown",
+          "caption": "=📸 *PREVIEW DE CAMPAÑA - {{ $('Parse manifest & copy').item.json.copy.fecha }}*\n\n*Tema:* {{ $('Parse manifest & copy').item.json.copy.tema_del_dia }} ({{ $('Parse manifest & copy').item.json.copy.materia_prioritaria }})\n\n*Caption IG:*\n```\n{{ $('Parse manifest & copy').item.json.copy.caption_instagram }}\n```\n\n*CTA WhatsApp:* [Enlace wa.me]({{ $('Parse manifest & copy').item.json.copy.whatsapp_link }})"
+        }
+      }
+    },
+    {
+      "id": "telegram-wait-approval-1",
+      "name": "Telegram — Wait for Approval",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        1550,
+        200
+      ],
+      "credentials": {
+        "telegramApi": {
+          "id": "C70mrh8zZbUll0Zw",
+          "name": "Telegram account"
+        }
+      },
+      "parameters": {
+        "chatId": "724801911",
+        "operation": "sendAndWait",
+        "message": "=🤔 *¿Aprobar esta campaña para publicación orgánica?*\n\nFecha: {{ $('Parse manifest & copy').item.json.copy.fecha }}\nTema: {{ $('Parse manifest & copy').item.json.copy.tema_del_dia }}\n\nSi apruebas, actualizaremos el estado en el manifest.json a 'ready_to_publish'.",
+        "approvalOptions": {
+          "values": {
+            "approvalType": "double",
+            "approveLabel": "✅ Aprobar campaña",
+            "disapproveLabel": "❌ Rechazar campaña"
+          }
+        }
+      }
+    },
+    {
+      "id": "is-approved-1",
+      "name": "Approved?",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        1750,
+        200
+      ],
+      "parameters": {
+        "conditions": {
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "check-approved",
+              "leftValue": "={{ $json.approved }}",
+              "operator": {
+                "operation": "true",
+                "singleValue": true,
+                "type": "boolean"
+              }
+            }
+          ],
+          "options": {
+            "version": 2,
+            "leftValue": "",
+            "caseSensitive": true,
+            "typeValidation": "strict"
+          }
+        }
+      }
+    },
+    {
+      "id": "code-approved-status-1",
+      "name": "Set Status Approved",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1950,
+        100
+      ],
+      "parameters": {
+        "jsCode": "const manifestNode = $('Parse manifest & copy').first().json;\nconst manifest = manifestNode.manifest;\nmanifest.status = 'ready_to_publish';\n\nreturn [{\n  json: {\n    manifest,\n    manifestContent: JSON.stringify(manifest, null, 2),\n    filePath: manifestNode.manifestPath,\n    date: manifestNode.date\n  }\n}];"
+      }
+    },
+    {
+      "id": "convert-approved-file-1",
+      "name": "Convert JSON to File (Approved)",
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        2150,
+        100
+      ],
+      "parameters": {
+        "operation": "toText",
+        "sourceProperty": "manifestContent",
+        "binaryPropertyName": "manifestBinary"
+      }
+    },
+    {
+      "id": "write-approved-manifest-1",
+      "name": "Write manifest.json (Approved)",
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1.1,
+      "position": [
+        2350,
+        100
+      ],
+      "parameters": {
+        "operation": "write",
+        "fileName": "={{ $json.filePath }}",
+        "dataPropertyName": "manifestBinary"
+      }
+    },
+    {
+      "id": "telegram-approved-notify-1",
+      "name": "Telegram — Approved Notification",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        2550,
+        100
+      ],
+      "credentials": {
+        "telegramApi": {
+          "id": "C70mrh8zZbUll0Zw",
+          "name": "Telegram account"
+        }
+      },
+      "parameters": {
+        "chatId": "724801911",
+        "operation": "sendMessage",
+        "text": "=✅ *Campaña Aprobada*\n\nEl manifest.json de la campaña del {{ $json.date }} ha sido actualizado exitosamente a 'ready_to_publish'."
+      }
+    },
+    {
+      "id": "code-rejected-status-1",
+      "name": "Set Status Rejected",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1950,
+        300
+      ],
+      "parameters": {
+        "jsCode": "const manifestNode = $('Parse manifest & copy').first().json;\nconst manifest = manifestNode.manifest;\nmanifest.status = 'review_failed';\n\nreturn [{\n  json: {\n    manifest,\n    manifestContent: JSON.stringify(manifest, null, 2),\n    filePath: manifestNode.manifestPath,\n    date: manifestNode.date\n  }\n}];"
+      }
+    },
+    {
+      "id": "convert-rejected-file-1",
+      "name": "Convert JSON to File (Rejected)",
+      "type": "n8n-nodes-base.convertToFile",
+      "typeVersion": 1.1,
+      "position": [
+        2150,
+        300
+      ],
+      "parameters": {
+        "operation": "toText",
+        "sourceProperty": "manifestContent",
+        "binaryPropertyName": "manifestBinary"
+      }
+    },
+    {
+      "id": "write-rejected-manifest-1",
+      "name": "Write manifest.json (Rejected)",
+      "type": "n8n-nodes-base.readWriteFile",
+      "typeVersion": 1.1,
+      "position": [
+        2350,
+        300
+      ],
+      "parameters": {
+        "operation": "write",
+        "fileName": "={{ $json.filePath }}",
+        "dataPropertyName": "manifestBinary"
+      }
+    },
+    {
+      "id": "telegram-rejected-notify-1",
+      "name": "Telegram — Rejected Notification",
+      "type": "n8n-nodes-base.telegram",
+      "typeVersion": 1.2,
+      "position": [
+        2550,
+        300
+      ],
+      "credentials": {
+        "telegramApi": {
+          "id": "C70mrh8zZbUll0Zw",
+          "name": "Telegram account"
+        }
+      },
+      "parameters": {
+        "chatId": "724801911",
+        "operation": "sendMessage",
+        "text": "=❌ *Campaña Rechazada*\n\nLa campaña del {{ $json.date }} ha sido marcada como 'review_failed' y no se publicará."
+      }
+    },
+    {
+      "id": "stop-not-ready-1",
+      "name": "Stop - Not Ready",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [
+        1150,
+        450
+      ],
+      "parameters": {}
+    }
+  ],
+  "connections": {
+    "Schedule Trigger — 07:05 AM GT": {
+      "main": [
+        [
+          {
+            "node": "Get Dates & Paths",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Dates & Paths": {
+      "main": [
+        [
+          {
+            "node": "Read manifest.json",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Read copy.json",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read manifest.json": {
+      "main": [
+        [
+          {
+            "node": "Parse manifest & copy",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read copy.json": {
+      "main": [
+        [
+          {
+            "node": "Parse manifest & copy",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Parse manifest & copy": {
+      "main": [
+        [
+          {
+            "node": "Is Ready for Review?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Is Ready for Review?": {
+      "main": [
+        [
+          {
+            "node": "Read Feed Square Image",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Stop - Not Ready",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read Feed Square Image": {
+      "main": [
+        [
+          {
+            "node": "Telegram — Send Preview",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram — Send Preview": {
+      "main": [
+        [
+          {
+            "node": "Telegram — Wait for Approval",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Telegram — Wait for Approval": {
+      "main": [
+        [
+          {
+            "node": "Approved?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Approved?": {
+      "main": [
+        [
+          {
+            "node": "Set Status Approved",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Set Status Rejected",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Status Approved": {
+      "main": [
+        [
+          {
+            "node": "Convert JSON to File (Approved)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert JSON to File (Approved)": {
+      "main": [
+        [
+          {
+            "node": "Write manifest.json (Approved)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Write manifest.json (Approved)": {
+      "main": [
+        [
+          {
+            "node": "Telegram — Approved Notification",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Set Status Rejected": {
+      "main": [
+        [
+          {
+            "node": "Convert JSON to File (Rejected)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Convert JSON to File (Rejected)": {
+      "main": [
+        [
+          {
+            "node": "Write manifest.json (Rejected)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Write manifest.json (Rejected)": {
+      "main": [
+        [
+          {
+            "node": "Telegram — Rejected Notification",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "settings": {
+    "executionOrder": "v1",
+    "timezone": "America/Guatemala",
+    "errorWorkflow": "hqtExbNvPA6slEwu"
+  },
+  "active": false
+}

@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-06-18T18:39:57.628Z",
+  "date": "2026-06-16",
+  "themeId": "parent-pain",
+  "themeName": "Dolor del padre o madre",
+  "status": "ready_for_human_review",
+  "publishing": "disabled",
+  "files": [
+    {
+      "path": "vertical_1080x1920.png",
+      "bytes": 1950657,
+      "sha256": "2e44700f1ba4721504a0513fca151b20c32d4cad064a599d3b82a61f0a6f0c85"
+    },
+    {
+      "path": "feed_1080x1080.png",
+      "bytes": 995034,
+      "sha256": "7194164e26d69106486ca317346e0cc52b42d2da144bb3767839a52bf3895395"
+    },
+    {
+      "path": "feed_1080x1350.png",
+      "bytes": 1305637,
+      "sha256": "9f17cd7dcae87692f2cb00b6d6168e9d8a0630e0739466fc19ad11c3811082ff"
+    },
+    {
+      "path": "source.html",
+      "bytes": 14882,
+      "sha256": "fa06ee9aaa3aa613094cb353566e4fbc423be1f17c35b0c2a4d1f8c47d8e2df6"
+    },
+    {
+      "path": "copy.json",
+      "bytes": 3764,
+      "sha256": "347153a06c55752cefb985ad2d832eee5b6114adc8bc16a0441378015a6ef507"
+    },
+    {
+      "path": "carousel/slide_01_1080x1350.png",
+      "bytes": 1403314,
+      "sha256": "2a4880afdb05c744c2bb80751d06a08727a0a536f7c8d4ac97e4a418dd1d2b03"
+    },
+    {
+      "path": "carousel/slide_02_1080x1350.png",
+      "bytes": 87888,
+      "sha256": "b3a244d7d5e751f591bbbb4b6ea183f85e8ac63a269449c8341da67b3637a163"
+    },
+    {
+      "path": "carousel/slide_03_1080x1350.png",
+      "bytes": 92142,
+      "sha256": "f782b970f445b71cf1a2e1c866ecbf620251bf0e7dcb437cd35d7e3ec9a7d71a"
+    },
+    {
+      "path": "carousel/slide_04_1080x1350.png",
+      "bytes": 83801,
+      "sha256": "ee0527ef79c5e05af2162c243660ca4ab4c763a323a5d3ac2084dc7c272758d1"
+    },
+    {
+      "path": "carousel/slide_05_1080x1350.png",
+      "bytes": 90811,
+      "sha256": "769b46f6c94ee063fff2f6f1e5bc1b6febae9ad4ddb306a2e0d3b4a117206f69"
+    }
+  ]
+}

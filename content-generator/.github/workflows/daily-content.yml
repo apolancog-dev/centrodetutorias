@@ -1,0 +1,32 @@
+name: Generate daily CEDETU content
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "0 13 * * *" # 07:00 America/Guatemala (UTC-6)
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install dependencies
+        working-directory: content-generator
+        run: npm install
+      - name: Generate campaign
+        working-directory: content-generator
+        run: node generate_daily_content.js
+      - name: Validate assets
+        working-directory: content-generator
+        run: node validate_outputs.js
+      - name: Upload for human review
+        uses: actions/upload-artifact@v4
+        with:
+          name: cedetu-daily-content
+          path: content-generator/output/
+          retention-days: 30
