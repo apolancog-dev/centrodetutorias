@@ -19,11 +19,11 @@
     },
     {
       "date": "2026-06-18",
-      "themeId": "emotional-reminder",
-      "themeName": "Recordatorio emocional",
-      "subject": "Matemática",
+      "themeId": "personalized-support",
+      "themeName": "Apoyo personalizado",
+      "subject": "Álgebra",
       "output": "output/2026-06-18",
-      "generatedAt": "2026-06-19T02:15:53.776Z"
+      "generatedAt": "2026-06-19T02:24:57.080Z"
     }
   ]
 }

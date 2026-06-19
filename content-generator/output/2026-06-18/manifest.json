@@ -1,61 +1,61 @@
 {
   "version": 1,
-  "generatedAt": "2026-06-19T02:15:53.776Z",
+  "generatedAt": "2026-06-19T02:24:57.080Z",
   "date": "2026-06-18",
-  "themeId": "emotional-reminder",
-  "themeName": "Recordatorio emocional",
-  "status": "review_failed",
+  "themeId": "personalized-support",
+  "themeName": "Apoyo personalizado",
+  "status": "ready_for_human_review",
   "publishing": "disabled",
   "files": [
     {
       "path": "vertical_1080x1920.png",
-      "bytes": 1949161,
-      "sha256": "a785e8a87579e4ebbf7a09a642d198ef2abdc872d9789bbd756d2ade56b53c98"
+      "bytes": 1735185,
+      "sha256": "8be7327f10ca0da14307767167a446194c140a80007fa0eaf786093c1d0755f8"
     },
     {
       "path": "feed_1080x1080.png",
-      "bytes": 999763,
-      "sha256": "e3a8bf6da802ad2dc32fe315f72d49bd13db5be6196da69b765e716f3c77caea"
+      "bytes": 990170,
+      "sha256": "9f039bc4755f09ac8470e448047d395e907f4e4dced5aa621620426608d47ba8"
     },
     {
       "path": "feed_1080x1350.png",
-      "bytes": 1305582,
-      "sha256": "66d1a916374789cae78288defba1cb8834c999ed799445e59b8eee08f679b211"
+      "bytes": 1151160,
+      "sha256": "33a333812dc9f272d8bd2bf04200a743b054cd506f8d3b4b4afc904f26644051"
     },
     {
       "path": "source.html",
-      "bytes": 15012,
-      "sha256": "68060f53008e73afe58eb8944778b09d6f145db444d05b84fb17b3e8930e84b2"
+      "bytes": 14966,
+      "sha256": "abfda7d3be7e7617fcf0de6650dba8f12b7c80b9fd1121548faf99b8eec2f7f5"
     },
     {
       "path": "copy.json",
-      "bytes": 3884,
-      "sha256": "aa2ffc2e3e3c8e5faa6c2afeb4c23c559830111b628ea6f6ea53b2a5b555ba48"
+      "bytes": 3846,
+      "sha256": "5067ad506ad02bec238004637babbc0004bdf073831ab3c63f663635158e821b"
     },
     {
       "path": "carousel/slide_01_1080x1350.png",
-      "bytes": 1392652,
-      "sha256": "3f7003115b65613caf48cc5916a433d84903325032945ba9a04d165bc20827df"
+      "bytes": 1284785,
+      "sha256": "17588d56e8818982836d3ab34567f46cc02f1f37dc6a0697159260c2e1b1dbc2"
     },
     {
       "path": "carousel/slide_02_1080x1350.png",
-      "bytes": 87211,
-      "sha256": "1217bddafa47ce60197966f6d8f21ac4eaaaaacfcb7afa7b07c263a26d673d71"
+      "bytes": 87143,
+      "sha256": "5820b4cc9aa5ff7e13b1b01dac648fd62b1e9ad35bbfa1a0940b279e27b288b5"
     },
     {
       "path": "carousel/slide_03_1080x1350.png",
-      "bytes": 92142,
-      "sha256": "f782b970f445b71cf1a2e1c866ecbf620251bf0e7dcb437cd35d7e3ec9a7d71a"
+      "bytes": 91213,
+      "sha256": "80e9d6df013010d45f98b0e4112b264103e58d06fda0bfee5d0725ae455aaa3d"
     },
     {
       "path": "carousel/slide_04_1080x1350.png",
-      "bytes": 83440,
-      "sha256": "fc69cb7e426942a51f22dd451d2dfc98f890dcb3753741e1814f705e3a8996fc"
+      "bytes": 80027,
+      "sha256": "1f7faee96f2fe8cf6c02dd8f657ddd153fa84ed53fbe8dcb6859f16e9e2e8472"
     },
     {
       "path": "carousel/slide_05_1080x1350.png",
-      "bytes": 90201,
-      "sha256": "2e1fc2d3b2fb1cff544ae72fa9303bc1b50c801d637a269abcc31baa29febf1f"
+      "bytes": 89667,
+      "sha256": "3dfc6a4874fcecc5401e01e641921cd2303d62c6825b876ad774e8e1ffae5c38"
     }
   ]
 }
