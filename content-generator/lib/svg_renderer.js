@@ -34,11 +34,20 @@ function textLines(text, x, y, options = {}) {
 }
 
 function imageData(file) {
-  return `data:image/png;base64,${fs.readFileSync(file).toString("base64")}`;
+  const buffer = fs.readFileSync(file);
+  let mime = "image/png";
+  if (buffer[0] === 0xFF && buffer[1] === 0xD8) {
+    mime = "image/jpeg";
+  } else if (buffer[0] === 0x89 && buffer[1] === 0x50 && buffer[2] === 0x4E && buffer[3] === 0x47) {
+    mime = "image/png";
+  } else if (buffer[0] === 0x47 && buffer[1] === 0x49 && buffer[2] === 0x46) {
+    mime = "image/gif";
+  }
+  return `data:${mime};base64,${buffer.toString("base64")}`;
 }
 
 function svgStart(width, height, background) {
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}"><rect width="${width}" height="${height}" fill="${background}"/>`;
+  return `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}"><rect width="${width}" height="${height}" fill="${background}"/>`;
 }
 
 function defs() {
@@ -66,7 +75,7 @@ function brand(x, y, config, inverse = false, scale = 1) {
   
   let logoElement;
   if (logoData) {
-    logoElement = `<image href="${logoData}" width="${mark}" height="${mark}" />`;
+    logoElement = `<image xlink:href="${logoData}" href="${logoData}" width="${mark}" height="${mark}" />`;
   } else {
     logoElement = `<rect width="${mark}" height="${mark}" rx="${12 * scale}" fill="${inverse ? "#FFFFFF" : config.colors.cobalt}"/><path d="M${14 * scale} ${17 * scale}h${29 * scale}m-${29 * scale} ${10 * scale}h${22 * scale}m-${22 * scale} ${10 * scale}h${26 * scale}" stroke="${inverse ? config.colors.cobalt : "#FFFFFF"}" stroke-width="${5 * scale}" stroke-linecap="round"/><circle cx="${44 * scale}" cy="${43 * scale}" r="${7 * scale}" fill="${config.colors.turquoise}"/>`;
   }
@@ -88,7 +97,7 @@ function footer(y, height, config, width = 1080) {
 }
 
 function photoTag(data, x, y, width, height, position = "xMidYMid") {
-  return `<svg x="${x}" y="${y}" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" preserveAspectRatio="none"><image href="${data}" width="100%" height="100%" preserveAspectRatio="${position} slice"/></svg>`;
+  return `<svg x="${x}" y="${y}" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}" preserveAspectRatio="none"><image xlink:href="${data}" href="${data}" width="100%" height="100%" preserveAspectRatio="${position} slice"/></svg>`;
 }
 
 function verticalSvg(theme, config, photo) {
