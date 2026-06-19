@@ -278,7 +278,7 @@
       "type": "n8n-nodes-base.telegram",
       "typeVersion": 1.2,
       "position": [
-        2450,
+        3700,
         100
       ],
       "credentials": {
@@ -290,9 +290,133 @@
       "parameters": {
         "chatId": "724801911",
         "operation": "sendMessage",
-        "text": "=✅ *Campaña Aprobada*\n\nEl manifest.json de la campaña del {{ $json.date }} ha sido actualizado exitosamente a 'ready_to_publish'."
+        "text": "=✅ *Campaña Publicada con Éxito*\n\nLa campaña del {{ $('Set Status Approved').item.json.date }} ha sido publicada:\n- *Facebook Page:* Publicado exitosamente 📸\n- *Instagram Business:* Publicado exitosamente 📸\n\nEl manifest.json ha sido actualizado a 'ready_to_publish'."
       },
       "webhookId": "e7e37d6d-0faf-425a-b095-41e3f8fba334"
+    },
+    {
+      "id": "meta-get-page-info-1",
+      "name": "Get Page Info (Meta)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        2450,
+        100
+      ],
+      "credentials": {
+        "httpQueryAuth": {
+          "id": "Hznf2ZMg4wObho4L",
+          "name": "Meta Page Access Token"
+        }
+      },
+      "parameters": {
+        "url": "https://graph.facebook.com/v19.0/me",
+        "method": "GET",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpQueryAuth",
+        "options": {}
+      }
+    },
+    {
+      "id": "meta-get-instagram-account-1",
+      "name": "Get Instagram Account (Meta)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        2700,
+        100
+      ],
+      "credentials": {
+        "httpQueryAuth": {
+          "id": "Hznf2ZMg4wObho4L",
+          "name": "Meta Page Access Token"
+        }
+      },
+      "parameters": {
+        "url": "=https://graph.facebook.com/v19.0/{{ $json.id }}?fields=instagram_business_account",
+        "method": "GET",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpQueryAuth",
+        "options": {}
+      }
+    },
+    {
+      "id": "meta-publish-facebook-1",
+      "name": "Publish to Facebook (Meta)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        2950,
+        100
+      ],
+      "credentials": {
+        "httpQueryAuth": {
+          "id": "Hznf2ZMg4wObho4L",
+          "name": "Meta Page Access Token"
+        }
+      },
+      "parameters": {
+        "url": "=https://graph.facebook.com/v19.0/{{ $('Get Page Info (Meta)').item.json.id }}/photos",
+        "method": "POST",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpQueryAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"url\": \"{{ $('Parse manifest & copy').item.json.imageUrl }}\",\n  \"message\": \"{{ $('Parse manifest & copy').item.json.copy.caption_facebook }}\"\n}",
+        "options": {}
+      }
+    },
+    {
+      "id": "meta-create-instagram-media-1",
+      "name": "Create Instagram Media (Meta)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        3200,
+        100
+      ],
+      "credentials": {
+        "httpQueryAuth": {
+          "id": "Hznf2ZMg4wObho4L",
+          "name": "Meta Page Access Token"
+        }
+      },
+      "parameters": {
+        "url": "=https://graph.facebook.com/v19.0/{{ $('Get Instagram Account (Meta)').item.json.instagram_business_account.id }}/media",
+        "method": "POST",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpQueryAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"image_url\": \"{{ $('Parse manifest & copy').item.json.imageUrl }}\",\n  \"caption\": \"{{ $('Parse manifest & copy').item.json.copy.caption_instagram }}\"\n}",
+        "options": {}
+      }
+    },
+    {
+      "id": "meta-publish-instagram-media-1",
+      "name": "Publish Instagram Media (Meta)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        3450,
+        100
+      ],
+      "credentials": {
+        "httpQueryAuth": {
+          "id": "Hznf2ZMg4wObho4L",
+          "name": "Meta Page Access Token"
+        }
+      },
+      "parameters": {
+        "url": "=https://graph.facebook.com/v19.0/{{ $('Get Instagram Account (Meta)').item.json.instagram_business_account.id }}/media_publish",
+        "method": "POST",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpQueryAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={\n  \"creation_id\": \"{{ $json.id }}\"\n}",
+        "options": {}
+      }
     },
     {
       "id": "code-rejected-status-1",
@@ -519,6 +643,61 @@
       ]
     },
     "Write manifest.json (Approved)": {
+      "main": [
+        [
+          {
+            "node": "Get Page Info (Meta)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Page Info (Meta)": {
+      "main": [
+        [
+          {
+            "node": "Get Instagram Account (Meta)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get Instagram Account (Meta)": {
+      "main": [
+        [
+          {
+            "node": "Publish to Facebook (Meta)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Publish to Facebook (Meta)": {
+      "main": [
+        [
+          {
+            "node": "Create Instagram Media (Meta)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create Instagram Media (Meta)": {
+      "main": [
+        [
+          {
+            "node": "Publish Instagram Media (Meta)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Publish Instagram Media (Meta)": {
       "main": [
         [
           {
