@@ -77,7 +77,7 @@
         300
       ],
       "parameters": {
-        "jsCode": "const manifest = $('Read manifest.json').first().json;\nconst copy = $('Read copy.json').first().json;\nconst datesNode = $('Get Dates & Paths').first().json;\n\nreturn [{\n  json: {\n    date: datesNode.date,\n    githubFilePath: datesNode.githubFilePath,\n    repoOwner: datesNode.repoOwner,\n    repoName: datesNode.repoName,\n    branch: datesNode.branch,\n    imageUrl: datesNode.imageUrl,\n    manifest,\n    copy\n  }\n}];"
+        "jsCode": "const manifestInput = $('Read manifest.json').first().json;\nconst copyInput = $('Read copy.json').first().json;\n\nlet manifest;\nif (typeof manifestInput.data === 'string') {\n  manifest = JSON.parse(manifestInput.data);\n} else if (manifestInput.data) {\n  manifest = manifestInput.data;\n} else {\n  manifest = manifestInput;\n}\n\nlet copy;\nif (typeof copyInput.data === 'string') {\n  copy = JSON.parse(copyInput.data);\n} else if (copyInput.data) {\n  copy = copyInput.data;\n} else {\n  copy = copyInput;\n}\n\nconst datesNode = $('Get Dates & Paths').first().json;\n\nreturn [{\n  json: {\n    date: datesNode.date,\n    githubFilePath: datesNode.githubFilePath,\n    repoOwner: datesNode.repoOwner,\n    repoName: datesNode.repoName,\n    branch: datesNode.branch,\n    imageUrl: datesNode.imageUrl,\n    manifest,\n    copy\n  }\n}];"
       }
     },
     {
