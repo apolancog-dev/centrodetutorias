@@ -24,6 +24,14 @@
       "subject": "Estadística",
       "output": "output/2026-06-18",
       "generatedAt": "2026-06-19T05:06:18.609Z"
+    },
+    {
+      "date": "2026-06-19",
+      "themeId": "academic-diagnosis",
+      "themeName": "Diagnóstico académico",
+      "subject": "Matemática y Estadística",
+      "output": "output/2026-06-19",
+      "generatedAt": "2026-06-19T15:57:06.187Z"
     }
   ]
 }
