@@ -45,10 +45,33 @@ function defs() {
   return `<defs><filter id="shadow" x="-20%" y="-20%" width="140%" height="140%"><feDropShadow dx="0" dy="10" stdDeviation="10" flood-color="#102A43" flood-opacity=".18"/></filter></defs>`;
 }
 
+let logoBase64Cache = null;
+
+function getLogoBase64(config) {
+  if (logoBase64Cache) return logoBase64Cache;
+  if (!config.brand.logo) return "";
+  const logoPath = path.join(__dirname, "..", config.brand.logo);
+  if (fs.existsSync(logoPath)) {
+    logoBase64Cache = `data:image/png;base64,${fs.readFileSync(logoPath).toString("base64")}`;
+  } else {
+    logoBase64Cache = "";
+  }
+  return logoBase64Cache;
+}
+
 function brand(x, y, config, inverse = false, scale = 1) {
   const color = inverse ? "#FFFFFF" : config.colors.cobalt;
   const mark = 56 * scale;
-  return `<g transform="translate(${x} ${y})"><rect width="${mark}" height="${mark}" rx="${12 * scale}" fill="${inverse ? "#FFFFFF" : config.colors.cobalt}"/><path d="M${14 * scale} ${17 * scale}h${29 * scale}m-${29 * scale} ${10 * scale}h${22 * scale}m-${22 * scale} ${10 * scale}h${26 * scale}" stroke="${inverse ? config.colors.cobalt : "#FFFFFF"}" stroke-width="${5 * scale}" stroke-linecap="round"/><circle cx="${44 * scale}" cy="${43 * scale}" r="${7 * scale}" fill="${config.colors.turquoise}"/><text x="${72 * scale}" y="${37 * scale}" fill="${color}" font-family="Avenir, Helvetica Neue, Arial, sans-serif" font-size="${25 * scale}" font-weight="800">${esc(config.brand.name.toUpperCase())}</text></g>`;
+  const logoData = getLogoBase64(config);
+  
+  let logoElement;
+  if (logoData) {
+    logoElement = `<image href="${logoData}" width="${mark}" height="${mark}" />`;
+  } else {
+    logoElement = `<rect width="${mark}" height="${mark}" rx="${12 * scale}" fill="${inverse ? "#FFFFFF" : config.colors.cobalt}"/><path d="M${14 * scale} ${17 * scale}h${29 * scale}m-${29 * scale} ${10 * scale}h${22 * scale}m-${22 * scale} ${10 * scale}h${26 * scale}" stroke="${inverse ? config.colors.cobalt : "#FFFFFF"}" stroke-width="${5 * scale}" stroke-linecap="round"/><circle cx="${44 * scale}" cy="${43 * scale}" r="${7 * scale}" fill="${config.colors.turquoise}"/>`;
+  }
+  
+  return `<g transform="translate(${x} ${y})">${logoElement}<text x="${72 * scale}" y="${37 * scale}" fill="${color}" font-family="Avenir, Helvetica Neue, Arial, sans-serif" font-size="${25 * scale}" font-weight="800">${esc(config.brand.name.toUpperCase())}</text></g>`;
 }
 
 function eyebrow(x, y, text, config, inverse = false) {

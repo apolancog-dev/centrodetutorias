@@ -17,9 +17,7 @@ body { padding: 40px; display: flex; flex-direction: column; align-items: center
 .artboard { position: relative; overflow: hidden; background: var(--paper); flex: none; isolation: isolate; }
 .photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .brand { display: flex; align-items: center; gap: 18px; font-size: 24px; font-weight: 800; letter-spacing: 0; text-transform: uppercase; color: var(--cobalt); }
-.brand-mark { width: 58px; height: 58px; border-radius: 12px; background: var(--cobalt); position: relative; flex: none; }
-.brand-mark::before { content: ""; position: absolute; left: 14px; top: 15px; width: 30px; height: 5px; background: white; box-shadow: 0 10px 0 white, 0 20px 0 white; border-radius: 4px; }
-.brand-mark::after { content: ""; position: absolute; right: 8px; bottom: 8px; width: 15px; height: 15px; border-radius: 50%; background: var(--turquoise); }
+.brand-mark { width: 58px; height: 58px; object-fit: contain; flex: none; }
 .eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 22px; font-weight: 800; color: var(--cobalt); text-transform: uppercase; }
 .eyebrow::before { content: ""; width: 34px; height: 5px; background: var(--turquoise); border-radius: 4px; }
 .headline { margin: 22px 0 0; font-weight: 800; line-height: 1.03; letter-spacing: 0; text-wrap: balance; }

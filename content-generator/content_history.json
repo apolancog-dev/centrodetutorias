@@ -7,7 +7,7 @@
       "themeName": "Dolor del padre o madre",
       "subject": "Matemática",
       "output": "output/2026-06-16",
-      "generatedAt": "2026-06-18T18:39:57.628Z"
+      "generatedAt": "2026-06-19T05:06:16.653Z"
     },
     {
       "date": "2026-06-17",
@@ -15,15 +15,15 @@
       "themeName": "Preparación para exámenes",
       "subject": "Matemática y Física",
       "output": "output/2026-06-17",
-      "generatedAt": "2026-06-18T18:39:58.476Z"
+      "generatedAt": "2026-06-19T05:06:17.569Z"
     },
     {
       "date": "2026-06-18",
-      "themeId": "personalized-support",
-      "themeName": "Apoyo personalizado",
-      "subject": "Álgebra",
+      "themeId": "university-statistics",
+      "themeName": "Estadística universitaria",
+      "subject": "Estadística",
       "output": "output/2026-06-18",
-      "generatedAt": "2026-06-19T02:24:57.080Z"
+      "generatedAt": "2026-06-19T05:06:18.609Z"
     }
   ]
 }

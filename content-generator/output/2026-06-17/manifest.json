@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-06-18T18:39:58.476Z",
+  "generatedAt": "2026-06-19T05:06:17.569Z",
   "date": "2026-06-17",
   "themeId": "exam-prep",
   "themeName": "Preparación para exámenes",
@@ -9,23 +9,23 @@
   "files": [
     {
       "path": "vertical_1080x1920.png",
-      "bytes": 1737261,
-      "sha256": "f5762bc1689dbb42ecf5b049aae5a8c71041052e06517a5aacfb4e0bfb7d5b76"
+      "bytes": 1739382,
+      "sha256": "c1ca541f67eb54155fa4ca7a9c49885086a2855c01f9750dde8e8e29a768ac03"
     },
     {
       "path": "feed_1080x1080.png",
-      "bytes": 989528,
-      "sha256": "db60e9490fd2e6f7c95ea8e07a69797f29f2a05536c55dbed110ef64196cdbe3"
+      "bytes": 991385,
+      "sha256": "ae929418385497b8d83ef67cc772d97eb5b742576d0d7c14ad9d151566645abb"
     },
     {
       "path": "feed_1080x1350.png",
-      "bytes": 1151212,
-      "sha256": "07880ee93499ce2b4968926aadf3efb765e5d0300cbadf83ddac9488f066ce28"
+      "bytes": 1152892,
+      "sha256": "994c05e72e8f75739d371823288c832cbb47047bf3bc82d6a54e81efc72e45a1"
     },
     {
       "path": "source.html",
-      "bytes": 14965,
-      "sha256": "f3168bee9bc41fcf1d1f40888a244f24a94569abae8127b326d0883ed5dff316"
+      "bytes": 14867,
+      "sha256": "117ab54622b9ee0b544af76c15512e7b96af97a965f0895c03b83cc94954e22f"
     },
     {
       "path": "copy.json",
@@ -34,28 +34,28 @@
     },
     {
       "path": "carousel/slide_01_1080x1350.png",
-      "bytes": 1285122,
-      "sha256": "c7251f4cf80f713ab0e813ea7462d980037fa2cbc381b8022d0e4c1590b9e5cb"
+      "bytes": 1287167,
+      "sha256": "04adb08dcc7195ff0e283dda6a82b438b43b0545cfa5b720b19cc414ef82fac6"
     },
     {
       "path": "carousel/slide_02_1080x1350.png",
-      "bytes": 85138,
-      "sha256": "48e8c638f9e86f34ec50a47da1c2f5e26c7f07260b78527705e84576462a3fe5"
+      "bytes": 86736,
+      "sha256": "80d91d36db3f213f384e5d544c0058ce363a2352d715ad002574440c1ebe6463"
     },
     {
       "path": "carousel/slide_03_1080x1350.png",
-      "bytes": 93978,
-      "sha256": "3a37a8e7818a226ffd48ac0f87ab33b0eb26f8186a938136ea14d295afc05bb4"
+      "bytes": 95472,
+      "sha256": "86e8dbe6c25566c6fd647927bbd55eac26d19dd0bd2b54c754f51ddcb32d04f0"
     },
     {
       "path": "carousel/slide_04_1080x1350.png",
-      "bytes": 84548,
-      "sha256": "ae04bb61a8c640be0e0d2aa4e0a9d0780a8a6392760642e828e5bf0447ed1b42"
+      "bytes": 85913,
+      "sha256": "b0b464dc4747d1e01772e241cdd29107f8bcfd05e7830620021af264d3dcf53a"
     },
     {
       "path": "carousel/slide_05_1080x1350.png",
-      "bytes": 89841,
-      "sha256": "fe6086142d3070a0dd22d1e62eca9f10c6002176cb691c38370d618fbe91fee5"
+      "bytes": 91319,
+      "sha256": "9e674159c06671d1783766d11db17e677e69d1ae958b07dd0ccdf40d88ffc07e"
     }
   ]
 }

@@ -156,7 +156,8 @@ function buildCopy(date, theme, config) {
 }
 
 function brandBlock(config) {
-  return `<div class="brand"><span class="brand-mark"></span><span>${escapeHtml(config.brand.name)}</span></div>`;
+  const logoSrc = `../../${config.brand.logo}`;
+  return `<div class="brand"><img class="brand-mark" src="${logoSrc}" alt="Logo"><span>${escapeHtml(config.brand.name)}</span></div>`;
 }
 
 function footerBlock(config) {

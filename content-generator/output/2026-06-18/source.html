@@ -23,9 +23,7 @@ body { padding: 40px; display: flex; flex-direction: column; align-items: center
 .artboard { position: relative; overflow: hidden; background: var(--paper); flex: none; isolation: isolate; }
 .photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .brand { display: flex; align-items: center; gap: 18px; font-size: 24px; font-weight: 800; letter-spacing: 0; text-transform: uppercase; color: var(--cobalt); }
-.brand-mark { width: 58px; height: 58px; border-radius: 12px; background: var(--cobalt); position: relative; flex: none; }
-.brand-mark::before { content: ""; position: absolute; left: 14px; top: 15px; width: 30px; height: 5px; background: white; box-shadow: 0 10px 0 white, 0 20px 0 white; border-radius: 4px; }
-.brand-mark::after { content: ""; position: absolute; right: 8px; bottom: 8px; width: 15px; height: 15px; border-radius: 50%; background: var(--turquoise); }
+.brand-mark { width: 58px; height: 58px; object-fit: contain; flex: none; }
 .eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 22px; font-weight: 800; color: var(--cobalt); text-transform: uppercase; }
 .eyebrow::before { content: ""; width: 34px; height: 5px; background: var(--turquoise); border-radius: 4px; }
 .headline { margin: 22px 0 0; font-weight: 800; line-height: 1.03; letter-spacing: 0; text-wrap: balance; }
@@ -107,61 +105,61 @@ body { padding: 40px; display: flex; flex-direction: column; align-items: center
 </style>
 </head>
 <body>
-<section id="vertical" class="artboard vertical" aria-label="Pieza de Centro de Tutorías sobre apoyo personalizado. Cada estudiante aprende distinto y merece una explicación diferente. Imagen de un estudiante en un ambiente de estudio y llamado a la acción: Conoce nuestras tutorías.">
-  <img class="photo" src="../../assets/backgrounds/exam-prep.png" alt="">
+<section id="vertical" class="artboard vertical" aria-label="Pieza de Centro de Tutorías sobre estadística universitaria. Estadística no debería ser el curso que baje su promedio. Imagen de un estudiante en un ambiente de estudio y llamado a la acción: Conoce nuestras tutorías.">
+  <img class="photo" src="../../assets/backgrounds/university-statistics.png" alt="">
   <div class="photo-shade"></div>
   <div class="top">
-    <div class="brand"><span class="brand-mark"></span><span>Centro de Tutorías</span></div>
-    <div class="eyebrow">Apoyo personalizado</div>
-    <h1 class="headline">Cada estudiante aprende distinto y merece una explicación diferente</h1>
-    <p class="subtitle">Adaptamos ejemplos, ritmo y práctica al nivel real del estudiante y a sus objetivos académicos.</p>
+    <div class="brand"><img class="brand-mark" src="../../assets/logos/logo.png" alt="Logo"><span>Centro de Tutorías</span></div>
+    <div class="eyebrow">Estadística universitaria</div>
+    <h1 class="headline">Estadística no debería ser el curso que baje su promedio</h1>
+    <p class="subtitle">Explicamos conceptos, procedimientos e interpretación con ejemplos cercanos a su carrera y nivel académico.</p>
   </div>
   <div class="cta">Conoce nuestras tutorías <span class="cta-arrow">→</span></div>
   <div class="footer"><span class="footer-url">centrodetutorias.com</span><span class="wa"><span class="wa-icon"></span>Escríbenos por WhatsApp</span></div>
 </section>
 
-<section id="feed-square" class="artboard feed-square" aria-label="Pieza de Centro de Tutorías sobre apoyo personalizado. Cada estudiante aprende distinto y merece una explicación diferente. Imagen de un estudiante en un ambiente de estudio y llamado a la acción: Conoce nuestras tutorías.">
+<section id="feed-square" class="artboard feed-square" aria-label="Pieza de Centro de Tutorías sobre estadística universitaria. Estadística no debería ser el curso que baje su promedio. Imagen de un estudiante en un ambiente de estudio y llamado a la acción: Conoce nuestras tutorías.">
   <div class="copy">
-    <div class="brand"><span class="brand-mark"></span><span>Centro de Tutorías</span></div>
-    <div class="eyebrow">Apoyo personalizado</div>
-    <h1 class="headline">Cada estudiante aprende distinto y merece una explicación diferente</h1>
-    <p class="subtitle">Adaptamos ejemplos, ritmo y práctica al nivel real del estudiante y a sus objetivos académicos.</p>
+    <div class="brand"><img class="brand-mark" src="../../assets/logos/logo.png" alt="Logo"><span>Centro de Tutorías</span></div>
+    <div class="eyebrow">Estadística universitaria</div>
+    <h1 class="headline">Estadística no debería ser el curso que baje su promedio</h1>
+    <p class="subtitle">Explicamos conceptos, procedimientos e interpretación con ejemplos cercanos a su carrera y nivel académico.</p>
     <div class="cta">Conoce nuestras tutorías <span class="cta-arrow">→</span></div>
   </div>
-  <div class="visual"><img class="photo" src="../../assets/backgrounds/exam-prep.png" alt=""></div>
+  <div class="visual"><img class="photo" src="../../assets/backgrounds/university-statistics.png" alt=""></div>
   <div class="url-band">centrodetutorias.com</div>
 </section>
 
-<section id="feed-portrait" class="artboard feed-portrait" aria-label="Pieza de Centro de Tutorías sobre apoyo personalizado. Cada estudiante aprende distinto y merece una explicación diferente. Imagen de un estudiante en un ambiente de estudio y llamado a la acción: Conoce nuestras tutorías.">
-  <img class="photo" src="../../assets/backgrounds/exam-prep.png" alt="">
+<section id="feed-portrait" class="artboard feed-portrait" aria-label="Pieza de Centro de Tutorías sobre estadística universitaria. Estadística no debería ser el curso que baje su promedio. Imagen de un estudiante en un ambiente de estudio y llamado a la acción: Conoce nuestras tutorías.">
+  <img class="photo" src="../../assets/backgrounds/university-statistics.png" alt="">
   <div class="top">
-    <div class="brand"><span class="brand-mark"></span><span>Centro de Tutorías</span></div>
-    <div class="eyebrow">Apoyo personalizado</div>
-    <h1 class="headline">Cada estudiante aprende distinto y merece una explicación diferente</h1>
-    <p class="subtitle">Adaptamos ejemplos, ritmo y práctica al nivel real del estudiante y a sus objetivos académicos.</p>
+    <div class="brand"><img class="brand-mark" src="../../assets/logos/logo.png" alt="Logo"><span>Centro de Tutorías</span></div>
+    <div class="eyebrow">Estadística universitaria</div>
+    <h1 class="headline">Estadística no debería ser el curso que baje su promedio</h1>
+    <p class="subtitle">Explicamos conceptos, procedimientos e interpretación con ejemplos cercanos a su carrera y nivel académico.</p>
   </div>
   <div class="cta">Conoce nuestras tutorías <span class="cta-arrow">→</span></div>
   <div class="footer"><span class="footer-url">centrodetutorias.com</span><span class="wa"><span class="wa-icon"></span>Escríbenos por WhatsApp</span></div>
 </section>
 
-<section id="carousel-01" class="artboard carousel-slide cover" aria-label="Carrusel 01 de 5: Cada estudiante aprende distinto y merece una explicación diferente">
-  <img class="photo" src="../../assets/backgrounds/exam-prep.png" alt=""><div class="overlay"></div><div class="cover-copy"><div class="brand"><span class="brand-mark"></span><span>Centro de Tutorías</span></div><div class="slide-number">1/5</div><div class="content"><div class="kicker">Apoyo personalizado</div><h2>Cada estudiante aprende distinto y merece una explicación diferente</h2><p>Adaptamos ejemplos, ritmo y práctica al nivel real del estudiante y a sus objetivos académicos.</p></div><div class="bottom"><span>centrodetutorias.com</span><span>Desliza →</span></div></div>
+<section id="carousel-01" class="artboard carousel-slide cover" aria-label="Carrusel 01 de 5: Estadística no debería ser el curso que baje su promedio">
+  <img class="photo" src="../../assets/backgrounds/university-statistics.png" alt=""><div class="overlay"></div><div class="cover-copy"><div class="brand"><img class="brand-mark" src="../../assets/logos/logo.png" alt="Logo"><span>Centro de Tutorías</span></div><div class="slide-number">1/5</div><div class="content"><div class="kicker">Estadística universitaria</div><h2>Estadística no debería ser el curso que baje su promedio</h2><p>Explicamos conceptos, procedimientos e interpretación con ejemplos cercanos a su carrera y nivel académico.</p></div><div class="bottom"><span>centrodetutorias.com</span><span>Desliza →</span></div></div>
 </section>
 
 <section id="carousel-02" class="artboard carousel-slide problem" aria-label="Carrusel 02 de 5: Lo que suele estar pasando">
-  <div class="brand"><span class="brand-mark"></span><span>Centro de Tutorías</span></div><div class="slide-number">2/5</div><div class="content"><div class="kicker">Antes de exigir más horas</div><h2>Lo que suele estar pasando</h2><p>Repetir la misma explicación más veces no siempre funciona. A veces hay que cambiar el ejemplo, el ritmo o el punto de partida.</p></div><div class="bottom"><span>centrodetutorias.com</span><span>Desliza →</span></div>
+  <div class="brand"><img class="brand-mark" src="../../assets/logos/logo.png" alt="Logo"><span>Centro de Tutorías</span></div><div class="slide-number">2/5</div><div class="content"><div class="kicker">Antes de exigir más horas</div><h2>Lo que suele estar pasando</h2><p>Estadística se vuelve difícil cuando se memorizan fórmulas sin entender qué pregunta responde cada procedimiento.</p></div><div class="bottom"><span>centrodetutorias.com</span><span>Desliza →</span></div>
 </section>
 
 <section id="carousel-03" class="artboard carousel-slide steps" aria-label="Carrusel 03 de 5: Un mejor punto de partida">
-  <div class="brand"><span class="brand-mark"></span><span>Centro de Tutorías</span></div><div class="slide-number">3/5</div><div class="content"><div class="kicker">Una ruta más clara</div><h2>Un mejor punto de partida</h2><div class="step-list"><div class="step"><strong>1</strong><span>Identificar la dificultad exacta, no solamente la nota.</span></div><div class="step"><strong>2</strong><span>Explicar desde el nivel real del estudiante y a su ritmo.</span></div><div class="step"><strong>3</strong><span>Practicar Álgebra con retroalimentación clara.</span></div></div></div><div class="bottom"><span>centrodetutorias.com</span><span>Desliza →</span></div>
+  <div class="brand"><img class="brand-mark" src="../../assets/logos/logo.png" alt="Logo"><span>Centro de Tutorías</span></div><div class="slide-number">3/5</div><div class="content"><div class="kicker">Una ruta más clara</div><h2>Un mejor punto de partida</h2><div class="step-list"><div class="step"><strong>1</strong><span>Identificar la dificultad exacta, no solamente la nota.</span></div><div class="step"><strong>2</strong><span>Explicar desde el nivel real del estudiante y a su ritmo.</span></div><div class="step"><strong>3</strong><span>Practicar Estadística con retroalimentación clara.</span></div></div></div><div class="bottom"><span>centrodetutorias.com</span><span>Desliza →</span></div>
 </section>
 
 <section id="carousel-04" class="artboard carousel-slide approach" aria-label="Carrusel 04 de 5: Cómo acompañamos">
-  <div class="brand"><span class="brand-mark"></span><span>Centro de Tutorías</span></div><div class="slide-number">4/5</div><div class="content"><div class="kicker">Tutoría personalizada</div><h2>Cómo acompañamos</h2><div class="accent-rule"></div><p>Personalizamos la sesión y verificamos comprensión durante el proceso, no solamente al final del ejercicio.</p></div><div class="bottom"><span>centrodetutorias.com</span><span>Desliza →</span></div>
+  <div class="brand"><img class="brand-mark" src="../../assets/logos/logo.png" alt="Logo"><span>Centro de Tutorías</span></div><div class="slide-number">4/5</div><div class="content"><div class="kicker">Tutoría personalizada</div><h2>Cómo acompañamos</h2><div class="accent-rule"></div><p>Conectamos conceptos, ejercicios e interpretación para que el estudiante entienda por qué aplica cada método.</p></div><div class="bottom"><span>centrodetutorias.com</span><span>Desliza →</span></div>
 </section>
 
 <section id="carousel-05" class="artboard carousel-slide final" aria-label="Carrusel 05 de 5: El apoyo correcto puede empezar hoy">
-  <div class="brand"><span class="brand-mark"></span><span>Centro de Tutorías</span></div><div class="slide-number">5/5</div><div class="content"><div class="kicker">Centro de Tutorías</div><h2>El apoyo correcto puede empezar hoy</h2><p>Conoce nuestras tutorías. Descubre una tutoría enfocada en lo que realmente necesita.</p><div class="cta">Conoce nuestras tutorías <span class="cta-arrow">→</span></div></div><div class="bottom"><span>https://www.centrodetutorias.com</span><span>+502 5715 2096</span></div>
+  <div class="brand"><img class="brand-mark" src="../../assets/logos/logo.png" alt="Logo"><span>Centro de Tutorías</span></div><div class="slide-number">5/5</div><div class="content"><div class="kicker">Centro de Tutorías</div><h2>El apoyo correcto puede empezar hoy</h2><p>Conoce nuestras tutorías. Descubre una tutoría enfocada en lo que realmente necesita.</p><div class="cta">Conoce nuestras tutorías <span class="cta-arrow">→</span></div></div><div class="bottom"><span>https://www.centrodetutorias.com</span><span>+502 5715 2096</span></div>
 </section>
 
 </body>
