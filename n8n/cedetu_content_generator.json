@@ -294,7 +294,7 @@
       "type": "n8n-nodes-base.telegram",
       "typeVersion": 1.2,
       "position": [
-        3700,
+        4650,
         100
       ],
       "credentials": {
@@ -353,84 +353,6 @@
         "method": "GET",
         "authentication": "genericCredentialType",
         "genericAuthType": "httpQueryAuth",
-        "options": {}
-      }
-    },
-    {
-      "id": "meta-publish-facebook-1",
-      "name": "Publish to Facebook (Meta)",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.4,
-      "position": [
-        2950,
-        100
-      ],
-      "credentials": {
-        "httpQueryAuth": {
-          "id": "Hznf2ZMg4wObho4L",
-          "name": "Meta Page Access Token"
-        }
-      },
-      "parameters": {
-        "url": "=https://graph.facebook.com/v19.0/{{ $('Get Page Info (Meta)').item.json.id }}/photos",
-        "method": "POST",
-        "authentication": "genericCredentialType",
-        "genericAuthType": "httpQueryAuth",
-        "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "={{ { url: $('Parse manifest & copy').item.json.imageUrl, message: $('Parse manifest & copy').item.json.copy.caption_facebook } }}",
-        "options": {}
-      }
-    },
-    {
-      "id": "meta-create-instagram-media-1",
-      "name": "Create Instagram Media (Meta)",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.4,
-      "position": [
-        3200,
-        100
-      ],
-      "credentials": {
-        "httpQueryAuth": {
-          "id": "Hznf2ZMg4wObho4L",
-          "name": "Meta Page Access Token"
-        }
-      },
-      "parameters": {
-        "url": "=https://graph.facebook.com/v19.0/{{ $('Get Instagram Account (Meta)').item.json.instagram_business_account.id }}/media",
-        "method": "POST",
-        "authentication": "genericCredentialType",
-        "genericAuthType": "httpQueryAuth",
-        "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "={{ { image_url: $('Parse manifest & copy').item.json.imageUrl, caption: $('Parse manifest & copy').item.json.copy.caption_instagram } }}",
-        "options": {}
-      }
-    },
-    {
-      "id": "meta-publish-instagram-media-1",
-      "name": "Publish Instagram Media (Meta)",
-      "type": "n8n-nodes-base.httpRequest",
-      "typeVersion": 4.4,
-      "position": [
-        3450,
-        100
-      ],
-      "credentials": {
-        "httpQueryAuth": {
-          "id": "Hznf2ZMg4wObho4L",
-          "name": "Meta Page Access Token"
-        }
-      },
-      "parameters": {
-        "url": "=https://graph.facebook.com/v19.0/{{ $('Get Instagram Account (Meta)').item.json.instagram_business_account.id }}/media_publish",
-        "method": "POST",
-        "authentication": "genericCredentialType",
-        "genericAuthType": "httpQueryAuth",
-        "sendBody": true,
-        "specifyBody": "json",
-        "jsonBody": "={{ { creation_id: $json.id } }}",
         "options": {}
       }
     },
@@ -515,6 +437,270 @@
         450
       ],
       "parameters": {}
+    },
+    {
+      "id": "prepare-fb-carousel-items-1",
+      "name": "Prepare FB Carousel Items",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2700,
+        -100
+      ],
+      "parameters": {
+        "jsCode": "const parseNode = $('Parse manifest & copy').first().json;\nconst date = parseNode.date;\nconst repoOwner = parseNode.repoOwner;\nconst repoName = parseNode.repoName;\nconst branch = parseNode.branch;\nconst cacheBuster = Date.now();\n\nconst items = [];\nfor (let i = 1; i <= 5; i++) {\n  const slideNum = String(i).padStart(2, '0');\n  const slideUrl = `https://raw.githubusercontent.com/${repoOwner}/${repoName}/${branch}/content-generator/output/${date}/carousel/slide_${slideNum}_1080x1350.png?t=${cacheBuster}`;\n  items.push({ json: { slideUrl } });\n}\nreturn items;"
+      }
+    },
+    {
+      "id": "upload-fb-photo-1",
+      "name": "Upload FB Photo",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        2950,
+        -100
+      ],
+      "credentials": {
+        "httpQueryAuth": {
+          "id": "Hznf2ZMg4wObho4L",
+          "name": "Meta Page Access Token"
+        }
+      },
+      "parameters": {
+        "url": "=https://graph.facebook.com/v19.0/{{ $('Get Page Info (Meta)').item.json.id }}/photos",
+        "method": "POST",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpQueryAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ { url: $json.slideUrl, published: false } }}",
+        "options": {}
+      }
+    },
+    {
+      "id": "aggregate-fb-photo-ids-1",
+      "name": "Aggregate FB Photo IDs",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3200,
+        -100
+      ],
+      "parameters": {
+        "jsCode": "const items = $input.all();\nconst attachedMedia = items.map(item => ({ media_fbid: item.json.id }));\n\nreturn [{\n  json: {\n    attachedMediaJson: JSON.stringify(attachedMedia)\n  }\n}];"
+      }
+    },
+    {
+      "id": "publish-fb-carousel-1",
+      "name": "Publish FB Carousel",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        3450,
+        -100
+      ],
+      "credentials": {
+        "httpQueryAuth": {
+          "id": "Hznf2ZMg4wObho4L",
+          "name": "Meta Page Access Token"
+        }
+      },
+      "parameters": {
+        "url": "=https://graph.facebook.com/v19.0/{{ $('Get Page Info (Meta)').item.json.id }}/feed",
+        "method": "POST",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpQueryAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ { message: $('Parse manifest & copy').item.json.copy.caption_facebook, attached_media: JSON.parse($json.attachedMediaJson) } }}",
+        "options": {}
+      }
+    },
+    {
+      "id": "prepare-ig-carousel-items-1",
+      "name": "Prepare IG Carousel Items",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2950,
+        100
+      ],
+      "parameters": {
+        "jsCode": "const parseNode = $('Parse manifest & copy').first().json;\nconst date = parseNode.date;\nconst repoOwner = parseNode.repoOwner;\nconst repoName = parseNode.repoName;\nconst branch = parseNode.branch;\nconst cacheBuster = Date.now();\n\nconst items = [];\nfor (let i = 1; i <= 5; i++) {\n  const slideNum = String(i).padStart(2, '0');\n  const slideUrl = `https://raw.githubusercontent.com/${repoOwner}/${repoName}/${branch}/content-generator/output/${date}/carousel/slide_${slideNum}_1080x1350.png?t=${cacheBuster}`;\n  items.push({ json: { slideUrl } });\n}\nreturn items;"
+      }
+    },
+    {
+      "id": "create-ig-carousel-container-1",
+      "name": "Create IG Carousel Container",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        3200,
+        100
+      ],
+      "credentials": {
+        "httpQueryAuth": {
+          "id": "Hznf2ZMg4wObho4L",
+          "name": "Meta Page Access Token"
+        }
+      },
+      "parameters": {
+        "url": "=https://graph.facebook.com/v19.0/{{ $('Get Instagram Account (Meta)').item.json.instagram_business_account.id }}/media",
+        "method": "POST",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpQueryAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ { image_url: $json.slideUrl, is_carousel_item: true } }}",
+        "options": {}
+      }
+    },
+    {
+      "id": "aggregate-ig-container-ids-1",
+      "name": "Aggregate IG Container IDs",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3450,
+        100
+      ],
+      "parameters": {
+        "jsCode": "const items = $input.all();\nconst children = items.map(item => item.json.id).join(',');\n\nreturn [{\n  json: {\n    children\n  }\n}];"
+      }
+    },
+    {
+      "id": "create-ig-carousel-parent-1",
+      "name": "Create IG Carousel Parent",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        3700,
+        100
+      ],
+      "credentials": {
+        "httpQueryAuth": {
+          "id": "Hznf2ZMg4wObho4L",
+          "name": "Meta Page Access Token"
+        }
+      },
+      "parameters": {
+        "url": "=https://graph.facebook.com/v19.0/{{ $('Get Instagram Account (Meta)').item.json.instagram_business_account.id }}/media",
+        "method": "POST",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpQueryAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ { media_type: 'CAROUSEL', caption: $('Parse manifest & copy').item.json.copy.caption_instagram, children: $json.children } }}",
+        "options": {}
+      }
+    },
+    {
+      "id": "publish-ig-carousel-1",
+      "name": "Publish IG Carousel",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        3950,
+        100
+      ],
+      "credentials": {
+        "httpQueryAuth": {
+          "id": "Hznf2ZMg4wObho4L",
+          "name": "Meta Page Access Token"
+        }
+      },
+      "parameters": {
+        "url": "=https://graph.facebook.com/v19.0/{{ $('Get Instagram Account (Meta)').item.json.instagram_business_account.id }}/media_publish",
+        "method": "POST",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpQueryAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ { creation_id: $json.id } }}",
+        "options": {}
+      }
+    },
+    {
+      "id": "create-ig-story-container-1",
+      "name": "Create IG Story Container",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        2950,
+        300
+      ],
+      "credentials": {
+        "httpQueryAuth": {
+          "id": "Hznf2ZMg4wObho4L",
+          "name": "Meta Page Access Token"
+        }
+      },
+      "parameters": {
+        "url": "=https://graph.facebook.com/v19.0/{{ $('Get Instagram Account (Meta)').item.json.instagram_business_account.id }}/media",
+        "method": "POST",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpQueryAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ { media_type: 'STORIES', image_url: 'https://raw.githubusercontent.com/apolancog-dev/centrodetutorias/main/content-generator/output/' + $('Parse manifest & copy').item.json.date + '/vertical_1080x1920.png?t=' + Date.now() } }}",
+        "options": {}
+      }
+    },
+    {
+      "id": "publish-ig-story-1",
+      "name": "Publish IG Story",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        3200,
+        300
+      ],
+      "credentials": {
+        "httpQueryAuth": {
+          "id": "Hznf2ZMg4wObho4L",
+          "name": "Meta Page Access Token"
+        }
+      },
+      "parameters": {
+        "url": "=https://graph.facebook.com/v19.0/{{ $('Get Instagram Account (Meta)').item.json.instagram_business_account.id }}/media_publish",
+        "method": "POST",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpQueryAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ { creation_id: $json.id } }}",
+        "options": {}
+      }
+    },
+    {
+      "id": "merge-fb-ig-feed-1",
+      "name": "Merge FB and IG Feed",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2.1,
+      "position": [
+        4200,
+        0
+      ],
+      "parameters": {
+        "mode": "combine",
+        "combinationMode": "multiplex",
+        "options": {}
+      }
+    },
+    {
+      "id": "merge-feed-story-1",
+      "name": "Merge Feed and Story",
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 2.1,
+      "position": [
+        4400,
+        100
+      ],
+      "parameters": {
+        "mode": "combine",
+        "combinationMode": "multiplex",
+        "options": {}
+      }
     }
   ],
   "connections": {
@@ -687,6 +873,11 @@
             "node": "Get Instagram Account (Meta)",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "Prepare FB Carousel Items",
+            "type": "main",
+            "index": 0
           }
         ]
       ]
@@ -695,40 +886,12 @@
       "main": [
         [
           {
-            "node": "Publish to Facebook (Meta)",
+            "node": "Prepare IG Carousel Items",
             "type": "main",
             "index": 0
-          }
-        ]
-      ]
-    },
-    "Publish to Facebook (Meta)": {
-      "main": [
-        [
+          },
           {
-            "node": "Create Instagram Media (Meta)",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Create Instagram Media (Meta)": {
-      "main": [
-        [
-          {
-            "node": "Publish Instagram Media (Meta)",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Publish Instagram Media (Meta)": {
-      "main": [
-        [
-          {
-            "node": "Telegram — Approved Notification",
+            "node": "Create IG Story Container",
             "type": "main",
             "index": 0
           }
@@ -751,6 +914,149 @@
         [
           {
             "node": "Telegram — Rejected Notification",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare FB Carousel Items": {
+      "main": [
+        [
+          {
+            "node": "Upload FB Photo",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Upload FB Photo": {
+      "main": [
+        [
+          {
+            "node": "Aggregate FB Photo IDs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate FB Photo IDs": {
+      "main": [
+        [
+          {
+            "node": "Publish FB Carousel",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Publish FB Carousel": {
+      "main": [
+        [
+          {
+            "node": "Merge FB and IG Feed",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare IG Carousel Items": {
+      "main": [
+        [
+          {
+            "node": "Create IG Carousel Container",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create IG Carousel Container": {
+      "main": [
+        [
+          {
+            "node": "Aggregate IG Container IDs",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Aggregate IG Container IDs": {
+      "main": [
+        [
+          {
+            "node": "Create IG Carousel Parent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create IG Carousel Parent": {
+      "main": [
+        [
+          {
+            "node": "Publish IG Carousel",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Publish IG Carousel": {
+      "main": [
+        [
+          {
+            "node": "Merge FB and IG Feed",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Create IG Story Container": {
+      "main": [
+        [
+          {
+            "node": "Publish IG Story",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Publish IG Story": {
+      "main": [
+        [
+          {
+            "node": "Merge Feed and Story",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge FB and IG Feed": {
+      "main": [
+        [
+          {
+            "node": "Merge Feed and Story",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge Feed and Story": {
+      "main": [
+        [
+          {
+            "node": "Telegram — Approved Notification",
             "type": "main",
             "index": 0
           }
