@@ -1,61 +1,61 @@
 {
   "version": 1,
-  "generatedAt": "2026-06-19T19:00:36.232Z",
+  "generatedAt": "2026-06-19T19:03:24.400Z",
   "date": "2026-06-19",
-  "themeId": "academic-diagnosis",
-  "themeName": "Diagnóstico académico",
+  "themeId": "academic-confidence",
+  "themeName": "Confianza académica",
   "status": "ready_for_human_review",
   "publishing": "disabled",
   "files": [
     {
       "path": "vertical_1080x1920.png",
-      "bytes": 2717677,
-      "sha256": "f19befd97e5e1c704df4c789ebfe803d029ace6518e3da05721addfb83c1b2f0"
+      "bytes": 2274633,
+      "sha256": "faef7890bfb4357ca18d437e347477cf2a424b0124ff7ee97a89ab92b08a292a"
     },
     {
       "path": "feed_1080x1080.png",
-      "bytes": 1290437,
-      "sha256": "302dfef603622ea71a42e971a3578d3a3e9b96e79b6bd8a39dc3eef0ce26ebd3"
+      "bytes": 1103786,
+      "sha256": "bcb5c36067a703c6a441d145135da6e85b8bac8d8ab504daaa8083e8f72f740a"
     },
     {
       "path": "feed_1080x1350.png",
-      "bytes": 1721072,
-      "sha256": "4cf5fa4271cf9f15c95c04fb612e8aa83906e95035326388eefffd0acfad564d"
+      "bytes": 1531462,
+      "sha256": "5ee1a1012998009d377a8231342fc1dc6e9d3959ef257eba6fa37686d7b9b00d"
     },
     {
       "path": "source.html",
-      "bytes": 14948,
-      "sha256": "073f33f5ac9b0ecd798131d445d9afef58255f0fc6a15e5eaffde1c8b9a6f702"
+      "bytes": 14933,
+      "sha256": "970ba3c798b5acd58c5a6557604dddc9fcb9d41f79a57469345f70a4fb9dec67"
     },
     {
       "path": "copy.json",
-      "bytes": 3874,
-      "sha256": "c1dcd4b2b5f1249b53c7679af6550fb626f882f95b36b16b8d4969df58a4f801"
+      "bytes": 3860,
+      "sha256": "0a91c3aadf171e8b09d5793083515db9d7a1b3dbf1f3b049e6012888637402c4"
     },
     {
       "path": "carousel/slide_01_1080x1350.png",
-      "bytes": 2013294,
-      "sha256": "3586f88a75ea528934e8f62de9e5d9a93cc0a9005c2de6caa16974ffc0f2e08f"
+      "bytes": 1723345,
+      "sha256": "061feeb46ae290abb4bbdaf0e0693292c53abe00aa3f26588c8d2576723ecda3"
     },
     {
       "path": "carousel/slide_02_1080x1350.png",
-      "bytes": 87646,
-      "sha256": "f3dd9eb2e7b90ec720e8ba656d25565b21813a15a57898ff54a4b47ff2c04912"
+      "bytes": 89468,
+      "sha256": "8575d312aa7468b73ec1bbc3a83d86860a79ccdc02652bb5d50a02ecffd63eaf"
     },
     {
       "path": "carousel/slide_03_1080x1350.png",
-      "bytes": 96428,
-      "sha256": "dc6cd91fd7f395bd4169f68464a29c896cf6a791a10cd26d70f8034bd9fe690a"
+      "bytes": 93699,
+      "sha256": "11bce9f2cbc427e21722bdb7d9949f399370558f76300608db2e7ceb41140d4f"
     },
     {
       "path": "carousel/slide_04_1080x1350.png",
-      "bytes": 84025,
-      "sha256": "58f00456c6737857b4525bed3ce29288877e6fac103d3559b9a76ed43a96cf1b"
+      "bytes": 83385,
+      "sha256": "f712a3852ca894820f05036d54f5d4391243a629bb17d8726052c5cd518cfcb2"
     },
     {
       "path": "carousel/slide_05_1080x1350.png",
-      "bytes": 90791,
-      "sha256": "4e92bdc75a0e5bd779c56fb043aeb16c92ddd29b1c4f5ccc740fff0631162851"
+      "bytes": 91731,
+      "sha256": "2829d532c1f263e37ae5364df08aae6ad92e9916b6f49bd3eb47c4aa4916edcf"
     }
   ]
 }
