@@ -12,3 +12,9 @@ else
 fi
 
 "$NODE" "$ROOT/generate_daily_content.js" "$@"
+
+# Auto commit and push generated content to GitHub
+echo "Pushing campaign to GitHub..."
+git add "$ROOT/output" "$ROOT/content_history.json"
+git diff --quiet && git diff --staged --quiet || (git commit -m "chore: auto-generate daily campaign ($(date +%F))" && git push origin main)
+

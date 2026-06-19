@@ -32,41 +32,39 @@
         300
       ],
       "parameters": {
-        "jsCode": "const now = new Date();\nconst gtOffset = -6 * 60;\nconst gtTime = new Date(now.getTime() + gtOffset * 60000);\nconst yyyy = gtTime.getUTCFullYear();\nconst mm = String(gtTime.getUTCMonth() + 1).padStart(2, '0');\nconst dd = String(gtTime.getUTCDate()).padStart(2, '0');\nconst dateStr = `${yyyy}-${mm}-${dd}`;\n\nconst baseDir = \"/Users/antoniopolanco/Library/CloudStorage/GoogleDrive-apolancog@gmail.com/Mi unidad/NEGOCIOS/CENTRO DE TUTORIAS/CETU AGENT/content-generator\";\nconst outputDir = `${baseDir}/output/${dateStr}`;\n\nreturn [{\n  json: {\n    date: dateStr,\n    manifestPath: `${outputDir}/manifest.json`,\n    copyPath: `${outputDir}/copy.json`,\n    imagePath: `${outputDir}/feed_1080x1080.png`,\n    outputDir: outputDir\n  }\n}];"
+        "jsCode": "const now = new Date();\nconst gtOffset = -6 * 60;\nconst gtTime = new Date(now.getTime() + gtOffset * 60000);\nconst yyyy = gtTime.getUTCFullYear();\nconst mm = String(gtTime.getUTCMonth() + 1).padStart(2, '0');\nconst dd = String(gtTime.getUTCDate()).padStart(2, '0');\nconst dateStr = `${yyyy}-${mm}-${dd}`;\n\nconst repoOwner = \"apolancog-dev\";\nconst repoName = \"centrodetutorias\";\nconst branch = \"main\";\nconst baseRawUrl = `https://raw.githubusercontent.com/${repoOwner}/${repoName}/${branch}/content-generator/output/${dateStr}`;\nconst githubFilePath = `content-generator/output/${dateStr}/manifest.json`;\n\nreturn [{\n  json: {\n    date: dateStr,\n    manifestUrl: `${baseRawUrl}/manifest.json`,\n    copyUrl: `${baseRawUrl}/copy.json`,\n    imageUrl: `${baseRawUrl}/feed_1080x1080.png`,\n    githubFilePath: githubFilePath,\n    repoOwner: repoOwner,\n    repoName: repoName,\n    branch: branch\n  }\n}];"
       }
     },
     {
       "id": "read-manifest-1",
       "name": "Read manifest.json",
-      "type": "n8n-nodes-base.readWriteFile",
-      "typeVersion": 1.1,
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
       "position": [
         500,
         200
       ],
       "parameters": {
-        "operation": "read",
-        "fileSelector": "={{ $json.manifestPath }}",
-        "options": {
-          "dataPropertyName": "manifestBinary"
-        }
+        "url": "={{ $json.manifestUrl }}",
+        "method": "GET",
+        "authentication": "none",
+        "options": {}
       }
     },
     {
       "id": "read-copy-1",
       "name": "Read copy.json",
-      "type": "n8n-nodes-base.readWriteFile",
-      "typeVersion": 1.1,
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
       "position": [
         500,
         400
       ],
       "parameters": {
-        "operation": "read",
-        "fileSelector": "={{ $('Get Dates & Paths').item.json.copyPath }}",
-        "options": {
-          "dataPropertyName": "copyBinary"
-        }
+        "url": "={{ $('Get Dates & Paths').item.json.copyUrl }}",
+        "method": "GET",
+        "authentication": "none",
+        "options": {}
       }
     },
     {
@@ -79,7 +77,7 @@
         300
       ],
       "parameters": {
-        "jsCode": "const manifestBinary = $('Read manifest.json').first().binary.manifestBinary;\nconst copyBinary = $('Read copy.json').first().binary.copyBinary;\n\nconst manifestText = Buffer.from(manifestBinary.data, 'base64').toString('utf8');\nconst copyText = Buffer.from(copyBinary.data, 'base64').toString('utf8');\n\nconst manifest = JSON.parse(manifestText);\nconst copy = JSON.parse(copyText);\n\nconst datesNode = $('Get Dates & Paths').first().json;\n\nreturn [{\n  json: {\n    date: datesNode.date,\n    outputDir: datesNode.outputDir,\n    manifestPath: datesNode.manifestPath,\n    imagePath: datesNode.imagePath,\n    manifest,\n    copy\n  }\n}];"
+        "jsCode": "const manifest = $('Read manifest.json').first().json;\nconst copy = $('Read copy.json').first().json;\nconst datesNode = $('Get Dates & Paths').first().json;\n\nreturn [{\n  json: {\n    date: datesNode.date,\n    githubFilePath: datesNode.githubFilePath,\n    repoOwner: datesNode.repoOwner,\n    repoName: datesNode.repoName,\n    branch: datesNode.branch,\n    imageUrl: datesNode.imageUrl,\n    manifest,\n    copy\n  }\n}];"
       }
     },
     {
@@ -117,17 +115,23 @@
     {
       "id": "read-image-1",
       "name": "Read Feed Square Image",
-      "type": "n8n-nodes-base.readWriteFile",
-      "typeVersion": 1.1,
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
       "position": [
         1150,
         200
       ],
       "parameters": {
-        "operation": "read",
-        "fileSelector": "={{ $json.imagePath }}",
+        "url": "={{ $json.imageUrl }}",
+        "method": "GET",
+        "authentication": "none",
         "options": {
-          "dataPropertyName": "feedSquareBinary"
+          "response": {
+            "response": {
+              "responseFormat": "file",
+              "outputPropertyName": "feedSquareBinary"
+            }
+          }
         }
       }
     },
@@ -155,7 +159,8 @@
           "parse_mode": "Markdown",
           "caption": "=📸 *PREVIEW DE CAMPAÑA - {{ $('Parse manifest & copy').item.json.copy.fecha }}*\n\n*Tema:* {{ $('Parse manifest & copy').item.json.copy.tema_del_dia }} ({{ $('Parse manifest & copy').item.json.copy.materia_prioritaria }})\n\n*Caption IG:*\n```\n{{ $('Parse manifest & copy').item.json.copy.caption_instagram }}\n```\n\n*CTA WhatsApp:* [Enlace wa.me]({{ $('Parse manifest & copy').item.json.copy.whatsapp_link }})"
         }
-      }
+      },
+      "webhookId": "2eefec34-decf-4868-9e66-f6966cd9c4ed"
     },
     {
       "id": "telegram-wait-approval-1",
@@ -183,7 +188,8 @@
             "disapproveLabel": "❌ Rechazar campaña"
           }
         }
-      }
+      },
+      "webhookId": "9b20eae1-3dd0-4385-b2c7-1ccc30f81464"
     },
     {
       "id": "is-approved-1",
@@ -227,37 +233,43 @@
         100
       ],
       "parameters": {
-        "jsCode": "const manifestNode = $('Parse manifest & copy').first().json;\nconst manifest = manifestNode.manifest;\nmanifest.status = 'ready_to_publish';\n\nreturn [{\n  json: {\n    manifest,\n    manifestContent: JSON.stringify(manifest, null, 2),\n    filePath: manifestNode.manifestPath,\n    date: manifestNode.date\n  }\n}];"
-      }
-    },
-    {
-      "id": "convert-approved-file-1",
-      "name": "Convert JSON to File (Approved)",
-      "type": "n8n-nodes-base.convertToFile",
-      "typeVersion": 1.1,
-      "position": [
-        2150,
-        100
-      ],
-      "parameters": {
-        "operation": "toText",
-        "sourceProperty": "manifestContent",
-        "binaryPropertyName": "manifestBinary"
+        "jsCode": "const manifestNode = $('Parse manifest & copy').first().json;\nconst manifest = manifestNode.manifest;\nmanifest.status = 'ready_to_publish';\n\nreturn [{\n  json: {\n    manifest,\n    manifestContent: JSON.stringify(manifest, null, 2),\n    githubFilePath: manifestNode.githubFilePath,\n    repoOwner: manifestNode.repoOwner,\n    repoName: manifestNode.repoName,\n    branch: manifestNode.branch,\n    date: manifestNode.date\n  }\n}];"
       }
     },
     {
       "id": "write-approved-manifest-1",
       "name": "Write manifest.json (Approved)",
-      "type": "n8n-nodes-base.readWriteFile",
+      "type": "n8n-nodes-base.github",
       "typeVersion": 1.1,
       "position": [
-        2350,
+        2200,
         100
       ],
+      "credentials": {
+        "githubApi": {
+          "id": "ZrJVlb7qQrRtylDx",
+          "name": "GitHub account"
+        }
+      },
       "parameters": {
-        "operation": "write",
-        "fileName": "={{ $json.filePath }}",
-        "dataPropertyName": "manifestBinary"
+        "resource": "file",
+        "operation": "edit",
+        "owner": {
+          "mode": "name",
+          "value": "={{ $json.repoOwner }}"
+        },
+        "repository": {
+          "mode": "name",
+          "value": "={{ $json.repoName }}"
+        },
+        "filePath": "={{ $json.githubFilePath }}",
+        "fileContent": "={{ $json.manifestContent }}",
+        "commitMessage": "=chore: approve campaign ({{ $json.date }})",
+        "additionalParameters": {
+          "branch": {
+            "branch": "={{ $json.branch }}"
+          }
+        }
       }
     },
     {
@@ -266,7 +278,7 @@
       "type": "n8n-nodes-base.telegram",
       "typeVersion": 1.2,
       "position": [
-        2550,
+        2450,
         100
       ],
       "credentials": {
@@ -279,7 +291,8 @@
         "chatId": "724801911",
         "operation": "sendMessage",
         "text": "=✅ *Campaña Aprobada*\n\nEl manifest.json de la campaña del {{ $json.date }} ha sido actualizado exitosamente a 'ready_to_publish'."
-      }
+      },
+      "webhookId": "e7e37d6d-0faf-425a-b095-41e3f8fba334"
     },
     {
       "id": "code-rejected-status-1",
@@ -291,37 +304,43 @@
         300
       ],
       "parameters": {
-        "jsCode": "const manifestNode = $('Parse manifest & copy').first().json;\nconst manifest = manifestNode.manifest;\nmanifest.status = 'review_failed';\n\nreturn [{\n  json: {\n    manifest,\n    manifestContent: JSON.stringify(manifest, null, 2),\n    filePath: manifestNode.manifestPath,\n    date: manifestNode.date\n  }\n}];"
-      }
-    },
-    {
-      "id": "convert-rejected-file-1",
-      "name": "Convert JSON to File (Rejected)",
-      "type": "n8n-nodes-base.convertToFile",
-      "typeVersion": 1.1,
-      "position": [
-        2150,
-        300
-      ],
-      "parameters": {
-        "operation": "toText",
-        "sourceProperty": "manifestContent",
-        "binaryPropertyName": "manifestBinary"
+        "jsCode": "const manifestNode = $('Parse manifest & copy').first().json;\nconst manifest = manifestNode.manifest;\nmanifest.status = 'review_failed';\n\nreturn [{\n  json: {\n    manifest,\n    manifestContent: JSON.stringify(manifest, null, 2),\n    githubFilePath: manifestNode.githubFilePath,\n    repoOwner: manifestNode.repoOwner,\n    repoName: manifestNode.repoName,\n    branch: manifestNode.branch,\n    date: manifestNode.date\n  }\n}];"
       }
     },
     {
       "id": "write-rejected-manifest-1",
       "name": "Write manifest.json (Rejected)",
-      "type": "n8n-nodes-base.readWriteFile",
+      "type": "n8n-nodes-base.github",
       "typeVersion": 1.1,
       "position": [
-        2350,
+        2200,
         300
       ],
+      "credentials": {
+        "githubApi": {
+          "id": "ZrJVlb7qQrRtylDx",
+          "name": "GitHub account"
+        }
+      },
       "parameters": {
-        "operation": "write",
-        "fileName": "={{ $json.filePath }}",
-        "dataPropertyName": "manifestBinary"
+        "resource": "file",
+        "operation": "edit",
+        "owner": {
+          "mode": "name",
+          "value": "={{ $json.repoOwner }}"
+        },
+        "repository": {
+          "mode": "name",
+          "value": "={{ $json.repoName }}"
+        },
+        "filePath": "={{ $json.githubFilePath }}",
+        "fileContent": "={{ $json.manifestContent }}",
+        "commitMessage": "=chore: reject campaign ({{ $json.date }})",
+        "additionalParameters": {
+          "branch": {
+            "branch": "={{ $json.branch }}"
+          }
+        }
       }
     },
     {
@@ -330,7 +349,7 @@
       "type": "n8n-nodes-base.telegram",
       "typeVersion": 1.2,
       "position": [
-        2550,
+        2450,
         300
       ],
       "credentials": {
@@ -343,7 +362,8 @@
         "chatId": "724801911",
         "operation": "sendMessage",
         "text": "=❌ *Campaña Rechazada*\n\nLa campaña del {{ $json.date }} ha sido marcada como 'review_failed' y no se publicará."
-      }
+      },
+      "webhookId": "568f4293-b0e1-4a26-b2e4-684a79b47057"
     },
     {
       "id": "stop-not-ready-1",
@@ -491,17 +511,6 @@
       "main": [
         [
           {
-            "node": "Convert JSON to File (Approved)",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Convert JSON to File (Approved)": {
-      "main": [
-        [
-          {
             "node": "Write manifest.json (Approved)",
             "type": "main",
             "index": 0
@@ -521,17 +530,6 @@
       ]
     },
     "Set Status Rejected": {
-      "main": [
-        [
-          {
-            "node": "Convert JSON to File (Rejected)",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
-    "Convert JSON to File (Rejected)": {
       "main": [
         [
           {
@@ -559,5 +557,13 @@
     "timezone": "America/Guatemala",
     "errorWorkflow": "hqtExbNvPA6slEwu"
   },
+  "staticData": {
+    "node:Schedule Trigger — 07:05 AM GT": {
+      "recurrenceRules": []
+    }
+  },
+  "meta": null,
+  "nodeGroups": [],
+  "pinData": null,
   "active": false
 }
