@@ -2,6 +2,22 @@
   "name": "CEDETU Content Generator",
   "nodes": [
     {
+      "id": "webhook-trigger-1",
+      "name": "Webhook Trigger",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        100,
+        150
+      ],
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "daily-content-trigger",
+        "responseMode": "onReceived",
+        "options": {}
+      }
+    },
+    {
       "id": "schedule-trigger-1",
       "name": "Schedule Trigger — 07:05 AM GT",
       "type": "n8n-nodes-base.scheduleTrigger",
@@ -32,7 +48,7 @@
         300
       ],
       "parameters": {
-        "jsCode": "const now = new Date();\nconst gtOffset = -6 * 60;\nconst gtTime = new Date(now.getTime() + gtOffset * 60000);\nconst yyyy = gtTime.getUTCFullYear();\nconst mm = String(gtTime.getUTCMonth() + 1).padStart(2, '0');\nconst dd = String(gtTime.getUTCDate()).padStart(2, '0');\nconst dateStr = `${yyyy}-${mm}-${dd}`;\n\nconst repoOwner = \"apolancog-dev\";\nconst repoName = \"centrodetutorias\";\nconst branch = \"main\";\nconst baseRawUrl = `https://raw.githubusercontent.com/${repoOwner}/${repoName}/${branch}/content-generator/output/${dateStr}`;\nconst githubFilePath = `content-generator/output/${dateStr}/manifest.json`;\n\nreturn [{\n  json: {\n    date: dateStr,\n    manifestUrl: `${baseRawUrl}/manifest.json`,\n    copyUrl: `${baseRawUrl}/copy.json`,\n    imageUrl: `${baseRawUrl}/feed_1080x1080.png`,\n    githubFilePath: githubFilePath,\n    repoOwner: repoOwner,\n    repoName: repoName,\n    branch: branch\n  }\n}];"
+        "jsCode": "let dateStr;\ntry {\n  const inputData = $input.first();\n  if (inputData && inputData.json && inputData.json.body && inputData.json.body.date) {\n    dateStr = inputData.json.body.date;\n  }\n} catch (e) {}\n\nif (!dateStr) {\n  const now = new Date();\n  const gtOffset = -6 * 60;\n  const gtTime = new Date(now.getTime() + gtOffset * 60000);\n  const yyyy = gtTime.getUTCFullYear();\n  const mm = String(gtTime.getUTCMonth() + 1).padStart(2, '0');\n  const dd = String(gtTime.getUTCDate()).padStart(2, '0');\n  dateStr = `${yyyy}-${mm}-${dd}`;\n}\n\nconst repoOwner = \"apolancog-dev\";\nconst repoName = \"centrodetutorias\";\nconst branch = \"main\";\nconst baseRawUrl = `https://raw.githubusercontent.com/${repoOwner}/${repoName}/${branch}/content-generator/output/${dateStr}`;\nconst githubFilePath = `content-generator/output/${dateStr}/manifest.json`;\n\nreturn [{\n  json: {\n    date: dateStr,\n    manifestUrl: `${baseRawUrl}/manifest.json`,\n    copyUrl: `${baseRawUrl}/copy.json`,\n    imageUrl: `${baseRawUrl}/feed_1080x1080.png`,\n    githubFilePath: githubFilePath,\n    repoOwner: repoOwner,\n    repoName: repoName,\n    branch: branch\n  }\n}];"
       }
     },
     {
@@ -502,6 +518,17 @@
     }
   ],
   "connections": {
+    "Webhook Trigger": {
+      "main": [
+        [
+          {
+            "node": "Get Dates & Paths",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
     "Schedule Trigger — 07:05 AM GT": {
       "main": [
         [
