@@ -206,7 +206,7 @@
           "conditions": [
             {
               "id": "check-approved",
-              "leftValue": "={{ $json.approved }}",
+              "leftValue": "={{ $json.data.approved }}",
               "operator": {
                 "operation": "true",
                 "singleValue": true,
