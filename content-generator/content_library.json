@@ -10,7 +10,7 @@
     "secondaryCta": "Conoce nuestras tutorías",
     "insight": "La frustración repetida no siempre significa falta de capacidad. Muchas veces hay una base pendiente que nadie ha detectado.",
     "approach": "Revisamos dónde se perdió la comprensión y avanzamos paso a paso, sin convertir la tarde de estudio en otra discusión.",
-    "image": "parent-support.png",
+    "image": "parent-pain.png",
     "subject": "Matemática"
   },
   {
@@ -38,7 +38,7 @@
     "secondaryCta": "Organiza sus pendientes",
     "insight": "La acumulación suele ocultar una dificultad concreta: una fórmula, un concepto base o un procedimiento que no quedó claro.",
     "approach": "Convertimos pendientes grandes en pasos manejables y reforzamos la comprensión para que el estudiante pueda continuar por sí mismo.",
-    "image": "parent-support.png",
+    "image": "task-overload.png",
     "subject": "Matemática"
   },
   {
@@ -66,7 +66,7 @@
     "secondaryCta": "Evalúa sus bases",
     "insight": "En la universidad se asumen conocimientos previos y el curso avanza rápido. Una base débil puede sentirse como falta de capacidad.",
     "approach": "Revisamos fundamentos, lenguaje matemático y formas de estudio para construir una transición académica más sólida.",
-    "image": "university-statistics.png",
+    "image": "college-transition.png",
     "subject": "Cálculo básico"
   },
   {
@@ -80,7 +80,7 @@
     "secondaryCta": "Conoce el método",
     "insight": "Cuando un estudiante anticipa que fallará, participa menos y practica con inseguridad. Esa experiencia también necesita atención.",
     "approach": "Trabajamos con metas pequeñas, retroalimentación clara y práctica guiada para recuperar autonomía académica.",
-    "image": "exam-prep.png",
+    "image": "academic-confidence.png",
     "subject": "Matemática"
   },
   {
@@ -94,7 +94,7 @@
     "secondaryCta": "Solicita un diagnóstico",
     "insight": "Dos estudiantes con la misma nota pueden necesitar apoyos completamente distintos. La causa importa más que el síntoma.",
     "approach": "Observamos procedimientos, conceptos base y hábitos de estudio para proponer una ruta de refuerzo específica.",
-    "image": "parent-support.png",
+    "image": "academic-diagnosis.png",
     "subject": "Matemática y Estadística"
   },
   {
@@ -108,7 +108,7 @@
     "secondaryCta": "Agenda una clase modelo",
     "insight": "Repetir la misma explicación más veces no siempre funciona. A veces hay que cambiar el ejemplo, el ritmo o el punto de partida.",
     "approach": "Personalizamos la sesión y verificamos comprensión durante el proceso, no solamente al final del ejercicio.",
-    "image": "exam-prep.png",
+    "image": "personalized-support.png",
     "subject": "Álgebra"
   },
   {
@@ -122,7 +122,7 @@
     "secondaryCta": "Habla con un tutor",
     "insight": "Las etiquetas aparecen rápido: “no soy bueno”, “esto no es para mí”. Pero una dificultad específica no define todo su potencial.",
     "approach": "Creamos un espacio seguro para preguntar, reconstruir bases y experimentar avances que cambien su relación con el curso.",
-    "image": "parent-support.png",
+    "image": "emotional-reminder.png",
     "subject": "Matemática"
   },
   {
@@ -136,7 +136,7 @@
     "secondaryCta": "Escríbenos por WhatsApp",
     "insight": "Elegir apoyo académico también requiere confianza. Una primera sesión permite observar el enfoque y resolver preguntas.",
     "approach": "Conversamos sobre el curso, revisamos necesidades y mostramos cómo sería una tutoría enfocada en su situación.",
-    "image": "exam-prep.png",
+    "image": "model-class.png",
     "subject": "Matemática, Estadística y Física"
   }
 ]

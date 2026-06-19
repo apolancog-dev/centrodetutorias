@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-06-19T05:06:18.609Z",
+  "generatedAt": "2026-06-19T16:53:17.376Z",
   "date": "2026-06-18",
   "themeId": "university-statistics",
   "themeName": "Estadística universitaria",
@@ -9,18 +9,18 @@
   "files": [
     {
       "path": "vertical_1080x1920.png",
-      "bytes": 1693750,
-      "sha256": "d74eed26bed0e7e12ed2a9f9c361dee6b2e31a10cee1e926fb9262f243805ea9"
+      "bytes": 124772,
+      "sha256": "e4137a3e3a798e33db2399c5f4393ce84a46c475aa415602edaf13fe7828d485"
     },
     {
       "path": "feed_1080x1080.png",
-      "bytes": 894921,
-      "sha256": "171850090528b9c5e3b18820a9827c17b951cae673dde9293f7ff43e57f5ddfa"
+      "bytes": 85188,
+      "sha256": "ec20b86703497f28f8989b1ba5ad7695c0c1646898a82102c150c303d5ee7b06"
     },
     {
       "path": "feed_1080x1350.png",
-      "bytes": 1092726,
-      "sha256": "d9900f798a4dfdb3d500c2747902c80fbdde51c5ceb1e1ebc3633db629b345e7"
+      "bytes": 96706,
+      "sha256": "74216613ed38f2728d338add8d3f80dea307e7318d76a433ab51e08e53cbba10"
     },
     {
       "path": "source.html",
@@ -34,8 +34,8 @@
     },
     {
       "path": "carousel/slide_01_1080x1350.png",
-      "bytes": 1272499,
-      "sha256": "cd47a86e71f19b9505262c3a75d4c35b84f049cb939c743d683de862ff0110e4"
+      "bytes": 95467,
+      "sha256": "9d7b609b206fd3a0db4c2bc7d33a937776d0ffe51f734b4fdc9ec138f3bd8822"
     },
     {
       "path": "carousel/slide_02_1080x1350.png",

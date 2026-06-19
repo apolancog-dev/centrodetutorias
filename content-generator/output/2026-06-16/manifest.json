@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-06-19T05:06:16.653Z",
+  "generatedAt": "2026-06-19T16:53:16.387Z",
   "date": "2026-06-16",
   "themeId": "parent-pain",
   "themeName": "Dolor del padre o madre",
@@ -9,23 +9,23 @@
   "files": [
     {
       "path": "vertical_1080x1920.png",
-      "bytes": 1952859,
-      "sha256": "d6acdb014e0cd706d320b9b454fad6cae37930607f61de485beed16e29c2e521"
+      "bytes": 118060,
+      "sha256": "c72cabc202051c0f3d4a72633bbb8f69fe41b6578194827a430ca3e87e84843a"
     },
     {
       "path": "feed_1080x1080.png",
-      "bytes": 996495,
-      "sha256": "73c1b43e8b9dc532d92508b430158373f56e3387974b6671a6cc0fcff6f3a460"
+      "bytes": 81430,
+      "sha256": "83f204b8f13e8abb503757aad21e450ca1748e7c3dd12130da0b76fae20d41f0"
     },
     {
       "path": "feed_1080x1350.png",
-      "bytes": 1307311,
-      "sha256": "60d03f3fb15fc90eaa1fa5355e4f848099968122297c028f565a9fd7c1c52b34"
+      "bytes": 93332,
+      "sha256": "d9bb507d7d722f3622a133b69c13f119f304bbec0fd3d4e84e279c4ea7cb6342"
     },
     {
       "path": "source.html",
-      "bytes": 14784,
-      "sha256": "06c6516da85672ac79c6f6f91b853bc2918e3a5ea24567a57aaa368444d7f162"
+      "bytes": 14772,
+      "sha256": "880b75eb9efd0ad4007f2a1c7fdb2be7a0532cb4ae17b5f20f6d31635dae9ed0"
     },
     {
       "path": "copy.json",
@@ -34,8 +34,8 @@
     },
     {
       "path": "carousel/slide_01_1080x1350.png",
-      "bytes": 1405031,
-      "sha256": "f0c8b581c630f92aa037f2338e690ddb0ea972eca1d6419e76bbb6d0e56a430a"
+      "bytes": 88430,
+      "sha256": "49faef4a39dd44deb0e874538e6250005082e7ed688adfe56a4ac4b491316dbd"
     },
     {
       "path": "carousel/slide_02_1080x1350.png",

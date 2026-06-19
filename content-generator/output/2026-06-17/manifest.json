@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-06-19T05:06:17.569Z",
+  "generatedAt": "2026-06-19T16:53:16.853Z",
   "date": "2026-06-17",
   "themeId": "exam-prep",
   "themeName": "Preparación para exámenes",
@@ -9,18 +9,18 @@
   "files": [
     {
       "path": "vertical_1080x1920.png",
-      "bytes": 1739382,
-      "sha256": "c1ca541f67eb54155fa4ca7a9c49885086a2855c01f9750dde8e8e29a768ac03"
+      "bytes": 126261,
+      "sha256": "2e2af00d55ef8d24ef71c06a8821adad4d9ac30e421013425578d0c5884f7b65"
     },
     {
       "path": "feed_1080x1080.png",
-      "bytes": 991385,
-      "sha256": "ae929418385497b8d83ef67cc772d97eb5b742576d0d7c14ad9d151566645abb"
+      "bytes": 86986,
+      "sha256": "9fd40395356c1b5ad5727425fbb7fcf61a00e9b3426c741766479bf3d97f2719"
     },
     {
       "path": "feed_1080x1350.png",
-      "bytes": 1152892,
-      "sha256": "994c05e72e8f75739d371823288c832cbb47047bf3bc82d6a54e81efc72e45a1"
+      "bytes": 99555,
+      "sha256": "76786b17e250757126e54eb4b183c7321ced17c632d40e6b2ea3c3a222ad42c6"
     },
     {
       "path": "source.html",
@@ -34,8 +34,8 @@
     },
     {
       "path": "carousel/slide_01_1080x1350.png",
-      "bytes": 1287167,
-      "sha256": "04adb08dcc7195ff0e283dda6a82b438b43b0545cfa5b720b19cc414ef82fac6"
+      "bytes": 96431,
+      "sha256": "7e0b0e87b73dc372228407971d82b4d6e397a76bc35bdf1e7e47806c4f3008fb"
     },
     {
       "path": "carousel/slide_02_1080x1350.png",
