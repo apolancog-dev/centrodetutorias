@@ -378,7 +378,7 @@
         "genericAuthType": "httpQueryAuth",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={\n  \"url\": \"{{ $('Parse manifest & copy').item.json.imageUrl }}\",\n  \"message\": \"{{ $('Parse manifest & copy').item.json.copy.caption_facebook }}\"\n}",
+        "jsonBody": "={{ { url: $('Parse manifest & copy').item.json.imageUrl, message: $('Parse manifest & copy').item.json.copy.caption_facebook } }}",
         "options": {}
       }
     },
@@ -404,7 +404,7 @@
         "genericAuthType": "httpQueryAuth",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={\n  \"image_url\": \"{{ $('Parse manifest & copy').item.json.imageUrl }}\",\n  \"caption\": \"{{ $('Parse manifest & copy').item.json.copy.caption_instagram }}\"\n}",
+        "jsonBody": "={{ { image_url: $('Parse manifest & copy').item.json.imageUrl, caption: $('Parse manifest & copy').item.json.copy.caption_instagram } }}",
         "options": {}
       }
     },
@@ -430,7 +430,7 @@
         "genericAuthType": "httpQueryAuth",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={\n  \"creation_id\": \"{{ $json.id }}\"\n}",
+        "jsonBody": "={{ { creation_id: $json.id } }}",
         "options": {}
       }
     },
