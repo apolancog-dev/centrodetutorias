@@ -19,11 +19,11 @@
     },
     {
       "date": "2026-06-18",
-      "themeId": "university-statistics",
-      "themeName": "Estadística universitaria",
-      "subject": "Estadística",
+      "themeId": "emotional-reminder",
+      "themeName": "Recordatorio emocional",
+      "subject": "Matemática",
       "output": "output/2026-06-18",
-      "generatedAt": "2026-06-18T18:39:59.298Z"
+      "generatedAt": "2026-06-19T02:15:53.776Z"
     }
   ]
 }
