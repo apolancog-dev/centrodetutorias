@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-06-19T19:03:24.400Z",
+  "generatedAt": "2026-06-19T19:18:25.333Z",
   "date": "2026-06-19",
   "themeId": "academic-confidence",
   "themeName": "Confianza académica",
@@ -29,8 +29,8 @@
     },
     {
       "path": "copy.json",
-      "bytes": 3860,
-      "sha256": "0a91c3aadf171e8b09d5793083515db9d7a1b3dbf1f3b049e6012888637402c4"
+      "bytes": 3934,
+      "sha256": "a5b3d4cb6819c6d943799cab83fcb14b388ba3e8abb0bc2c2cfc35c298eefc30"
     },
     {
       "path": "carousel/slide_01_1080x1350.png",
