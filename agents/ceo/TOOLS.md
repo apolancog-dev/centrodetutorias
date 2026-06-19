@@ -15,12 +15,13 @@ El CEO Agent interactúa con el sistema de Paperclip a través de su API HTTP ut
           -H "Content-Type: application/json" \
           -d "{\"body\":\"[Contenido del comentario]\"}"
         ```
-    *   Para reasignar o cambiar estado:
+    *   Para reasignar o cambiar estado (CRÍTICO: NUNCA uses variables de entorno como `$PAPERCLIP_AGENT_ID` o `$AGENT_ID` dentro del JSON enviado en `-d`, ya que causa errores de validación de formato UUID. Usa el ID literal de `AGENTS.md` como `b713f1b8-1b78-486c-b6ef-0fc2a885f2ec` para el CEO o `19948f90-95d4-4cb1-afd7-9ff64450fdf0` para el CTO):
         ```bash
         curl -s -X PATCH "$PAPERCLIP_API_URL/api/issues/$PAPERCLIP_TASK_ID" \
           -H "Authorization: Bearer $PAPERCLIP_API_KEY" \
           -H "Content-Type: application/json" \
-          -d "{\"assigneeAgentId\":\"[ID del Agente]\",\"status\":\"[todo/in_progress/done/blocked]\"}"
+          -d "{\"assigneeAgentId\":\"[ID literal del Agente de AGENTS.md]\",\"status\":\"[todo/in_progress/done/blocked]\"}"
         ```
 2.  **Workspace File Access:**
     *   Acceso de lectura y escritura al espacio compartido del repositorio `/app` para evaluar la documentación.
+

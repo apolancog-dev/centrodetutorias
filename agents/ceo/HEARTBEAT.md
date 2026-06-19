@@ -34,7 +34,7 @@ Cuando el issue tiene el prefijo `Telegram:` en el título, el Administrador Hum
               -H "Content-Type: application/json" \
               -d "{\"body\":\"Delegando esta tarea al DevOps Agent para su atención (DevOps Agent por favor audita el espacio libre en disco).\"}"
             ```
-        2.  **Reasignar y reencolar:** Cambiar el asignado al ID del agente correspondiente y cambiar el `status` a `todo`:
+        2.  **Reasignar y reencolar:** Cambiar el asignado al ID del agente correspondiente usando su UUID literal de `AGENTS.md` (NUNCA uses variables de entorno como `$PAPERCLIP_AGENT_ID` o `$AGENT_ID` dentro del JSON enviado en curl, ya que causará un error de validación):
             ```bash
             curl -s -X PATCH "$PAPERCLIP_API_URL/api/issues/$PAPERCLIP_TASK_ID" \
               -H "Authorization: Bearer $PAPERCLIP_API_KEY" \
