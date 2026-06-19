@@ -86,7 +86,7 @@
       "parameters": {
         "authentication": "genericCredentialType",
         "genericAuthType": "httpHeaderAuth",
-        "jsonBody": "={{ { \"title\": $json.title, \"description\": $json.description, \"status\": \"todo\", \"priority\": \"medium\", \"assigneeAgentId\": $json.agentId } }}",
+        "jsonBody": "={{ { \"title\": $json.title, \"description\": $json.description, \"status\": \"todo\", \"priority\": \"medium\", \"assigneeAgentId\": $json.agentId, \"projectId\": \"4b0dea6e-d88c-423f-bde0-680143ee643e\" } }}",
         "method": "POST",
         "options": {},
         "sendBody": true,

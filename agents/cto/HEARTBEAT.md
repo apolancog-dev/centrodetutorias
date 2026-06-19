@@ -31,6 +31,7 @@
     - Asegurar que la rama de trabajo local esté actualizada con `main`.
 - [ ] **3. Implementar Soluciones:**
     - Realizar los cambios de código especificados en la tarea directamente en `/app/workspace` (ej. crear o modificar archivos de la landing page).
+    - **CRÍTICO:** NUNCA utilices rutas absolutas que comiencen desde la raíz del sistema de archivos `/` (como `/css`, `/js`, `/img`). SIEMPRE utiliza rutas relativas (como `css/`, `js/`, `images/`) o rutas absolutas prefijadas con `/app/workspace/` (como `/app/workspace/css/`). Todas tus modificaciones de archivos deben ocurrir estrictamente dentro de `/app/workspace`.
     - Ejecutar comprobaciones básicas de sintaxis o empaquetado para validar los cambios.
 - [ ] **4. Actualizar Estado de la Tarea y Reportar:**
     - Sube tus cambios a una rama de desarrollo y abre un Pull Request si aplica.

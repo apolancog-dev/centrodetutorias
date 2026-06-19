@@ -174,7 +174,7 @@
         "authentication": "genericCredentialType",
         "contentType": "json",
         "genericAuthType": "httpHeaderAuth",
-        "jsonBody": "={\n  \"title\": \"Nuevo Lead Recibido: {{ $json.body.record.parent_or_student_name || '' }}\",\n  \"description\": \"Detalles del lead:\\nNombre: {{ $json.body.record.parent_or_student_name || '' }}\\nTeléfono: {{ $json.body.record.phone || '' }}\\nEmail: {{ $json.body.record.email || '' }}\\nMateria: {{ $json.body.record.subject || '' }}\\nDescripción: {{ $json.body.record.description || '' }}\\nTipo de apoyo: {{ $json.body.record.support_type || '' }}\",\n  \"status\": \"todo\",\n  \"priority\": \"medium\",\n  \"assigneeAgentId\": \"876bad48-2bd7-4dd4-a429-6bf95f6a94f6\"\n}",
+        "jsonBody": "={\n  \"title\": \"Nuevo Lead Recibido: {{ $json.body.record.parent_or_student_name || '' }}\",\n  \"description\": \"Detalles del lead:\\nNombre: {{ $json.body.record.parent_or_student_name || '' }}\\nTeléfono: {{ $json.body.record.phone || '' }}\\nEmail: {{ $json.body.record.email || '' }}\\nMateria: {{ $json.body.record.subject || '' }}\\nDescripción: {{ $json.body.record.description || '' }}\\nTipo de apoyo: {{ $json.body.record.support_type || '' }}\",\n  \"status\": \"todo\",\n  \"priority\": \"medium\",\n  \"assigneeAgentId\": \"876bad48-2bd7-4dd4-a429-6bf95f6a94f6\",\n  \"projectId\": \"4b0dea6e-d88c-423f-bde0-680143ee643e\"\n}",
         "method": "POST",
         "options": {},
         "sendBody": true,

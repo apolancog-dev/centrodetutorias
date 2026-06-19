@@ -84,7 +84,7 @@
         "genericAuthType": "httpHeaderAuth",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={\n  \"title\": \"⚠️ ALERTA DE DevOps: Anomalía en Servidor ({{ $json.today }})\",\n  \"description\": {{ JSON.stringify($json.markdownReport) }},\n  \"status\": \"todo\",\n  \"priority\": {{ JSON.stringify($json.priority) }},\n  \"assigneeAgentId\": \"e895240c-8524-403a-8770-d095915d8302\"\n}",
+        "jsonBody": "={\n  \"title\": \"⚠️ ALERTA DE DevOps: Anomalía en Servidor ({{ $json.today }})\",\n  \"description\": {{ JSON.stringify($json.markdownReport) }},\n  \"status\": \"todo\",\n  \"priority\": {{ JSON.stringify($json.priority) }},\n  \"assigneeAgentId\": \"e895240c-8524-403a-8770-d095915d8302\",\n  \"projectId\": \"4b0dea6e-d88c-423f-bde0-680143ee643e\"\n}",
         "options": {}
       },
       "id": "paperclip-alert-issue-1",
@@ -130,7 +130,7 @@
         "genericAuthType": "httpHeaderAuth",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={\n  \"title\": \"✅ Reporte Diario de Salud del Servidor ({{ $json.today }})\",\n  \"description\": {{ JSON.stringify($json.markdownReport) }},\n  \"status\": \"todo\",\n  \"priority\": \"low\",\n  \"assigneeAgentId\": \"e895240c-8524-403a-8770-d095915d8302\"\n}",
+        "jsonBody": "={\n  \"title\": \"✅ Reporte Diario de Salud del Servidor ({{ $json.today }})\",\n  \"description\": {{ JSON.stringify($json.markdownReport) }},\n  \"status\": \"todo\",\n  \"priority\": \"low\",\n  \"assigneeAgentId\": \"e895240c-8524-403a-8770-d095915d8302\",\n  \"projectId\": \"4b0dea6e-d88c-423f-bde0-680143ee643e\"\n}",
         "options": {}
       },
       "id": "paperclip-ok-report-issue-1",

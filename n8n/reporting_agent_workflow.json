@@ -133,7 +133,7 @@
         "genericAuthType": "httpHeaderAuth",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={\n  \"title\": \"Informe Diario: Leads y Costos AI ({{ $json.today }})\",\n  \"description\": {{ JSON.stringify($json.markdownReport) }},\n  \"status\": \"todo\",\n  \"priority\": \"low\",\n  \"assigneeAgentId\": \"3c88bb29-c1d9-4358-aa4c-50c32bccc8f4\"\n}",
+        "jsonBody": "={\n  \"title\": \"Informe Diario: Leads y Costos AI ({{ $json.today }})\",\n  \"description\": {{ JSON.stringify($json.markdownReport) }},\n  \"status\": \"todo\",\n  \"priority\": \"low\",\n  \"assigneeAgentId\": \"3c88bb29-c1d9-4358-aa4c-50c32bccc8f4\",\n  \"projectId\": \"4b0dea6e-d88c-423f-bde0-680143ee643e\"\n}",
         "options": {}
       },
       "id": "paperclip-create-issue-1",

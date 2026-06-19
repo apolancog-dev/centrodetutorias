@@ -25,7 +25,7 @@
         "authentication": "genericCredentialType",
         "contentType": "json",
         "genericAuthType": "httpHeaderAuth",
-        "jsonBody": "={\n  \"title\": \"Fallo de ejecución en workflow: {{ $json.execution.workflow.name || '' }}\",\n  \"description\": \"El workflow '{{ $json.execution.workflow.name || '' }}' (ID: {{ $json.execution.workflow.id || '' }}) ha fallado.\\n\\nDetalles del error:\\n- Execution ID: {{ $json.execution.id || '' }}\\n- Último Nodo Ejecutado: {{ $json.execution.lastNodeExecuted || '' }}\\n- Mensaje de Error: {{ $json.execution.error.message || '' }}\\n\\nEnlace de ejecución en n8n:\\n{{ $json.execution.url || '' }}\",\n  \"status\": \"todo\",\n  \"priority\": \"high\",\n  \"assigneeAgentId\": \"df330bdb-7956-4a34-a8c8-5e2df95c14e9\"\n}",
+        "jsonBody": "={\n  \"title\": \"Fallo de ejecución en workflow: {{ $json.execution.workflow.name || '' }}\",\n  \"description\": \"El workflow '{{ $json.execution.workflow.name || '' }}' (ID: {{ $json.execution.workflow.id || '' }}) ha fallado.\\n\\nDetalles del error:\\n- Execution ID: {{ $json.execution.id || '' }}\\n- Último Nodo Ejecutado: {{ $json.execution.lastNodeExecuted || '' }}\\n- Mensaje de Error: {{ $json.execution.error.message || '' }}\\n\\nEnlace de ejecución en n8n:\\n{{ $json.execution.url || '' }}\",\n  \"status\": \"todo\",\n  \"priority\": \"high\",\n  \"assigneeAgentId\": \"df330bdb-7956-4a34-a8c8-5e2df95c14e9\",\n  \"projectId\": \"4b0dea6e-d88c-423f-bde0-680143ee643e\"\n}",
         "method": "POST",
         "options": {},
         "sendBody": true,

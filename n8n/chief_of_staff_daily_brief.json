@@ -86,7 +86,7 @@
     {
       "parameters": {
         "authentication": "genericCredentialType",
-        "body": "={{ JSON.stringify({ title: '🗂️ Brief Ejecutivo — ' + $('Merge & Format Context').item.json.date, description: $json.text || $json.message?.content || '', status: 'backlog', priority: 'high', assigneeAgentId: 'b713f1b8-1b78-486c-b6ef-0fc2a885f2ec' }) }}",
+        "body": "={{ JSON.stringify({ title: '🗂️ Brief Ejecutivo — ' + $('Merge & Format Context').item.json.date, description: $json.text || $json.message?.content || '', status: 'backlog', priority: 'high', assigneeAgentId: 'b713f1b8-1b78-486c-b6ef-0fc2a885f2ec', projectId: '4b0dea6e-d88c-423f-bde0-680143ee643e' }) }}",
         "bodyContentType": "raw",
         "contentType": "raw",
         "genericAuthType": "httpHeaderAuth",
