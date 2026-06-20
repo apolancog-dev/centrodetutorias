@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Autorización de TikTok - Centro de Tutorías</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f7f6;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .card {
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      text-align: center;
+      max-width: 450px;
+    }
+    h1 { color: #14213d; margin-bottom: 20px; font-size: 24px; }
+    p { color: #666; margin-bottom: 30px; line-height: 1.5; }
+    .btn {
+      display: inline-block;
+      background-color: #00f2fe;
+      color: #14213d;
+      padding: 14px 28px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 16px;
+      box-shadow: 0 4px 10px rgba(0, 242, 254, 0.3);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(0, 242, 254, 0.4);
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Autorizar Publicación en TikTok</h1>
+    <p>Haz clic en el siguiente botón para conectar de forma segura la cuenta de TikTok de Centro de Tutorías con nuestro publicador automático.</p>
+    <a class="btn" href="https://www.tiktok.com/v2/auth/authorize/?client_key=awmwwpskyd83i0ro&scope=user.info.basic,video.publish,video.upload&response_type=code&redirect_uri=https://www.centrodetutorias.com/tiktok-callback.html&state=cedetu123">Conectar TikTok</a>
+  </div>
+</body>
+</html>

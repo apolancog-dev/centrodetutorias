@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conexión de TikTok Exitosa - Centro de Tutorías</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f7f6;
+      color: #333;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    .card {
+      background: white;
+      padding: 40px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      text-align: center;
+      max-width: 500px;
+      width: 100%;
+    }
+    h1 { color: #2ec4b6; margin-bottom: 20px; font-size: 24px; }
+    p { color: #666; margin-bottom: 20px; line-height: 1.5; }
+    .code-box {
+      background-color: #f1f3f5;
+      padding: 15px;
+      border-radius: 6px;
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 16px;
+      font-weight: bold;
+      color: #e63946;
+      word-break: break-all;
+      margin-bottom: 25px;
+      border: 1px solid #dee2e6;
+    }
+    .btn-copy {
+      background-color: #14213d;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: bold;
+    }
+    .btn-copy:hover {
+      background-color: #000;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>¡Conexión Autorizada con TikTok!</h1>
+    <p>Copia el siguiente código de autorización y pégamelo en el chat para terminar de configurar la credencial en n8n:</p>
+    <div class="code-box" id="code">Obteniendo código...</div>
+    <button class="btn-copy" onclick="copyCode()">Copiar Código</button>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const code = params.get('code');
+    const error = params.get('error');
+    
+    if (code) {
+      document.getElementById('code').innerText = code;
+    } else if (error) {
+      document.getElementById('code').innerText = 'Error de autorización: ' + error;
+      document.querySelector('h1').innerText = 'Error de Conexión';
+      document.querySelector('h1').style.color = '#e63946';
+    } else {
+      document.getElementById('code').innerText = 'No se encontró ningún código de autorización.';
+    }
+
+    function copyCode() {
+      const codeText = document.getElementById('code').innerText;
+      navigator.clipboard.writeText(codeText).then(() => {
+        alert('Código copiado al portapapeles');
+      });
+    }
+  </script>
+</body>
+</html>
