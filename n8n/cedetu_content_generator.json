@@ -17,27 +17,7 @@
         "options": {}
       }
     },
-    {
-      "id": "schedule-trigger-1",
-      "name": "Schedule Trigger — 07:05 AM GT",
-      "type": "n8n-nodes-base.scheduleTrigger",
-      "typeVersion": 1.3,
-      "position": [
-        100,
-        300
-      ],
-      "parameters": {
-        "rule": {
-          "interval": [
-            {
-              "field": "cronExpression",
-              "expression": "5 7 * * *"
-            }
-          ]
-        }
-      },
-      "notes": "Runs every day at 07:05 AM Guatemala Time (UTC-6)"
-    },
+
     {
       "id": "code-dates-paths-1",
       "name": "Get Dates & Paths",
@@ -715,17 +695,7 @@
         ]
       ]
     },
-    "Schedule Trigger — 07:05 AM GT": {
-      "main": [
-        [
-          {
-            "node": "Get Dates & Paths",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
+
     "Get Dates & Paths": {
       "main": [
         [
@@ -1069,11 +1039,7 @@
     "timezone": "America/Guatemala",
     "errorWorkflow": "hqtExbNvPA6slEwu"
   },
-  "staticData": {
-    "node:Schedule Trigger — 07:05 AM GT": {
-      "recurrenceRules": []
-    }
-  },
+  "staticData": null,
   "meta": null,
   "nodeGroups": [],
   "pinData": null,
