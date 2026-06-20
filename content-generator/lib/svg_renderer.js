@@ -140,6 +140,10 @@ async function renderSvg(sharp, svg, output) {
   await sharp(Buffer.from(svg)).png().toFile(output);
 }
 
+async function renderSvgJpg(sharp, svg, output) {
+  await sharp(Buffer.from(svg)).jpeg({ quality: 90 }).toFile(output);
+}
+
 async function renderCampaign({ theme, copy, config, photoPath, outputDir }) {
   const sharp = loadSharp();
   const photo = imageData(photoPath);
@@ -150,7 +154,9 @@ async function renderCampaign({ theme, copy, config, photoPath, outputDir }) {
   await renderSvg(sharp, portraitSvg(theme, config, photo), path.join(outputDir, "feed_1080x1350.png"));
   const slides = carouselSvgs(theme, copy, config, photo);
   for (let index = 0; index < slides.length; index += 1) {
-    await renderSvg(sharp, slides[index], path.join(carouselDir, `slide_${String(index + 1).padStart(2, "0")}_1080x1350.png`));
+    const slideNum = String(index + 1).padStart(2, "0");
+    await renderSvg(sharp, slides[index], path.join(carouselDir, `slide_${slideNum}_1080x1350.png`));
+    await renderSvgJpg(sharp, slides[index], path.join(carouselDir, `slide_${slideNum}_1080x1350.jpg`));
   }
 }
 

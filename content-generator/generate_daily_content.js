@@ -260,7 +260,8 @@ function buildManifest(date, theme, outputDir) {
     "feed_1080x1350.png",
     "source.html",
     "copy.json",
-    ...Array.from({ length: 5 }, (_, index) => `carousel/slide_${String(index + 1).padStart(2, "0")}_1080x1350.png`)
+    ...Array.from({ length: 5 }, (_, index) => `carousel/slide_${String(index + 1).padStart(2, "0")}_1080x1350.png`),
+    ...Array.from({ length: 5 }, (_, index) => `carousel/slide_${String(index + 1).padStart(2, "0")}_1080x1350.jpg`)
   ];
   return {
     version: 1,
