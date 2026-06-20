@@ -32,6 +32,14 @@
       "subject": "Matemática",
       "output": "output/2026-06-19",
       "generatedAt": "2026-06-19T19:03:24.400Z"
+    },
+    {
+      "date": "2026-06-20",
+      "themeId": "model-class",
+      "themeName": "Llamado a clase modelo",
+      "subject": "Matemática, Estadística y Física",
+      "output": "output/2026-06-20",
+      "generatedAt": "2026-06-20T15:00:55.469Z"
     }
   ]
 }

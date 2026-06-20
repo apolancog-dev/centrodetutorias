@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "generatedAt": "2026-06-20T15:00:55.469Z",
+  "date": "2026-06-20",
+  "themeId": "model-class",
+  "themeName": "Llamado a clase modelo",
+  "status": "ready_for_human_review",
+  "publishing": "disabled",
+  "files": [
+    {
+      "path": "vertical_1080x1920.png",
+      "bytes": 2741829,
+      "sha256": "feb156fb01931d683a171b4fb692cd941dd7e7fe93bd30bfe48232de8ffa775c"
+    },
+    {
+      "path": "feed_1080x1080.png",
+      "bytes": 1317642,
+      "sha256": "717dba8cade2d160b94520d769c2ce1fbc4344b1f89ac82945cdba212fde7e41"
+    },
+    {
+      "path": "feed_1080x1350.png",
+      "bytes": 1756441,
+      "sha256": "fc9143f868bbabe5fce47876bc81ad3435f2f0d2848dc64b84ee6e5b304b2709"
+    },
+    {
+      "path": "source.html",
+      "bytes": 14858,
+      "sha256": "7e1334a0c5e51c51845375ab0d5a073b917bcf917c6b647f9829b70735e87a21"
+    },
+    {
+      "path": "copy.json",
+      "bytes": 3902,
+      "sha256": "05b0526180f74a523f09127460c1c5e489ae4591c1b55ab28bb6264c756be582"
+    },
+    {
+      "path": "carousel/slide_01_1080x1350.png",
+      "bytes": 2108276,
+      "sha256": "4b4eab7308efa40e87efff01d51378540156ba09da05bf94e7451baf5f9ceb03"
+    },
+    {
+      "path": "carousel/slide_02_1080x1350.png",
+      "bytes": 91684,
+      "sha256": "fd2bea966570bfce3a12049f85c51d1b6299329535346fe8db5bbef2b9d43d7f"
+    },
+    {
+      "path": "carousel/slide_03_1080x1350.png",
+      "bytes": 100078,
+      "sha256": "b61033b8302dfa2006e89a6abe8c14ae10d207bd62ee017375a10b513ea58c21"
+    },
+    {
+      "path": "carousel/slide_04_1080x1350.png",
+      "bytes": 85845,
+      "sha256": "139436ce4660b19c58368e477208ad7ce00b6607880fd9d305330e08d0b543d1"
+    },
+    {
+      "path": "carousel/slide_05_1080x1350.png",
+      "bytes": 94241,
+      "sha256": "c70907f2e9b3d9995b10e528673764a079593f676d67f6b0bfb13b76609c31c6"
+    }
+  ]
+}
