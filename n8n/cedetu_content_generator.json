@@ -15,9 +15,9 @@
         "path": "daily-content-trigger",
         "responseMode": "onReceived",
         "options": {}
-      }
+      },
+      "webhookId": "9faffaaa-a5be-4968-9468-4f077dc01ae9"
     },
-
     {
       "id": "code-dates-paths-1",
       "name": "Get Dates & Paths",
@@ -266,7 +266,8 @@
             "branch": "={{ $json.branch }}"
           }
         }
-      }
+      },
+      "webhookId": "6b1058f6-91a7-42e0-8fc0-2675abf1c4c3"
     },
     {
       "id": "telegram-approved-notify-1",
@@ -274,7 +275,7 @@
       "type": "n8n-nodes-base.telegram",
       "typeVersion": 1.2,
       "position": [
-        4650,
+        4750,
         100
       ],
       "credentials": {
@@ -383,7 +384,8 @@
             "branch": "={{ $json.branch }}"
           }
         }
-      }
+      },
+      "webhookId": "967cceaa-1025-43d5-a64c-6ad178f32b6a"
     },
     {
       "id": "telegram-rejected-notify-1",
@@ -554,7 +556,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.4,
       "position": [
-        3700,
+        3800,
         100
       ],
       "credentials": {
@@ -580,7 +582,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.4,
       "position": [
-        3950,
+        4050,
         100
       ],
       "credentials": {
@@ -658,7 +660,7 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 2.1,
       "position": [
-        4200,
+        4300,
         0
       ],
       "parameters": {
@@ -673,7 +675,7 @@
       "type": "n8n-nodes-base.merge",
       "typeVersion": 2.1,
       "position": [
-        4400,
+        4500,
         100
       ],
       "parameters": {
@@ -681,6 +683,22 @@
         "combinationMode": "multiplex",
         "options": {}
       }
+    },
+    {
+      "id": "c00711df-d906-4448-983f-b986502c9321",
+      "name": "Wait 15s (IG Carousel)",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        3580,
+        100
+      ],
+      "parameters": {
+        "amount": 15,
+        "resume": "timeInterval",
+        "unit": "seconds"
+      },
+      "webhookId": "4e41b27f-83a8-4ef5-942a-2271533a01fe"
     }
   ],
   "connections": {
@@ -695,7 +713,6 @@
         ]
       ]
     },
-
     "Get Dates & Paths": {
       "main": [
         [
@@ -956,17 +973,6 @@
         ]
       ]
     },
-    "Aggregate IG Container IDs": {
-      "main": [
-        [
-          {
-            "node": "Create IG Carousel Parent",
-            "type": "main",
-            "index": 0
-          }
-        ]
-      ]
-    },
     "Create IG Carousel Parent": {
       "main": [
         [
@@ -1032,16 +1038,44 @@
           }
         ]
       ]
+    },
+    "Aggregate IG Container IDs": {
+      "main": [
+        [
+          {
+            "node": "Wait 15s (IG Carousel)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait 15s (IG Carousel)": {
+      "main": [
+        [
+          {
+            "node": "Create IG Carousel Parent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
     }
   },
   "settings": {
     "executionOrder": "v1",
     "timezone": "America/Guatemala",
-    "errorWorkflow": "hqtExbNvPA6slEwu"
+    "errorWorkflow": "hqtExbNvPA6slEwu",
+    "binaryMode": "separate",
+    "timeSavedMode": "fixed",
+    "callerPolicy": "workflowsFromSameOwner",
+    "availableInMCP": false
   },
-  "staticData": null,
+  "staticData": {
+    "node:Schedule Trigger — 07:05 AM GT": {
+      "recurrenceRules": []
+    }
+  },
   "meta": null,
-  "nodeGroups": [],
-  "pinData": null,
-  "active": false
+  "pinData": null
 }
