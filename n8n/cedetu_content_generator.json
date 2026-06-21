@@ -710,7 +710,7 @@
         -300
       ],
       "parameters": {
-        "jsCode": "const parseNode = $('Parse manifest & copy').first().json;\nconst date = parseNode.date;\nconst repoOwner = parseNode.repoOwner;\nconst repoName = parseNode.repoName;\nconst branch = parseNode.branch;\nconst cacheBuster = Date.now();\n\nconst photoImages = [];\nfor (let i = 1; i <= 5; i++) {\n  const slideNum = String(i).padStart(2, '0');\n  photoImages.push(`https://raw.githubusercontent.com/${repoOwner}/${repoName}/${branch}/content-generator/output/${date}/carousel/slide_${slideNum}_1080x1350.jpg?t=${cacheBuster}`);\n}\nreturn [{ json: { photoImages } }];"
+        "jsCode": "const parseNode = $('Parse manifest & copy').first().json;\nconst date = parseNode.date;\nconst cacheBuster = Date.now();\n\nconst photoImages = [];\nfor (let i = 1; i <= 5; i++) {\n  const slideNum = String(i).padStart(2, '0');\n  photoImages.push(`https://www.centrodetutorias.com/content-generator/output/${date}/carousel/slide_${slideNum}_1080x1350.jpg?t=${cacheBuster}`);\n}\nreturn [{ json: { photoImages } }];"
       }
     },
     {
