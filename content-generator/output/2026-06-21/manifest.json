@@ -1,0 +1,92 @@
+{
+  "version": 1,
+  "generatedAt": "2026-06-21T02:08:27.801Z",
+  "date": "2026-06-21",
+  "format": "video",
+  "themeId": "college-transition",
+  "themeName": "Transición colegio-universidad",
+  "status": "ready_for_human_review",
+  "publishing": "disabled",
+  "files": [
+    {
+      "path": "vertical_1080x1920.png",
+      "bytes": 2823052,
+      "sha256": "bcb49a99e75f16fb61d4b548a15a16c2f41c8fc840194e5691b61a036d60ee41"
+    },
+    {
+      "path": "feed_1080x1080.png",
+      "bytes": 1311575,
+      "sha256": "dcf47d0e8204dc62accfea9373cfa73e361c367116456477b786fb2a96c4374b"
+    },
+    {
+      "path": "feed_1080x1350.png",
+      "bytes": 1885244,
+      "sha256": "37bc97f7e9cae710ba983975d88202cb20f77a67f96f0b9d8ab6b8c401700fa7"
+    },
+    {
+      "path": "source.html",
+      "bytes": 15033,
+      "sha256": "0ce80763c1bc3ae14c8e7b2fba2e6177ff32c81b8b6d1518631b26b89a2e8ea0"
+    },
+    {
+      "path": "copy.json",
+      "bytes": 4024,
+      "sha256": "e5116172f55e1c41e66bc31c12111ded1827a39da0090a7641a44af9be171c33"
+    },
+    {
+      "path": "carousel/slide_01_1080x1350.png",
+      "bytes": 2178564,
+      "sha256": "31a59e4dc13da6aa2ac89fd691ca9f8de398024a58f08d9d52047e68f4a533da"
+    },
+    {
+      "path": "carousel/slide_02_1080x1350.png",
+      "bytes": 90205,
+      "sha256": "03b2ac8ef7a00380aba6dd6e271e261498cbf837cf5d3645bcfb57dea19c5168"
+    },
+    {
+      "path": "carousel/slide_03_1080x1350.png",
+      "bytes": 94165,
+      "sha256": "04c7bdd315f3cdfaa17c271560c0d7fc1526dae53559be539dc7bb37f1989102"
+    },
+    {
+      "path": "carousel/slide_04_1080x1350.png",
+      "bytes": 84742,
+      "sha256": "2557481e622bc38303a76e1a6ef3acf523967121f720e5f0a8519bc278aae0d9"
+    },
+    {
+      "path": "carousel/slide_05_1080x1350.png",
+      "bytes": 91998,
+      "sha256": "dc4f3571cb227bd1ad5c2f2dd3be23f2d304c79aea37f246dba6af31c55f6a65"
+    },
+    {
+      "path": "carousel/slide_01_1080x1350.jpg",
+      "bytes": 224472,
+      "sha256": "8d10780ea39ff64b0d180f1c47e9f9f6efc3ce5e9afc0741485448a4a8059beb"
+    },
+    {
+      "path": "carousel/slide_02_1080x1350.jpg",
+      "bytes": 87625,
+      "sha256": "575a7db1dcf1060a23076f9a4c26cb51b377dc2df2dd2ea2d1fea23406f3b724"
+    },
+    {
+      "path": "carousel/slide_03_1080x1350.jpg",
+      "bytes": 86420,
+      "sha256": "0dabc7e4532d82b317d28e1730dfff4246993e5eda3be45b7228e9a18da34267"
+    },
+    {
+      "path": "carousel/slide_04_1080x1350.jpg",
+      "bytes": 69901,
+      "sha256": "d546d29c651bcf96d3a242ab704d03ea79e85399c42d7b787b1093264493ee79"
+    },
+    {
+      "path": "carousel/slide_05_1080x1350.jpg",
+      "bytes": 88274,
+      "sha256": "19792a87d1f3674837689719bd7d24a1cf30d2bb83d1daa221062bebced6ac96"
+    },
+    {
+      "path": "vertical_video.mp4",
+      "bytes": 1660755,
+      "sha256": "bee14923fe0159b14c72778c481f3a1058139b5a3b7f71c45b28e57b779776c1"
+    }
+  ]
+}

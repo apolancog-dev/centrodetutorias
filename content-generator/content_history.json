@@ -40,6 +40,15 @@
       "subject": "Matemática, Estadística y Física",
       "output": "output/2026-06-20",
       "generatedAt": "2026-06-20T15:00:55.469Z"
+    },
+    {
+      "date": "2026-06-21",
+      "themeId": "college-transition",
+      "themeName": "Transición colegio-universidad",
+      "subject": "Cálculo básico",
+      "format": "video",
+      "output": "output/2026-06-21",
+      "generatedAt": "2026-06-21T02:08:27.801Z"
     }
   ]
 }

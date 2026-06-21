@@ -5,6 +5,7 @@ const fs = require("fs");
 const path = require("path");
 const crypto = require("crypto");
 const { renderCampaign } = require("./lib/svg_renderer");
+const { generateVideo } = require("./lib/video_generator");
 
 const ROOT = __dirname;
 const OUTPUT_ROOT = path.join(ROOT, "output");
@@ -21,13 +22,14 @@ function writeJson(file, value) {
 }
 
 function parseArgs(argv) {
-  const args = { date: null, theme: null, force: false, noHistory: false };
+  const args = { date: null, theme: null, force: false, noHistory: false, format: null };
   for (let i = 0; i < argv.length; i += 1) {
     const arg = argv[i];
     if (arg === "--date") args.date = argv[++i];
     else if (arg === "--theme") args.theme = argv[++i];
     else if (arg === "--force") args.force = true;
     else if (arg === "--no-history") args.noHistory = true;
+    else if (arg === "--format") args.format = argv[++i];
     else if (arg === "--help" || arg === "-h") args.help = true;
     else throw new Error(`Argumento desconocido: ${arg}`);
   }
@@ -253,7 +255,7 @@ function sha256(file) {
   return crypto.createHash("sha256").update(fs.readFileSync(file)).digest("hex");
 }
 
-function buildManifest(date, theme, outputDir) {
+function buildManifest(date, theme, outputDir, format) {
   const relativeFiles = [
     "vertical_1080x1920.png",
     "feed_1080x1080.png",
@@ -263,10 +265,14 @@ function buildManifest(date, theme, outputDir) {
     ...Array.from({ length: 5 }, (_, index) => `carousel/slide_${String(index + 1).padStart(2, "0")}_1080x1350.png`),
     ...Array.from({ length: 5 }, (_, index) => `carousel/slide_${String(index + 1).padStart(2, "0")}_1080x1350.jpg`)
   ];
+  if (format === "video") {
+    relativeFiles.push("vertical_video.mp4");
+  }
   return {
     version: 1,
     generatedAt: new Date().toISOString(),
     date,
+    format,
     themeId: theme.id,
     themeName: theme.name,
     status: "ready_for_human_review",
@@ -288,8 +294,11 @@ function updateHistory(history, entry) {
 async function main() {
   const args = parseArgs(process.argv.slice(2));
   if (args.help) {
-    console.log("Uso: node generate_daily_content.js [--date YYYY-MM-DD] [--theme ID] [--force] [--no-history]");
+    console.log("Uso: node generate_daily_content.js [--date YYYY-MM-DD] [--theme ID] [--force] [--no-history] [--format carousel|video]");
     return;
+  }
+  if (args.format && args.format !== "carousel" && args.format !== "video") {
+    throw new Error("Formato inválido. Debe ser 'carousel' o 'video'.");
   }
   const config = readJson(CONFIG_PATH);
   const library = readJson(LIBRARY_PATH);
@@ -310,6 +319,21 @@ async function main() {
   const sourcePath = path.join(outputDir, "source.html");
   fs.writeFileSync(sourcePath, buildSourceHtml(theme, copy, config), "utf8");
   writeJson(path.join(outputDir, "copy.json"), copy);
+
+  let format = args.format;
+  if (!format) {
+    if (history.generated && history.generated.length > 0) {
+      const lastEntry = history.generated[history.generated.length - 1];
+      if (lastEntry.format === "carousel" || !lastEntry.format) {
+        format = "video";
+      } else {
+        format = "carousel";
+      }
+    } else {
+      format = "carousel";
+    }
+  }
+
   await renderCampaign({
     theme,
     copy,
@@ -317,7 +341,12 @@ async function main() {
     photoPath: path.join(ROOT, "assets", "backgrounds", theme.image),
     outputDir
   });
-  const manifest = buildManifest(date, theme, outputDir);
+
+  if (format === "video") {
+    await generateVideo({ theme, copy, config, outputDir });
+  }
+
+  const manifest = buildManifest(date, theme, outputDir, format);
   writeJson(manifestPath, manifest);
 
   if (!args.noHistory) {
@@ -326,12 +355,13 @@ async function main() {
       themeId: theme.id,
       themeName: theme.name,
       subject: theme.subject,
+      format,
       output: path.relative(ROOT, outputDir),
       generatedAt: manifest.generatedAt
     });
     writeJson(HISTORY_PATH, history);
   }
-  console.log(JSON.stringify({ date, theme: theme.id, outputDir, files: manifest.files.length }, null, 2));
+  console.log(JSON.stringify({ date, theme: theme.id, format, outputDir, files: manifest.files.length }, null, 2));
 }
 
 main().catch((error) => {

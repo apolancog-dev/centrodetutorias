@@ -1,0 +1,59 @@
+{
+  "fecha": "2026-06-21",
+  "tema_del_dia": "Transición colegio-universidad",
+  "tema_id": "college-transition",
+  "materia_prioritaria": "Cálculo básico",
+  "dolor_del_cliente": "El salto de ritmo y exigencia entre el colegio y los primeros cursos numéricos universitarios.",
+  "headline_principal": "La universidad cambia el ritmo, pero no tiene que enfrentarlo solo",
+  "subtitulo": "Reforzamos bases y hábitos de resolución para que los nuevos cursos sean exigentes, no abrumadores.",
+  "texto_corto_imagen": "Nuevas exigencias necesitan una nueva estrategia.",
+  "caption_instagram": "La universidad cambia el ritmo, pero no tiene que enfrentarlo solo\n\nEl salto de ritmo y exigencia entre el colegio y los primeros cursos numéricos universitarios.\n\nRevisamos fundamentos, lenguaje matemático y formas de estudio para construir una transición académica más sólida.\n\nSolicita apoyo universitario. Visita https://www.centrodetutorias.com o escríbenos directamente por WhatsApp: https://wa.me/50257152096\n\n#CentroDeTutorías #TutoríasPersonalizadas #Matemática #ApoyoAcadémico #Educación",
+  "caption_facebook": "La universidad cambia el ritmo, pero no tiene que enfrentarlo solo\n\nEn la universidad se asumen conocimientos previos y el curso avanza rápido. Una base débil puede sentirse como falta de capacidad.\n\nEn Centro de Tutorías, revisamos fundamentos, lenguaje matemático y formas de estudio para construir una transición académica más sólida.\n\nSolicita apoyo universitario: https://www.centrodetutorias.com\nChatea con nosotros por WhatsApp: https://wa.me/50257152096",
+  "texto_tiktok": "Nuevas exigencias necesitan una nueva estrategia. Solicita apoyo universitario. #CentroDeTutorías #TutoríasPersonalizadas #Matemática #ApoyoAcadémico",
+  "hashtags": [
+    "#CentroDeTutorías",
+    "#TutoríasPersonalizadas",
+    "#Matemática",
+    "#ApoyoAcadémico",
+    "#Educación"
+  ],
+  "cta_principal": "Solicita apoyo universitario",
+  "cta_secundario": "Evalúa sus bases",
+  "url_destino": "https://www.centrodetutorias.com",
+  "whatsapp": "+502 5715 2096",
+  "whatsapp_link": "https://wa.me/50257152096?text=Hola%2C%20vi%20la%20publicaci%C3%B3n%20de%20Centro%20de%20Tutor%C3%ADas%20sobre%20transici%C3%B3n%20colegio-universidad%20y%20quisiera%20informaci%C3%B3n%20sobre%20una%20clase%20modelo%20o%20diagn%C3%B3stico%20acad%C3%A9mico.",
+  "mensaje_whatsapp_sugerido": "Hola, vi la publicación de Centro de Tutorías sobre transición colegio-universidad y quisiera información sobre una clase modelo o diagnóstico académico.",
+  "alt_text": "Pieza de Centro de Tutorías sobre transición colegio-universidad. La universidad cambia el ritmo, pero no tiene que enfrentarlo solo. Imagen de un estudiante en un ambiente de estudio y llamado a la acción: Solicita apoyo universitario.",
+  "carrusel": [
+    {
+      "slide": 1,
+      "role": "gancho",
+      "title": "La universidad cambia el ritmo, pero no tiene que enfrentarlo solo",
+      "body": "Reforzamos bases y hábitos de resolución para que los nuevos cursos sean exigentes, no abrumadores."
+    },
+    {
+      "slide": 2,
+      "role": "problema",
+      "title": "Lo que suele estar pasando",
+      "body": "En la universidad se asumen conocimientos previos y el curso avanza rápido. Una base débil puede sentirse como falta de capacidad."
+    },
+    {
+      "slide": 3,
+      "role": "orientación",
+      "title": "Un mejor punto de partida",
+      "body": "Identificar la dificultad, ajustar la explicación y practicar con retroalimentación."
+    },
+    {
+      "slide": 4,
+      "role": "solución",
+      "title": "Cómo acompañamos",
+      "body": "Revisamos fundamentos, lenguaje matemático y formas de estudio para construir una transición académica más sólida."
+    },
+    {
+      "slide": 5,
+      "role": "cta",
+      "title": "El apoyo correcto puede empezar hoy",
+      "body": "Solicita apoyo universitario. Descubre una tutoría enfocada en lo que realmente necesita."
+    }
+  ]
+}

@@ -28,7 +28,7 @@
         300
       ],
       "parameters": {
-        "jsCode": "let dateStr;\nlet ref = \"main\";\ntry {\n  const inputData = $input.first();\n  if (inputData && inputData.json && inputData.json.body) {\n    if (inputData.json.body.date) dateStr = inputData.json.body.date;\n    if (inputData.json.body.commit) ref = inputData.json.body.commit;\n  }\n} catch (e) {}\n\nif (!dateStr) {\n  const now = new Date();\n  const gtOffset = -6 * 60;\n  const gtTime = new Date(now.getTime() + gtOffset * 60000);\n  const yyyy = gtTime.getUTCFullYear();\n  const mm = String(gtTime.getUTCMonth() + 1).padStart(2, '0');\n  const dd = String(gtTime.getUTCDate()).padStart(2, '0');\n  dateStr = `${yyyy}-${mm}-${dd}`;\n}\n\nconst repoOwner = \"apolancog-dev\";\nconst repoName = \"centrodetutorias\";\nconst branch = \"main\";\nconst baseRawUrl = `https://raw.githubusercontent.com/${repoOwner}/${repoName}/${ref}/content-generator/output/${dateStr}`;\nconst githubFilePath = `content-generator/output/${dateStr}/manifest.json`;\nconst cacheBuster = Date.now();\n\nreturn [{\n  json: {\n    date: dateStr,\n    manifestUrl: `${baseRawUrl}/manifest.json?t=${cacheBuster}`,\n    copyUrl: `${baseRawUrl}/copy.json?t=${cacheBuster}`,\n    imageUrl: `${baseRawUrl}/feed_1080x1080.png?t=${cacheBuster}`,\n    githubFilePath: githubFilePath,\n    repoOwner: repoOwner,\n    repoName: repoName,\n    branch: branch\n  }\n}];"
+        "jsCode": "let dateStr;\nlet ref = \"main\";\ntry {\n  const inputData = $input.first();\n  if (inputData && inputData.json && inputData.json.body) {\n    if (inputData.json.body.date) dateStr = inputData.json.body.date;\n    if (inputData.json.body.commit) ref = inputData.json.body.commit;\n  }\n} catch (e) {}\n\nif (!dateStr) {\n  const now = new Date();\n  const gtOffset = -6 * 60;\n  const gtTime = new Date(now.getTime() + gtOffset * 60000);\n  const yyyy = gtTime.getUTCFullYear();\n  const mm = String(gtTime.getUTCMonth() + 1).padStart(2, '0');\n  const dd = String(gtTime.getUTCDate()).padStart(2, '0');\n  dateStr = `${yyyy}-${mm}-${dd}`;\n}\n\nconst repoOwner = \"apolancog-dev\";\nconst repoName = \"centrodetutorias\";\nconst branch = \"main\";\nconst baseRawUrl = `https://raw.githubusercontent.com/${repoOwner}/${repoName}/${ref}/content-generator/output/${dateStr}`;\nconst githubFilePath = `content-generator/output/${dateStr}/manifest.json`;\nconst cacheBuster = Date.now();\n\nreturn [{\n  json: {\n    videoUrl: `${baseRawUrl}/vertical_video.mp4?t=${cacheBuster}`,\n    date: dateStr,\n    manifestUrl: `${baseRawUrl}/manifest.json?t=${cacheBuster}`,\n    copyUrl: `${baseRawUrl}/copy.json?t=${cacheBuster}`,\n    imageUrl: `${baseRawUrl}/feed_1080x1080.png?t=${cacheBuster}`,\n    githubFilePath: githubFilePath,\n    repoOwner: repoOwner,\n    repoName: repoName,\n    branch: branch\n  }\n}];"
       }
     },
     {
@@ -153,7 +153,7 @@
         "binaryPropertyName": "feedSquareBinary",
         "additionalFields": {
           "parse_mode": "Markdown",
-          "caption": "=📸 *PREVIEW DE CAMPAÑA - {{ $('Parse manifest & copy').item.json.copy.fecha }}*\n\n*Tema:* {{ $('Parse manifest & copy').item.json.copy.tema_del_dia }} ({{ $('Parse manifest & copy').item.json.copy.materia_prioritaria }})\n\n*Caption IG:*\n```\n{{ $('Parse manifest & copy').item.json.copy.caption_instagram }}\n```\n\n*CTA WhatsApp:* [Enlace wa.me]({{ $('Parse manifest & copy').item.json.copy.whatsapp_link }})"
+          "caption": "=🎬 *PREVIEW DE CAMPAÑA ({{ $(\"Parse manifest & copy\").item.json.manifest.format === \"video\" ? \"VIDEO\" : \"CARRUSEL\" }}) - {{ $('Parse manifest & copy').item.json.copy.fecha }}*\n\n*Tema:* {{ $('Parse manifest & copy').item.json.copy.tema_del_dia }} ({{ $('Parse manifest & copy').item.json.copy.materia_prioritaria }})\n\n*Caption IG:*\n```\n{{ $('Parse manifest & copy').item.json.copy.caption_instagram }}\n```\n\n*CTA WhatsApp:* [Enlace wa.me]({{ $('Parse manifest & copy').item.json.copy.whatsapp_link }})"
         }
       },
       "webhookId": "2eefec34-decf-4868-9e66-f6966cd9c4ed"
@@ -878,6 +878,236 @@
           }
         }
       }
+    },
+    {
+      "id": "is-video-meta-1",
+      "name": "Is Video? (Meta)",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        2950,
+        -250
+      ],
+      "parameters": {
+        "conditions": {
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "check-format",
+              "leftValue": "={{ $('Parse manifest & copy').item.json.manifest.format }}",
+              "operator": {
+                "operation": "equals",
+                "type": "string"
+              },
+              "rightValue": "video"
+            }
+          ],
+          "options": {
+            "version": 2,
+            "leftValue": "",
+            "caseSensitive": true,
+            "typeValidation": "strict"
+          }
+        }
+      }
+    },
+    {
+      "id": "publish-fb-video-1",
+      "name": "Publish FB Video",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        3200,
+        -250
+      ],
+      "credentials": {
+        "httpQueryAuth": {
+          "id": "Hznf2ZMg4wObho4L",
+          "name": "Meta Page Access Token"
+        }
+      },
+      "parameters": {
+        "url": "=https://graph.facebook.com/v19.0/{{ $('Get Page Info (Meta)').item.json.id }}/videos",
+        "method": "POST",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpQueryAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ { file_url: 'https://centrodetutorias.com/content-generator/output/' + $('Parse manifest & copy').item.json.date + '/vertical_video.mp4?t=' + Date.now(), description: $('Parse manifest & copy').item.json.copy.caption_facebook } }}",
+        "options": {}
+      }
+    },
+    {
+      "id": "is-video-ig-1",
+      "name": "Is Video? (IG)",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        2950,
+        0
+      ],
+      "parameters": {
+        "conditions": {
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "check-format",
+              "leftValue": "={{ $('Parse manifest & copy').item.json.manifest.format }}",
+              "operator": {
+                "operation": "equals",
+                "type": "string"
+              },
+              "rightValue": "video"
+            }
+          ],
+          "options": {
+            "version": 2,
+            "leftValue": "",
+            "caseSensitive": true,
+            "typeValidation": "strict"
+          }
+        }
+      }
+    },
+    {
+      "id": "create-ig-reel-container-1",
+      "name": "Create IG Reel Container",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        3200,
+        0
+      ],
+      "credentials": {
+        "httpQueryAuth": {
+          "id": "Hznf2ZMg4wObho4L",
+          "name": "Meta Page Access Token"
+        }
+      },
+      "parameters": {
+        "url": "=https://graph.facebook.com/v19.0/{{ $('Get Instagram Account (Meta)').item.json.instagram_business_account.id }}/media",
+        "method": "POST",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpQueryAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ { media_type: 'REELS', video_url: 'https://centrodetutorias.com/content-generator/output/' + $('Parse manifest & copy').item.json.date + '/vertical_video.mp4?t=' + Date.now(), caption: $('Parse manifest & copy').item.json.copy.caption_instagram, share_to_feed: true } }}",
+        "options": {}
+      }
+    },
+    {
+      "id": "wait-ig-reel-1",
+      "name": "Wait 30s (IG Reel)",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        3450,
+        0
+      ],
+      "parameters": {
+        "amount": 30,
+        "resume": "timeInterval",
+        "unit": "seconds"
+      }
+    },
+    {
+      "id": "publish-ig-reel-1",
+      "name": "Publish IG Reel",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        3700,
+        0
+      ],
+      "credentials": {
+        "httpQueryAuth": {
+          "id": "Hznf2ZMg4wObho4L",
+          "name": "Meta Page Access Token"
+        }
+      },
+      "parameters": {
+        "url": "=https://graph.facebook.com/v19.0/{{ $('Get Instagram Account (Meta)').item.json.instagram_business_account.id }}/media_publish",
+        "method": "POST",
+        "authentication": "genericCredentialType",
+        "genericAuthType": "httpQueryAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ { creation_id: $json.id } }}",
+        "options": {}
+      }
+    },
+    {
+      "id": "is-video-tiktok-1",
+      "name": "Is Video? (TikTok)",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.3,
+      "position": [
+        3250,
+        -450
+      ],
+      "parameters": {
+        "conditions": {
+          "combinator": "and",
+          "conditions": [
+            {
+              "id": "check-format",
+              "leftValue": "={{ $('Parse manifest & copy').item.json.manifest.format }}",
+              "operator": {
+                "operation": "equals",
+                "type": "string"
+              },
+              "rightValue": "video"
+            }
+          ],
+          "options": {
+            "version": 2,
+            "leftValue": "",
+            "caseSensitive": true,
+            "typeValidation": "strict"
+          }
+        }
+      }
+    },
+    {
+      "id": "prepare-tiktok-video-1",
+      "name": "Prepare TikTok Video",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        3500,
+        -500
+      ],
+      "parameters": {
+        "jsCode": "const parseNode = $('Parse manifest & copy').first().json;\nconst date = parseNode.date;\nconst cacheBuster = Date.now();\nconst videoUrl = `https://centrodetutorias.com/content-generator/output/${date}/vertical_video.mp4?t=${cacheBuster}`;\nreturn [{ json: { videoUrl } }];"
+      }
+    },
+    {
+      "id": "publish-tiktok-video-1",
+      "name": "Publish TikTok Video",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        3750,
+        -500
+      ],
+      "parameters": {
+        "url": "https://open.tiktokapis.com/v2/post/publish/video/init/",
+        "method": "POST",
+        "authentication": "none",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ { post_mode: 'DIRECT_POST', media_type: 'VIDEO', post_info: { title: 'Apoyo Académico - CEDETU', description: $('Parse manifest & copy').item.json.copy.texto_tiktok, privacy_level: 'SELF_ONLY', disable_comment: false, disable_duet: false, disable_stitch: false }, source_info: { source: 'PULL_FROM_URL', video_url: $json.videoUrl } } }}",
+        "options": {},
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('Refresh TikTok Token (HTTP Request)').item.json.access_token }}"
+            }
+          ]
+        }
+      }
     }
   ],
   "connections": {
@@ -1046,7 +1276,7 @@
             "index": 0
           },
           {
-            "node": "Prepare FB Carousel Items",
+            "node": "Is Video? (Meta)",
             "type": "main",
             "index": 0
           }
@@ -1057,12 +1287,7 @@
       "main": [
         [
           {
-            "node": "Prepare IG Carousel Items",
-            "type": "main",
-            "index": 0
-          },
-          {
-            "node": "Create IG Story Container",
+            "node": "Is Video? (IG)",
             "type": "main",
             "index": 0
           }
@@ -1315,9 +1540,134 @@
       "main": [
         [
           {
+            "node": "Is Video? (TikTok)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Is Video? (Meta)": {
+      "main": [
+        [
+          {
+            "node": "Publish FB Video",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Prepare FB Carousel Items",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Publish FB Video": {
+      "main": [
+        [
+          {
+            "node": "Merge FB and IG Feed",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Is Video? (IG)": {
+      "main": [
+        [
+          {
+            "node": "Create IG Reel Container",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Prepare IG Carousel Items",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Create IG Story Container",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Create IG Reel Container": {
+      "main": [
+        [
+          {
+            "node": "Wait 30s (IG Reel)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait 30s (IG Reel)": {
+      "main": [
+        [
+          {
+            "node": "Publish IG Reel",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Publish IG Reel": {
+      "main": [
+        [
+          {
+            "node": "Merge FB and IG Feed",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Is Video? (TikTok)": {
+      "main": [
+        [
+          {
+            "node": "Prepare TikTok Video",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
             "node": "Prepare TikTok Slides",
             "type": "main",
             "index": 0
+          }
+        ]
+      ]
+    },
+    "Prepare TikTok Video": {
+      "main": [
+        [
+          {
+            "node": "Publish TikTok Video",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Publish TikTok Video": {
+      "main": [
+        [
+          {
+            "node": "Merge All Socials",
+            "type": "main",
+            "index": 1
           }
         ]
       ]

@@ -136,6 +136,33 @@ function carouselSvgs(theme, copy, config, photo) {
   return [s1, s2, s3, s4, s5];
 }
 
+function verticalCarouselSvgs(theme, copy, config, photo) {
+  const c = config.colors;
+  const header1 = `${brand(74, 80, config, true, 1)}<text x="1006" y="118" text-anchor="end" fill="#FFFFFF" font-family="Avenir, Helvetica Neue, Arial, sans-serif" font-size="28" font-weight="800">1/5</text>`;
+  const bottom1 = `<line x1="74" y1="1790" x2="1006" y2="1790" stroke="#FFFFFF" stroke-width="3" opacity=".3"/><text x="74" y="1840" fill="#FFFFFF" font-family="Avenir, Helvetica Neue, Arial, sans-serif" font-size="26" font-weight="700">${esc(config.brand.displayUrl)}</text>`;
+  const s1 = `${svgStart(1080, 1920, c.navy)}${photoTag(photo, 0, 0, 1080, 1920)}<rect width="1080" height="1920" fill="${c.navy}" opacity=".58"/>${header1}${eyebrow(74, 960, theme.name, config, true)}${textLines(theme.headline, 74, 1080, { size: 84, maxChars: 24, lineHeight: 1.05, fill: "#FFFFFF", maxLines: 4 })}${textLines(theme.subtitle, 74, 1380, { size: 34, weight: 500, maxChars: 50, lineHeight: 1.34, fill: "#FFFFFF", maxLines: 3 })}${bottom1}</svg>`;
+
+  const header2 = `${brand(74, 80, config, true, 1)}<text x="1006" y="118" text-anchor="end" fill="#FFFFFF" font-family="Avenir, Helvetica Neue, Arial, sans-serif" font-size="28" font-weight="800">2/5</text>`;
+  const bottom2 = `<line x1="74" y1="1790" x2="1006" y2="1790" stroke="#FFFFFF" stroke-width="3" opacity=".3"/><text x="74" y="1840" fill="#FFFFFF" font-family="Avenir, Helvetica Neue, Arial, sans-serif" font-size="26" font-weight="700">${esc(config.brand.displayUrl)}</text>`;
+  const s2 = `${svgStart(1080, 1920, c.cobalt)}${header2}${eyebrow(74, 420, "Antes de exigir más horas", config, true)}${textLines("Lo que suele estar pasando", 74, 560, { size: 80, maxChars: 24, lineHeight: 1.06, fill: "#FFFFFF", maxLines: 3 })}${textLines(theme.insight, 74, 900, { size: 38, weight: 500, maxChars: 46, lineHeight: 1.45, fill: "#DCE9FF", maxLines: 6 })}${bottom2}</svg>`;
+
+  const header3 = `${brand(74, 80, config)}<text x="1006" y="118" text-anchor="end" fill="${config.colors.cobalt}" font-family="Avenir, Helvetica Neue, Arial, sans-serif" font-size="28" font-weight="800">3/5</text>`;
+  const bottom3 = `<line x1="74" y1="1790" x2="1006" y2="1790" stroke="${c.cobalt}" stroke-width="3" opacity=".3"/><text x="74" y="1840" fill="${c.cobalt}" font-family="Avenir, Helvetica Neue, Arial, sans-serif" font-size="26" font-weight="700">${esc(config.brand.displayUrl)}</text>`;
+  const stepText = ["Identificar la dificultad exacta, no solamente la nota.", "Explicar desde el nivel real del estudiante y a su ritmo.", `Practicar ${theme.subject} con retroalimentación clara.`];
+  const steps = stepText.map((item, i) => `<circle cx="108" cy="${880 + i * 260}" r="38" fill="${c.sky}"/><text x="108" y="${891 + i * 260}" text-anchor="middle" fill="${c.cobalt}" font-family="Avenir, Helvetica Neue, Arial, sans-serif" font-size="30" font-weight="800">${i + 1}</text>${textLines(item, 180, 874 + i * 260, { size: 34, maxChars: 42, lineHeight: 1.34, fill: c.ink, maxLines: 3 })}`).join("");
+  const s3 = `${svgStart(1080, 1920, c.paper)}${header3}${eyebrow(74, 400, "Una ruta más clara", config)}${textLines("Un mejor punto de partida", 74, 540, { size: 80, maxChars: 24, lineHeight: 1.06, fill: c.ink, maxLines: 3 })}${steps}${bottom3}</svg>`;
+
+  const header4 = `${brand(74, 80, config)}<text x="1006" y="118" text-anchor="end" fill="${config.colors.cobalt}" font-family="Avenir, Helvetica Neue, Arial, sans-serif" font-size="28" font-weight="800">4/5</text>`;
+  const bottom4 = `<line x1="74" y1="1790" x2="1006" y2="1790" stroke="${c.cobalt}" stroke-width="3" opacity=".3"/><text x="74" y="1840" fill="${c.cobalt}" font-family="Avenir, Helvetica Neue, Arial, sans-serif" font-size="26" font-weight="700">${esc(config.brand.displayUrl)}</text>`;
+  const s4 = `${svgStart(1080, 1920, c.sky)}${header4}${eyebrow(74, 420, "Tutoría personalizada", config)}${textLines("Cómo acompañamos", 74, 560, { size: 82, maxChars: 24, lineHeight: 1.06, fill: c.ink, maxLines: 2 })}<rect x="74" y="690" width="180" height="14" rx="7" fill="${c.turquoise}"/>${textLines(theme.approach, 74, 830, { size: 38, weight: 500, maxChars: 46, lineHeight: 1.45, fill: c.muted, maxLines: 7 })}${bottom4}</svg>`;
+
+  const header5 = `${brand(74, 80, config, true)}<text x="1006" y="118" text-anchor="end" fill="#FFFFFF" font-family="Avenir, Helvetica Neue, Arial, sans-serif" font-size="28" font-weight="800">5/5</text>`;
+  const bottom5 = `<line x1="74" y1="1790" x2="1006" y2="1790" stroke="#FFFFFF" stroke-width="3" opacity=".3"/><text x="74" y="1840" fill="#FFFFFF" font-family="Avenir, Helvetica Neue, Arial, sans-serif" font-size="26" font-weight="700">${esc(config.brand.displayUrl)}</text>`;
+  const s5 = `${svgStart(1080, 1920, c.navy)}${defs()}${header5}${eyebrow(74, 420, "Centro de Tutorías", config, true)}${textLines("El apoyo correcto puede empezar hoy", 74, 560, { size: 80, maxChars: 24, lineHeight: 1.06, fill: "#FFFFFF", maxLines: 4 })}${textLines(copy.carrusel[4].body, 74, 980, { size: 36, weight: 500, maxChars: 48, lineHeight: 1.45, fill: "#DCE9EF", maxLines: 5 })}${cta(74, 1420, theme.cta, config, 32)}${bottom5}</svg>`;
+
+  return [s1, s2, s3, s4, s5];
+}
+
 async function renderSvg(sharp, svg, output) {
   await sharp(Buffer.from(svg)).png().toFile(output);
 }
@@ -152,11 +179,20 @@ async function renderCampaign({ theme, copy, config, photoPath, outputDir }) {
   await renderSvg(sharp, verticalSvg(theme, config, photo), path.join(outputDir, "vertical_1080x1920.png"));
   await renderSvg(sharp, squareSvg(theme, config, photo), path.join(outputDir, "feed_1080x1080.png"));
   await renderSvg(sharp, portraitSvg(theme, config, photo), path.join(outputDir, "feed_1080x1350.png"));
+  
   const slides = carouselSvgs(theme, copy, config, photo);
   for (let index = 0; index < slides.length; index += 1) {
     const slideNum = String(index + 1).padStart(2, "0");
     await renderSvg(sharp, slides[index], path.join(carouselDir, `slide_${slideNum}_1080x1350.png`));
     await renderSvgJpg(sharp, slides[index], path.join(carouselDir, `slide_${slideNum}_1080x1350.jpg`));
+  }
+
+  const vVideoSlidesDir = path.join(outputDir, "video_slides");
+  fs.mkdirSync(vVideoSlidesDir, { recursive: true });
+  const vSlides = verticalCarouselSvgs(theme, copy, config, photo);
+  for (let index = 0; index < vSlides.length; index += 1) {
+    const slideNum = String(index + 1).padStart(2, "0");
+    await renderSvg(sharp, vSlides[index], path.join(vVideoSlidesDir, `slide_${slideNum}_1080x1920.png`));
   }
 }
 
