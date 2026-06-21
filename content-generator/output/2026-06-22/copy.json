@@ -1,0 +1,59 @@
+{
+  "fecha": "2026-06-22",
+  "tema_del_dia": "Apoyo personalizado",
+  "tema_id": "personalized-support",
+  "materia_prioritaria": "Álgebra",
+  "dolor_del_cliente": "Clases generales que avanzan a un ritmo distinto del que el estudiante necesita para comprender.",
+  "headline_principal": "Cada estudiante aprende distinto y merece una explicación diferente",
+  "subtitulo": "Adaptamos ejemplos, ritmo y práctica al nivel real del estudiante y a sus objetivos académicos.",
+  "texto_corto_imagen": "Una tutoría diseñada alrededor del estudiante.",
+  "caption_instagram": "Cada estudiante aprende distinto y merece una explicación diferente\n\nClases generales que avanzan a un ritmo distinto del que el estudiante necesita para comprender.\n\nPersonalizamos la sesión y verificamos comprensión durante el proceso, no solamente al final del ejercicio.\n\nConoce nuestras tutorías. Visita https://www.centrodetutorias.com o escríbenos directamente por WhatsApp: https://wa.me/50257152096\n\n#CentroDeTutorías #TutoríasPersonalizadas #Matemática #ApoyoAcadémico #Educación",
+  "caption_facebook": "Cada estudiante aprende distinto y merece una explicación diferente\n\nRepetir la misma explicación más veces no siempre funciona. A veces hay que cambiar el ejemplo, el ritmo o el punto de partida.\n\nEn Centro de Tutorías, personalizamos la sesión y verificamos comprensión durante el proceso, no solamente al final del ejercicio.\n\nConoce nuestras tutorías: https://www.centrodetutorias.com\nChatea con nosotros por WhatsApp: https://wa.me/50257152096",
+  "texto_tiktok": "Una tutoría diseñada alrededor del estudiante. Conoce nuestras tutorías. #CentroDeTutorías #TutoríasPersonalizadas #Matemática #ApoyoAcadémico",
+  "hashtags": [
+    "#CentroDeTutorías",
+    "#TutoríasPersonalizadas",
+    "#Matemática",
+    "#ApoyoAcadémico",
+    "#Educación"
+  ],
+  "cta_principal": "Conoce nuestras tutorías",
+  "cta_secundario": "Agenda una clase modelo",
+  "url_destino": "https://www.centrodetutorias.com",
+  "whatsapp": "+502 5715 2096",
+  "whatsapp_link": "https://wa.me/50257152096?text=Hola%2C%20vi%20la%20publicaci%C3%B3n%20de%20Centro%20de%20Tutor%C3%ADas%20sobre%20apoyo%20personalizado%20y%20quisiera%20informaci%C3%B3n%20sobre%20una%20clase%20modelo%20o%20diagn%C3%B3stico%20acad%C3%A9mico.",
+  "mensaje_whatsapp_sugerido": "Hola, vi la publicación de Centro de Tutorías sobre apoyo personalizado y quisiera información sobre una clase modelo o diagnóstico académico.",
+  "alt_text": "Pieza de Centro de Tutorías sobre apoyo personalizado. Cada estudiante aprende distinto y merece una explicación diferente. Imagen de un estudiante en un ambiente de estudio y llamado a la acción: Conoce nuestras tutorías.",
+  "carrusel": [
+    {
+      "slide": 1,
+      "role": "gancho",
+      "title": "Cada estudiante aprende distinto y merece una explicación diferente",
+      "body": "Adaptamos ejemplos, ritmo y práctica al nivel real del estudiante y a sus objetivos académicos."
+    },
+    {
+      "slide": 2,
+      "role": "problema",
+      "title": "Lo que suele estar pasando",
+      "body": "Repetir la misma explicación más veces no siempre funciona. A veces hay que cambiar el ejemplo, el ritmo o el punto de partida."
+    },
+    {
+      "slide": 3,
+      "role": "orientación",
+      "title": "Un mejor punto de partida",
+      "body": "Identificar la dificultad, ajustar la explicación y practicar con retroalimentación."
+    },
+    {
+      "slide": 4,
+      "role": "solución",
+      "title": "Cómo acompañamos",
+      "body": "Personalizamos la sesión y verificamos comprensión durante el proceso, no solamente al final del ejercicio."
+    },
+    {
+      "slide": 5,
+      "role": "cta",
+      "title": "El apoyo correcto puede empezar hoy",
+      "body": "Conoce nuestras tutorías. Descubre una tutoría enfocada en lo que realmente necesita."
+    }
+  ]
+}

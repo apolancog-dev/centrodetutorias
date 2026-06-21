@@ -1,0 +1,87 @@
+{
+  "version": 1,
+  "generatedAt": "2026-06-21T19:07:22.914Z",
+  "date": "2026-06-22",
+  "format": "carousel",
+  "themeId": "personalized-support",
+  "themeName": "Apoyo personalizado",
+  "status": "ready_for_human_review",
+  "publishing": "disabled",
+  "files": [
+    {
+      "path": "vertical_1080x1920.png",
+      "bytes": 2537711,
+      "sha256": "a48d339e165eb29d785bfb6d87d9e5eddc9b23bb0ebd09b3eb560e40f3d75128"
+    },
+    {
+      "path": "feed_1080x1080.png",
+      "bytes": 1145064,
+      "sha256": "67150d2ef95a2b273a8b4085dbbd399dd8fadf81d3d5fc7badd6c0831de835da"
+    },
+    {
+      "path": "feed_1080x1350.png",
+      "bytes": 1641494,
+      "sha256": "7b902123773f9d26554a49891f91bcb371fa5d2ad2477bd2593bacfd5bda256e"
+    },
+    {
+      "path": "source.html",
+      "bytes": 14912,
+      "sha256": "ce73fc80e6d2f290c2937c4cd5abf1ad30ff940876fc0c39f65d39ae7fca84a6"
+    },
+    {
+      "path": "copy.json",
+      "bytes": 3920,
+      "sha256": "3486558f58a7da5511e73f6e616b659da694d83eb4caf671eb35f8dffc41ca9e"
+    },
+    {
+      "path": "carousel/slide_01_1080x1350.png",
+      "bytes": 1763428,
+      "sha256": "65197b0602d849cbccf8eed5eccf3343d05c27a676a5742917544e096bc8c0d3"
+    },
+    {
+      "path": "carousel/slide_02_1080x1350.png",
+      "bytes": 88733,
+      "sha256": "c9afd7e4b7d8ab67ceb9832bdc756d26368d389fcb0b9321d032a5936df09ecb"
+    },
+    {
+      "path": "carousel/slide_03_1080x1350.png",
+      "bytes": 92657,
+      "sha256": "837e18a451a5be32a30877da8051a6f5f889f2dd618b09102a24c0d90ed9c15d"
+    },
+    {
+      "path": "carousel/slide_04_1080x1350.png",
+      "bytes": 81351,
+      "sha256": "9a0bb7e56dcc4bfd11a1b8ecd7fc5e5801084a51cf733b4c6a9d87856e42f5a8"
+    },
+    {
+      "path": "carousel/slide_05_1080x1350.png",
+      "bytes": 91160,
+      "sha256": "3a892369f9ca942ffec7448b02986cdcc11a4ce8ee06e6f158a963a7ee05bde3"
+    },
+    {
+      "path": "carousel/slide_01_1080x1350.jpg",
+      "bytes": 203986,
+      "sha256": "8e78638f75d1845db4afc413a26e8ca7deaf8e4fea316d09a1f0157f11c562c2"
+    },
+    {
+      "path": "carousel/slide_02_1080x1350.jpg",
+      "bytes": 86571,
+      "sha256": "7b9b3fecbd376e231b52a44eb8412806e956336e04e66efd20bcb60e447a2612"
+    },
+    {
+      "path": "carousel/slide_03_1080x1350.jpg",
+      "bytes": 84934,
+      "sha256": "72306933c906666d566c603b6090f63d25db39d12658ebca451ecf775b3d383b"
+    },
+    {
+      "path": "carousel/slide_04_1080x1350.jpg",
+      "bytes": 66661,
+      "sha256": "4a424f82f65fa9b859c687485801ffae67235f8d7cb780979f7cb2fc318368b2"
+    },
+    {
+      "path": "carousel/slide_05_1080x1350.jpg",
+      "bytes": 86682,
+      "sha256": "55e5031f5320248e9487c9b865924f04971f1353e39b9bc08085bf6475d62cbd"
+    }
+  ]
+}
