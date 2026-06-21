@@ -4,7 +4,15 @@ const fs = require("fs");
 const path = require("path");
 const { execSync } = require("child_process");
 
-const EDGE_TTS_PATH = "/Users/antoniopolanco/Library/Python/3.9/bin/edge-tts";
+function getEdgeTtsPath() {
+  try {
+    const whichPath = execSync("which edge-tts").toString().trim();
+    if (whichPath) return whichPath;
+  } catch (e) {}
+  return "/Users/antoniopolanco/Library/Python/3.9/bin/edge-tts";
+}
+
+const EDGE_TTS_PATH = getEdgeTtsPath();
 
 function getAudioDuration(audioPath) {
   try {
