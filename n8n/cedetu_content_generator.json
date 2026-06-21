@@ -706,7 +706,7 @@
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
       "position": [
-        2700,
+        3250,
         -300
       ],
       "parameters": {
@@ -719,24 +719,28 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.4,
       "position": [
-        3000,
+        3450,
         -300
       ],
-      "credentials": {
-        "oAuth2Api": {
-          "id": "tiktok-publisher-oauth",
-          "name": "TikTok Publisher Credentials"
-        }
-      },
+      "credentials": {},
       "parameters": {
         "url": "https://open.tiktokapis.com/v2/post/publish/content/init/",
         "method": "POST",
-        "authentication": "genericCredentialType",
+        "authentication": "none",
         "genericAuthType": "oAuth2Api",
         "sendBody": true,
         "specifyBody": "json",
         "jsonBody": "={{ { post_mode: 'DIRECT_POST', media_type: 'PHOTO', post_info: { title: $('Parse manifest & copy').item.json.copy.texto_tiktok, privacy_level: 'PUBLIC_TO_EVERYONE', disable_comment: false, disable_duet: false, disable_stitch: false }, source_info: { source: 'PULL_FROM_URL', photo_cover_index: 0, photo_images: $json.photoImages } } }}",
-        "options": {}
+        "options": {},
+        "sendHeaders": true,
+        "headerParameters": {
+          "parameters": [
+            {
+              "name": "Authorization",
+              "value": "=Bearer {{ $('Refresh TikTok Token (HTTP Request)').item.json.access_token }}"
+            }
+          ]
+        }
       }
     },
     {
@@ -752,6 +756,127 @@
         "mode": "combine",
         "combinationMode": "multiplex",
         "options": {}
+      }
+    },
+    {
+      "id": "read-tiktok-tokens-github",
+      "name": "Read TikTok Tokens (GitHub)",
+      "type": "n8n-nodes-base.github",
+      "typeVersion": 1.1,
+      "position": [
+        2450,
+        -300
+      ],
+      "credentials": {
+        "githubApi": {
+          "id": "ZrJVlb7qQrRtylDx",
+          "name": "GitHub account"
+        }
+      },
+      "parameters": {
+        "resource": "file",
+        "operation": "get",
+        "owner": {
+          "mode": "name",
+          "value": "={{ $('Parse manifest & copy').item.json.repoOwner }}"
+        },
+        "repository": {
+          "mode": "name",
+          "value": "={{ $('Parse manifest & copy').item.json.repoName }}"
+        },
+        "filePath": "tiktok_tokens.json",
+        "additionalParameters": {
+          "branch": {
+            "branch": "={{ $('Parse manifest & copy').item.json.branch }}"
+          }
+        }
+      }
+    },
+    {
+      "id": "parse-tiktok-tokens",
+      "name": "Parse Tokens",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2650,
+        -300
+      ],
+      "parameters": {
+        "jsCode": "const githubResponse = $('Read TikTok Tokens (GitHub)').first().json;\nconst base64Content = githubResponse.content.replace(/\\n/g, '');\nconst jsonString = Buffer.from(base64Content, 'base64').toString('utf8');\nconst tokens = JSON.parse(jsonString);\nreturn [{ json: { tokens } }];"
+      }
+    },
+    {
+      "id": "refresh-tiktok-token-http",
+      "name": "Refresh TikTok Token (HTTP Request)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.4,
+      "position": [
+        2850,
+        -300
+      ],
+      "parameters": {
+        "url": "https://open.tiktokapis.com/v2/oauth/token/",
+        "method": "POST",
+        "authentication": "none",
+        "sendBody": true,
+        "contentType": "form-urlencoded",
+        "bodyParameters": {
+          "parameters": [
+            {
+              "name": "client_key",
+              "value": "sbawe7h8d96tvebmf9"
+            },
+            {
+              "name": "client_secret",
+              "value": "NlgAUI6yxs2vFSBvMkEQllOuIKtZvf2P"
+            },
+            {
+              "name": "grant_type",
+              "value": "refresh_token"
+            },
+            {
+              "name": "refresh_token",
+              "value": "={{ $json.tokens.refresh_token }}"
+            }
+          ]
+        },
+        "options": {}
+      }
+    },
+    {
+      "id": "save-tiktok-tokens-github",
+      "name": "Save TikTok Tokens (GitHub)",
+      "type": "n8n-nodes-base.github",
+      "typeVersion": 1.1,
+      "position": [
+        3050,
+        -300
+      ],
+      "credentials": {
+        "githubApi": {
+          "id": "ZrJVlb7qQrRtylDx",
+          "name": "GitHub account"
+        }
+      },
+      "parameters": {
+        "resource": "file",
+        "operation": "edit",
+        "owner": {
+          "mode": "name",
+          "value": "={{ $('Parse manifest & copy').item.json.repoOwner }}"
+        },
+        "repository": {
+          "mode": "name",
+          "value": "={{ $('Parse manifest & copy').item.json.repoName }}"
+        },
+        "filePath": "tiktok_tokens.json",
+        "fileContent": "={{ JSON.stringify($json) }}",
+        "commitMessage": "chore: update tiktok tokens",
+        "additionalParameters": {
+          "branch": {
+            "branch": "={{ $('Parse manifest & copy').item.json.branch }}"
+          }
+        }
       }
     }
   ],
@@ -905,7 +1030,7 @@
             "index": 0
           },
           {
-            "node": "Prepare TikTok Slides",
+            "node": "Read TikTok Tokens (GitHub)",
             "type": "main",
             "index": 0
           }
@@ -1147,6 +1272,50 @@
         [
           {
             "node": "Create IG Carousel Parent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Read TikTok Tokens (GitHub)": {
+      "main": [
+        [
+          {
+            "node": "Parse Tokens",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Parse Tokens": {
+      "main": [
+        [
+          {
+            "node": "Refresh TikTok Token (HTTP Request)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Refresh TikTok Token (HTTP Request)": {
+      "main": [
+        [
+          {
+            "node": "Save TikTok Tokens (GitHub)",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Save TikTok Tokens (GitHub)": {
+      "main": [
+        [
+          {
+            "node": "Prepare TikTok Slides",
             "type": "main",
             "index": 0
           }
