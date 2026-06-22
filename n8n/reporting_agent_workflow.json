@@ -67,7 +67,7 @@
     },
     {
       "parameters": {
-        "url": "http://paperclip.centrodetutorias.com:3100/api/companies/87d21d03-de87-46f0-8f1d-27d223f99ce3/costs/summary",
+        "url": "http://cedetu-paperclipapp-6vqkln:3100/api/companies/87d21d03-de87-46f0-8f1d-27d223f99ce3/costs/summary",
         "method": "GET",
         "authentication": "genericCredentialType",
         "genericAuthType": "httpHeaderAuth",
@@ -90,7 +90,7 @@
     },
     {
       "parameters": {
-        "url": "http://paperclip.centrodetutorias.com:3100/api/companies/87d21d03-de87-46f0-8f1d-27d223f99ce3/costs/by-agent",
+        "url": "http://cedetu-paperclipapp-6vqkln:3100/api/companies/87d21d03-de87-46f0-8f1d-27d223f99ce3/costs/by-agent",
         "method": "GET",
         "authentication": "genericCredentialType",
         "genericAuthType": "httpHeaderAuth",
@@ -127,7 +127,7 @@
     },
     {
       "parameters": {
-        "url": "http://paperclip.centrodetutorias.com:3100/api/companies/87d21d03-de87-46f0-8f1d-27d223f99ce3/issues",
+        "url": "http://cedetu-paperclipapp-6vqkln:3100/api/companies/87d21d03-de87-46f0-8f1d-27d223f99ce3/issues",
         "method": "POST",
         "authentication": "genericCredentialType",
         "genericAuthType": "httpHeaderAuth",
