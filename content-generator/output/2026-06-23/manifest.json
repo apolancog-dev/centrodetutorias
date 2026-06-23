@@ -1,0 +1,92 @@
+{
+  "version": 1,
+  "generatedAt": "2026-06-23T14:40:01.392Z",
+  "date": "2026-06-23",
+  "format": "video",
+  "themeId": "emotional-reminder",
+  "themeName": "Recordatorio emocional",
+  "status": "ready_for_human_review",
+  "publishing": "disabled",
+  "files": [
+    {
+      "path": "vertical_1080x1920.png",
+      "bytes": 2478145,
+      "sha256": "4cba6e013fbb59259a843fb56cb457c7e5e02298c9af10d21df1e92605f2ff5d"
+    },
+    {
+      "path": "feed_1080x1080.png",
+      "bytes": 1187977,
+      "sha256": "43ccac7b40f5644c4560b94a8f9c19fb7c4efca41cc665a48789891c0692e242"
+    },
+    {
+      "path": "feed_1080x1350.png",
+      "bytes": 1686837,
+      "sha256": "1f88d8ba0e78587aac6a4c366cc41896db1ffa2173e56733de090b9b72b51fda"
+    },
+    {
+      "path": "source.html",
+      "bytes": 14930,
+      "sha256": "37ff66dc4defe51117c7fba88c63103799c577236204fdee1c8b218eb82757e6"
+    },
+    {
+      "path": "copy.json",
+      "bytes": 3958,
+      "sha256": "9c96561d07540293efc2fd0478f056ae91ec02fcb3b346a03e1cfadede76eca9"
+    },
+    {
+      "path": "carousel/slide_01_1080x1350.png",
+      "bytes": 1775692,
+      "sha256": "3a87a4b333b492055336ede47ef696029e7ad3f5918277454bb598ef295c09b4"
+    },
+    {
+      "path": "carousel/slide_02_1080x1350.png",
+      "bytes": 91976,
+      "sha256": "e4d43e20c47524c25b3890a739ecbb1ed7acae56ae1534f02771336389596ae4"
+    },
+    {
+      "path": "carousel/slide_03_1080x1350.png",
+      "bytes": 96274,
+      "sha256": "8fdb46dc19a1880510e0710e372fe77f90efd8df0543533e81d486a8e6216039"
+    },
+    {
+      "path": "carousel/slide_04_1080x1350.png",
+      "bytes": 87862,
+      "sha256": "e4a0fb257e9bc29dd34eee06488a48637bb13b1dc9ec06133ed92c6149e43faf"
+    },
+    {
+      "path": "carousel/slide_05_1080x1350.png",
+      "bytes": 94362,
+      "sha256": "cccad8451a1ece33bea1cdc2b68557de375e3c5e4848e4b49100635c5be33942"
+    },
+    {
+      "path": "carousel/slide_01_1080x1350.jpg",
+      "bytes": 192757,
+      "sha256": "083801287f10b79012f48a823d1ca7a6d400b3f846b9e3dc8e60b62b0ab31dda"
+    },
+    {
+      "path": "carousel/slide_02_1080x1350.jpg",
+      "bytes": 87004,
+      "sha256": "ff5c6742ff466ff463e54e7c6a4508a489ddd3febbcd1d315e32e1788e240524"
+    },
+    {
+      "path": "carousel/slide_03_1080x1350.jpg",
+      "bytes": 87731,
+      "sha256": "ef80533d1d1a5434d3f3c65cf030cc2ba17b0c6b921ff315d910766f73f3c6d3"
+    },
+    {
+      "path": "carousel/slide_04_1080x1350.jpg",
+      "bytes": 72282,
+      "sha256": "8216f06870919bdc7c9879cfe9a69887811e42c9ab4f1ca7c764c8b434d3dd8e"
+    },
+    {
+      "path": "carousel/slide_05_1080x1350.jpg",
+      "bytes": 88841,
+      "sha256": "cb1f422fcc3fb49e0d69dbd819a6556769788604e02778de3bf93a1599ff1b6d"
+    },
+    {
+      "path": "vertical_video.mp4",
+      "bytes": 1608087,
+      "sha256": "de732f8871b6fa0c0428528e9cc5486880110ded6f8e2bde075d406f321ee956"
+    }
+  ]
+}
