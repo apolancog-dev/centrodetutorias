@@ -67,6 +67,15 @@
       "format": "video",
       "output": "output/2026-06-23",
       "generatedAt": "2026-06-23T14:40:01.392Z"
+    },
+    {
+      "date": "2026-06-24",
+      "themeId": "model-class",
+      "themeName": "Llamado a clase modelo",
+      "subject": "Matemática, Estadística y Física",
+      "format": "carousel",
+      "output": "output/2026-06-24",
+      "generatedAt": "2026-06-24T14:50:37.621Z"
     }
   ]
 }
