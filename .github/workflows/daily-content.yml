@@ -3,7 +3,7 @@ name: Generate daily CEDETU content
 on:
   workflow_dispatch:
   schedule:
-    - cron: "0 13 * * *" # 07:00 America/Guatemala (UTC-6)
+    - cron: "0 11 * * *" # 05:00 America/Guatemala (UTC-6)
 
 jobs:
   generate:
