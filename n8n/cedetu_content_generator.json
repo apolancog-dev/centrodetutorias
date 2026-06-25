@@ -287,7 +287,7 @@
       "parameters": {
         "chatId": "724801911",
         "operation": "sendMessage",
-        "text": "=✅ *Campaña Publicada con Éxito*\n\nLa campaña del {{ $('Set Status Approved').item.json.date }} ha sido publicada:\n- *Facebook Page:* Publicado exitosamente 📸\n- *Instagram Business:* Publicado exitosamente 📸\n- *TikTok:* Publicado exitosamente 🎵\n\nEl manifest.json ha sido actualizado a 'ready_to_publish'."
+        "text": "={{ $json.message }}"
       },
       "webhookId": "e7e37d6d-0faf-425a-b095-41e3f8fba334"
     },
@@ -624,7 +624,7 @@
         "genericAuthType": "httpQueryAuth",
         "sendBody": true,
         "specifyBody": "json",
-        "jsonBody": "={{ { media_type: 'STORIES', image_url: 'https://raw.githubusercontent.com/apolancog-dev/centrodetutorias/main/content-generator/output/' + $('Parse manifest & copy').item.json.date + '/vertical_1080x1920.png?t=' + Date.now() } }}",
+        "jsonBody": "={{ $('Parse manifest & copy').item.json.manifest.format === 'video' ? { media_type: 'STORIES', video_url: 'https://centrodetutorias.com/content-generator/output/' + $('Parse manifest & copy').item.json.date + '/vertical_video.mp4?t=' + Date.now() } : { media_type: 'STORIES', image_url: 'https://raw.githubusercontent.com/apolancog-dev/centrodetutorias/main/content-generator/output/' + $('Parse manifest & copy').item.json.date + '/vertical_1080x1920.png?t=' + Date.now() } }}",
         "options": {}
       }
     },
@@ -1108,6 +1108,19 @@
           ]
         }
       }
+    },
+    {
+      "id": "format-status-message-1",
+      "name": "Format Status Message",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        4950,
+        200
+      ],
+      "parameters": {
+        "jsCode": "const parseNode = $('Parse manifest & copy').first().json;\nconst format = parseNode.manifest.format; // 'video' o 'carousel'\nconst date = parseNode.date;\n\nlet fbStatus = \"No publicado\";\nlet igFeedStatus = \"No publicado\";\nlet igStoryStatus = \"No publicado\";\nlet tiktokStatus = \"No publicado\";\nlet hasErrors = false;\n\nif (format === 'video') {\n  // 1. Facebook Video\n  try {\n    const fbNode = $('Publish FB Video').first();\n    if (fbNode.json.error) {\n      fbStatus = `❌ Error: ${fbNode.json.error.message || JSON.stringify(fbNode.json.error)}`;\n      hasErrors = true;\n    } else if (fbNode.json.id) {\n      fbStatus = `✅ Publicado con éxito (ID: ${fbNode.json.id})`;\n    } else {\n      fbStatus = `✅ Publicado con éxito`;\n    }\n  } catch (e) {\n    fbStatus = `⚠️ No ejecutado o no verificado`;\n  }\n\n  // 2. Instagram Reel (Feed)\n  try {\n    const igNode = $('Publish IG Reel').first();\n    if (igNode.json.error) {\n      igFeedStatus = `❌ Error: ${igNode.json.error.message || JSON.stringify(igNode.json.error)}`;\n      hasErrors = true;\n    } else if (igNode.json.id) {\n      igFeedStatus = `✅ Publicado con éxito (ID: ${igNode.json.id})`;\n    } else {\n      igFeedStatus = `✅ Publicado con éxito`;\n    }\n  } catch (e) {\n    igFeedStatus = `⚠️ No ejecutado o no verificado`;\n  }\n\n  // 3. TikTok Video\n  try {\n    const ttNode = $('Publish TikTok Video').first();\n    if (ttNode.json.error) {\n      tiktokStatus = `❌ Error: ${ttNode.json.error.message || JSON.stringify(ttNode.json.error)}`;\n      hasErrors = true;\n    } else if (ttNode.json.data && ttNode.json.data.publish_id) {\n      tiktokStatus = `✅ Publicado con éxito (Publish ID: ${ttNode.json.data.publish_id})`;\n    } else {\n      tiktokStatus = `✅ Publicado con éxito`;\n    }\n  } catch (e) {\n    tiktokStatus = `⚠️ No ejecutado o no verificado`;\n  }\n\n} else {\n  // Formato Carrusel (Slides)\n  // 1. Facebook Carousel\n  try {\n    const fbNode = $('Publish FB Carousel').first();\n    if (fbNode.json.error) {\n      fbStatus = `❌ Error: ${fbNode.json.error.message || JSON.stringify(fbNode.json.error)}`;\n      hasErrors = true;\n    } else if (fbNode.json.id) {\n      fbStatus = `✅ Publicado con éxito (ID: ${fbNode.json.id})`;\n    } else {\n      fbStatus = `✅ Publicado con éxito`;\n    }\n  } catch (e) {\n    fbStatus = `⚠️ No ejecutado o no verificado`;\n  }\n\n  // 2. Instagram Carousel (Feed)\n  try {\n    const igNode = $('Publish IG Carousel').first();\n    if (igNode.json.error) {\n      igFeedStatus = `❌ Error: ${igNode.json.error.message || JSON.stringify(igNode.json.error)}`;\n      hasErrors = true;\n    } else if (igNode.json.id) {\n      igFeedStatus = `✅ Publicado con éxito (ID: ${igNode.json.id})`;\n    } else {\n      igFeedStatus = `✅ Publicado con éxito`;\n    }\n  } catch (e) {\n    igFeedStatus = `⚠️ No ejecutado o no verificado`;\n  }\n\n  // 3. TikTok Slides\n  try {\n    const ttNode = $('Publish to TikTok').first();\n    if (ttNode.json.error) {\n      tiktokStatus = `❌ Error: ${ttNode.json.error.message || JSON.stringify(ttNode.json.error)}`;\n      hasErrors = true;\n    } else if (ttNode.json.data && ttNode.json.data.publish_id) {\n      tiktokStatus = `✅ Publicado con éxito (Publish ID: ${ttNode.json.data.publish_id})`;\n    } else {\n      tiktokStatus = `✅ Publicado con éxito`;\n    }\n  } catch (e) {\n    tiktokStatus = `⚠️ No ejecutado o no verificado`;\n  }\n}\n\n// 4. Instagram Story (Común para ambos formatos)\ntry {\n  const storyNode = $('Publish IG Story').first();\n  if (storyNode.json.error) {\n    igStoryStatus = `❌ Error: ${storyNode.json.error.message || JSON.stringify(storyNode.json.error)}`;\n    hasErrors = true;\n  } else if (storyNode.json.id) {\n    igStoryStatus = `✅ Publicado con éxito (ID: ${storyNode.json.id})`;\n  } else {\n    igStoryStatus = `✅ Publicado con éxito`;\n  }\n} catch (e) {\n  igStoryStatus = `⚠️ No ejecutado o no verificado`;\n}\n\n// Formatear el mensaje final\nlet header = hasErrors ? \"⚠️ *Campaña Publicada con Fallos*\" : \"✅ *Campaña Publicada con Éxito*\";\nlet message = `${header}\\n\\n`;\nmessage += `La campaña del *${date}* (${format.toUpperCase()}) se procesó con el siguiente resultado:\\n\\n`;\nmessage += `👥 *Facebook Page:* ${fbStatus}\\n`;\nmessage += `📸 *Instagram Feed:* ${igFeedStatus}\\n`;\nmessage += `📖 *Instagram Story:* ${igStoryStatus}\\n`;\nmessage += `🎵 *TikTok:* ${tiktokStatus}\\n\\n`;\nmessage += `El manifest.json ha sido actualizado a 'ready_to_publish'.`;\n\nreturn [{ json: { message } }];"
+      }
     }
   ],
   "connections": {
@@ -1474,7 +1487,7 @@
       "main": [
         [
           {
-            "node": "Telegram — Approved Notification",
+            "node": "Format Status Message",
             "type": "main",
             "index": 0
           }
@@ -1583,6 +1596,11 @@
             "node": "Create IG Reel Container",
             "type": "main",
             "index": 0
+          },
+          {
+            "node": "Create IG Story Container",
+            "type": "main",
+            "index": 0
           }
         ],
         [
@@ -1668,6 +1686,17 @@
             "node": "Merge All Socials",
             "type": "main",
             "index": 1
+          }
+        ]
+      ]
+    },
+    "Format Status Message": {
+      "main": [
+        [
+          {
+            "node": "Telegram — Approved Notification",
+            "type": "main",
+            "index": 0
           }
         ]
       ]

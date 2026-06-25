@@ -70,3 +70,4 @@ Cada Issue que creates debe seguir esta estructura:
 - Crear el Issue en Paperclip con el brief completo
 - Asignar el Issue al CEO Agent
 - Etiquetar el Issue con la label `chief-of-staff` y `daily-brief`
+- Asignar el checklist operativo de interacción diaria al Administrador Humano (Antonio) en el tablero de "Crecimiento Orgánico" para asegurar la participación activa en redes y comunidades.
