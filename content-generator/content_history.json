@@ -76,6 +76,15 @@
       "format": "carousel",
       "output": "output/2026-06-24",
       "generatedAt": "2026-06-24T14:50:37.621Z"
+    },
+    {
+      "date": "2026-06-25",
+      "themeId": "academic-confidence",
+      "themeName": "Confianza académica",
+      "subject": "Matemática",
+      "format": "video",
+      "output": "output/2026-06-25",
+      "generatedAt": "2026-06-25T13:15:55.210Z"
     }
   ]
 }

@@ -1,0 +1,59 @@
+{
+  "fecha": "2026-06-25",
+  "tema_del_dia": "Confianza académica",
+  "tema_id": "academic-confidence",
+  "materia_prioritaria": "Matemática",
+  "dolor_del_cliente": "La pérdida de confianza que aparece cuando un estudiante acumula errores y empieza a evitar el curso.",
+  "headline_principal": "Recuperar la confianza también es parte de aprender matemática",
+  "subtitulo": "La comprensión llega mejor cuando el estudiante puede preguntar, equivocarse y avanzar sin sentirse juzgado.",
+  "texto_corto_imagen": "Comprender también devuelve confianza.",
+  "caption_instagram": "Recuperar la confianza también es parte de aprender matemática\n\nLa pérdida de confianza que aparece cuando un estudiante acumula errores y empieza a evitar el curso.\n\nTrabajamos con metas pequeñas, retroalimentación clara y práctica guiada para recuperar autonomía académica.\n\nAcompáñalo paso a paso. Visita https://www.centrodetutorias.com o escríbenos directamente por WhatsApp: https://wa.me/50257152096\n\n#CentroDeTutorías #TutoríasPersonalizadas #Matemática #ApoyoAcadémico #Educación",
+  "caption_facebook": "Recuperar la confianza también es parte de aprender matemática\n\nCuando un estudiante anticipa que fallará, participa menos y practica con inseguridad. Esa experiencia también necesita atención.\n\nEn Centro de Tutorías, trabajamos con metas pequeñas, retroalimentación clara y práctica guiada para recuperar autonomía académica.\n\nAcompáñalo paso a paso: https://www.centrodetutorias.com\nChatea con nosotros por WhatsApp: https://wa.me/50257152096",
+  "texto_tiktok": "Comprender también devuelve confianza. Acompáñalo paso a paso. #CentroDeTutorías #TutoríasPersonalizadas #Matemática #ApoyoAcadémico",
+  "hashtags": [
+    "#CentroDeTutorías",
+    "#TutoríasPersonalizadas",
+    "#Matemática",
+    "#ApoyoAcadémico",
+    "#Educación"
+  ],
+  "cta_principal": "Acompáñalo paso a paso",
+  "cta_secundario": "Conoce el método",
+  "url_destino": "https://www.centrodetutorias.com",
+  "whatsapp": "+502 5715 2096",
+  "whatsapp_link": "https://wa.me/50257152096?text=Hola%2C%20vi%20la%20publicaci%C3%B3n%20de%20Centro%20de%20Tutor%C3%ADas%20sobre%20confianza%20acad%C3%A9mica%20y%20quisiera%20informaci%C3%B3n%20sobre%20una%20clase%20modelo%20o%20diagn%C3%B3stico%20acad%C3%A9mico.",
+  "mensaje_whatsapp_sugerido": "Hola, vi la publicación de Centro de Tutorías sobre confianza académica y quisiera información sobre una clase modelo o diagnóstico académico.",
+  "alt_text": "Pieza de Centro de Tutorías sobre confianza académica. Recuperar la confianza también es parte de aprender matemática. Imagen de un estudiante en un ambiente de estudio y llamado a la acción: Acompáñalo paso a paso.",
+  "carrusel": [
+    {
+      "slide": 1,
+      "role": "gancho",
+      "title": "Recuperar la confianza también es parte de aprender matemática",
+      "body": "La comprensión llega mejor cuando el estudiante puede preguntar, equivocarse y avanzar sin sentirse juzgado."
+    },
+    {
+      "slide": 2,
+      "role": "problema",
+      "title": "Lo que suele estar pasando",
+      "body": "Cuando un estudiante anticipa que fallará, participa menos y practica con inseguridad. Esa experiencia también necesita atención."
+    },
+    {
+      "slide": 3,
+      "role": "orientación",
+      "title": "Un mejor punto de partida",
+      "body": "Identificar la dificultad, ajustar la explicación y practicar con retroalimentación."
+    },
+    {
+      "slide": 4,
+      "role": "solución",
+      "title": "Cómo acompañamos",
+      "body": "Trabajamos con metas pequeñas, retroalimentación clara y práctica guiada para recuperar autonomía académica."
+    },
+    {
+      "slide": 5,
+      "role": "cta",
+      "title": "El apoyo correcto puede empezar hoy",
+      "body": "Acompáñalo paso a paso. Descubre una tutoría enfocada en lo que realmente necesita."
+    }
+  ]
+}
