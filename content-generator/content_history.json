@@ -79,12 +79,12 @@
     },
     {
       "date": "2026-06-25",
-      "themeId": "academic-confidence",
-      "themeName": "Confianza académica",
-      "subject": "Matemática",
-      "format": "video",
+      "themeId": "academic-diagnosis",
+      "themeName": "Diagnóstico académico",
+      "subject": "Matemática y Estadística",
+      "format": "carousel",
       "output": "output/2026-06-25",
-      "generatedAt": "2026-06-25T13:15:55.210Z"
+      "generatedAt": "2026-06-25T17:22:40.436Z"
     }
   ]
 }

@@ -1,41 +1,41 @@
 {
   "fecha": "2026-06-25",
-  "tema_del_dia": "Confianza académica",
-  "tema_id": "academic-confidence",
-  "materia_prioritaria": "Matemática",
-  "dolor_del_cliente": "La pérdida de confianza que aparece cuando un estudiante acumula errores y empieza a evitar el curso.",
-  "headline_principal": "Recuperar la confianza también es parte de aprender matemática",
-  "subtitulo": "La comprensión llega mejor cuando el estudiante puede preguntar, equivocarse y avanzar sin sentirse juzgado.",
-  "texto_corto_imagen": "Comprender también devuelve confianza.",
-  "caption_instagram": "Recuperar la confianza también es parte de aprender matemática\n\nLa pérdida de confianza que aparece cuando un estudiante acumula errores y empieza a evitar el curso.\n\nTrabajamos con metas pequeñas, retroalimentación clara y práctica guiada para recuperar autonomía académica.\n\nAcompáñalo paso a paso. Visita https://www.centrodetutorias.com o escríbenos directamente por WhatsApp: https://wa.me/50257152096\n\n#CentroDeTutorías #TutoríasPersonalizadas #Matemática #ApoyoAcadémico #Educación",
-  "caption_facebook": "Recuperar la confianza también es parte de aprender matemática\n\nCuando un estudiante anticipa que fallará, participa menos y practica con inseguridad. Esa experiencia también necesita atención.\n\nEn Centro de Tutorías, trabajamos con metas pequeñas, retroalimentación clara y práctica guiada para recuperar autonomía académica.\n\nAcompáñalo paso a paso: https://www.centrodetutorias.com\nChatea con nosotros por WhatsApp: https://wa.me/50257152096",
-  "texto_tiktok": "Comprender también devuelve confianza. Acompáñalo paso a paso. #CentroDeTutorías #TutoríasPersonalizadas #Matemática #ApoyoAcadémico",
+  "tema_del_dia": "Diagnóstico académico",
+  "tema_id": "academic-diagnosis",
+  "materia_prioritaria": "Matemática y Estadística",
+  "dolor_del_cliente": "Aumentar horas de estudio sin saber exactamente qué concepto o habilidad está causando la dificultad.",
+  "headline_principal": "Estudiar más horas no sirve si no sabes dónde está el vacío",
+  "subtitulo": "Con un diagnóstico gratuito de 20 minutos identificamos el tema exacto que está bloqueando a tu hijo.",
+  "texto_corto_imagen": "Identifica primero. Corrige después.",
+  "caption_instagram": "Estudiar más horas no sirve si no sabes dónde está el vacío\n\nAumentar horas de estudio sin saber exactamente qué concepto o habilidad está causando la dificultad.\n\nEvaluamos brevemente las destrezas de resolución y te entregamos un mapa detallado del nivel de tu hijo y qué necesita reforzar.\n\nSolicita diagnóstico gratis. Visita https://www.centrodetutorias.com o escríbenos directamente por WhatsApp: https://wa.me/50257152096\n\n#CentroDeTutorías #TutoríasPersonalizadas #Matemática #ApoyoAcadémico #Estadística",
+  "caption_facebook": "Estudiar más horas no sirve si no sabes dónde está el vacío\n\nRepasar todo el libro no es eficiente. Enfocar el esfuerzo en la debilidad raíz (ej. fracciones, despejes) ahorra semanas de estudio frustrante.\n\nEn Centro de Tutorías, evaluamos brevemente las destrezas de resolución y te entregamos un mapa detallado del nivel de tu hijo y qué necesita reforzar.\n\nSolicita diagnóstico gratis: https://www.centrodetutorias.com\nChatea con nosotros por WhatsApp: https://wa.me/50257152096",
+  "texto_tiktok": "Identifica primero. Corrige después. Solicita diagnóstico gratis. #CentroDeTutorías #TutoríasPersonalizadas #Matemática #ApoyoAcadémico",
   "hashtags": [
     "#CentroDeTutorías",
     "#TutoríasPersonalizadas",
     "#Matemática",
     "#ApoyoAcadémico",
-    "#Educación"
+    "#Estadística"
   ],
-  "cta_principal": "Acompáñalo paso a paso",
-  "cta_secundario": "Conoce el método",
+  "cta_principal": "Solicita diagnóstico gratis",
+  "cta_secundario": "Habla con un asesor",
   "url_destino": "https://www.centrodetutorias.com",
   "whatsapp": "+502 5715 2096",
-  "whatsapp_link": "https://wa.me/50257152096?text=Hola%2C%20vi%20la%20publicaci%C3%B3n%20de%20Centro%20de%20Tutor%C3%ADas%20sobre%20confianza%20acad%C3%A9mica%20y%20quisiera%20informaci%C3%B3n%20sobre%20una%20clase%20modelo%20o%20diagn%C3%B3stico%20acad%C3%A9mico.",
-  "mensaje_whatsapp_sugerido": "Hola, vi la publicación de Centro de Tutorías sobre confianza académica y quisiera información sobre una clase modelo o diagnóstico académico.",
-  "alt_text": "Pieza de Centro de Tutorías sobre confianza académica. Recuperar la confianza también es parte de aprender matemática. Imagen de un estudiante en un ambiente de estudio y llamado a la acción: Acompáñalo paso a paso.",
+  "whatsapp_link": "https://wa.me/50257152096?text=Hola%2C%20vi%20la%20publicaci%C3%B3n%20de%20Centro%20de%20Tutor%C3%ADas%20sobre%20diagn%C3%B3stico%20acad%C3%A9mico%20y%20quisiera%20informaci%C3%B3n%20sobre%20una%20clase%20modelo%20o%20diagn%C3%B3stico%20acad%C3%A9mico.",
+  "mensaje_whatsapp_sugerido": "Hola, vi la publicación de Centro de Tutorías sobre diagnóstico académico y quisiera información sobre una clase modelo o diagnóstico académico.",
+  "alt_text": "Pieza de Centro de Tutorías sobre diagnóstico académico. Estudiar más horas no sirve si no sabes dónde está el vacío. Imagen de un estudiante en un ambiente de estudio y llamado a la acción: Solicita diagnóstico gratis.",
   "carrusel": [
     {
       "slide": 1,
       "role": "gancho",
-      "title": "Recuperar la confianza también es parte de aprender matemática",
-      "body": "La comprensión llega mejor cuando el estudiante puede preguntar, equivocarse y avanzar sin sentirse juzgado."
+      "title": "Estudiar más horas no sirve si no sabes dónde está el vacío",
+      "body": "Con un diagnóstico gratuito de 20 minutos identificamos el tema exacto que está bloqueando a tu hijo."
     },
     {
       "slide": 2,
       "role": "problema",
       "title": "Lo que suele estar pasando",
-      "body": "Cuando un estudiante anticipa que fallará, participa menos y practica con inseguridad. Esa experiencia también necesita atención."
+      "body": "Repasar todo el libro no es eficiente. Enfocar el esfuerzo en la debilidad raíz (ej. fracciones, despejes) ahorra semanas de estudio frustrante."
     },
     {
       "slide": 3,
@@ -47,13 +47,13 @@
       "slide": 4,
       "role": "solución",
       "title": "Cómo acompañamos",
-      "body": "Trabajamos con metas pequeñas, retroalimentación clara y práctica guiada para recuperar autonomía académica."
+      "body": "Evaluamos brevemente las destrezas de resolución y te entregamos un mapa detallado del nivel de tu hijo y qué necesita reforzar."
     },
     {
       "slide": 5,
       "role": "cta",
       "title": "El apoyo correcto puede empezar hoy",
-      "body": "Acompáñalo paso a paso. Descubre una tutoría enfocada en lo que realmente necesita."
+      "body": "Solicita diagnóstico gratis. Descubre una tutoría enfocada en lo que realmente necesita."
     }
   ]
 }
