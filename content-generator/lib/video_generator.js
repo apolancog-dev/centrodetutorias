@@ -39,9 +39,9 @@ async function generateVideo({ theme, copy, config, outputDir }) {
   const slideTexts = [
     `${theme.headline}. ${theme.subtitle}`,
     `Lo que suele estar pasando. ${theme.insight}`,
-    `Un mejor punto de partida. Primero, identificar la dificultad exacta, no solamente la nota. Segundo, explicar desde el nivel real del estudiante y a su ritmo. Tercero, practicar con retroalimentación clara.`,
+    `Un mejor punto de partida. ${copy.carrusel[2].body}`,
     `Cómo acompañamos. ${theme.approach}`,
-    `El apoyo correcto puede empezar hoy. ${copy.carrusel[4].body}. ${theme.cta}.`
+    `El apoyo correcto puede empezar hoy. ${copy.carrusel[4].body}`
   ];
 
   const clipPaths = [];

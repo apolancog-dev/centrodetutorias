@@ -40,6 +40,6 @@
       curl -X PATCH "$PAPERCLIP_API_URL/api/issues/$PAPERCLIP_TASK_ID" \
         -H "Authorization: Bearer $PAPERCLIP_API_KEY" \
         -H "Content-Type: application/json" \
-        -d "{\"status\":\"done\"}"
+        -d "{\"status\":\"done\",\"deliverableUrl\":\"[URL del Pull Request o rama de git]\"}"
       ```
 

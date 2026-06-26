@@ -3,7 +3,12 @@
 El CEO Agent interactúa con el sistema de Paperclip a través de su API HTTP utilizando comandos `curl` en la herramienta `bash` (ya que no cuenta con herramientas directas como getIssue/updateIssue en su entorno de ejecución).
 
 1.  **Interactuar con la API de Paperclip:**
-    *   Para leer un issue:
+    *   Para listar todas las tareas (se recomienda usar `lightweight=true` para no sobrecargar de datos el payload y evitar errores):
+        ```bash
+        curl -s -X GET "$PAPERCLIP_API_URL/api/companies/$PAPERCLIP_COMPANY_ID/issues?lightweight=true" \
+          -H "Authorization: Bearer $PAPERCLIP_API_KEY"
+        ```
+    *   Para leer un issue (aquí puedes validar el campo `deliverableUrl` donde el CTO adjunta su Pull Request o rama):
         ```bash
         curl -s -X GET "$PAPERCLIP_API_URL/api/issues/$PAPERCLIP_TASK_ID" \
           -H "Authorization: Bearer $PAPERCLIP_API_KEY"
@@ -22,6 +27,17 @@ El CEO Agent interactúa con el sistema de Paperclip a través de su API HTTP ut
           -H "Content-Type: application/json" \
           -d "{\"assigneeAgentId\":\"[ID literal del Agente de AGENTS.md]\",\"status\":\"[todo/in_progress/done/blocked]\"}"
         ```
-2.  **Workspace File Access:**
+2.  **API de Facturación y Control de Costos:**
+    *   Para obtener el resumen del consumo de costos actual de la empresa:
+        ```bash
+        curl -s -X GET "$PAPERCLIP_API_URL/api/companies/$PAPERCLIP_COMPANY_ID/costs/summary" \
+          -H "Authorization: Bearer $PAPERCLIP_API_KEY"
+        ```
+    *   Para obtener el desglose detallado de costos acumulados por cada agente:
+        ```bash
+        curl -s -X GET "$PAPERCLIP_API_URL/api/companies/$PAPERCLIP_COMPANY_ID/costs/by-agent" \
+          -H "Authorization: Bearer $PAPERCLIP_API_KEY"
+        ```
+3.  **Workspace File Access:**
     *   Acceso de lectura y escritura al espacio compartido del repositorio `/app` para evaluar la documentación.
 
