@@ -1,0 +1,92 @@
+{
+  "version": 1,
+  "generatedAt": "2026-06-26T13:10:46.119Z",
+  "date": "2026-06-26",
+  "format": "video",
+  "themeId": "academic-confidence",
+  "themeName": "Confianza académica",
+  "status": "ready_for_human_review",
+  "publishing": "disabled",
+  "files": [
+    {
+      "path": "vertical_1080x1920.png",
+      "bytes": 2284479,
+      "sha256": "fe59eb56e5ac1264dd16475d8d850f9aa4e96e18333544b1633a5ef98b5e80cc"
+    },
+    {
+      "path": "feed_1080x1080.png",
+      "bytes": 1109714,
+      "sha256": "2e91708cc063d9614eac9cef8b1dc3d0fe5b17354a6232e6a77920b543cb2b75"
+    },
+    {
+      "path": "feed_1080x1350.png",
+      "bytes": 1540828,
+      "sha256": "fd4a44070fc617242167ee6778f3b9a4f6033d5137a9e64f5093b84219ad5270"
+    },
+    {
+      "path": "source.html",
+      "bytes": 14984,
+      "sha256": "37cc29aa2e15a32f892b8e6d4589b3befe8f392984c2957ef22ad4d06761bcf6"
+    },
+    {
+      "path": "copy.json",
+      "bytes": 4012,
+      "sha256": "9ae6debf6ed688c059f379f56e6298b4d3d201cd4733f6f5106c3b6159448362"
+    },
+    {
+      "path": "carousel/slide_01_1080x1350.png",
+      "bytes": 1722890,
+      "sha256": "b35dd4368e7bc29fad262b687f77ae0dc53929dec16ab40787b54e17d955b523"
+    },
+    {
+      "path": "carousel/slide_02_1080x1350.png",
+      "bytes": 93257,
+      "sha256": "b56b0550f7e336d77b2812a853fa96a28cebab26f228afef246ced86dfaed5c8"
+    },
+    {
+      "path": "carousel/slide_03_1080x1350.png",
+      "bytes": 96274,
+      "sha256": "8fdb46dc19a1880510e0710e372fe77f90efd8df0543533e81d486a8e6216039"
+    },
+    {
+      "path": "carousel/slide_04_1080x1350.png",
+      "bytes": 88450,
+      "sha256": "a1a6fc42df6db91afe1259815fe6f2c07c8ca611a4ac385f64aa2e9cdb7a2faf"
+    },
+    {
+      "path": "carousel/slide_05_1080x1350.png",
+      "bytes": 92627,
+      "sha256": "c124a8db70326882293fe2c829788e02e6d642ff9e22db3876020cb6d9bf5da0"
+    },
+    {
+      "path": "carousel/slide_01_1080x1350.jpg",
+      "bytes": 197024,
+      "sha256": "e39aca8e5c746acf9d6c8eac5542c20e2e345251aeb057a18f8aca3328f93710"
+    },
+    {
+      "path": "carousel/slide_02_1080x1350.jpg",
+      "bytes": 89809,
+      "sha256": "83961051a39169c432c18569e8beabf466118fad61c1ebf5dcb6d21d314010de"
+    },
+    {
+      "path": "carousel/slide_03_1080x1350.jpg",
+      "bytes": 87731,
+      "sha256": "ef80533d1d1a5434d3f3c65cf030cc2ba17b0c6b921ff315d910766f73f3c6d3"
+    },
+    {
+      "path": "carousel/slide_04_1080x1350.jpg",
+      "bytes": 74011,
+      "sha256": "b6b120d0e7773d7ba08debf7262dedac6ac250848967ab019b530a7edcca37b8"
+    },
+    {
+      "path": "carousel/slide_05_1080x1350.jpg",
+      "bytes": 86230,
+      "sha256": "78901794c1d6740a856c96cd26ff16bcfb096581bc21ca2da0dfbeace17f933f"
+    },
+    {
+      "path": "vertical_video.mp4",
+      "bytes": 1638762,
+      "sha256": "fde0d3153916add1f0d39833a024aac82a130600c16ea1e8ea3afdea1fe7f7b8"
+    }
+  ]
+}

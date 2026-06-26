@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Centro de Tutorías · 2026-06-26</title>
+  <style>:root {
+  --navy: #102A43;
+  --cobalt: #1E3A8A;
+  --blue: #2563EB;
+  --turquoise: #12B8A6;
+  --sky: #DDF4F2;
+  --paper: #F7FAFC;
+  --white: #FFFFFF;
+  --ink: #14213D;
+  --muted: #52647A;
+  --accent: #F4B942;
+}
+
+* { box-sizing: border-box; }
+html, body { margin: 0; background: #d8e1e8; font-family: Avenir, "Helvetica Neue", Arial, sans-serif; color: var(--ink); }
+body { padding: 40px; display: flex; flex-direction: column; align-items: center; gap: 42px; }
+.artboard { position: relative; overflow: hidden; background: var(--paper); flex: none; isolation: isolate; }
+.photo { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.brand { display: flex; align-items: center; gap: 18px; font-size: 24px; font-weight: 800; letter-spacing: 0; text-transform: uppercase; color: var(--cobalt); }
+.brand-mark { width: 58px; height: 58px; object-fit: contain; flex: none; }
+.eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: 22px; font-weight: 800; color: var(--cobalt); text-transform: uppercase; }
+.eyebrow::before { content: ""; width: 34px; height: 5px; background: var(--turquoise); border-radius: 4px; }
+.headline { margin: 22px 0 0; font-weight: 800; line-height: 1.03; letter-spacing: 0; text-wrap: balance; }
+.subtitle { margin: 24px 0 0; color: var(--muted); font-weight: 500; line-height: 1.34; text-wrap: balance; }
+.cta { display: inline-flex; align-items: center; justify-content: center; gap: 12px; background: var(--accent); color: var(--navy); font-weight: 800; border-radius: 6px; white-space: nowrap; }
+.cta-arrow { font-size: 1.08em; line-height: 1; }
+.footer { display: flex; align-items: center; justify-content: space-between; color: white; }
+.footer-url { font-weight: 700; }
+.wa { display: flex; align-items: center; gap: 12px; font-weight: 700; }
+.wa-icon { width: 32px; height: 32px; border: 3px solid currentColor; border-radius: 50%; position: relative; }
+.wa-icon::after { content: ""; position: absolute; width: 9px; height: 9px; border-left: 3px solid currentColor; border-bottom: 3px solid currentColor; left: -3px; bottom: -3px; transform: rotate(-10deg); }
+
+/* Vertical story/reel */
+.vertical { width: 1080px; height: 1920px; background: var(--paper); }
+.vertical .photo { top: 620px; height: 1130px; object-position: center 64%; }
+.vertical .photo-shade { position: absolute; inset: 620px 0 170px; background: rgba(16,42,67,.08); }
+.vertical .top { position: absolute; inset: 0 0 auto 0; height: 720px; padding: 78px 74px; background: var(--paper); clip-path: polygon(0 0,100% 0,100% 84%,0 100%); }
+.vertical .brand { margin-bottom: 62px; }
+.vertical .headline { max-width: 910px; font-size: 82px; }
+.vertical .subtitle { max-width: 900px; font-size: 35px; }
+.vertical .cta { position: absolute; left: 74px; bottom: 205px; min-height: 76px; padding: 0 34px; font-size: 30px; z-index: 3; box-shadow: 0 10px 0 rgba(16,42,67,.14); }
+.vertical .footer { position: absolute; left: 0; right: 0; bottom: 0; height: 170px; padding: 0 74px; background: var(--cobalt); font-size: 26px; }
+
+/* Square feed */
+.feed-square { width: 1080px; height: 1080px; display: grid; grid-template-columns: 56% 44%; background: var(--paper); }
+.feed-square .visual { position: relative; overflow: hidden; }
+.feed-square .photo { object-position: 62% center; }
+.feed-square .copy { padding: 66px 52px 52px 64px; display: flex; flex-direction: column; z-index: 2; }
+.feed-square .brand { margin-bottom: 72px; font-size: 20px; }
+.feed-square .brand-mark { width: 50px; height: 50px; }
+.feed-square .headline { font-size: 58px; }
+.feed-square .subtitle { font-size: 26px; }
+.feed-square .cta { margin-top: auto; min-height: 66px; padding: 0 22px; font-size: 23px; align-self: flex-start; }
+.feed-square .url-band { position: absolute; left: 56%; right: 0; bottom: 0; min-height: 100px; padding: 26px; display: flex; align-items: center; justify-content: center; background: var(--cobalt); color: white; font-size: 23px; font-weight: 700; z-index: 3; }
+
+/* Portrait feed */
+.feed-portrait { width: 1080px; height: 1350px; background: var(--paper); }
+.feed-portrait .photo { top: 510px; height: 700px; object-position: center 62%; }
+.feed-portrait .top { position: absolute; inset: 0 0 auto; height: 600px; padding: 58px 70px; background: var(--paper); clip-path: polygon(0 0,100% 0,100% 88%,0 100%); z-index: 2; }
+.feed-portrait .brand { margin-bottom: 36px; font-size: 20px; }
+.feed-portrait .headline { font-size: 66px; max-width: 940px; }
+.feed-portrait .subtitle { font-size: 29px; max-width: 900px; }
+.feed-portrait .cta { position: absolute; left: 70px; bottom: 172px; min-height: 68px; padding: 0 28px; font-size: 25px; z-index: 4; }
+.feed-portrait .footer { position: absolute; left: 0; right: 0; bottom: 0; height: 140px; padding: 0 70px; background: var(--cobalt); font-size: 23px; }
+
+/* Carousel */
+.carousel-slide { width: 1080px; height: 1350px; padding: 72px; display: flex; flex-direction: column; background: var(--paper); }
+.carousel-slide .slide-number { margin-left: auto; color: var(--cobalt); font-size: 25px; font-weight: 800; }
+.carousel-slide .brand { font-size: 20px; }
+.carousel-slide .content { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+.carousel-slide .kicker { color: var(--turquoise); font-size: 25px; font-weight: 800; text-transform: uppercase; }
+.carousel-slide h2 { max-width: 920px; margin: 24px 0 0; font-size: 76px; line-height: 1.04; letter-spacing: 0; text-wrap: balance; }
+.carousel-slide p { max-width: 890px; margin: 30px 0 0; font-size: 35px; line-height: 1.42; color: var(--muted); text-wrap: balance; }
+.carousel-slide .bottom { display: flex; align-items: center; justify-content: space-between; padding-top: 30px; border-top: 3px solid #dbe7ef; color: var(--cobalt); font-size: 23px; font-weight: 700; }
+.carousel-slide.cover { padding: 0; color: white; }
+.carousel-slide.cover .photo { object-position: center 58%; }
+.carousel-slide.cover .overlay { position: absolute; inset: 0; background: rgba(16,42,67,.56); }
+.carousel-slide.cover .cover-copy { position: relative; z-index: 2; height: 100%; padding: 72px; display: flex; flex-direction: column; }
+.carousel-slide.cover .brand { color: white; }
+.carousel-slide.cover .content { justify-content: flex-end; padding-bottom: 105px; }
+.carousel-slide.cover h2 { font-size: 82px; }
+.carousel-slide.cover p { color: white; font-size: 32px; }
+.carousel-slide.problem { background: var(--cobalt); color: white; }
+.carousel-slide.problem p, .carousel-slide.problem .bottom { color: #dce9ff; }
+.carousel-slide.problem .bottom { border-top-color: rgba(255,255,255,.28); }
+.carousel-slide.problem .brand, .carousel-slide.problem .slide-number { color: white; }
+.carousel-slide.steps .step-list { margin-top: 44px; display: grid; gap: 22px; }
+.carousel-slide.steps .step { display: grid; grid-template-columns: 68px 1fr; gap: 24px; align-items: start; padding: 24px 0; border-top: 2px solid #dbe7ef; }
+.carousel-slide.steps .step:first-child { border-top: 0; }
+.carousel-slide.steps .step strong { width: 58px; height: 58px; display: grid; place-items: center; border-radius: 50%; background: var(--sky); color: var(--cobalt); font-size: 27px; }
+.carousel-slide.steps .step span { font-size: 31px; line-height: 1.38; color: var(--ink); }
+.carousel-slide.approach { background: var(--sky); }
+.carousel-slide.approach .accent-rule { width: 160px; height: 12px; background: var(--turquoise); margin-top: 38px; }
+.carousel-slide.final { background: var(--navy); color: white; }
+.carousel-slide.final p { color: #dce9ef; }
+.carousel-slide.final .brand, .carousel-slide.final .slide-number { color: white; }
+.carousel-slide.final .cta { align-self: flex-start; min-height: 76px; padding: 0 34px; margin-top: 42px; font-size: 29px; }
+.carousel-slide.final .bottom { color: white; border-top-color: rgba(255,255,255,.22); }
+</style>
+</head>
+<body>
+<section id="vertical" class="artboard vertical" aria-label="Pieza de Centro de Tutorías sobre confianza académica. Si te dice 'no puedo con mate', necesita otra forma de explicación. Imagen de un estudiante en un ambiente de estudio y llamado a la acción: Recupera su confianza.">
+  <img class="photo" src="../../assets/backgrounds/academic-confidence.png" alt="">
+  <div class="photo-shade"></div>
+  <div class="top">
+    <div class="brand"><img class="brand-mark" src="../../assets/logos/logo.png" alt="Logo"><span>Centro de Tutorías</span></div>
+    <div class="eyebrow">Confianza académica</div>
+    <h1 class="headline">Si te dice 'no puedo con mate', necesita otra forma de explicación</h1>
+    <p class="subtitle">La seguridad académica regresa cuando el estudiante puede preguntar sin miedo y equivocarse en un ambiente paciente.</p>
+  </div>
+  <div class="cta">Recupera su confianza <span class="cta-arrow">→</span></div>
+  <div class="footer"><span class="footer-url">centrodetutorias.com</span><span class="wa"><span class="wa-icon"></span>Escríbenos por WhatsApp</span></div>
+</section>
+
+<section id="feed-square" class="artboard feed-square" aria-label="Pieza de Centro de Tutorías sobre confianza académica. Si te dice 'no puedo con mate', necesita otra forma de explicación. Imagen de un estudiante en un ambiente de estudio y llamado a la acción: Recupera su confianza.">
+  <div class="copy">
+    <div class="brand"><img class="brand-mark" src="../../assets/logos/logo.png" alt="Logo"><span>Centro de Tutorías</span></div>
+    <div class="eyebrow">Confianza académica</div>
+    <h1 class="headline">Si te dice 'no puedo con mate', necesita otra forma de explicación</h1>
+    <p class="subtitle">La seguridad académica regresa cuando el estudiante puede preguntar sin miedo y equivocarse en un ambiente paciente.</p>
+    <div class="cta">Recupera su confianza <span class="cta-arrow">→</span></div>
+  </div>
+  <div class="visual"><img class="photo" src="../../assets/backgrounds/academic-confidence.png" alt=""></div>
+  <div class="url-band">centrodetutorias.com</div>
+</section>
+
+<section id="feed-portrait" class="artboard feed-portrait" aria-label="Pieza de Centro de Tutorías sobre confianza académica. Si te dice 'no puedo con mate', necesita otra forma de explicación. Imagen de un estudiante en un ambiente de estudio y llamado a la acción: Recupera su confianza.">
+  <img class="photo" src="../../assets/backgrounds/academic-confidence.png" alt="">
+  <div class="top">
+    <div class="brand"><img class="brand-mark" src="../../assets/logos/logo.png" alt="Logo"><span>Centro de Tutorías</span></div>
+    <div class="eyebrow">Confianza académica</div>
+    <h1 class="headline">Si te dice 'no puedo con mate', necesita otra forma de explicación</h1>
+    <p class="subtitle">La seguridad académica regresa cuando el estudiante puede preguntar sin miedo y equivocarse en un ambiente paciente.</p>
+  </div>
+  <div class="cta">Recupera su confianza <span class="cta-arrow">→</span></div>
+  <div class="footer"><span class="footer-url">centrodetutorias.com</span><span class="wa"><span class="wa-icon"></span>Escríbenos por WhatsApp</span></div>
+</section>
+
+<section id="carousel-01" class="artboard carousel-slide cover" aria-label="Carrusel 01 de 5: Si te dice 'no puedo con mate', necesita otra forma de explicación">
+  <img class="photo" src="../../assets/backgrounds/academic-confidence.png" alt=""><div class="overlay"></div><div class="cover-copy"><div class="brand"><img class="brand-mark" src="../../assets/logos/logo.png" alt="Logo"><span>Centro de Tutorías</span></div><div class="slide-number">1/5</div><div class="content"><div class="kicker">Confianza académica</div><h2>Si te dice 'no puedo con mate', necesita otra forma de explicación</h2><p>La seguridad académica regresa cuando el estudiante puede preguntar sin miedo y equivocarse en un ambiente paciente.</p></div><div class="bottom"><span>centrodetutorias.com</span><span>Desliza →</span></div></div>
+</section>
+
+<section id="carousel-02" class="artboard carousel-slide problem" aria-label="Carrusel 02 de 5: Lo que suele estar pasando">
+  <div class="brand"><img class="brand-mark" src="../../assets/logos/logo.png" alt="Logo"><span>Centro de Tutorías</span></div><div class="slide-number">2/5</div><div class="content"><div class="kicker">Antes de exigir más horas</div><h2>Lo que suele estar pasando</h2><p>Cuando alguien anticipa que fallará, deja de intentar. La dificultad en matemáticas golpea la autoestima del estudiante rápidamente.</p></div><div class="bottom"><span>centrodetutorias.com</span><span>Desliza →</span></div>
+</section>
+
+<section id="carousel-03" class="artboard carousel-slide steps" aria-label="Carrusel 03 de 5: Un mejor punto de partida">
+  <div class="brand"><img class="brand-mark" src="../../assets/logos/logo.png" alt="Logo"><span>Centro de Tutorías</span></div><div class="slide-number">3/5</div><div class="content"><div class="kicker">Una ruta más clara</div><h2>Un mejor punto de partida</h2><div class="step-list"><div class="step"><strong>1</strong><span>Identificar la dificultad exacta, no solamente la nota.</span></div><div class="step"><strong>2</strong><span>Explicar desde el nivel real del estudiante y a su ritmo.</span></div><div class="step"><strong>3</strong><span>Practicar Matemática con retroalimentación clara.</span></div></div></div><div class="bottom"><span>centrodetutorias.com</span><span>Desliza →</span></div>
+</section>
+
+<section id="carousel-04" class="artboard carousel-slide approach" aria-label="Carrusel 04 de 5: Cómo acompañamos">
+  <div class="brand"><img class="brand-mark" src="../../assets/logos/logo.png" alt="Logo"><span>Centro de Tutorías</span></div><div class="slide-number">4/5</div><div class="content"><div class="kicker">Tutoría personalizada</div><h2>Cómo acompañamos</h2><div class="accent-rule"></div><p>Trabajamos con metas pequeñas y retroalimentación positiva e inmediata para que experimente el éxito desde la primera sesión.</p></div><div class="bottom"><span>centrodetutorias.com</span><span>Desliza →</span></div>
+</section>
+
+<section id="carousel-05" class="artboard carousel-slide final" aria-label="Carrusel 05 de 5: El apoyo correcto puede empezar hoy">
+  <div class="brand"><img class="brand-mark" src="../../assets/logos/logo.png" alt="Logo"><span>Centro de Tutorías</span></div><div class="slide-number">5/5</div><div class="content"><div class="kicker">Centro de Tutorías</div><h2>El apoyo correcto puede empezar hoy</h2><p>Recupera su confianza. Descubre una tutoría enfocada en lo que realmente necesita.</p><div class="cta">Recupera su confianza <span class="cta-arrow">→</span></div></div><div class="bottom"><span>https://www.centrodetutorias.com</span><span>+502 5715 2096</span></div>
+</section>
+
+</body>
+</html>
