@@ -94,6 +94,15 @@
       "format": "video",
       "output": "output/2026-06-26",
       "generatedAt": "2026-06-26T13:10:46.119Z"
+    },
+    {
+      "date": "2026-06-27",
+      "themeId": "college-transition",
+      "themeName": "Transición colegio-universidad",
+      "subject": "Cálculo básico",
+      "format": "carousel",
+      "output": "output/2026-06-27",
+      "generatedAt": "2026-06-27T12:08:45.441Z"
     }
   ]
 }
