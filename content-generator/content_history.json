@@ -103,6 +103,15 @@
       "format": "carousel",
       "output": "output/2026-06-27",
       "generatedAt": "2026-06-27T12:08:45.441Z"
+    },
+    {
+      "date": "2026-06-28",
+      "themeId": "task-overload",
+      "themeName": "Tareas acumuladas",
+      "subject": "Matemática",
+      "format": "video",
+      "output": "output/2026-06-28",
+      "generatedAt": "2026-06-28T12:15:59.115Z"
     }
   ]
 }

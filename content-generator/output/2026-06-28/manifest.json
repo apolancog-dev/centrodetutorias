@@ -1,0 +1,92 @@
+{
+  "version": 1,
+  "generatedAt": "2026-06-28T12:15:59.115Z",
+  "date": "2026-06-28",
+  "format": "video",
+  "themeId": "task-overload",
+  "themeName": "Tareas acumuladas",
+  "status": "ready_for_human_review",
+  "publishing": "disabled",
+  "files": [
+    {
+      "path": "vertical_1080x1920.png",
+      "bytes": 2911534,
+      "sha256": "76f93d93812b374b77f48d9fbc171c56abcab241bfabbe0c0db949577dfb7c84"
+    },
+    {
+      "path": "feed_1080x1080.png",
+      "bytes": 1337391,
+      "sha256": "324fcb210945b8c782eb49cbae85a2673072f35fa414a6082cd7ce1bddfb49d1"
+    },
+    {
+      "path": "feed_1080x1350.png",
+      "bytes": 1882806,
+      "sha256": "59480b32769909be0fb043edeca06fd3d11a3d1a3209eb659c9bf2991a99a62d"
+    },
+    {
+      "path": "source.html",
+      "bytes": 14848,
+      "sha256": "2bc63bb5009d7a695359f34380543e9fe4e7f191d519df87a1210a5809acf8ae"
+    },
+    {
+      "path": "copy.json",
+      "bytes": 3908,
+      "sha256": "e1621188fd9661e4985dd949fa2e43aa1fb2207448eb23b09d6ee3b38d9eb2c5"
+    },
+    {
+      "path": "carousel/slide_01_1080x1350.png",
+      "bytes": 2283216,
+      "sha256": "579bf52d6dff77ffb552436f2a1912c0bc2dcf536154eaaf337f9c02e182fdc7"
+    },
+    {
+      "path": "carousel/slide_02_1080x1350.png",
+      "bytes": 92002,
+      "sha256": "b4023195ca9d50b6843ccbfdf22e9410fae1ccb8201f4eb98cdc85916cbc130d"
+    },
+    {
+      "path": "carousel/slide_03_1080x1350.png",
+      "bytes": 96274,
+      "sha256": "8fdb46dc19a1880510e0710e372fe77f90efd8df0543533e81d486a8e6216039"
+    },
+    {
+      "path": "carousel/slide_04_1080x1350.png",
+      "bytes": 88862,
+      "sha256": "279e7b8c401f78961de8711657a14e4c79edb68c54e28ba77af74b3865199686"
+    },
+    {
+      "path": "carousel/slide_05_1080x1350.png",
+      "bytes": 94252,
+      "sha256": "a3e9e4946810666a8bbbd4a17ca51ba2258e1c19e412f27644e85155e245d920"
+    },
+    {
+      "path": "carousel/slide_01_1080x1350.jpg",
+      "bytes": 252293,
+      "sha256": "966b560a3a66c9ee24462c64f63d806db04181879f2c63b82930742f2590569c"
+    },
+    {
+      "path": "carousel/slide_02_1080x1350.jpg",
+      "bytes": 86639,
+      "sha256": "e600b44e240b74ef1858fe902e9aeaa807aefef6c080e4164b5194f7de6bf9d9"
+    },
+    {
+      "path": "carousel/slide_03_1080x1350.jpg",
+      "bytes": 87731,
+      "sha256": "ef80533d1d1a5434d3f3c65cf030cc2ba17b0c6b921ff315d910766f73f3c6d3"
+    },
+    {
+      "path": "carousel/slide_04_1080x1350.jpg",
+      "bytes": 73500,
+      "sha256": "4d54761a93f0b3c63eba4902add3a5995474b09d99cac57265af7d10fcbd7fe9"
+    },
+    {
+      "path": "carousel/slide_05_1080x1350.jpg",
+      "bytes": 87536,
+      "sha256": "579f75b527ed94f2bf28b3cef10954f1a0cd4ccb43319f5981ec164b5e82b043"
+    },
+    {
+      "path": "vertical_video.mp4",
+      "bytes": 1398694,
+      "sha256": "4ed21278eb1f00cc76bba10a1438fda41439ecd6420f9a4a40fc70a86925c049"
+    }
+  ]
+}
