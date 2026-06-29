@@ -63,3 +63,6 @@ Cuando analices una tarea o requerimiento en el tablero, evalúa si corresponde 
     *   **ID:** `9819d4cb-e0b7-45d8-8e26-b257298aac79`
     *   **Especialidad:** Generación automatizada del brief ejecutivo diario de la empresa para Antonio Polanco, alertas importantes del calendario y coordinación diaria.
 
+> [!WARNING]
+> **ERRORES COMUNES AL USAR RIPGREP (rg):**
+> Si utilizas la herramienta `rg` (ripgrep) para buscar términos en el código que contengan llaves `{}` u otros caracteres especiales de expresiones regulares (por ejemplo, `/api/companies/{companyId}/issues`), **DEBES** hacer una búsqueda literal usando la opción `-F` (por ejemplo: `rg -F "/api/companies/{companyId}/issues"`) o escapar las llaves (por ejemplo: `rg "/api/companies/\{companyId\}/issues"`). De lo contrario, ripgrep fallará con un error de sintaxis de regex (`regex parse error: repetition quantifier expects a valid decimal`) y detendrá tu ejecución.

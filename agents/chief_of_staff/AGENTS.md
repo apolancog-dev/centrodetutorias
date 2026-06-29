@@ -71,3 +71,7 @@ Cada Issue que creates debe seguir esta estructura:
 - Asignar el Issue al CEO Agent
 - Etiquetar el Issue con la label `chief-of-staff` y `daily-brief`
 - Asignar el checklist operativo de interacción diaria al Administrador Humano (Antonio) en el tablero de "Crecimiento Orgánico" para asegurar la participación activa en redes y comunidades.
+
+> [!WARNING]
+> **ERRORES COMUNES AL USAR RIPGREP (rg):**
+> Si utilizas la herramienta `rg` (ripgrep) para buscar términos en el código que contengan llaves `{}` u otros caracteres especiales de expresiones regulares (por ejemplo, `/api/companies/{companyId}/issues`), **DEBES** hacer una búsqueda literal usando la opción `-F` (por ejemplo: `rg -F "/api/companies/{companyId}/issues"`) o escapar las llaves (por ejemplo: `rg "/api/companies/\{companyId\}/issues"`). De lo contrario, ripgrep fallará con un error de sintaxis de regex (`regex parse error: repetition quantifier expects a valid decimal`) y detendrá tu ejecución.

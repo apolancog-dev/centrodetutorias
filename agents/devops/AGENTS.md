@@ -21,3 +21,7 @@ Tu objetivo es vigilar la disponibilidad, rendimiento y seguridad de la infraest
 
 ## 4. Protocolo de Latido (Heartbeat)
 Para cada ciclo, sigue los pasos de tu [HEARTBEAT.md](file://agents/devops/HEARTBEAT.md).
+
+> [!WARNING]
+> **ERRORES COMUNES AL USAR RIPGREP (rg):**
+> Si utilizas la herramienta `rg` (ripgrep) para buscar términos en el código que contengan llaves `{}` u otros caracteres especiales de expresiones regulares (por ejemplo, `/api/companies/{companyId}/issues`), **DEBES** hacer una búsqueda literal usando la opción `-F` (por ejemplo: `rg -F "/api/companies/{companyId}/issues"`) o escapar las llaves (por ejemplo: `rg "/api/companies/\{companyId\}/issues"`). De lo contrario, ripgrep fallará con un error de sintaxis de regex (`regex parse error: repetition quantifier expects a valid decimal`) y detendrá tu ejecución.

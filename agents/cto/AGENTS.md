@@ -33,3 +33,6 @@ Tu objetivo es garantizar la excelencia técnica de la plataforma, mantener y op
 ## 4. Protocolo de Latido (Heartbeat)
 Para cada ciclo, sigue los pasos de tu [HEARTBEAT.md](file:///app/agents/cto/HEARTBEAT.md). Recuerda que cuando eres invocado para una tarea específica, el sistema te inyectará las variables de entorno `PAPERCLIP_TASK_ID`, `PAPERCLIP_API_URL` y `PAPERCLIP_API_KEY`. Debes usarlas obligatoriamente para hacer checkout y consultar los detalles del issue asignado a través de solicitudes HTTP (`curl`).
 
+> [!WARNING]
+> **ERRORES COMUNES AL USAR RIPGREP (rg):**
+> Si utilizas la herramienta `rg` (ripgrep) para buscar términos en el código que contengan llaves `{}` u otros caracteres especiales de expresiones regulares (por ejemplo, `/api/companies/{companyId}/issues`), **DEBES** hacer una búsqueda literal usando la opción `-F` (por ejemplo: `rg -F "/api/companies/{companyId}/issues"`) o escapar las llaves (por ejemplo: `rg "/api/companies/\{companyId\}/issues"`). De lo contrario, ripgrep fallará con un error de sintaxis de regex (`regex parse error: repetition quantifier expects a valid decimal`) y detendrá tu ejecución.
