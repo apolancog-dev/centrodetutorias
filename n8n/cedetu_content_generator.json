@@ -1143,6 +1143,21 @@
         "resume": "timeInterval",
         "unit": "seconds"
       }
+    },
+    {
+      "id": "wait-ig-carousel-publish-1",
+      "name": "Wait 30s (IG Carousel Publish)",
+      "type": "n8n-nodes-base.wait",
+      "typeVersion": 1.1,
+      "position": [
+        3925,
+        100
+      ],
+      "parameters": {
+        "amount": 30,
+        "resume": "timeInterval",
+        "unit": "seconds"
+      }
     }
   ],
   "connections": {
@@ -1421,7 +1436,7 @@
       "main": [
         [
           {
-            "node": "Publish IG Carousel",
+            "node": "Wait 30s (IG Carousel Publish)",
             "type": "main",
             "index": 0
           }
@@ -1728,6 +1743,17 @@
         [
           {
             "node": "Publish IG Story",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Wait 30s (IG Carousel Publish)": {
+      "main": [
+        [
+          {
+            "node": "Publish IG Carousel",
             "type": "main",
             "index": 0
           }
