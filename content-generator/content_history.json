@@ -112,6 +112,15 @@
       "format": "video",
       "output": "output/2026-06-28",
       "generatedAt": "2026-06-28T12:15:59.115Z"
+    },
+    {
+      "date": "2026-06-29",
+      "themeId": "emotional-reminder",
+      "themeName": "Recordatorio emocional",
+      "subject": "Matemática",
+      "format": "carousel",
+      "output": "output/2026-06-29",
+      "generatedAt": "2026-06-29T15:41:57.049Z"
     }
   ]
 }
