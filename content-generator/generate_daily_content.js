@@ -99,9 +99,9 @@ function wordCount(text) {
 
 function validateCopy(theme) {
   const ranges = [
-    ["headline", theme.headline, 8, 12],
-    ["subtitle", theme.subtitle, 12, 22],
-    ["cta", theme.cta, 3, 6]
+    ["headline", theme.headline, 6, 15],
+    ["subtitle", theme.subtitle, 10, 25],
+    ["cta", theme.cta, 3, 8]
   ];
   for (const [name, text, min, max] of ranges) {
     const count = wordCount(text);

@@ -689,7 +689,7 @@
     },
     {
       "id": "c00711df-d906-4448-983f-b986502c9321",
-      "name": "Wait 15s (IG Carousel)",
+      "name": "Wait 120s (IG Carousel)",
       "type": "n8n-nodes-base.wait",
       "typeVersion": 1.1,
       "position": [
@@ -697,7 +697,7 @@
         100
       ],
       "parameters": {
-        "amount": 15,
+        "amount": 120,
         "resume": "timeInterval",
         "unit": "seconds"
       },
@@ -1520,14 +1520,14 @@
       "main": [
         [
           {
-            "node": "Wait 15s (IG Carousel)",
+            "node": "Wait 120s (IG Carousel)",
             "type": "main",
             "index": 0
           }
         ]
       ]
     },
-    "Wait 15s (IG Carousel)": {
+    "Wait 120s (IG Carousel)": {
       "main": [
         [
           {
