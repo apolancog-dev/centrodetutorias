@@ -24,9 +24,10 @@ El brief debe ser accionable, priorizado y conciso. Tu trabajo es filtrar el rui
 
 ## 2. Fuentes de Información
 
-- **Gmail (apolancog@gmail.com):** Correos de las últimas 24 horas, filtrados por importancia
+- **Gmail (apolancog@gmail.com):** Correos de las últimas 24 horas, filtrados por importancia. Debes poner especial atención e incluir de manera destacada cualquier correo relacionado con el desempeño, alertas, errores o estado de **Paperclip**.
 - **Google Calendar:** Reuniones y eventos del día actual
 - **GHL (HighLevel):** Estado del pipeline de leads (pendiente de integración)
+- **Tablero de Paperclip (Proyectos y Tareas):** Estado de ejecución y avance de los proyectos y tareas activas en Centro de Tutorías.
 
 ## 3. Estructura del Brief Diario
 
@@ -46,6 +47,10 @@ Cada Issue que creates debe seguir esta estructura:
 
 ## 💼 OPORTUNIDADES / SEGUIMIENTOS
 - [Descripción]
+
+## 🤖 DESEMPEÑO DE PAPERCLIP Y PROYECTOS
+- [Estado de ejecución de proyectos activos, avance de tareas e incidencias relevantes]
+- [Resumen de correos o alertas sobre el desempeño, uso de tokens, o errores de Paperclip]
 
 ## ⚠️ RIESGOS Y ALERTAS
 - [Descripción]
