@@ -1,47 +1,47 @@
 {
   "version": 1,
-  "generatedAt": "2026-06-29T15:41:57.049Z",
+  "generatedAt": "2026-06-30T00:49:59.925Z",
   "date": "2026-06-29",
-  "format": "carousel",
-  "themeId": "emotional-reminder",
-  "themeName": "Recordatorio emocional",
-  "status": "ready_to_publish",
+  "format": "video",
+  "themeId": "task-overload",
+  "themeName": "Tareas acumuladas",
+  "status": "ready_for_human_review",
   "publishing": "disabled",
   "files": [
     {
       "path": "vertical_1080x1920.png",
-      "bytes": 2869737,
-      "sha256": "83122ee2a2196f5514c835e1c2364f786d47461a85ad23d69a5b7f3e422547f6"
+      "bytes": 2906311,
+      "sha256": "eb1a637e644a64df0a582d913a2da16d41be41bc5ca76096f7201389fcef9aa7"
     },
     {
       "path": "feed_1080x1080.png",
-      "bytes": 1304349,
-      "sha256": "aa0a61453bf8233053815cd6ff225483bebaf242b75b41a23e387a3c5365d35e"
+      "bytes": 1332821,
+      "sha256": "d06b24cd3d8d2db310fe3f0d0052b11c1f3755f8c545b9389338479c27211cda"
     },
     {
       "path": "feed_1080x1350.png",
-      "bytes": 1846240,
-      "sha256": "45f7230936153ae3194986f1456d2c5fe827334b7be82310f32466010af55058"
+      "bytes": 1878042,
+      "sha256": "6f7cea166d83e0698aaddff7ad6dfeda71f0c6ba80c2848b98e77cb28bb37a19"
     },
     {
       "path": "source.html",
-      "bytes": 15048,
-      "sha256": "db43a1fc98f39a80b4e6c81ec433b23465082f88863673749e499914b0503ae6"
+      "bytes": 14848,
+      "sha256": "de53441f3eca10d2af0108a59fc087eaf2b218fd70d3f0ff5f78978215df2e7c"
     },
     {
       "path": "copy.json",
-      "bytes": 4063,
-      "sha256": "f16bbd18c392dfd7fe0913e2de49ef1c4c75984b2513b7368ab263e86adfa550"
+      "bytes": 3908,
+      "sha256": "cb65e221c2b8ed73afd37b357d237685af9d8d6947cf96a9decc6c6428b9f8b6"
     },
     {
       "path": "carousel/slide_01_1080x1350.png",
-      "bytes": 2106870,
-      "sha256": "055d65e9a4ef29de4b2471870b7bd49d6ad79ec49b2ba0c98792873579d6db44"
+      "bytes": 2289369,
+      "sha256": "256d698d6eae44078d89087b4bce11afc899ff4f6595035b895bcd985be4df56"
     },
     {
       "path": "carousel/slide_02_1080x1350.png",
-      "bytes": 93147,
-      "sha256": "2342a4b93f238503d6c810ff6fdfe40e56e4feb0d85ad3b9298a0a7e990b58c2"
+      "bytes": 87900,
+      "sha256": "8ff8a5af8f454c948a691be4d7a1bdcd4ad5187efbe0ec3a83391b516ca1c70b"
     },
     {
       "path": "carousel/slide_03_1080x1350.png",
@@ -50,23 +50,23 @@
     },
     {
       "path": "carousel/slide_04_1080x1350.png",
-      "bytes": 87644,
-      "sha256": "91df4da9db5874e6b973d8e7dc429ae9aa33d40c19dd9e82cf5cfb23c71d3df8"
+      "bytes": 86007,
+      "sha256": "eb2bcfc7f986232d3d047fabf883364935b4ebb9f69cbcfd2511c06b4a80f8ed"
     },
     {
       "path": "carousel/slide_05_1080x1350.png",
-      "bytes": 89537,
-      "sha256": "a8d04434f55fb99a89193aa5f96a333bb3320ac2b634b3e5fbd52fd22495ef8c"
+      "bytes": 91732,
+      "sha256": "a0382c0ecb1a951655efa2e7865812947eb3670e0eb0b16e5100e9e1a78ad18f"
     },
     {
       "path": "carousel/slide_01_1080x1350.jpg",
-      "bytes": 218968,
-      "sha256": "d64ea01395583373ce073d81cce7600672cf3fc821bf42adbf360a29306e1e01"
+      "bytes": 251501,
+      "sha256": "f8ba6512eed733c5fcc7748cf5e02bf2f9d8b1e711dbdbb6f31ca0ae2a73f15c"
     },
     {
       "path": "carousel/slide_02_1080x1350.jpg",
-      "bytes": 92424,
-      "sha256": "af87b29351e7a16247da92d4057cc6edc27552da14a326e50f2329a0d2b46d46"
+      "bytes": 85073,
+      "sha256": "d8d7efe1b6638761fadec473ebe5e393ae22e5c486ec8b516a37730b27e10a33"
     },
     {
       "path": "carousel/slide_03_1080x1350.jpg",
@@ -75,13 +75,18 @@
     },
     {
       "path": "carousel/slide_04_1080x1350.jpg",
-      "bytes": 73357,
-      "sha256": "768085dcb0740136a404ff9928c7822f6df85f636b7ec2c69f987708633cf757"
+      "bytes": 71498,
+      "sha256": "3fb3cb168a25ab00e4c7ff2adda20d223e9e9736828b6635a6875a041f2a266a"
     },
     {
       "path": "carousel/slide_05_1080x1350.jpg",
-      "bytes": 83743,
-      "sha256": "5c5c256d16c872ec7955220f298233f61ebef9ec1e0c44f0948b936102a3e7dc"
+      "bytes": 86999,
+      "sha256": "dd2700f98bb82f3449005d35252a48d14ff4d6cba6f14b3cf462fc49006f2e49"
+    },
+    {
+      "path": "vertical_video.mp4",
+      "bytes": 1385202,
+      "sha256": "84e24de0cdcea6da4bf58bbe9390378110d638f1ea137f7b3e02fc6873e6e295"
     }
   ]
 }

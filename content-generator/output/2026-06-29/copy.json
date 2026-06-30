@@ -1,15 +1,15 @@
 {
   "fecha": "2026-06-29",
-  "tema_del_dia": "Recordatorio emocional",
-  "tema_id": "emotional-reminder",
+  "tema_del_dia": "Tareas acumuladas",
+  "tema_id": "task-overload",
   "materia_prioritaria": "Matemática",
-  "dolor_del_cliente": "Escuchar a un hijo decir que no sirve para matemática después de varias experiencias frustrantes.",
-  "headline_principal": "El estrés por matemáticas no tiene por qué definir las tardes en tu casa",
-  "subtitulo": "Ayuda a tu hijo a separar un mal resultado temporal de su capacidad real. El apoyo paciente cambia la perspectiva.",
-  "texto_corto_imagen": "La dificultad no define su inteligencia.",
-  "caption_instagram": "El estrés por matemáticas no tiene por qué definir las tardes en tu casa\n\nEscuchar a un hijo decir que no sirve para matemática después de varias experiencias frustrantes.\n\nCreamos un espacio seguro donde equivocarse es parte del aprendizaje y celebrar pequeños logros cambia la relación con la materia.\n\nBríndale apoyo hoy. Visita https://www.centrodetutorias.com o escríbenos directamente por WhatsApp: https://wa.me/50257152096\n\n#CentroDeTutorías #TutoríasPersonalizadas #Matemática #ApoyoAcadémico #Educación",
-  "caption_facebook": "El estrés por matemáticas no tiene por qué definir las tardes en tu casa\n\nEs muy común etiquetarse como 'malo para los números'. Sin embargo, con paciencia y la analogía correcta, cualquiera puede comprender matemáticas.\n\nEn Centro de Tutorías, creamos un espacio seguro donde equivocarse es parte del aprendizaje y celebrar pequeños logros cambia la relación con la materia.\n\nBríndale apoyo hoy: https://www.centrodetutorias.com\nChatea con nosotros por WhatsApp: https://wa.me/50257152096",
-  "texto_tiktok": "La dificultad no define su inteligencia. Bríndale apoyo hoy. #CentroDeTutorías #TutoríasPersonalizadas #Matemática #ApoyoAcadémico",
+  "dolor_del_cliente": "Tareas, laboratorios y proyectos numéricos que se acumulan hasta convertir la semana en una carrera.",
+  "headline_principal": "Cuando las tareas se acumulan, la frustración en casa crece",
+  "subtitulo": "Ayudamos a tu hijo a comprender el proceso y resolver de forma independiente, sin hacer la tarea por él.",
+  "texto_corto_imagen": "Comprender primero. Avanzar mejor.",
+  "caption_instagram": "Cuando las tareas se acumulan, la frustración en casa crece\n\nTareas, laboratorios y proyectos numéricos que se acumulan hasta convertir la semana en una carrera.\n\nDividimos los problemas grandes en pasos sencillos y guiamos al estudiante hasta que recupere la autonomía para resolver solo.\n\nAgenda tutoría de apoyo. Visita https://www.centrodetutorias.com o escríbenos directamente por WhatsApp: https://wa.me/50257152096\n\n#CentroDeTutorías #TutoríasPersonalizadas #Matemática #ApoyoAcadémico #Educación",
+  "caption_facebook": "Cuando las tareas se acumulan, la frustración en casa crece\n\nLa acumulación suele esconder un vacío conceptual: un paso algebraico o un signo que no quedó claro en la clase presencial.\n\nEn Centro de Tutorías, dividimos los problemas grandes en pasos sencillos y guiamos al estudiante hasta que recupere la autonomía para resolver solo.\n\nAgenda tutoría de apoyo: https://www.centrodetutorias.com\nChatea con nosotros por WhatsApp: https://wa.me/50257152096",
+  "texto_tiktok": "Comprender primero. Avanzar mejor. Agenda tutoría de apoyo. #CentroDeTutorías #TutoríasPersonalizadas #Matemática #ApoyoAcadémico",
   "hashtags": [
     "#CentroDeTutorías",
     "#TutoríasPersonalizadas",
@@ -17,25 +17,25 @@
     "#ApoyoAcadémico",
     "#Educación"
   ],
-  "cta_principal": "Bríndale apoyo hoy",
-  "cta_secundario": "Chatea con nosotros",
+  "cta_principal": "Agenda tutoría de apoyo",
+  "cta_secundario": "Organiza sus pendientes",
   "url_destino": "https://www.centrodetutorias.com",
   "whatsapp": "+502 5715 2096",
-  "whatsapp_link": "https://wa.me/50257152096?text=Hola%2C%20vi%20la%20publicaci%C3%B3n%20de%20Centro%20de%20Tutor%C3%ADas%20sobre%20recordatorio%20emocional%20y%20quisiera%20informaci%C3%B3n%20sobre%20una%20clase%20modelo%20o%20diagn%C3%B3stico%20acad%C3%A9mico.",
-  "mensaje_whatsapp_sugerido": "Hola, vi la publicación de Centro de Tutorías sobre recordatorio emocional y quisiera información sobre una clase modelo o diagnóstico académico.",
-  "alt_text": "Pieza de Centro de Tutorías sobre recordatorio emocional. El estrés por matemáticas no tiene por qué definir las tardes en tu casa. Imagen de un estudiante en un ambiente de estudio y llamado a la acción: Bríndale apoyo hoy.",
+  "whatsapp_link": "https://wa.me/50257152096?text=Hola%2C%20vi%20la%20publicaci%C3%B3n%20de%20Centro%20de%20Tutor%C3%ADas%20sobre%20tareas%20acumuladas%20y%20quisiera%20informaci%C3%B3n%20sobre%20una%20clase%20modelo%20o%20diagn%C3%B3stico%20acad%C3%A9mico.",
+  "mensaje_whatsapp_sugerido": "Hola, vi la publicación de Centro de Tutorías sobre tareas acumuladas y quisiera información sobre una clase modelo o diagnóstico académico.",
+  "alt_text": "Pieza de Centro de Tutorías sobre tareas acumuladas. Cuando las tareas se acumulan, la frustración en casa crece. Imagen de un estudiante en un ambiente de estudio y llamado a la acción: Agenda tutoría de apoyo.",
   "carrusel": [
     {
       "slide": 1,
       "role": "gancho",
-      "title": "El estrés por matemáticas no tiene por qué definir las tardes en tu casa",
-      "body": "Ayuda a tu hijo a separar un mal resultado temporal de su capacidad real. El apoyo paciente cambia la perspectiva."
+      "title": "Cuando las tareas se acumulan, la frustración en casa crece",
+      "body": "Ayudamos a tu hijo a comprender el proceso y resolver de forma independiente, sin hacer la tarea por él."
     },
     {
       "slide": 2,
       "role": "problema",
       "title": "Lo que suele estar pasando",
-      "body": "Es muy común etiquetarse como 'malo para los números'. Sin embargo, con paciencia y la analogía correcta, cualquiera puede comprender matemáticas."
+      "body": "La acumulación suele esconder un vacío conceptual: un paso algebraico o un signo que no quedó claro en la clase presencial."
     },
     {
       "slide": 3,
@@ -47,13 +47,13 @@
       "slide": 4,
       "role": "solución",
       "title": "Cómo acompañamos",
-      "body": "Creamos un espacio seguro donde equivocarse es parte del aprendizaje y celebrar pequeños logros cambia la relación con la materia."
+      "body": "Dividimos los problemas grandes en pasos sencillos y guiamos al estudiante hasta que recupere la autonomía para resolver solo."
     },
     {
       "slide": 5,
       "role": "cta",
       "title": "El apoyo correcto puede empezar hoy",
-      "body": "Bríndale apoyo hoy. Descubre una tutoría enfocada en lo que realmente necesita."
+      "body": "Agenda tutoría de apoyo. Descubre una tutoría enfocada en lo que realmente necesita."
     }
   ]
 }

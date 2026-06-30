@@ -322,17 +322,24 @@ async function main() {
 
   let format = args.format;
   if (!format) {
-    if (history.generated && history.generated.length > 0) {
-      const lastEntry = history.generated[history.generated.length - 1];
-      if (lastEntry.format === "carousel" || !lastEntry.format) {
-        format = "video";
-      } else {
-        format = "carousel";
-      }
+    // Implementar taxonomía de formatos recomendada en recomendaciones_contenido_proximo_mes.md:
+    // - Videos (Reels) para temas de Atracción y Confianza.
+    // - Carruseles para temas de Educación y Conversión.
+    const videoThemes = [
+      "parent-pain",
+      "task-overload",
+      "university-statistics",
+      "college-transition",
+      "academic-confidence",
+      "emotional-reminder"
+    ];
+    if (videoThemes.includes(theme.id)) {
+      format = "video";
     } else {
       format = "carousel";
     }
   }
+
 
   await renderCampaign({
     theme,
