@@ -1,0 +1,59 @@
+{
+  "fecha": "2026-06-30",
+  "tema_del_dia": "Llamado a clase modelo",
+  "tema_id": "model-class",
+  "materia_prioritaria": "Matemática, Estadística y Física",
+  "dolor_del_cliente": "No saber si una tutoría realmente se adaptará a las necesidades y forma de aprender del estudiante.",
+  "headline_principal": "Prueba cómo explicamos con una clase demostrativa",
+  "subtitulo": "Agenda una sesión modelo y observa cómo el estudiante interactúa con el tutor, la pizarra digital y las explicaciones pacíficas.",
+  "texto_corto_imagen": "Conoce el método antes de elegir.",
+  "caption_instagram": "Prueba cómo explicamos con una clase demostrativa\n\nNo saber si una tutoría realmente se adaptará a las necesidades y forma de aprender del estudiante.\n\nCoordinamos una sesión introductoria corta enfocada en un tema de su interés para que experimente la dinámica virtual.\n\nAgenda tu clase modelo. Visita https://www.centrodetutorias.com o escríbenos directamente por WhatsApp: https://wa.me/50257152096\n\n#CentroDeTutorías #TutoríasPersonalizadas #Matemática #ApoyoAcadémico #Estadística",
+  "caption_facebook": "Prueba cómo explicamos con una clase demostrativa\n\nLa química entre el tutor y el estudiante es vital para el aprendizaje. Una sesión inicial permite validar el nivel de comodidad y sintonía.\n\nEn Centro de Tutorías, coordinamos una sesión introductoria corta enfocada en un tema de su interés para que experimente la dinámica virtual.\n\nAgenda tu clase modelo: https://www.centrodetutorias.com\nChatea con nosotros por WhatsApp: https://wa.me/50257152096",
+  "texto_tiktok": "Conoce el método antes de elegir. Agenda tu clase modelo. #CentroDeTutorías #TutoríasPersonalizadas #Matemática #ApoyoAcadémico",
+  "hashtags": [
+    "#CentroDeTutorías",
+    "#TutoríasPersonalizadas",
+    "#Matemática",
+    "#ApoyoAcadémico",
+    "#Estadística"
+  ],
+  "cta_principal": "Agenda tu clase modelo",
+  "cta_secundario": "Consulta disponibilidad",
+  "url_destino": "https://www.centrodetutorias.com",
+  "whatsapp": "+502 5715 2096",
+  "whatsapp_link": "https://wa.me/50257152096?text=Hola%2C%20vi%20la%20publicaci%C3%B3n%20de%20Centro%20de%20Tutor%C3%ADas%20sobre%20llamado%20a%20clase%20modelo%20y%20quisiera%20informaci%C3%B3n%20sobre%20una%20clase%20modelo%20o%20diagn%C3%B3stico%20acad%C3%A9mico.",
+  "mensaje_whatsapp_sugerido": "Hola, vi la publicación de Centro de Tutorías sobre llamado a clase modelo y quisiera información sobre una clase modelo o diagnóstico académico.",
+  "alt_text": "Pieza de Centro de Tutorías sobre llamado a clase modelo. Prueba cómo explicamos con una clase demostrativa. Imagen de un estudiante en un ambiente de estudio y llamado a la acción: Agenda tu clase modelo.",
+  "carrusel": [
+    {
+      "slide": 1,
+      "role": "gancho",
+      "title": "Prueba cómo explicamos con una clase demostrativa",
+      "body": "Agenda una sesión modelo y observa cómo el estudiante interactúa con el tutor, la pizarra digital y las explicaciones pacíficas."
+    },
+    {
+      "slide": 2,
+      "role": "problema",
+      "title": "Lo que suele estar pasando",
+      "body": "La química entre el tutor y el estudiante es vital para el aprendizaje. Una sesión inicial permite validar el nivel de comodidad y sintonía."
+    },
+    {
+      "slide": 3,
+      "role": "orientación",
+      "title": "Un mejor punto de partida",
+      "body": "Identificar la dificultad, ajustar la explicación y practicar con retroalimentación."
+    },
+    {
+      "slide": 4,
+      "role": "solución",
+      "title": "Cómo acompañamos",
+      "body": "Coordinamos una sesión introductoria corta enfocada en un tema de su interés para que experimente la dinámica virtual."
+    },
+    {
+      "slide": 5,
+      "role": "cta",
+      "title": "El apoyo correcto puede empezar hoy",
+      "body": "Agenda tu clase modelo. Descubre una tutoría enfocada en lo que realmente necesita."
+    }
+  ]
+}
