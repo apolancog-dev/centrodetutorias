@@ -1,6 +1,38 @@
 <!DOCTYPE html>
 <html lang="es" class="scroll-smooth">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-56Z99KD09C"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-56Z99KD09C');
+
+      // Custom Event Tracking for conversions
+      document.addEventListener('DOMContentLoaded', () => {
+        // Track clicks to WhatsApp links
+        document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp.com"]').forEach(link => {
+          link.addEventListener('click', () => {
+            gtag('event', 'whatsapp_conversion_click', {
+              'event_category': 'Engagement',
+              'event_label': link.innerText.trim() || 'WhatsApp CTA',
+              'destination_url': link.href
+            });
+          });
+        });
+
+        // Track clicks on other anchor call-to-actions
+        document.querySelectorAll('a[href^="#"], button').forEach(element => {
+          element.addEventListener('click', () => {
+            gtag('event', 'cta_button_click', {
+              'event_category': 'Navigation',
+              'event_label': element.innerText.trim() || 'CTA Button'
+            });
+          });
+        });
+      });
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tutorías virtuales de Matemáticas, Física y Estadística | Centro de Tutorías</title>
