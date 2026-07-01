@@ -130,6 +130,15 @@
       "format": "carousel",
       "output": "output/2026-06-30",
       "generatedAt": "2026-06-30T13:10:08.293Z"
+    },
+    {
+      "date": "2026-07-01",
+      "themeId": "parent-pain",
+      "themeName": "Dolor del padre o madre",
+      "subject": "Matemática",
+      "format": "video",
+      "output": "output/2026-07-01",
+      "generatedAt": "2026-07-01T13:34:08.971Z"
     }
   ]
 }

@@ -1,0 +1,92 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-01T13:34:08.971Z",
+  "date": "2026-07-01",
+  "format": "video",
+  "themeId": "parent-pain",
+  "themeName": "Dolor del padre o madre",
+  "status": "ready_for_human_review",
+  "publishing": "disabled",
+  "files": [
+    {
+      "path": "vertical_1080x1920.png",
+      "bytes": 2925540,
+      "sha256": "e3a22ae92bd6640701ea3b2a1d3b59a4f23e4a81908eff4d0c9ab705a5d07714"
+    },
+    {
+      "path": "feed_1080x1080.png",
+      "bytes": 1311709,
+      "sha256": "872d16006851d94f9f78954acdc371e1ef2dd6cb215160fcb8c6bfa89584a52a"
+    },
+    {
+      "path": "feed_1080x1350.png",
+      "bytes": 1900084,
+      "sha256": "54440fb915d2896b932bb17d65280b5201c0e0a1d619bb2c4d753e26eca25f66"
+    },
+    {
+      "path": "source.html",
+      "bytes": 15055,
+      "sha256": "2156bf3e8cec2e6c9be04ab08a32f4695342365753f7a8f731fdbfaa6888cce2"
+    },
+    {
+      "path": "copy.json",
+      "bytes": 4035,
+      "sha256": "ae3b89e67f034e84ce4591c36fe0a04ae745a2349d8efc0a89ba5058218bfb16"
+    },
+    {
+      "path": "carousel/slide_01_1080x1350.png",
+      "bytes": 2233233,
+      "sha256": "be20f9fb3aafdc428a8741648c81d8ed0bc97215289ea06a69b0b6822f1cf015"
+    },
+    {
+      "path": "carousel/slide_02_1080x1350.png",
+      "bytes": 96659,
+      "sha256": "22f27b1887720ba5741d9170cc90cdd9e34436cd970010acfa34542f59b7347e"
+    },
+    {
+      "path": "carousel/slide_03_1080x1350.png",
+      "bytes": 96274,
+      "sha256": "8fdb46dc19a1880510e0710e372fe77f90efd8df0543533e81d486a8e6216039"
+    },
+    {
+      "path": "carousel/slide_04_1080x1350.png",
+      "bytes": 89724,
+      "sha256": "fadfd562b852f763fa2793ea72ff317cd8045b23fb18cb00559a1a74f3dee5f3"
+    },
+    {
+      "path": "carousel/slide_05_1080x1350.png",
+      "bytes": 95264,
+      "sha256": "67ba96130ff3da5b8efade608b4b057975e634f5b6149937cd5142234459ffb9"
+    },
+    {
+      "path": "carousel/slide_01_1080x1350.jpg",
+      "bytes": 228150,
+      "sha256": "b24a7de50a60ad2a83d218311ca38b3307e9b99ac2713c7b80caa01e0b0b7d7e"
+    },
+    {
+      "path": "carousel/slide_02_1080x1350.jpg",
+      "bytes": 94178,
+      "sha256": "609ebfb2da5ae6a038a3fe54f2b764286d0773eb07615ed280d38ddf6c347900"
+    },
+    {
+      "path": "carousel/slide_03_1080x1350.jpg",
+      "bytes": 87731,
+      "sha256": "ef80533d1d1a5434d3f3c65cf030cc2ba17b0c6b921ff315d910766f73f3c6d3"
+    },
+    {
+      "path": "carousel/slide_04_1080x1350.jpg",
+      "bytes": 74356,
+      "sha256": "c11a63cc5bc7eb4facb3062153f6f0640d04811080753b517cf422981cdae007"
+    },
+    {
+      "path": "carousel/slide_05_1080x1350.jpg",
+      "bytes": 90306,
+      "sha256": "11ca40a73537a2c28ab02271f187a908c5917b418b8f40c94e3f33b30bdebd00"
+    },
+    {
+      "path": "vertical_video.mp4",
+      "bytes": 1490304,
+      "sha256": "9ac2ca2ddb8aff809c3a8f4cbd65cafc410d61ec1cb9b20e686e326c93b21559"
+    }
+  ]
+}
