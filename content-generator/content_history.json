@@ -139,6 +139,15 @@
       "format": "video",
       "output": "output/2026-07-01",
       "generatedAt": "2026-07-01T14:53:51.098Z"
+    },
+    {
+      "date": "2026-07-02",
+      "themeId": "academic-diagnosis",
+      "themeName": "Diagnóstico académico",
+      "subject": "Matemática y Estadística",
+      "format": "carousel",
+      "output": "output/2026-07-02",
+      "generatedAt": "2026-07-02T12:56:08.302Z"
     }
   ]
 }

@@ -1,0 +1,87 @@
+{
+  "version": 1,
+  "generatedAt": "2026-07-02T12:56:08.302Z",
+  "date": "2026-07-02",
+  "format": "carousel",
+  "themeId": "academic-diagnosis",
+  "themeName": "Diagnóstico académico",
+  "status": "ready_for_human_review",
+  "publishing": "disabled",
+  "files": [
+    {
+      "path": "vertical_1080x1920.png",
+      "bytes": 2717934,
+      "sha256": "84aa59c3f38094da029d72274b34e8c15f42d4223323c42288931c516205139b"
+    },
+    {
+      "path": "feed_1080x1080.png",
+      "bytes": 1293508,
+      "sha256": "df609e36648446403a39daec511092146eb6bf82b2d3211dc22464c3c45786fc"
+    },
+    {
+      "path": "feed_1080x1350.png",
+      "bytes": 1717165,
+      "sha256": "80c05869b5e019830c2670a40278a74fc1ce88429a6244710ba1aa85ad9feda6"
+    },
+    {
+      "path": "source.html",
+      "bytes": 14995,
+      "sha256": "48e07465ee748a861dd10dcb6b047eb67cd46523b314c8d293cf9a3c6bbfdd01"
+    },
+    {
+      "path": "copy.json",
+      "bytes": 4052,
+      "sha256": "cef482f2730096fa40545cd83d32924361a7ad078282f90665df2f0bbee64880"
+    },
+    {
+      "path": "carousel/slide_01_1080x1350.png",
+      "bytes": 2014000,
+      "sha256": "ee1a95b33e7049c7e8630a8e43a86e65911df8dc0e7691116f9620fc96289c17"
+    },
+    {
+      "path": "carousel/slide_02_1080x1350.png",
+      "bytes": 94739,
+      "sha256": "1dadf321314b14c1f8b1100b40d8a92579f1e21139f5d0dc6d448cb431bcf243"
+    },
+    {
+      "path": "carousel/slide_03_1080x1350.png",
+      "bytes": 99131,
+      "sha256": "462fbdfad3054210442fa73943d87ca0b5a3a21f4aae9d4b0a80dcc1a0d4cbf5"
+    },
+    {
+      "path": "carousel/slide_04_1080x1350.png",
+      "bytes": 88200,
+      "sha256": "7336ce71a87a553001dc06707337d72b0dcd449e7bf26a0f6764a0880bedcad2"
+    },
+    {
+      "path": "carousel/slide_05_1080x1350.png",
+      "bytes": 94952,
+      "sha256": "4238129501092562648180cd683b510359f88c227869870e6ef0bf7eb6185a9d"
+    },
+    {
+      "path": "carousel/slide_01_1080x1350.jpg",
+      "bytes": 202477,
+      "sha256": "6421f77c7435ce0321c649abbf9271d3d5f9649942f6bfeeb0071c408eafd145"
+    },
+    {
+      "path": "carousel/slide_02_1080x1350.jpg",
+      "bytes": 92206,
+      "sha256": "a1c5cdf6f23e2da45f2b0de0e4c9a951c1160a964f138232cdff1d6d9b7afa9d"
+    },
+    {
+      "path": "carousel/slide_03_1080x1350.jpg",
+      "bytes": 91273,
+      "sha256": "83edd21af79353ccd2791fbecd6da818202b07c143aba486ae3a1faef1f4c487"
+    },
+    {
+      "path": "carousel/slide_04_1080x1350.jpg",
+      "bytes": 74152,
+      "sha256": "3d05656962e1c09b08ff7416e44c28fb24189fb8f8094df781d0145277b58096"
+    },
+    {
+      "path": "carousel/slide_05_1080x1350.jpg",
+      "bytes": 89290,
+      "sha256": "adbf218aee12f821368074cc73718311000ab8ec40b43f04ed4ec81e86193205"
+    }
+  ]
+}
